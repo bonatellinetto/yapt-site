@@ -1,0 +1,55 @@
+---
+import { t, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const metrics = t('trustBar.items', locale) as { number: string; label: string }[];
+---
+
+<section
+  class="w-full border-b border-gray-100 py-6 relative overflow-hidden"
+  style="background: linear-gradient(180deg, #FFFFFF 0%, #F0FDFA 100%);"
+>
+  <!-- Decorative vine — top-left -->
+  <svg class="absolute top-0 left-0 pointer-events-none" width="180" height="120" viewBox="0 0 180 120" fill="none" style="opacity: 0.08;" aria-hidden="true">
+    <path d="M0 0 C30 20, 50 50, 40 80 C35 95, 20 100, 10 110" stroke="#10B981" stroke-width="2" fill="none"/>
+    <path d="M40 80 C50 75, 60 70, 65 60" stroke="#059669" stroke-width="1.5" fill="none"/>
+    <ellipse cx="30" cy="25" rx="6" ry="3.5" transform="rotate(-30 30 25)" fill="#10B981"/>
+    <ellipse cx="45" cy="55" rx="5" ry="3" transform="rotate(20 45 55)" fill="#059669"/>
+    <ellipse cx="35" cy="90" rx="5.5" ry="3" transform="rotate(-15 35 90)" fill="#10B981"/>
+    <ellipse cx="55" cy="65" rx="4" ry="2.5" transform="rotate(40 55 65)" fill="#059669"/>
+  </svg>
+
+  <!-- Decorative vine — bottom-right -->
+  <svg class="absolute bottom-0 right-0 pointer-events-none" width="180" height="120" viewBox="0 0 180 120" fill="none" style="opacity: 0.08;" aria-hidden="true">
+    <path d="M180 120 C150 100, 130 70, 140 40 C145 25, 160 20, 170 10" stroke="#10B981" stroke-width="2" fill="none"/>
+    <path d="M140 40 C130 45, 120 50, 115 60" stroke="#059669" stroke-width="1.5" fill="none"/>
+    <ellipse cx="150" cy="95" rx="6" ry="3.5" transform="rotate(150 150 95)" fill="#10B981"/>
+    <ellipse cx="135" cy="65" rx="5" ry="3" transform="rotate(-160 135 65)" fill="#059669"/>
+    <ellipse cx="145" cy="30" rx="5.5" ry="3" transform="rotate(165 145 30)" fill="#10B981"/>
+    <ellipse cx="125" cy="55" rx="4" ry="2.5" transform="rotate(-140 125 55)" fill="#059669"/>
+  </svg>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-16">
+      {Array.isArray(metrics) && metrics.map((metric, index) => (
+        <div class="flex items-center gap-4 md:gap-8 lg:gap-16">
+          <div class="flex flex-col items-center gap-0.5">
+            <span class="font-poppins text-xl md:text-2xl font-bold" style="color: #20B2AA;">
+              {metric.number}
+            </span>
+            <span class="text-xs uppercase tracking-wider" style="color: #656D78;">
+              {metric.label}
+            </span>
+          </div>
+          {index < metrics.length - 1 && (
+            <span class="hidden md:block text-gray-300 text-xl select-none" aria-hidden="true">·</span>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

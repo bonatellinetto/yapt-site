@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "badge": "Parceiro",
+    "back": "Ir para o App",
+    "overview": "Visão Geral",
+    "dashboard": "Dashboard",
+    "clients": "Clientes",
+    "myClients": "Meus Clientes",
+    "team": "Time",
+    "teamMembers": "Membros",
+    "account": "Conta",
+    "onboarding": "Onboarding",
+    "settings": "Configurações",
+    "billing": "Faturamento",
+    "comingSoon": "Em breve"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Bem-vindo ao Partner Hub de {{name}}",
+    "recentClients": "Clientes Recentes",
+    "viewAll": "Ver todos",
+    "noClients": "Nenhum cliente ainda",
+    "onboardingChecklist": "Checklist de Onboarding",
+    "viewOnboarding": "Ver Onboarding"
+  },
+  "stats": {
+    "totalClients": "Total de Clientes",
+    "activeClients": "Clientes Ativos",
+    "totalMembers": "Total de Membros",
+    "tier": "Tier"
+  },
+  "clients": {
+    "title": "Meus Clientes",
+    "subtitle": "Gerencie os clientes da sua operação",
+    "newClient": "Novo Cliente",
+    "searchPlaceholder": "Buscar por nome, slug ou CNPJ...",
+    "empty": "Nenhum cliente encontrado",
+    "emptyDescription": "Crie seu primeiro cliente para começar a usar a plataforma.",
+    "name": "Nome",
+    "members": "Membros",
+    "created": "Criado em"
+  },
+  "createClient": {
+    "title": "Novo Cliente",
+    "description": "Preencha o CNPJ para buscar os dados da empresa automaticamente.",
+    "lookup": "Buscar",
+    "cnpjFound": "CNPJ encontrado",
+    "adminName": "Nome do admin",
+    "adminNamePlaceholder": "Nome completo",
+    "adminEmail": "Email do admin",
+    "adminEmailPlaceholder": "email@empresa.com",
+    "adminPassword": "Senha",
+    "adminPasswordPlaceholder": "Mínimo 6 caracteres",
+    "cancel": "Cancelar",
+    "submit": "Criar Cliente",
+    "creating": "Criando...",
+    "success": "Cliente criado com sucesso",
+    "successDescription": "{{name}} foi adicionado à sua carteira.",
+    "error": "Erro ao criar cliente"
+  },
+  "clientDetail": {
+    "notFound": "Cliente não encontrado",
+    "backToClients": "Voltar aos clientes",
+    "healthScore": "Health Score",
+    "members": "Membros",
+    "createdAt": "Criado em",
+    "onboardingChecklist": "Checklist de Onboarding",
+    "membersTab": "Membros",
+    "invitesTab": "Convites",
+    "membersComingSoon": "Gestão de membros em breve",
+    "invitesComingSoon": "Gestão de convites em breve"
+  },
+  "team": {
+    "title": "Time",
+    "subtitle": "Membros do seu time de parceiro",
+    "invite": "Convidar",
+    "comingSoon": "Gestão de time em breve",
+    "comingSoonDescription": "Em breve você poderá convidar membros para o seu time de parceiro."
+  },
+  "settings": {
+    "title": "Configurações",
+    "subtitle": "Dados da empresa e configurações do parceiro",
+    "companyData": "Dados da Empresa",
+    "companyName": "Razão Social",
+    "tradeName": "Nome Fantasia",
+    "phone": "Telefone",
+    "email": "Email",
+    "address": "Endereço",
+    "planBilling": "Plano e Faturamento",
+    "currentPlan": "Plano Atual",
+    "trialEnds": "Trial termina em",
+    "billingComingSoon": "Faturamento será habilitado em breve"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "subtitle": "Complete os passos para configurar sua operação",
+    "progress": "Progresso",
+    "step": "Passo",
+    "goTo": "Ir",
+    "companyProfile": "Completar perfil da empresa",
+    "companyProfileDesc": "Verifique os dados da empresa nas configurações.",
+    "firstClient": "Criar primeiro cliente",
+    "firstClientDesc": "Adicione seu primeiro cliente com CNPJ.",
+    "teamMember": "Convidar membro do time",
+    "teamMemberDesc": "Convide alguém do seu time para ajudar na operação.",
+    "channelConnected": "Conectar canal do cliente",
+    "channelConnectedDesc": "Ajude seu primeiro cliente a conectar um canal de comunicação.",
+    "firstConversation": "Primeira conversa do cliente",
+    "firstConversationDesc": "Seu cliente recebeu a primeira conversa na plataforma."
+  }
+}

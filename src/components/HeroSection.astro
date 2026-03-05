@@ -1,0 +1,210 @@
+---
+import { t, type Locale } from '../lib/i18n';
+import WhatsAppChat from './WhatsAppChat.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section
+  class="relative min-h-screen flex items-center overflow-hidden"
+  style="background: linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%);"
+>
+  <div class="relative w-full flex flex-col lg:flex-row min-h-screen" style="z-index: 10; animation: hero-mount 1s ease forwards; opacity: 0;">
+    <!-- LEFT SIDE — Copy -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center px-6 lg:px-8 xl:px-16 pt-24 pb-6 lg:py-0">
+      <!-- Badge -->
+      <div
+        class="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 w-fit"
+        style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.18);"
+      >
+        <span class="text-xs text-white/90">{t('hero.badge', locale)}</span>
+        <span class="inline-flex items-center gap-1 text-[10px] font-semibold uppercase rounded-full px-2.5 py-0.5" style="background: #25D366; color: #ffffff;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          {t('hero.badgeTag', locale)}
+        </span>
+      </div>
+
+      <!-- Tagline -->
+      <p class="text-xs text-white/80 mb-6 -mt-4" style="letter-spacing: 0.02em;">
+        {t('hero.tagline', locale)}
+      </p>
+
+      <!-- H1 -->
+      <h1 class="font-poppins font-bold text-white text-3xl lg:text-4xl xl:text-5xl leading-tight">
+        {t('hero.title', locale)}
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base lg:text-lg text-white/80 max-w-xl mt-6 leading-relaxed">
+        {t('hero.description', locale)}
+      </p>
+
+      <!-- Highlight statement -->
+      <div class="mt-5 flex items-center gap-3">
+        <div class="h-px flex-shrink-0" style="width: 32px; background: linear-gradient(90deg, transparent, #2DD4BF);"></div>
+        <p class="font-poppins font-semibold text-sm sm:text-base lg:text-lg text-white tracking-wide uppercase" style="letter-spacing: 0.08em;">
+          {t('hero.descriptionLine2', locale)}
+        </p>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="#cta-final" class="inline-flex items-center justify-center font-semibold rounded-xl px-8 py-4 transition-all duration-200 hover:shadow-lg" style="background: #ffffff; color: #064E3B;">
+          {t('hero.cta', locale)}
+        </a>
+        <a href="#journey" class="inline-flex items-center justify-center font-semibold rounded-xl px-8 py-4 border border-white/30 text-white transition-all duration-200 hover:bg-white/10">
+          {t('hero.ctaSecondary', locale)}
+        </a>
+      </div>
+    </div>
+
+    <!-- MOBILE — WhatsApp mockup -->
+    <div class="block lg:hidden w-full px-6 pb-8 pt-2">
+      <div class="mx-auto max-w-[340px]">
+        <WhatsAppChat />
+      </div>
+      <div class="mt-4 flex justify-center">
+        <div class="inline-flex items-center gap-2 rounded-full px-4 py-1.5" style="background: rgba(255,255,255,0.10); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15);">
+          <span class="text-[10px]" style="color: rgba(255,255,255,0.6);">{t('hero.poweredBy', locale)}</span>
+          <span class="font-poppins text-[10px] font-semibold text-white">yapt.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE — Forest Illustration (desktop) -->
+    <div class="hidden lg:block lg:w-1/2 relative overflow-hidden">
+      <!-- Deep green gradient overlay -->
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, #064E3B 0%, #065F46 50%, #047857 100%);"></div>
+
+      <!-- Trees SVG -->
+      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lr1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+          <linearGradient id="lr2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <polygon points="180,0 240,0 340,800 220,800" fill="url(#lr1)" opacity="0.6"/>
+        <polygon points="380,0 420,0 480,800 400,800" fill="url(#lr2)" opacity="0.5"/>
+        <line x1="100" y1="800" x2="100" y2="220" stroke="#065F46" stroke-width="22"/>
+        <line x1="320" y1="800" x2="320" y2="180" stroke="#065F46" stroke-width="18"/>
+        <line x1="500" y1="800" x2="500" y2="260" stroke="#065F46" stroke-width="20"/>
+        <line x1="100" y1="360" x2="50" y2="290" stroke="#065F46" stroke-width="10"/>
+        <line x1="100" y1="440" x2="170" y2="370" stroke="#065F46" stroke-width="8"/>
+        <line x1="320" y1="300" x2="260" y2="230" stroke="#065F46" stroke-width="8"/>
+        <line x1="500" y1="380" x2="560" y2="310" stroke="#065F46" stroke-width="8"/>
+        <ellipse cx="90" cy="240" rx="80" ry="65" fill="#10B981" opacity="0.9"/>
+        <ellipse cx="120" cy="270" rx="65" ry="50" fill="#059669" opacity="0.8"/>
+        <ellipse cx="60" cy="280" rx="55" ry="45" fill="#047857" opacity="0.7"/>
+        <ellipse cx="310" cy="200" rx="90" ry="70" fill="#34D399" opacity="0.8"/>
+        <ellipse cx="340" cy="240" rx="70" ry="55" fill="#10B981" opacity="0.7"/>
+        <ellipse cx="280" cy="250" rx="60" ry="50" fill="#059669" opacity="0.75"/>
+        <ellipse cx="500" cy="280" rx="75" ry="60" fill="#10B981" opacity="0.85"/>
+        <ellipse cx="530" cy="310" rx="60" ry="50" fill="#059669" opacity="0.7"/>
+        <ellipse cx="470" cy="300" rx="55" ry="45" fill="#047857" opacity="0.65"/>
+      </svg>
+
+      <!-- Toucan -->
+      <div class="absolute" style="top: 18%; right: 18%; animation: yapt-float 4s ease-in-out infinite;">
+        <svg width="70" height="80" viewBox="0 0 70 80" fill="none">
+          <ellipse cx="35" cy="52" rx="20" ry="24" fill="#1F2937"/>
+          <ellipse cx="35" cy="56" rx="13" ry="16" fill="#F0FDF4"/>
+          <circle cx="35" cy="28" r="16" fill="#1F2937"/>
+          <circle cx="42" cy="24" r="7" fill="#06B6D4"/>
+          <circle cx="42" cy="24" r="4.5" fill="#1a1a1a"/>
+          <circle cx="40" cy="22" r="1.5" fill="white"/>
+          <path d="M48 22 Q70 28 68 36 Q55 40 44 34 Z" fill="#F97316"/>
+          <path d="M53 24 Q68 29 67 34 Q62 36 56 32 Z" fill="#FB923C"/>
+          <path d="M65 28 Q70 28 68 36 L64 34 Z" fill="#1F2937"/>
+          <path d="M22 68 Q10 80 8 90 Q18 82 28 76 Z" fill="#1F2937"/>
+        </svg>
+      </div>
+
+      <!-- Butterfly 1 -->
+      <div class="absolute" style="top: 25%; left: 25%; animation: yapt-butterfly1 8s ease-in-out infinite;">
+        <svg width="40" height="28" viewBox="0 0 40 28" fill="none">
+          <ellipse cx="12" cy="12" rx="12" ry="9" fill="#F59E0B" style="animation: yapt-wing-flap 0.3s ease-in-out infinite alternate;" transform="rotate(-20, 12, 12)"/>
+          <ellipse cx="28" cy="12" rx="12" ry="9" fill="#FBBF24" style="animation: yapt-wing-flap 0.3s ease-in-out infinite alternate-reverse;" transform="rotate(20, 28, 12)"/>
+          <ellipse cx="20" cy="14" rx="3" ry="7" fill="#1F2937"/>
+        </svg>
+      </div>
+
+      <!-- Butterfly 2 -->
+      <div class="absolute" style="top: 50%; right: 22%; animation: yapt-butterfly2 10s ease-in-out infinite;">
+        <svg width="36" height="25" viewBox="0 0 36 25" fill="none">
+          <ellipse cx="10" cy="11" rx="10" ry="8" fill="#34D399" style="animation: yapt-wing-flap 0.3s ease-in-out infinite alternate;" transform="rotate(-20, 10, 11)"/>
+          <ellipse cx="26" cy="11" rx="10" ry="8" fill="#10B981" style="animation: yapt-wing-flap 0.3s ease-in-out infinite alternate-reverse;" transform="rotate(20, 26, 11)"/>
+          <ellipse cx="18" cy="12" rx="2.5" ry="6" fill="#1F2937"/>
+        </svg>
+      </div>
+
+      <!-- Bee -->
+      <div class="absolute" style="top: 60%; left: 18%; animation: yapt-bee 4s ease-in-out infinite;">
+        <svg width="36" height="30" viewBox="0 0 36 30" fill="none">
+          <ellipse cx="14" cy="10" rx="10" ry="6" stroke="#E5E7EB" stroke-width="1" fill="rgba(229,231,235,0.5)" style="animation: yapt-bee-wing 0.15s ease-in-out infinite alternate;"/>
+          <ellipse cx="22" cy="10" rx="10" ry="6" stroke="#E5E7EB" stroke-width="1" fill="rgba(229,231,235,0.5)" style="animation: yapt-bee-wing 0.15s ease-in-out infinite alternate-reverse;"/>
+          <ellipse cx="18" cy="20" rx="8" ry="9" fill="#F59E0B"/>
+          <rect x="10" y="17" width="16" height="3" rx="1" fill="#1F2937" opacity="0.7"/>
+          <rect x="10" y="22" width="16" height="3" rx="1" fill="#1F2937" opacity="0.7"/>
+          <circle cx="18" cy="11" r="5" fill="#F59E0B"/>
+          <circle cx="15.5" cy="10" r="1.5" fill="#1a1a1a"/>
+          <circle cx="20.5" cy="10" r="1.5" fill="#1a1a1a"/>
+        </svg>
+      </div>
+
+      <!-- Bottom vegetation -->
+      <svg class="absolute bottom-0 w-full" style="height: 320px;" viewBox="0 0 600 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 280 Q30 220 60 260 Q90 220 120 280 L0 280 Z" fill="#047857"/>
+        <path d="M50 300 Q90 230 130 280 Q100 250 80 300 Z" fill="#059669"/>
+        <path d="M100 290 Q140 210 180 270 Q150 240 120 290 Z" fill="#065F46"/>
+        <path d="M160 310 Q200 240 240 290 L160 310 Z" fill="#10B981" opacity="0.8"/>
+        <path d="M220 300 Q260 230 300 280 Q270 260 240 300 Z" fill="#047857" opacity="0.9"/>
+        <path d="M300 295 Q340 225 380 275 L300 295 Z" fill="#059669"/>
+        <path d="M360 305 Q400 235 440 285 Q410 260 380 305 Z" fill="#10B981" opacity="0.7"/>
+        <path d="M420 290 Q460 220 500 270 L420 290 Z" fill="#065F46" opacity="0.9"/>
+        <path d="M480 300 Q520 230 560 280 L480 300 Z" fill="#047857"/>
+        <path d="M540 285 Q570 230 600 265 L540 285 Z" fill="#059669" opacity="0.8"/>
+        <circle cx="75" cy="268" r="5" fill="#F472B6"/>
+        <circle cx="200" cy="282" r="4" fill="#FBBF24"/>
+        <circle cx="350" cy="275" r="5" fill="#FB923C"/>
+        <circle cx="470" cy="285" r="4" fill="#F472B6"/>
+        <circle cx="560" cy="270" r="5" fill="#FBBF24" opacity="0.9"/>
+        <!-- Frog -->
+        <g transform="translate(500, 245)">
+          <ellipse cx="0" cy="0" rx="18" ry="13" fill="#10B981"/>
+          <circle cx="-8" cy="-14" r="7" fill="#34D399"/>
+          <circle cx="8" cy="-14" r="7" fill="#34D399"/>
+          <circle cx="-8" cy="-14" r="4" fill="#1a1a1a"/>
+          <circle cx="8" cy="-14" r="4" fill="#1a1a1a"/>
+          <circle cx="-6" cy="-16" r="1.5" fill="white"/>
+          <circle cx="10" cy="-16" r="1.5" fill="white"/>
+          <path d="M-6 4 Q0 9 6 4" stroke="#065F46" stroke-width="1.5" fill="none"/>
+        </g>
+      </svg>
+
+      <!-- WhatsApp Chat mockup — floating over forest -->
+      <div class="absolute inset-0 flex items-end justify-center" style="z-index: 5; padding-bottom: 6rem;">
+        <div style="transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);">
+          <WhatsAppChat />
+        </div>
+      </div>
+
+      <!-- Powered by yapt. badge -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full px-5 py-2" style="background: rgba(255,255,255,0.10); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); z-index: 10;">
+        <span class="text-xs" style="color: rgba(255,255,255,0.6);">{t('hero.poweredBy', locale)}</span>
+        <span class="font-poppins text-xs font-semibold text-white">yapt.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes hero-mount {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

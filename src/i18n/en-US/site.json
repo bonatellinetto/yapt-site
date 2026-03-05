@@ -1,0 +1,1981 @@
+{
+  "trustCenter": {
+    "meta": { "title": "Trust Center — yapt.", "description": "Learn about the security, privacy and AI governance practices that protect your data on yapt." },
+    "hero": {
+      "badge": "Trust Center",
+      "title": "Security and compliance as a priority.",
+      "subtitle": "Learn about the security, privacy and AI governance practices that protect your data on yapt."
+    },
+    "compliance": {
+      "subtitle": "Compliance",
+      "title": "GDPR and international standards",
+      "description": "Compliance with GDPR and preparation for international certifications.",
+      "features": [
+        "Right to erasure (GDPR Delete) with dry-run mode",
+        "Data subject export (Data Portability)",
+        "Consent management by channel and purpose",
+        "Immutable audit logs with tenant isolation",
+        "Data impact assessment for AI usage",
+        "Data processing agreements for AI sub-processors"
+      ]
+    },
+    "security": {
+      "subtitle": "Security",
+      "title": "Layered protection",
+      "description": "Multiple layers of security to protect your data and your customers.",
+      "features": [
+        "Origin protection with restrictive validation",
+        "Multi-factor authentication (MFA/TOTP)",
+        "Rate limiting on sensitive endpoints",
+        "Cryptographic signature on Meta webhooks",
+        "Tokens and secrets in environment variables (zero hardcoded)",
+        "Sensitive information protected in production"
+      ]
+    },
+    "infrastructure": {
+      "subtitle": "Infrastructure",
+      "title": "Secure architecture by design",
+      "description": "Secure architecture with native multi-tenant isolation.",
+      "features": [
+        "Complete isolation between organizations on all tables",
+        "TLS encryption in transit (HTTPS mandatory)",
+        "Each organization fully isolated on every operation",
+        "Ultra-fast cloud processing",
+        "Daily automatic backup with 7-day retention",
+        "Real-time monitoring and alerts"
+      ]
+    },
+    "aiGovernance": {
+      "subtitle": "AI Governance",
+      "title": "Responsible and transparent AI",
+      "description": "Full control over how artificial intelligence processes your customers' data.",
+      "features": [
+        "Advisory mode: AI suggests, human executes (never direct mutation)",
+        "Complete audit trail of every LLM interaction",
+        "Full traceability of every AI interaction",
+        "Legal basis of consent per AI processing",
+        "Declared sub-processors (OpenAI, Anthropic, Google)",
+        "Personal data flagged in audit trail"
+      ]
+    },
+    "status": {
+      "sectionLabel": "Implementation Status",
+      "title": "Where we stand",
+      "active": "Active",
+      "inProgress": "In progress",
+      "items": {
+        "cors": "Origin protection",
+        "webhookSignatures": "Webhook signatures",
+        "rateLimiting": "Rate limiting",
+        "mfaTotp": "MFA (TOTP)",
+        "gdprDelete": "GDPR Delete",
+        "gdprExport": "GDPR Export",
+        "auditLogs": "Audit logs",
+        "aiAuditTrail": "AI Audit Trail",
+        "consentMgmt": "Consent management",
+        "encryptionAtRest": "Encryption at rest",
+        "dataAnonymization": "Data anonymization",
+        "soc2": "SOC 2 Type II",
+        "iso27001": "ISO 27001"
+      }
+    }
+  },
+  "nav": {
+    "product": "Product",
+    "integrations": "Integrations",
+    "enterprise": "Enterprise",
+    "pricing": "Pricing",
+    "login": "Login",
+    "goToDashboard": "Go to Dashboard",
+    "scheduleDemo": "Schedule Demo",
+    "productLinks": {
+      "conversations": "Conversations",
+      "conversationsDesc": "Inbox, CRM 360°, Omnichannel",
+      "intelligence": "Intelligence",
+      "intelligenceDesc": "AI, Agents, Memory, Emotion",
+      "marketing": "Marketing",
+      "marketingDesc": "Campaigns, Flows, Instant Engage",
+      "operations": "Operations",
+      "operationsDesc": "Deals, SLA, Analytics",
+      "sales": "Sales",
+      "salesDesc": "Pipeline, Deals, Proposals, Coaching",
+      "automations": "Automations",
+      "automationsDesc": "Flows, Triggers, Orchestrated AI",
+      "integrations": "Integrations",
+      "enterprise": "Enterprise",
+      "pricing": "Pricing"
+    }
+  },
+  "footer": {
+    "tagline": "by New Way — Meta Business Solution Provider",
+    "description": "The first AI Native conversational platform with infinite memory.",
+    "product": "Product",
+    "resources": "Resources",
+    "docs": "Documentation",
+    "apiReference": "API Reference",
+    "blog": "Blog",
+    "cases": "Case Studies",
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "press": "Press",
+    "copyright": "© 2026 yapt. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "trustCenter": "Trust Center"
+  },
+  "cta": {
+    "badges": {
+      "bsp": "Official Meta BSP",
+      "messages": "30M+ msg/month",
+      "years": "11 years"
+    },
+    "title": "Ready to turn your conversations into revenue?",
+    "subtitle": "Schedule a personalized demo and see how yapt. can revolutionize your business's conversational operations.",
+    "primaryButton": "Schedule a Free Demo",
+    "secondaryButton": "Talk to a Specialist",
+    "smallText": "No commitment. Setup in 24h. Dedicated support."
+  },
+  "conversations": {
+    "meta": {
+      "title": "Conversations & Omnichannel",
+      "description": "yaInbox, yaPeople and yaConnect: all conversations in one place, with AI, scoring and real-time emotion detection."
+    },
+    "hero": {
+      "badge": "Conversations & Omnichannel",
+      "title": "Every conversation. One single place.",
+      "subtitle": "yaInbox, yaPeople and yaConnect working together so no opportunity slips between channels."
+    },
+    "inbox": {
+      "subtitle": "yaInbox",
+      "title": "10 smart views. Infinite context.",
+      "description": "Unified inbox with lead scoring, emotion analysis, handler state and AI whisper panel — all in real time.",
+      "features": [
+        "10 pre-configured views: Unread, Awaiting AI, Mine, Bot, VIP and more",
+        "Qualification score visible in every conversation",
+        "Emotion Engine detects 13 emotional signals",
+        "Handler State: know if AI, human or bot is in control",
+        "Whisper panel: AI suggests responses without the customer seeing"
+      ]
+    },
+    "handlerState": {
+      "subtitle": "Handler State",
+      "title": "The intelligence that transfers to a human at the right moment.",
+      "description": "yapt. knows when AI should handle the conversation and when it's time for a human to take over. The transition is intelligent — with full context preserved and zero information loss.",
+      "features": [
+        "Active AI state",
+        "Human need detection",
+        "Frictionless handoff",
+        "100% preserved context",
+        "Automatic return to AI"
+      ]
+    },
+    "yavehTeam": {
+      "subtitle": "yaveh AI + yaTeam",
+      "title": "The AI brain of yapt. Build your own agent team.",
+      "description": "yaveh is the central intelligence — it orchestrates everything. With yaTeam, you create your own team of agents: for customer service, for sales team training (copilot), for monitoring pipelines.",
+      "features": [
+        "yaveh orchestrates all AI",
+        "yaTeam: create agents for customer service",
+        "yaTeam: create internal agents (team copilot)",
+        "Agents that ensure pipeline rhythm",
+        "Agents that evaluate deals automatically"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "The power of data that boosts team efficiency.",
+      "description": "yaMentor analyzes conversations, identifies real team pain points, and delivers real-time coaching. This isn't theory — these are actionable insights based on what's happening in your sales.",
+      "features": [
+        "Real-time coaching during conversations",
+        "Performance analysis per salesperson",
+        "Gap and missed objection identification",
+        "Suggestions based on real data",
+        "Meeting Intelligence (meeting analysis)"
+      ]
+    },
+    "memory": {
+      "subtitle": "yaMemory",
+      "title": "Your customer never has to repeat anything again.",
+      "description": "Supermemory is yapt.'s infinite memory. Every conversation, every objection, every preference — stored forever. The AI knows everything that's ever happened, across any channel, at any time.",
+      "features": [
+        "Cross-channel (WA, IG, Email — one single memory)",
+        "Cross-time (6 months ago? Remembered with full context)",
+        "Cross-agent (Changed agents? Context goes with them)",
+        "Automatic fact extraction (budget, stakeholders, objections)",
+        "Intelligent semantic search"
+      ]
+    },
+    "audio": {
+      "subtitle": "Audio Intelligence",
+      "title": "Audio that becomes data. Conversations that become insights.",
+      "description": "yapt. transcribes and analyzes audio automatically. The AI doesn't just read text — it listens, interprets, and extracts information from voice messages.",
+      "features": [
+        "Automatic audio transcription",
+        "Voice sentiment analysis",
+        "Information extraction from long audio messages",
+        "Integration with Emotion Engine",
+        "Voice context feeds SuperMemory"
+      ]
+    },
+    "people": {
+      "subtitle": "yaPeople",
+      "title": "CRM 360° that understands context.",
+      "description": "Each contact carries dual scoring, lifecycle stage, emotion history, accounts and everything your AI needs to sell.",
+      "features": [
+        "Automatic lifecycle stage: Lead → MQL → SQL → Customer",
+        "Dual scoring: behavioral (7 factors) + AI",
+        "Accounts: group contacts by company",
+        "Identifiers: WhatsApp, email, Instagram in the same profile",
+        "Emotion timeline: sentiment history per conversation"
+      ]
+    },
+    "connect": {
+      "subtitle": "yaConnect",
+      "title": "Channel hub without fragmentation.",
+      "description": "WhatsApp, Instagram, Email and webhooks converge into a single data flow, with visual field mapping.",
+      "features": [
+        "WhatsApp Business API (official BSP New Way)",
+        "Instagram DM with intelligent routing",
+        "Inbound and outbound webhooks with advanced filters",
+        "Visual field mapping: configure without code",
+        "Rate limiting and automatic retry per channel"
+      ]
+    },
+    "grid": {
+      "title": "All connected. Nothing lost.",
+      "realtime": { "title": "Realtime", "description": "Messages, scores and emotions updated in real time — instantly." },
+      "omnichannel": { "title": "Omnichannel", "description": "WhatsApp, Instagram, Email and webhooks in the same inbox — no screen switching." },
+      "ai": { "title": "AI-Powered", "description": "AI suggests responses, qualifies leads and detects emotions automatically." },
+      "score": { "title": "Lead Score", "description": "Dual scoring (behavioral + AI) visible in every conversation to prioritize opportunities." },
+      "emotion": { "title": "Emotion Engine", "description": "13 emotional signals detected in every message for empathetic routing." },
+      "crm": { "title": "CRM 360°", "description": "Contacts with lifecycle, accounts, identifiers and complete history in one place." },
+      "smartQueue": { "title": "Smart Queue", "description": "Intelligent queue that auto-prioritizes by score, emotion and SLA." },
+      "snooze": { "title": "Snooze", "description": "Defer conversations to the right moment — they automatically return to your queue." },
+      "macros": { "title": "Macros", "description": "Quick replies with dynamic variables to speed up customer service." },
+      "windowGuardian": { "title": "Window Guardian", "description": "Protects your operation outside business hours with alternative routing." },
+      "qualificationGate": { "title": "Qualification Gate", "description": "Only leads who reach the minimum configured score are passed to the sales team." },
+      "viewerPresence": { "title": "Viewer Presence", "description": "See who's viewing the same conversation in real time — avoid duplicate responses." }
+    },
+    "roadmap": {
+      "title": "See what's coming",
+      "subtitle": "Coming soon",
+      "items": {
+        "webchat": {
+          "title": "Intelligent Webchat",
+          "description": "Website chat widget with native AI, SuperMemory and direct inbox integration.",
+          "impact": "New channel"
+        },
+        "whatsappGroups": {
+          "title": "WhatsApp Groups",
+          "description": "Manage WhatsApp groups with built-in automations, moderation and analytics.",
+          "impact": "Communities"
+        },
+        "meetingIntelligence": {
+          "title": "Integrated Meeting Intelligence",
+          "description": "Automatic meeting analysis with transcription, action items and post-call coaching.",
+          "impact": "Advanced coaching"
+        }
+      }
+    }
+  },
+  "intelligence": {
+    "meta": {
+      "title": "Intelligence & AI",
+      "description": "yaveh AI, yaTeam, yaMemory and Emotion Engine: orchestrated AI that never forgets, never guesses, never improvises."
+    },
+    "hero": {
+      "badge": "Intelligence & AI",
+      "title": "AI that never forgets, never guesses, never improvises.",
+      "subtitle": "yaveh AI, yaTeam, yaMemory and Emotion Engine orchestrated for real decisions, not hallucinations."
+    },
+    "ai": {
+      "subtitle": "yaveh AI",
+      "title": "The brain that orchestrates all intelligence.",
+      "description": "yaveh is the AI core of yapt. It understands context, decides actions and responds with your brand's personality. All with infinite memory, intelligent fallback and advisory mode — AI suggests, the human decides.",
+      "features": [
+        "40+ automatic actions: qualify, create deal, schedule, escalate",
+        "Enriched context: campaign, attribution, full history",
+        "Advisory mode: AI suggests, salesperson decides",
+        "Intelligent fallback: if one model fails, another takes over",
+        "Protection against loops and incorrect responses"
+      ]
+    },
+    "team": {
+      "subtitle": "yaTeam",
+      "title": "Build your own AI agent team. Train each one your way.",
+      "description": "You have a powerful base model — and you train it with your rules. Define your qualifying questions, configure when the AI should consider a lead qualified, choose your sales playbook and adjust the personality. It's your sales process, codified in AI.",
+      "features": [
+        "Train with your qualifying questions (BANT, SPIN, MEDDIC or custom)",
+        "Define the criteria: when the AI considers a lead qualified",
+        "7 specializations: SDR, Closer, Support, Scheduler, Engager, Analyst, Guardian",
+        "Configurable personality: formality, proactiveness, empathy",
+        "Smart handoff: AI → human with zero context loss"
+      ]
+    },
+    "aiTeam": {
+      "sectionLabel": "AI Team",
+      "title": "8 types of AI. Each with its own mission.",
+      "subtitle": "Build the ideal team for your operation.",
+      "comingSoon": "Coming soon",
+      "agents": {
+        "sdr": {
+          "name": "SDR Agent",
+          "description": "Trained with your qualifying questions. Serves, qualifies and sells 24/7 — following your process, not a generic one.",
+          "active": true
+        },
+        "closer": {
+          "name": "Closer Agent",
+          "description": "Focused on closing deals. Identifies objections, negotiates and moves deals to closure.",
+          "active": true
+        },
+        "mentor": {
+          "name": "yaMentor",
+          "description": "You define the perfect playbook and it trains your team. Suggests ideal responses at the right moments. Teams with AI coaching are 34% more efficient.",
+          "active": true
+        },
+        "pipeline": {
+          "name": "Pipeline Guardian",
+          "description": "Monitors stalled deals, ensures pipeline rhythm and alerts on at-risk opportunities."
+        },
+        "campaign": {
+          "name": "Campaign Analyst",
+          "description": "Analyzes campaign performance in real time and suggests budget and creative optimizations."
+        },
+        "revenue": {
+          "name": "Revenue Predictor",
+          "description": "Forecasts revenue based on historical patterns and current pipeline velocity."
+        },
+        "people": {
+          "name": "People Enricher",
+          "description": "Automatically enriches contact data with public and behavioral information."
+        },
+        "guardian": {
+          "name": "Window Guardian",
+          "description": "Protects your operation outside business hours with intelligent responses and alternative routing."
+        }
+      }
+    },
+    "memory": {
+      "subtitle": "yaMemory",
+      "title": "Infinite supermemory. Context that never expires.",
+      "description": "Every lead is remembered forever. Semantic search, automatic fact extraction, historical import. The AI knows everything that's ever happened, across any channel, at any time.",
+      "features": [
+        "Persistent memory per lead — each contact has their complete history",
+        "Semantic search: find context by meaning, not keyword",
+        "Automatic extraction: budget, stakeholders, objections, timeline",
+        "Cross-channel: WhatsApp, Instagram, Email — one single memory",
+        "Resilient: if memory is unavailable, AI keeps working normally"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "Define the playbook. The AI trains your team.",
+      "description": "You create the perfect sales process. yaMentor ensures every salesperson executes it — with real-time suggestions, performance analysis and data-driven coaching. Teams with AI coaching are 34% more efficient.",
+      "features": [
+        "Define playbooks: scripts, objections, closing techniques",
+        "Real-time coaching during conversations",
+        "Ideal response suggestions at the ideal moments",
+        "Individual performance analysis per salesperson",
+        "AI evolves the human — it doesn't replace them"
+      ]
+    },
+    "scoring": {
+      "subtitle": "Lead Scoring",
+      "title": "Train the AI with your questions. Precise and automatic scoring.",
+      "description": "You define the qualifying questions for your process (BANT, SPIN, MEDDIC or custom) and the AI extracts answers directly from the conversation. Combine with 7 behavioral factors and describe your ICP — the AI evaluates each lead semantically. Hybrid score that updates automatically.",
+      "features": [
+        "Train with your qualifying questions — AI extracts answers from the conversation",
+        "Describe your ICP and the AI evaluates each lead semantically",
+        "7 behavioral factors: engagement, recency, emotion, channel, deal and more",
+        "Hybrid mode: combines trained AI + behavior for a precise final score",
+        "Visible in every Inbox conversation — your team prioritizes automatically"
+      ]
+    },
+    "emotion": {
+      "subtitle": "Emotion Engine",
+      "title": "13 emotional signals. Empathetic routing.",
+      "description": "Detects frustration, enthusiasm, urgency and more. Emotion-aware routing prioritizes who needs attention — before the lead gives up.",
+      "features": [
+        "13 emotional signals detected in real time",
+        "Emotion timeline: sentiment evolution per conversation",
+        "Emotion-aware routing: frustration → priority support",
+        "Integrated with scoring: emotion influences qualification",
+        "Emotional health dashboard for your lead base"
+      ]
+    },
+    "audio": {
+      "subtitle": "Audio Intelligence",
+      "title": "Audio that becomes data. Voice that becomes insight.",
+      "description": "yapt. transcribes and analyzes audio automatically. The AI understands voice messages, extracts information and feeds SuperMemory with audio context.",
+      "features": [
+        "Automatic voice message transcription",
+        "Audio sentiment analysis",
+        "Information extraction from long audio messages",
+        "Native integration with Emotion Engine",
+        "Voice context feeds SuperMemory"
+      ]
+    },
+    "grid": {
+      "title": "Intelligence in every detail",
+      "advisory": { "title": "Advisory Mode", "description": "AI suggests, human decides. No action is ever executed without approval — total control." },
+      "fallback": { "title": "Fallback Chain", "description": "If one model fails, another takes over automatically. Guaranteed safe response." },
+      "circuitBreaker": { "title": "Failure Protection", "description": "Protects against loops, hallucinations and excessive calls. AI that's secure by design." },
+      "yaModels": { "title": "Ya-Models", "description": "ya-Flash (fast, high volume), ya-Pro (advanced intelligence) and ya-Ultra (deep reasoning). Choose by need, depth and intelligence." },
+      "knowledgeHub": { "title": "Knowledge Hub", "description": "Knowledge base with articles, FAQs and guides — accessible by both AI and your team." },
+      "playbooks": { "title": "Playbooks", "description": "SPIN, Challenger, your own technique — codified and enforced by AI." },
+      "bant": { "title": "Trainable Qualification", "description": "BANT, SPIN, MEDDIC, GPCTBA or your own questions — you train the model with your process's qualifying questions. The AI extracts answers automatically from the conversation." },
+      "icp": { "title": "ICP Matching", "description": "Describe your ideal customer in natural language. The AI evaluates each lead semantically against your ICP — no rigid rules." },
+      "promptEng": { "title": "Prompt Engineering", "description": "Multi-language, customizable persona, context-adjustable tone." },
+      "nonBlocking": { "title": "Resilient Memory", "description": "If memory is unavailable, AI keeps working normally. Zero downtime." },
+      "emotionRouting": { "title": "Emotion Routing", "description": "Frustration detected? Lead goes straight to a senior agent. Automatically." }
+    },
+    "roadmap": {
+      "title": "See what's coming",
+      "subtitle": "Coming soon",
+      "items": {
+        "knowledgeHub": {
+          "title": "Knowledge Hub",
+          "description": "Knowledge base integrated with AI — articles, FAQs and guides that AI consults automatically.",
+          "impact": "More precise AI"
+        },
+        "playbooksAI": {
+          "title": "AI-Powered Playbooks",
+          "description": "Codify SPIN Selling, Challenger or your own methodology into automations that AI executes.",
+          "impact": "Consistent sales"
+        },
+        "revenueAgent": {
+          "title": "Revenue Agent",
+          "description": "AI that forecasts revenue, identifies at-risk deals and suggests actions to accelerate the pipeline.",
+          "impact": "Predictability"
+        }
+      }
+    },
+    "cta": {
+      "primary": "Schedule a Free Demo",
+      "secondary": "Talk to a Specialist",
+      "midPage": "See yapt. AI in action"
+    }
+  },
+  "marketing": {
+    "meta": {
+      "title": "Marketing & Campaigns — yapt.",
+      "description": "From ad to closed deal. yaCampaigns connects paid media to real revenue. Every dollar invested, every lead generated, every conversation — tracked from click to sale."
+    },
+    "hero": {
+      "badge": "Marketing & Campaigns",
+      "title": "From ad to closed deal. Fully tracked.",
+      "subtitle": "yaCampaigns connects paid media to real revenue. Every dollar invested, every lead generated, every conversation — tracked from click to sale."
+    },
+    "statement": {
+      "headline": "yapt. is the only platform with real WhatsApp tracking.",
+      "subtext": "If it comes from a Meta or Google campaign — full tracking via native integration. If it comes from a landing page — iLeadway detects the campaign and we track 100% on WhatsApp.",
+      "badges": ["Native Meta Ads", "Native Google Ads", "iLeadway Integrated"]
+    },
+    "painPoints": {
+      "header": "Different company, different industry, but the pain is always the same...",
+      "items": [
+        {
+          "title": "Unqualified leads",
+          "description": "Campaigns go wrong and flood WhatsApp with unqualified leads. Your team wastes time on people who will never buy."
+        },
+        {
+          "title": "Irrelevant data",
+          "description": "The ad manager delivers irrelevant information. Impossible to know which ad actually drives sales."
+        },
+        {
+          "title": "Hours in spreadsheets",
+          "description": "Hours wasted filling spreadsheets because WhatsApp doesn't tell you which conversation became a sale."
+        },
+        {
+          "title": "Imprecise metrics",
+          "description": "Ad manager data is imprecise and it's hard to optimize campaigns. You're investing in the dark."
+        }
+      ]
+    },
+    "campaigns": {
+      "subtitle": "yaCampaigns",
+      "title": "Campaign Intelligence: every dollar invested, tracked to the sale.",
+      "description": "Sync your Meta and Google Ads campaigns with yapt. Configure intelligence per campaign — expected ticket, product, target audience — and track real ROAS calculated with sales data, not estimates.",
+      "features": [
+        "Automatic sync with Meta Ads + Google Ads",
+        "Campaign Intelligence: ticket, product and audience per campaign",
+        "Real ROAS calculated with sales data (not Meta estimates)",
+        "Dashboard with leads, conversions, revenue and cost per channel",
+        "Cross-attribution: know exactly which ad generated which sale"
+      ]
+    },
+    "instantEngage": {
+      "subtitle": "Instant Engage",
+      "title": "Lead filled out the form? WhatsApp arrives in under 30 seconds.",
+      "description": "When a lead fills out a Meta form, yapt. fires a WhatsApp message automatically via official API. Configurable template per campaign, dynamic variables and 100% automatic attribution. The lead is still on the ad screen when they receive the message.",
+      "features": [
+        "Lead Form → WhatsApp in <30 seconds, no intervention",
+        "Custom template per campaign with dynamic variables",
+        "Direct attribution: zero cookie or pixel dependency",
+        "Real-time status: sent, delivered, read",
+        "Works with Meta Lead Ads and Google Lead Forms"
+      ]
+    },
+    "tracking": {
+      "subtitle": "Full Tracking",
+      "title": "From any source. 100% tracking on WhatsApp.",
+      "description": "Click-to-WhatsApp? Form? Landing page? No matter the source — yapt. tracks everything. Ad headline, creative, source URL, UTMs — 10 fields captured automatically. With iLeadway, even landing page leads enter WhatsApp with full attribution.",
+      "features": [
+        "CTWA: headline, body, media and ad URL captured automatically",
+        "Lead Form: full campaign attribution per lead",
+        "Landing Page: iLeadway integration detects campaign and tracks on WA",
+        "UTM tracking: source, medium, campaign, term, content",
+        "Conversions API: send conversions back to Meta and Google (closed loop)"
+      ]
+    },
+    "googleAds": {
+      "subtitle": "Google Ads",
+      "title": "The same Meta power. Now with Google.",
+      "description": "Connect your Google Ads campaigns with the same intelligence pipeline as Meta. Automatic sync, Instant Engage for Google Lead Forms and full attribution — all integrated into the same dashboard.",
+      "features": [
+        "Simplified OAuth with Google Ads",
+        "Automatic campaign and metrics sync",
+        "Instant Engage works with Google Lead Forms",
+        "Same unified dashboard (Meta + Google side by side)",
+        "Cross-platform attribution"
+      ]
+    },
+    "templates": {
+      "subtitle": "WhatsApp Templates",
+      "title": "Create, sync with Meta and measure results. All here.",
+      "description": "Visual template builder with dynamic variables. Automatically syncs with Meta. Analytics per template: sent, delivered, read, replied. A/B testing to discover which message converts more.",
+      "features": [
+        "Visual builder with dynamic variables (name, product, price)",
+        "3 Meta categories: Marketing, Utility, Authentication",
+        "Automatic sync with Meta — without leaving yapt.",
+        "Analytics: sent, delivered, read, replied, per template",
+        "A/B testing: test variants and discover what converts"
+      ]
+    },
+    "proposals": {
+      "subtitle": "Proposals",
+      "title": "Proposal via WhatsApp. Customer accepts on mobile.",
+      "description": "Send proposals via direct link on WhatsApp. The customer opens it on their phone, sees everything formatted, and accepts online. No PDF, no email, no middleman. Tracking: viewed, time spent, acceptance.",
+      "features": [
+        "Proposal template builder (title, description, price, terms)",
+        "Public link — customer opens and accepts on mobile",
+        "Tracking: views, time on page, clicks, acceptances",
+        "Integrated with Deals — proposal linked to the deal",
+        "Versioning: proposal v1, v2, v3 with full history"
+      ]
+    },
+    "capi": {
+      "subtitle": "Conversions API",
+      "title": "Closed loop. Conversions back to Meta and Google.",
+      "description": "Send real conversion events — qualified lead, proposal sent, deal closed — directly to Meta CAPI and Google Ads. The platform algorithms learn from real sales data, not estimates. Your campaigns optimize themselves.",
+      "features": [
+        "Meta CAPI direct from server: zero pixel or cookie dependency",
+        "Google Ads Offline Conversions: import real sales",
+        "Customizable events: lead, qualification, proposal, sale",
+        "Optimized match rate: email, phone, fbclid, gclid",
+        "Campaigns self-optimize with real revenue data"
+      ]
+    },
+    "timeline": {
+      "sectionLabel": "The Complete Journey",
+      "title": "From click to revenue. Every step tracked.",
+      "subtitle": "Every step connected, tracked and powered by AI. No gaps, no spreadsheets, no guesswork.",
+      "steps": ["Ad", "Lead", "WhatsApp", "AI qualifies", "Deal", "Sale"]
+    },
+    "grid": {
+      "title": "Every detail designed to convert",
+      "campaignIntelligence": {
+        "title": "Campaign Intelligence",
+        "description": "Configure ticket, product and audience per campaign"
+      },
+      "abTesting": {
+        "title": "A/B Testing",
+        "description": "Test templates, messages and creatives"
+      },
+      "roasReal": {
+        "title": "Real ROAS",
+        "description": "Calculated with sales data, not estimates"
+      },
+      "multiAdAccount": {
+        "title": "Multi Ad Account",
+        "description": "Multiple Meta and Google accounts in one dashboard"
+      },
+      "conversionsApi": {
+        "title": "Conversions API",
+        "description": "Closed loop — conversions back to Meta/Google"
+      },
+      "templateAnalytics": {
+        "title": "Template Analytics",
+        "description": "Sent, delivered, read, replied per template"
+      },
+      "richMedia": {
+        "title": "Rich Media Templates",
+        "description": "Image, video, buttons and carousel"
+      },
+      "proposalTracking": {
+        "title": "Proposal Tracking",
+        "description": "Views, time spent, clicks and acceptances"
+      },
+      "utmTracking": {
+        "title": "UTM Tracking",
+        "description": "Full source, medium, campaign tracking"
+      },
+      "ileadwayBridge": {
+        "title": "iLeadway Bridge",
+        "description": "Landing pages tracked on WhatsApp"
+      }
+    }
+  },
+  "operations": {
+    "meta": {
+      "title": "Operations & Management",
+      "description": "Intelligent routing, SLA, agent monitor, pipeline, scoring, emotion and analytics — all in one place."
+    },
+    "hero": {
+      "badge": "Operations & Management",
+      "title": "Your operation on autopilot.",
+      "subtitle": "Intelligent routing, real-time SLA, team monitor, visual pipeline and real analytics. Everything that used to depend on spreadsheets and goodwill now runs by itself."
+    },
+    "inbox": {
+      "subtitle": "Inbox V2 — Smart Queue",
+      "title": "Smart queue. Right priority.",
+      "description": "4 fixed views with automatic prioritization by score, emotion and SLA. The queue organizes itself — hot leads always first.",
+      "features": [
+        "4 views: My Inbox, Smart Queue (AI prioritizes), Open, Waiting",
+        "Lead Scoring (0-100): 7 behavioral factors calculated every 10 min",
+        "Sorting by SLA, priority, wait time or last activity",
+        "Emotion Engine: 13 emotional signals per message (frustration, urgency, hesitation)",
+        "Handler State: bot ↔ human control, pauses automation when agent takes over"
+      ]
+    },
+    "routing": {
+      "subtitle": "yaOps — Routing",
+      "title": "6 distribution modes. Zero lost leads.",
+      "description": "Round-robin, least-loaded, skill-based, by keyword, campaign or schedule. Sticky routing keeps the same agent. Overflow redirects automatically.",
+      "features": [
+        "Round-robin with weight and capacity per agent",
+        "Least-loaded: sends to whoever has fewer conversations",
+        "Skill-based: route by language, product, region or certification",
+        "Sticky routing: keeps the agent for N days (no context loss)",
+        "Agent Pull: agent pulls from queue when ready",
+        "Overflow: if sector full, redirects automatically"
+      ]
+    },
+    "sla": {
+      "subtitle": "SLA & Escalation",
+      "title": "SLA per sector. Automatic escalation.",
+      "description": "Set response and resolution times per sector. Timer visible in Inbox. When SLA is at risk, escalation automatically moves up the chain.",
+      "features": [
+        "Response + resolution SLA configurable per sector",
+        "Visual timer in Inbox: green, yellow, red",
+        "Automatic escalation when deadline approaches",
+        "Business hours and holidays respected in calculation",
+        "Window Guardian: outside hours, alternative routing"
+      ]
+    },
+    "monitor": {
+      "subtitle": "Agents Monitor",
+      "title": "Full team visibility in real time.",
+      "description": "Who's online, busy, on break. Used capacity vs available. Utilization per agent. All live, updated instantly.",
+      "features": [
+        "Real-time status: online, busy, away, break, offline",
+        "Capacity: current conversations vs configured maximum",
+        "Utilization %: green (<50%), yellow (50-80%), red (>80%) indicators",
+        "Filters by status, sector or name search",
+        "Instant updates — no refresh needed"
+      ]
+    },
+    "deals": {
+      "subtitle": "yaDeals",
+      "title": "Visual pipeline. Every deal tracked.",
+      "description": "Drag-and-drop kanban with multi-pipeline, stakeholders, products, SLA per stage and automatic win/loss analysis.",
+      "features": [
+        "Visual kanban with drag-and-drop between stages",
+        "Multi-pipeline: sales, onboarding, CS — each with its own stages",
+        "Stakeholders: link multiple contacts to the same deal",
+        "SLA per stage: alerts when a deal is stuck",
+        "Win/Loss analysis: understand why deals are won or lost"
+      ]
+    },
+    "grid": {
+      "title": "Everything your operation needs",
+      "subtitle": "Complementary Modules",
+      "calendar": { "title": "Calendar", "description": "Google Calendar sync, multi-seller view and scheduling integrated with deals." },
+      "activities": { "title": "Activities Hub", "description": "Tasks, calls, meetings and My Day — all centralized with reminders and deal linking." },
+      "proposals": { "title": "Proposals", "description": "Visual editor, public link with view tracking and direct deal integration." },
+      "scoring": { "title": "Hybrid Lead Scoring", "description": "7 behavioral factors + AI. Score updates every 10 min and prioritizes your queue automatically." },
+      "emotion": { "title": "Emotion Engine", "description": "13 real-time emotional signals. Frustration redirects to senior agent automatically." },
+      "handoff": { "title": "Bot ↔ Human", "description": "Managed handler state. Automations pause when agent takes over. Zero duplicate messages." }
+    },
+    "analytics": {
+      "subtitle": "yaAnalytics",
+      "title": "Real analytics. Not vanity dashboards.",
+      "description": "Structured data for advanced analysis, CSAT, NPS, conversion funnel and metrics that matter for business decisions.",
+      "features": [
+        "Structured data for advanced analysis",
+        "CSAT and NPS integrated into conversation flow",
+        "Conversion funnel: from lead to closed deal",
+        "Metrics by agent, channel, campaign and period",
+        "Export to CSV and external BI integration"
+      ]
+    },
+    "roadmap": {
+      "title": "See what's coming",
+      "subtitle": "Coming soon to your operation",
+      "items": {
+        "controlTower": {
+          "title": "Control Tower",
+          "description": "Supervisor panel with volume per sector, wait times, drag-drop redistribution and AI-powered bottleneck prediction.",
+          "impact": "+18% operational efficiency"
+        },
+        "escalationChains": {
+          "title": "Escalation Chains",
+          "description": "Inbox → Supervisor → Manager, with configurable timers and multi-channel notification (in-app, email, WhatsApp).",
+          "impact": "+25% SLA resolution"
+        },
+        "availability": {
+          "title": "Availability Scheduling",
+          "description": "Agents block personal hours. The system knows who's truly available — zero leads routed to unavailable people.",
+          "impact": "+18% efficiency"
+        },
+        "vipRouting": {
+          "title": "VIP & Blacklist",
+          "description": "Automatically prioritize VIP contacts and block problematic ones. Intelligent routing by customer value.",
+          "impact": "+12% quality"
+        },
+        "customFields": {
+          "title": "Custom Fields",
+          "description": "Add extra fields to contacts and deals: text, number, date, select, multi-select. Your data, your structure.",
+          "impact": "Custom data"
+        },
+        "notifications": {
+          "title": "Notification Preferences",
+          "description": "Each member configures their alerts by category and channel. Quiet hours to avoid disturbance after hours.",
+          "impact": "Zero noise"
+        }
+      }
+    }
+  },
+  "integrations": {
+    "meta": {
+      "title": "Integrations — yapt.",
+      "description": "WhatsApp, Instagram, Meta Ads, Google Ads, Google Calendar, Infinite Memory and more — all converging into a single flow in yapt."
+    },
+    "hero": {
+      "badge": "Integrations",
+      "title": "Connect everything. Fragment nothing.",
+      "subtitle": "Native channels, ads ecosystem, external data, flow connections and full API — all in one place."
+    },
+    "channels": {
+      "subtitle": "Native Channels",
+      "title": "Your customers are already on these channels. So is yapt.",
+      "description": "Omnichannel communication with intelligent routing, native AI and unified identity. One lead, one contact — regardless of the channel."
+    },
+    "ads": {
+      "subtitle": "Ads & Acquisition",
+      "title": "From ad to WhatsApp in under 30 seconds.",
+      "description": "Connect your ad campaigns directly to sales operations. Captured leads become WhatsApp conversations instantly.",
+      "features": [
+        "Meta Ads: campaigns, audiences, metrics, CTWA with 10 attribution fields",
+        "Google Ads: lead capture via webhook with automatic mapping",
+        "Lead Forms: form filled → proactive WhatsApp in under 30s",
+        "Instant Engage: configure per campaign which template to send automatically",
+        "CAPI: send conversions back to Meta and optimize your ads",
+        "Campaign Intelligence: average ticket, product, target audience — AI knows everything about the campaign"
+      ]
+    },
+    "connect": {
+      "subtitle": "yapt. Connect",
+      "title": "Receive data from any system. No code.",
+      "description": "CRM, ERP, landing page, external form — any system that sends a webhook can feed yapt. automatically.",
+      "features": [
+        "Create contacts automatically when receiving external data",
+        "Update existing contact fields via webhook",
+        "Trigger automation flows when a lead arrives",
+        "Visual field mapping with drag-and-drop — zero code",
+        "Complete history of received payloads for debugging",
+        "Identity Resolution: same lead from different channels = 1 contact, zero duplicates"
+      ]
+    },
+    "flows": {
+      "subtitle": "Flow Builder Connections",
+      "title": "Inside a flow, connect anything.",
+      "description": "The Flow Builder is not a closed box. Each flow can call external APIs, notify systems and schedule meetings — all visual.",
+      "features": [
+        "HTTP Request: call any external API within the flow",
+        "Outbound webhooks: notify systems when events happen",
+        "AI Zones: AI supervises entire flow steps, with playbook and smart exits",
+        "Google Calendar: schedule meetings directly in the flow, with bidirectional sync",
+        "Smart conditions: branch the flow based on lead, campaign or deal data",
+        "WhatsApp Templates: send Meta-approved templates with dynamic variables"
+      ]
+    },
+    "api": {
+      "title": "API First. Extensible by design.",
+      "subtitle": "For Developers",
+      "description": "Everything you do on screen, you can do via API. Full documentation coming soon.",
+      "webhooks": { "title": "Outbound Webhooks", "description": "Notify external systems in real time when events happen in yapt." },
+      "jsonpath": { "title": "Advanced Filters", "description": "Filter events by content using advanced rules before triggering webhooks." },
+      "rateLimit": { "title": "Rate Limiting", "description": "Protect your endpoints with configurable limits per webhook and per minute." },
+      "retry": { "title": "Automatic Retry", "description": "3 attempts with exponential backoff. No event is ever lost." },
+      "logs": { "title": "Real-Time Logs", "description": "Debug without leaving yapt. View sent payloads, responses and errors." },
+      "rest": { "title": "Full REST API", "description": "CRUD for everything: contacts, conversations, deals, campaigns, flows and more." }
+    },
+    "productivity": {
+      "subtitle": "Productivity & AI",
+      "title": "Intelligence that connects everything automatically.",
+      "description": "Integrations that work silently so your team can focus on what matters: selling.",
+      "features": [
+        "Infinite Memory: AI never forgets a lead — history, preferences, objections, all persisted",
+        "Google Calendar: automatic bidirectional sync, seller's calendar always up to date",
+        "Identity Resolution: form + WhatsApp + Instagram = same contact, automatically",
+        "Stripe: automatic billing with checkout, customer portal and integrated invoicing"
+      ]
+    }
+  },
+  "enterprise": {
+    "meta": {
+      "title": "Enterprise",
+      "description": "Multi-tenant, granular permissions, guaranteed SLA and the security of a platform that processes 30M+ messages per month."
+    },
+    "hero": {
+      "badge": "Enterprise",
+      "title": "Scale without giving up control.",
+      "subtitle": "Multi-tenant, granular permissions, guaranteed SLA and the security of a platform that processes 30M+ messages per month."
+    },
+    "multiTenant": {
+      "subtitle": "Absolute Isolation",
+      "title": "Multi-tenant with native isolation.",
+      "description": "Each organization is completely isolated by automatic security rules. Instant onboarding, data never crosses.",
+      "features": [
+        "Each organization fully isolated with automatic rules",
+        "Instant onboarding: new tenant without deploy",
+        "Data never crosses between organizations",
+        "Settings per tenant: scoring, SLA, AI, channels",
+        "Per-tenant branding customization (coming soon)"
+      ]
+    },
+    "permissions": {
+      "subtitle": "Granular Control",
+      "title": "Roles and permissions by module.",
+      "description": "Customizable roles with policies per module. Complete audit trail for compliance.",
+      "features": [
+        "Customizable roles: Admin, Manager, Agent, Viewer",
+        "Policies per module: inbox, deals, campaigns, settings",
+        "Audit trail: who did what, when and where",
+        "Email invite with predefined role",
+        "SSO and 2FA (roadmap)"
+      ]
+    },
+    "sla": {
+      "subtitle": "SLA & Distribution",
+      "title": "Round-robin, skill-based, Window Guardian.",
+      "description": "Intelligent distribution that respects capacity, skill and business hours.",
+      "features": [
+        "Round-robin with weights per agent",
+        "Skill-based: language, product, region",
+        "Window Guardian: no one works outside business hours",
+        "SLA per department with automatic alerts",
+        "Overflow: redirects when department is full"
+      ]
+    },
+    "security": {
+      "subtitle": "Security",
+      "title": "Over 700 active security rules.",
+      "description": "100% cloud infrastructure, ultra-fast processing and over 700 active security rules.",
+      "features": [
+        "Over 700 active security rules in production",
+        "Ultra-fast cloud processing",
+        "Optimized architecture with no external dependencies",
+        "Data encrypted at rest and in transit",
+        "Automatic backup with point-in-time recovery"
+      ]
+    },
+    "trust": {
+      "sectionLabel": "Trust",
+      "title": "Why companies trust yapt.",
+      "badges": ["Official Meta BSP", "30M+ msg/month", "11 years in market", "Own infrastructure"]
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing",
+      "description": "Plans that grow with you. From your first salesperson to enterprise operations. No surprises."
+    },
+    "hero": {
+      "badge": "Pricing",
+      "title": "Plans that grow with you.",
+      "subtitle": "From your first salesperson to enterprise operations. No surprises."
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "For teams getting started",
+        "features": ["Up to 5 users", "1 WhatsApp channel", "Basic AI (Easy mode)", "1,000 conversations/month", "Email support"]
+      },
+      "business": {
+        "name": "Business",
+        "description": "For growing operations",
+        "badge": "Most popular",
+        "features": ["Up to 25 users", "Multi-channel (WhatsApp + Instagram)", "Full AI (all modes)", "10,000 conversations/month", "Meta Ads campaigns", "Priority support"]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large-scale operations",
+        "features": ["Unlimited users", "All channels", "AI with SuperMemory", "Unlimited conversations", "Full API + webhooks", "Dedicated SLA + CSM"]
+      },
+      "contactSales": "Talk to sales",
+      "priceLabel": "Contact us"
+    },
+    "faq": {
+      "sectionLabel": "Frequently Asked Questions",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Can I try it before buying?",
+          "answer": "Yes! We offer a personalized demo where you see yapt. working with real data from your scenario. Schedule a conversation with our team and understand how the platform fits your operation."
+        },
+        {
+          "question": "What is the setup timeline?",
+          "answer": "Setup in up to 24 hours for Starter and Business plans. For Enterprise, onboarding is done with dedicated guidance and may include custom migrations and integrations."
+        },
+        {
+          "question": "Do I need a technical team?",
+          "answer": "No. yapt. is no-code for configuration. AI agents, pipelines, campaigns and integrations are configured through a visual interface. For advanced API integrations, full documentation is available."
+        },
+        {
+          "question": "How does migration work?",
+          "answer": "Our team handles the entire migration. We import contacts, conversation history and settings from your current tool. The transition is done without disrupting your service."
+        },
+        {
+          "question": "Is there a lock-in contract?",
+          "answer": "No. Monthly plans with no lock-in. You can upgrade, downgrade or cancel at any time. We believe you stay because you want to, not because you have to."
+        }
+      ]
+    }
+  },
+  "hero": {
+    "badge": "by New Way — Meta Business Solution Provider",
+    "badgeTag": "WhatsApp First",
+    "tagline": "The world's 1st AI Native Conversational Revenue Platform.",
+    "title": "Intelligent Conversations that Convert.",
+    "description": "AI-native conversational intelligence. Agents that sell. Mentors that level up teams. Artificial Intelligence with infinite memory.",
+    "descriptionLine2": "From ad click to closed deal.",
+    "uniqueBadge": "One of a kind",
+    "cta": "Schedule Demo",
+    "ctaSecondary": "See how it works ↓",
+    "poweredBy": "Powered by"
+  },
+  "trustBar": {
+    "items": [
+      { "number": "30M+", "label": "messages/month" },
+      { "number": "11", "label": "years in market" },
+      { "number": "BSP", "label": "official Meta" },
+      { "number": "Enterprise", "label": "ready" }
+    ]
+  },
+  "problem": {
+    "badge": "The Problem",
+    "title": "Your operation grows, but your intelligence doesn't.",
+    "description": "You invest in campaigns, hire agents, integrate tools — but the more you grow, the more fragmented your operation becomes. Without connected data, there is no intelligence. Without intelligence, there are no decisions.",
+    "cards": [
+      {
+        "title": "Invisible attribution",
+        "description": "Leads arrive, but nobody knows where from. Which campaign generated them? Which channel converted? Which ad performed? Without source traceability, every media investment is a shot in the dark."
+      },
+      {
+        "title": "Chatbots and AIs that underdeliver",
+        "description": "Chatbots promise automation, but without customer context, interaction history or business data — AI doesn't qualify, doesn't resolve, doesn't sell. It just frustrates."
+      },
+      {
+        "title": "Team operating in the dark",
+        "description": "The lead arrives and the salesperson doesn't know: where they came from, what they were looking for, which offer they saw, who they already spoke with. Without context, every interaction starts from zero. The opportunity cools. The sale is lost."
+      }
+    ]
+  },
+  "solution": {
+    "badge": "The Solution",
+    "title": "One platform. One intelligence. Total visibility.",
+    "subtitleBefore": "With",
+    "subtitleAfter": "your operation converses with intelligence, learns from every interaction, and delivers complete pipeline visibility — all in one place.",
+    "cards": [
+      {
+        "title": "Native Conversational AI",
+        "description": "Every conversation is guided by artificial intelligence that understands context, qualifies leads, and responds with your brand's personality — 24/7, without human intervention."
+      },
+      {
+        "title": "Infinite Memory",
+        "description": "Every interaction, preference, and history is stored forever. The AI remembers who the lead is, what was discussed, and what the next step is — without repeating questions."
+      },
+      {
+        "title": "Unified View",
+        "description": "WhatsApp, Instagram, Meta Ads, email — all channels converge into a single dashboard. See the entire pipeline, from acquisition to conversion, with real-time metrics."
+      }
+    ]
+  },
+  "features": {
+    "blocks": [
+      {
+        "title": "Intelligence, not software",
+        "description": "From emotions in conversations to management settings — everything is AI. It's not a chatbot bolted onto a legacy system. It's artificial intelligence that permeates every layer of your operation.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "Agents that sell. Agents that train your team.",
+        "description": "Incredible customer experience and operational efficiency for your team. AI agents serve, qualify and sell 24/7. Mentor agents work to increase your team's potential.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "From ad to deal. Fully tracked.",
+        "description": "Complete source attribution — know exactly which campaign, ad and creative generated each lead. Instant Engage captures in the first second. Conversion events go back to Meta Ads.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "Automations with infinite memory",
+        "description": "Event-driven, multi-agent, multi-knowledge. The AI knows everything that's happened with each lead and uses that complete history to decide the next step. No repetitions, no redundant questions.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "Intelligence at enterprise scale",
+        "description": "Conversational experiences that convert at scale. Intelligent distribution across teams, automations for complex journeys, 360° customer view and end-to-end attribution.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "Intelligent pipeline with AI",
+        "description": "CRM that fills itself — AI extracts data from conversations and suggests fields automatically. Manage opportunities from first contact to close. Real revenue predictability.",
+        "cta": "Learn more"
+      },
+      {
+        "title": "Security and compliance as a priority",
+        "description": "Data protected with the highest standards. End-to-end encryption, automated backups, GDPR compliance. Granular permission control and complete audit trail.",
+        "cta": "Learn more"
+      }
+    ]
+  },
+  "journey": {
+    "badge": "The Journey",
+    "title": "From first ad to closed deal. One journey, one platform.",
+    "subtitleBefore": "Follow how",
+    "subtitleAfter": "orchestrates every step of your customer's journey.",
+    "steps": [
+      { "title": "Meta Ads → Lead captured", "description": "Lead clicks the ad, data enters yapt. automatically via Meta webhook. Zero manual entry." },
+      { "title": "AI qualifies in seconds", "description": "YaBot analyzes profile, history, and context. Classifies the lead before any human touches it." },
+      { "title": "Intelligent distribution", "description": "YaFlow routes to the right salesperson based on rules, availability, and expertise." },
+      { "title": "Conversation with full context", "description": "The salesperson receives the lead with a complete profile: source, interest, score, and AI-suggested approach." },
+      { "title": "Automatic follow-up", "description": "YaBot sends personalized follow-ups at the right time. No more leads going cold." },
+      { "title": "Assisted negotiation", "description": "AI suggests next steps, detects objections, and recommends offers based on success patterns." },
+      { "title": "Deal closed", "description": "Pipeline updated automatically. Conversion metrics in real time." },
+      { "title": "Intelligent post-sale", "description": "Supermemory ensures the customer never has to repeat anything. Expansion and retention powered by AI." }
+    ],
+    "footerBefore": "From seed to fruit —",
+    "footerAfter": "nurtures every relationship."
+  },
+  "modules": {
+    "title": "{{count}} Modules",
+    "subtitle": "The ya* family. {{moduleCount}} modules, {{categoryCount}} categories,",
+    "subtitleLine2": "infinite possibilities.",
+    "description": "Each module is powerful on its own. Together, they're unbeatable.",
+    "conversations": {
+      "title": "Conversations & Omnichannel",
+      "modules": [
+        { "name": "yaInbox", "description": "Unified inbox — 10 smart views, realtime, whisper panel" },
+        { "name": "yaPeople", "description": "CRM 360° — lifecycle, dual lead scoring, emotion detection (13 signals)" },
+        { "name": "yaConnect", "description": "Channel hub + integrations — WhatsApp, Instagram, webhooks, field mapping" }
+      ]
+    },
+    "intelligence": {
+      "title": "Intelligence & AI",
+      "modules": [
+        { "name": "yaveh AI", "description": "The brain — centralized AI engine, persistent memory, failure protection" },
+        { "name": "yaTeam", "description": "Specialized AI team — Agent Builder (3 modes), 7 specializations, 40+ actions" },
+        { "name": "yaMemory", "description": "Infinite supermemory — semantic search, automatic historical import, eternal context" },
+        { "name": "Mentor/Whisper", "description": "AI as mentor — suggests live responses, configurable coaching" },
+        { "name": "Emotion Engine", "description": "Emotion detection — 13 signals, emotion-aware routing" }
+      ]
+    },
+    "marketing": {
+      "title": "Marketing & Campaigns",
+      "modules": [
+        { "name": "yaCampaigns", "description": "Meta & Google Ads — sync, intelligence, Instant Engage (<30s), CTWA, CAPI" },
+        { "name": "yaFlows", "description": "Visual automations — drag-and-drop editor, 13 nodes, 9 triggers, ready-made templates" }
+      ]
+    },
+    "operations": {
+      "title": "Operations & Management",
+      "modules": [
+        { "name": "yaDeals", "description": "Sales pipeline — multi-pipeline kanban, stakeholders, SLA tracking" },
+        { "name": "yaOps", "description": "Operations center — departments/queues, intelligent distribution, Window Guardian" },
+        { "name": "Calendar", "description": "Meetings — bidirectional Google Calendar sync, Google Meet, multi-seller" },
+        { "name": "Activities Hub", "description": "Tasks, calls, meetings — My Day, 7 activity types, outcomes" },
+        { "name": "Proposals", "description": "Generation and delivery — builder, public link with tracking, digital signature" },
+        { "name": "WhatsApp Templates", "description": "Builder + policies — variables, Meta sync, analytics, rate limiting" },
+        { "name": "yaAnalytics", "description": "Advanced dashboards — structured data for analysis, CSAT, NPS, funnel, performance" },
+        { "name": "Knowledge Hub", "description": "Knowledge base — AI articles, categories, embedded yaveh AI Assistant" },
+        { "name": "Playbooks", "description": "Sales playbooks — processes, coaching, best practices, linkable to agents" }
+      ]
+    }
+  },
+  "differential": {
+    "badge": "Why yapt.",
+    "title": "It's not just another tool.",
+    "titleLine2": "It's the platform you've been missing.",
+    "subtitle": "was built from scratch to be AI Native. It's not AI bolted onto legacy software.",
+    "features": [
+      { "title": "Native AI, not bolted on", "description": "Built from scratch with AI at the core. It's not ChatGPT glued onto a chat widget." },
+      { "title": "Supermemory", "description": "Remembers EVERYTHING. Every interaction, preference, pattern. The customer never repeats anything." },
+      { "title": "BSP + AI", "description": "We're an official Meta BSP with 11 years of experience. AI backed by real infrastructure." },
+      { "title": "One platform", "description": "Replaces 5-8 tools. One login, one data source, one intelligence." },
+      { "title": "Real time", "description": "Decisions based on data that updates with every conversation, not every monthly report." }
+    ]
+  },
+  "whyYapt": {
+    "badge": "Why yapt.",
+    "title": "Why yapt.",
+    "subtitle": "It's not just another tool. It's the platform you've been missing.",
+    "tabs": [
+      {
+        "headline": "Intelligence, not software",
+        "description": "From emotions in conversations to management settings — everything is AI. Lead scoring, qualification, routing and coaching: native intelligence in every interaction."
+      },
+      {
+        "headline": "Agents that sell. Mentors that evolve.",
+        "description": "Premium customer experience with specialized AI agents. Real-time coaching for your team with Whisper — the mentor the customer doesn't see."
+      },
+      {
+        "headline": "From ad to deal. Fully tracked.",
+        "description": "Complete attribution from Meta Ads to closed deal. Instant Engage in <30s. Pipeline integrated with campaign intelligence."
+      },
+      {
+        "headline": "Automations with infinite memory",
+        "description": "Event-driven, multi-agent, with eternal context. The AI knows everything that's ever happened — every conversation, every preference, every interaction."
+      },
+      {
+        "headline": "Meta BSP. 30M msgs/month. True omnichannel.",
+        "description": "Own WhatsApp Business API infrastructure. Instagram, Email and Webchat in the same inbox. It's not an integration — it is the platform."
+      }
+    ]
+  },
+  "supermemorySection": {
+    "badge": "Supermemory",
+    "title": "Your customer never has to repeat anything again.",
+    "description": "Imagine an AI that remembers every conversation, every preference, every interaction — across any channel, forever. That's yapt.'s Supermemory.",
+    "features": [
+      "Cross-channel: WhatsApp, Instagram, Email, Webchat — one single memory",
+      "Cross-time: An interaction from 6 months ago? Remembered with full context.",
+      "Cross-agent: Switched agents? The context goes with them."
+    ]
+  },
+  "comparison": {
+    "title": "yapt. vs. the rest of the market",
+    "subtitle": "Compare and see why companies are switching.",
+    "headers": ["Feature", "Traditional Tools", "yapt."],
+    "traditionalLabel": "Traditional",
+    "yaptLabel": "yapt.",
+    "rows": [
+      { "feature": "Conversational AI", "traditional": "Basic rule-based chatbot", "yapt": "Generative AI with context and memory" },
+      { "feature": "Memory", "traditional": "None or limited to session", "yapt": "Infinite cross-channel Supermemory" },
+      { "feature": "Channels", "traditional": "Each one with its own tool", "yapt": "WhatsApp, Instagram, Email, Webchat unified" },
+      { "feature": "Distribution", "traditional": "Manual or simple round-robin", "yapt": "AI that routes by context and expertise" },
+      { "feature": "Analytics", "traditional": "Static monthly reports", "yapt": "Real-time dashboards with predictive AI" },
+      { "feature": "Follow-up", "traditional": "Manual reminder", "yapt": "AI that sends personalized follow-ups automatically" },
+      { "feature": "Meta Ads", "traditional": "Basic integration via Zapier", "yapt": "Native webhook with instant qualification" },
+      { "feature": "Scalability", "traditional": "Slow, expensive, limited", "yapt": "30M+ messages/month proven" }
+    ]
+  },
+  "useCases": {
+    "badge": "Use Cases",
+    "title": "For every challenge, an intelligent solution.",
+    "subtitle": "See how real companies use yapt. to transform their operations.",
+    "cases": [
+      { "title": "Consultative Sales", "description": "From captured lead to closed deal in a journey 100% assisted by AI. Automatic qualification, intelligent follow-up, real-time pipeline.", "metric": "3x more conversion" },
+      { "title": "Support & Service", "description": "AI resolves 70% of requests on its own. Scale without losing quality. Supermemory ensures full context.", "metric": "70% automation" },
+      { "title": "Conversational Marketing", "description": "Campaigns that converse. Segmentation by real behavior. ROI measured by conversation, not by click.", "metric": "5x more engagement" },
+      { "title": "Unified Operations", "description": "One platform replacing 5-8 tools. Centralized data, real-time decisions, lean operations.", "metric": "60% fewer tools" }
+    ]
+  },
+  "landing": {
+    "meta": {
+      "title": "yapt. — Conversational AI Platform | by New Way",
+      "description": "The first AI Native conversational platform with infinite memory. Turn every conversation into data, every data point into a decision, every decision into revenue.",
+      "ogTitle": "yapt. — Conversational AI Platform",
+      "ogDescription": "The groundbreaking AI that turns every conversation into data, every data point into a decision, every decision into revenue."
+    }
+  },
+  "quiz": {
+    "meta": {
+      "title": "Discover your potential",
+      "description": "Answer a few questions and discover how to grow as a yapt. partner."
+    },
+    "header": {
+      "back": "Back"
+    },
+    "progress": {
+      "start": "Let's begin",
+      "yourData": "Your info",
+      "yourBusiness": "Your business",
+      "q1": "Question 1 of 4",
+      "q2": "Question 2 of 4",
+      "q3": "Question 3 of 4",
+      "q4": "Question 4 of 4",
+      "finishing": "Finishing..."
+    },
+    "welcome": {
+      "title": "Discover how you can",
+      "titleHighlight": "grow with yapt.",
+      "msg1": "👋 Hi! I'm <strong>yaveh</strong>, the yapt. AI.",
+      "msg2": "I'll help you discover how you can grow with us — and <strong>harvest fruit every month.</strong>",
+      "msg3": "Just a few quick questions so I can build a personalized proposal for you. Ready to plant? 🌱",
+      "cta": "Let's go"
+    },
+    "capture": {
+      "personalMsg": "Before we start, tell me a bit about yourself:",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your best email",
+      "whatsappPlaceholder": "WhatsApp (with area code)",
+      "continueBtn": "Continue",
+      "personalResponse": "Nice to meet you, {{name}}!",
+      "businessMsg": "And about your business?",
+      "companyPlaceholder": "Company name",
+      "websitePlaceholder": "Website or Instagram @ (optional)",
+      "startQuizBtn": "Start the quiz",
+      "businessResponse": "Awesome! Let's discover how {{company}} can grow with yapt."
+    },
+    "questions": {
+      "profile": {
+        "message": "Which of these best describes what you do today?",
+        "response": "Perfect! I know this terrain well. Many of our best growers came from there.",
+        "options": {
+          "agency": { "emoji": "🏢", "title": "Marketing Agency", "desc": "I serve multiple clients with digital marketing" },
+          "consultancy": { "emoji": "📊", "title": "Sales or CX Consultancy", "desc": "I help companies sell more and serve better" },
+          "tech": { "emoji": "💻", "title": "Technology Company", "desc": "I have my own product or integrate solutions" },
+          "independent": { "emoji": "👤", "title": "Independent Professional", "desc": "I work on my own with direct clients" }
+        }
+      },
+      "size": {
+        "response": "Got it! This helps me see where you are on the journey.",
+        "agency": {
+          "message": "How many clients does your agency serve today?",
+          "options": [
+            { "id": "1-10", "title": "1 to 10 clients", "subtitle": "I'm planting the first seeds" },
+            { "id": "11-50", "title": "11 to 50 clients", "subtitle": "Some trees are already bearing fruit" },
+            { "id": "51-200", "title": "51 to 200 clients", "subtitle": "My orchard is already sizable" },
+            { "id": "200+", "title": "More than 200", "subtitle": "I have an entire forest" }
+          ]
+        },
+        "consultancy": {
+          "message": "What's the main service you deliver?",
+          "options": [
+            { "id": "crm", "title": "CRM Implementation" },
+            { "id": "training", "title": "Sales team training" },
+            { "id": "automation", "title": "Process automation" },
+            { "id": "strategy", "title": "Strategy and mentoring" }
+          ]
+        },
+        "tech": {
+          "message": "Do you already have your own product or do you integrate tools?",
+          "options": [
+            { "id": "product", "title": "We have our own product" },
+            { "id": "integrate", "title": "We integrate tools for clients" },
+            { "id": "both", "title": "Both", "subtitle": "We harvest from both sides" }
+          ]
+        },
+        "independent": {
+          "message": "Do you already work with WhatsApp or chatbots for your clients?",
+          "options": [
+            { "id": "yes", "title": "Yes, it's my main service", "subtitle": "I already plant in this soil" },
+            { "id": "starting", "title": "I want to start in this area", "subtitle": "I'm preparing the ground" },
+            { "id": "tried", "title": "I've tried but it didn't scale", "subtitle": "I planted, but haven't harvested yet" }
+          ]
+        }
+      },
+      "pain": {
+        "message": "Now tell me: what are the biggest pains you see in your clients today?",
+        "response": "I know that pain well. It's exactly where the right AI makes all the difference — and where you can be recognized for solving it.",
+        "confirmBtn": "Continue ({{count}} selected)",
+        "options": {
+          "slow": { "emoji": "⏰", "title": "Slow WhatsApp response" },
+          "sales": { "emoji": "💸", "title": "Leads go cold without follow-up" },
+          "ai_bad": { "emoji": "🤖", "title": "Chatbots that frustrate" },
+          "no_ai": { "emoji": "🚫", "title": "No AI in customer service" },
+          "no_attribution": { "emoji": "📊", "title": "No idea where the lead came from" },
+          "no_automation": { "emoji": "⚡", "title": "Manual or no automations" },
+          "fragmented": { "emoji": "🔧", "title": "Tools that don't talk to each other" },
+          "volume": { "emoji": "📈", "title": "Volume the team can't handle" }
+        }
+      },
+      "model": {
+        "message": "Last one! How do you want to grow this business?",
+        "options": {
+          "referral": { "emoji": "💰", "title": "Refer and harvest", "desc": "I want to recommend yapt. and earn recurring commission" },
+          "service": { "emoji": "🛠️", "title": "Deploy as a service", "desc": "I want to set up AI for clients and charge for consulting" },
+          "full": { "emoji": "🌳", "title": "The full orchard", "desc": "I want to refer, deploy and support — harvest in every way" }
+        }
+      }
+    },
+    "transition": {
+      "title": "Preparing your orchard...",
+      "text": "Building a personalized proposal just for you"
+    }
+  },
+  "partners": {
+    "meta": {
+      "title": "Partner Program",
+      "description": "Be the partner who brought the innovation. Recurring commission, native AI, and official Meta infrastructure."
+    },
+    "nav": {
+      "benefits": "Benefits",
+      "forWhom": "Who it's for",
+      "howItWorks": "How it works",
+      "cta": "Become a partner",
+      "badge": "Partners"
+    },
+    "hero": {
+      "byNewWay": "by New Way — Meta Business Solution Provider",
+      "partnersBadge": "Partners",
+      "title": "Be the partner who brought the",
+      "titleHighlight": "innovation.",
+      "tagline": "Plant once. Harvest every month.",
+      "subtitle": "Your clients will remember you as the one who introduced the AI that actually works. You gain recognition, authority — and recurring commission as long as they use it.",
+      "emphasis": "<strong>yapt. Partners are recognized as innovators.</strong> While others recommend generic tools, you deliver the only AI Native platform with its own WhatsApp infrastructure.",
+      "cta": "Discover my potential"
+    },
+    "problem": {
+      "label": "The Reality",
+      "title": "You already live this. Every day.",
+      "card1Quote": "Conversational AI on WhatsApp",
+      "card1Text": "Your client wants AI on WhatsApp. You recommend a generic tool — <strong>someone else harvests what you planted.</strong>",
+      "card2Quote": "Intelligent Automations",
+      "card2Text": "They lose sales from lack of follow-up. Leads go cold, opportunities die. <strong>You see it and can't fix it.</strong>",
+      "card3Quote": "Connected Campaigns",
+      "card3Text": "They invest in Meta Ads and don't know what became a conversation. <strong>Money without tracking is a seed thrown to the wind.</strong>",
+      "card4Quote": "Setup + Training",
+      "card4Text": "You configure, train the team, fix the bugs. Work for free — <strong>and the MRR goes to someone else's account.</strong>",
+      "card5Quote": "The Market Grows",
+      "card5Text": "Conversational AI grows 40% per year. <strong>Every client that passes through you without a solution, another partner plants.</strong>"
+    },
+    "turn": {
+      "title": "What if every referral became a harvest — and you were the partner who brought the innovation?",
+      "text1": "Imagine earning <strong>recurring commission</strong> for every client you bring. Every month. As long as they use the platform.",
+      "text2": "Even better: charge for implementation, training, follow-up — and <strong>still earn recurring on top</strong>. Every client becomes a tree that bears fruit for you. Every month.",
+      "card1Title": "Recognition",
+      "card1Text": "Be seen as an innovation reference. The partner who brought the solution that works.",
+      "card2Title": "Recurring Revenue",
+      "card2Text": "Commission every month, as long as the client uses it. Plant once, harvest always.",
+      "card3Title": "Authority",
+      "card3Text": "Get called for more projects. Satisfied clients refer you."
+    },
+    "trust": {
+      "label": "Infrastructure",
+      "title": "Deep roots. Not promises.",
+      "subtitle": "You'll be recommending something that actually works.",
+      "stat1": "30M+",
+      "stat1Label": "messages processed per month",
+      "stat2": "BSP",
+      "stat2Label": "Official Meta — proprietary infrastructure",
+      "stat3": "Native AI",
+      "stat3Label": "trainable per client, no workarounds",
+      "stat4": "Only",
+      "stat4Label": "AI Native platform with own WhatsApp infra",
+      "footnote": "11 years cultivating conversation technology. Now, we're opening the orchard for you."
+    },
+    "profiles": {
+      "label": "Who It's For",
+      "title": "Built for those who already plant — and want to harvest more.",
+      "agency": "Marketing Agencies",
+      "agencyDesc": "You already deliver results. Now recommend the tool that works 24/7 — and earn recurring every month.",
+      "consulting": "Sales/CX Consultancies",
+      "consultingDesc": "Your clients trust you. Deploy the AI that transforms their service — and charge for it.",
+      "tech": "Technology Companies",
+      "techDesc": "Integrate yapt. into your offering. Recommend, deploy, follow up. Every client becomes recurring revenue.",
+      "independent": "Independent Professionals",
+      "independentDesc": "Start with no team, no office. One referral, one client, one commission every month."
+    },
+    "cta": {
+      "title": "Be recognized as an innovator — and harvest beautiful fruits every month.",
+      "text": "In 2 minutes, we understand your profile and show how you can grow with yapt. No commitment. No sign-up.",
+      "button": "Start now",
+      "note": "Takes less than 2 minutes. No email required."
+    },
+    "footer": {
+      "copyright": "© 2025 yapt. by New Way — Meta Business Solution Provider"
+    },
+    "result": {
+      "meta": {
+        "title": "Your personalized plan",
+        "description": "Personalized proposal from the yapt. partner program."
+      },
+      "nav": {
+        "status": "Personalized proposal for {{company}}"
+      },
+      "loading": {
+        "analyzing": "Analyzing <span style=\"color:#5EEAD4;font-weight:600\">{{company}}</span> profile...",
+        "mapping": "Mapping opportunities for {{profile}}...",
+        "calculating": "Calculating revenue potential...",
+        "preparing": "Preparing your personalized plan...",
+        "ready": "✓ Ready, {{name}}!",
+        "profiles": {
+          "agency": "agencies",
+          "consultancy": "consultancies",
+          "tech": "tech companies",
+          "independent": "independent professionals"
+        }
+      },
+      "hero": {
+        "badge": "High potential profile",
+        "title": ", your profile was selected.",
+        "subtitle": "{{company}} has everything to become a reference in conversational AI.",
+        "models": {
+          "referral": "Model: Refer and Harvest",
+          "service": "Model: Deploy as Service",
+          "full": "Model: Full Orchard"
+        }
+      },
+      "pains": {
+        "intro": "You told us that {{company}}'s clients face:",
+        "items": {
+          "slow": {
+            "icon": "⏰",
+            "pain": "Slow WhatsApp response",
+            "painDesc": "Clients wait hours for a reply. Leads go cold. Sales are lost.",
+            "solution": "yaveh AI responds in seconds",
+            "solutionDesc": "AI responds 24/7 with context, brand personality, and human tone. Zero queue."
+          },
+          "sales": {
+            "icon": "💸",
+            "pain": "Leads go cold without follow-up",
+            "painDesc": "Lead came in, nobody called. 5 minutes later, cold. Sale lost.",
+            "solution": "yaFlows does automatic follow-up",
+            "solutionDesc": "Fires at the right time, qualifies, and schedules meetings. Zero forgotten leads."
+          },
+          "ai_bad": {
+            "icon": "🤖",
+            "pain": "Chatbots that frustrate",
+            "painDesc": "Dumb bot that understands nothing. Client gets annoyed, gives up, goes to the competitor.",
+            "solution": "Native AI with infinite memory",
+            "solutionDesc": "Not a rules-based chatbot. Real intelligence that learns, remembers, and evolves."
+          },
+          "no_ai": {
+            "icon": "🚫",
+            "pain": "No AI in customer service",
+            "painDesc": "Everything manual. Team replies one by one, makes mistakes, falls behind. Competitors with AI move ahead.",
+            "solution": "yaveh AI + yaTeam: ready-to-use AI",
+            "solutionDesc": "From zero to configured AI in hours. Specialized agents, 3 modes, 40+ actions. No code."
+          },
+          "no_attribution": {
+            "icon": "📊",
+            "pain": "No idea where the lead came from",
+            "painDesc": "Spent $10k on ads. Sold. But which campaign converted? Total mystery.",
+            "solution": "Campaign Intelligence + CAPI",
+            "solutionDesc": "Tracks from click to closed deal. Attribution per conversation. Real ROI per campaign."
+          },
+          "no_automation": {
+            "icon": "⚡",
+            "pain": "Manual or no automations",
+            "painDesc": "Team does everything by hand. Copy, paste, send. Human error, rework, high cost.",
+            "solution": "yaFlows: visual automation",
+            "solutionDesc": "Drag-and-drop editor. 13 nodes, 9 triggers, zero code. Anyone can build it."
+          },
+          "fragmented": {
+            "icon": "🔧",
+            "pain": "Tools that don't talk to each other",
+            "painDesc": "CRM here, chatbot there, automation elsewhere. 5 logins, 5 costs, zero integration.",
+            "solution": "One platform replaces everything",
+            "solutionDesc": "Chat, AI, CRM, automation, analytics. One login, one intelligence, one view."
+          },
+          "volume": {
+            "icon": "📈",
+            "pain": "Volume the team can't handle",
+            "painDesc": "Grew fast. Team can't keep up. Quality drops, clients complain, churn rises.",
+            "solution": "AI absorbs 70% of demand",
+            "solutionDesc": "Smart distribution. AI handles the repetitive. Humans focus on what converts."
+          }
+        }
+      },
+      "calculator": {
+        "label": "Calculator",
+        "title": "What you can harvest",
+        "clientsLabel": "New clients per month",
+        "clientsUnit": "clients/month",
+        "ticketLabel": "Average monthly ticket per client",
+        "annualLabel": "revenue in the first year",
+        "monthlyLabel": "per month at month 6",
+        "costOfInaction": "Each month you wait, that's <strong>$ {{value}}</strong> less at month 6. And those clients go elsewhere."
+      },
+      "path": {
+        "label": "Your path",
+        "title": "How it works in practice",
+        "steps": {
+          "indicate": { "icon": "🐝", "title": "Refer", "desc": "Share your link with clients who need AI on WhatsApp" },
+          "activate": { "icon": "📋", "title": "Activate", "desc": "We handle onboarding, setup, and support" },
+          "harvest": { "icon": "🍊", "title": "Harvest", "desc": "Receive recurring commission every month, automatically" },
+          "configure": { "icon": "🐙", "title": "Configure", "desc": "Deploy yapt. for the client using your know-how" },
+          "train": { "icon": "🐘", "title": "Train", "desc": "Empower the team and charge for consulting services" },
+          "grow": { "icon": "🌳", "title": "Grow", "desc": "Service revenue + recurring commission on top" },
+          "indicateAndConfigure": { "icon": "🐝", "title": "Refer and configure", "desc": "Bring the client and do the full deployment" },
+          "trainAndFollow": { "icon": "🐘", "title": "Train and follow up", "desc": "Empower, monitor, optimize the operation" },
+          "harvestAll": { "icon": "🍊", "title": "Harvest it all", "desc": "Service + recurring + market authority" }
+        }
+      },
+      "future": {
+        "title": "Imagine {{company}} in December 2026...",
+        "today": "Today",
+        "firstSeed": "First seed",
+        "months3": "3 months",
+        "months6": "6 months",
+        "months12": "12 months",
+        "message": ", you'll be recognized as the one who brought real AI to your clients."
+      },
+      "benefits": {
+        "label": "Benefits",
+        "title": "Your yapt. partner kit",
+        "items": {
+          "dashboard": "Dedicated partner dashboard",
+          "link": "Personalized referral link",
+          "materials": "Co-branded sales materials",
+          "certification": "yapt. Partner Certification",
+          "training": "Complete platform training",
+          "support": "Dedicated support via WhatsApp",
+          "commission": "Recurring commission on every client",
+          "earlyAccess": "Early access to new features",
+          "badge": "\"yapt. Certified Partner\" badge for your site and LinkedIn"
+        }
+      },
+      "trust": {
+        "badges": {
+          "bsp": "Official Meta BSP",
+          "messages": "30M+ msg/month",
+          "ai": "Native AI",
+          "years": "11 years"
+        },
+        "social": "Program open to the first 50 launch partners."
+      },
+      "cta": {
+        "title": ", your orchard is ready.",
+        "planName": "Partner Plan",
+        "comparison": {
+          "wouldCost": "These features would cost on the intermediate plan:",
+          "regularPlan": "Intermediate plan (2k conversations): $ {{price}}/mo"
+        },
+        "savings": "Savings of $ {{value}}/month",
+        "noSetup": "$ 0 setup fee",
+        "features": {
+          "whatsapp": "1 WhatsApp number included",
+          "channels": "3 extra channels free",
+          "yavehAi": "yaveh AI — free (included in plan)",
+          "superMemory": "yaSuperMemory — free (included in plan)",
+          "agents": "Unlimited agents",
+          "automations": "Unlimited Automations + Flows",
+          "onboarding": "Specialized onboarding",
+          "training": "Complete training",
+          "community": "Access to the agency community"
+        },
+        "form": {
+          "name": "Name",
+          "email": "Email",
+          "whatsapp": "WhatsApp",
+          "company": "Company"
+        },
+        "submitBtn": "Start growing",
+        "security": "Your data is secure. Cancel anytime.",
+        "urgency": "Launch conditions valid until February 28",
+        "successMessage": "🌱 Welcome to the yapt. partner program!\n\nYou'll receive an email with the next steps shortly."
+      },
+      "sticky": {
+        "label": "MRR at month 6",
+        "button": "Start now"
+      }
+    }
+  },
+
+  "automations": {
+    "meta": {
+      "title": "Intelligent Automations",
+      "description": "Create conversational experiences and internal automations with AI, SuperMemory and native WhatsApp Flows."
+    },
+    "hero": {
+      "badge": "yaFlows — Automations",
+      "title": "Automations that think.\nExperiences that convert.",
+      "subtitle": "33 node types, 15 triggers, parallel execution and orchestrated AI. Build flows that understand context, remember the past and act with intelligence."
+    },
+    "builder": {
+      "subtitle": "yaFlows Builder",
+      "title": "A builder that thinks with you",
+      "description": "Visual drag & drop editor with 33 node types across 6 categories. Connect triggers, AI, CRM actions, conditional logic and communication on an intuitive canvas — no code required.",
+      "features": [
+        "33 node types: AI, communication, data, logic, CRM and integrations",
+        "Drag & drop with visual connections and real-time validation",
+        "Ready-made templates for the most common scenarios",
+        "Test before publishing with dry-run mode",
+        "Analytics overlay: see each node's performance directly on the canvas"
+      ]
+    },
+    "dualExperience": {
+      "subtitle": "Two Experiences, One Builder",
+      "title": "Conversations and internal automations in one place",
+      "description": "Create conversational experiences (lead replies, AI processes, WhatsApp responds) and internal automations (timer fires, fetch data, update CRM) — all in the same visual builder.",
+      "features": [
+        "Conversational experiences: respond to leads with real-time AI",
+        "Internal automations: send active messages, move pipeline, update tags",
+        "Mix both in the same flow: conversation + backend action",
+        "Various triggers: message, keyword, tag, deal stage, timer, webhook"
+      ]
+    },
+    "superMemory": {
+      "subtitle": "SuperMemory in Automations",
+      "title": "AI never forgets",
+      "description": "Every flow the lead went through, every response, every preference — everything is saved in SuperMemory and automatically available in the next flows. AI has eternal context.",
+      "features": [
+        "Persistent context across different flows",
+        "AI knows what was already said, offered and negotiated",
+        "Facts extracted automatically: budget, objections, stakeholders",
+        "Per-lead memory: each contact has their complete history",
+        "Zero configuration: works automatically in every flow"
+      ]
+    },
+    "multiAI": {
+      "subtitle": "Multi-AI per Experience",
+      "title": "More than one intelligence in the same flow",
+      "description": "Combine classification, generation and data extraction in the same conversational experience. Each AI node can use the ideal model for its specific task.",
+      "features": [
+        "Classification: AI analyzes intent and sentiment",
+        "Generation: AI responds with context and personality",
+        "Extraction: AI captures structured data from conversation",
+        "Each node can use a different model (GPT-4, Claude, Gemini)",
+        "Chain multiple AIs for more precise results"
+      ]
+    },
+    "integrations": {
+      "subtitle": "External Data & Integrations",
+      "title": "Connect your flows to the world",
+      "description": "Inbound and outbound webhooks, REST APIs, Zapier and sub-flows. Bring external data to enrich the experience and send results to any system.",
+      "features": [
+        "Inbound webhooks: receive events from any system",
+        "Outbound webhooks: notify external systems in real time",
+        "REST APIs: connect to any endpoint with advanced filters",
+        "Sub-flows: break complex automations into reusable modules",
+        "Zapier: integrate with 5,000+ apps with no code"
+      ]
+    },
+    "waFlows": {
+      "subtitle": "WhatsApp Flows",
+      "title": "Native interactive experiences on WhatsApp",
+      "description": "Create forms, surveys, scheduling and interactive journeys directly on WhatsApp — without leaving the conversation. Visual builder with 20 native Meta components.",
+      "features": [
+        "20 native Meta components (inputs, selects, calendars, etc.)",
+        "Real-time preview inside WhatsApp",
+        "Multi-step forms with validation",
+        "Direct integration with the automation flow",
+        "Meta JSON v6.0 generated automatically"
+      ]
+    },
+    "numbers": {
+      "title": "Impressive numbers",
+      "items": {
+        "nodes": { "value": "33", "label": "Node types" },
+        "triggers": { "value": "15", "label": "Triggers" },
+        "performance": { "value": "10K+", "label": "msgs/second" },
+        "waComponents": { "value": "20", "label": "WA Components" }
+      }
+    },
+    "grid": {
+      "title": "Everything you need to automate with intelligence",
+      "parallel": { "title": "Parallel Execution", "description": "Nodes that can run simultaneously are executed in parallel, maximizing speed." },
+      "dryRun": { "title": "Dry-Run (Test)", "description": "Simulate your entire flow before publishing. See each step without affecting real data." },
+      "reentry": { "title": "Configurable Re-entry", "description": "Define if the lead can re-enter: once, with cooldown or always. Total control." },
+      "rateLimit": { "title": "Rate Limiting", "description": "Limit how many times a contact can enter the same flow per period." },
+      "absorption": { "title": "Event Absorption", "description": "Active flows consume the message before the router — no conflicts between automations." },
+      "templates": { "title": "Ready-made Templates", "description": "6 templates for the most common scenarios: welcome, qualification, scheduling and more." }
+    }
+  },
+  "onboarding": {
+    "defaultName": "partner",
+    "header": {
+      "status": "Setting up your panel"
+    },
+    "nav": {
+      "continue": "Continue",
+      "back": "Back",
+      "finish": "Finish onboarding"
+    },
+    "block1": {
+      "title": "Let's confirm your details",
+      "subtitle": "We already have some info. Complete the rest.",
+      "chatMessage": "Great, <strong>{{name}}</strong>! 🎉 Now I need some information to <span style='color:#FCD34D'>set up your partner panel</span> and prepare your contract.",
+      "confirmTitle": "Confirm your details",
+      "clickToEdit": "Click to edit",
+      "completeTitle": "Complete to continue",
+      "operatorTitle": "Main operator",
+      "operatorDesc": "Who will operate the panel day-to-day? It can be you or someone else.",
+      "selectPlaceholder": "Select...",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "company": "Company",
+        "segment": "Segment",
+        "clients": "Active clients",
+        "cnpj": "Tax ID",
+        "revenue": "Average monthly revenue",
+        "operatorName": "Operator name",
+        "operatorWhatsapp": "Operator WhatsApp",
+        "sameAsMe": "Same as mine"
+      },
+      "segments": {
+        "agency": "Marketing Agency",
+        "consultancy": "Sales/CX Consultancy",
+        "tech": "Technology Company",
+        "independent": "Independent Professional"
+      },
+      "clients": {
+        "1-10": "1 to 10 clients",
+        "11-50": "11 to 50 clients",
+        "51-200": "51 to 200 clients",
+        "200+": "More than 200 clients"
+      },
+      "revenue": {
+        "r1": "Up to $10,000",
+        "r2": "$10,000 to $20,000",
+        "r3": "$20,000 to $40,000",
+        "r4": "$40,000 to $100,000",
+        "r5": "Over $100,000"
+      }
+    },
+    "block2": {
+      "title": "Your maturity level",
+      "subtitle": "This helps us personalize your journey.",
+      "chatMessage": "Now I want to understand <strong>where you are in the journey</strong>. Based on this, I'll <span style='color:#FCD34D'>build a personalized onboarding plan</span> for you.",
+      "automation": {
+        "title": "Automation",
+        "desc": "Your level with automation tools",
+        "levels": {
+          "beginner": "Beginner",
+          "basic": "Basic",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced"
+        },
+        "options": {
+          "beginner": "Never used automation tools",
+          "basic": "Autoresponders, simple sequences",
+          "intermediate": "Flows, integrations, webhooks",
+          "advanced": "Multi-channel orchestration, APIs"
+        }
+      },
+      "campaigns": {
+        "title": "Campaigns / Traffic",
+        "desc": "Your level with paid media and performance",
+        "levels": {
+          "beginner": "Beginner",
+          "basic": "Basic",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced"
+        },
+        "options": {
+          "beginner": "I don't run paid campaigns",
+          "basic": "Post boosts, simple campaigns",
+          "intermediate": "Meta Ads with targeting, A/B testing",
+          "advanced": "CAPI, audiences, LTV optimization"
+        }
+      },
+      "ai": {
+        "title": "Artificial Intelligence",
+        "desc": "Your level with AI in customer service",
+        "levels": {
+          "beginner": "Beginner",
+          "basic": "Basic",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced"
+        },
+        "options": {
+          "beginner": "Never used AI in customer service",
+          "basic": "Basic chatbot (decision tree)",
+          "intermediate": "Use generative AI manually",
+          "advanced": "AI integrated into processes"
+        }
+      }
+    },
+    "block3": {
+      "title": "Your expectations",
+      "subtitle": "So we can align next steps.",
+      "chatMessage": "Last step! 🌱 Tell me: <strong>what do you expect to achieve in the first 90 days</strong>? And how do you prefer to learn?",
+      "expectationsTitle": "What do you expect in the first 90 days?",
+      "learnTitle": "How do you prefer to learn?",
+      "kickoffTitle": "Availability for kickoff",
+      "callMe": "📞 Call me to schedule",
+      "expectations": {
+        "firstClient": "Close first client",
+        "migrateClients": "Migrate current clients",
+        "buildOffer": "Build my offer",
+        "learnPlatform": "Learn the platform"
+      },
+      "learn": {
+        "video": "Videos",
+        "docs": "Documentation",
+        "call": "1:1 Call",
+        "group": "Group"
+      }
+    },
+    "success": {
+      "title": "🎉 Congratulations, {{name}}!",
+      "message": "Your partner panel is being configured. You'll receive an email with access credentials shortly.",
+      "nextStepsTitle": "📋 Next steps",
+      "steps": {
+        "credentials": "Email with credentials (within 2h)",
+        "whatsappWelcome": "WhatsApp welcome message",
+        "kickoff": "Kickoff call scheduled"
+      },
+      "cta": "Back to home"
+    }
+  },
+
+  "sales": {
+    "meta": {
+      "title": "Sales & Pipeline — yapt.",
+      "description": "From qualified lead to closed deal. Visual pipeline, AI qualification, real-time coaching and proposals via WhatsApp."
+    },
+    "hero": {
+      "badge": "Sales & Pipeline",
+      "title": "From qualified lead to closed deal. No spreadsheets.",
+      "subtitle": "yapt. combines AI, visual pipeline and real-time coaching to turn conversations into revenue. Every lead qualified, every deal tracked, every proposal followed up."
+    },
+    "painPoints": {
+      "title": "Your team sells via WhatsApp, but struggles with this every day...",
+      "items": {
+        "noFollowUp": {
+          "title": "Leads go cold without follow-up",
+          "description": "Sales rep takes 2h to respond and the lead already bought from a competitor. Without prioritization, everyone loses."
+        },
+        "invisiblePipeline": {
+          "title": "Invisible pipeline",
+          "description": "Deals in the rep's head, on sticky notes, in spreadsheets. Manager doesn't know the real forecast."
+        },
+        "feelingQualification": {
+          "title": "Gut-feeling qualification",
+          "description": "Rep spends 1h with a cold lead and ignores the hot lead who messaged 3x. No score, no criteria."
+        },
+        "noCoaching": {
+          "title": "No coaching",
+          "description": "Rep fumbles an objection and nobody corrects in real time. Training only happens in Friday's meeting."
+        }
+      }
+    },
+    "deals": {
+      "subtitle": "yaDeals",
+      "title": "Visual pipeline. Every deal tracked from WhatsApp to revenue.",
+      "description": "Drag-and-drop Kanban with multi-pipeline, stakeholders, linked products and SLA per stage. Know exactly where each deal stands, why it's stuck and when it will close. Integrated with every conversation — the deal is born from the conversation.",
+      "features": [
+        "Visual Kanban with drag-and-drop between stages",
+        "Multi-pipeline: sales, onboarding, CS — each with its own stages",
+        "Stakeholders: link multiple contacts to the same deal",
+        "SLA per stage: alerts when a deal is stuck too long",
+        "Win/Loss analysis: understand why deals are won or lost"
+      ]
+    },
+    "qualification": {
+      "subtitle": "Smart Qualification",
+      "title": "Train the AI with your questions. It qualifies each lead automatically.",
+      "description": "Choose your methodology (BANT, SPIN, MEDDIC, Challenger or custom), set up your questions with weight and criteria, and define thresholds. The AI extracts answers directly from the conversation and calculates the score. When the lead hits the right point — it becomes a deal automatically.",
+      "features": [
+        "6 methodologies: BANT, SPIN, MEDDIC, GPCT, Challenger or Custom",
+        "Set up your questions with weight (1-5) and criteria by type",
+        "Visual thresholds: Lead → MQL → SQL → Opportunity",
+        "ICP mode: describe your ideal customer and the AI evaluates semantically",
+        "Hybrid score: 7 behavioral factors + AI qualification"
+      ]
+    },
+    "playbooks": {
+      "subtitle": "Playbooks",
+      "title": "Codify your methodology. The entire team executes the same way.",
+      "description": "Build your playbook in 5 steps: product, qualification, pipeline, objections and buying signals. yaMentor is trained on the playbook and guides each rep in real time. Junior gets full script. Senior gets bullet points. Everyone sells on standard.",
+      "features": [
+        "5-step wizard: product, qualification, pipeline, situations, review",
+        "Objections mapped with ideal response per scenario",
+        "Buying signals + recommended action",
+        "Connected to yaMentor — AI trained on your playbook",
+        "Rep level: Junior (full script) → Senior (bullet points)"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "Real-time coaching. The AI whispers the right play.",
+      "description": "While the rep is chatting, the Mentor suggests the next action based on the playbook, the lead's history and the conversation moment. Ready response, objection handled, red flag detected — all in real time, without interrupting the flow.",
+      "features": [
+        "Response suggestion based on active playbook",
+        "Objection detection + recommended response",
+        "Red flags: frustration, prolonged silence, cancellation threat",
+        "Configurable style: Direct, Encouraging or Socratic",
+        "Next actions: \"Create deal\", \"Send proposal\", \"Schedule call\""
+      ]
+    },
+    "proposals": {
+      "subtitle": "Proposals",
+      "title": "Proposal via WhatsApp. Client accepts on mobile.",
+      "description": "Send proposals via direct link on WhatsApp. The client opens on mobile, sees everything formatted, and accepts online. Tracking: viewed, time on page, when accepted. No PDF, no email, no middleman.",
+      "features": [
+        "Proposal template builder (title, description, price, terms)",
+        "Public link — client opens and accepts on mobile",
+        "Tracking: views, time on site, clicks, acceptances",
+        "Integrated with Deals — proposal linked to the deal",
+        "Versioning: proposal v1, v2, v3 with history"
+      ]
+    },
+    "contacts": {
+      "subtitle": "Contacts 360",
+      "title": "Each lead as a living database.",
+      "description": "360 view of each contact: lifecycle stage, lead score with breakdown, emotion trends, associated deals, activities, proposals and campaign attribution. The rep never asks 'who is this lead?' again — everything is right there.",
+      "features": [
+        "Lifecycle: visitor → lead → MQL → SQL → opportunity → customer",
+        "Score with visual breakdown (7 factors + AI)",
+        "Emotion trends: latest messages with sentiment",
+        "Deals, proposals and activities linked",
+        "Campaign attribution: where they came from (Google, Meta, direct)"
+      ]
+    },
+    "calendar": {
+      "subtitle": "Calendar & Activities",
+      "title": "Synced calendar. Every action logged.",
+      "description": "Bidirectional Google Calendar sync with multi-seller view. Activities Hub tracks calls, meetings, tasks and emails — all linked to the deal. My Day shows today's tasks. Manager knows exactly what each rep did.",
+      "features": [
+        "Automatic bidirectional Google Calendar sync",
+        "Multi-seller view: see the entire team's calendar",
+        "Activities Hub: tasks, calls, meetings with duration and notes",
+        "My Day: today's tasks to complete",
+        "Everything linked to the deal and the contact"
+      ]
+    },
+    "autoDeal": {
+      "subtitle": "Pipeline Automation",
+      "title": "Lead qualified? Deal created. Team notified.",
+      "description": "Set the trigger stage (MQL, SQL or Opportunity) and the deal is created automatically in the pipeline. Real-time email notifications: deal won, proposal accepted, lead qualified, AI handoff. Each event with configurable recipients.",
+      "features": [
+        "Auto-deal: lead reaches score → deal created in pipeline automatically",
+        "3 triggers: by lifecycle stage, by score threshold, or via Flow",
+        "Notifications: deal won/lost, proposal accepted, auto-deal created",
+        "Configurable recipients: owner, admins or custom team",
+        "Smart handoff: AI escalates to human with reason (frustration, high value)"
+      ]
+    },
+    "timeline": {
+      "title": "From conversation to revenue. Every step connected.",
+      "subtitle": "Lead arrives, AI qualifies, deal is created, proposal sent, sale closed — all automatic, all tracked.",
+      "steps": ["Conversation", "AI Qualifies", "Score", "Deal", "Proposal", "Sale"]
+    },
+    "grid": {
+      "title": "Every detail designed to sell more",
+      "scoring": { "title": "Hybrid Lead Scoring", "description": "7 behavioral factors + AI qualification combined in a single score." },
+      "methodology": { "title": "BANT / SPIN / MEDDIC", "description": "Configurable methodology per agent. Choose what makes sense for your team." },
+      "icp": { "title": "ICP Matching", "description": "Describe your ideal customer — AI evaluates each lead semantically." },
+      "multiPipeline": { "title": "Multi-Pipeline", "description": "Sales, onboarding, CS — each with its own stages and SLA." },
+      "sla": { "title": "SLA per Stage", "description": "Alert when a deal is stuck too long. Never lose a deal due to inaction again." },
+      "winLoss": { "title": "Win/Loss Analysis", "description": "Understand why deals are won or lost. Improve the process." },
+      "emotion": { "title": "Emotion Engine", "description": "13 emotional signals integrated into the score and visible in the deal." },
+      "proposalTracking": { "title": "Proposal Tracking", "description": "Views, time on page, clicks and acceptances — all tracked." },
+      "handlerState": { "title": "Handler State", "description": "Bot ↔ Human without duplicate messages. Clean transition." },
+      "myDay": { "title": "My Day", "description": "Today's tasks for the rep in 1 screen. Total focus." },
+      "lifecycle": { "title": "Automatic Lifecycle", "description": "Visitor → Lead → MQL → SQL → Opportunity — automatic progression." },
+      "autoDeal": { "title": "Deal Auto-Create", "description": "Lead qualified → deal created automatically in the pipeline." }
+    }
+  }
+}

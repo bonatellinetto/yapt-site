@@ -1,0 +1,142 @@
+---
+import '../styles/global.css';
+import SiteNavbar from '../components/SiteNavbar.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { type Locale, localeHtmlLang, localePath, locales, localePrefix, localeHreflang } from '../lib/i18n';
+import { getCanonical, getHreflangAlternates, organizationJsonLd, websiteJsonLd } from '../lib/seo';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string; // path without locale prefix, e.g. "/" or "/pricing"
+  locale: Locale;
+  ogType?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, any>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  locale,
+  ogType = 'website',
+  ogImage = '/og-image.png',
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = getCanonical(path, locale);
+const alternates = getHreflangAlternates(path);
+const htmlLang = localeHtmlLang[locale];
+const fullTitle = `${title} | yapt.`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://yapt.ai${ogImage}`;
+
+const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
+---
+
+<!DOCTYPE html>
+<html lang={htmlLang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {noindex
+    ? <meta name="robots" content="noindex, nofollow" />
+    : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  }
+  <link rel="canonical" href={canonical} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/yapt-icon.svg" />
+
+  <!-- Fonts: Inter + Poppins (self-hosted) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="yapt." />
+  <meta property="og:image" content={ogImageUrl} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- hreflang alternates -->
+  {alternates.map(({ hreflang, href }) => (
+    <link rel="alternate" hreflang={hreflang} href={href} />
+  ))}
+
+  <!-- JSON-LD structured data -->
+  {allJsonLd.map((ld) => (
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  ))}
+
+  <!-- Language detection + redirect (first visit only) -->
+  <script is:inline>
+    (function() {
+      if (typeof window === 'undefined') return;
+      var stored = localStorage.getItem('cosmos_language');
+      if (stored) return; // user already chose a language
+
+      var path = window.location.pathname;
+      // Don't redirect if already on a locale path
+      if (path.startsWith('/en/') || path.startsWith('/en') || path.startsWith('/es/') || path.startsWith('/es')) return;
+      // Only redirect from root pages (pt-BR default)
+      var lang = (navigator.language || '').toLowerCase();
+      if (lang.startsWith('en')) {
+        window.location.replace('/en' + path);
+      } else if (lang.startsWith('es')) {
+        window.location.replace('/es' + path);
+      }
+      // pt and others: stay on current path (pt-BR default)
+    })();
+  </script>
+</head>
+<body class="min-h-screen bg-white">
+  <SiteNavbar locale={locale} />
+  <slot />
+  <SiteFooter locale={locale} />
+
+  <!-- Scroll-triggered fade-in observer -->
+  <script is:inline>
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var targets = entry.target.querySelectorAll('[data-fade]');
+            if (targets.length === 0 && entry.target.hasAttribute('data-fade')) {
+              targets = [entry.target];
+            }
+            targets.forEach(function(el, i) {
+              setTimeout(function() {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+              }, i * 120);
+            });
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('[data-observe]').forEach(function(el) {
+        observer.observe(el);
+      });
+      document.querySelectorAll('[data-fade]').forEach(function(el) {
+        if (!el.closest('[data-observe]')) {
+          observer.observe(el);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

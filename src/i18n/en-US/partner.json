@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "badge": "Partner",
+    "back": "Go to App",
+    "overview": "Overview",
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "myClients": "My Clients",
+    "team": "Team",
+    "teamMembers": "Members",
+    "account": "Account",
+    "onboarding": "Onboarding",
+    "settings": "Settings",
+    "billing": "Billing",
+    "comingSoon": "Soon"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Welcome to {{name}}'s Partner Hub",
+    "recentClients": "Recent Clients",
+    "viewAll": "View all",
+    "noClients": "No clients yet",
+    "onboardingChecklist": "Onboarding Checklist",
+    "viewOnboarding": "View Onboarding"
+  },
+  "stats": {
+    "totalClients": "Total Clients",
+    "activeClients": "Active Clients",
+    "totalMembers": "Total Members",
+    "tier": "Tier"
+  },
+  "clients": {
+    "title": "My Clients",
+    "subtitle": "Manage your operation's clients",
+    "newClient": "New Client",
+    "searchPlaceholder": "Search by name, slug or CNPJ...",
+    "empty": "No clients found",
+    "emptyDescription": "Create your first client to start using the platform.",
+    "name": "Name",
+    "members": "Members",
+    "created": "Created"
+  },
+  "createClient": {
+    "title": "New Client",
+    "description": "Enter the CNPJ to auto-fill company data.",
+    "lookup": "Lookup",
+    "cnpjFound": "CNPJ found",
+    "adminName": "Admin name",
+    "adminNamePlaceholder": "Full name",
+    "adminEmail": "Admin email",
+    "adminEmailPlaceholder": "email@company.com",
+    "adminPassword": "Password",
+    "adminPasswordPlaceholder": "Minimum 6 characters",
+    "cancel": "Cancel",
+    "submit": "Create Client",
+    "creating": "Creating...",
+    "success": "Client created successfully",
+    "successDescription": "{{name}} has been added to your portfolio.",
+    "error": "Error creating client"
+  },
+  "clientDetail": {
+    "notFound": "Client not found",
+    "backToClients": "Back to clients",
+    "healthScore": "Health Score",
+    "members": "Members",
+    "createdAt": "Created at",
+    "onboardingChecklist": "Onboarding Checklist",
+    "membersTab": "Members",
+    "invitesTab": "Invites",
+    "membersComingSoon": "Member management coming soon",
+    "invitesComingSoon": "Invite management coming soon"
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Your partner team members",
+    "invite": "Invite",
+    "comingSoon": "Team management coming soon",
+    "comingSoonDescription": "Soon you'll be able to invite members to your partner team."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Company data and partner settings",
+    "companyData": "Company Data",
+    "companyName": "Legal Name",
+    "tradeName": "Trade Name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "planBilling": "Plan & Billing",
+    "currentPlan": "Current Plan",
+    "trialEnds": "Trial ends on",
+    "billingComingSoon": "Billing will be enabled soon"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "subtitle": "Complete the steps to set up your operation",
+    "progress": "Progress",
+    "step": "Step",
+    "goTo": "Go",
+    "companyProfile": "Complete company profile",
+    "companyProfileDesc": "Check company data in settings.",
+    "firstClient": "Create first client",
+    "firstClientDesc": "Add your first client with CNPJ.",
+    "teamMember": "Invite team member",
+    "teamMemberDesc": "Invite someone to help with operations.",
+    "channelConnected": "Connect client channel",
+    "channelConnectedDesc": "Help your first client connect a communication channel.",
+    "firstConversation": "First client conversation",
+    "firstConversationDesc": "Your client received the first conversation on the platform."
+  }
+}

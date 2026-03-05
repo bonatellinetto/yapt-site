@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import ProblemSection from '../../components/ProblemSection.astro';
+import FeaturesSection from '../../components/FeaturesSection.astro';
+import CTASection from '../../components/CTASection.astro';
+import { softwareApplicationJsonLd } from '../../lib/seo';
+
+const locale = 'en-US' as const;
+---
+
+<SiteLayout
+  title="Conversational AI Platform"
+  description="yapt. is the conversational AI platform for sales. Manage leads, automate conversations, and close more deals with artificial intelligence."
+  path="/"
+  locale={locale}
+  jsonLd={[softwareApplicationJsonLd()]}
+>
+  <HeroSection locale={locale} />
+  <TrustBar locale={locale} />
+  <ProblemSection locale={locale} />
+  <FeaturesSection locale={locale} />
+  <CTASection locale={locale} />
+</SiteLayout>

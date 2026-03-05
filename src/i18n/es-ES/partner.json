@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "badge": "Socio",
+    "back": "Volver a la App",
+    "overview": "Resumen",
+    "dashboard": "Dashboard",
+    "clients": "Clientes",
+    "myClients": "Mis Clientes",
+    "team": "Equipo",
+    "teamMembers": "Miembros",
+    "account": "Cuenta",
+    "onboarding": "Onboarding",
+    "settings": "Configuración",
+    "billing": "Facturación",
+    "comingSoon": "Pronto"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Bienvenido al Partner Hub de {{name}}",
+    "recentClients": "Clientes Recientes",
+    "viewAll": "Ver todos",
+    "noClients": "Sin clientes aún",
+    "onboardingChecklist": "Checklist de Onboarding",
+    "viewOnboarding": "Ver Onboarding"
+  },
+  "stats": {
+    "totalClients": "Total de Clientes",
+    "activeClients": "Clientes Activos",
+    "totalMembers": "Total de Miembros",
+    "tier": "Tier"
+  },
+  "clients": {
+    "title": "Mis Clientes",
+    "subtitle": "Gestiona los clientes de tu operación",
+    "newClient": "Nuevo Cliente",
+    "searchPlaceholder": "Buscar por nombre, slug o CNPJ...",
+    "empty": "Ningún cliente encontrado",
+    "emptyDescription": "Crea tu primer cliente para empezar a usar la plataforma.",
+    "name": "Nombre",
+    "members": "Miembros",
+    "created": "Creado"
+  },
+  "createClient": {
+    "title": "Nuevo Cliente",
+    "description": "Ingresa el CNPJ para buscar los datos de la empresa automáticamente.",
+    "lookup": "Buscar",
+    "cnpjFound": "CNPJ encontrado",
+    "adminName": "Nombre del admin",
+    "adminNamePlaceholder": "Nombre completo",
+    "adminEmail": "Email del admin",
+    "adminEmailPlaceholder": "email@empresa.com",
+    "adminPassword": "Contraseña",
+    "adminPasswordPlaceholder": "Mínimo 6 caracteres",
+    "cancel": "Cancelar",
+    "submit": "Crear Cliente",
+    "creating": "Creando...",
+    "success": "Cliente creado con éxito",
+    "successDescription": "{{name}} fue agregado a tu cartera.",
+    "error": "Error al crear cliente"
+  },
+  "clientDetail": {
+    "notFound": "Cliente no encontrado",
+    "backToClients": "Volver a clientes",
+    "healthScore": "Health Score",
+    "members": "Miembros",
+    "createdAt": "Creado en",
+    "onboardingChecklist": "Checklist de Onboarding",
+    "membersTab": "Miembros",
+    "invitesTab": "Invitaciones",
+    "membersComingSoon": "Gestión de miembros próximamente",
+    "invitesComingSoon": "Gestión de invitaciones próximamente"
+  },
+  "team": {
+    "title": "Equipo",
+    "subtitle": "Miembros de tu equipo de socio",
+    "invite": "Invitar",
+    "comingSoon": "Gestión de equipo próximamente",
+    "comingSoonDescription": "Pronto podrás invitar miembros a tu equipo de socio."
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Datos de la empresa y configuración del socio",
+    "companyData": "Datos de la Empresa",
+    "companyName": "Razón Social",
+    "tradeName": "Nombre Fantasía",
+    "phone": "Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "planBilling": "Plan y Facturación",
+    "currentPlan": "Plan Actual",
+    "trialEnds": "Trial termina en",
+    "billingComingSoon": "La facturación se habilitará pronto"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "subtitle": "Completa los pasos para configurar tu operación",
+    "progress": "Progreso",
+    "step": "Paso",
+    "goTo": "Ir",
+    "companyProfile": "Completar perfil de la empresa",
+    "companyProfileDesc": "Verifica los datos de la empresa en configuración.",
+    "firstClient": "Crear primer cliente",
+    "firstClientDesc": "Agrega tu primer cliente con CNPJ.",
+    "teamMember": "Invitar miembro del equipo",
+    "teamMemberDesc": "Invita a alguien para ayudar en la operación.",
+    "channelConnected": "Conectar canal del cliente",
+    "channelConnectedDesc": "Ayuda a tu primer cliente a conectar un canal de comunicación.",
+    "firstConversation": "Primera conversación del cliente",
+    "firstConversationDesc": "Tu cliente recibió la primera conversación en la plataforma."
+  }
+}

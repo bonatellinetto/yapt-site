@@ -1,0 +1,111 @@
+---
+import { t, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const trustBadges = [
+  t('cta.badges.bsp', locale),
+  t('cta.badges.messages', locale),
+  t('cta.badges.years', locale),
+];
+---
+
+<section
+  id="cta-final"
+  data-observe
+  style="background: linear-gradient(135deg, #064E3B, #0D9488, #20B2AA);"
+  class="relative py-16 lg:py-24 xl:py-32 overflow-hidden"
+>
+  <!-- Light rays -->
+  <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+    <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+    <div class="absolute" style="top: -30%; left: 5%; width: 40%; height: 130%; background: linear-gradient(140deg, rgba(255,255,255,0.6) 0%, transparent 35%); transform: rotate(-25deg);"></div>
+  </div>
+
+  <!-- Top vegetation -->
+  <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
+    <svg viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+      <path d="M0 160 C60 120, 100 60, 160 80 C220 100, 260 40, 320 70 C380 100, 420 30, 480 55 C540 80, 580 20, 640 50 C700 80, 740 15, 800 45 C860 75, 900 25, 960 60 C1020 95, 1060 35, 1120 65 C1180 95, 1220 45, 1280 70 C1340 95, 1400 60, 1440 80 L1440 0 L0 0Z" fill="rgba(255,255,255,0.3)"/>
+      <path d="M0 130 C80 90, 140 40, 220 65 C300 90, 340 25, 400 50 C460 75, 520 15, 580 40 C640 65, 700 10, 760 35 C820 60, 880 20, 940 50 C1000 80, 1060 30, 1120 55 C1180 80, 1240 35, 1300 55 C1360 75, 1410 50, 1440 60 L1440 0 L0 0Z" fill="rgba(255,255,255,0.2)"/>
+      <path d="M0 100 C40 70, 90 50, 130 65 C170 80, 210 35, 260 55 C310 75, 350 30, 400 48 C450 66, 490 20, 540 42 C590 64, 640 22, 690 46 C740 70, 790 28, 840 50 C890 72, 940 32, 990 52 C1040 72, 1090 28, 1140 48 C1190 68, 1240 30, 1290 52 C1340 74, 1390 45, 1440 55 L1440 0 L0 0Z" fill="rgba(255,255,255,0.12)"/>
+    </svg>
+  </div>
+
+  <!-- Bottom vegetation -->
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
+    <svg viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+      <path d="M0 0 C80 50, 140 100, 220 75 C300 50, 360 110, 440 85 C520 60, 580 120, 660 90 C740 60, 800 115, 880 80 C960 45, 1020 105, 1100 75 C1180 45, 1240 100, 1320 70 C1400 40, 1430 80, 1440 60 L1440 160 L0 160Z" fill="rgba(255,255,255,0.3)"/>
+      <path d="M0 20 C60 60, 120 110, 200 85 C280 60, 340 120, 420 95 C500 70, 560 125, 640 100 C720 75, 780 130, 860 100 C940 70, 1000 120, 1080 90 C1160 60, 1220 110, 1300 80 C1380 50, 1420 90, 1440 75 L1440 160 L0 160Z" fill="rgba(255,255,255,0.2)"/>
+    </svg>
+  </div>
+
+  <!-- Fireflies -->
+  <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:18%;left:12%;animation:yapt-float 6s ease-in-out infinite;"></div>
+  <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.35);top:35%;right:15%;animation:yapt-float 7s ease-in-out infinite;animation-delay:2s;"></div>
+  <div class="absolute rounded-full pointer-events-none" style="width:6px;height:6px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:55%;left:8%;animation:yapt-float 5s ease-in-out infinite;animation-delay:4s;"></div>
+  <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.3);top:70%;right:10%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
+  <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:25%;right:25%;animation:yapt-float 6.5s ease-in-out infinite;animation-delay:5s;"></div>
+  <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:80%;left:20%;animation:yapt-float 7.5s ease-in-out infinite;animation-delay:7s;"></div>
+
+  <!-- Butterfly left -->
+  <div class="absolute pointer-events-none" style="top:22%;left:6%;animation:yapt-butterfly1 12s ease-in-out infinite;">
+    <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+      <path d="M12 10 C8 2, 0 0, 2 8 C4 14, 10 14, 12 10Z" fill="rgba(45,212,191,0.5)" style="animation: yapt-wing 0.4s ease-in-out infinite alternate;"/>
+      <path d="M12 10 C16 2, 24 0, 22 8 C20 14, 14 14, 12 10Z" fill="rgba(45,212,191,0.5)" style="animation: yapt-wing-flap 0.4s ease-in-out infinite alternate;"/>
+      <line x1="12" y1="6" x2="12" y2="14" stroke="rgba(45,212,191,0.6)" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Butterfly right -->
+  <div class="absolute pointer-events-none" style="top:60%;right:7%;animation:yapt-butterfly2 14s ease-in-out infinite;animation-delay:3s;">
+    <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+      <path d="M10 8 C7 2, 0 1, 2 7 C4 12, 8 11, 10 8Z" fill="rgba(255,255,255,0.45)" style="animation: yapt-wing 0.35s ease-in-out infinite alternate;"/>
+      <path d="M10 8 C13 2, 20 1, 18 7 C16 12, 12 11, 10 8Z" fill="rgba(255,255,255,0.45)" style="animation: yapt-wing-flap 0.35s ease-in-out infinite alternate;"/>
+      <line x1="10" y1="5" x2="10" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <div class="relative max-w-4xl mx-auto px-6 text-center">
+    <!-- Trust badges -->
+    <div data-fade class="flex justify-center flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-12" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      {trustBadges.map((badge) => (
+        <span class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white/80">{badge}</span>
+      ))}
+    </div>
+
+    <!-- Heading -->
+    <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+        {t('cta.title', locale)}
+      </h2>
+    </div>
+
+    <!-- Subtitle -->
+    <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto">
+        {t('cta.subtitle', locale)}
+      </p>
+    </div>
+
+    <!-- CTA buttons -->
+    <div data-fade class="flex flex-col sm:flex-row justify-center gap-4 mt-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <a href="#" class="bg-white text-[#064E3B] font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl transition-all duration-300 inline-block">
+        {t('cta.primaryButton', locale)}
+      </a>
+      <a href="#" class="border-2 border-white/30 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/10 transition-all duration-300 inline-block">
+        {t('cta.secondaryButton', locale)}
+      </a>
+    </div>
+
+    <!-- Small text -->
+    <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <p class="text-sm text-white/50 mt-6">
+        {t('cta.smallText', locale)}
+      </p>
+    </div>
+  </div>
+</section>

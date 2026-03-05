@@ -1,0 +1,1980 @@
+{
+  "trustCenter": {
+    "meta": { "title": "Trust Center — yapt.", "description": "Conozca las prácticas de seguridad, privacidad y gobernanza de IA que protegen sus datos en yapt." },
+    "hero": {
+      "badge": "Trust Center",
+      "title": "Seguridad y conformidad como prioridad.",
+      "subtitle": "Conozca las prácticas de seguridad, privacidad y gobernanza de IA que protegen sus datos en yapt."
+    },
+    "compliance": {
+      "subtitle": "Conformidad",
+      "title": "LGPD y estándares internacionales",
+      "description": "Cumplimiento con la Ley General de Protección de Datos y preparación para certificaciones internacionales.",
+      "features": [
+        "Derecho al olvido (GDPR Delete) con modo dry-run",
+        "Exportación de datos del titular (Data Portability)",
+        "Gestión de consentimiento por canal y finalidad",
+        "Logs de auditoría inmutables con aislamiento por organización",
+        "Evaluación de impacto de datos para uso de IA",
+        "Contratos de procesamiento de datos para sub-procesadores de IA"
+      ]
+    },
+    "security": {
+      "subtitle": "Seguridad",
+      "title": "Protección en capas",
+      "description": "Múltiples capas de seguridad para proteger sus datos y sus clientes.",
+      "features": [
+        "Protección de origen con validación restrictiva",
+        "Autenticación multi-factor (MFA/TOTP)",
+        "Rate limiting en endpoints sensibles",
+        "Firma criptográfica en webhooks Meta",
+        "Tokens y secrets en variables de entorno (cero hardcoded)",
+        "Información sensible protegida en producción"
+      ]
+    },
+    "infrastructure": {
+      "subtitle": "Infraestructura",
+      "title": "Arquitectura segura por diseño",
+      "description": "Arquitectura segura con aislamiento multi-tenant nativo.",
+      "features": [
+        "Aislamiento total entre organizaciones en todas las tablas",
+        "Encriptación TLS en tránsito (HTTPS obligatorio)",
+        "Cada organización completamente aislada en toda operación",
+        "Procesamiento ultrarrápido en la nube",
+        "Backup automático diario con retención de 7 días",
+        "Monitoreo y alertas en tiempo real"
+      ]
+    },
+    "aiGovernance": {
+      "subtitle": "Gobernanza de IA",
+      "title": "IA responsable y transparente",
+      "description": "Control total sobre cómo la inteligencia artificial procesa los datos de sus clientes.",
+      "features": [
+        "Modo advisory: IA sugiere, humano ejecuta (nunca mutación directa)",
+        "Audit trail completo de cada interacción con LLM",
+        "Rastreabilidad completa de cada interacción con IA",
+        "Base legal de consentimiento por procesamiento de IA",
+        "Sub-procesadores declarados (OpenAI, Anthropic, Google)",
+        "Datos personales señalizados en el audit trail"
+      ]
+    },
+    "status": {
+      "sectionLabel": "Estado de Implementación",
+      "title": "Dónde estamos",
+      "active": "Activo",
+      "inProgress": "En progreso",
+      "items": {
+        "cors": "Protección de origen",
+        "webhookSignatures": "Firmas webhook",
+        "rateLimiting": "Rate limiting",
+        "mfaTotp": "MFA (TOTP)",
+        "gdprDelete": "GDPR Delete",
+        "gdprExport": "GDPR Export",
+        "auditLogs": "Logs de auditoría",
+        "aiAuditTrail": "AI Audit Trail",
+        "consentMgmt": "Gestión de consentimiento",
+        "encryptionAtRest": "Encriptación en reposo",
+        "dataAnonymization": "Anonimización de datos",
+        "soc2": "SOC 2 Type II",
+        "iso27001": "ISO 27001"
+      }
+    }
+  },
+  "nav": {
+    "product": "Producto",
+    "integrations": "Integraciones",
+    "enterprise": "Enterprise",
+    "pricing": "Precios",
+    "login": "Login",
+    "goToDashboard": "Ir al Dashboard",
+    "scheduleDemo": "Agendar Demo",
+    "productLinks": {
+      "conversations": "Conversaciones",
+      "conversationsDesc": "Inbox, CRM 360°, Omnichannel",
+      "intelligence": "Inteligencia",
+      "intelligenceDesc": "IA, Agentes, Memoria, Emoción",
+      "sales": "Ventas",
+      "salesDesc": "Pipeline, Deals, Propuestas, Coaching",
+      "marketing": "Marketing",
+      "marketingDesc": "Campañas, Flows, Instant Engage",
+      "operations": "Operaciones",
+      "operationsDesc": "Deals, SLA, Analytics",
+      "automations": "Automatizaciones",
+      "automationsDesc": "Flows, Triggers, IA Orquestada",
+      "integrations": "Integraciones",
+      "enterprise": "Enterprise",
+      "pricing": "Precios"
+    }
+  },
+  "footer": {
+    "tagline": "by New Way — Meta Business Solution Provider",
+    "description": "La primera plataforma conversacional AI Native con memoria infinita.",
+    "product": "Producto",
+    "resources": "Recursos",
+    "docs": "Documentación",
+    "apiReference": "API Reference",
+    "blog": "Blog",
+    "cases": "Casos de éxito",
+    "company": "Empresa",
+    "about": "Nosotros",
+    "careers": "Carreras",
+    "contact": "Contacto",
+    "press": "Prensa",
+    "copyright": "© 2026 yapt. Todos los derechos reservados.",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "trustCenter": "Trust Center"
+  },
+  "cta": {
+    "badges": {
+      "bsp": "BSP Oficial Meta",
+      "messages": "30M+ msg/mes",
+      "years": "11 años"
+    },
+    "title": "¿Listo para transformar sus conversaciones en ingresos?",
+    "subtitle": "Agende una demostración personalizada y descubra cómo yapt. puede revolucionar la operación conversacional de su negocio.",
+    "primaryButton": "Agendar Demo Gratuita",
+    "secondaryButton": "Hablar con un Especialista",
+    "smallText": "Sin compromiso. Setup en 24h. Soporte dedicado."
+  },
+  "conversations": {
+    "meta": {
+      "title": "Conversaciones & Omnichannel",
+      "description": "yaInbox, yaPeople y yaConnect: todas las conversaciones en un solo lugar, con IA, scoring y emoción en tiempo real."
+    },
+    "hero": {
+      "badge": "Conversaciones & Omnichannel",
+      "title": "Todas las conversaciones. Un solo lugar.",
+      "subtitle": "yaInbox, yaPeople y yaConnect unidos para que ninguna oportunidad se pierda entre canales."
+    },
+    "inbox": {
+      "subtitle": "yaInbox",
+      "title": "10 vistas inteligentes. Contexto infinito.",
+      "description": "Inbox unificado con score de lead, análisis de emoción, handler state y whisper panel de IA — todo en tiempo real.",
+      "features": [
+        "10 vistas preconfiguradas: No leídos, Esperando IA, Míos, Bot, VIP y más",
+        "Score de calificación visible en cada conversación",
+        "Emotion Engine detecta 13 señales emocionales",
+        "Handler State: sepa si IA, humano o bot tiene el control",
+        "Whisper panel: IA sugiere respuestas sin que el cliente lo vea"
+      ]
+    },
+    "handlerState": {
+      "subtitle": "Handler State",
+      "title": "La inteligencia que transfiere al humano en el momento justo.",
+      "description": "yapt. sabe cuándo la IA debe conversar y cuándo es hora de que el humano tome el control. La transición es inteligente — con contexto preservado, sin pérdida de información.",
+      "features": [
+        "Estado IA activa",
+        "Detección de necesidad humana",
+        "Handoff sin fricción",
+        "Contexto 100% preservado",
+        "Retorno automático a IA"
+      ]
+    },
+    "yavehTeam": {
+      "subtitle": "yaveh AI + yaTeam",
+      "title": "El cerebro IA de yapt. Arma tu equipo de agentes.",
+      "description": "yaveh es la inteligencia central — orquesta todo. Con yaTeam, creas tu propio equipo de agentes: para atención al cliente, para entrenamiento del equipo de ventas (copilot), para monitorear pipelines.",
+      "features": [
+        "yaveh orquesta toda la IA",
+        "yaTeam: crea agentes para atención",
+        "yaTeam: crea agentes internos (copilot del equipo)",
+        "Agentes que garantizan el ritmo de los pipelines",
+        "Agentes que evalúan negocios automáticamente"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "El poder de los datos que aumenta la eficiencia del equipo.",
+      "description": "yaMentor analiza conversaciones, identifica dolores reales del equipo y entrega coaching en tiempo real. No es teoría — son insights accionables basados en lo que sucede en tus ventas.",
+      "features": [
+        "Coaching en tiempo real durante la conversación",
+        "Análisis de performance por vendedor",
+        "Identificación de gaps y objeciones perdidas",
+        "Sugerencias basadas en datos reales",
+        "Meeting Intelligence (análisis de reuniones)"
+      ]
+    },
+    "memory": {
+      "subtitle": "yaMemory",
+      "title": "Tu cliente nunca más necesita repetir nada.",
+      "description": "Supermemoria es la memoria infinita de yapt. Cada conversación, cada objeción, cada preferencia — grabada para siempre. La IA sabe todo lo que ya ocurrió, en cualquier canal, en cualquier momento.",
+      "features": [
+        "Cross-canal (WA, IG, Email — una sola memoria)",
+        "Cross-tiempo (¿6 meses atrás? Recordado con contexto)",
+        "Cross-agente (¿Cambió de agente? El contexto va junto)",
+        "Extracción automática de hechos (budget, stakeholders, objeciones)",
+        "Búsqueda semántica inteligente"
+      ]
+    },
+    "audio": {
+      "subtitle": "Audio Intelligence",
+      "title": "Audios que se convierten en datos. Conversaciones que se convierten en insights.",
+      "description": "yapt. transcribe y analiza audios automáticamente. La IA no solo lee texto — escucha, interpreta y extrae información de mensajes de voz.",
+      "features": [
+        "Transcripción automática de audio",
+        "Análisis de sentimiento en voz",
+        "Extracción de información de audios largos",
+        "Integración con Emotion Engine",
+        "Contexto de voz alimenta la Supermemoria"
+      ]
+    },
+    "people": {
+      "subtitle": "yaPeople",
+      "title": "CRM 360° que entiende el contexto.",
+      "description": "Cada contacto lleva scoring dual, lifecycle stage, historial de emociones, accounts y todo lo que tu IA necesita para vender.",
+      "features": [
+        "Lifecycle stage automático: Lead → MQL → SQL → Cliente",
+        "Scoring dual: comportamental (7 factores) + IA",
+        "Accounts: agrupa contactos por empresa",
+        "Identifiers: WhatsApp, email, Instagram en el mismo perfil",
+        "Emotion timeline: historial de sentimientos por conversación"
+      ]
+    },
+    "connect": {
+      "subtitle": "yaConnect",
+      "title": "Hub de canales sin fragmentación.",
+      "description": "WhatsApp, Instagram, Email y webhooks convergen en un único flujo de datos, con field mapping visual.",
+      "features": [
+        "WhatsApp Business API (BSP oficial New Way)",
+        "Instagram DM con enrutamiento inteligente",
+        "Webhooks de entrada y salida con filtros avanzados",
+        "Field mapping visual: configura sin código",
+        "Rate limiting y retry automático por canal"
+      ]
+    },
+    "grid": {
+      "title": "Todo conectado. Nada perdido.",
+      "realtime": { "title": "Tiempo Real", "description": "Mensajes, scores y emociones actualizados en tiempo real — instantáneamente." },
+      "omnichannel": { "title": "Omnichannel", "description": "WhatsApp, Instagram, Email y webhooks en el mismo inbox — sin cambiar de pantalla." },
+      "ai": { "title": "AI-Powered", "description": "IA sugiere respuestas, califica leads y detecta emociones automáticamente." },
+      "score": { "title": "Lead Score", "description": "Scoring dual (comportamental + IA) visible en cada conversación para priorizar oportunidades." },
+      "emotion": { "title": "Emotion Engine", "description": "13 señales emocionales detectadas en cada mensaje para enrutamiento empático." },
+      "crm": { "title": "CRM 360°", "description": "Contactos con lifecycle, accounts, identifiers e historial completo en un solo lugar." },
+      "smartQueue": { "title": "Smart Queue", "description": "Cola inteligente que prioriza por score, emoción y SLA automáticamente." },
+      "snooze": { "title": "Snooze", "description": "Pospón conversaciones para el momento correcto — vuelven automáticamente a tu cola." },
+      "macros": { "title": "Macros", "description": "Respuestas rápidas con variables dinámicas para agilizar la atención." },
+      "windowGuardian": { "title": "Window Guardian", "description": "Protege tu operación fuera del horario comercial con routing alternativo." },
+      "qualificationGate": { "title": "Qualification Gate", "description": "Solo pasa al equipo de ventas quien alcance el score mínimo configurado." },
+      "viewerPresence": { "title": "Viewer Presence", "description": "Ve quién está mirando la misma conversación en tiempo real — evita respuestas duplicadas." }
+    },
+    "roadmap": {
+      "title": "Mira lo que viene",
+      "subtitle": "Próximamente",
+      "items": {
+        "webchat": {
+          "title": "Webchat inteligente",
+          "description": "Widget de chat para sitios web con IA nativa, SuperMemoria e integración directa con el inbox.",
+          "impact": "Nuevo canal"
+        },
+        "whatsappGroups": {
+          "title": "WhatsApp Groups",
+          "description": "Administra grupos de WhatsApp con automatizaciones, moderación y analytics integrados.",
+          "impact": "Comunidades"
+        },
+        "meetingIntelligence": {
+          "title": "Meeting Intelligence integrado",
+          "description": "Análisis automático de reuniones con transcripción, action items y coaching post-call.",
+          "impact": "Coaching avanzado"
+        }
+      }
+    }
+  },
+  "intelligence": {
+    "meta": {
+      "title": "Inteligencia & IA",
+      "description": "yaveh AI, yaTeam, yaMemory y Emotion Engine: IA orquestada que no olvida, no improvisa, no alucina."
+    },
+    "hero": {
+      "badge": "Inteligencia & IA",
+      "title": "IA que no olvida, no improvisa, no alucina.",
+      "subtitle": "yaveh AI, yaTeam, yaMemory y Emotion Engine orquestados para decisiones reales, no alucinaciones."
+    },
+    "ai": {
+      "subtitle": "yaveh AI",
+      "title": "El cerebro que orquesta toda la inteligencia.",
+      "description": "yaveh es el núcleo de IA de yapt. Entiende contexto, decide acciones y responde con la personalidad de tu marca. Todo con memoria infinita, fallback inteligente y modo advisory — la IA sugiere, el humano decide.",
+      "features": [
+        "40+ acciones automáticas: calificar, crear deal, agendar, escalar",
+        "Contexto enriquecido: campaña, atribución, historial completo",
+        "Advisory mode: IA sugiere, vendedor decide",
+        "Fallback inteligente: si un modelo falla, otro asume",
+        "Protección contra loops y respuestas erróneas"
+      ]
+    },
+    "team": {
+      "subtitle": "yaTeam",
+      "title": "Arma tu propio equipo de agentes de IA. Entrena cada uno a tu manera.",
+      "description": "Tienes un modelo base poderoso — y lo entrenas con tus reglas. Define las preguntas de calificación, configura cuándo la IA debe considerar un lead calificado, elige el playbook de ventas y ajusta la personalidad. Es tu proceso de ventas, codificado en IA.",
+      "features": [
+        "Entrena con tus preguntas de calificación (BANT, SPIN, MEDDIC o custom)",
+        "Define los criterios: cuándo la IA considera un lead calificado",
+        "7 especializaciones: SDR, Closer, Soporte, Scheduler, Engager, Analyst, Guardian",
+        "Personalidad configurable: formalidad, proactividad, empatía",
+        "Handoff inteligente: IA → humano sin pérdida de contexto"
+      ]
+    },
+    "aiTeam": {
+      "sectionLabel": "Equipo de IAs",
+      "title": "8 tipos de IA. Cada una con su misión.",
+      "subtitle": "Arma el equipo ideal para tu operación.",
+      "comingSoon": "Próximamente",
+      "agents": {
+        "sdr": {
+          "name": "Agente SDR",
+          "description": "Entrenado con tus preguntas de calificación. Atiende, califica y vende 24/7 — siguiendo tu proceso, no uno genérico.",
+          "active": true
+        },
+        "closer": {
+          "name": "Agente Closer",
+          "description": "Enfocado en cerrar negocios. Identifica objeciones, negocia y mueve deals al cierre.",
+          "active": true
+        },
+        "mentor": {
+          "name": "yaMentor",
+          "description": "Tú defines el playbook perfecto y él entrena a tu equipo. Sugiere respuestas ideales en los momentos correctos. Equipos con coaching IA son 34% más eficientes.",
+          "active": true
+        },
+        "pipeline": {
+          "name": "Pipeline Guardian",
+          "description": "Monitorea deals estancados, garantiza el ritmo del pipeline y alerta sobre oportunidades en riesgo."
+        },
+        "campaign": {
+          "name": "Campaign Analyst",
+          "description": "Analiza performance de campañas en tiempo real y sugiere optimizaciones de budget y creativos."
+        },
+        "revenue": {
+          "name": "Revenue Predictor",
+          "description": "Predice ingresos basándose en patrones históricos y velocidad del pipeline actual."
+        },
+        "people": {
+          "name": "People Enricher",
+          "description": "Enriquece datos de contactos automáticamente con información pública y comportamental."
+        },
+        "guardian": {
+          "name": "Window Guardian",
+          "description": "Protege tu operación fuera del horario comercial con respuestas inteligentes y routing alternativo."
+        }
+      }
+    },
+    "memory": {
+      "subtitle": "yaMemory",
+      "title": "Supermemoria infinita. Contexto que nunca expira.",
+      "description": "Cada lead es recordado para siempre. Búsqueda semántica, extracción automática de hechos, importación de histórico. La IA sabe todo lo que ya ocurrió, en cualquier canal, en cualquier momento.",
+      "features": [
+        "Memoria persistente por lead — cada contacto tiene su historial completo",
+        "Búsqueda semántica: encuentra contexto por significado, no por keyword",
+        "Extracción automática: budget, stakeholders, objeciones, timeline",
+        "Cross-canal: WhatsApp, Instagram, Email — una sola memoria",
+        "Sin impacto operativo: si la memoria falla, la IA continúa funcionando"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "Define el playbook. La IA entrena a tu equipo.",
+      "description": "Tú creas el proceso perfecto de ventas. yaMentor garantiza que cada vendedor lo ejecute — con sugerencias en tiempo real, análisis de performance y coaching basado en datos. Equipos con IA de coaching son 34% más eficientes.",
+      "features": [
+        "Define playbooks: scripts, objeciones, técnicas de cierre",
+        "Coaching en tiempo real durante la conversación",
+        "Sugerencias de respuesta ideales en los momentos ideales",
+        "Análisis de performance individual por vendedor",
+        "La IA evoluciona al humano — no lo reemplaza"
+      ]
+    },
+    "scoring": {
+      "subtitle": "Lead Scoring",
+      "title": "Entrena la IA con tus preguntas. Score preciso y automático.",
+      "description": "Tú defines las preguntas de calificación de tu proceso (BANT, SPIN, MEDDIC o custom) y la IA extrae las respuestas directamente de la conversación. Combina con 7 factores comportamentales y describe tu ICP — la IA evalúa semánticamente cada lead. Score híbrido que se actualiza automáticamente.",
+      "features": [
+        "Entrena con tus preguntas de calificación — la IA extrae respuestas de la conversación",
+        "Describe tu ICP y la IA evalúa semánticamente cada lead",
+        "7 factores comportamentales: engagement, recencia, emoción, canal, deal y más",
+        "Modo híbrido: combina IA entrenada + comportamiento para score final preciso",
+        "Visible en cada conversación en el Inbox — tu equipo prioriza automáticamente"
+      ]
+    },
+    "emotion": {
+      "subtitle": "Emotion Engine",
+      "title": "13 señales emocionales. Enrutamiento empático.",
+      "description": "Detecta frustración, entusiasmo, urgencia y más. Routing emotion-aware prioriza a quien necesita atención — antes de que el lead desista.",
+      "features": [
+        "13 señales emocionales detectadas en tiempo real",
+        "Emotion timeline: evolución del sentimiento por conversación",
+        "Routing emotion-aware: frustración → atención prioritaria",
+        "Integrado al scoring: la emoción influye en la calificación",
+        "Dashboard de salud emocional de la base de leads"
+      ]
+    },
+    "audio": {
+      "subtitle": "Audio Intelligence",
+      "title": "Audios que se convierten en datos. Voz que se convierte en insight.",
+      "description": "yapt. transcribe y analiza audios automáticamente. La IA entiende mensajes de voz, extrae información y alimenta la Supermemoria con contexto de audio.",
+      "features": [
+        "Transcripción automática de mensajes de voz",
+        "Análisis de sentimiento en audio",
+        "Extracción de información de audios largos",
+        "Integración nativa con Emotion Engine",
+        "Contexto de voz alimenta la Supermemoria"
+      ]
+    },
+    "grid": {
+      "title": "Inteligencia en cada detalle",
+      "advisory": { "title": "Advisory Mode", "description": "IA sugiere, humano decide. Nunca una acción se ejecuta sin aprobación — control total." },
+      "fallback": { "title": "Fallback Chain", "description": "Si un modelo falla, otro asume automáticamente. Respuesta segura garantizada." },
+      "circuitBreaker": { "title": "Protección contra Fallos", "description": "Protege contra loops, alucinaciones y llamadas excesivas. IA segura por diseño." },
+      "yaModels": { "title": "Ya-Models", "description": "ya-Flash (rápido, alto volumen), ya-Pro (inteligencia avanzada) y ya-Ultra (razonamiento profundo). Elige por necesidad, profundidad e inteligencia." },
+      "knowledgeHub": { "title": "Knowledge Hub", "description": "Base de conocimiento con artículos, FAQs y guías — accesible por la IA y por el equipo." },
+      "playbooks": { "title": "Playbooks", "description": "SPIN, Challenger, tu propia técnica — codificada y garantizada por la IA." },
+      "bant": { "title": "Calificación Entrenable", "description": "BANT, SPIN, MEDDIC, GPCTBA o tus propias preguntas — entrenas el modelo con las preguntas de calificación de tu proceso. La IA extrae las respuestas automáticamente de la conversación." },
+      "icp": { "title": "ICP Matching", "description": "Describe tu cliente ideal en lenguaje natural. La IA evalúa semánticamente cada lead contra tu ICP — sin reglas rígidas." },
+      "promptEng": { "title": "Prompt Engineering", "description": "Multi-language, persona personalizable, tono ajustable por contexto." },
+      "nonBlocking": { "title": "Memoria Resiliente", "description": "Si la memoria queda indisponible, la IA continúa funcionando normalmente. Zero downtime." },
+      "emotionRouting": { "title": "Emotion Routing", "description": "¿Frustración detectada? El lead va directo al agente senior. Automáticamente." }
+    },
+    "roadmap": {
+      "title": "Mira lo que viene",
+      "subtitle": "Próximamente",
+      "items": {
+        "knowledgeHub": {
+          "title": "Knowledge Hub",
+          "description": "Base de conocimiento integrada a la IA — artículos, FAQs y guías que la IA consulta automáticamente.",
+          "impact": "IA más precisa"
+        },
+        "playbooksAI": {
+          "title": "Playbooks con IA",
+          "description": "Codifica SPIN Selling, Challenger o tu propia metodología en automatizaciones que la IA ejecuta.",
+          "impact": "Ventas consistentes"
+        },
+        "revenueAgent": {
+          "title": "Agente Revenue",
+          "description": "IA que predice ingresos, identifica deals en riesgo y sugiere acciones para acelerar el pipeline.",
+          "impact": "Previsibilidad"
+        }
+      }
+    },
+    "cta": {
+      "primary": "Agendar Demo Gratuita",
+      "secondary": "Hablar con Especialista",
+      "midPage": "Ve la IA de yapt. en acción"
+    }
+  },
+  "marketing": {
+    "meta": {
+      "title": "Marketing & Campañas — yapt.",
+      "description": "Del anuncio al negocio cerrado. yaCampaigns conecta medios pagos con ingresos reales. Cada peso invertido, cada lead generado, cada conversación — rastreados del clic a la venta."
+    },
+    "hero": {
+      "badge": "Marketing & Campañas",
+      "title": "Del anuncio al negocio cerrado. Todo rastreado.",
+      "subtitle": "yaCampaigns conecta medios pagos con ingresos reales. Cada peso invertido, cada lead generado, cada conversación — rastreados del clic a la venta."
+    },
+    "statement": {
+      "headline": "yapt. es la única plataforma con rastreo real en WhatsApp.",
+      "subtext": "Si viene de campaña Meta o Google — rastreo total vía integración nativa. Si viene de landing page — iLeadway detecta la campaña y rastreamos 100% en WhatsApp.",
+      "badges": ["Meta Ads Nativo", "Google Ads Nativo", "iLeadway Integrado"]
+    },
+    "painPoints": {
+      "header": "Cambia la empresa, cambia la industria, pero el sufrimiento siempre es el mismo...",
+      "items": [
+        {
+          "title": "Leads descalificados",
+          "description": "Las campañas van mal y llenan el WhatsApp de leads descalificados. Tu equipo pierde tiempo con quien nunca va a comprar."
+        },
+        {
+          "title": "Datos irrelevantes",
+          "description": "El administrador de anuncios entrega información irrelevante. Imposible saber qué anuncio realmente trae ventas."
+        },
+        {
+          "title": "Horas en planillas",
+          "description": "Horas perdidas llenando planillas porque WhatsApp no dice qué conversación se convirtió en venta."
+        },
+        {
+          "title": "Métricas imprecisas",
+          "description": "Los datos del administrador son imprecisos y es difícil optimizar campañas. Inviertes a ciegas."
+        }
+      ]
+    },
+    "campaigns": {
+      "subtitle": "yaCampaigns",
+      "title": "Campaign Intelligence: cada peso invertido, rastreado hasta la venta.",
+      "description": "Sincroniza tus campañas Meta y Google Ads con yapt. Configura inteligencia por campaña — ticket esperado, producto, público objetivo — y acompaña el ROAS real calculado con datos de ventas, no estimaciones.",
+      "features": [
+        "Sync automático Meta Ads + Google Ads",
+        "Campaign Intelligence: ticket, producto y público por campaña",
+        "ROAS real calculado con datos de ventas (no estimación de Meta)",
+        "Dashboard con leads, conversiones, ingresos y costo por canal",
+        "Atribución cruzada: sepa exactamente qué anuncio generó qué venta"
+      ]
+    },
+    "instantEngage": {
+      "subtitle": "Disparo Instantáneo",
+      "title": "¿El lead llenó el formulario? WhatsApp llega en menos de 30 segundos.",
+      "description": "Cuando el lead llena un formulario Meta, yapt. dispara un mensaje en WhatsApp automáticamente vía API oficial. Template configurable por campaña, variables dinámicas y atribución 100% automática. El lead aún está en la pantalla del anuncio cuando recibe el mensaje.",
+      "features": [
+        "Lead Form → WhatsApp en <30 segundos, sin intervención",
+        "Template personalizado por campaña con variables dinámicas",
+        "Atribución directa: cero dependencia de cookies o pixels",
+        "Status en tiempo real: enviado, entregado, leído",
+        "Funciona con Meta Lead Ads y Google Lead Forms"
+      ]
+    },
+    "tracking": {
+      "subtitle": "Rastreo Total",
+      "title": "De cualquier origen. Rastreo 100% en WhatsApp.",
+      "description": "¿Click-to-WhatsApp? ¿Formulario? ¿Landing page? No importa el origen — yapt. rastrea todo. Headline del anuncio, creative, URL de origen, UTMs — 10 campos capturados automáticamente. Con iLeadway, hasta leads de landing page entran al WhatsApp con atribución completa.",
+      "features": [
+        "CTWA: headline, body, media y URL del anuncio capturados automáticamente",
+        "Lead Form: atribución completa de la campaña al lead",
+        "Landing Page: integración iLeadway detecta campaña y rastrea en WA",
+        "UTM tracking: source, medium, campaign, term, content",
+        "Conversions API: envía conversiones de vuelta a Meta y Google (loop cerrado)"
+      ]
+    },
+    "googleAds": {
+      "subtitle": "Google Ads",
+      "title": "El mismo poder de Meta. Ahora con Google.",
+      "description": "Conecta tus campañas Google Ads con el mismo pipeline de inteligencia de Meta. Sync automático, Instant Engage para Google Lead Forms y atribución completa — todo integrado en el mismo dashboard.",
+      "features": [
+        "OAuth simplificado con Google Ads",
+        "Sync automático de campañas y métricas",
+        "Instant Engage funciona con Google Lead Forms",
+        "Mismo dashboard unificado (Meta + Google lado a lado)",
+        "Atribución cruzada entre plataformas"
+      ]
+    },
+    "templates": {
+      "subtitle": "Templates WhatsApp",
+      "title": "Crea, sincroniza con Meta y mide resultado. Todo aquí.",
+      "description": "Builder visual de templates con variables dinámicas. Sincroniza automáticamente con Meta. Analytics por template: enviados, entregados, leídos, respondidos. A/B testing para descubrir qué mensaje convierte más.",
+      "features": [
+        "Builder visual con variables dinámicas (nombre, producto, valor)",
+        "3 categorías Meta: Marketing, Utility, Authentication",
+        "Sync automático con Meta — sin salir de yapt.",
+        "Analytics: enviados, entregados, leídos, respondidos, por template",
+        "A/B testing: prueba variantes y descubre qué convierte"
+      ]
+    },
+    "proposals": {
+      "subtitle": "Propuestas",
+      "title": "Propuesta por WhatsApp. El cliente acepta desde el celular.",
+      "description": "Envía propuestas vía link directo en WhatsApp. El cliente abre en el celular, ve todo formateado, y acepta online. Sin PDF, sin email, sin intermediario. Tracking: visualizó, cuánto tiempo estuvo, cuándo aceptó.",
+      "features": [
+        "Template builder de propuestas (título, descripción, precio, términos)",
+        "Link público — el cliente abre y acepta desde el celular",
+        "Tracking: visualizaciones, tiempo en el sitio, clics, aceptaciones",
+        "Integrado con Deals — propuesta vinculada al negocio",
+        "Versionado: propuesta v1, v2, v3 con historial"
+      ]
+    },
+    "capi": {
+      "subtitle": "Conversions API",
+      "title": "Loop cerrado. Conversiones de vuelta a Meta y Google.",
+      "description": "Envía eventos de conversión reales — lead calificado, propuesta enviada, venta cerrada — directo a Meta CAPI y Google Ads. El algoritmo de las plataformas aprende con datos reales de ventas, no estimaciones. Tus campañas se optimizan solas.",
+      "features": [
+        "Meta CAPI directo: cero dependencia de pixel o cookies",
+        "Google Ads Offline Conversions: importa ventas reales",
+        "Eventos personalizables: lead, calificación, propuesta, venta",
+        "Match rate optimizado: email, teléfono, fbclid, gclid",
+        "Campañas se optimizan solas con datos reales de ingresos"
+      ]
+    },
+    "timeline": {
+      "sectionLabel": "El Recorrido Completo",
+      "title": "Del clic a los ingresos. Cada etapa rastreada.",
+      "subtitle": "Cada etapa conectada, rastreada y potenciada por IA. Sin vacíos, sin planillas, sin adivinanzas.",
+      "steps": ["Anuncio", "Lead", "WhatsApp", "IA califica", "Deal", "Venta"]
+    },
+    "grid": {
+      "title": "Cada detalle pensado para convertir",
+      "campaignIntelligence": {
+        "title": "Campaign Intelligence",
+        "description": "Configura ticket, producto y público por campaña"
+      },
+      "abTesting": {
+        "title": "A/B Testing",
+        "description": "Prueba templates, mensajes y creativos"
+      },
+      "roasReal": {
+        "title": "ROAS Real",
+        "description": "Calculado con datos de ventas, no estimaciones"
+      },
+      "multiAdAccount": {
+        "title": "Multi Ad Account",
+        "description": "Múltiples cuentas Meta y Google en un dashboard"
+      },
+      "conversionsApi": {
+        "title": "Conversions API",
+        "description": "Loop cerrado — conversiones de vuelta a Meta/Google"
+      },
+      "templateAnalytics": {
+        "title": "Template Analytics",
+        "description": "Enviados, entregados, leídos, respondidos por template"
+      },
+      "richMedia": {
+        "title": "Rich Media Templates",
+        "description": "Imagen, video, botones y carrusel"
+      },
+      "proposalTracking": {
+        "title": "Proposal Tracking",
+        "description": "Visualizaciones, tiempo, clics y aceptaciones"
+      },
+      "utmTracking": {
+        "title": "UTM Tracking",
+        "description": "Source, medium, campaign completo"
+      },
+      "ileadwayBridge": {
+        "title": "iLeadway Bridge",
+        "description": "Landing pages rastreadas en WhatsApp"
+      }
+    }
+  },
+  "operations": {
+    "meta": {
+      "title": "Operaciones & Gestión",
+      "description": "Enrutamiento inteligente, SLA, monitor de agentes, pipeline, scoring, emoción y analytics — todo en un solo lugar."
+    },
+    "hero": {
+      "badge": "Operaciones & Gestión",
+      "title": "Tu operación en piloto automático.",
+      "subtitle": "Enrutamiento inteligente, SLA en tiempo real, monitor de equipo, pipeline visual y analytics de verdad. Todo lo que antes dependía de planillas y buena voluntad ahora funciona solo."
+    },
+    "inbox": {
+      "subtitle": "Inbox V2 — Smart Queue",
+      "title": "Cola inteligente. Prioridad correcta.",
+      "description": "4 vistas fijas con priorización automática por score, emoción y SLA. La cola se organiza sola — leads calientes siempre primero.",
+      "features": [
+        "4 vistas: Mi Inbox, Smart Queue (IA prioriza), Abiertos, Esperando",
+        "Lead Scoring (0-100): 7 factores comportamentales calculados cada 10 min",
+        "Ordenamiento por SLA, prioridad, tiempo de espera o última actividad",
+        "Emotion Engine: 13 señales emocionales por mensaje (frustración, urgencia, hesitación)",
+        "Handler State: control bot ↔ humano, pausa automatización cuando agente toma el control"
+      ]
+    },
+    "routing": {
+      "subtitle": "yaOps — Enrutamiento",
+      "title": "6 modos de distribución. Cero leads perdidos.",
+      "description": "Round-robin, least-loaded, skill-based, por keyword, campaña u horario. Sticky routing mantiene al mismo agente. Overflow redirige automáticamente.",
+      "features": [
+        "Round-robin con peso y capacidad por agente",
+        "Least-loaded: envía a quien tiene menos conversaciones",
+        "Skill-based: dirige por idioma, producto, región o certificación",
+        "Sticky routing: mantiene al agente por N días (sin pérdida de contexto)",
+        "Agent Pull: agente toma de la cola cuando está listo",
+        "Overflow: si el sector está lleno, redirige automáticamente"
+      ]
+    },
+    "sla": {
+      "subtitle": "SLA & Escalación",
+      "title": "SLA por sector. Escalación automática.",
+      "description": "Define tiempo de respuesta y resolución por sector. Timer visible en el Inbox. Cuando el SLA está en riesgo, la escalación sube automáticamente en la cadena.",
+      "features": [
+        "SLA de respuesta + resolución configurable por sector",
+        "Timer visual en el Inbox: verde, amarillo, rojo",
+        "Escalación automática cuando el deadline se acerca",
+        "Horario comercial y feriados respetados en el cálculo",
+        "Window Guardian: fuera de horario, enrutamiento alternativo"
+      ]
+    },
+    "monitor": {
+      "subtitle": "Monitor de Agentes",
+      "title": "Visibilidad total del equipo en tiempo real.",
+      "description": "Quién está online, ocupado, en pausa. Capacidad usada vs disponible. Utilización por agente. Todo en vivo con actualización instantánea.",
+      "features": [
+        "Status en tiempo real: online, busy, away, break, offline",
+        "Capacidad: conversaciones actuales vs máximo configurado",
+        "Utilización %: indicadores verde (<50%), amarillo (50-80%), rojo (>80%)",
+        "Filtros por status, sector o búsqueda por nombre",
+        "Actualización instantánea — sin refresh"
+      ]
+    },
+    "deals": {
+      "subtitle": "yaDeals",
+      "title": "Pipeline visual. Cada deal rastreado.",
+      "description": "Kanban drag-and-drop con multi-pipeline, stakeholders, productos, SLA por stage y análisis win/loss automático.",
+      "features": [
+        "Kanban visual con drag-and-drop entre stages",
+        "Multi-pipeline: ventas, onboarding, CS — cada uno con sus stages",
+        "Stakeholders: vincula múltiples contactos al mismo deal",
+        "SLA por stage: alerta cuando un deal se estanca",
+        "Análisis Win/Loss: entiende por qué los deals se ganan o pierden"
+      ]
+    },
+    "grid": {
+      "title": "Todo lo que tu operación necesita",
+      "subtitle": "Módulos Complementarios",
+      "calendar": { "title": "Calendar", "description": "Sincronización con Google Calendar, vista multi-seller y agendamientos integrados al deal." },
+      "activities": { "title": "Activities Hub", "description": "Tasks, calls, meetings y My Day — todo centralizado con recordatorios y vinculación a deals." },
+      "proposals": { "title": "Propuestas", "description": "Editor visual, link público con tracking de visualización e integración directa con deals." },
+      "scoring": { "title": "Lead Scoring Híbrido", "description": "7 factores comportamentales + IA. Score se actualiza cada 10 min y prioriza tu cola automáticamente." },
+      "emotion": { "title": "Emotion Engine", "description": "13 señales emocionales en tiempo real. Frustración redirige al agente senior automáticamente." },
+      "handoff": { "title": "Bot ↔ Humano", "description": "Handler state gestionado. Automatizaciones pausan cuando agente toma control. Cero mensajes duplicados." }
+    },
+    "analytics": {
+      "subtitle": "yaAnalytics",
+      "title": "Analytics avanzados. No dashboards de vanidad.",
+      "description": "Datos estructurados para análisis avanzado, CSAT, NPS, embudo de conversión y métricas que importan para decisiones de negocio.",
+      "features": [
+        "Datos estructurados para análisis avanzado",
+        "CSAT y NPS integrados al flujo de conversación",
+        "Embudo de conversión: del lead al deal cerrado",
+        "Métricas por agente, canal, campaña y período",
+        "Export a CSV e integración con BI externo"
+      ]
+    },
+    "roadmap": {
+      "title": "Mira lo que viene",
+      "subtitle": "Próximamente en tu operación",
+      "items": {
+        "controlTower": {
+          "title": "Torre de Control",
+          "description": "Panel del supervisor con volumen por sector, tiempos de espera, redistribución drag-drop y predicción de cuellos de botella con IA.",
+          "impact": "+18% eficiencia operacional"
+        },
+        "escalationChains": {
+          "title": "Cadenas de Escalación",
+          "description": "Inbox → Supervisor → Gerente, con timers configurables y notificación multi-canal (in-app, email, WhatsApp).",
+          "impact": "+25% resolución de SLA"
+        },
+        "availability": {
+          "title": "Agenda de Disponibilidad",
+          "description": "Agentes bloquean horarios personales. El sistema sabe quién está disponible de verdad — cero leads encaminados a quien no puede atender.",
+          "impact": "+18% eficiencia"
+        },
+        "vipRouting": {
+          "title": "VIP & Blacklist",
+          "description": "Prioriza contactos VIP automáticamente y bloquea contactos problemáticos. Enrutamiento inteligente por valor del cliente.",
+          "impact": "+12% calidad"
+        },
+        "customFields": {
+          "title": "Campos Personalizados",
+          "description": "Agrega campos extras en contactos y deals: texto, número, fecha, select, multi-select. Tus datos, tu estructura.",
+          "impact": "Datos a medida"
+        },
+        "notifications": {
+          "title": "Preferencias de Notificación",
+          "description": "Cada miembro configura sus alertas por categoría y canal. Quiet hours para no molestar fuera de horario.",
+          "impact": "Cero ruido"
+        }
+      }
+    }
+  },
+  "integrations": {
+    "meta": {
+      "title": "Integraciones — yapt.",
+      "description": "WhatsApp, Instagram, Meta Ads, Google Ads, Google Calendar, Memoria Infinita y más — todo convergiendo en un flujo único en yapt."
+    },
+    "hero": {
+      "badge": "Integraciones",
+      "title": "Conecta todo. No fragmentes nada.",
+      "subtitle": "Canales nativos, ecosistema de ads, datos externos, conexiones en flujos y API completa — todo en un solo lugar."
+    },
+    "channels": {
+      "subtitle": "Canales Nativos",
+      "title": "Tus clientes ya están en estos canales. yapt. también.",
+      "description": "Comunicación omnichannel con enrutamiento inteligente, IA nativa e identidad unificada. Un lead, un contacto — sin importar el canal."
+    },
+    "ads": {
+      "subtitle": "Ads & Adquisición",
+      "title": "Del anuncio al WhatsApp en menos de 30 segundos.",
+      "description": "Conecta tus campañas de anuncios directamente a la operación de ventas. Los leads capturados se convierten en conversaciones de WhatsApp instantáneamente.",
+      "features": [
+        "Meta Ads: campañas, audiencias, métricas, CTWA con 10 campos de atribución",
+        "Google Ads: captura de leads vía webhook con mapeo automático",
+        "Lead Forms: formulario completado → WhatsApp proactivo en menos de 30s",
+        "Instant Engage: configura por campaña qué template enviar automáticamente",
+        "CAPI: envía conversiones de vuelta a Meta y optimiza tus anuncios",
+        "Campaign Intelligence: ticket promedio, producto, audiencia objetivo — la IA sabe todo de la campaña"
+      ]
+    },
+    "connect": {
+      "subtitle": "yapt. Connect",
+      "title": "Recibe datos de cualquier sistema. Sin código.",
+      "description": "CRM, ERP, landing page, formulario externo — cualquier sistema que envíe un webhook puede alimentar yapt. automáticamente.",
+      "features": [
+        "Crea contactos automáticamente al recibir datos externos",
+        "Actualiza campos de contactos existentes vía webhook",
+        "Dispara flujos de automatización cuando llega un lead",
+        "Field mapping visual con drag-and-drop — cero código",
+        "Historial completo de payloads recibidos para debug",
+        "Identity Resolution: mismo lead de diferentes canales = 1 contacto, cero duplicados"
+      ]
+    },
+    "flows": {
+      "subtitle": "Conexiones en el Flow Builder",
+      "title": "Dentro de un flujo, conecta cualquier cosa.",
+      "description": "El Flow Builder no es una caja cerrada. Cada flujo puede llamar APIs externas, notificar sistemas y agendar reuniones — todo visual.",
+      "features": [
+        "HTTP Request: llama cualquier API externa dentro del flujo",
+        "Webhooks de salida: notifica sistemas cuando ocurren eventos",
+        "AI Zones: la IA supervisa etapas completas del flujo, con playbook y salidas inteligentes",
+        "Google Calendar: agenda reuniones directo en el flujo, con sync bidireccional",
+        "Condiciones inteligentes: ramifica el flujo basado en datos del lead, campaña o deal",
+        "Templates WhatsApp: envía templates aprobados por Meta con variables dinámicas"
+      ]
+    },
+    "api": {
+      "title": "API First. Extensible por diseño.",
+      "subtitle": "Para Desarrolladores",
+      "description": "Todo lo que haces en pantalla, lo haces vía API. Documentación completa próximamente.",
+      "webhooks": { "title": "Webhooks de Salida", "description": "Notifica sistemas externos en tiempo real cuando ocurren eventos en yapt." },
+      "jsonpath": { "title": "Filtros Avanzados", "description": "Filtra eventos por contenido usando reglas avanzadas antes de disparar webhooks." },
+      "rateLimit": { "title": "Rate Limiting", "description": "Protege tus endpoints con límites configurables por webhook y por minuto." },
+      "retry": { "title": "Retry Automático", "description": "3 intentos con backoff exponencial. Ningún evento se pierde." },
+      "logs": { "title": "Logs en Tiempo Real", "description": "Debug sin salir de yapt. Ve payloads enviados, respuestas y errores." },
+      "rest": { "title": "REST API Completa", "description": "CRUD para todo: contactos, conversaciones, deals, campañas, flujos y más." }
+    },
+    "productivity": {
+      "subtitle": "Productividad & IA",
+      "title": "Inteligencia que conecta todo automáticamente.",
+      "description": "Integraciones que trabajan silenciosamente para que tu equipo se enfoque en lo que importa: vender.",
+      "features": [
+        "Memoria Infinita: la IA nunca olvida un lead — historial, preferencias, objeciones, todo persistido",
+        "Google Calendar: sync bidireccional automático, agenda del vendedor siempre actualizada",
+        "Identity Resolution: formulario + WhatsApp + Instagram = mismo contacto, automáticamente",
+        "Stripe: billing automático con checkout, portal del cliente y facturación integrada"
+      ]
+    }
+  },
+  "enterprise": {
+    "meta": {
+      "title": "Enterprise",
+      "description": "Multi-tenant, permisos granulares, SLA garantizado y la seguridad de quien procesa 30M de mensajes por mes."
+    },
+    "hero": {
+      "badge": "Enterprise",
+      "title": "Escala sin perder el control.",
+      "subtitle": "Multi-tenant, permisos granulares, SLA garantizado y la seguridad de quien procesa 30M de mensajes por mes."
+    },
+    "multiTenant": {
+      "subtitle": "Aislamiento Absoluto",
+      "title": "Multi-tenant con aislamiento nativo.",
+      "description": "Cada organización está completamente aislada con seguridad nativa en la base de datos. Onboarding sin deploy, los datos nunca se cruzan.",
+      "features": [
+        "Aislamiento total entre organizaciones con reglas de seguridad automáticas",
+        "Onboarding instantáneo: nueva organización sin deploy",
+        "Los datos nunca se cruzan entre organizaciones",
+        "Settings por organización: scoring, SLA, IA, canales",
+        "Personalización de branding por organización (futuro)"
+      ]
+    },
+    "permissions": {
+      "subtitle": "Control Granular",
+      "title": "Roles y permisos por módulo.",
+      "description": "Roles personalizables con policies por módulo. Audit trail completo para compliance.",
+      "features": [
+        "Roles personalizables: Admin, Manager, Agent, Viewer",
+        "Policies por módulo: inbox, deals, campaigns, settings",
+        "Audit trail: quién hizo qué, cuándo y dónde",
+        "Invitación por email con role predefinido",
+        "SSO y 2FA (roadmap)"
+      ]
+    },
+    "sla": {
+      "subtitle": "SLA & Distribución",
+      "title": "Round-robin, skill-based, Window Guardian.",
+      "description": "Distribución inteligente que respeta capacidad, habilidad y horario comercial.",
+      "features": [
+        "Round-robin con pesos por agente",
+        "Skill-based: idioma, producto, región",
+        "Window Guardian: nadie atiende fuera de horario",
+        "SLA por sector con alertas automáticas",
+        "Overflow: redirige cuando el sector está lleno"
+      ]
+    },
+    "security": {
+      "subtitle": "Seguridad",
+      "title": "Más de 700 reglas de seguridad. Cero cache externo.",
+      "description": "Infraestructura 100% procesamiento en la nube, más de 700 reglas de seguridad activas.",
+      "features": [
+        "Más de 700 reglas de seguridad activas en producción",
+        "Procesamiento en la nube: serverless y ultrarrápido",
+        "Base de datos como fuente única de verdad — sin cache externo",
+        "Datos en reposo y en tránsito encriptados",
+        "Backup automático con recuperación puntual"
+      ]
+    },
+    "trust": {
+      "sectionLabel": "Confianza",
+      "title": "Por qué las empresas confían en yapt.",
+      "badges": ["BSP Oficial Meta", "30M+ msg/mes", "11 años de mercado", "Infraestructura propia"]
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Precios",
+      "description": "Planes que crecen contigo. Del primer vendedor a la operación enterprise. Sin sorpresas."
+    },
+    "hero": {
+      "badge": "Precios",
+      "title": "Planes que crecen contigo.",
+      "subtitle": "Del primer vendedor a la operación enterprise. Sin sorpresas."
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Para equipos que comienzan",
+        "features": ["Hasta 5 usuarios", "1 canal WhatsApp", "IA básica (Easy mode)", "1.000 conversaciones/mes", "Soporte por email"]
+      },
+      "business": {
+        "name": "Business",
+        "description": "Para operaciones en crecimiento",
+        "badge": "Más popular",
+        "features": ["Hasta 25 usuarios", "Multi-canal (WhatsApp + Instagram)", "IA completa (todos los modos)", "10.000 conversaciones/mes", "Campañas Meta Ads", "Soporte prioritario"]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Para grandes operaciones",
+        "features": ["Usuarios ilimitados", "Todos los canales", "IA con SuperMemoria", "Conversaciones ilimitadas", "API completa + webhooks", "SLA dedicado + CSM"]
+      },
+      "contactSales": "Hablar con ventas",
+      "priceLabel": "Contáctenos"
+    },
+    "faq": {
+      "sectionLabel": "Preguntas Frecuentes",
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Puedo probar antes de contratar?",
+          "answer": "¡Sí! Ofrecemos una demostración personalizada donde ves yapt. funcionando con datos reales de tu escenario. Agenda una conversación con nuestro equipo y entiende cómo la plataforma se adapta a tu operación."
+        },
+        {
+          "question": "¿Cuál es el plazo de setup?",
+          "answer": "Setup en hasta 24 horas para planes Starter y Business. Para Enterprise, el onboarding se realiza con acompañamiento dedicado y puede incluir migraciones e integraciones personalizadas."
+        },
+        {
+          "question": "¿Necesito un equipo técnico?",
+          "answer": "No. yapt. es no-code para configuración. Agentes de IA, pipelines, campañas e integraciones se configuran vía interfaz visual. Para integraciones avanzadas vía API, la documentación completa está disponible."
+        },
+        {
+          "question": "¿Cómo funciona la migración?",
+          "answer": "Nuestro equipo se encarga de toda la migración. Importamos contactos, historial de conversaciones y configuraciones de tu herramienta actual. La transición se realiza sin interrupción de tu atención."
+        },
+        {
+          "question": "¿Hay contrato de permanencia?",
+          "answer": "No. Planes mensuales sin permanencia. Puedes hacer upgrade, downgrade o cancelar en cualquier momento. Creemos que te quedas porque quieres, no porque tienes que quedarte."
+        }
+      ]
+    }
+  },
+  "hero": {
+    "badge": "by New Way — Meta Business Solution Provider",
+    "badgeTag": "WhatsApp First",
+    "tagline": "La 1ª Conversational Revenue Platform AI Native del mundo.",
+    "title": "Conversaciones Inteligentes que Convierten.",
+    "description": "Inteligencia conversacional AI-native. Agentes que venden. Mentores que evolucionan equipos. Inteligencia Artificial con memoria infinita.",
+    "descriptionLine2": "Del clic en el anuncio al negocio cerrado.",
+    "uniqueBadge": "Única en el mundo",
+    "cta": "Agendar Demo",
+    "ctaSecondary": "Ve cómo funciona ↓",
+    "poweredBy": "Powered by"
+  },
+  "trustBar": {
+    "items": [
+      { "number": "30M+", "label": "mensajes/mes" },
+      { "number": "11", "label": "años de mercado" },
+      { "number": "BSP", "label": "oficial Meta" },
+      { "number": "Enterprise", "label": "ready" }
+    ]
+  },
+  "problem": {
+    "badge": "El Problema",
+    "title": "Tu operación crece, pero tu inteligencia no.",
+    "description": "Inviertes en campañas, contratas agentes, integras herramientas — pero cuanto más creces, más fragmentada queda la operación. Sin datos conectados, no hay inteligencia. Sin inteligencia, no hay decisión.",
+    "cards": [
+      {
+        "title": "Atribución invisible",
+        "description": "Los leads llegan, pero nadie sabe de dónde. ¿Qué campaña los generó? ¿Qué canal convirtió? ¿Qué anuncio funcionó? Sin rastreabilidad de origen, cada inversión en medios es un tiro a ciegas."
+      },
+      {
+        "title": "Chatbots e IAs que no entregan",
+        "description": "Los chatbots prometen automatización, pero sin contexto del cliente, sin historial de interacciones, sin datos de negocio — la IA no califica, no resuelve, no vende. Solo frustra."
+      },
+      {
+        "title": "Equipo operando a ciegas",
+        "description": "El lead llega y el vendedor no sabe: de dónde vino, qué buscaba, qué oferta vio, con quién ya habló. Sin contexto, cada atención empieza de cero. La oportunidad se enfría. La venta se pierde."
+      }
+    ]
+  },
+  "solution": {
+    "badge": "La Solución",
+    "title": "Una plataforma. Una inteligencia. Visión total.",
+    "subtitleBefore": "Con",
+    "subtitleAfter": "tu operación conversa con inteligencia, aprende de cada interacción y entrega visibilidad completa del pipeline — todo en un solo lugar.",
+    "cards": [
+      {
+        "title": "IA Conversacional Nativa",
+        "description": "Cada conversación es guiada por inteligencia artificial que entiende contexto, califica leads y responde con la personalidad de tu marca — 24/7, sin intervención humana."
+      },
+      {
+        "title": "Memoria Infinita",
+        "description": "Cada interacción, preferencia e historial quedan registrados para siempre. La IA recuerda quién es el lead, de qué ya conversaron y cuál es el próximo paso — sin repetir preguntas."
+      },
+      {
+        "title": "Visión Unificada",
+        "description": "WhatsApp, Instagram, Meta Ads, email — todos los canales convergen en un panel único. Ve el pipeline completo, de adquisición a conversión, con métricas en tiempo real."
+      }
+    ]
+  },
+  "features": {
+    "blocks": [
+      {
+        "title": "Inteligencia, no software",
+        "description": "De las emociones en la conversación a las configuraciones de gestión — todo es IA. No es un chatbot pegado encima de un sistema legado. Es inteligencia artificial que permea cada capa de la operación.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Agentes que venden. Agentes que entrenan a tu equipo.",
+        "description": "Experiencia increíble para el cliente y eficiencia operacional para tu equipo. Agentes de IA atienden, califican y venden 24/7. Agentes mentores actúan aumentando el potencial de tu equipo.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Del anuncio al deal. Todo rastreado.",
+        "description": "Atribución completa de origen — sabe exactamente qué campaña, anuncio y creativo generó cada lead. Instant Engage captura en el primer segundo. Eventos de conversión vuelven a Meta Ads.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Automatizaciones con memoria infinita",
+        "description": "Event-driven, multi-agente, multi-conocimiento. La IA sabe todo lo que ya ocurrió con cada lead y usa ese historial completo para decidir el próximo paso. Sin repeticiones, sin preguntas redundantes.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Inteligencia en grandes operaciones",
+        "description": "Experiencias conversacionales que convierten a escala. Distribución inteligente entre equipos, automatizaciones en jornadas complejas, visión 360° del cliente y atribución completa de punta a punta.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Pipeline inteligente con IA",
+        "description": "CRM que se llena solo — la IA extrae datos de las conversaciones y sugiere campos automáticamente. Administra oportunidades del primer contacto al cierre. Previsibilidad real de ingresos.",
+        "cta": "Saber más"
+      },
+      {
+        "title": "Seguridad y conformidad como prioridad",
+        "description": "Datos protegidos con los más altos estándares. Encriptación de punta a punta, backups automatizados, conformidad con LGPD. Control granular de permisos y auditoría completa.",
+        "cta": "Saber más"
+      }
+    ]
+  },
+  "journey": {
+    "badge": "El Recorrido",
+    "title": "Del primer anuncio al deal cerrado. Un recorrido, una plataforma.",
+    "subtitleBefore": "Acompaña cómo",
+    "subtitleAfter": "orquesta cada etapa del recorrido de tu cliente.",
+    "steps": [
+      { "title": "Meta Ads → Lead capturado", "description": "El lead hace clic en el anuncio, los datos ingresan automáticamente en yapt. vía webhook Meta. Cero digitación." },
+      { "title": "La IA califica en segundos", "description": "YaBot analiza perfil, historial y contexto. Clasifica al lead antes de que cualquier humano intervenga." },
+      { "title": "Distribución inteligente", "description": "YaFlow distribuye al vendedor correcto basándose en reglas, disponibilidad y especialidad." },
+      { "title": "Conversación con contexto total", "description": "El vendedor recibe al lead con ficha completa: origen, interés, score, sugerencia de abordaje de la IA." },
+      { "title": "Follow-up automático", "description": "YaBot realiza follow-ups personalizados en el momento preciso. Nunca más leads enfriándose." },
+      { "title": "Negociación asistida", "description": "La IA sugiere próximos pasos, detecta objeciones y recomienda ofertas basadas en patrones de éxito." },
+      { "title": "Deal cerrado", "description": "Pipeline actualizado automáticamente. Métricas de conversión en tiempo real." },
+      { "title": "Posventa inteligente", "description": "La Supermemoria garantiza que el cliente nunca necesite repetir nada. Expansión y retención con IA." }
+    ],
+    "footerBefore": "De la semilla al fruto —",
+    "footerAfter": "cultiva cada relación."
+  },
+  "modules": {
+    "title": "{{count}} Módulos",
+    "subtitle": "La familia ya*. {{moduleCount}} módulos, {{categoryCount}} categorías,",
+    "subtitleLine2": "infinitas posibilidades.",
+    "description": "Cada módulo es poderoso por sí solo. Juntos, son imbatibles.",
+    "conversations": {
+      "title": "Conversaciones & Omnichannel",
+      "modules": [
+        { "name": "yaInbox", "description": "Bandeja de entrada unificada — 10 vistas inteligentes, realtime, whisper panel" },
+        { "name": "yaPeople", "description": "CRM 360° — lifecycle, lead scoring dual, detección de emociones (13 señales)" },
+        { "name": "yaConnect", "description": "Hub de canales + integraciones — WhatsApp, Instagram, webhooks, field mapping" }
+      ]
+    },
+    "intelligence": {
+      "title": "Inteligencia & IA",
+      "modules": [
+        { "name": "yaveh AI", "description": "El cerebro — motor de IA centralizado, memoria persistente, protección contra fallos" },
+        { "name": "yaTeam", "description": "Equipo de IAs especializadas — Agent Builder (3 modos), 7 especializaciones, 40+ acciones" },
+        { "name": "yaMemory", "description": "Supermemoria infinita — búsqueda semántica, importación de histórico, contexto eterno" },
+        { "name": "Mentor/Whisper", "description": "IA como mentora — sugiere respuestas en vivo, coaching configurable" },
+        { "name": "Emotion Engine", "description": "Detección de emociones — 13 señales, routing emotion-aware" }
+      ]
+    },
+    "marketing": {
+      "title": "Marketing & Campañas",
+      "modules": [
+        { "name": "yaCampaigns", "description": "Meta & Google Ads — sync, intelligence, Instant Engage (<30s), CTWA, CAPI" },
+        { "name": "yaFlows", "description": "Automatizaciones visuales — editor drag-and-drop, 13 nodos, 9 triggers, templates listos" }
+      ]
+    },
+    "operations": {
+      "title": "Operaciones & Gestión",
+      "modules": [
+        { "name": "yaDeals", "description": "Pipeline de ventas — kanban multi-pipeline, stakeholders, SLA tracking" },
+        { "name": "yaOps", "description": "Centro de operaciones — sectores/colas, distribución inteligente, Window Guardian" },
+        { "name": "Calendar", "description": "Reuniones — Google Calendar sync bidireccional, Google Meet, multi-seller" },
+        { "name": "Activities Hub", "description": "Tasks, calls, meetings — My Day, 7 tipos de actividad, outcomes" },
+        { "name": "Propuestas", "description": "Generación y envío — builder, link público con tracking, firma digital" },
+        { "name": "Templates WhatsApp", "description": "Builder + políticas — variables, sync Meta, analytics, rate limiting" },
+        { "name": "yaAnalytics", "description": "Analytics avanzados — datos estructurados para análisis, CSAT, NPS, embudo, rendimiento" },
+        { "name": "Knowledge Hub", "description": "Base de conocimiento — artículos IA, categorías, yaveh AI Assistant integrado" },
+        { "name": "Playbooks", "description": "Sales playbooks — procesos, coaching, mejores prácticas, vinculable a agentes" }
+      ]
+    }
+  },
+  "differential": {
+    "badge": "Por qué yapt.",
+    "title": "No es una herramienta más.",
+    "titleLine2": "Es la plataforma que faltaba.",
+    "subtitle": "fue construida desde cero para ser AI Native. No es IA acoplada a software antiguo.",
+    "features": [
+      { "title": "IA Nativa, no acoplada", "description": "Construida desde cero con IA en el núcleo. No es ChatGPT pegado a un chat widget." },
+      { "title": "Supermemoria", "description": "Recuerda TODO. Cada interacción, preferencia, patrón. El cliente nunca repite nada." },
+      { "title": "BSP + IA", "description": "Somos BSP oficial Meta con 11 años de experiencia. IA con infraestructura real." },
+      { "title": "Una plataforma", "description": "Sustituye 5-8 herramientas. Un login, una fuente de datos, una inteligencia." },
+      { "title": "Tiempo real", "description": "Decisiones basadas en datos que se actualizan en cada conversación, no en cada informe mensual." }
+    ]
+  },
+  "whyYapt": {
+    "badge": "Por qué yapt.",
+    "title": "Por qué yapt.",
+    "subtitle": "No es una herramienta más. Es la plataforma que faltaba.",
+    "tabs": [
+      {
+        "headline": "Inteligencia, no software",
+        "description": "De las emociones en la conversación a las configuraciones de gestión — todo es IA. Lead scoring, calificación, enrutamiento y coaching: inteligencia nativa en cada interacción."
+      },
+      {
+        "headline": "Agentes que venden. Mentores que evolucionan.",
+        "description": "Experiencia premium para el cliente con agentes IA especializados. Coaching en tiempo real para el equipo con Whisper — el mentor que el cliente no ve."
+      },
+      {
+        "headline": "Del anuncio al deal. Todo rastreado.",
+        "description": "Atribución completa de Meta Ads al deal cerrado. Instant Engage en <30s. Pipeline integrado con inteligencia de campaña."
+      },
+      {
+        "headline": "Automatizaciones con memoria infinita",
+        "description": "Event-driven, multi-agente, con contexto eterno. La IA sabe todo lo que ya ocurrió — cada conversación, cada preferencia, cada interacción."
+      },
+      {
+        "headline": "BSP Meta. 30M msgs/mes. Omnichannel real.",
+        "description": "Infraestructura propia de WhatsApp Business API. Instagram, Email y Webchat en el mismo inbox. No es integración — es la plataforma."
+      }
+    ]
+  },
+  "supermemorySection": {
+    "badge": "Supermemoria",
+    "title": "Tu cliente nunca más necesita repetir nada.",
+    "description": "Imagina una IA que recuerda cada conversación, cada preferencia, cada interacción — en cualquier canal, para siempre. Eso es la Supermemoria de yapt.",
+    "features": [
+      "Cross-canal: WhatsApp, Instagram, Email, Webchat — una sola memoria",
+      "Cross-tiempo: Interacción de hace 6 meses? Recordada con contexto total.",
+      "Cross-agente: ¿Cambió de agente? El contexto se transfiere."
+    ]
+  },
+  "comparison": {
+    "title": "yapt. vs. el resto del mercado",
+    "subtitle": "Compara y ve por qué las empresas están migrando.",
+    "headers": ["Funcionalidad", "Herramientas Tradicionales", "yapt."],
+    "traditionalLabel": "Tradicional",
+    "yaptLabel": "yapt.",
+    "rows": [
+      { "feature": "IA Conversacional", "traditional": "Chatbot básico con reglas", "yapt": "IA generativa con contexto y memoria" },
+      { "feature": "Memoria", "traditional": "Ninguna o limitada a la sesión", "yapt": "Supermemoria infinita cross-canal" },
+      { "feature": "Canales", "traditional": "Cada uno con su herramienta", "yapt": "WhatsApp, Instagram, Email, Webchat unificados" },
+      { "feature": "Distribución", "traditional": "Manual o round-robin simple", "yapt": "IA que distribuye por contexto y especialidad" },
+      { "feature": "Analytics", "traditional": "Informes estáticos mensuales", "yapt": "Dashboards en tiempo real con IA predictiva" },
+      { "feature": "Follow-up", "traditional": "Recordatorio manual", "yapt": "IA que realiza follow-up personalizado automáticamente" },
+      { "feature": "Meta Ads", "traditional": "Integración básica vía Zapier", "yapt": "Webhook nativo con calificación instantánea" },
+      { "feature": "Escalabilidad", "traditional": "Lento, costoso, limitado", "yapt": "30M+ mensajes/mes comprobado" }
+    ]
+  },
+  "useCases": {
+    "badge": "Casos de Uso",
+    "title": "Para cada desafío, una solución inteligente.",
+    "subtitle": "Ve cómo empresas reales usan yapt. para transformar operaciones.",
+    "cases": [
+      { "title": "Ventas Consultivas", "description": "De lead capturado a deal cerrado en un recorrido 100% asistido por IA. Calificación automática, follow-up inteligente, pipeline en tiempo real.", "metric": "3x más conversión" },
+      { "title": "Atención & Soporte", "description": "La IA resuelve el 70% de las demandas sola. Escala sin perder calidad. La Supermemoria garantiza contexto total.", "metric": "70% automatización" },
+      { "title": "Marketing Conversacional", "description": "Campañas que conversan. Segmentación por comportamiento real. ROI medido por conversación, no por clic.", "metric": "5x más engagement" },
+      { "title": "Operaciones Unificadas", "description": "Una plataforma sustituyendo 5-8 herramientas. Datos centralizados, decisiones en tiempo real, operación eficiente.", "metric": "60% menos herramientas" }
+    ]
+  },
+  "landing": {
+    "meta": {
+      "title": "yapt. — Conversational AI Platform | by New Way",
+      "description": "La primera plataforma conversacional AI Native con memoria infinita. Transforma cada conversación en dato, cada dato en decisión, cada decisión en ingreso.",
+      "ogTitle": "yapt. — Conversational AI Platform",
+      "ogDescription": "La IA innovadora que transforma cada conversación en dato, cada dato en decisión, cada decisión en ingreso."
+    }
+  },
+  "quiz": {
+    "meta": {
+      "title": "Descubre tu potencial",
+      "description": "Responde algunas preguntas y descubre cómo crecer como partner de yapt."
+    },
+    "header": {
+      "back": "Volver"
+    },
+    "progress": {
+      "start": "Comencemos",
+      "yourData": "Tus datos",
+      "yourBusiness": "Tu empresa",
+      "q1": "Pregunta 1 de 4",
+      "q2": "Pregunta 2 de 4",
+      "q3": "Pregunta 3 de 4",
+      "q4": "Pregunta 4 de 4",
+      "finishing": "Finalizando..."
+    },
+    "welcome": {
+      "title": "Descubre cómo puedes",
+      "titleHighlight": "crecer con yapt.",
+      "msg1": "👋 ¡Hola! Soy <strong>yaveh</strong>, la IA de yapt.",
+      "msg2": "Te voy a ayudar a descubrir cómo puedes crecer con nosotros — y <strong>cosechar frutos cada mes.</strong>",
+      "msg3": "Son algunas preguntas rápidas para que arme una propuesta personalizada para ti. ¿Listo para plantar? 🌱",
+      "cta": "¡Vamos!"
+    },
+    "capture": {
+      "personalMsg": "Antes de empezar, cuéntame un poco sobre ti:",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "Tu mejor email",
+      "whatsappPlaceholder": "WhatsApp (con código de área)",
+      "continueBtn": "Continuar",
+      "personalResponse": "¡Mucho gusto, {{name}}!",
+      "businessMsg": "¿Y sobre tu negocio?",
+      "companyPlaceholder": "Nombre de la empresa",
+      "websitePlaceholder": "Sitio web o @ de Instagram (opcional)",
+      "startQuizBtn": "Empezar el quiz",
+      "businessResponse": "¡Genial! Vamos a descubrir cómo {{company}} puede crecer con yapt."
+    },
+    "questions": {
+      "profile": {
+        "message": "¿Cuál de estas opciones describe mejor lo que haces hoy?",
+        "response": "¡Perfecto! Conozco bien ese terreno. Muchos de nuestros mejores cultivadores vinieron de ahí.",
+        "options": {
+          "agency": { "emoji": "🏢", "title": "Agencia de Marketing", "desc": "Atiendo múltiples clientes con marketing digital" },
+          "consultancy": { "emoji": "📊", "title": "Consultoría de Ventas o CX", "desc": "Ayudo a empresas a vender más y atender mejor" },
+          "tech": { "emoji": "💻", "title": "Empresa de Tecnología", "desc": "Tengo producto propio o integro soluciones" },
+          "independent": { "emoji": "👤", "title": "Profesional Independiente", "desc": "Trabajo por cuenta propia con clientes directos" }
+        }
+      },
+      "size": {
+        "response": "¡Entendido! Esto me ayuda a ver dónde estás en el camino.",
+        "agency": {
+          "message": "¿Cuántos clientes atiende tu agencia hoy?",
+          "options": [
+            { "id": "1-10", "title": "1 a 10 clientes", "subtitle": "Estoy plantando las primeras semillas" },
+            { "id": "11-50", "title": "11 a 50 clientes", "subtitle": "Ya tengo algunos árboles dando fruto" },
+            { "id": "51-200", "title": "51 a 200 clientes", "subtitle": "Mi huerto ya es considerable" },
+            { "id": "200+", "title": "Más de 200", "subtitle": "Tengo un bosque entero" }
+          ]
+        },
+        "consultancy": {
+          "message": "¿Cuál es el principal servicio que entregas?",
+          "options": [
+            { "id": "crm", "title": "Implementación de CRM" },
+            { "id": "training", "title": "Entrenamiento de equipo comercial" },
+            { "id": "automation", "title": "Automatización de procesos" },
+            { "id": "strategy", "title": "Estrategia y mentoría" }
+          ]
+        },
+        "tech": {
+          "message": "¿Ya tienen producto propio o integran herramientas?",
+          "options": [
+            { "id": "product", "title": "Tenemos producto propio" },
+            { "id": "integrate", "title": "Integramos herramientas para clientes" },
+            { "id": "both", "title": "Ambos", "subtitle": "Cosechamos de los dos lados" }
+          ]
+        },
+        "independent": {
+          "message": "¿Ya trabajas con WhatsApp o chatbot para tus clientes?",
+          "options": [
+            { "id": "yes", "title": "Sí, es mi servicio principal", "subtitle": "Ya planto en esta tierra" },
+            { "id": "starting", "title": "Quiero empezar en esta área", "subtitle": "Estoy preparando el suelo" },
+            { "id": "tried", "title": "Ya lo intenté pero no escaló", "subtitle": "Planté, pero aún no cosecho" }
+          ]
+        }
+      },
+      "pain": {
+        "message": "Ahora cuéntame: ¿cuáles son los mayores dolores que ves en tus clientes hoy?",
+        "response": "Ese dolor lo conozco bien. Es exactamente donde la IA correcta marca la diferencia — y donde tú puedes ser reconocido por resolverlo.",
+        "confirmBtn": "Continuar ({{count}} seleccionadas)",
+        "options": {
+          "slow": { "emoji": "⏰", "title": "Atención lenta en WhatsApp" },
+          "sales": { "emoji": "💸", "title": "Leads se enfrían sin follow-up" },
+          "ai_bad": { "emoji": "🤖", "title": "Chatbot que frustra" },
+          "no_ai": { "emoji": "🚫", "title": "Sin IA en la atención" },
+          "no_attribution": { "emoji": "📊", "title": "No sabe de dónde vino el lead" },
+          "no_automation": { "emoji": "⚡", "title": "Automatizaciones manuales o inexistentes" },
+          "fragmented": { "emoji": "🔧", "title": "Herramientas que no se hablan" },
+          "volume": { "emoji": "📈", "title": "Volumen que el equipo no aguanta" }
+        }
+      },
+      "model": {
+        "message": "¡Última! ¿Cómo quieres cultivar este negocio?",
+        "options": {
+          "referral": { "emoji": "💰", "title": "Recomendar y cosechar", "desc": "Quiero recomendar yapt. y ganar comisión recurrente" },
+          "service": { "emoji": "🛠️", "title": "Implementar como servicio", "desc": "Quiero configurar la IA en los clientes y cobrar por la consultoría" },
+          "full": { "emoji": "🌳", "title": "El huerto completo", "desc": "Quiero recomendar, implementar y acompañar — cosechar de todas las formas" }
+        }
+      }
+    },
+    "transition": {
+      "title": "Preparando tu huerto...",
+      "text": "Armando una propuesta personalizada para ti"
+    }
+  },
+  "partners": {
+    "meta": {
+      "title": "Programa de Partners",
+      "description": "Sé el partner que trajo la innovación. Comisión recurrente, IA nativa e infraestructura Meta oficial."
+    },
+    "nav": {
+      "benefits": "Beneficios",
+      "forWhom": "Para quién",
+      "howItWorks": "Cómo funciona",
+      "cta": "Quiero ser partner",
+      "badge": "Partners"
+    },
+    "hero": {
+      "byNewWay": "by New Way — Meta Business Solution Provider",
+      "partnersBadge": "Partners",
+      "title": "Sé el partner que trajo la",
+      "titleHighlight": "innovación.",
+      "tagline": "Planta una vez. Cosecha cada mes.",
+      "subtitle": "Tus clientes te recordarán como quien les presentó la IA que realmente funciona. Ganas reconocimiento, autoridad — y comisión recurrente mientras ellos la usen.",
+      "emphasis": "<strong>Los partners yapt. son reconocidos como innovadores.</strong> Mientras otros recomiendan herramientas genéricas, tú entregas la única plataforma AI Native de Brasil con infraestructura propia de WhatsApp.",
+      "cta": "Descubrir mi potencial"
+    },
+    "problem": {
+      "label": "La Realidad",
+      "title": "Ya vives esto. Todos los días.",
+      "card1Quote": "IA Conversacional en WhatsApp",
+      "card1Text": "Tu cliente quiere IA en WhatsApp. Recomiendas una herramienta genérica — <strong>otro cosecha lo que tú plantaste.</strong>",
+      "card2Quote": "Automatizaciones Inteligentes",
+      "card2Text": "Pierde ventas por falta de follow-up. Los leads se enfrían, las oportunidades mueren. <strong>Tú lo ves y no puedes resolverlo.</strong>",
+      "card3Quote": "Campañas Conectadas",
+      "card3Text": "Invierte en Meta Ads y no sabe qué se convirtió en conversación. <strong>Dinero sin rastreo es semilla lanzada al viento.</strong>",
+      "card4Quote": "Implementación + Entrenamiento",
+      "card4Text": "Tú configuras, entrenas al equipo, resuelves los bugs. Trabajas gratis — <strong>y el MRR va a la cuenta de otro.</strong>",
+      "card5Quote": "El Mercado Crece",
+      "card5Text": "La IA conversacional crece 40% al año en Brasil. <strong>Cada cliente que pasa por ti sin solución, otro partner lo planta.</strong>"
+    },
+    "turn": {
+      "title": "¿Y si cada recomendación se convirtiera en cosecha — y tú fueras el partner que trajo la innovación?",
+      "text1": "Imagina ganar <strong>comisión recurrente</strong> por cada cliente que traes. Cada mes. Mientras use la plataforma.",
+      "text2": "O mejor: cobrar por la implantación, el entrenamiento, el acompañamiento — y <strong>aún ganar recurrente encima</strong>. Cada cliente se convierte en un árbol que da frutos para ti. Cada mes.",
+      "card1Title": "Reconocimiento",
+      "card1Text": "Sé visto como referencia en innovación. El partner que trajo la solución que funciona.",
+      "card2Title": "Ingresos Recurrentes",
+      "card2Text": "Comisión cada mes, mientras el cliente use. Planta una vez, cosecha siempre.",
+      "card3Title": "Autoridad",
+      "card3Text": "Te llaman para más proyectos. Clientes satisfechos te recomiendan."
+    },
+    "trust": {
+      "label": "Infraestructura",
+      "title": "Raíces profundas. No promesas.",
+      "subtitle": "Vas a recomendar algo que realmente funciona.",
+      "stat1": "30M+",
+      "stat1Label": "mensajes procesados por mes",
+      "stat2": "BSP",
+      "stat2Label": "Meta Oficial — infraestructura propia",
+      "stat3": "IA Nativa",
+      "stat3Label": "entrenable por cliente, sin parches",
+      "stat4": "Única",
+      "stat4Label": "plataforma AI Native de Brasil",
+      "footnote": "11 años cultivando tecnología para conversaciones. Ahora, abrimos el huerto para ti."
+    },
+    "profiles": {
+      "label": "Para Quién",
+      "title": "Hecho para quien ya planta — y quiere cosechar más.",
+      "agency": "Agencias de Marketing",
+      "agencyDesc": "Ya entregas resultados. Ahora recomienda la herramienta que trabaja 24h — y gana recurrente cada mes.",
+      "consulting": "Consultorías de Ventas/CX",
+      "consultingDesc": "Tus clientes confían en ti. Implanta la IA que transforma su atención — y cobra por ello.",
+      "tech": "Empresas de Tecnología",
+      "techDesc": "Integra yapt. en tu oferta. Recomienda, implanta, acompaña. Cada cliente tuyo se convierte en ingreso recurrente.",
+      "independent": "Profesionales Independientes",
+      "independentDesc": "Empieza sin equipo, sin oficina. Una recomendación, un cliente, una comisión cada mes."
+    },
+    "cta": {
+      "title": "Sé reconocido como innovador — y cosecha hermosos frutos cada mes.",
+      "text": "En 2 minutos, entendemos tu perfil y te mostramos cómo puedes crecer con yapt. Sin compromiso. Sin registro.",
+      "button": "Empezar ahora",
+      "note": "Toma menos de 2 minutos. Sin pedir email."
+    },
+    "footer": {
+      "copyright": "© 2025 yapt. by New Way — Meta Business Solution Provider"
+    },
+    "result": {
+      "meta": {
+        "title": "Tu plan personalizado",
+        "description": "Propuesta personalizada del programa de partners yapt."
+      },
+      "nav": {
+        "status": "Propuesta personalizada para {{company}}"
+      },
+      "loading": {
+        "analyzing": "Analizando perfil de <span style=\"color:#5EEAD4;font-weight:600\">{{company}}</span>...",
+        "mapping": "Mapeando oportunidades para {{profile}}...",
+        "calculating": "Calculando potencial de ingresos...",
+        "preparing": "Preparando tu plan personalizado...",
+        "ready": "✓ ¡Listo, {{name}}!",
+        "profiles": {
+          "agency": "agencias",
+          "consultancy": "consultorías",
+          "tech": "empresas de tecnología",
+          "independent": "profesionales independientes"
+        }
+      },
+      "hero": {
+        "badge": "Perfil con alto potencial",
+        "title": ", tu perfil fue seleccionado.",
+        "subtitle": "{{company}} tiene todo para convertirse en referencia en IA conversacional.",
+        "models": {
+          "referral": "Modelo: Recomendar y Cosechar",
+          "service": "Modelo: Implementar como Servicio",
+          "full": "Modelo: Huerto Completo"
+        }
+      },
+      "pains": {
+        "intro": "Nos contaste que los clientes de {{company}} enfrentan:",
+        "items": {
+          "slow": {
+            "icon": "⏰",
+            "pain": "Atención lenta en WhatsApp",
+            "painDesc": "Los clientes esperan horas por una respuesta. Los leads se enfrían. Las ventas se pierden.",
+            "solution": "yaveh AI responde en segundos",
+            "solutionDesc": "IA responde 24/7 con contexto, personalidad de marca y tono humano. Cero cola de espera."
+          },
+          "sales": {
+            "icon": "💸",
+            "pain": "Leads se enfrían sin follow-up",
+            "painDesc": "El lead entró, nadie llamó. 5 minutos después, se enfrió. Venta perdida.",
+            "solution": "yaFlows hace follow-up automático",
+            "solutionDesc": "Dispara en el momento justo, califica y agenda reunión. Cero lead olvidado."
+          },
+          "ai_bad": {
+            "icon": "🤖",
+            "pain": "Chatbot que frustra",
+            "painDesc": "Bot tonto que no entiende nada. El cliente se irrita, desiste, va al competidor.",
+            "solution": "IA nativa con memoria infinita",
+            "solutionDesc": "No es chatbot de reglas. Es inteligencia real que aprende, recuerda y evoluciona."
+          },
+          "no_ai": {
+            "icon": "🚫",
+            "pain": "Sin IA en la atención",
+            "painDesc": "Todo manual. El equipo responde una por una, se equivoca, se atrasa. El competidor con IA se adelanta.",
+            "solution": "yaveh AI + yaTeam: IA lista para usar",
+            "solutionDesc": "De cero a IA configurada en horas. Agentes especializados, 3 modos, 40+ acciones. Sin código."
+          },
+          "no_attribution": {
+            "icon": "📊",
+            "pain": "No sabe de dónde vino el lead",
+            "painDesc": "Gastó $10k en ads. Vendió. Pero ¿qué campaña convirtió? Misterio total.",
+            "solution": "Campaign Intelligence + CAPI",
+            "solutionDesc": "Rastrea del clic al deal cerrado. Atribución por conversación. ROI real de cada campaña."
+          },
+          "no_automation": {
+            "icon": "⚡",
+            "pain": "Automatizaciones manuales o inexistentes",
+            "painDesc": "El equipo hace todo a mano. Copia, pega, envía. Error humano, retrabajo, costo alto.",
+            "solution": "yaFlows: automatización visual",
+            "solutionDesc": "Editor drag-and-drop. 13 nodos, 9 triggers, cero código. Cualquiera lo monta."
+          },
+          "fragmented": {
+            "icon": "🔧",
+            "pain": "Herramientas que no se hablan",
+            "painDesc": "CRM aquí, chatbot allá, automatización allá. 5 logins, 5 costos, cero integración.",
+            "solution": "Una plataforma sustituye todo",
+            "solutionDesc": "Conversación, IA, CRM, automatización, analytics. Un login, una inteligencia, una visión."
+          },
+          "volume": {
+            "icon": "📈",
+            "pain": "Volumen que el equipo no aguanta",
+            "painDesc": "Creció rápido. El equipo no acompaña. La calidad cae, el cliente reclama, el churn sube.",
+            "solution": "IA absorbe 70% de la demanda",
+            "solutionDesc": "Distribución inteligente. IA cuida lo repetitivo. El humano se enfoca en lo que convierte."
+          }
+        }
+      },
+      "calculator": {
+        "label": "Calculadora",
+        "title": "Lo que puedes cosechar",
+        "clientsLabel": "Nuevos clientes por mes",
+        "clientsUnit": "clientes/mes",
+        "ticketLabel": "Ticket promedio mensual por cliente",
+        "annualLabel": "ingresos en el primer año",
+        "monthlyLabel": "por mes en el mes 6",
+        "costOfInaction": "Cada mes que esperas, son <strong>R$ {{value}}</strong> menos en el mes 6. Y esos clientes van a otro lugar."
+      },
+      "path": {
+        "label": "Tu camino",
+        "title": "Cómo funciona en la práctica",
+        "steps": {
+          "indicate": { "icon": "🐝", "title": "Recomienda", "desc": "Comparte tu enlace con clientes que necesitan IA en WhatsApp" },
+          "activate": { "icon": "📋", "title": "Activa", "desc": "Nosotros nos encargamos del onboarding, configuración y soporte" },
+          "harvest": { "icon": "🍊", "title": "Cosecha", "desc": "Recibe comisión recurrente cada mes, automáticamente" },
+          "configure": { "icon": "🐙", "title": "Configura", "desc": "Implementa yapt. en el cliente usando tu know-how" },
+          "train": { "icon": "🐘", "title": "Entrena", "desc": "Capacita al equipo y cobra por el servicio de consultoría" },
+          "grow": { "icon": "🌳", "title": "Crece", "desc": "Ingresos por servicio + comisión recurrente encima" },
+          "indicateAndConfigure": { "icon": "🐝", "title": "Recomienda y configura", "desc": "Trae al cliente y haz la implementación completa" },
+          "trainAndFollow": { "icon": "🐘", "title": "Entrena y acompaña", "desc": "Capacita, monitorea, optimiza la operación" },
+          "harvestAll": { "icon": "🍊", "title": "Cosecha de todo", "desc": "Servicio + recurrente + autoridad en el mercado" }
+        }
+      },
+      "future": {
+        "title": "Imagina a {{company}} en diciembre de 2026...",
+        "today": "Hoy",
+        "firstSeed": "Primera semilla",
+        "months3": "3 meses",
+        "months6": "6 meses",
+        "months12": "12 meses",
+        "message": ", serás reconocido como quien trajo IA de verdad a sus clientes."
+      },
+      "benefits": {
+        "label": "Beneficios",
+        "title": "Tu kit de partner yapt.",
+        "items": {
+          "dashboard": "Dashboard de partner dedicado",
+          "link": "Enlace de recomendación personalizado",
+          "materials": "Materiales de venta co-branded",
+          "certification": "Certificación yapt. Partner",
+          "training": "Entrenamiento completo de la plataforma",
+          "support": "Soporte dedicado vía WhatsApp",
+          "commission": "Comisión recurrente sobre cada cliente",
+          "earlyAccess": "Acceso anticipado a nuevas features",
+          "badge": "Sello \"yapt. Certified Partner\" para tu sitio y LinkedIn"
+        }
+      },
+      "trust": {
+        "badges": {
+          "bsp": "BSP Meta Oficial",
+          "messages": "30M+ msg/mes",
+          "ai": "IA Nativa",
+          "years": "11 años"
+        },
+        "social": "Programa abierto para los primeros 50 partners de lanzamiento."
+      },
+      "cta": {
+        "title": ", tu huerto está listo.",
+        "planName": "Plan Partner",
+        "comparison": {
+          "wouldCost": "Estas features costarían en el plan intermedio:",
+          "regularPlan": "Plan intermedio (2k conversaciones): R$ {{price}}/mes"
+        },
+        "savings": "Ahorro de R$ {{value}}/mes",
+        "noSetup": "R$ 0 de setup",
+        "features": {
+          "whatsapp": "1 número de WhatsApp incluido",
+          "channels": "3 canales extras gratis",
+          "yavehAi": "yaveh AI — libre (incluido en el plan)",
+          "superMemory": "yaSuperMemory — libre (incluido en el plan)",
+          "agents": "Agentes ilimitados",
+          "automations": "Automatizaciones + Flows ilimitados",
+          "onboarding": "Onboarding especializado",
+          "training": "Entrenamiento completo",
+          "community": "Acceso a la comunidad de agencias"
+        },
+        "form": {
+          "name": "Nombre",
+          "email": "Email",
+          "whatsapp": "WhatsApp",
+          "company": "Empresa"
+        },
+        "submitBtn": "Empezar a cultivar",
+        "security": "Tus datos están seguros. Cancela cuando quieras.",
+        "urgency": "Condiciones de lanzamiento válidas hasta el 28 de febrero",
+        "successMessage": "🌱 ¡Bienvenido al programa de partners yapt.!\n\nPronto recibirás un email con los próximos pasos."
+      },
+      "sticky": {
+        "label": "MRR en el mes 6",
+        "button": "Empezar ahora"
+      }
+    }
+  },
+
+  "automations": {
+    "meta": {
+      "title": "Automatizaciones Inteligentes",
+      "description": "Crea experiencias conversacionales y automatizaciones internas con IA, SuperMemoria y WhatsApp Flows nativos."
+    },
+    "hero": {
+      "badge": "yaFlows — Automatizaciones",
+      "title": "Automatizaciones que piensan.\nExperiencias que convierten.",
+      "subtitle": "33 tipos de nodo, 15 disparadores, ejecución paralela e IA orquestada. Construye flujos que entienden contexto, recuerdan el pasado y actúan con inteligencia."
+    },
+    "builder": {
+      "subtitle": "yaFlows Builder",
+      "title": "Un builder que piensa contigo",
+      "description": "Editor visual drag & drop con 33 tipos de nodo en 6 categorías. Conecta disparadores, IA, acciones de CRM, lógica condicional y comunicación en un canvas intuitivo — sin código.",
+      "features": [
+        "33 tipos de nodo: IA, comunicación, datos, lógica, CRM e integraciones",
+        "Drag & drop con conexiones visuales y validación en tiempo real",
+        "Plantillas listas para los escenarios más comunes",
+        "Prueba antes de publicar con modo dry-run",
+        "Analytics overlay: ve el rendimiento de cada nodo directamente en el canvas"
+      ]
+    },
+    "dualExperience": {
+      "subtitle": "Dos Experiencias, Un Builder",
+      "title": "Conversaciones y automatizaciones internas en el mismo lugar",
+      "description": "Crea experiencias conversacionales (lead responde, IA procesa, WhatsApp responde) y automatizaciones internas (timer dispara, busca datos, actualiza CRM) — todo en el mismo builder visual.",
+      "features": [
+        "Experiencias conversacionales: responde leads con IA en tiempo real",
+        "Automatizaciones internas: envía activos, mueve pipeline, actualiza tags",
+        "Mezcla ambos en el mismo flujo: conversación + acción backend",
+        "Disparadores variados: mensaje, keyword, tag, deal stage, timer, webhook"
+      ]
+    },
+    "superMemory": {
+      "subtitle": "SuperMemoria en Automatizaciones",
+      "title": "La IA nunca olvida",
+      "description": "Cada flujo que pasó el lead, cada respuesta, cada preferencia — todo queda grabado en la SuperMemoria y disponible automáticamente en los próximos flujos. La IA tiene contexto eterno.",
+      "features": [
+        "Contexto persistente entre flujos diferentes",
+        "La IA sabe lo que ya fue dicho, ofrecido y negociado",
+        "Hechos extraídos automáticamente: presupuesto, objeciones, stakeholders",
+        "Memoria por lead: cada contacto tiene su historial completo",
+        "Cero configuración: funciona automáticamente en todo flujo"
+      ]
+    },
+    "multiAI": {
+      "subtitle": "Multi-IA por Experiencia",
+      "title": "Más de una inteligencia en el mismo flujo",
+      "description": "Combina clasificación, generación y extracción de datos en la misma experiencia conversacional. Cada nodo de IA puede usar el modelo ideal para su tarea específica.",
+      "features": [
+        "Clasificación: IA analiza intención y sentimiento",
+        "Generación: IA responde con contexto y personalidad",
+        "Extracción: IA captura datos estructurados de la conversación",
+        "Cada nodo puede usar un modelo diferente (GPT-4, Claude, Gemini)",
+        "Encadena múltiples IAs para resultados más precisos"
+      ]
+    },
+    "integrations": {
+      "subtitle": "Datos Externos e Integraciones",
+      "title": "Conecta tus flujos al mundo",
+      "description": "Webhooks de entrada y salida, APIs REST, Zapier y sub-flujos. Trae datos externos para enriquecer la experiencia y envía resultados a cualquier sistema.",
+      "features": [
+        "Webhooks de entrada: recibe eventos de cualquier sistema",
+        "Webhooks de salida: notifica sistemas externos en tiempo real",
+        "APIs REST: conecta a cualquier endpoint con mapeo visual",
+        "Sub-flujos: divide automatizaciones complejas en módulos reutilizables",
+        "Zapier: integra con 5.000+ apps sin código"
+      ]
+    },
+    "waFlows": {
+      "subtitle": "WhatsApp Flows",
+      "title": "Experiencias interactivas nativas en WhatsApp",
+      "description": "Crea formularios, encuestas, agendamientos y jornadas interactivas directo en WhatsApp — sin salir de la conversación. Builder visual con 20 componentes Meta nativos.",
+      "features": [
+        "20 componentes nativos de Meta (inputs, selects, calendarios, etc.)",
+        "Preview en tiempo real dentro de WhatsApp",
+        "Formularios multi-step con validación",
+        "Integración directa con el flujo de automatización",
+        "JSON Meta v6.0 generado automáticamente"
+      ]
+    },
+    "numbers": {
+      "title": "Números que impresionan",
+      "items": {
+        "nodes": { "value": "33", "label": "Tipos de nodo" },
+        "triggers": { "value": "15", "label": "Disparadores" },
+        "performance": { "value": "10K+", "label": "msgs/segundo" },
+        "waComponents": { "value": "20", "label": "Componentes WA" }
+      }
+    },
+    "grid": {
+      "title": "Todo lo que necesitas para automatizar con inteligencia",
+      "parallel": { "title": "Ejecución Paralela", "description": "Nodos que pueden ejecutarse simultáneamente se ejecutan en paralelo, maximizando velocidad." },
+      "dryRun": { "title": "Dry-Run (Prueba)", "description": "Simula tu flujo entero antes de publicar. Ve cada paso sin afectar datos reales." },
+      "reentry": { "title": "Re-entry Configurable", "description": "Define si el lead puede re-entrar: una vez, con cooldown o siempre. Control total." },
+      "rateLimit": { "title": "Rate Limiting", "description": "Limita cuántas veces un contacto puede entrar al mismo flujo por período." },
+      "absorption": { "title": "Event Absorption", "description": "Flujos activos consumen el mensaje antes del router — sin conflictos entre automatizaciones." },
+      "templates": { "title": "Plantillas Listas", "description": "6 plantillas para los escenarios más comunes: bienvenida, calificación, agendamiento y más." }
+    }
+  },
+  "onboarding": {
+    "defaultName": "socio",
+    "header": {
+      "status": "Configurando tu panel"
+    },
+    "nav": {
+      "continue": "Continuar",
+      "back": "Volver",
+      "finish": "Finalizar onboarding"
+    },
+    "block1": {
+      "title": "Confirmemos tus datos",
+      "subtitle": "Ya tenemos alguna información. Completa el resto.",
+      "chatMessage": "¡Genial, <strong>{{name}}</strong>! 🎉 Ahora necesito algunas informaciones para <span style='color:#FCD34D'>configurar tu panel de partner</span> y preparar tu contrato.",
+      "confirmTitle": "Confirma tus datos",
+      "clickToEdit": "Haz clic para editar",
+      "completeTitle": "Completa para continuar",
+      "operatorTitle": "Operador principal",
+      "operatorDesc": "¿Quién va a operar el panel día a día? Puedes ser tú u otra persona.",
+      "selectPlaceholder": "Selecciona...",
+      "fields": {
+        "name": "Nombre",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "company": "Empresa",
+        "segment": "Segmento",
+        "clients": "Clientes activos",
+        "cnpj": "ID Fiscal",
+        "revenue": "Facturación mensual promedio",
+        "operatorName": "Nombre del operador",
+        "operatorWhatsapp": "WhatsApp del operador",
+        "sameAsMe": "Igual que el mío"
+      },
+      "segments": {
+        "agency": "Agencia de Marketing",
+        "consultancy": "Consultoría de Ventas/CX",
+        "tech": "Empresa de Tecnología",
+        "independent": "Profesional Independiente"
+      },
+      "clients": {
+        "1-10": "1 a 10 clientes",
+        "11-50": "11 a 50 clientes",
+        "51-200": "51 a 200 clientes",
+        "200+": "Más de 200 clientes"
+      },
+      "revenue": {
+        "r1": "Hasta $10.000",
+        "r2": "$10.000 a $20.000",
+        "r3": "$20.000 a $40.000",
+        "r4": "$40.000 a $100.000",
+        "r5": "Más de $100.000"
+      }
+    },
+    "block2": {
+      "title": "Tu nivel de madurez",
+      "subtitle": "Esto nos ayuda a personalizar tu jornada.",
+      "chatMessage": "Ahora quiero entender <strong>dónde estás en el camino</strong>. Con base en esto, voy a <span style='color:#FCD34D'>armar un plan de onboarding personalizado</span> para ti.",
+      "automation": {
+        "title": "Automatización",
+        "desc": "Tu nivel con herramientas de automatización",
+        "levels": {
+          "beginner": "Principiante",
+          "basic": "Básico",
+          "intermediate": "Intermedio",
+          "advanced": "Avanzado"
+        },
+        "options": {
+          "beginner": "Nunca usé herramientas de automatización",
+          "basic": "Autoresponder, secuencias simples",
+          "intermediate": "Flows, integraciones, webhooks",
+          "advanced": "Orquestación multicanal, APIs"
+        }
+      },
+      "campaigns": {
+        "title": "Campañas / Tráfico",
+        "desc": "Tu nivel con medios pagos y performance",
+        "levels": {
+          "beginner": "Principiante",
+          "basic": "Básico",
+          "intermediate": "Intermedio",
+          "advanced": "Avanzado"
+        },
+        "options": {
+          "beginner": "No hago campañas pagas",
+          "basic": "Boost de posts, campañas simples",
+          "intermediate": "Meta Ads con segmentación, A/B test",
+          "advanced": "CAPI, audiences, LTV optimization"
+        }
+      },
+      "ai": {
+        "title": "Inteligencia Artificial",
+        "desc": "Tu nivel con IA en atención al cliente",
+        "levels": {
+          "beginner": "Principiante",
+          "basic": "Básico",
+          "intermediate": "Intermedio",
+          "advanced": "Avanzado"
+        },
+        "options": {
+          "beginner": "Nunca usé IA en atención",
+          "basic": "Chatbot básico (árbol de decisión)",
+          "intermediate": "Uso IA generativa manualmente",
+          "advanced": "IA integrada en los procesos"
+        }
+      }
+    },
+    "block3": {
+      "title": "Tus expectativas",
+      "subtitle": "Para alinear los próximos pasos.",
+      "chatMessage": "¡Última etapa! 🌱 Cuéntame: <strong>¿qué esperas lograr en los primeros 90 días</strong>? ¿Y cómo prefieres aprender?",
+      "expectationsTitle": "¿Qué esperas en los primeros 90 días?",
+      "learnTitle": "¿Cómo prefieres aprender?",
+      "kickoffTitle": "Disponibilidad para kickoff",
+      "callMe": "📞 Llámenme para agendar",
+      "expectations": {
+        "firstClient": "Cerrar primer cliente",
+        "migrateClients": "Migrar clientes actuales",
+        "buildOffer": "Armar mi oferta",
+        "learnPlatform": "Aprender la plataforma"
+      },
+      "learn": {
+        "video": "Videos",
+        "docs": "Documentación",
+        "call": "Call 1:1",
+        "group": "Grupo"
+      }
+    },
+    "success": {
+      "title": "🎉 ¡Felicitaciones, {{name}}!",
+      "message": "Tu panel de partner está siendo configurado. Pronto recibirás un email con las credenciales de acceso.",
+      "nextStepsTitle": "📋 Próximos pasos",
+      "steps": {
+        "credentials": "Email con credenciales (en hasta 2h)",
+        "whatsappWelcome": "WhatsApp de bienvenida",
+        "kickoff": "Call de kickoff agendada"
+      },
+      "cta": "Volver al inicio"
+    }
+  },
+  "sales": {
+    "meta": {
+      "title": "Ventas & Pipeline — yapt.",
+      "description": "Del lead calificado al negocio cerrado. Pipeline visual, calificación por IA, coaching en tiempo real y propuestas por WhatsApp."
+    },
+    "hero": {
+      "badge": "Ventas & Pipeline",
+      "title": "Del lead calificado al negocio cerrado. Sin planillas.",
+      "subtitle": "yapt. une IA, pipeline visual y coaching en tiempo real para transformar conversaciones en ingresos. Cada lead calificado, cada deal rastreado, cada propuesta acompañada."
+    },
+    "painPoints": {
+      "title": "Tu equipo vende por WhatsApp, pero sufre con esto todos los días...",
+      "items": {
+        "noFollowUp": {
+          "title": "El lead se enfría sin follow-up",
+          "description": "El vendedor tarda 2h en responder y el lead ya compró a la competencia. Sin priorización, todos pierden."
+        },
+        "invisiblePipeline": {
+          "title": "Pipeline invisible",
+          "description": "Deals en la cabeza del vendedor, en post-its, en planillas. El gerente no sabe el forecast real."
+        },
+        "feelingQualification": {
+          "title": "Calificación por intuición",
+          "description": "El vendedor gasta 1h con un lead frío e ignora al hot lead que envió mensaje 3 veces. Sin score, sin criterio."
+        },
+        "noCoaching": {
+          "title": "Coaching inexistente",
+          "description": "El vendedor falla una objeción y nadie corrige en tiempo real. El entrenamiento solo ocurre en la reunión del viernes."
+        }
+      }
+    },
+    "deals": {
+      "subtitle": "yaDeals",
+      "title": "Pipeline visual. Cada deal rastreado del WhatsApp a los ingresos.",
+      "description": "Kanban drag-and-drop con multi-pipeline, stakeholders, productos vinculados y SLA por stage. Sepa exactamente dónde está cada negocio, por qué está trabado y cuándo va a cerrar. Integrado a cada conversación — el deal nace de la conversación.",
+      "features": [
+        "Kanban visual con drag-and-drop entre stages",
+        "Multi-pipeline: ventas, onboarding, CS — cada uno con sus stages",
+        "Stakeholders: vincule múltiples contactos al mismo deal",
+        "SLA por stage: alerta cuando un deal queda parado demasiado",
+        "Win/Loss analysis: entienda por qué los deals se ganan o pierden"
+      ]
+    },
+    "qualification": {
+      "subtitle": "Calificación Inteligente",
+      "title": "Entrene la IA con sus preguntas. Ella califica cada lead automáticamente.",
+      "description": "Elija su metodología (BANT, SPIN, MEDDIC, Challenger o custom), registre sus preguntas con peso y criterio, y defina los thresholds. La IA extrae las respuestas directo de la conversación y calcula el score. Cuando el lead alcanza el punto correcto — se convierte en deal automáticamente.",
+      "features": [
+        "6 metodologías: BANT, SPIN, MEDDIC, GPCT, Challenger o Custom",
+        "Registre sus preguntas con peso (1-5) y criterio por tipo",
+        "Thresholds visuales: Lead → MQL → SQL → Opportunity",
+        "Modo ICP: describa su cliente ideal y la IA evalúa semánticamente",
+        "Score híbrido: 7 factores comportamentales + calificación IA"
+      ]
+    },
+    "playbooks": {
+      "subtitle": "Playbooks",
+      "title": "Codifique su metodología. Todo el equipo ejecuta igual.",
+      "description": "Monte su playbook en 5 pasos: producto, calificación, pipeline, objeciones y señales de compra. El yaMentor es entrenado en el playbook y guía a cada vendedor en tiempo real. Junior recibe script completo. Sénior recibe bullet points. Todos venden en el estándar.",
+      "features": [
+        "Wizard 5 pasos: producto, calificación, pipeline, situaciones, revisión",
+        "Objeciones mapeadas con respuesta ideal por escenario",
+        "Señales de compra + acción recomendada",
+        "Conectado al yaMentor — IA entrenada en su playbook",
+        "Nivel del vendedor: Junior (script completo) → Sénior (bullet points)"
+      ]
+    },
+    "mentor": {
+      "subtitle": "yaMentor",
+      "title": "Coaching en tiempo real. La IA murmura la jugada correcta.",
+      "description": "Mientras el vendedor conversa, el Mentor sugiere la próxima acción basada en el playbook, en el historial del lead y en el momento de la conversación. Respuesta lista, objeción tratada, red flag detectada — todo en tiempo real, sin interrumpir el flujo.",
+      "features": [
+        "Sugerencia de respuesta basada en el playbook activo",
+        "Detección de objeción + respuesta recomendada",
+        "Red flags: frustración, silencio prolongado, amenaza de cancelación",
+        "Estilo configurable: Directo, Alentador o Socrático",
+        "Next actions: \"Crear deal\", \"Enviar propuesta\", \"Agendar call\""
+      ]
+    },
+    "proposals": {
+      "subtitle": "Propuestas",
+      "title": "Propuesta por WhatsApp. Cliente acepta en el celular.",
+      "description": "Envíe propuestas vía link directo en WhatsApp. El cliente abre en el celular, ve todo formateado, y acepta online. Tracking: visualizó, cuánto tiempo estuvo en la página, cuándo aceptó. Sin PDF, sin email, sin intermediario.",
+      "features": [
+        "Template builder de propuestas (título, descripción, precio, términos)",
+        "Link público — cliente abre y acepta por el celular",
+        "Tracking: visualizaciones, tiempo en el sitio, clics, aceptaciones",
+        "Integrado con Deals — propuesta vinculada al negocio",
+        "Versionamiento: propuesta v1, v2, v3 con historial"
+      ]
+    },
+    "contacts": {
+      "subtitle": "Contacts 360",
+      "title": "Cada lead como una base de datos viva.",
+      "description": "Visión 360 de cada contacto: lifecycle stage, lead score con breakdown, emotion trends, deals asociados, actividades, propuestas y atribución de campaña. El vendedor nunca más pregunta '¿quién es este lead?' — todo está ahí.",
+      "features": [
+        "Lifecycle: visitante → lead → MQL → SQL → opportunity → cliente",
+        "Score con breakdown visual (7 factores + IA)",
+        "Emotion trends: últimos mensajes con sentimiento",
+        "Deals, propuestas y actividades vinculados",
+        "Atribución de campaña: de dónde vino (Google, Meta, directo)"
+      ]
+    },
+    "calendar": {
+      "subtitle": "Agenda & Actividades",
+      "title": "Calendario sincronizado. Cada acción registrada.",
+      "description": "Google Calendar sync bidireccional con visión multi-seller. Activities Hub rastrea calls, meetings, tasks y emails — todo vinculado al deal. My Day muestra las tareas del día. El gerente sabe exactamente qué hizo cada vendedor.",
+      "features": [
+        "Google Calendar sync bidireccional automático",
+        "Visión multi-seller: vea la agenda de todo el equipo",
+        "Activities Hub: tasks, calls, meetings con duración y notas",
+        "My Day: tareas del día para cumplir",
+        "Todo vinculado al deal y al contacto"
+      ]
+    },
+    "autoDeal": {
+      "subtitle": "Automatización de Pipeline",
+      "title": "¿Lead calificó? Deal creado. Equipo notificado.",
+      "description": "Configure la etapa gatillo (MQL, SQL u Opportunity) y el deal se crea automáticamente en el pipeline. Notificaciones por email en tiempo real: deal ganado, propuesta aceptada, lead calificado, handoff de la IA. Cada evento con destinatario configurable.",
+      "features": [
+        "Auto-deal: lead alcanza score → deal creado en el pipeline automáticamente",
+        "3 gatillos: por lifecycle stage, por score threshold, o vía Flow",
+        "Notificaciones: deal ganado/perdido, propuesta aceptada, auto-deal creado",
+        "Destinatarios configurables: dueño, admins o equipo personalizado",
+        "Handoff inteligente: IA escala al humano con motivo (frustración, alto valor)"
+      ]
+    },
+    "timeline": {
+      "title": "De la conversación a los ingresos. Cada etapa conectada.",
+      "subtitle": "Lead llega, IA califica, deal es creado, propuesta enviada, venta cerrada — todo automático, todo rastreado.",
+      "steps": ["Conversación", "IA Califica", "Score", "Deal", "Propuesta", "Venta"]
+    },
+    "grid": {
+      "title": "Cada detalle pensado para vender más",
+      "scoring": { "title": "Lead Scoring Híbrido", "description": "7 factores comportamentales + calificación IA combinados en un score único." },
+      "methodology": { "title": "BANT / SPIN / MEDDIC", "description": "Metodología configurable por agente. Elija la que tiene sentido para su equipo." },
+      "icp": { "title": "ICP Matching", "description": "Describa su cliente ideal — IA evalúa semánticamente cada lead." },
+      "multiPipeline": { "title": "Multi-Pipeline", "description": "Ventas, onboarding, CS — cada uno con stages y SLA propios." },
+      "sla": { "title": "SLA por Stage", "description": "Alerta cuando deal queda parado demasiado. Nunca más pierda un negocio por inacción." },
+      "winLoss": { "title": "Win/Loss Analysis", "description": "Entienda por qué deals se ganan o pierden. Mejore el proceso." },
+      "emotion": { "title": "Emotion Engine", "description": "13 señales emocionales integradas al score y visibles en el deal." },
+      "proposalTracking": { "title": "Proposal Tracking", "description": "Visualizaciones, tiempo en la página, clics y aceptaciones — todo rastreado." },
+      "handlerState": { "title": "Handler State", "description": "Bot ↔ Humano sin mensaje duplicado. Transición limpia." },
+      "myDay": { "title": "My Day", "description": "Tareas del día del vendedor en 1 pantalla. Enfoque total." },
+      "lifecycle": { "title": "Lifecycle Automático", "description": "Visitante → Lead → MQL → SQL → Opportunity — progresión automática." },
+      "autoDeal": { "title": "Deal Auto-Create", "description": "Lead calificó → deal creado automáticamente en el pipeline." }
+    }
+  }
+}

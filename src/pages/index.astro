@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import CTASection from '../components/CTASection.astro';
+import { softwareApplicationJsonLd } from '../lib/seo';
+
+const locale = 'pt-BR' as const;
+---
+
+<SiteLayout
+  title="Plataforma Conversacional com IA"
+  description="yapt. é a plataforma conversacional com IA para vendas. Gerencie leads, automatize conversas e feche mais negócios com inteligência artificial."
+  path="/"
+  locale={locale}
+  jsonLd={[softwareApplicationJsonLd()]}
+>
+  <HeroSection locale={locale} />
+  <TrustBar locale={locale} />
+  <ProblemSection locale={locale} />
+  <FeaturesSection locale={locale} />
+  <CTASection locale={locale} />
+</SiteLayout>

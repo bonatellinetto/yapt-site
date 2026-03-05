@@ -1,0 +1,104 @@
+---
+import { t, type Locale, localePath } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const blocks = [
+  { key: 'yaveh', module: 'yaveh', color: '#8B5CF6', colorBg: 'rgba(139,92,246,0.1)', colorText: '#7C3AED', reverse: false, link: '/intelligence' },
+  { key: 'yaTeam', module: 'yaTeam', color: '#8B5CF6', colorBg: 'rgba(139,92,246,0.1)', colorText: '#7C3AED', reverse: true, link: '/intelligence' },
+  { key: 'yaCampaigns', module: 'yaCampaigns', color: '#F59E0B', colorBg: 'rgba(245,158,11,0.1)', colorText: '#D97706', reverse: false, link: '/marketing-site' },
+  { key: 'yaFlows', module: 'yaFlows', color: '#10B981', colorBg: 'rgba(16,185,129,0.1)', colorText: '#059669', reverse: true, link: '/automations' },
+  { key: 'yaEnterprise', module: 'yaEnterprise', color: '#20B2AA', colorBg: 'rgba(32,178,170,0.1)', colorText: '#0D9488', reverse: false, link: '/for-enterprise' },
+  { key: 'yaDeals', module: 'yaDeals', color: '#3B82F6', colorBg: 'rgba(59,130,246,0.1)', colorText: '#2563EB', reverse: true, link: '/operations' },
+  { key: 'yaTrust', module: 'yaTrust', color: '#374151', colorBg: 'rgba(55,65,81,0.1)', colorText: '#374151', reverse: false, link: '/trust' },
+];
+---
+
+<section style="background: #f5f5f7; position: relative;">
+  <!-- Dot pattern -->
+  <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+
+  <!-- Section header -->
+  <div class="relative z-10 text-center px-6 pt-12 md:pt-20 lg:pt-24">
+    <span class="font-poppins inline-flex items-center gap-2 text-xs font-semibold mb-4 md:mb-6 px-4 py-1.5 rounded-full" style="background: rgba(32,178,170,0.1); color: #20B2AA;">
+      <span class="inline-block w-2 h-2 rounded-full" style="background-color: #20B2AA;"></span>
+      {t('solution.badge', locale)}
+    </span>
+    <h2 class="font-poppins mx-auto mb-3 md:mb-4 max-w-[720px]" style="font-size: clamp(22px, 5vw, 44px); font-weight: 700; color: #434A54; letter-spacing: clamp(-0.5px, -0.03em, -1.5px); line-height: 1.15;">
+      {t('solution.title', locale)}
+    </h2>
+    <p class="font-poppins mx-auto max-w-[640px] text-sm md:text-base lg:text-[17px]" style="font-weight: 400; color: #6B7280; line-height: 1.7;">
+      {t('solution.subtitleBefore', locale)}{' '}
+      <span class="font-poppins" style="font-weight: 600; color: #20B2AA;">yapt.</span>{' '}
+      {t('solution.subtitleAfter', locale)}
+    </p>
+  </div>
+
+  <!-- Feature blocks -->
+  {blocks.map((block, i) => {
+    const i18nKey = `features.blocks.${i}`;
+    return (
+      <div
+        data-fade
+        class={`feat-section${block.reverse ? ' feat-reverse' : ''}`}
+        style={`position: relative; max-width: 1200px; margin: 0 auto; padding: 50px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; overflow: hidden; opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease;`}
+      >
+        {block.reverse ? (
+          <>
+            <!-- Visual placeholder -->
+            <div class="feat-visual" style="position: relative; z-index: 2; display: flex; justify-content: center;">
+              <div style="width: 100%; max-width: 480px; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.08); background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 1px solid rgba(0,0,0,0.06); overflow: hidden; padding: 16px; min-height: 240px; display: flex; align-items: center; justify-content: center;">
+                <span class="font-poppins text-sm font-medium" style={`color: ${block.colorText};`}>{block.module} mockup</span>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="feat-content" style="position: relative; z-index: 2; max-width: 480px;">
+              <div style={`display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-bottom: 16px; padding: 6px 14px; border-radius: 20px; background: ${block.colorBg}; color: ${block.colorText};`}>
+                {block.module}
+              </div>
+              <h2 style="font-family: Poppins, sans-serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #1d1d1f; margin-bottom: 20px;">
+                {t(`${i18nKey}.title`, locale)}
+              </h2>
+              <p style="font-size: 17px; color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
+                {t(`${i18nKey}.description`, locale)}
+              </p>
+              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 14px 24px; background: ${block.color}; border-radius: 50px; transition: all 0.25s ease; font-family: Inter, sans-serif;`}>
+                {t(`${i18nKey}.cta`, locale)}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </>
+        ) : (
+          <>
+            <!-- Content -->
+            <div class="feat-content" style="position: relative; z-index: 2; max-width: 480px;">
+              <div style={`display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-bottom: 16px; padding: 6px 14px; border-radius: 20px; background: ${block.colorBg}; color: ${block.colorText};`}>
+                {block.module}
+              </div>
+              <h2 style="font-family: Poppins, sans-serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #1d1d1f; margin-bottom: 20px;">
+                {t(`${i18nKey}.title`, locale)}
+              </h2>
+              <p style="font-size: 17px; color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
+                {t(`${i18nKey}.description`, locale)}
+              </p>
+              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 14px 24px; background: ${block.color}; border-radius: 50px; transition: all 0.25s ease; font-family: Inter, sans-serif;`}>
+                {t(`${i18nKey}.cta`, locale)}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <!-- Visual placeholder -->
+            <div class="feat-visual" style="position: relative; z-index: 2; display: flex; justify-content: center;">
+              <div style="width: 100%; max-width: 480px; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.08); background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 1px solid rgba(0,0,0,0.06); overflow: hidden; padding: 16px; min-height: 240px; display: flex; align-items: center; justify-content: center;">
+                <span class="font-poppins text-sm font-medium" style={`color: ${block.colorText};`}>{block.module} mockup</span>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  })}
+</section>
