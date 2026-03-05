@@ -1,0 +1,197 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { t, type Locale } from '../../lib/i18n';
+
+const locale = 'pt-BR' as const;
+const onb = t('onboarding', locale) as any;
+---
+
+<SiteLayout
+  title="Onboarding de Parceiro"
+  description="Complete seu onboarding como parceiro yapt."
+  path="/partners/onboarding"
+  locale={locale}
+  noindex={true}
+>
+  <div class="pt-28 pb-16 lg:pt-36 lg:pb-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">{onb.header?.title || 'Onboarding'}</h1>
+        <p class="text-base text-[#656D78] mt-2">{onb.header?.subtitle || 'Complete as informações para iniciar sua parceria.'}</p>
+      </div>
+
+      <!-- Steps indicator -->
+      <div class="flex items-center justify-center gap-4 mb-12">
+        {[1,2,3].map((n) => (
+          <div class="flex items-center gap-2">
+            <div
+              id={`step-indicator-${n}`}
+              class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold border-2 transition-colors"
+              style={n === 1 ? 'border-color: #0D9488; background: #0D9488; color: white;' : 'border-color: #E5E7EB; color: #AAB2BD;'}
+            >
+              {n}
+            </div>
+            {n < 3 && <div class="w-12 h-0.5 bg-gray-200"></div>}
+          </div>
+        ))}
+      </div>
+
+      <!-- Step 1: Confirm Data -->
+      <div id="onb-step-1" class="onb-step bg-white rounded-2xl p-6 lg:p-8 shadow-sm">
+        <h2 class="font-poppins text-lg font-bold text-[#1a1a2e] mb-6">{onb.block1?.title || 'Confirme seus dados'}</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm text-[#656D78] mb-1">Nome completo</label>
+            <input type="text" id="onb-name" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400" />
+          </div>
+          <div>
+            <label class="block text-sm text-[#656D78] mb-1">E-mail</label>
+            <input type="email" id="onb-email" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400" />
+          </div>
+          <div>
+            <label class="block text-sm text-[#656D78] mb-1">WhatsApp</label>
+            <input type="tel" id="onb-phone" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400" />
+          </div>
+          <div>
+            <label class="block text-sm text-[#656D78] mb-1">Empresa</label>
+            <input type="text" id="onb-company" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400" />
+          </div>
+          <div>
+            <label class="block text-sm text-[#656D78] mb-1">CNPJ</label>
+            <input type="text" id="onb-cnpj" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400" placeholder="00.000.000/0000-00" />
+          </div>
+        </div>
+        <button class="onb-next bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors mt-6 w-full">
+          Continuar
+        </button>
+      </div>
+
+      <!-- Step 2: Maturity -->
+      <div id="onb-step-2" class="onb-step hidden bg-white rounded-2xl p-6 lg:p-8 shadow-sm">
+        <h2 class="font-poppins text-lg font-bold text-[#1a1a2e] mb-6">{onb.block2?.title || 'Nível de maturidade'}</h2>
+        <p class="text-sm text-[#656D78] mb-6">{onb.block2?.subtitle || 'Como você avalia sua experiência com plataformas conversacionais?'}</p>
+        <div class="space-y-3">
+          {[1,2,3,4,5].map((level) => (
+            <button
+              class="onb-maturity w-full text-left bg-[#FAFBFC] border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#434A54] hover:border-teal-400 transition-colors"
+              data-level={level}
+            >
+              <span class="font-medium">Nível {level}</span>
+              <span class="text-[#AAB2BD] ml-2">
+                {level === 1 ? '— Nunca trabalhei com isso' :
+                 level === 2 ? '— Conheço mas não implemento' :
+                 level === 3 ? '— Já implementei algumas vezes' :
+                 level === 4 ? '— Implemento regularmente' :
+                 '— Expert, faço consultoria'}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Step 3: Expectations -->
+      <div id="onb-step-3" class="onb-step hidden bg-white rounded-2xl p-6 lg:p-8 shadow-sm">
+        <h2 class="font-poppins text-lg font-bold text-[#1a1a2e] mb-6">{onb.block3?.title || 'Expectativas'}</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm text-[#656D78] mb-2">O que espera da parceria?</label>
+            <textarea id="onb-expectations" rows="3" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-teal-400 resize-none" placeholder="Conte-nos suas expectativas..."></textarea>
+          </div>
+          <div>
+            <label class="block text-sm text-[#656D78] mb-2">Como prefere aprender?</label>
+            <div class="flex flex-wrap gap-2">
+              {['Vídeo-aulas','Documentação','Mentoria 1:1','Webinars ao vivo'].map((opt) => (
+                <button class="onb-learning px-4 py-2 rounded-full text-sm border border-gray-200 text-[#656D78] hover:border-teal-400 hover:text-teal-600 transition-colors" data-value={opt}>
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        <button class="onb-submit bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors mt-6 w-full">
+          Finalizar
+        </button>
+      </div>
+
+      <!-- Success -->
+      <div id="onb-success" class="onb-step hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2 class="font-poppins text-2xl font-bold text-[#1a1a2e] mb-4">{onb.success?.title || 'Tudo certo!'}</h2>
+        <p class="text-base text-[#656D78] mb-8">{onb.success?.subtitle || 'Seu onboarding foi concluído. Nosso time entrará em contato em breve.'}</p>
+        <a href="/" class="inline-block bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors">
+          Voltar ao site
+        </a>
+      </div>
+    </div>
+  </div>
+</SiteLayout>
+
+<script is:inline>
+(function() {
+  var currentStep = 1;
+  var data = {};
+
+  // Pre-fill from quiz
+  try {
+    var quiz = JSON.parse(localStorage.getItem('yapt_partner_quiz') || '{}');
+    if (quiz.name) document.getElementById('onb-name').value = quiz.name;
+    if (quiz.email) document.getElementById('onb-email').value = quiz.email;
+    if (quiz.phone) document.getElementById('onb-phone').value = quiz.phone;
+    if (quiz.company) document.getElementById('onb-company').value = quiz.company;
+  } catch(e) {}
+
+  function showStep(n) {
+    currentStep = n;
+    document.querySelectorAll('.onb-step').forEach(function(el) { el.classList.add('hidden'); });
+    var el = document.getElementById(n === 4 ? 'onb-success' : 'onb-step-' + n);
+    if (el) el.classList.remove('hidden');
+    // Update indicators
+    for (var i = 1; i <= 3; i++) {
+      var ind = document.getElementById('step-indicator-' + i);
+      if (i <= n) {
+        ind.style.borderColor = '#0D9488';
+        ind.style.background = i < n ? '#0D9488' : (i === n ? '#0D9488' : '');
+        ind.style.color = 'white';
+      } else {
+        ind.style.borderColor = '#E5E7EB';
+        ind.style.background = '';
+        ind.style.color = '#AAB2BD';
+      }
+    }
+  }
+
+  // Next button (step 1)
+  document.querySelectorAll('.onb-next').forEach(function(btn) {
+    btn.addEventListener('click', function() { showStep(currentStep + 1); });
+  });
+
+  // Maturity buttons (step 2, auto-advance)
+  document.querySelectorAll('.onb-maturity').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      data.maturity = this.getAttribute('data-level');
+      document.querySelectorAll('.onb-maturity').forEach(function(b) { b.classList.remove('border-teal-400', 'bg-teal-50'); });
+      this.classList.add('border-teal-400', 'bg-teal-50');
+      setTimeout(function() { showStep(3); }, 300);
+    });
+  });
+
+  // Learning toggle
+  document.querySelectorAll('.onb-learning').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.classList.toggle('border-teal-400');
+      this.classList.toggle('text-teal-600');
+      this.classList.toggle('bg-teal-50');
+    });
+  });
+
+  // Submit
+  document.querySelector('.onb-submit')?.addEventListener('click', function() {
+    showStep(4);
+  });
+})();
+</script>

@@ -1,0 +1,97 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { t, type Locale } from '../../lib/i18n';
+
+const locale = 'pt-BR' as const;
+const result = t('partners.result', locale) as any;
+---
+
+<SiteLayout
+  title="Seu Resultado"
+  description="Veja como o yapt. pode transformar seu negócio como parceiro."
+  path="/partners/result"
+  locale={locale}
+  noindex={true}
+>
+  <div class="pt-28 pb-16 lg:pt-36 lg:pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Personalized header -->
+      <div id="result-header" class="text-center mb-12">
+        <h1 class="font-poppins text-3xl lg:text-4xl font-bold text-[#1a1a2e]">
+          <span id="result-name">Parceiro</span>, {result?.title || 'aqui está o seu plano.'}
+        </h1>
+        <p class="text-base text-[#656D78] mt-4">{result?.subtitle || 'Baseado nas suas respostas, montamos uma proposta personalizada.'}</p>
+      </div>
+
+      <!-- Profile card -->
+      <div id="result-profile" class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+            <span id="result-avatar" class="font-poppins font-bold text-teal-700 text-lg">P</span>
+          </div>
+          <div>
+            <h2 id="result-fullname" class="font-poppins font-semibold text-[#1a1a2e]">Parceiro</h2>
+            <p id="result-company-display" class="text-sm text-[#656D78]"></p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-[#FAFBFC] rounded-xl p-4">
+            <span class="text-xs text-[#AAB2BD] uppercase tracking-wider">Perfil</span>
+            <p id="result-profile-type" class="font-medium text-[#1a1a2e] mt-1">-</p>
+          </div>
+          <div class="bg-[#FAFBFC] rounded-xl p-4">
+            <span class="text-xs text-[#AAB2BD] uppercase tracking-wider">Modelo</span>
+            <p id="result-model-type" class="font-medium text-[#1a1a2e] mt-1">-</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value proposition -->
+      <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl p-6 lg:p-8 mb-8">
+        <h3 class="font-poppins text-xl font-bold text-[#1a1a2e] mb-4">{result?.valueTitle || 'O que você ganha'}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="text-center">
+            <div class="font-poppins text-2xl font-bold text-teal-600">{result?.revenue || '20%'}</div>
+            <p class="text-sm text-[#656D78] mt-1">{result?.revenueLabel || 'Comissão recorrente'}</p>
+          </div>
+          <div class="text-center">
+            <div class="font-poppins text-2xl font-bold text-teal-600">{result?.training || 'Cert.'}</div>
+            <p class="text-sm text-[#656D78] mt-1">{result?.trainingLabel || 'Certificação oficial'}</p>
+          </div>
+          <div class="text-center">
+            <div class="font-poppins text-2xl font-bold text-teal-600">{result?.support || '1:1'}</div>
+            <p class="text-sm text-[#656D78] mt-1">{result?.supportLabel || 'Suporte dedicado'}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <a href="/partners/onboarding" class="inline-block bg-teal-500 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-teal-600 transition-colors">
+          {result?.cta || 'Quero ser parceiro'}
+        </a>
+        <p class="text-sm text-[#AAB2BD] mt-4">{result?.ctaNote || 'Sem compromisso. Converse com nosso time.'}</p>
+      </div>
+    </div>
+  </div>
+</SiteLayout>
+
+<script is:inline>
+(function() {
+  try {
+    var data = JSON.parse(localStorage.getItem('yapt_partner_quiz') || '{}');
+    if (data.name) {
+      document.getElementById('result-name').textContent = data.name.split(' ')[0];
+      document.getElementById('result-fullname').textContent = data.name;
+      document.getElementById('result-avatar').textContent = data.name.charAt(0).toUpperCase();
+    }
+    if (data.company) {
+      document.getElementById('result-company-display').textContent = data.company;
+    }
+    var profileMap = { agency: 'Agência', consulting: 'Consultoria', tech: 'Tecnologia', independent: 'Independente' };
+    var modelMap = { referral: 'Indicação', service: 'Serviço', full: 'Full Partner' };
+    if (data.profile) document.getElementById('result-profile-type').textContent = profileMap[data.profile] || data.profile;
+    if (data.model) document.getElementById('result-model-type').textContent = modelMap[data.model] || data.model;
+  } catch(e) {}
+})();
+</script>

@@ -1,0 +1,194 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { t, type Locale } from '../../lib/i18n';
+
+const locale = 'pt-BR' as const;
+const quiz = t('quiz', locale) as any;
+---
+
+<SiteLayout
+  title="Descubra seu Potencial"
+  description="Descubra como se tornar parceiro yapt. e ganhar comissão recorrente."
+  path="/partners/discover"
+  locale={locale}
+  noindex={true}
+>
+  <div class="pt-28 pb-16 lg:pt-36 lg:pb-24 min-h-screen" style="background: linear-gradient(135deg, #0A3D2E, #064E3B);">
+    <div class="max-w-2xl mx-auto px-6">
+      <!-- Progress bar -->
+      <div class="mb-8">
+        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+          <div id="quiz-progress" class="h-full bg-teal-400 rounded-full transition-all duration-500" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Quiz container -->
+      <div id="quiz-container" class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10">
+        <!-- Welcome step -->
+        <div id="step-welcome" class="quiz-step">
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl">🌿</span>
+            </div>
+            <h2 class="font-poppins text-xl lg:text-2xl font-bold text-white mb-4">{quiz.welcome?.title || 'Vamos descobrir juntos'}</h2>
+            <p class="text-base text-white/70 mb-8">{quiz.welcome?.subtitle || 'Em poucos minutos, vou te mostrar como o yapt. pode transformar seu negócio.'}</p>
+            <button class="quiz-next bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors">
+              {quiz.welcome?.cta || 'Começar'}
+            </button>
+          </div>
+        </div>
+
+        <!-- Personal data step -->
+        <div id="step-personal" class="quiz-step hidden">
+          <h3 class="font-poppins text-lg font-bold text-white mb-6">{quiz.capture?.personalTitle || 'Primeiro, me conta sobre você'}</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm text-white/60 mb-1">Nome</label>
+              <input type="text" id="quiz-name" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-teal-400" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="block text-sm text-white/60 mb-1">E-mail</label>
+              <input type="email" id="quiz-email" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-teal-400" placeholder="seu@email.com" />
+            </div>
+            <div>
+              <label class="block text-sm text-white/60 mb-1">WhatsApp</label>
+              <input type="tel" id="quiz-phone" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-teal-400" placeholder="(11) 99999-9999" />
+            </div>
+          </div>
+          <button class="quiz-next bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors mt-6 w-full">
+            Continuar
+          </button>
+        </div>
+
+        <!-- Business data step -->
+        <div id="step-business" class="quiz-step hidden">
+          <h3 class="font-poppins text-lg font-bold text-white mb-6">{quiz.capture?.businessTitle || 'E sobre seu negócio?'}</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm text-white/60 mb-1">Empresa</label>
+              <input type="text" id="quiz-company" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-teal-400" placeholder="Nome da empresa" />
+            </div>
+            <div>
+              <label class="block text-sm text-white/60 mb-1">Website ou Instagram</label>
+              <input type="text" id="quiz-website" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-teal-400" placeholder="site.com.br ou @perfil" />
+            </div>
+          </div>
+          <button class="quiz-next bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors mt-6 w-full">
+            Continuar
+          </button>
+        </div>
+
+        <!-- Profile step -->
+        <div id="step-profile" class="quiz-step hidden">
+          <h3 class="font-poppins text-lg font-bold text-white mb-6">{quiz.questions?.profileTitle || 'Qual seu perfil?'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {['agency','consulting','tech','independent'].map((p) => (
+              <button
+                class="quiz-option text-left bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-sm text-white/80 hover:border-teal-400 hover:bg-teal-500/10 transition-colors"
+                data-field="profile"
+                data-value={p}
+              >
+                {quiz.questions?.[`profile_${p}`] || p}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Model step -->
+        <div id="step-model" class="quiz-step hidden">
+          <h3 class="font-poppins text-lg font-bold text-white mb-6">{quiz.questions?.modelTitle || 'Como quer atuar?'}</h3>
+          <div class="space-y-3">
+            {['referral','service','full'].map((m) => (
+              <button
+                class="quiz-option w-full text-left bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-sm text-white/80 hover:border-teal-400 hover:bg-teal-500/10 transition-colors"
+                data-field="model"
+                data-value={m}
+              >
+                <span class="font-medium text-white">{quiz.questions?.[`model_${m}_title`] || m}</span>
+                {quiz.questions?.[`model_${m}_desc`] && (
+                  <span class="block text-xs text-white/50 mt-1">{quiz.questions[`model_${m}_desc`]}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Transition step -->
+        <div id="step-transition" class="quiz-step hidden">
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl">🌱</span>
+            </div>
+            <h2 class="font-poppins text-xl lg:text-2xl font-bold text-white mb-4">{quiz.transition?.title || 'Perfeito! Preparei algo especial pra você.'}</h2>
+            <p class="text-base text-white/70 mb-8">{quiz.transition?.subtitle || 'Baseado no que me contou, vou te mostrar como o yapt. pode funcionar pra você.'}</p>
+            <a href="/partners/result" class="inline-block bg-teal-500 text-white font-poppins font-semibold px-8 py-3 rounded-xl hover:bg-teal-600 transition-colors">
+              {quiz.transition?.cta || 'Ver meu resultado'}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>
+
+<script is:inline>
+(function() {
+  var steps = ['welcome','personal','business','profile','model','transition'];
+  var currentStep = 0;
+  var data = {};
+
+  function showStep(idx) {
+    currentStep = idx;
+    document.querySelectorAll('.quiz-step').forEach(function(el) { el.classList.add('hidden'); });
+    var stepEl = document.getElementById('step-' + steps[idx]);
+    if (stepEl) stepEl.classList.remove('hidden');
+    var progress = document.getElementById('quiz-progress');
+    if (progress) progress.style.width = Math.round((idx / (steps.length - 1)) * 100) + '%';
+  }
+
+  function nextStep() {
+    if (currentStep < steps.length - 1) showStep(currentStep + 1);
+  }
+
+  // Next buttons
+  document.querySelectorAll('.quiz-next').forEach(function(btn) {
+    btn.addEventListener('click', nextStep);
+  });
+
+  // Option buttons (auto-advance)
+  document.querySelectorAll('.quiz-option').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var field = this.getAttribute('data-field');
+      var value = this.getAttribute('data-value');
+      data[field] = value;
+      // Visual feedback
+      this.parentElement.querySelectorAll('.quiz-option').forEach(function(b) {
+        b.classList.remove('border-teal-400', 'bg-teal-500/10');
+      });
+      this.classList.add('border-teal-400', 'bg-teal-500/10');
+      // Store and advance
+      try { localStorage.setItem('yapt_partner_quiz', JSON.stringify(data)); } catch(e) {}
+      setTimeout(nextStep, 300);
+    });
+  });
+
+  // Collect form data on next
+  document.querySelectorAll('.quiz-next').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var name = document.getElementById('quiz-name');
+      var email = document.getElementById('quiz-email');
+      var phone = document.getElementById('quiz-phone');
+      var company = document.getElementById('quiz-company');
+      var website = document.getElementById('quiz-website');
+      if (name && name.value) data.name = name.value;
+      if (email && email.value) data.email = email.value;
+      if (phone && phone.value) data.phone = phone.value;
+      if (company && company.value) data.company = company.value;
+      if (website && website.value) data.website = website.value;
+      try { localStorage.setItem('yapt_partner_quiz', JSON.stringify(data)); } catch(e) {}
+    });
+  });
+
+  showStep(0);
+})();
+</script>
