@@ -18,6 +18,7 @@ const staticPages = [
   '/privacy',
   '/terms',
   '/blog',
+  '/partners',
 ];
 
 const locales = [

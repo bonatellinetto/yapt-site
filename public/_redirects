@@ -1,0 +1,2 @@
+# Redirect old sitemap URL to new
+/sitemap-index.xml /sitemap.xml 301
