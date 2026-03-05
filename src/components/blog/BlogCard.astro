@@ -1,0 +1,67 @@
+---
+import type { BlogPost } from '../../lib/blog';
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const fallbackGradients = [
+  'linear-gradient(135deg, #064E3B, #10B981)',
+  'linear-gradient(135deg, #5B21B6, #8B5CF6)',
+  'linear-gradient(135deg, #1E40AF, #3B82F6)',
+  'linear-gradient(135deg, #92400E, #F59E0B)',
+  'linear-gradient(135deg, #0D9488, #2DD4BF)',
+  'linear-gradient(135deg, #9D174D, #EC4899)',
+];
+const gradient = fallbackGradients[Math.abs(post.slug.charCodeAt(0)) % fallbackGradients.length];
+const imageUrl = post.card_image_url || post.cover_image_url;
+const date = post.published_at ? new Date(post.published_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+---
+
+<a href={`/blog/${post.slug}`} class="group block">
+  <div class="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200">
+    <!-- Image -->
+    <div class="aspect-[16/9] overflow-hidden">
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt={post.title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+      ) : (
+        <div class="w-full h-full flex items-center justify-center" style={`background: ${gradient};`}>
+          <span class="font-poppins text-white/60 text-sm">yapt.</span>
+        </div>
+      )}
+    </div>
+    <!-- Content -->
+    <div class="p-5">
+      {post.category && (
+        <span
+          class="inline-block text-xs font-medium rounded-full px-2.5 py-0.5 mb-3"
+          style={`background: ${post.category.color}15; color: ${post.category.color};`}
+        >
+          {post.category.name}
+        </span>
+      )}
+      <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors">
+        {post.title}
+      </h3>
+      {post.excerpt && (
+        <p class="text-sm text-[#656D78] line-clamp-2 mb-3">{post.excerpt}</p>
+      )}
+      <div class="flex items-center gap-3 text-xs text-[#AAB2BD]">
+        <span>{date}</span>
+        {post.reading_time_minutes > 0 && (
+          <>
+            <span>&middot;</span>
+            <span>{post.reading_time_minutes} min</span>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,64 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCard from '../../../components/blog/BlogCard.astro';
+import FeaturedPost from '../../../components/blog/FeaturedPost.astro';
+import { getAllPublishedPosts, getAllCategories, buildSearchIndex } from '../../../lib/blog';
+
+const locale = 'en-US' as const;
+const posts = await getAllPublishedPosts();
+const categories = await getAllCategories();
+const searchIndex = await buildSearchIndex(posts);
+
+const featuredPost = posts[0] || null;
+const gridPosts = posts.slice(1);
+---
+
+<BlogLayout
+  title="Blog"
+  description="Articles about conversational sales, AI, WhatsApp Business, and marketing automation."
+  path="/blog"
+  locale={locale}
+>
+  <div class="pt-28 pb-8 lg:pt-36 lg:pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="font-poppins text-3xl lg:text-4xl font-bold text-[#1a1a2e]">Blog</h1>
+      <p class="text-base text-[#656D78] mt-3 max-w-2xl">
+        Insights on conversational sales, artificial intelligence, and closing more deals with technology.
+      </p>
+    </div>
+  </div>
+
+  {categories.length > 0 && (
+    <div class="max-w-7xl mx-auto px-6 mb-8">
+      <div class="flex flex-wrap gap-2">
+        <a href="/en/blog" class="px-4 py-2 rounded-full text-sm font-medium bg-teal-50 text-teal-700">All</a>
+        {categories.map((cat) => (
+          <a href={`/en/blog?category=${cat.slug}`} class="px-4 py-2 rounded-full text-sm font-medium text-[#656D78] hover:bg-gray-100 transition-colors">
+            {cat.name_en || cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {posts.length === 0 ? (
+    <div class="max-w-7xl mx-auto px-6 py-20 text-center">
+      <p class="text-[#656D78]">No articles published yet. Check back soon!</p>
+    </div>
+  ) : (
+    <div class="max-w-7xl mx-auto px-6 pb-16">
+      {featuredPost && (
+        <div class="mb-12"><FeaturedPost post={featuredPost} /></div>
+      )}
+      {gridPosts.length > 0 && (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gridPosts.map((post) => (<BlogCard post={post} />))}
+        </div>
+      )}
+    </div>
+  )}
+
+  <script is:inline define:vars={{ searchIndex }}>
+    window.__blogSearchIndex = searchIndex;
+  </script>
+</BlogLayout>
