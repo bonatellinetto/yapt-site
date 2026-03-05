@@ -1,0 +1,140 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import CTASection from '../components/CTASection.astro';
+import { t, type Locale } from '../lib/i18n';
+import { eagleSvg, genericIcons } from '../lib/fauna';
+
+const locale = 'pt-BR' as const;
+const m = (key: string) => t(`marketing.${key}`, locale);
+const meta = m('meta') as { title: string; description: string };
+const hero = m('hero') as { badge: string; title: string; subtitle: string };
+
+const gridData = m('grid') as Record<string, any>;
+const gridKeys = Object.keys(gridData).filter(k => k !== 'title' && k !== 'subtitle');
+const gridFeatures = gridKeys.map(k => ({
+  icon: genericIcons[k as keyof typeof genericIcons] || genericIcons.megaphone,
+  title: gridData[k].title,
+  description: gridData[k].description,
+}));
+
+const modules = ['campaigns','instantEngage','tracking','googleAds','templates','proposals','capi'] as const;
+
+// Pain points
+const painPoints = m('painPoints') as any;
+const painPointKeys = painPoints ? Object.keys(painPoints).filter(k => k !== 'title' && k !== 'subtitle') : [];
+
+// Statement / WOW
+const statement = m('statement') as any;
+
+// Timeline
+const timeline = m('timeline') as any;
+const timelineSteps = timeline?.steps || [];
+---
+
+<SiteLayout title={meta.title} description={meta.description} path="/marketing-site" locale={locale}>
+  <PageHero
+    gradient="linear-gradient(135deg, #92400E, #F59E0B, #FBBF24)"
+    title={hero.title}
+    subtitle={hero.subtitle}
+    badge={hero.badge}
+    fauna={eagleSvg}
+  />
+
+  {/* Statement WOW */}
+  {statement && statement.title && (
+    <section data-observe class="py-16 lg:py-24" style="background: linear-gradient(135deg, #1a1a2e, #1e3a5f);">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-4xl font-bold text-white leading-tight">{statement.title}</h2>
+          {statement.subtitle && <p class="text-base text-white/60 mt-6 max-w-2xl mx-auto">{statement.subtitle}</p>}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Pain Points */}
+  {painPointKeys.length > 0 && (
+    <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+          {painPoints.title && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">{painPoints.title}</h2>}
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {painPointKeys.map((k) => {
+            const pp = painPoints[k];
+            return (
+              <div
+                data-fade
+                style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+                class="bg-white rounded-2xl p-6 border border-amber-100"
+              >
+                <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{pp.title}</h3>
+                <p class="text-sm text-[#656D78] leading-relaxed">{pp.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {modules.map((key, i) => {
+      const mod = m(key) as { subtitle: string; title: string; description: string; features: string[] };
+      if (!mod || !mod.title) return null;
+      return (
+        <>
+          <ModuleDeepDive
+            title={mod.title}
+            subtitle={mod.subtitle}
+            description={mod.description}
+            features={mod.features || []}
+            reversed={i % 2 === 1}
+            accentColor="#F59E0B"
+          />
+          {i < modules.length - 1 && <SectionDivider variant="light" />}
+        </>
+      );
+    })}
+  </div>
+
+  {/* Timeline */}
+  {timelineSteps.length > 0 && (
+    <section data-observe class="py-16 lg:py-24" style="background: linear-gradient(135deg, #1a1a2e, #92400E);">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+          {timeline.title && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white">{timeline.title}</h2>}
+        </div>
+        <div class="relative">
+          <div class="absolute left-6 top-0 bottom-0 w-px bg-amber-400/20"></div>
+          {timelineSteps.map((step: any, i: number) => (
+            <div
+              data-fade
+              style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+              class="relative pl-16 pb-10 last:pb-0"
+            >
+              <div class="absolute left-4 w-5 h-5 rounded-full border-2 border-amber-400 bg-[#1a1a2e] flex items-center justify-center">
+                <span class="text-[10px] text-amber-300 font-bold">{i + 1}</span>
+              </div>
+              <h3 class="font-poppins text-base font-semibold text-white">{step.title}</h3>
+              <p class="text-sm text-white/50 mt-1 leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FeatureGrid
+    title={gridData.title}
+    features={gridFeatures}
+    columns={3}
+    accentColor="#F59E0B"
+  />
+
+  <CTASection locale={locale} />
+</SiteLayout>

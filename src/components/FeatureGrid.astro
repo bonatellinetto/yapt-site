@@ -1,0 +1,56 @@
+---
+interface Feature {
+  icon: string; // SVG string
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+  columns?: 2 | 3;
+  accentColor: string;
+}
+
+const { title, subtitle, features, columns = 3, accentColor } = Astro.props;
+---
+
+<section data-observe class="py-16 lg:py-24" style="background: #FAFBFC;">
+  <div class="max-w-7xl mx-auto px-6">
+    {(title || subtitle) && (
+      <div class="text-center mb-12">
+        {subtitle && (
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider mb-3" style={`color: ${accentColor};`}>
+            {subtitle}
+          </span>
+        )}
+        {title && (
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            {title}
+          </h2>
+        )}
+      </div>
+    )}
+    <div class={`grid grid-cols-1 ${columns === 3 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'} gap-6 lg:gap-8`}>
+      {features.map((feat) => (
+        <div
+          data-fade
+          style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+          class="bg-white rounded-2xl p-6 lg:p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div
+            class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+            style={`background-color: ${accentColor}15;`}
+          >
+            <div style={`color: ${accentColor};`} set:html={feat.icon} />
+          </div>
+          <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">
+            {feat.title}
+          </h3>
+          <p class="text-sm text-[#656D78] leading-relaxed">{feat.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { type Locale } from '../lib/i18n';
+
+const locale = 'pt-BR' as const;
+---
+
+<SiteLayout
+  title="Termos de Serviço"
+  description="Termos de Serviço da yapt. — plataforma conversacional com IA da New Way Soluções Digitais Ltda."
+  path="/terms"
+  locale={locale}
+>
+  <div class="pt-28 pb-16 lg:pt-36 lg:pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="font-poppins text-3xl lg:text-4xl font-bold text-[#1a1a2e] mb-8">Termos de Serviço</h1>
+      <p class="text-sm text-[#656D78] mb-8">Última atualização: Março 2026</p>
+
+      <div class="prose prose-sm max-w-none text-[#434A54] [&_h2]:font-poppins [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-[#1a1a2e] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:font-poppins [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-[#1a1a2e] [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_li]:text-sm">
+
+        <p>Estes Termos de Serviço ("Termos") regulam o uso da plataforma yapt. ("Plataforma"), operada pela <strong>New Way Soluções Digitais Ltda.</strong> ("New Way", "nós"), CNPJ 17.738.064/0001-97.</p>
+
+        <h2>1. Aceitação</h2>
+        <p>Ao acessar ou utilizar a Plataforma, você concorda com estes Termos e com nossa Política de Privacidade. Se não concordar, não utilize a Plataforma.</p>
+
+        <h2>2. Descrição do Serviço</h2>
+        <p>A yapt. é uma plataforma conversacional com inteligência artificial voltada para gestão de vendas. Inclui inbox unificado, qualificação de leads, automações, CRM, integrações com canais de comunicação e ferramentas de IA.</p>
+
+        <h2>3. Cadastro e Conta</h2>
+        <ul>
+          <li>Você deve fornecer informações verdadeiras e mantê-las atualizadas</li>
+          <li>Você é responsável pela segurança de suas credenciais</li>
+          <li>Cada conta deve corresponder a uma empresa ou pessoa física</li>
+          <li>Contas de teste podem ser encerradas após 14 dias sem atividade</li>
+        </ul>
+
+        <h2>4. Uso Permitido</h2>
+        <p>Você se compromete a:</p>
+        <ul>
+          <li>Utilizar a Plataforma em conformidade com a legislação aplicável</li>
+          <li>Não enviar spam, conteúdo ilegal ou não solicitado</li>
+          <li>Não tentar acessar dados de outros tenants</li>
+          <li>Não realizar engenharia reversa ou descompilar a Plataforma</li>
+          <li>Respeitar os limites de uso do seu plano</li>
+        </ul>
+
+        <h2>5. Integrações</h2>
+        <p>A Plataforma integra-se com serviços de terceiros (WhatsApp Business API, Meta Ads, Google Ads, entre outros). O uso dessas integrações está sujeito aos termos de cada provedor. Não nos responsabilizamos por interrupções ou mudanças nos serviços de terceiros.</p>
+
+        <h2>6. Inteligência Artificial</h2>
+        <ul>
+          <li>A IA da Plataforma auxilia na qualificação de leads, sugestão de respostas e automações</li>
+          <li>As respostas geradas por IA são sugestões e não substituem o julgamento humano</li>
+          <li>Você é responsável por revisar e aprovar as ações da IA quando necessário</li>
+          <li>Não garantimos precisão absoluta das análises de IA</li>
+        </ul>
+
+        <h2>7. Propriedade Intelectual</h2>
+        <p>A Plataforma, incluindo seu código-fonte, design, marca e conteúdo, é propriedade da New Way. Você recebe uma licença limitada, não exclusiva e revogável para usar a Plataforma conforme seu plano. Os dados inseridos por você permanecem de sua propriedade.</p>
+
+        <h2>8. Disponibilidade e SLA</h2>
+        <ul>
+          <li>Nos esforçamos para manter a Plataforma disponível 99,9% do tempo</li>
+          <li>Manutenções programadas serão comunicadas com 48h de antecedência</li>
+          <li>Para clientes Enterprise, SLAs específicos podem ser negociados</li>
+        </ul>
+
+        <h2>9. Limitação de Responsabilidade</h2>
+        <p>Na máxima extensão permitida por lei, a New Way não será responsável por: danos indiretos, perda de lucros, interrupções causadas por terceiros, ou ações tomadas com base em análises de IA. Nossa responsabilidade total está limitada ao valor pago pelo cliente nos últimos 12 meses.</p>
+
+        <h2>10. Rescisão</h2>
+        <ul>
+          <li>Você pode cancelar sua conta a qualquer momento</li>
+          <li>Podemos suspender ou encerrar contas que violem estes Termos</li>
+          <li>Após o cancelamento, seus dados serão retidos por 30 dias para recuperação e depois eliminados</li>
+        </ul>
+
+        <h2>11. Alterações</h2>
+        <p>Podemos alterar estes Termos a qualquer momento. Mudanças significativas serão comunicadas com 30 dias de antecedência. O uso continuado da Plataforma após as alterações constitui aceitação.</p>
+
+        <h2>12. Legislação e Foro</h2>
+        <p>Estes Termos são regidos pela legislação brasileira. Fica eleito o foro da comarca de São Paulo/SP para dirimir quaisquer controvérsias.</p>
+
+        <h2>13. Contato</h2>
+        <ul>
+          <li><strong>E-mail</strong>: contato@newway.com.br</li>
+          <li><strong>Endereço</strong>: New Way Soluções Digitais Ltda., São Paulo/SP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  reversed?: boolean;
+  accentColor: string;
+}
+
+const { title, subtitle, description, features, reversed = false, accentColor } = Astro.props;
+---
+
+<section data-observe class="py-16 lg:py-24">
+  <div class={`max-w-7xl mx-auto px-6 flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-16`}>
+    <!-- Text side -->
+    <div class="flex-1 max-w-xl">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider mb-3" style={`color: ${accentColor};`}>
+          {subtitle}
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e] leading-tight">
+          {title}
+        </h2>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base text-[#656D78] mt-4 leading-relaxed">
+          {description}
+        </p>
+      </div>
+      <ul class="mt-6 space-y-3">
+        {features.map((feat) => (
+          <li
+            data-fade
+            style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="flex items-start gap-3"
+          >
+            <span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${accentColor};`} />
+            <span class="text-sm text-[#434A54] leading-relaxed">{feat}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Mockup side (slot) -->
+    <div
+      class="flex-1 max-w-lg w-full"
+      data-fade
+      style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
+    >
+      <slot />
+    </div>
+  </div>
+</section>

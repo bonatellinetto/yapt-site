@@ -1,0 +1,159 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTASection from '../../components/CTASection.astro';
+import { t, type Locale } from '../../lib/i18n';
+import { toucanSvg } from '../../lib/fauna';
+
+const locale = 'en-US' as const;
+const m = (key: string) => t(`pricing.${key}`, locale);
+const meta = m('meta') as { title: string; description: string };
+const hero = m('hero') as { badge: string; title: string; subtitle: string };
+
+const plans = m('plans') as any;
+const planKeys = plans ? Object.keys(plans).filter(k => k !== 'title' && k !== 'subtitle') : [];
+
+const faq = m('faq') as any;
+const faqItems = faq?.items || [];
+
+// JSON-LD for FAQ
+const faqJsonLd = faqItems.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item: any) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+} : null;
+---
+
+<SiteLayout
+  title={meta.title}
+  description={meta.description}
+  path="/en/pricing"
+  locale={locale}
+  jsonLd={faqJsonLd ? [faqJsonLd] : []}
+>
+  <PageHero
+    gradient="linear-gradient(135deg, #064E3B, #0D9488, #20B2AA)"
+    title={hero.title}
+    subtitle={hero.subtitle}
+    badge={hero.badge}
+    fauna={toucanSvg}
+  />
+
+  <!-- Pricing Cards -->
+  <section data-observe class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      {plans.title && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e] text-center mb-4">{plans.title}</h2>}
+      {plans.subtitle && <p class="text-base text-[#656D78] text-center mb-12 max-w-2xl mx-auto">{plans.subtitle}</p>}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {planKeys.map((k, i) => {
+          const plan = plans[k];
+          const isHighlighted = i === 1;
+          return (
+            <div
+              data-fade
+              style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+              class={`rounded-2xl p-6 lg:p-8 ${
+                isHighlighted
+                  ? 'bg-white border-2 border-teal-400 shadow-xl relative'
+                  : 'bg-white border border-gray-200'
+              }`}
+            >
+              {isHighlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span class="bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {plan.badge || 'Popular'}
+                  </span>
+                </div>
+              )}
+              <h3 class="font-poppins text-lg font-bold text-[#1a1a2e]">{plan.name}</h3>
+              <div class="mt-4 mb-6">
+                <span class="font-poppins text-3xl font-bold text-[#1a1a2e]">{plan.price}</span>
+                {plan.period && <span class="text-sm text-[#656D78]">/{plan.period}</span>}
+              </div>
+              <p class="text-sm text-[#656D78] mb-6">{plan.description}</p>
+              {plan.features && (
+                <ul class="space-y-3 mb-8">
+                  {(plan.features as string[]).map((f: string) => (
+                    <li class="flex items-start gap-2 text-sm text-[#434A54]">
+                      <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-teal-500" fill="none" viewBox="0 0 16 16">
+                        <path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <a
+                href="#"
+                class={`block w-full text-center font-poppins font-semibold px-6 py-3 rounded-xl transition-all duration-200 ${
+                  isHighlighted
+                    ? 'bg-teal-500 text-white hover:bg-teal-600'
+                    : 'border-2 border-gray-200 text-[#1a1a2e] hover:border-teal-400'
+                }`}
+              >
+                {plan.cta || 'Get Started'}
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  {faqItems.length > 0 && (
+    <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e] text-center mb-12">
+          {faq.title || 'Frequently Asked Questions'}
+        </h2>
+        <div class="space-y-3" id="faq-accordion">
+          {faqItems.map((item: any, i: number) => (
+            <div
+              data-fade
+              style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+              class="bg-white rounded-xl border border-gray-100 overflow-hidden"
+            >
+              <button
+                class="w-full flex items-center justify-between px-6 py-4 text-left faq-trigger"
+                data-faq-index={i}
+              >
+                <span class="font-medium text-[#1a1a2e] text-sm pr-4">{item.question}</span>
+                <svg class="w-5 h-5 text-[#656D78] flex-shrink-0 transition-transform duration-200 faq-chevron" fill="none" viewBox="0 0 20 20">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="faq-content hidden px-6 pb-4">
+                <p class="text-sm text-[#656D78] leading-relaxed">{item.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTASection locale={locale} />
+</SiteLayout>
+
+<script is:inline>
+  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var content = this.nextElementSibling;
+      var chevron = this.querySelector('.faq-chevron');
+      var isOpen = !content.classList.contains('hidden');
+      // Close all
+      document.querySelectorAll('.faq-content').forEach(function(c) { c.classList.add('hidden'); });
+      document.querySelectorAll('.faq-chevron').forEach(function(c) { c.style.transform = ''; });
+      // Toggle current
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>

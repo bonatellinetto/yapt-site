@@ -1,0 +1,71 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import CTASection from '../components/CTASection.astro';
+import { t, type Locale } from '../lib/i18n';
+import { dolphinSvg, genericIcons } from '../lib/fauna';
+
+const locale = 'pt-BR' as const;
+const m = (key: string) => t(`conversations.${key}`, locale);
+const meta = m('meta') as { title: string; description: string };
+const hero = m('hero') as { badge: string; title: string; subtitle: string };
+
+const gridData = m('grid') as Record<string, any>;
+const gridKeys = Object.keys(gridData).filter(k => k !== 'title');
+const iconMap: Record<string, string> = {
+  realtime: genericIcons.realtime, omnichannel: genericIcons.omnichannel,
+  ai: genericIcons.ai, score: genericIcons.score, emotion: genericIcons.emotion,
+  crm: genericIcons.crm, smartQueue: genericIcons.queue, snooze: genericIcons.snooze,
+  macros: genericIcons.macros, windowGuardian: genericIcons.shield,
+  qualificationGate: genericIcons.gate, viewerPresence: genericIcons.presence,
+};
+const gridFeatures = gridKeys.map(k => ({
+  icon: iconMap[k] || genericIcons.ai,
+  title: gridData[k].title,
+  description: gridData[k].description,
+}));
+
+const modules = ['inbox','handlerState','yavehTeam','mentor','memory','audio','people','connect'] as const;
+---
+
+<SiteLayout title={meta.title} description={meta.description} path="/conversations" locale={locale}>
+  <PageHero
+    gradient="linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA)"
+    title={hero.title}
+    subtitle={hero.subtitle}
+    badge={hero.badge}
+    fauna={dolphinSvg}
+  />
+
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {modules.map((key, i) => {
+      const mod = m(key) as { subtitle: string; title: string; description: string; features: string[] };
+      if (!mod || !mod.title) return null;
+      return (
+        <>
+          <ModuleDeepDive
+            title={mod.title}
+            subtitle={mod.subtitle}
+            description={mod.description}
+            features={mod.features || []}
+            reversed={i % 2 === 1}
+            accentColor="#3B82F6"
+          />
+          {i < modules.length - 1 && <SectionDivider variant="light" />}
+        </>
+      );
+    })}
+  </div>
+
+  <FeatureGrid
+    title={gridData.title}
+    features={gridFeatures}
+    columns={3}
+    accentColor="#3B82F6"
+  />
+
+  <CTASection locale={locale} />
+</SiteLayout>

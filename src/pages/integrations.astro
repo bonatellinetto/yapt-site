@@ -1,0 +1,48 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import CTASection from '../components/CTASection.astro';
+import { t, type Locale } from '../lib/i18n';
+import { myceliumSvg } from '../lib/fauna';
+
+const locale = 'pt-BR' as const;
+const m = (key: string) => t(`integrations.${key}`, locale);
+const meta = m('meta') as { title: string; description: string };
+const hero = m('hero') as { badge: string; title: string; subtitle: string };
+
+const modules = ['channels','ads','connect','flows','api','productivity'] as const;
+---
+
+<SiteLayout title={meta.title} description={meta.description} path="/integrations" locale={locale}>
+  <PageHero
+    gradient="linear-gradient(135deg, #064E3B, #0D9488, #2DD4BF)"
+    title={hero.title}
+    subtitle={hero.subtitle}
+    badge={hero.badge}
+    fauna={myceliumSvg}
+  />
+
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {modules.map((key, i) => {
+      const mod = m(key) as { subtitle: string; title: string; description: string; features: string[] };
+      if (!mod || !mod.title) return null;
+      return (
+        <>
+          <ModuleDeepDive
+            title={mod.title}
+            subtitle={mod.subtitle}
+            description={mod.description}
+            features={mod.features || []}
+            reversed={i % 2 === 1}
+            accentColor="#0D9488"
+          />
+          {i < modules.length - 1 && <SectionDivider variant="light" />}
+        </>
+      );
+    })}
+  </div>
+
+  <CTASection locale={locale} />
+</SiteLayout>

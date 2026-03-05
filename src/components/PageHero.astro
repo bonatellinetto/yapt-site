@@ -1,0 +1,79 @@
+---
+interface Props {
+  gradient: string;
+  title: string;
+  subtitle: string;
+  badge?: string;
+  fauna?: string; // Raw SVG string
+}
+
+const { gradient, title, subtitle, badge, fauna } = Astro.props;
+---
+
+<div
+  data-observe
+  class="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24"
+  style={`background: ${gradient};`}
+>
+  <!-- Light rays -->
+  <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+    <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+  </div>
+
+  <!-- Foliage top -->
+  <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+    <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+      <path d="M0 80 C80 50, 160 20, 240 40 C320 60, 400 10, 480 35 C560 60, 640 15, 720 38 C800 61, 880 18, 960 42 C1040 66, 1120 22, 1200 45 C1280 68, 1360 30, 1440 50 L1440 0 L0 0Z" fill="rgba(255,255,255,0.25)"/>
+      <ellipse cx="200" cy="25" rx="30" ry="15" fill="rgba(255,255,255,0.1)" />
+      <ellipse cx="700" cy="20" rx="35" ry="18" fill="rgba(255,255,255,0.08)" />
+      <ellipse cx="1100" cy="30" rx="28" ry="14" fill="rgba(255,255,255,0.1)" />
+    </svg>
+  </div>
+
+  <!-- Fauna SVG -->
+  {fauna && (
+    <div
+      class="absolute pointer-events-none hidden lg:block"
+      style="top: 12%; right: 6%; animation: yapt-float 6s ease-in-out infinite; opacity: 0.25;"
+      set:html={fauna}
+    />
+  )}
+
+  <!-- Leaves decorative -->
+  <div class="absolute pointer-events-none" style="opacity: 0.08;">
+    <svg class="w-full h-full absolute inset-0" viewBox="0 0 1440 400" fill="none">
+      <path d="M100 350 Q120 320, 110 290" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+      <path d="M1350 100 Q1370 130, 1360 160" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+      <ellipse cx="80" cy="280" rx="12" ry="6" fill="rgba(255,255,255,0.2)" transform="rotate(-30 80 280)" />
+      <ellipse cx="1380" cy="150" rx="12" ry="6" fill="rgba(255,255,255,0.2)" transform="rotate(20 1380 150)" />
+    </svg>
+  </div>
+
+  <!-- Bottom foliage wave -->
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+      <path d="M0 0 C120 40, 240 15, 360 30 C480 45, 600 10, 720 25 C840 40, 960 8, 1080 22 C1200 36, 1320 12, 1440 20 L1440 60 L0 60Z" fill="rgba(255,255,255,0.2)"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative max-w-4xl mx-auto px-6 text-center">
+    {badge && (
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block rounded-full px-4 py-1.5 text-xs font-medium text-white/90 mb-6" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">
+          {badge}
+        </span>
+      </div>
+    )}
+    <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <h1 class="font-poppins text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+        {title}
+      </h1>
+    </div>
+    <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+      <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+  </div>
+</div>

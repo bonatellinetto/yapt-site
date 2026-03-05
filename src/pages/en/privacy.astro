@@ -1,0 +1,103 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { type Locale } from '../../lib/i18n';
+
+const locale = 'en-US' as const;
+---
+
+<SiteLayout
+  title="Privacy Policy"
+  description="Privacy Policy for yapt. — AI-powered conversational platform by New Way Soluções Digitais Ltda."
+  path="/en/privacy"
+  locale={locale}
+>
+  <div class="pt-28 pb-16 lg:pt-36 lg:pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="font-poppins text-3xl lg:text-4xl font-bold text-[#1a1a2e] mb-8">Privacy Policy</h1>
+      <p class="text-sm text-[#656D78] mb-8">Last updated: March 2026</p>
+
+      <div class="prose prose-sm max-w-none text-[#434A54] [&_h2]:font-poppins [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-[#1a1a2e] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:font-poppins [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-[#1a1a2e] [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_li]:text-sm">
+
+        <p><strong>New Way Soluções Digitais Ltda.</strong> ("New Way", "we", "us"), CNPJ 17.738.064/0001-97, is the data controller for personal data processed by the yapt. platform ("Platform"). This Policy describes how we collect, use, store, and share your data, in compliance with the Brazilian General Data Protection Law (LGPD — Law 13,709/2018) and applicable international privacy regulations.</p>
+
+        <h2>1. Data We Collect</h2>
+        <h3>1.1 Data you provide</h3>
+        <ul>
+          <li>Name, email, phone number, and company (registration)</li>
+          <li>Payment data (processed by a third-party gateway)</li>
+          <li>Content of messages sent/received on the Platform</li>
+        </ul>
+        <h3>1.2 Automatically collected data</h3>
+        <ul>
+          <li>IP address, browser, device, and operating system</li>
+          <li>Pages visited, clicks, and session duration</li>
+          <li>Cookies and similar technologies (see section 10)</li>
+        </ul>
+
+        <h2>2. How We Use Your Data</h2>
+        <ul>
+          <li>Provide and improve the Platform's services</li>
+          <li>Process and qualify leads using artificial intelligence</li>
+          <li>Send transactional communications and, with your consent, marketing messages</li>
+          <li>Comply with legal and regulatory obligations</li>
+          <li>Prevent fraud and ensure security</li>
+        </ul>
+
+        <h2>3. Artificial Intelligence</h2>
+        <p>The Platform uses AI models for sentiment analysis, lead qualification, response suggestions, and automations. Models process conversation content at runtime and do not retain data after processing. No personal data is used to train third-party models.</p>
+
+        <h2>4. Data Sharing</h2>
+        <p>We share data only with:</p>
+        <ul>
+          <li><strong>Infrastructure providers</strong>: Supabase (database), Cloudflare (CDN)</li>
+          <li><strong>AI providers</strong>: OpenAI, Google (Gemini) — conversation content at runtime only</li>
+          <li><strong>Communication providers</strong>: Meta (WhatsApp Business API), Google (email)</li>
+          <li><strong>Authorities</strong>: when required by law or court order</li>
+        </ul>
+
+        <h2>5. Security</h2>
+        <p>We adopt technical and organizational measures to protect your data, including: encryption in transit (TLS) and at rest, role-based access control (RBAC), Row Level Security (RLS) on all multi-tenant data, continuous monitoring, and audit logs.</p>
+
+        <h2>6. Retention</h2>
+        <p>We retain your data for as long as your account is active or as needed to fulfill legal obligations. Conversation data is retained for up to 2 years after account closure, unless otherwise required by law.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Confirmation and access to your processed data</li>
+          <li>Correction of incomplete or outdated data</li>
+          <li>Anonymization, blocking, or deletion of unnecessary data</li>
+          <li>Data portability</li>
+          <li>Withdrawal of consent</li>
+          <li>Information about third-party data sharing</li>
+          <li>Objection to processing, where applicable</li>
+        </ul>
+
+        <h2>8. International Transfers</h2>
+        <p>Some of our infrastructure and AI providers have servers outside Brazil. In these cases, we ensure that transfers are carried out with an adequate level of protection, in accordance with the LGPD and applicable international standards.</p>
+
+        <h2>9. Automated Decisions</h2>
+        <p>The Platform performs automated decisions, such as lead qualification and conversation routing. You may request a review of any automated decision by contacting our DPO.</p>
+
+        <h2>10. Cookies</h2>
+        <p>We use essential cookies for the Platform's operation and analytical cookies to improve the user experience. You can manage your cookie preferences in your browser settings.</p>
+
+        <h2>11. Sub-processors</h2>
+        <p>Current list of sub-processors: Supabase Inc. (database), Cloudflare Inc. (CDN and protection), OpenAI LLC (language processing), Google LLC (Gemini AI and email), Meta Platforms Inc. (WhatsApp Business API), Resend Inc. (transactional email).</p>
+
+        <h2>12. DPA (Data Processing Agreement)</h2>
+        <p>For enterprise customers, we offer a DPA upon request. Contact our DPO to request one.</p>
+
+        <h2>13. Changes</h2>
+        <p>We may update this Policy periodically. We will notify you of significant changes via email or on the Platform.</p>
+
+        <h2>14. Contact</h2>
+        <p>To exercise your rights or ask questions:</p>
+        <ul>
+          <li><strong>DPO</strong>: dpo@newway.com.br</li>
+          <li><strong>Address</strong>: New Way Soluções Digitais Ltda., São Paulo/SP, Brazil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

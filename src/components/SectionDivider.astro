@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: 'leaves' | 'light';
+}
+
+const { variant = 'leaves' } = Astro.props;
+---
+
+{variant === 'light' ? (
+  <div class="relative py-4">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="h-px" style="background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);"></div>
+    </div>
+  </div>
+) : (
+  <div class="relative py-6 overflow-hidden" style="opacity: 0.12;">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+      <ellipse cx="120" cy="30" rx="40" ry="12" fill="#10B981" transform="rotate(-15 120 30)" />
+      <ellipse cx="145" cy="25" rx="30" ry="10" fill="#059669" transform="rotate(10 145 25)" />
+      <ellipse cx="100" cy="35" rx="25" ry="8" fill="#047857" transform="rotate(-25 100 35)" />
+      <ellipse cx="480" cy="22" rx="18" ry="7" fill="#10B981" transform="rotate(20 480 22)" />
+      <ellipse cx="520" cy="38" rx="15" ry="6" fill="#059669" transform="rotate(-10 520 38)" />
+      <path d="M200 30 C350 20, 500 40, 650 28 C800 16, 950 38, 1100 26 C1250 14, 1350 35, 1440 30" stroke="#10B981" stroke-width="1.5" fill="none" />
+      <ellipse cx="400" cy="33" rx="10" ry="5" fill="#059669" transform="rotate(30 400 33)" />
+      <ellipse cx="750" cy="24" rx="10" ry="5" fill="#10B981" transform="rotate(-20 750 24)" />
+      <ellipse cx="1000" cy="34" rx="10" ry="5" fill="#047857" transform="rotate(15 1000 34)" />
+      <ellipse cx="1320" cy="28" rx="35" ry="11" fill="#10B981" transform="rotate(12 1320 28)" />
+      <ellipse cx="1350" cy="35" rx="28" ry="9" fill="#059669" transform="rotate(-8 1350 35)" />
+      <line x1="300" y1="5" x2="320" y2="55" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" />
+      <line x1="900" y1="0" x2="880" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" />
+    </svg>
+  </div>
+)}
