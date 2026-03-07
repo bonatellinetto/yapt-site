@@ -1,0 +1,102 @@
+---
+/** MockupYaCampaigns — Campaign Attribution Dashboard (static HTML/CSS mockup) */
+---
+<div class="mockup-frame">
+  <!-- Top bar -->
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
+    <div style="flex:1;"></div>
+    <div style="font-size: 10px; font-weight: 600; color: #D97706; font-family: Poppins, sans-serif;">yaCampaigns</div>
+  </div>
+
+  <!-- KPIs -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
+      <div style="font-size: 8px; color: #9CA3AF;">Leads hoje</div>
+      <div style="font-size: 16px; font-weight: 700; color: #D97706;">847</div>
+    </div>
+    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
+      <div style="font-size: 8px; color: #9CA3AF;">CPL</div>
+      <div style="font-size: 16px; font-weight: 700; color: #D97706;">R$4.20</div>
+    </div>
+    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
+      <div style="font-size: 8px; color: #9CA3AF;">ROAS</div>
+      <div style="font-size: 16px; font-weight: 700; color: #22C55E;">8.4x</div>
+    </div>
+  </div>
+
+  <!-- Campaign list -->
+  <div style="font-size: 9px; font-weight: 600; color: #1F2937; margin-bottom: 8px;">Campanhas ativas</div>
+  <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;">
+    <!-- Campaign 1 -->
+    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
+      <div style="width: 24px; height: 24px; border-radius: 6px; background: #1877F2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Black Friday — Conversao WhatsApp</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Meta Ads &middot; 312 leads &middot; R$2.80 CPL</div>
+      </div>
+      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">12.1x</div>
+    </div>
+
+    <!-- Campaign 2 -->
+    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
+      <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #E1306C, #F77737); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="18" cy="6" r="1.5" fill="white"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Remarketing — Carrinho Abandonado</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Instagram &middot; 198 leads &middot; R$5.40 CPL</div>
+      </div>
+      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">6.8x</div>
+    </div>
+
+    <!-- Campaign 3 -->
+    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
+      <div style="width: 24px; height: 24px; border-radius: 6px; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Lancamento Produto — CTWA</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Click-to-WhatsApp &middot; 337 leads &middot; R$3.10 CPL</div>
+      </div>
+      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">9.2x</div>
+    </div>
+  </div>
+
+  <!-- Attribution funnel mini -->
+  <div style="background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.1); border-radius: 10px; padding: 10px;">
+    <div style="font-size: 8px; font-weight: 600; color: #D97706; margin-bottom: 8px;">Funil de atribuicao</div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <div style="height: 6px; border-radius: 3px; background: #F59E0B; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">847 Cliques</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <div style="height: 6px; border-radius: 3px; background: #F59E0B; width: 72%;"></div>
+        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">612 Conversas</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <div style="height: 6px; border-radius: 3px; background: #D97706; width: 38%;"></div>
+        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">324 Leads</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <div style="height: 6px; border-radius: 3px; background: #22C55E; width: 14%;"></div>
+        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">118 Vendas</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mockup-frame {
+    width: 100%; max-width: 480px; border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 18px; overflow: hidden;
+  }
+</style>

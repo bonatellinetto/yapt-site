@@ -1,0 +1,104 @@
+---
+/** MockupYaveh — AI Intelligence Dashboard (static HTML/CSS mockup) */
+---
+<div class="mockup-frame">
+  <!-- Top bar -->
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
+    <div style="flex:1;"></div>
+    <div style="font-size: 10px; font-weight: 600; color: #8B5CF6; font-family: Poppins, sans-serif;">yaveh</div>
+  </div>
+
+  <!-- Greeting -->
+  <div style="margin-bottom: 14px;">
+    <div style="font-size: 13px; font-weight: 600; color: #1F2937; font-family: Poppins, sans-serif;">Bom dia, Carolina!</div>
+    <div style="font-size: 9px; color: #9CA3AF; margin-top: 2px;">A IA resolveu 89% das conversas hoje</div>
+  </div>
+
+  <!-- KPI row -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">Conversao</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">34%</div>
+      <div style="font-size: 7px; color: #22C55E;">+12%</div>
+    </div>
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">TME</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">2.4s</div>
+      <div style="font-size: 7px; color: #22C55E;">-0.8s</div>
+    </div>
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">Resolucao IA</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">89%</div>
+      <div style="font-size: 7px; color: #22C55E;">+5%</div>
+    </div>
+  </div>
+
+  <!-- Emotion analysis card -->
+  <div style="background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.03)); border: 1px solid rgba(139,92,246,0.12); border-radius: 10px; padding: 10px; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+      <div style="width: 6px; height: 6px; border-radius: 50%; background: #8B5CF6; animation: mockup-pulse 2s ease-in-out infinite;"></div>
+      <div style="font-size: 9px; font-weight: 600; color: #7C3AED;">Emotion Engine — Tempo real</div>
+    </div>
+    <div style="display: flex; gap: 6px;">
+      <div class="mockup-emotion" style="flex: 3;">
+        <div style="height: 4px; border-radius: 2px; background: #22C55E; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Satisfeito 62%</div>
+      </div>
+      <div class="mockup-emotion" style="flex: 2;">
+        <div style="height: 4px; border-radius: 2px; background: #F59E0B; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Neutro 24%</div>
+      </div>
+      <div class="mockup-emotion" style="flex: 1;">
+        <div style="height: 4px; border-radius: 2px; background: #EF4444; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Frustrado 14%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mini chart area -->
+  <div style="display: flex; gap: 8px;">
+    <div style="flex: 1; background: #F9FAFB; border-radius: 8px; padding: 8px;">
+      <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 6px;">Conversas/hora</div>
+      <div style="display: flex; align-items: flex-end; gap: 3px; height: 36px;">
+        <div style="flex:1; background: rgba(139,92,246,0.2); border-radius: 2px; height: 40%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.3); border-radius: 2px; height: 55%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.4); border-radius: 2px; height: 70%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.5); border-radius: 2px; height: 90%;"></div>
+        <div style="flex:1; background: #8B5CF6; border-radius: 2px; height: 100%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.6); border-radius: 2px; height: 75%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.3); border-radius: 2px; height: 45%;"></div>
+      </div>
+    </div>
+    <div style="flex: 1; background: #F9FAFB; border-radius: 8px; padding: 8px;">
+      <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 6px;">Origem leads</div>
+      <div style="position: relative; width: 40px; height: 40px; margin: 0 auto;">
+        <svg viewBox="0 0 36 36" style="width: 40px; height: 40px; transform: rotate(-90deg);">
+          <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(139,92,246,0.15)" stroke-width="5"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#8B5CF6" stroke-width="5" stroke-dasharray="44 44" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="22 66" stroke-dashoffset="-44" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#F59E0B" stroke-width="5" stroke-dasharray="11 77" stroke-dashoffset="-66" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mockup-frame {
+    width: 100%; max-width: 480px; border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 18px; overflow: hidden;
+  }
+  .mockup-kpi {
+    background: #F9FAFB; border-radius: 10px; padding: 8px 10px; text-align: center;
+  }
+  @keyframes mockup-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+/** MockupYaFlows — Automation Flow Builder (static HTML/CSS mockup) */
+---
+<div class="mockup-frame">
+  <!-- Top bar -->
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
+    <div style="flex:1;"></div>
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <div style="width: 6px; height: 6px; border-radius: 50%; background: #22C55E; animation: mockup-pulse 2s ease-in-out infinite;"></div>
+      <div style="font-size: 8px; color: #059669;">Ativo</div>
+    </div>
+    <div style="font-size: 10px; font-weight: 600; color: #059669; font-family: Poppins, sans-serif;">yaFlows</div>
+  </div>
+
+  <!-- Flow name -->
+  <div style="font-size: 12px; font-weight: 600; color: #1F2937; margin-bottom: 4px; font-family: Poppins, sans-serif;">Onboarding Novo Cliente</div>
+  <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 16px;">Event-driven &middot; Multi-agente &middot; 2.4k execucoes/dia</div>
+
+  <!-- Flow diagram -->
+  <div style="position: relative; padding: 0 10px;">
+    <!-- Node: Trigger -->
+    <div class="flow-node" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
+      <div class="flow-icon" style="background: #10B981;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">Trigger: Nova conversa</div>
+        <div style="font-size: 7px; color: #9CA3AF;">WhatsApp &middot; Instagram &middot; Webchat</div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="flow-connector"><div class="flow-line"></div></div>
+
+    <!-- Node: AI Classification -->
+    <div class="flow-node" style="border-color: rgba(139,92,246,0.3); background: rgba(139,92,246,0.04);">
+      <div class="flow-icon" style="background: #8B5CF6;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">IA classifica intencao</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Memoria infinita &middot; Contexto completo</div>
+      </div>
+    </div>
+
+    <!-- Connector with branch -->
+    <div class="flow-connector"><div class="flow-line"></div></div>
+
+    <!-- Node: Conditional -->
+    <div style="display: flex; gap: 8px;">
+      <!-- Branch A -->
+      <div class="flow-node" style="flex: 1; border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.04);">
+        <div>
+          <div style="font-size: 8px; font-weight: 600; color: #3B82F6;">Compra</div>
+          <div style="font-size: 7px; color: #9CA3AF;">→ Agente Sales</div>
+        </div>
+      </div>
+      <!-- Branch B -->
+      <div class="flow-node" style="flex: 1; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04);">
+        <div>
+          <div style="font-size: 8px; font-weight: 600; color: #D97706;">Suporte</div>
+          <div style="font-size: 7px; color: #9CA3AF;">→ Agente CS</div>
+        </div>
+      </div>
+      <!-- Branch C -->
+      <div class="flow-node" style="flex: 1; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
+        <div>
+          <div style="font-size: 8px; font-weight: 600; color: #059669;">Duvida</div>
+          <div style="font-size: 7px; color: #9CA3AF;">→ IA responde</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="flow-connector"><div class="flow-line"></div></div>
+
+    <!-- Node: Action -->
+    <div class="flow-node" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
+      <div class="flow-icon" style="background: #059669;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">Atualiza CRM + Notifica</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Deal criado &middot; Tag aplicada &middot; Alerta enviado</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div style="display: flex; gap: 8px; margin-top: 14px;">
+    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
+      <div style="font-size: 7px; color: #9CA3AF;">Execucoes</div>
+      <div style="font-size: 12px; font-weight: 700; color: #059669;">2.4k</div>
+    </div>
+    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
+      <div style="font-size: 7px; color: #9CA3AF;">Sucesso</div>
+      <div style="font-size: 12px; font-weight: 700; color: #059669;">99.2%</div>
+    </div>
+    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
+      <div style="font-size: 7px; color: #9CA3AF;">Tempo medio</div>
+      <div style="font-size: 12px; font-weight: 700; color: #059669;">1.2s</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mockup-frame {
+    width: 100%; max-width: 480px; border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 18px; overflow: hidden;
+  }
+  .flow-node {
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid; border-radius: 10px; padding: 8px 10px;
+  }
+  .flow-icon {
+    width: 24px; height: 24px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .flow-connector {
+    display: flex; justify-content: center; padding: 4px 0;
+  }
+  .flow-line {
+    width: 2px; height: 14px; background: #D1D5DB; border-radius: 1px;
+  }
+  @keyframes mockup-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+</style>
