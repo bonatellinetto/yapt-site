@@ -82,26 +82,7 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   ))}
 
-  <!-- Language detection + redirect (first visit only) -->
-  <script is:inline>
-    (function() {
-      if (typeof window === 'undefined') return;
-      var stored = localStorage.getItem('cosmos_language');
-      if (stored) return; // user already chose a language
-
-      var path = window.location.pathname;
-      // Don't redirect if already on a locale path
-      if (path.startsWith('/en/') || path.startsWith('/en') || path.startsWith('/es/') || path.startsWith('/es')) return;
-      // Only redirect from root pages (pt-BR default)
-      var lang = (navigator.language || '').toLowerCase();
-      if (lang.startsWith('en')) {
-        window.location.replace('/en' + path);
-      } else if (lang.startsWith('es')) {
-        window.location.replace('/es' + path);
-      }
-      // pt and others: stay on current path (pt-BR default)
-    })();
-  </script>
+  <!-- i18n handled via hreflang tags above — no JS redirect needed -->
 </head>
 <body class="min-h-screen bg-white">
   <SiteNavbar locale={locale} />
