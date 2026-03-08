@@ -1,102 +1,304 @@
 ---
-/** MockupYaCampaigns — Campaign Attribution Dashboard (static HTML/CSS mockup) */
+/** MockupYaCampaigns — yaPerformance > Atribuição & ROAS (replicates real product UI) */
 ---
-<div class="mockup-frame">
-  <!-- Top bar -->
-  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
-    <div style="flex:1;"></div>
-    <div style="font-size: 10px; font-weight: 600; color: #D97706; font-family: Poppins, sans-serif;">yaCampaigns</div>
-  </div>
-
-  <!-- KPIs -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
-    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
-      <div style="font-size: 8px; color: #9CA3AF;">Leads hoje</div>
-      <div style="font-size: 16px; font-weight: 700; color: #D97706;">847</div>
+<div class="yacmp-frame">
+  <!-- Header breadcrumb -->
+  <div class="yacmp-header">
+    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(32,178,170,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#20B2AA"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
     </div>
-    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
-      <div style="font-size: 8px; color: #9CA3AF;">CPL</div>
-      <div style="font-size: 16px; font-weight: 700; color: #D97706;">R$4.20</div>
-    </div>
-    <div style="background: rgba(245,158,11,0.06); border-radius: 10px; padding: 8px; text-align: center;">
-      <div style="font-size: 8px; color: #9CA3AF;">ROAS</div>
-      <div style="font-size: 16px; font-weight: 700; color: #22C55E;">8.4x</div>
+    <div>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 10px; color: #9CA3AF;">yaPerformance</span>
+        <span style="font-size: 10px; color: #D1D5DB;">›</span>
+        <span style="font-size: 10px; font-weight: 700; color: #1F2937;">Atribuicao &amp; ROAS</span>
+      </div>
+      <div style="font-size: 8px; color: #9CA3AF; margin-top: 1px;">Funil por origem e retorno por campanha</div>
     </div>
   </div>
 
-  <!-- Campaign list -->
-  <div style="font-size: 9px; font-weight: 600; color: #1F2937; margin-bottom: 8px;">Campanhas ativas</div>
-  <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;">
-    <!-- Campaign 1 -->
-    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
-      <div style="width: 24px; height: 24px; border-radius: 6px; background: #1877F2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  <!-- KPI cards -->
+  <div class="yacmp-kpis">
+    <div class="yacmp-kpi-card">
+      <div class="yacmp-kpi-top">
+        <span class="yacmp-kpi-label">TOTAL LEADS</span>
+        <div class="yacmp-kpi-icon" style="background: rgba(32,178,170,0.1);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
       </div>
-      <div style="flex: 1; min-width: 0;">
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Black Friday — Conversao WhatsApp</div>
-        <div style="font-size: 7px; color: #9CA3AF;">Meta Ads &middot; 312 leads &middot; R$2.80 CPL</div>
-      </div>
-      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">12.1x</div>
+      <div class="yacmp-kpi-value">847</div>
     </div>
-
-    <!-- Campaign 2 -->
-    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
-      <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #E1306C, #F77737); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="18" cy="6" r="1.5" fill="white"/></svg>
+    <div class="yacmp-kpi-card">
+      <div class="yacmp-kpi-top">
+        <span class="yacmp-kpi-label">CPL</span>
+        <div class="yacmp-kpi-icon" style="background: rgba(245,158,11,0.1);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h6"/></svg>
+        </div>
       </div>
-      <div style="flex: 1; min-width: 0;">
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Remarketing — Carrinho Abandonado</div>
-        <div style="font-size: 7px; color: #9CA3AF;">Instagram &middot; 198 leads &middot; R$5.40 CPL</div>
-      </div>
-      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">6.8x</div>
+      <div class="yacmp-kpi-value">R$ 4,20</div>
     </div>
-
-    <!-- Campaign 3 -->
-    <div style="display: flex; align-items: center; gap: 8px; background: #F9FAFB; border-radius: 8px; padding: 8px 10px;">
-      <div style="width: 24px; height: 24px; border-radius: 6px; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    <div class="yacmp-kpi-card">
+      <div class="yacmp-kpi-top">
+        <span class="yacmp-kpi-label">ROAS</span>
+        <div class="yacmp-kpi-icon" style="background: rgba(32,178,170,0.1);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
       </div>
-      <div style="flex: 1; min-width: 0;">
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Lancamento Produto — CTWA</div>
-        <div style="font-size: 7px; color: #9CA3AF;">Click-to-WhatsApp &middot; 337 leads &middot; R$3.10 CPL</div>
+      <div class="yacmp-kpi-value">8.4x</div>
+    </div>
+    <div class="yacmp-kpi-card">
+      <div class="yacmp-kpi-top">
+        <span class="yacmp-kpi-label">RECEITA TOTAL</span>
+        <div class="yacmp-kpi-icon" style="background: rgba(139,92,246,0.1);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h6"/></svg>
+        </div>
       </div>
-      <div style="font-size: 9px; font-weight: 700; color: #22C55E;">9.2x</div>
+      <div class="yacmp-kpi-value">R$ 29,8k</div>
     </div>
   </div>
 
-  <!-- Attribution funnel mini -->
-  <div style="background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.1); border-radius: 10px; padding: 10px;">
-    <div style="font-size: 8px; font-weight: 600; color: #D97706; margin-bottom: 8px;">Funil de atribuicao</div>
-    <div style="display: flex; flex-direction: column; gap: 4px;">
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <div style="height: 6px; border-radius: 3px; background: #F59E0B; width: 100%;"></div>
-        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">847 Cliques</div>
+  <!-- Chart: Funil por Origem -->
+  <div class="yacmp-chart-card">
+    <div style="font-size: 11px; font-weight: 600; color: #1F2937; margin-bottom: 12px;">Funil por Origem</div>
+
+    <!-- Y axis + bars -->
+    <div style="display: flex; gap: 4px; height: 110px;">
+      <!-- Y labels -->
+      <div style="display: flex; flex-direction: column; justify-content: space-between; padding-right: 2px;">
+        <span class="yacmp-axis">400</span>
+        <span class="yacmp-axis">300</span>
+        <span class="yacmp-axis">200</span>
+        <span class="yacmp-axis">100</span>
+        <span class="yacmp-axis">0</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <div style="height: 6px; border-radius: 3px; background: #F59E0B; width: 72%;"></div>
-        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">612 Conversas</div>
-      </div>
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <div style="height: 6px; border-radius: 3px; background: #D97706; width: 38%;"></div>
-        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">324 Leads</div>
-      </div>
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <div style="height: 6px; border-radius: 3px; background: #22C55E; width: 14%;"></div>
-        <div style="font-size: 7px; color: #6B7280; white-space: nowrap;">118 Vendas</div>
+
+      <!-- Bar groups -->
+      <div style="flex: 1; display: flex; align-items: flex-end; gap: 0; position: relative;">
+        <!-- Grid lines -->
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none;">
+          <div style="border-bottom: 1px dashed #E5E7EB; height: 0;"></div>
+          <div style="border-bottom: 1px dashed #E5E7EB; height: 0;"></div>
+          <div style="border-bottom: 1px dashed #E5E7EB; height: 0;"></div>
+          <div style="border-bottom: 1px dashed #E5E7EB; height: 0;"></div>
+          <div style="border-bottom: 1px solid #E5E7EB; height: 0;"></div>
+        </div>
+
+        <!-- WhatsApp group -->
+        <div class="yacmp-bar-group" style="flex: 1;">
+          <div style="display: flex; align-items: flex-end; gap: 2px; height: 100%; justify-content: center;">
+            <div class="yacmp-bar" style="background: #2DD4BF; height: 92%;"></div>
+            <div class="yacmp-bar" style="background: #3B82F6; height: 38%;"></div>
+            <div class="yacmp-bar" style="background: #8B5CF6; height: 28%;"></div>
+            <div class="yacmp-bar" style="background: #22C55E; height: 18%;"></div>
+          </div>
+          <div class="yacmp-bar-label">WhatsApp</div>
+        </div>
+
+        <!-- Meta Ads group -->
+        <div class="yacmp-bar-group" style="flex: 1;">
+          <div style="display: flex; align-items: flex-end; gap: 2px; height: 100%; justify-content: center;">
+            <div class="yacmp-bar" style="background: #2DD4BF; height: 48%;"></div>
+            <div class="yacmp-bar" style="background: #3B82F6; height: 22%;"></div>
+            <div class="yacmp-bar" style="background: #8B5CF6; height: 14%;"></div>
+            <div class="yacmp-bar" style="background: #22C55E; height: 8%;"></div>
+          </div>
+          <div class="yacmp-bar-label">Meta Ads</div>
+        </div>
+
+        <!-- Instagram group -->
+        <div class="yacmp-bar-group" style="flex: 1;">
+          <div style="display: flex; align-items: flex-end; gap: 2px; height: 100%; justify-content: center;">
+            <div class="yacmp-bar" style="background: #2DD4BF; height: 24%;"></div>
+            <div class="yacmp-bar" style="background: #3B82F6; height: 12%;"></div>
+            <div class="yacmp-bar" style="background: #8B5CF6; height: 6%;"></div>
+            <div class="yacmp-bar" style="background: #22C55E; height: 3%;"></div>
+          </div>
+          <div class="yacmp-bar-label">Instagram</div>
+        </div>
+
+        <!-- Direto group -->
+        <div class="yacmp-bar-group" style="flex: 1;">
+          <div style="display: flex; align-items: flex-end; gap: 2px; height: 100%; justify-content: center;">
+            <div class="yacmp-bar" style="background: #2DD4BF; height: 10%;"></div>
+            <div class="yacmp-bar" style="background: #3B82F6; height: 5%;"></div>
+            <div class="yacmp-bar" style="background: #8B5CF6; height: 2%;"></div>
+            <div class="yacmp-bar" style="background: #22C55E; height: 1%;"></div>
+          </div>
+          <div class="yacmp-bar-label">Direto</div>
+        </div>
+
+        <!-- Google Ads group -->
+        <div class="yacmp-bar-group" style="flex: 1;">
+          <div style="display: flex; align-items: flex-end; gap: 2px; height: 100%; justify-content: center;">
+            <div class="yacmp-bar" style="background: #2DD4BF; height: 15%;"></div>
+            <div class="yacmp-bar" style="background: #3B82F6; height: 8%;"></div>
+            <div class="yacmp-bar" style="background: #8B5CF6; height: 4%;"></div>
+            <div class="yacmp-bar" style="background: #22C55E; height: 2%;"></div>
+          </div>
+          <div class="yacmp-bar-label">Google Ads</div>
+        </div>
       </div>
     </div>
+
+    <!-- Legend -->
+    <div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+      <div class="yacmp-legend"><div class="yacmp-legend-dot" style="background: #2DD4BF;"></div>Leads</div>
+      <div class="yacmp-legend"><div class="yacmp-legend-dot" style="background: #3B82F6;"></div>MQLs</div>
+      <div class="yacmp-legend"><div class="yacmp-legend-dot" style="background: #8B5CF6;"></div>SQLs</div>
+      <div class="yacmp-legend"><div class="yacmp-legend-dot" style="background: #22C55E;"></div>Won</div>
+    </div>
+  </div>
+
+  <!-- Table: Por Campanha -->
+  <div class="yacmp-table-card">
+    <div style="font-size: 11px; font-weight: 600; color: #1F2937; margin-bottom: 10px;">Por Campanha</div>
+    <table class="yacmp-table">
+      <thead>
+        <tr>
+          <th style="text-align: left;">Campanha</th>
+          <th>Plataforma</th>
+          <th>Gasto</th>
+          <th>Leads</th>
+          <th>MQLs</th>
+          <th>SQLs</th>
+          <th>Won</th>
+          <th>Receita</th>
+          <th>ROAS</th>
+          <th>CPL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left; font-weight: 600; color: #1F2937;">Black Friday CTWA</td>
+          <td><span class="yacmp-plat-badge" style="background: rgba(24,119,242,0.08); color: #1877F2;">meta</span></td>
+          <td>R$ 1.2k</td>
+          <td style="font-weight: 600;">312</td>
+          <td>89</td>
+          <td>52</td>
+          <td>28</td>
+          <td style="color: #22C55E; font-weight: 600;">R$ 14k</td>
+          <td style="color: #22C55E; font-weight: 600;">11.6x</td>
+          <td>R$ 3,84</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: 600; color: #1F2937;">Remarketing Carrinho</td>
+          <td><span class="yacmp-plat-badge" style="background: rgba(24,119,242,0.08); color: #1877F2;">Meta Ads</span></td>
+          <td>R$ 980</td>
+          <td style="font-weight: 600;">198</td>
+          <td>54</td>
+          <td>31</td>
+          <td>14</td>
+          <td style="color: #22C55E; font-weight: 600;">R$ 8.2k</td>
+          <td style="color: #22C55E; font-weight: 600;">8.4x</td>
+          <td>R$ 4,94</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: 600; color: #1F2937;">Lancamento Pro</td>
+          <td><span class="yacmp-plat-badge" style="background: rgba(234,88,12,0.08); color: #EA580C;">Instagram</span></td>
+          <td>R$ 640</td>
+          <td style="font-weight: 600;">147</td>
+          <td>38</td>
+          <td>19</td>
+          <td>7</td>
+          <td style="color: #22C55E; font-weight: 600;">R$ 4.1k</td>
+          <td style="color: #22C55E; font-weight: 600;">6.4x</td>
+          <td>R$ 4,35</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: 600; color: #1F2937;">Brand Search</td>
+          <td><span class="yacmp-plat-badge" style="background: rgba(66,133,244,0.08); color: #4285F4;">Google Ads</span></td>
+          <td>R$ 720</td>
+          <td style="font-weight: 600;">190</td>
+          <td>41</td>
+          <td>22</td>
+          <td>9</td>
+          <td style="color: #22C55E; font-weight: 600;">R$ 3.5k</td>
+          <td style="color: #22C55E; font-weight: 600;">4.9x</td>
+          <td>R$ 3,78</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <style>
-  .mockup-frame {
-    width: 100%; max-width: 480px; border-radius: 20px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 18px; overflow: hidden;
+  .yacmp-frame {
+    width: 100%; max-width: 520px; border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #F9FAFB; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .yacmp-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px; background: white; border-bottom: 1px solid #F3F4F6;
+  }
+
+  /* KPI cards */
+  .yacmp-kpis {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px;
+    padding: 12px; background: white; margin: 10px; border-radius: 12px;
+    border: 1px solid #F3F4F6;
+  }
+  .yacmp-kpi-card { padding: 8px; }
+  .yacmp-kpi-top {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;
+  }
+  .yacmp-kpi-label {
+    font-size: 7px; font-weight: 600; color: #9CA3AF; letter-spacing: 0.04em;
+  }
+  .yacmp-kpi-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .yacmp-kpi-value {
+    font-size: 16px; font-weight: 700; color: #1F2937; font-family: Poppins, sans-serif;
+  }
+
+  /* Chart card */
+  .yacmp-chart-card {
+    margin: 0 10px 10px; padding: 14px; background: white;
+    border-radius: 12px; border: 1px solid #F3F4F6;
+  }
+  .yacmp-axis { font-size: 6px; color: #9CA3AF; text-align: right; }
+  .yacmp-bar-group {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .yacmp-bar {
+    width: 7px; border-radius: 2px 2px 0 0; min-height: 2px;
+  }
+  .yacmp-bar-label {
+    font-size: 6px; color: #9CA3AF; margin-top: 4px; white-space: nowrap;
+  }
+  .yacmp-legend {
+    display: flex; align-items: center; gap: 3px;
+    font-size: 7px; color: #6B7280;
+  }
+  .yacmp-legend-dot { width: 6px; height: 6px; border-radius: 2px; }
+
+  /* Table card */
+  .yacmp-table-card {
+    margin: 0 10px 10px; padding: 14px; background: white;
+    border-radius: 12px; border: 1px solid #F3F4F6;
+  }
+  .yacmp-table {
+    width: 100%; border-collapse: collapse; font-size: 7px; color: #6B7280;
+  }
+  .yacmp-table th {
+    font-size: 7px; font-weight: 600; color: #9CA3AF; text-align: center;
+    padding: 4px 3px; border-bottom: 1px solid #F3F4F6;
+  }
+  .yacmp-table td {
+    text-align: center; padding: 6px 3px; border-bottom: 1px solid #F9FAFB;
+  }
+  .yacmp-plat-badge {
+    font-size: 6px; font-weight: 600; padding: 2px 6px;
+    border-radius: 4px; white-space: nowrap;
+  }
+
+  /* Mobile: hide table, simplify KPIs */
+  @media (max-width: 480px) {
+    .yacmp-kpis { grid-template-columns: 1fr 1fr; }
+    .yacmp-table-card { display: none; }
   }
 </style>
