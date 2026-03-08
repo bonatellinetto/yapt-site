@@ -583,7 +583,14 @@
       "sectionLabel": "El Recorrido Completo",
       "title": "Del clic a los ingresos. Cada etapa rastreada.",
       "subtitle": "Cada etapa conectada, rastreada y potenciada por IA. Sin vacíos, sin planillas, sin adivinanzas.",
-      "steps": ["Anuncio", "Lead", "WhatsApp", "IA califica", "Deal", "Venta"]
+      "steps": [
+        { "title": "Anuncio", "description": "Meta Ads o Google Ads impactan al público correcto con creativos optimizados." },
+        { "title": "Lead", "description": "Formulario completado. yapt. captura nombre, email, teléfono + UTMs automáticamente." },
+        { "title": "WhatsApp", "description": "En menos de 30 segundos, el lead recibe un mensaje personalizado en WhatsApp." },
+        { "title": "IA califica", "description": "yaveh AI conversa, extrae dolor, volumen y presupuesto. Lead Score calculado en tiempo real." },
+        { "title": "Deal", "description": "Lead calificado se convierte en deal en el pipeline automáticamente. Vendedor notificado." },
+        { "title": "Venta", "description": "Propuesta enviada por WhatsApp, aceptada en el celular. ROAS real calculado con los ingresos." }
+      ]
     },
     "grid": {
       "title": "Cada detalle pensado para convertir",
@@ -1959,7 +1966,14 @@
     "timeline": {
       "title": "De la conversación a los ingresos. Cada etapa conectada.",
       "subtitle": "Lead llega, IA califica, deal es creado, propuesta enviada, venta cerrada — todo automático, todo rastreado.",
-      "steps": ["Conversación", "IA Califica", "Score", "Deal", "Propuesta", "Venta"]
+      "steps": [
+        { "title": "Conversación", "description": "Lead llega por WhatsApp. yaveh AI atiende, entiende contexto e inicia calificación." },
+        { "title": "IA Califica", "description": "Preguntas del playbook extraídas automáticamente. BANT, SPIN o metodología custom." },
+        { "title": "Score", "description": "Lead Score híbrido: 7 factores conductuales + calificación IA. Umbral alcanzado = SQL." },
+        { "title": "Deal", "description": "Deal creado automáticamente en el pipeline. Vendedor notificado con contexto completo." },
+        { "title": "Propuesta", "description": "Propuesta enviada por link en WhatsApp. Cliente abre en el celular y acepta online." },
+        { "title": "Venta", "description": "Negocio cerrado. Conversión enviada a Meta/Google vía CAPI. Loop cerrado." }
+      ]
     },
     "grid": {
       "title": "Cada detalle pensado para vender más",

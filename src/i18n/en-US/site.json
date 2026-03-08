@@ -583,7 +583,14 @@
       "sectionLabel": "The Complete Journey",
       "title": "From click to revenue. Every step tracked.",
       "subtitle": "Every step connected, tracked and powered by AI. No gaps, no spreadsheets, no guesswork.",
-      "steps": ["Ad", "Lead", "WhatsApp", "AI qualifies", "Deal", "Sale"]
+      "steps": [
+        { "title": "Ad", "description": "Meta Ads or Google Ads reach the right audience with optimized creatives." },
+        { "title": "Lead", "description": "Form filled. yapt. captures name, email, phone + UTMs automatically." },
+        { "title": "WhatsApp", "description": "In less than 30 seconds, the lead receives a personalized message on WhatsApp." },
+        { "title": "AI qualifies", "description": "yaveh AI converses, extracts pain, volume and budget. Lead Score calculated in real time." },
+        { "title": "Deal", "description": "Qualified lead becomes a deal in the pipeline automatically. Sales rep notified." },
+        { "title": "Sale", "description": "Proposal sent via WhatsApp, accepted on mobile. Real ROAS calculated with revenue." }
+      ]
     },
     "grid": {
       "title": "Every detail designed to convert",
@@ -1960,7 +1967,14 @@
     "timeline": {
       "title": "From conversation to revenue. Every step connected.",
       "subtitle": "Lead arrives, AI qualifies, deal is created, proposal sent, sale closed — all automatic, all tracked.",
-      "steps": ["Conversation", "AI Qualifies", "Score", "Deal", "Proposal", "Sale"]
+      "steps": [
+        { "title": "Conversation", "description": "Lead arrives via WhatsApp. yaveh AI answers, understands context and starts qualification." },
+        { "title": "AI Qualifies", "description": "Playbook questions extracted automatically. BANT, SPIN or custom methodology." },
+        { "title": "Score", "description": "Hybrid Lead Score: 7 behavioral factors + AI qualification. Threshold reached = SQL." },
+        { "title": "Deal", "description": "Deal created automatically in the pipeline. Sales rep notified with full context." },
+        { "title": "Proposal", "description": "Proposal sent via WhatsApp link. Client opens on mobile and accepts online." },
+        { "title": "Sale", "description": "Deal closed. Conversion sent to Meta/Google via CAPI. Closed loop." }
+      ]
     },
     "grid": {
       "title": "Every detail designed to sell more",
