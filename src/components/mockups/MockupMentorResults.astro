@@ -1,0 +1,236 @@
+---
+/** MockupMentorResults — Mentor ROI & Efficiency Dashboard (conversations page) */
+---
+<div class="mres-frame">
+  <!-- Header -->
+  <div class="mres-header">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, #20B2AA, #14B8A6); display: flex; align-items: center; justify-content: center;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="white"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 10px; font-weight: 700; color: #1F2937;">yaMentor</div>
+        <div style="font-size: 7px; color: #9CA3AF;">Impacto no time — Últimos 30 dias</div>
+      </div>
+    </div>
+    <div class="mres-badge-live">
+      <div style="width: 5px; height: 5px; border-radius: 50%; background: #10B981; animation: mres-pulse 2s ease-in-out infinite;"></div>
+      Ativo
+    </div>
+  </div>
+
+  <!-- KPI Row -->
+  <div class="mres-kpi-row">
+    <div class="mres-kpi">
+      <div class="mres-kpi-label">Economia/mês</div>
+      <div class="mres-kpi-value" style="color: #10B981;">R$47k</div>
+      <div class="mres-kpi-delta" style="color: #10B981;">↓ custos treinamento</div>
+    </div>
+    <div class="mres-kpi">
+      <div class="mres-kpi-label">Onboarding</div>
+      <div class="mres-kpi-value" style="color: #3B82F6;">3 dias</div>
+      <div class="mres-kpi-delta" style="color: #10B981;">era 21 dias</div>
+    </div>
+    <div class="mres-kpi">
+      <div class="mres-kpi-label">Eficiência</div>
+      <div class="mres-kpi-value" style="color: #8B5CF6;">+34%</div>
+      <div class="mres-kpi-delta" style="color: #10B981;">vs. sem Mentor</div>
+    </div>
+  </div>
+
+  <!-- Before/After comparison -->
+  <div class="mres-comparison">
+    <div class="mres-before">
+      <div class="mres-comp-label">Sem Mentor</div>
+      <div class="mres-comp-items">
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Onboarding</span>
+          <span style="font-size: 7px; font-weight: 600; color: #EF4444;">3 semanas</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Treinamento/mês</span>
+          <span style="font-size: 7px; font-weight: 600; color: #EF4444;">R$52k</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Taxa conversão</span>
+          <span style="font-size: 7px; font-weight: 600; color: #EF4444;">18%</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Objeções perdidas</span>
+          <span style="font-size: 7px; font-weight: 600; color: #EF4444;">42%</span>
+        </div>
+      </div>
+    </div>
+    <div class="mres-arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <div class="mres-after">
+      <div class="mres-comp-label" style="color: #059669;">Com Mentor</div>
+      <div class="mres-comp-items">
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Onboarding</span>
+          <span style="font-size: 7px; font-weight: 600; color: #059669;">3 dias</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Treinamento/mês</span>
+          <span style="font-size: 7px; font-weight: 600; color: #059669;">R$5k</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Taxa conversão</span>
+          <span style="font-size: 7px; font-weight: 600; color: #059669;">31%</span>
+        </div>
+        <div class="mres-comp-row">
+          <span style="font-size: 7px; color: #6B7280;">Objeções perdidas</span>
+          <span style="font-size: 7px; font-weight: 600; color: #059669;">12%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live coaching preview -->
+  <div class="mres-coaching">
+    <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+      <div style="width: 5px; height: 5px; border-radius: 50%; background: #10B981; animation: mres-pulse 2s ease-in-out infinite;"></div>
+      <span style="font-size: 7px; font-weight: 600; color: #059669;">Coaching ao vivo — Marina (vendedora)</span>
+    </div>
+    <div class="mres-coaching-bubble">
+      <div style="font-size: 6px; font-weight: 700; color: #8B5CF6; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em;">Sugestão do Mentor</div>
+      <div style="font-size: 7px; color: #374151; line-height: 1.5;">
+        "O cliente mencionou 3k conversas/dia — use o case da LogTech que tinha volume similar e reduziu TME em 60%. Ofereça o plano Enterprise com IA."
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: 6px;">
+      <div class="mres-metric-mini">
+        <div style="font-size: 6px; color: #9CA3AF;">Sugestões aceitas</div>
+        <div style="font-size: 9px; font-weight: 700; color: #059669;">89%</div>
+      </div>
+      <div class="mres-metric-mini">
+        <div style="font-size: 6px; color: #9CA3AF;">Tempo economizado</div>
+        <div style="font-size: 9px; font-weight: 700; color: #3B82F6;">4.2h/dia</div>
+      </div>
+      <div class="mres-metric-mini">
+        <div style="font-size: 6px; color: #9CA3AF;">Conversões +Mentor</div>
+        <div style="font-size: 9px; font-weight: 700; color: #8B5CF6;">+72%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team performance bars -->
+  <div class="mres-team">
+    <div style="font-size: 7px; font-weight: 600; color: #1F2937; margin-bottom: 6px;">Performance do time com Mentor</div>
+    <div class="mres-bar-row">
+      <span class="mres-bar-name">Marina</span>
+      <div class="mres-bar-track"><div class="mres-bar-fill" style="width: 94%; background: #10B981;"></div></div>
+      <span class="mres-bar-val">94%</span>
+    </div>
+    <div class="mres-bar-row">
+      <span class="mres-bar-name">Carlos</span>
+      <div class="mres-bar-track"><div class="mres-bar-fill" style="width: 87%; background: #10B981;"></div></div>
+      <span class="mres-bar-val">87%</span>
+    </div>
+    <div class="mres-bar-row">
+      <span class="mres-bar-name">Ana</span>
+      <div class="mres-bar-track"><div class="mres-bar-fill" style="width: 82%; background: #3B82F6;"></div></div>
+      <span class="mres-bar-val">82%</span>
+    </div>
+    <div class="mres-bar-row">
+      <span class="mres-bar-name">Lucas</span>
+      <div class="mres-bar-track"><div class="mres-bar-fill" style="width: 76%; background: #3B82F6;"></div></div>
+      <span class="mres-bar-val">76%</span>
+      <span class="mres-new-badge">Novo</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mres-frame {
+    width: 100%; max-width: 480px; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .mres-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 12px; border-bottom: 1px solid #F3F4F6;
+  }
+  .mres-badge-live {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 7px; font-weight: 600; color: #059669;
+    padding: 2px 8px; border-radius: 10px;
+    background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);
+  }
+
+  .mres-kpi-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+    padding: 10px 12px;
+  }
+  .mres-kpi {
+    text-align: center; background: #F9FAFB; border-radius: 8px; padding: 8px 6px;
+  }
+  .mres-kpi-label { font-size: 7px; color: #9CA3AF; margin-bottom: 2px; }
+  .mres-kpi-value { font-size: 16px; font-weight: 700; }
+  .mres-kpi-delta { font-size: 6px; margin-top: 1px; }
+
+  .mres-comparison {
+    display: flex; align-items: center; gap: 6px;
+    padding: 0 12px 10px;
+  }
+  .mres-before, .mres-after {
+    flex: 1; border-radius: 8px; padding: 8px;
+  }
+  .mres-before {
+    background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.12);
+  }
+  .mres-after {
+    background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.12);
+  }
+  .mres-comp-label {
+    font-size: 7px; font-weight: 700; color: #EF4444;
+    margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .mres-comp-items { display: flex; flex-direction: column; gap: 4px; }
+  .mres-comp-row { display: flex; justify-content: space-between; align-items: center; }
+  .mres-arrow { flex-shrink: 0; }
+
+  .mres-coaching {
+    margin: 0 12px 10px; padding: 8px;
+    background: linear-gradient(135deg, rgba(16,185,129,0.04), rgba(139,92,246,0.04));
+    border: 1px solid rgba(16,185,129,0.12); border-radius: 8px;
+  }
+  .mres-coaching-bubble {
+    background: white; border: 1px solid #E5E7EB; border-radius: 6px; padding: 6px 8px;
+  }
+  .mres-metric-mini {
+    flex: 1; text-align: center; background: white;
+    border: 1px solid #F3F4F6; border-radius: 6px; padding: 4px;
+  }
+
+  .mres-team {
+    padding: 10px 12px; border-top: 1px solid #F3F4F6;
+  }
+  .mres-bar-row {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+  }
+  .mres-bar-name { font-size: 7px; color: #6B7280; width: 38px; }
+  .mres-bar-track {
+    flex: 1; height: 5px; background: #F3F4F6; border-radius: 3px; overflow: hidden;
+  }
+  .mres-bar-fill { height: 100%; border-radius: 3px; }
+  .mres-bar-val { font-size: 7px; font-weight: 600; color: #1F2937; width: 22px; text-align: right; }
+  .mres-new-badge {
+    font-size: 5px; font-weight: 700; color: #F59E0B;
+    padding: 1px 4px; border-radius: 3px;
+    background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);
+  }
+
+  @keyframes mres-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @media (max-width: 640px) {
+    .mres-comparison { flex-direction: column; }
+    .mres-arrow { transform: rotate(90deg); }
+  }
+</style>
