@@ -1,0 +1,237 @@
+---
+/** MockupCalendar — Agenda & Atividades de Vendas (sales page, calendar section) */
+---
+<div class="cal-frame">
+  <!-- Header -->
+  <div class="cal-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #4F46E5, #818CF8); display: flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Agenda & Atividades</div>
+        <div style="font-size: 9px; color: #9CA3AF;">Marco 2026</div>
+      </div>
+    </div>
+    <div class="cal-toggle">
+      <div class="cal-toggle-btn cal-toggle-active">Dia</div>
+      <div class="cal-toggle-btn">Semana</div>
+    </div>
+  </div>
+
+  <!-- My Day Label -->
+  <div class="cal-day-label">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #1F2937;">My Day</span>
+    </div>
+    <span style="font-size: 8px; color: #9CA3AF;">Dom, 8 Mar 2026</span>
+  </div>
+
+  <!-- Activity Rows -->
+  <div class="cal-activities">
+    <!-- 09:00 — Done -->
+    <div class="cal-row cal-row-done">
+      <div class="cal-time">09:00</div>
+      <div class="cal-dot" style="background: #8B5CF6;"></div>
+      <div class="cal-content">
+        <div class="cal-title">Follow-up Rodrigo Pimentel</div>
+        <div class="cal-tag cal-tag-purple">Deal: Enterprise</div>
+      </div>
+      <div class="cal-check cal-checked">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+    </div>
+
+    <!-- 10:30 -->
+    <div class="cal-row">
+      <div class="cal-time">10:30</div>
+      <div class="cal-dot" style="background: #3B82F6;"></div>
+      <div class="cal-content">
+        <div class="cal-title">Demo yapt. — Marina Costa</div>
+        <div class="cal-tag cal-tag-blue">Google Meet</div>
+      </div>
+      <div class="cal-check">
+        <span class="cal-check-label">Feito</span>
+      </div>
+    </div>
+
+    <!-- 14:00 -->
+    <div class="cal-row">
+      <div class="cal-time">14:00</div>
+      <div class="cal-dot" style="background: #10B981;"></div>
+      <div class="cal-content">
+        <div class="cal-title">Enviar proposta Carlos Mendes</div>
+        <div class="cal-tag cal-tag-green">Deal: Starter</div>
+      </div>
+      <div class="cal-check">
+        <span class="cal-check-label">Feito</span>
+      </div>
+    </div>
+
+    <!-- 16:00 -->
+    <div class="cal-row">
+      <div class="cal-time">16:00</div>
+      <div class="cal-dot" style="background: #F59E0B;"></div>
+      <div class="cal-content">
+        <div class="cal-title">Review semanal com time</div>
+        <div class="cal-tag cal-tag-orange">Recorrente</div>
+      </div>
+      <div class="cal-check">
+        <span class="cal-check-label">Feito</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Bar -->
+  <div class="cal-summary">
+    <div class="cal-summary-left">
+      <span class="cal-summary-count">4 atividades hoje</span>
+      <span class="cal-summary-detail">2 calls · 1 meeting · 1 task</span>
+    </div>
+    <div class="cal-summary-sync">
+      <div class="cal-sync-dot"></div>
+      <span>Google Calendar sync ativo</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cal-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .cal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+
+  .cal-toggle {
+    display: flex; gap: 2px;
+    background: #F3F4F6; border-radius: 8px; padding: 2px;
+  }
+  .cal-toggle-btn {
+    font-size: 9px; font-weight: 500; color: #6B7280;
+    padding: 4px 10px; border-radius: 6px; cursor: default;
+  }
+  .cal-toggle-active {
+    background: white; color: #4F46E5; font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .cal-day-label {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid #F3F4F6;
+    background: #FAFBFC;
+  }
+
+  /* Activities */
+  .cal-activities {
+    display: flex; flex-direction: column;
+  }
+
+  .cal-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+  .cal-row:last-child { border-bottom: none; }
+
+  .cal-row-done {
+    background: #FAFBFC;
+  }
+  .cal-row-done .cal-title {
+    text-decoration: line-through;
+    color: #9CA3AF !important;
+  }
+
+  .cal-time {
+    font-size: 10px; font-weight: 700; color: #4B5563;
+    width: 34px; flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .cal-row-done .cal-time { color: #9CA3AF; }
+
+  .cal-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+
+  .cal-content {
+    flex: 1; min-width: 0;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+
+  .cal-title {
+    font-size: 10px; font-weight: 600; color: #1F2937;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .cal-tag {
+    font-size: 7px; font-weight: 600;
+    padding: 2px 6px; border-radius: 4px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .cal-tag-purple {
+    color: #7C3AED; background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.15);
+  }
+  .cal-tag-blue {
+    color: #2563EB; background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.15);
+  }
+  .cal-tag-green {
+    color: #059669; background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.15);
+  }
+  .cal-tag-orange {
+    color: #D97706; background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.15);
+  }
+
+  /* Checkbox */
+  .cal-check {
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .cal-check-label {
+    font-size: 8px; font-weight: 500; color: #9CA3AF;
+    padding: 3px 8px; border-radius: 6px;
+    border: 1.5px solid #E5E7EB; cursor: default;
+  }
+  .cal-checked {
+    width: 20px; height: 20px; border-radius: 6px;
+    background: #4F46E5; display: flex;
+    align-items: center; justify-content: center;
+  }
+
+  /* Summary */
+  .cal-summary {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-top: 1px solid #F3F4F6;
+    background: #FAFBFC; flex-wrap: wrap; gap: 6px;
+  }
+  .cal-summary-left {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cal-summary-count {
+    font-size: 10px; font-weight: 700; color: #1F2937;
+  }
+  .cal-summary-detail {
+    font-size: 8px; color: #9CA3AF; font-weight: 500;
+  }
+  .cal-summary-sync {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; color: #6B7280; font-weight: 500;
+  }
+  .cal-sync-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #10B981; flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .cal-content { flex-wrap: wrap; gap: 4px; }
+    .cal-title { max-width: 160px; }
+  }
+</style>

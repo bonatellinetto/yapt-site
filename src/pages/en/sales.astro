@@ -5,6 +5,14 @@ import ModuleDeepDive from '../../components/ModuleDeepDive.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import SectionDivider from '../../components/SectionDivider.astro';
 import CTASection from '../../components/CTASection.astro';
+import MockupYaDeals from '../../components/mockups/MockupYaDeals.astro';
+import MockupScoring from '../../components/mockups/MockupScoring.astro';
+import MockupPlaybook from '../../components/mockups/MockupPlaybook.astro';
+import MockupYaTeam from '../../components/mockups/MockupYaTeam.astro';
+import MockupProposals from '../../components/mockups/MockupProposals.astro';
+import MockupYaContact from '../../components/mockups/MockupYaContact.astro';
+import MockupCalendar from '../../components/mockups/MockupCalendar.astro';
+import MockupAutoDeal from '../../components/mockups/MockupAutoDeal.astro';
 import { t, type Locale } from '../../lib/i18n';
 import { wolfSvg, genericIcons } from '../../lib/fauna';
 
@@ -81,7 +89,16 @@ const timelineSteps = timeline?.steps || [];
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#4F46E5"
-          />
+          >
+            {key === 'deals' && <MockupYaDeals />}
+            {key === 'qualification' && <MockupScoring />}
+            {key === 'playbooks' && <MockupPlaybook />}
+            {key === 'mentor' && <MockupYaTeam />}
+            {key === 'proposals' && <MockupProposals />}
+            {key === 'contacts' && <MockupYaContact />}
+            {key === 'calendar' && <MockupCalendar />}
+            {key === 'autoDeal' && <MockupAutoDeal />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );

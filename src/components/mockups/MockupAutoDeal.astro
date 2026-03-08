@@ -1,0 +1,192 @@
+---
+/** MockupAutoDeal — Auto-Deal Pipeline Automation for sales page */
+---
+<div class="ad-frame">
+  <!-- Header -->
+  <div class="ad-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #6366F1, #4F46E5); display: flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Automação de Pipeline</div>
+        <div style="font-size: 9px; color: #9CA3AF;">3 regras ativas</div>
+      </div>
+    </div>
+    <div class="ad-auto-badge">
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="#4F46E5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Auto
+    </div>
+  </div>
+
+  <!-- Automation Rules -->
+  <div class="ad-rules">
+    <!-- Rule 1: Lead Score ≥ 80 -->
+    <div class="ad-rule">
+      <div class="ad-rule-bar" style="background: #22C55E;"></div>
+      <div class="ad-rule-content">
+        <div class="ad-rule-flow">
+          <div class="ad-rule-trigger">
+            <span class="ad-rule-label">TRIGGER</span>
+            <span class="ad-rule-text">Lead Score ≥ 80 (SQL)</span>
+          </div>
+          <svg class="ad-rule-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="ad-rule-action">
+            <span class="ad-rule-label">ACTION</span>
+            <span class="ad-rule-text">Criar Deal em Pipeline Vendas</span>
+          </div>
+        </div>
+        <div class="ad-rule-badge ad-badge-green">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          12 deals criados hoje
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule 2: Lifecycle = Opportunity -->
+    <div class="ad-rule">
+      <div class="ad-rule-bar" style="background: #3B82F6;"></div>
+      <div class="ad-rule-content">
+        <div class="ad-rule-flow">
+          <div class="ad-rule-trigger">
+            <span class="ad-rule-label">TRIGGER</span>
+            <span class="ad-rule-text">Lifecycle = Opportunity</span>
+          </div>
+          <svg class="ad-rule-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="ad-rule-action">
+            <span class="ad-rule-label">ACTION</span>
+            <span class="ad-rule-text">Notificar vendedor + criar task</span>
+          </div>
+        </div>
+        <div class="ad-rule-badge ad-badge-blue">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+          5 notificações
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule 3: IA detecta frustração -->
+    <div class="ad-rule">
+      <div class="ad-rule-bar" style="background: #F59E0B;"></div>
+      <div class="ad-rule-content">
+        <div class="ad-rule-flow">
+          <div class="ad-rule-trigger">
+            <span class="ad-rule-label">TRIGGER</span>
+            <span class="ad-rule-text">IA detecta frustração > 0.6</span>
+          </div>
+          <svg class="ad-rule-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="ad-rule-action">
+            <span class="ad-rule-label">ACTION</span>
+            <span class="ad-rule-text">Escalar para gestor</span>
+          </div>
+        </div>
+        <div class="ad-rule-badge ad-badge-amber">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg>
+          2 escalações
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Preview -->
+  <div class="ad-notification">
+    <div class="ad-notif-header">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+      <span style="font-size: 10px; font-weight: 600; color: #1F2937;">Última notificação</span>
+    </div>
+    <div class="ad-notif-card">
+      <div class="ad-notif-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      </div>
+      <div class="ad-notif-body">
+        <div style="font-size: 10px; font-weight: 700; color: #1F2937;">Novo deal criado</div>
+        <div style="font-size: 9px; color: #4B5563; margin-top: 2px;">Rodrigo Pimentel atingiu SQL (score: 87)</div>
+        <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+          <span class="ad-notif-pipeline">Pipeline: Vendas → Qualificação</span>
+          <span class="ad-notif-time">há 3 minutos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ad-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .ad-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .ad-auto-badge {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; font-weight: 600; color: #4F46E5;
+    padding: 3px 8px; border-radius: 8px;
+    background: rgba(79,70,229,0.06); border: 1px solid rgba(79,70,229,0.15);
+  }
+
+  /* Rules */
+  .ad-rules { padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; }
+
+  .ad-rule {
+    display: flex; border-radius: 10px; overflow: hidden;
+    border: 1px solid #F3F4F6; background: #FAFBFC;
+  }
+  .ad-rule-bar { width: 4px; flex-shrink: 0; }
+  .ad-rule-content { padding: 8px 10px; flex: 1; min-width: 0; }
+
+  .ad-rule-flow {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  }
+  .ad-rule-arrow { flex-shrink: 0; }
+  .ad-rule-trigger, .ad-rule-action { min-width: 0; }
+  .ad-rule-label {
+    display: block; font-size: 7px; font-weight: 700; letter-spacing: 0.5px;
+    color: #9CA3AF; text-transform: uppercase; margin-bottom: 1px;
+  }
+  .ad-rule-text { font-size: 10px; font-weight: 600; color: #1F2937; }
+
+  .ad-rule-badge {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 8px; font-weight: 600;
+    padding: 2px 7px; border-radius: 6px; margin-top: 6px;
+  }
+  .ad-badge-green {
+    color: #059669; background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.15);
+  }
+  .ad-badge-blue {
+    color: #3B82F6; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.15);
+  }
+  .ad-badge-amber {
+    color: #D97706; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.15);
+  }
+
+  /* Notification */
+  .ad-notification {
+    padding: 10px 14px 12px; border-top: 1px solid #F3F4F6;
+  }
+  .ad-notif-header {
+    display: flex; align-items: center; gap: 4px; margin-bottom: 8px;
+  }
+  .ad-notif-card {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 8px 10px; border-radius: 10px;
+    background: rgba(79,70,229,0.03); border: 1px solid rgba(79,70,229,0.1);
+  }
+  .ad-notif-icon {
+    width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+    background: rgba(79,70,229,0.08);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ad-notif-body { flex: 1; min-width: 0; }
+  .ad-notif-pipeline {
+    font-size: 8px; font-weight: 600; color: #4F46E5;
+    padding: 1px 6px; border-radius: 4px;
+    background: rgba(79,70,229,0.06);
+  }
+  .ad-notif-time { font-size: 8px; color: #9CA3AF; }
+</style>
