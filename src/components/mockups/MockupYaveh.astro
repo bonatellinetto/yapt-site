@@ -1,339 +1,104 @@
 ---
-/** MockupYaveh — yaInbox conversation with AI handoff + Mentor panel (replicates real product UI) */
+/** MockupYaveh — AI Intelligence Dashboard (static HTML/CSS mockup) */
 ---
-<div class="yav-frame">
-  <!-- Top bar: yaInbox -->
-  <div class="yav-topbar">
-    <div style="display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0;">
-      <div style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #10B981); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
-      <span style="font-size: 9px; font-weight: 700; color: #1F2937; font-family: Poppins, sans-serif;">yaInbox</span>
-      <span style="font-size: 8px; color: #9CA3AF;">Central de Conversas</span>
+<div class="mockup-frame">
+  <!-- Top bar -->
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
+    <div style="flex:1;"></div>
+    <div style="font-size: 10px; font-weight: 600; color: #8B5CF6; font-family: Poppins, sans-serif;">yaveh</div>
+  </div>
+
+  <!-- Greeting -->
+  <div style="margin-bottom: 14px;">
+    <div style="font-size: 13px; font-weight: 600; color: #1F2937; font-family: Poppins, sans-serif;">Bom dia, Carolina!</div>
+    <div style="font-size: 9px; color: #9CA3AF; margin-top: 2px;">A IA resolveu 89% das conversas hoje</div>
+  </div>
+
+  <!-- KPI row -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">Conversao</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">34%</div>
+      <div style="font-size: 7px; color: #22C55E;">+12%</div>
     </div>
-    <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
-      <span style="font-size: 7px; color: #6B7280;">0 Atendimentos ativos</span>
-      <span style="font-size: 7px; color: #6B7280;">TMA: 04:32</span>
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">TME</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">2.4s</div>
+      <div style="font-size: 7px; color: #22C55E;">-0.8s</div>
+    </div>
+    <div class="mockup-kpi">
+      <div style="font-size: 8px; color: #9CA3AF;">Resolucao IA</div>
+      <div style="font-size: 16px; font-weight: 700; color: #8B5CF6;">89%</div>
+      <div style="font-size: 7px; color: #22C55E;">+5%</div>
     </div>
   </div>
 
-  <!-- Contact header -->
-  <div class="yav-contact-bar">
-    <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
-      <div style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #3B82F6, #1D4ED8); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 9px; font-weight: 700; color: white;">AB</div>
-      <div>
-        <div style="font-size: 10px; font-weight: 600; color: #1F2937;">ASF Business Finance</div>
-        <div style="display: flex; align-items: center; gap: 3px;">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-          <span style="font-size: 7px; color: #22C55E;">WhatsApp Comercial - Waent</span>
-        </div>
-      </div>
+  <!-- Emotion analysis card -->
+  <div style="background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.03)); border: 1px solid rgba(139,92,246,0.12); border-radius: 10px; padding: 10px; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+      <div style="width: 6px; height: 6px; border-radius: 50%; background: #8B5CF6; animation: mockup-pulse 2s ease-in-out infinite;"></div>
+      <div style="font-size: 9px; font-weight: 600; color: #7C3AED;">Emotion Engine — Tempo real</div>
     </div>
-    <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
-      <div class="yav-badge-mql">MQL</div>
-      <div class="yav-pipeline-dots">
-        <span class="yav-pipe">LEAD</span>
-        <span class="yav-pipe yav-pipe-active">MQL</span>
-        <span class="yav-pipe">SAL</span>
-        <span class="yav-pipe">SQL</span>
+    <div style="display: flex; gap: 6px;">
+      <div class="mockup-emotion" style="flex: 3;">
+        <div style="height: 4px; border-radius: 2px; background: #22C55E; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Satisfeito 62%</div>
       </div>
-      <div class="yav-badge-mentor">Mentor</div>
-      <div class="yav-badge-resolved">Resolvida</div>
+      <div class="mockup-emotion" style="flex: 2;">
+        <div style="height: 4px; border-radius: 2px; background: #F59E0B; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Neutro 24%</div>
+      </div>
+      <div class="mockup-emotion" style="flex: 1;">
+        <div style="height: 4px; border-radius: 2px; background: #EF4444; width: 100%;"></div>
+        <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">Frustrado 14%</div>
+      </div>
     </div>
   </div>
 
-  <!-- Body: chat + mentor panel -->
-  <div class="yav-body">
-    <!-- Chat area -->
-    <div class="yav-chat">
-      <!-- Date separator -->
-      <div class="yav-date">2 de fevereiro</div>
-
-      <!-- Client message -->
-      <div class="yav-msg-left">
-        <div class="yav-bubble-white">
-          <div>Confirmar</div>
-          <span class="yav-time">10:51</span>
-        </div>
-      </div>
-
-      <!-- AI message -->
-      <div class="yav-msg-right">
-        <div class="yav-ai-label">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          <span>IA</span>
-        </div>
-        <div class="yav-bubble-green">
-          <div>Ola! Que otimo que voce demonstrou interesse. Para eu entender melhor como podemos ajudar a ASF Business Finance, poderia me dizer qual o principal desafio que sua equipe enfrenta hoje?</div>
-          <span class="yav-time">10:51 <span style="opacity: 0.6;">✓✓</span></span>
-        </div>
-      </div>
-
-      <!-- Client reply -->
-      <div class="yav-msg-left">
-        <div class="yav-bubble-white">
-          <div>Nossa maior dificuldade hoje e em aumentar a quantidade de contato com leads no processo de prospeccao</div>
-          <span class="yav-time">10:52</span>
-        </div>
-      </div>
-
-      <!-- AI HANDOFF MESSAGE — HIGHLIGHTED -->
-      <div class="yav-msg-right">
-        <div class="yav-ai-label">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          <span>IA</span>
-        </div>
-        <div class="yav-bubble-handoff">
-          <div>Perfeito, o melhor caminho daqui pra frente e voce falar com um de nossos especialistas, entao eu vou te transferir agora para alguem do time e logo eles retornam por aqui ok? Foi um prazer falar com voce! 🚀</div>
-          <span class="yav-time-light">10:53 <span style="opacity: 0.6;">✓✓</span></span>
-        </div>
-      </div>
-
-      <!-- Human agent takes over -->
-      <div class="yav-msg-right">
-        <div class="yav-bubble-green-light">
-          <div>Bom dia, tudo bem por ai?</div>
-          <div style="margin-top: 3px;">Com que eu falo?</div>
-          <span class="yav-time">10:55 <span style="opacity: 0.6;">✓✓</span></span>
-        </div>
-      </div>
-
-      <!-- Client -->
-      <div class="yav-msg-left">
-        <div class="yav-bubble-white">
-          <div>Bom dia Netto</div>
-          <span class="yav-time">10:59</span>
-        </div>
-      </div>
-      <div class="yav-msg-left">
-        <div class="yav-bubble-white">
-          <div>Aqui e o Felipe</div>
-          <span class="yav-time">11:00</span>
-        </div>
-      </div>
-
-      <!-- Human agent continues -->
-      <div class="yav-msg-right">
-        <div class="yav-bubble-green-light">
-          <div>Oi Felipe, bom dia! Tudo bem? 😊</div>
-          <div style="margin-top: 3px;">Obrigada por explicar o cenario. Entao hoje o maior desafio e conseguir falar com mais leads no processo de</div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="yav-chat-footer">
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <div style="width: 5px; height: 5px; border-radius: 50%; background: #F59E0B;"></div>
-          <span style="font-size: 7px; color: #F59E0B; font-weight: 500;">Janela de 24h fechada</span>
-          <span style="font-size: 7px; color: #9CA3AF;">&middot; Envie um template para reabrir</span>
-        </div>
+  <!-- Mini chart area -->
+  <div style="display: flex; gap: 8px;">
+    <div style="flex: 1; background: #F9FAFB; border-radius: 8px; padding: 8px;">
+      <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 6px;">Conversas/hora</div>
+      <div style="display: flex; align-items: flex-end; gap: 3px; height: 36px;">
+        <div style="flex:1; background: rgba(139,92,246,0.2); border-radius: 2px; height: 40%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.3); border-radius: 2px; height: 55%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.4); border-radius: 2px; height: 70%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.5); border-radius: 2px; height: 90%;"></div>
+        <div style="flex:1; background: #8B5CF6; border-radius: 2px; height: 100%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.6); border-radius: 2px; height: 75%;"></div>
+        <div style="flex:1; background: rgba(139,92,246,0.3); border-radius: 2px; height: 45%;"></div>
       </div>
     </div>
-
-    <!-- Sidebar icons -->
-    <div class="yav-sidebar-icons">
-      <div class="yav-side-icon yav-side-active">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/></svg>
-      </div>
-      <div class="yav-side-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg></div>
-      <div class="yav-side-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
-      <div class="yav-side-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
-      <div class="yav-side-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-      <div class="yav-side-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-    </div>
-
-    <!-- Mentor panel -->
-    <div class="yav-mentor">
-      <div style="display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid #F3F4F6; margin-bottom: 10px;">
-        <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #20B2AA, #14B8A6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
-        </div>
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span style="font-size: 10px; font-weight: 700; color: #1F2937;">Mentor de Vendas</span>
-            <span style="font-size: 6px; padding: 1px 5px; border-radius: 3px; background: rgba(249,115,22,0.1); color: #EA580C; font-weight: 600;">Mentor</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 3px;">
-            <div style="width: 4px; height: 4px; border-radius: 50%; background: #22C55E;"></div>
-            <span style="font-size: 7px; color: #9CA3AF;">InsideSales Comercial</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mentor suggestion content -->
-      <div style="font-size: 8px; color: #374151; line-height: 1.6; margin-bottom: 10px;">
-        Entendo que aumentar a quantidade de contato com leads na prospeccao e um desafio significativo para a ASF Business Finance.
-      </div>
-      <div style="font-size: 8px; color: #374151; line-height: 1.6; margin-bottom: 10px;">
-        Para te ajudar, a InsideSales oferece solucoes que podem otimizar esse processo. Por exemplo, nosso sistema pode ajudar a automatizar o agendamento de follow-ups e a priorizar leads com base no engajamento.
-      </div>
-      <div style="font-size: 8px; color: #374151; line-height: 1.6; margin-bottom: 12px;">
-        Voce ja utiliza alguma ferramenta de automacao de vendas ou CRM atualmente?
-      </div>
-
-      <!-- Action buttons -->
-      <div style="display: flex; gap: 6px; margin-bottom: 10px;">
-        <div class="yav-mentor-btn-outline">Copiar</div>
-        <div class="yav-mentor-btn-fill">Usar resposta</div>
-      </div>
-
-      <!-- Feedback -->
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <span style="font-size: 7px; color: #9CA3AF;">Essa sugestao ajudou?</span>
-        <div class="yav-feedback-btn">✓ Fez sentido</div>
-        <div class="yav-feedback-btn">✕ Nao ajudou</div>
-      </div>
-
-      <!-- Input -->
-      <div class="yav-mentor-input">
-        <span style="font-size: 8px; color: #9CA3AF; flex: 1;">Pergunte ao Mentor...</span>
-        <div style="width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #10B981); display: flex; align-items: center; justify-content: center;">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-        </div>
+    <div style="flex: 1; background: #F9FAFB; border-radius: 8px; padding: 8px;">
+      <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 6px;">Origem leads</div>
+      <div style="position: relative; width: 40px; height: 40px; margin: 0 auto;">
+        <svg viewBox="0 0 36 36" style="width: 40px; height: 40px; transform: rotate(-90deg);">
+          <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(139,92,246,0.15)" stroke-width="5"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#8B5CF6" stroke-width="5" stroke-dasharray="44 44" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="22 66" stroke-dashoffset="-44" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="#F59E0B" stroke-width="5" stroke-dasharray="11 77" stroke-dashoffset="-66" stroke-linecap="round"/>
+        </svg>
       </div>
     </div>
   </div>
 </div>
 
 <style>
-  .yav-frame {
-    width: 100%; max-width: 560px; border-radius: 16px;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
-    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
-    overflow: hidden;
+  .mockup-frame {
+    width: 100%; max-width: 480px; border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 18px; overflow: hidden;
   }
-
-  /* Top bar */
-  .yav-topbar {
-    display: flex; align-items: center; gap: 8px;
-    padding: 8px 12px; border-bottom: 1px solid #F3F4F6;
+  .mockup-kpi {
+    background: #F9FAFB; border-radius: 10px; padding: 8px 10px; text-align: center;
   }
-
-  /* Contact bar */
-  .yav-contact-bar {
-    display: flex; align-items: center; gap: 6px;
-    padding: 8px 12px; border-bottom: 1px solid #F3F4F6;
-    flex-wrap: wrap;
-  }
-  .yav-badge-mql {
-    font-size: 7px; font-weight: 700; color: #22C55E;
-    padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(34,197,94,0.3);
-  }
-  .yav-pipeline-dots {
-    display: flex; gap: 2px;
-  }
-  .yav-pipe {
-    font-size: 5px; font-weight: 700; color: #D1D5DB; letter-spacing: 0.03em;
-  }
-  .yav-pipe-active { color: #1F2937; }
-  .yav-badge-mentor {
-    font-size: 7px; font-weight: 600; color: white;
-    padding: 2px 8px; border-radius: 20px; background: #8B5CF6;
-  }
-  .yav-badge-resolved {
-    font-size: 7px; font-weight: 500; color: #6B7280;
-    padding: 2px 8px; border-radius: 6px; border: 1px solid #E5E7EB;
-  }
-
-  /* Body layout */
-  .yav-body {
-    display: grid; grid-template-columns: 1fr 30px 170px;
-    min-height: 280px;
-  }
-
-  /* Chat */
-  .yav-chat {
-    display: flex; flex-direction: column; padding: 8px;
-    background: #FAFBFC; overflow: hidden;
-  }
-  .yav-date {
-    font-size: 7px; color: #9CA3AF; text-align: center;
-    padding: 3px 10px; margin: 4px auto 8px;
-    background: white; border-radius: 8px; border: 1px solid #F3F4F6;
-  }
-  .yav-msg-left { align-self: flex-start; max-width: 75%; margin-bottom: 4px; }
-  .yav-msg-right { align-self: flex-end; max-width: 80%; margin-bottom: 4px; }
-  .yav-bubble-white {
-    background: white; border: 1px solid #E5E7EB; border-radius: 0 10px 10px 10px;
-    padding: 6px 8px; font-size: 8px; color: #1F2937; line-height: 1.5;
-  }
-  .yav-bubble-green {
-    background: #D1FAE5; border-radius: 10px 0 10px 10px;
-    padding: 6px 8px; font-size: 8px; color: #1F2937; line-height: 1.5;
-  }
-  .yav-bubble-green-light {
-    background: #ECFDF5; border-radius: 10px 0 10px 10px;
-    padding: 6px 8px; font-size: 8px; color: #1F2937; line-height: 1.5;
-  }
-
-  /* HANDOFF BUBBLE — HIGHLIGHTED */
-  .yav-bubble-handoff {
-    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
-    border: 1.5px solid #34D399;
-    border-radius: 10px 0 10px 10px;
-    padding: 8px 10px; font-size: 8px; color: #065F46; line-height: 1.6;
-    font-weight: 500;
-    box-shadow: 0 2px 12px rgba(16,185,129,0.15);
-    position: relative;
-  }
-  .yav-bubble-handoff::before {
-    content: '🔄 Transferencia para humano';
-    display: block; font-size: 6px; font-weight: 700; color: #059669;
-    letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 4px; padding-bottom: 3px;
-    border-bottom: 1px solid rgba(5,150,105,0.15);
-  }
-
-  .yav-ai-label {
-    display: flex; align-items: center; gap: 3px; justify-content: flex-end;
-    margin-bottom: 2px;
-  }
-  .yav-ai-label span { font-size: 7px; color: #20B2AA; font-weight: 600; }
-  .yav-time { font-size: 6px; color: #9CA3AF; float: right; margin-top: 2px; margin-left: 8px; }
-  .yav-time-light { font-size: 6px; color: #059669; float: right; margin-top: 2px; margin-left: 8px; }
-
-  .yav-chat-footer {
-    margin-top: auto; padding-top: 6px; border-top: 1px solid #F3F4F6;
-  }
-
-  /* Sidebar icons */
-  .yav-sidebar-icons {
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    padding: 8px 2px; border-left: 1px solid #F3F4F6; border-right: 1px solid #F3F4F6;
-  }
-  .yav-side-icon {
-    width: 22px; height: 22px; border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .yav-side-active { background: #20B2AA; }
-
-  /* Mentor panel */
-  .yav-mentor {
-    padding: 10px; border-top: 3px solid #10B981;
-    display: flex; flex-direction: column;
-  }
-  .yav-mentor-btn-outline {
-    font-size: 7px; font-weight: 500; color: #6B7280;
-    padding: 4px 10px; border: 1px solid #E5E7EB; border-radius: 6px;
-  }
-  .yav-mentor-btn-fill {
-    font-size: 7px; font-weight: 600; color: white;
-    padding: 4px 10px; border-radius: 6px; background: #10B981;
-  }
-  .yav-feedback-btn {
-    font-size: 6px; color: #6B7280; padding: 2px 6px;
-    border: 1px solid #E5E7EB; border-radius: 4px;
-  }
-  .yav-mentor-input {
-    display: flex; align-items: center; gap: 6px;
-    padding: 6px 10px; border: 1px solid #E5E7EB; border-radius: 20px;
-    margin-top: auto;
-  }
-
-  /* Mobile */
-  @media (max-width: 640px) {
-    .yav-body { grid-template-columns: 1fr; }
-    .yav-sidebar-icons, .yav-mentor { display: none; }
-    .yav-contact-bar { flex-wrap: nowrap; overflow-x: auto; }
+  @keyframes mockup-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
   }
 </style>

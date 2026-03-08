@@ -1,0 +1,215 @@
+---
+/** MockupHandoff — AI handoff to human conversation (compact, for conversations page) */
+---
+<div class="hoff-frame">
+  <!-- Contact bar mini -->
+  <div class="hoff-contact">
+    <div style="width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, #60A5FA, #3B82F6); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 7px; font-weight: 700; color: white;">RP</div>
+    <div style="flex: 1; min-width: 0;">
+      <div style="font-size: 9px; font-weight: 600; color: #1F2937;">Rodrigo Pimentel</div>
+      <div style="display: flex; align-items: center; gap: 3px;">
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="#25D366"><circle cx="12" cy="12" r="10"/></svg>
+        <span style="font-size: 6px; color: #9CA3AF;">WhatsApp Comercial</span>
+      </div>
+    </div>
+    <div class="hoff-badge-mql">MQL</div>
+    <div class="hoff-badge-ia-active">
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+      IA Ativa
+    </div>
+  </div>
+
+  <!-- Body: chat + mentor -->
+  <div class="hoff-body">
+    <!-- Chat -->
+    <div class="hoff-chat">
+      <!-- AI qualifies -->
+      <div class="hoff-msg-right">
+        <div class="hoff-ai-tag">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          IA
+        </div>
+        <div class="hoff-bubble-green">
+          Oi Rodrigo! Vi que voce tem interesse em otimizar o atendimento. Quantas pessoas tem no time hoje?
+          <span class="hoff-ts">14:31 ✓✓</span>
+        </div>
+      </div>
+
+      <!-- Client responds -->
+      <div class="hoff-msg-left">
+        <div class="hoff-bubble-white">
+          Temos 18 atendentes e recebemos cerca de 3 mil conversas por dia. Hoje perdemos muitos leads por demora.
+          <span class="hoff-ts">14:33</span>
+        </div>
+      </div>
+
+      <!-- AI HANDOFF — HIGHLIGHTED -->
+      <div class="hoff-msg-right">
+        <div class="hoff-ai-tag">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          IA
+        </div>
+        <div class="hoff-bubble-handoff">
+          <div class="hoff-handoff-label">Transferencia para especialista</div>
+          Entendi perfeitamente, Rodrigo. Com 18 atendentes e esse volume, voce precisa de alguem especializado. Vou te conectar agora com nosso consultor — ele ja tem todo o contexto da conversa. Foi um prazer te ajudar! 🚀
+          <span class="hoff-ts-light">14:34 ✓✓</span>
+        </div>
+      </div>
+
+      <!-- Human takes over -->
+      <div class="hoff-msg-right">
+        <div class="hoff-bubble-green-light">
+          Oi Rodrigo! Aqui e a Marina, consultora da yapt. Ja vi que voce tem 18 atendentes e 3k conversas/dia — tenho uma proposta perfeita pra esse cenario.
+          <span class="hoff-ts">14:36 ✓✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mentor mini panel -->
+    <div class="hoff-mentor">
+      <div style="display: flex; align-items: center; gap: 6px; padding-bottom: 8px; border-bottom: 1px solid #F3F4F6; margin-bottom: 8px;">
+        <div style="width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, #20B2AA, #14B8A6); display: flex; align-items: center; justify-content: center;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="white"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        </div>
+        <div>
+          <div style="font-size: 9px; font-weight: 700; color: #1F2937;">Mentor</div>
+          <div style="font-size: 6px; color: #9CA3AF;">Sugestao de resposta</div>
+        </div>
+      </div>
+
+      <!-- Suggested response -->
+      <div class="hoff-mentor-suggestion">
+        <div style="font-size: 7px; font-weight: 600; color: #059669; margin-bottom: 4px;">Resposta sugerida para Marina:</div>
+        <div style="font-size: 7px; color: #374151; line-height: 1.5;">
+          "Rodrigo, com 3 mil conversas/dia e 18 atendentes, nosso plano Enterprise com IA resolve ate 60% automaticamente. Isso liberaria ~10 atendentes pra focar nos leads quentes. Posso te mostrar os numeros?"
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="display: flex; gap: 4px; margin-top: 8px;">
+        <div class="hoff-mentor-btn-fill">Usar resposta</div>
+        <div class="hoff-mentor-btn-outline">Copiar</div>
+      </div>
+
+      <!-- Feedback -->
+      <div style="display: flex; align-items: center; gap: 4px; margin-top: 6px;">
+        <span style="font-size: 6px; color: #9CA3AF;">Ajudou?</span>
+        <div class="hoff-fb-btn">✓ Sim</div>
+        <div class="hoff-fb-btn">✕ Nao</div>
+      </div>
+
+      <!-- Input -->
+      <div class="hoff-mentor-input">
+        <span>Pergunte ao Mentor...</span>
+        <div style="width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #10B981); display: flex; align-items: center; justify-content: center;">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hoff-frame {
+    width: 100%; max-width: 480px; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .hoff-contact {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 10px; border-bottom: 1px solid #F3F4F6;
+  }
+  .hoff-badge-mql {
+    font-size: 6px; font-weight: 700; color: #22C55E;
+    padding: 2px 6px; border-radius: 10px; border: 1px solid rgba(34,197,94,0.3);
+  }
+  .hoff-badge-ia-active {
+    display: flex; align-items: center; gap: 2px;
+    font-size: 6px; font-weight: 600; color: #8B5CF6;
+    padding: 2px 6px; border-radius: 10px; border: 1px solid rgba(139,92,246,0.2);
+  }
+
+  .hoff-body {
+    display: grid; grid-template-columns: 1fr 150px;
+  }
+
+  /* Chat */
+  .hoff-chat {
+    display: flex; flex-direction: column; padding: 8px;
+    background: #FAFBFC;
+  }
+  .hoff-msg-left { align-self: flex-start; max-width: 85%; margin-bottom: 4px; }
+  .hoff-msg-right { align-self: flex-end; max-width: 85%; margin-bottom: 4px; }
+  .hoff-bubble-white {
+    background: white; border: 1px solid #E5E7EB; border-radius: 0 8px 8px 8px;
+    padding: 6px 8px; font-size: 7px; color: #1F2937; line-height: 1.5;
+  }
+  .hoff-bubble-green {
+    background: #D1FAE5; border-radius: 8px 0 8px 8px;
+    padding: 6px 8px; font-size: 7px; color: #1F2937; line-height: 1.5;
+  }
+  .hoff-bubble-green-light {
+    background: #ECFDF5; border-radius: 8px 0 8px 8px;
+    padding: 6px 8px; font-size: 7px; color: #1F2937; line-height: 1.5;
+  }
+
+  /* Handoff bubble */
+  .hoff-bubble-handoff {
+    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+    border: 1.5px solid #34D399;
+    border-radius: 8px 0 8px 8px;
+    padding: 8px; font-size: 7px; color: #065F46; line-height: 1.6;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(16,185,129,0.15);
+  }
+  .hoff-handoff-label {
+    font-size: 6px; font-weight: 700; color: #059669;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    margin-bottom: 3px; padding-bottom: 3px;
+    border-bottom: 1px solid rgba(5,150,105,0.15);
+    display: flex; align-items: center; gap: 3px;
+  }
+  .hoff-handoff-label::before { content: '🔄'; font-size: 7px; }
+
+  .hoff-ai-tag {
+    display: flex; align-items: center; gap: 2px; justify-content: flex-end;
+    margin-bottom: 1px; font-size: 6px; color: #20B2AA; font-weight: 600;
+  }
+  .hoff-ts { font-size: 5px; color: #9CA3AF; float: right; margin-top: 2px; margin-left: 6px; }
+  .hoff-ts-light { font-size: 5px; color: #059669; float: right; margin-top: 2px; margin-left: 6px; }
+
+  /* Mentor */
+  .hoff-mentor {
+    padding: 8px; border-left: 1px solid #F3F4F6;
+    border-top: 2px solid #10B981;
+    display: flex; flex-direction: column;
+  }
+  .hoff-mentor-suggestion {
+    background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.12);
+    border-radius: 8px; padding: 8px;
+  }
+  .hoff-mentor-btn-fill {
+    font-size: 6px; font-weight: 600; color: white;
+    padding: 3px 8px; border-radius: 5px; background: #10B981;
+  }
+  .hoff-mentor-btn-outline {
+    font-size: 6px; font-weight: 500; color: #6B7280;
+    padding: 3px 8px; border: 1px solid #E5E7EB; border-radius: 5px;
+  }
+  .hoff-fb-btn {
+    font-size: 5px; color: #6B7280; padding: 1px 5px;
+    border: 1px solid #E5E7EB; border-radius: 3px;
+  }
+  .hoff-mentor-input {
+    display: flex; align-items: center; gap: 4px;
+    padding: 5px 8px; border: 1px solid #E5E7EB; border-radius: 16px;
+    margin-top: auto; font-size: 7px; color: #9CA3AF;
+  }
+
+  @media (max-width: 640px) {
+    .hoff-body { grid-template-columns: 1fr; }
+    .hoff-mentor { border-left: none; border-top: 2px solid #10B981; }
+  }
+</style>

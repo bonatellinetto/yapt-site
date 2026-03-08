@@ -5,6 +5,7 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import MockupHandoff from '../components/mockups/MockupHandoff.astro';
 import { t, type Locale } from '../lib/i18n';
 import { dolphinSvg, genericIcons } from '../lib/fauna';
 
@@ -53,7 +54,9 @@ const modules = ['inbox','handlerState','yavehTeam','mentor','memory','audio','p
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#3B82F6"
-          />
+          >
+            {key === 'handlerState' && <MockupHandoff />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );
