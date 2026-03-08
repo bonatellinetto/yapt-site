@@ -141,12 +141,12 @@
   "conversations": {
     "meta": {
       "title": "Conversas & Omnichannel",
-      "description": "yaInbox, yaPeople e yaConnect: todas as conversas em um único lugar, com IA, scoring e emoção em tempo real."
+      "description": "yaInbox, yaContact e yaConnect: todas as conversas em um único lugar, com IA, scoring e emoção em tempo real."
     },
     "hero": {
       "badge": "Conversas & Omnichannel",
       "title": "Todas as conversas. Um único lugar.",
-      "subtitle": "yaInbox, yaPeople e yaConnect unidos para que nenhuma oportunidade se perca entre canais."
+      "subtitle": "yaInbox, yaContact e yaConnect unidos para que nenhuma oportunidade se perca entre canais."
     },
     "inbox": {
       "subtitle": "yaInbox",
@@ -221,7 +221,7 @@
       ]
     },
     "people": {
-      "subtitle": "yaPeople",
+      "subtitle": "yaContact",
       "title": "CRM 360° que entende o contexto.",
       "description": "Cada contato carrega scoring dual, lifecycle stage, histórico de emoções, accounts e tudo que sua IA precisa para vender.",
       "features": [
@@ -1082,7 +1082,7 @@
       "title": "Conversas & Omnichannel",
       "modules": [
         { "name": "yaInbox", "description": "Caixa de entrada unificada — 10 views inteligentes, realtime, whisper panel" },
-        { "name": "yaPeople", "description": "CRM 360° — lifecycle, lead scoring dual, emotion detection (13 sinais)" },
+        { "name": "yaContact", "description": "CRM 360° — lifecycle, lead scoring dual, emotion detection (13 sinais)" },
         { "name": "yaConnect", "description": "Hub de canais + integrações — WhatsApp, Instagram, webhooks, field mapping" }
       ]
     },
@@ -1565,7 +1565,7 @@
           "whatsapp": "1 número de WhatsApp incluso",
           "channels": "3 canais extras grátis",
           "yavehAi": "yaveh AI — livre (incluso no plano)",
-          "superMemory": "yaSuperMemory — livre (incluso no plano)",
+          "superMemory": "yaMemory — livre (incluso no plano)",
           "agents": "Atendentes ilimitados",
           "automations": "Automações + Flows ilimitados",
           "onboarding": "Onboarding especializado",

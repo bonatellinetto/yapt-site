@@ -141,12 +141,12 @@
   "conversations": {
     "meta": {
       "title": "Conversaciones & Omnichannel",
-      "description": "yaInbox, yaPeople y yaConnect: todas las conversaciones en un solo lugar, con IA, scoring y emoción en tiempo real."
+      "description": "yaInbox, yaContact y yaConnect: todas las conversaciones en un solo lugar, con IA, scoring y emoción en tiempo real."
     },
     "hero": {
       "badge": "Conversaciones & Omnichannel",
       "title": "Todas las conversaciones. Un solo lugar.",
-      "subtitle": "yaInbox, yaPeople y yaConnect unidos para que ninguna oportunidad se pierda entre canales."
+      "subtitle": "yaInbox, yaContact y yaConnect unidos para que ninguna oportunidad se pierda entre canales."
     },
     "inbox": {
       "subtitle": "yaInbox",
@@ -221,7 +221,7 @@
       ]
     },
     "people": {
-      "subtitle": "yaPeople",
+      "subtitle": "yaContact",
       "title": "CRM 360° que entiende el contexto.",
       "description": "Cada contacto lleva scoring dual, lifecycle stage, historial de emociones, accounts y todo lo que tu IA necesita para vender.",
       "features": [
@@ -1082,7 +1082,7 @@
       "title": "Conversaciones & Omnichannel",
       "modules": [
         { "name": "yaInbox", "description": "Bandeja de entrada unificada — 10 vistas inteligentes, realtime, whisper panel" },
-        { "name": "yaPeople", "description": "CRM 360° — lifecycle, lead scoring dual, detección de emociones (13 señales)" },
+        { "name": "yaContact", "description": "CRM 360° — lifecycle, lead scoring dual, detección de emociones (13 señales)" },
         { "name": "yaConnect", "description": "Hub de canales + integraciones — WhatsApp, Instagram, webhooks, field mapping" }
       ]
     },
@@ -1565,7 +1565,7 @@
           "whatsapp": "1 número de WhatsApp incluido",
           "channels": "3 canales extras gratis",
           "yavehAi": "yaveh AI — libre (incluido en el plan)",
-          "superMemory": "yaSuperMemory — libre (incluido en el plan)",
+          "superMemory": "yaMemory — libre (incluido en el plan)",
           "agents": "Agentes ilimitados",
           "automations": "Automatizaciones + Flows ilimitados",
           "onboarding": "Onboarding especializado",

@@ -141,12 +141,12 @@
   "conversations": {
     "meta": {
       "title": "Conversations & Omnichannel",
-      "description": "yaInbox, yaPeople and yaConnect: all conversations in one place, with AI, scoring and real-time emotion detection."
+      "description": "yaInbox, yaContact and yaConnect: all conversations in one place, with AI, scoring and real-time emotion detection."
     },
     "hero": {
       "badge": "Conversations & Omnichannel",
       "title": "Every conversation. One single place.",
-      "subtitle": "yaInbox, yaPeople and yaConnect working together so no opportunity slips between channels."
+      "subtitle": "yaInbox, yaContact and yaConnect working together so no opportunity slips between channels."
     },
     "inbox": {
       "subtitle": "yaInbox",
@@ -221,7 +221,7 @@
       ]
     },
     "people": {
-      "subtitle": "yaPeople",
+      "subtitle": "yaContact",
       "title": "CRM 360° that understands context.",
       "description": "Each contact carries dual scoring, lifecycle stage, emotion history, accounts and everything your AI needs to sell.",
       "features": [
@@ -1082,7 +1082,7 @@
       "title": "Conversations & Omnichannel",
       "modules": [
         { "name": "yaInbox", "description": "Unified inbox — 10 smart views, realtime, whisper panel" },
-        { "name": "yaPeople", "description": "CRM 360° — lifecycle, dual lead scoring, emotion detection (13 signals)" },
+        { "name": "yaContact", "description": "CRM 360° — lifecycle, dual lead scoring, emotion detection (13 signals)" },
         { "name": "yaConnect", "description": "Channel hub + integrations — WhatsApp, Instagram, webhooks, field mapping" }
       ]
     },
@@ -1565,7 +1565,7 @@
           "whatsapp": "1 WhatsApp number included",
           "channels": "3 extra channels free",
           "yavehAi": "yaveh AI — free (included in plan)",
-          "superMemory": "yaSuperMemory — free (included in plan)",
+          "superMemory": "yaMemory — free (included in plan)",
           "agents": "Unlimited agents",
           "automations": "Unlimited Automations + Flows",
           "onboarding": "Specialized onboarding",
