@@ -1,0 +1,304 @@
+---
+/** MockupCAPI — Conversions API Event Mapping panel (yaConnect page) */
+---
+<div class="capi-frame">
+  <!-- Header -->
+  <div class="capi-header">
+    <div class="capi-title">Mapeamento de Eventos</div>
+    <div class="capi-subtitle">Configure quais estágios do funil disparam eventos de conversão.</div>
+  </div>
+
+  <!-- Table -->
+  <div class="capi-table">
+    <!-- Table header -->
+    <div class="capi-row capi-row-head">
+      <span class="capi-col-stage">Estágio</span>
+      <span class="capi-col-event">Evento</span>
+      <span class="capi-col-value">Valor</span>
+      <span class="capi-col-type">Tipo</span>
+      <span class="capi-col-toggle">Ativo</span>
+    </div>
+
+    <!-- Row 1: Lead -->
+    <div class="capi-row">
+      <span class="capi-col-stage">Lead</span>
+      <span class="capi-col-event"><span class="capi-badge-event">Lead</span></span>
+      <span class="capi-col-value capi-val-empty">—</span>
+      <span class="capi-col-type"><span class="capi-badge-standard">Standard</span></span>
+      <span class="capi-col-toggle"><span class="capi-toggle capi-toggle-off"><span class="capi-toggle-circle"></span></span></span>
+    </div>
+
+    <!-- Row 2: MQL -->
+    <div class="capi-row">
+      <span class="capi-col-stage">MQL</span>
+      <span class="capi-col-event"><span class="capi-badge-event">QualifiedLead</span></span>
+      <span class="capi-col-value capi-val-empty">—</span>
+      <span class="capi-col-type"><span class="capi-badge-custom">Custom</span></span>
+      <span class="capi-col-toggle"><span class="capi-toggle capi-toggle-off"><span class="capi-toggle-circle"></span></span></span>
+    </div>
+
+    <!-- Row 3: SQL -->
+    <div class="capi-row">
+      <span class="capi-col-stage">SQL</span>
+      <span class="capi-col-event"><span class="capi-badge-event">SQL</span></span>
+      <span class="capi-col-value capi-val-empty">—</span>
+      <span class="capi-col-type"><span class="capi-badge-custom">Custom</span></span>
+      <span class="capi-col-toggle"><span class="capi-toggle capi-toggle-on"><span class="capi-toggle-circle"></span></span></span>
+    </div>
+
+    <!-- Row 4: Opportunity -->
+    <div class="capi-row">
+      <span class="capi-col-stage">Opportunity</span>
+      <span class="capi-col-event"><span class="capi-badge-event">SubmitApplication</span></span>
+      <span class="capi-col-value capi-val-money">$</span>
+      <span class="capi-col-type"><span class="capi-badge-standard">Standard</span></span>
+      <span class="capi-col-toggle"><span class="capi-toggle capi-toggle-on"><span class="capi-toggle-circle"></span></span></span>
+    </div>
+
+    <!-- Row 5: Deal Won -->
+    <div class="capi-row">
+      <span class="capi-col-stage">Deal Won</span>
+      <span class="capi-col-event"><span class="capi-badge-event">Purchase</span></span>
+      <span class="capi-col-value capi-val-money">$</span>
+      <span class="capi-col-type"><span class="capi-badge-standard">Standard</span></span>
+      <span class="capi-col-toggle"><span class="capi-toggle capi-toggle-on"><span class="capi-toggle-circle"></span></span></span>
+    </div>
+  </div>
+
+  <!-- Warning box -->
+  <div class="capi-warning">
+    <div class="capi-warning-icon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </div>
+    <div class="capi-warning-content">
+      <div class="capi-warning-title">Eventos customizados requerem aprovação</div>
+      <div class="capi-warning-text">Eventos como <strong>QualifiedLead</strong> e <strong>SQL</strong> precisam ser aprovados no Meta Events Manager antes de funcionar em campanhas. <span class="capi-warning-link">Como configurar &rarr;</span></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .capi-frame {
+    max-width: 480px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    padding: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F2937;
+  }
+
+  .capi-header {
+    margin-bottom: 16px;
+  }
+
+  .capi-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 3px;
+  }
+
+  .capi-subtitle {
+    font-size: 10px;
+    color: #9CA3AF;
+    line-height: 1.4;
+  }
+
+  /* Table */
+  .capi-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .capi-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #F3F4F6;
+    font-size: 10px;
+  }
+
+  .capi-row-head {
+    font-size: 9px;
+    font-weight: 600;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .capi-row:last-child {
+    border-bottom: none;
+  }
+
+  .capi-col-stage {
+    width: 22%;
+    font-weight: 500;
+    color: #374151;
+    flex-shrink: 0;
+  }
+
+  .capi-col-event {
+    width: 32%;
+    flex-shrink: 0;
+  }
+
+  .capi-col-value {
+    width: 12%;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .capi-col-type {
+    width: 20%;
+    flex-shrink: 0;
+  }
+
+  .capi-col-toggle {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .capi-row-head .capi-col-stage,
+  .capi-row-head .capi-col-event,
+  .capi-row-head .capi-col-value,
+  .capi-row-head .capi-col-type,
+  .capi-row-head .capi-col-toggle {
+    color: #9CA3AF;
+    font-weight: 600;
+  }
+
+  /* Badges */
+  .capi-badge-event {
+    display: inline-block;
+    background: #1F2937;
+    color: #fff;
+    font-size: 8.5px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .capi-badge-standard {
+    display: inline-block;
+    background: #1F2937;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .capi-badge-custom {
+    display: inline-block;
+    background: transparent;
+    color: #D97706;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid #D97706;
+    white-space: nowrap;
+  }
+
+  /* Value column */
+  .capi-val-empty {
+    color: #D1D5DB;
+    font-size: 10px;
+  }
+
+  .capi-val-money {
+    color: #20B2AA;
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  /* Toggle */
+  .capi-toggle {
+    display: inline-flex;
+    align-items: center;
+    width: 28px;
+    height: 16px;
+    border-radius: 8px;
+    padding: 2px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .capi-toggle-circle {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+
+  .capi-toggle-off {
+    background: #D1D5DB;
+    justify-content: flex-start;
+  }
+
+  .capi-toggle-on {
+    background: #20B2AA;
+    justify-content: flex-end;
+  }
+
+  /* Warning */
+  .capi-warning {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 10px;
+    padding: 10px 12px;
+    align-items: flex-start;
+  }
+
+  .capi-warning-icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .capi-warning-content {
+    min-width: 0;
+  }
+
+  .capi-warning-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #92400E;
+    margin-bottom: 2px;
+  }
+
+  .capi-warning-text {
+    font-size: 9px;
+    color: #A16207;
+    line-height: 1.5;
+  }
+
+  .capi-warning-text strong {
+    font-weight: 600;
+    color: #92400E;
+  }
+
+  .capi-warning-link {
+    color: #D97706;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+</style>

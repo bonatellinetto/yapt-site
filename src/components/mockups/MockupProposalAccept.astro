@@ -1,0 +1,332 @@
+---
+/** MockupProposalAccept — Proposal acceptance modal overlay (sales page) */
+---
+<div class="pa-frame">
+  <!-- Background: faint document behind modal -->
+  <div class="pa-bg-doc">
+    <div class="pa-bg-title">Termos e Condições</div>
+    <div class="pa-bg-line pa-bg-line-w80"></div>
+    <div class="pa-bg-line pa-bg-line-w90"></div>
+    <div class="pa-bg-line pa-bg-line-w70"></div>
+    <div class="pa-bg-line pa-bg-line-w85"></div>
+    <div class="pa-bg-line pa-bg-line-w60"></div>
+    <div class="pa-bg-line pa-bg-line-w90"></div>
+    <div class="pa-bg-line pa-bg-line-w75"></div>
+
+    <div class="pa-bg-steps">
+      <div class="pa-bg-steps-title">Próximos Passos</div>
+      <div class="pa-bg-btn-row">
+        <div class="pa-bg-btn pa-bg-btn-accept">✓ Aceitar Proposta</div>
+        <div class="pa-bg-btn pa-bg-btn-doubt">📋 Tenho Dúvidas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark overlay -->
+  <div class="pa-overlay"></div>
+
+  <!-- Modal card -->
+  <div class="pa-card">
+    <!-- Header -->
+    <div class="pa-header">
+      <div class="pa-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+          <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="pa-header-text">
+        <div class="pa-title">Aceitar Proposta</div>
+        <div class="pa-subtitle">Confirme seus dados para aceitar a proposta <strong>#PROP-2026-0023</strong></div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="pa-divider"></div>
+
+    <!-- Form -->
+    <div class="pa-form">
+      <div class="pa-field">
+        <label class="pa-label">Nome Completo <span class="pa-req">*</span></label>
+        <div class="pa-input">Seu nome</div>
+      </div>
+
+      <div class="pa-field">
+        <label class="pa-label">Email <span class="pa-req">*</span></label>
+        <div class="pa-input">seu@email.com</div>
+      </div>
+
+      <div class="pa-hint">Você receberá um código de verificação neste email</div>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="pa-check-row">
+      <div class="pa-checkbox"></div>
+      <div class="pa-check-text">Declaro que li e aceito os termos e condições desta proposta, e concordo com os valores e escopo apresentados.</div>
+    </div>
+
+    <!-- Divider -->
+    <div class="pa-divider"></div>
+
+    <!-- Actions -->
+    <div class="pa-actions">
+      <div class="pa-btn-cancel">Cancelar</div>
+      <div class="pa-btn-submit">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        Enviar Código
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pa-frame {
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+    aspect-ratio: 440 / 520;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #F3F4F6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Background document ─── */
+  .pa-bg-doc {
+    position: absolute;
+    inset: 0;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pa-bg-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #D1D5DB;
+    margin-bottom: 4px;
+  }
+
+  .pa-bg-line {
+    height: 4px;
+    border-radius: 2px;
+    background: #E5E7EB;
+  }
+  .pa-bg-line-w80 { width: 80%; }
+  .pa-bg-line-w90 { width: 90%; }
+  .pa-bg-line-w70 { width: 70%; }
+  .pa-bg-line-w85 { width: 85%; }
+  .pa-bg-line-w60 { width: 60%; }
+  .pa-bg-line-w75 { width: 75%; }
+
+  .pa-bg-steps {
+    position: absolute;
+    bottom: 16px;
+    left: 24px;
+    right: 24px;
+  }
+
+  .pa-bg-steps-title {
+    font-size: 9px;
+    font-weight: 600;
+    color: #D1D5DB;
+    margin-bottom: 6px;
+  }
+
+  .pa-bg-btn-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .pa-bg-btn {
+    font-size: 7px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .pa-bg-btn-accept {
+    background: #E0D4F7;
+    color: #7C3AED;
+  }
+
+  .pa-bg-btn-doubt {
+    background: #E5E7EB;
+    color: #9CA3AF;
+  }
+
+  /* ─── Overlay ─── */
+  .pa-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  /* ─── Modal card ─── */
+  .pa-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(0, 0, 0, 0.04);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ─── Header ─── */
+  .pa-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pa-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pa-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pa-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+  }
+
+  .pa-subtitle {
+    font-size: 9px;
+    color: #6B7280;
+    line-height: 1.4;
+  }
+
+  .pa-subtitle strong {
+    color: #7C3AED;
+    font-weight: 600;
+  }
+
+  /* ─── Divider ─── */
+  .pa-divider {
+    height: 1px;
+    background: #F3F4F6;
+    margin: 0 -2px;
+  }
+
+  /* ─── Form ─── */
+  .pa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pa-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .pa-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.01em;
+  }
+
+  .pa-req {
+    color: #EF4444;
+  }
+
+  .pa-input {
+    font-size: 9px;
+    color: #9CA3AF;
+    padding: 7px 10px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: #FAFAFA;
+    line-height: 1.4;
+  }
+
+  .pa-hint {
+    font-size: 8px;
+    color: #9CA3AF;
+    margin-top: -4px;
+  }
+
+  /* ─── Checkbox row ─── */
+  .pa-check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .pa-checkbox {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 3px;
+    background: #FFFFFF;
+    margin-top: 1px;
+  }
+
+  .pa-check-text {
+    font-size: 8px;
+    color: #6B7280;
+    line-height: 1.5;
+  }
+
+  /* ─── Actions ─── */
+  .pa-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .pa-btn-cancel {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6B7280;
+    padding: 6px 14px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: #FFFFFF;
+    cursor: default;
+  }
+
+  .pa-btn-submit {
+    font-size: 9px;
+    font-weight: 600;
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+    box-shadow: 0 1px 3px rgba(124, 58, 237, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: default;
+  }
+</style>

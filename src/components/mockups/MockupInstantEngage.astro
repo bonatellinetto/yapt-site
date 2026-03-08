@@ -1,0 +1,287 @@
+---
+/** MockupInstantEngage — WhatsApp conversation showing instant engagement after lead form fill */
+---
+<div class="ie-frame">
+  <!-- WhatsApp Header -->
+  <div class="ie-header">
+    <div class="ie-header-left">
+      <svg class="ie-back-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <div class="ie-avatar">UF</div>
+      <div class="ie-header-info">
+        <div class="ie-header-name">UniFacto Educacao</div>
+        <div class="ie-header-status">online</div>
+      </div>
+    </div>
+    <div class="ie-header-icons">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+    </div>
+  </div>
+
+  <!-- Chat Area -->
+  <div class="ie-chat">
+    <!-- Date chip -->
+    <div class="ie-date-chip">
+      <span>HOJE</span>
+    </div>
+
+    <!-- Business message bubble -->
+    <div class="ie-msg-row ie-msg-left">
+      <div class="ie-bubble ie-bubble-white">
+        <div class="ie-bubble-tail-left"></div>
+        <div class="ie-yapt-label">yapt.</div>
+        <div class="ie-msg-text">Oi Mariana! <span class="ie-emoji">&#x1F44B;</span><br><br>Voce preencheu o formulario em nosso anuncio para um desconto especial na matricula da faculdade.<br><br>Temos uma condicao exclusiva de <strong>40% OFF</strong> na primeira mensalidade + matricula gratis para quem se inscrever esta semana!<br><br><span class="ie-emoji">&#x1F4DA;</span> Curso: Administracao<br><span class="ie-emoji">&#x1F393;</span> Inicio: Marco 2026<br><span class="ie-emoji">&#x1F4B0;</span> De R$ 890 por <strong>R$ 534/mes</strong><br><br>Posso confirmar sua inscricao?</div>
+        <div class="ie-msg-meta">
+          <span class="ie-msg-time">18:42</span>
+          <svg class="ie-check" width="16" height="11" viewBox="0 0 16 11">
+            <path d="M11.07 0.73L4.53 7.26 1.97 4.7 0.56 6.11 4.53 10.08 12.49 2.14z" fill="#53bdeb"/>
+            <path d="M14.07 0.73L7.53 7.26 6.63 6.36 5.22 7.77 7.53 10.08 15.49 2.14z" fill="#53bdeb"/>
+          </svg>
+        </div>
+
+        <!-- Quick Reply Buttons -->
+        <div class="ie-quick-replies">
+          <div class="ie-quick-btn"><span class="ie-emoji">&#x2705;</span> Confirmar Inscricao</div>
+          <div class="ie-quick-btn"><span class="ie-emoji">&#x1F4C5;</span> Reagendar Contato</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sent via yapt. -->
+    <div class="ie-sent-via">&#x26A1; Enviado em 12s via yapt.</div>
+  </div>
+
+  <!-- Input bar -->
+  <div class="ie-input-bar">
+    <div class="ie-input-emoji">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    </div>
+    <div class="ie-input-field">Mensagem</div>
+    <div class="ie-input-mic">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ie-frame {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Header */
+  .ie-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, #075E54, #128C7E);
+  }
+  .ie-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+  .ie-back-arrow {
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+  .ie-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7C3AED, #A855F7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+  .ie-header-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .ie-header-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ie-header-status {
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+  }
+  .ie-header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  /* Chat area */
+  .ie-chat {
+    padding: 12px 10px 8px;
+    min-height: 320px;
+    background-color: #ECE5DD;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5bfb3' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Date chip */
+  .ie-date-chip {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .ie-date-chip span {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background: #E1F2FB;
+    color: #5f7e8a;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* Message rows */
+  .ie-msg-row {
+    display: flex;
+    margin-bottom: 4px;
+  }
+  .ie-msg-left {
+    justify-content: flex-start;
+  }
+
+  /* Bubbles */
+  .ie-bubble {
+    position: relative;
+    max-width: 88%;
+    border-radius: 8px;
+    padding: 6px 8px 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  }
+  .ie-bubble-white {
+    background: #ffffff;
+    color: #303030;
+  }
+  .ie-bubble-tail-left {
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #ffffff;
+    border-right: 6px solid transparent;
+  }
+
+  /* yapt. label */
+  .ie-yapt-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #20B2AA;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Message text */
+  .ie-msg-text {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #303030;
+    word-wrap: break-word;
+  }
+  .ie-msg-text strong {
+    font-weight: 600;
+  }
+  .ie-emoji {
+    font-style: normal;
+  }
+
+  /* Timestamp + check */
+  .ie-msg-meta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    margin-top: 4px;
+  }
+  .ie-msg-time {
+    font-size: 10.5px;
+    color: #8696a0;
+  }
+  .ie-check {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Quick reply buttons */
+  .ie-quick-replies {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .ie-quick-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #00a884;
+    padding: 9px 12px;
+    border: 1px solid rgba(0,168,132,0.25);
+    border-radius: 20px;
+    background: rgba(0,168,132,0.04);
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  /* Sent via yapt. */
+  .ie-sent-via {
+    text-align: center;
+    font-size: 10px;
+    color: #20B2AA;
+    margin-top: 10px;
+    opacity: 0.85;
+    letter-spacing: 0.01em;
+  }
+
+  /* Input bar */
+  .ie-input-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #F0F0F0;
+  }
+  .ie-input-emoji,
+  .ie-input-mic {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .ie-input-field {
+    flex: 1;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #ffffff;
+    font-size: 13px;
+    color: #8696a0;
+  }
+</style>
