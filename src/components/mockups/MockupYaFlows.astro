@@ -1,135 +1,358 @@
 ---
-/** MockupYaFlows — Automation Flow Builder (static HTML/CSS mockup) */
+/** MockupYaFlows — Flow Builder Canvas + A/B Test Panel (replicates real product UI) */
 ---
-<div class="mockup-frame">
-  <!-- Top bar -->
-  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
-    <div style="flex:1;"></div>
-    <div style="display: flex; align-items: center; gap: 4px;">
-      <div style="width: 6px; height: 6px; border-radius: 50%; background: #22C55E; animation: mockup-pulse 2s ease-in-out infinite;"></div>
-      <div style="font-size: 8px; color: #059669;">Ativo</div>
+<div class="yafl-frame">
+  <!-- Top toolbar -->
+  <div class="yafl-toolbar">
+    <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
+      <div style="width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #10B981); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <div style="font-size: 10px; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Fluxo automacao jornada</div>
     </div>
-    <div style="font-size: 10px; font-weight: 600; color: #059669; font-family: Poppins, sans-serif;">yaFlows</div>
-  </div>
-
-  <!-- Flow name -->
-  <div style="font-size: 12px; font-weight: 600; color: #1F2937; margin-bottom: 4px; font-family: Poppins, sans-serif;">Onboarding Novo Cliente</div>
-  <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 16px;">Event-driven &middot; Multi-agente &middot; 2.4k execucoes/dia</div>
-
-  <!-- Flow diagram -->
-  <div style="position: relative; padding: 0 10px;">
-    <!-- Node: Trigger -->
-    <div class="flow-node" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
-      <div class="flow-icon" style="background: #10B981;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+    <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+      <div class="yafl-tool-btn">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Analytics
       </div>
-      <div>
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">Trigger: Nova conversa</div>
-        <div style="font-size: 7px; color: #9CA3AF;">WhatsApp &middot; Instagram &middot; Webchat</div>
+      <div class="yafl-tool-btn">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Testar
       </div>
-    </div>
-
-    <!-- Connector -->
-    <div class="flow-connector"><div class="flow-line"></div></div>
-
-    <!-- Node: AI Classification -->
-    <div class="flow-node" style="border-color: rgba(139,92,246,0.3); background: rgba(139,92,246,0.04);">
-      <div class="flow-icon" style="background: #8B5CF6;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+      <div class="yafl-tool-btn" style="color: #8B5CF6;">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        IA
       </div>
-      <div>
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">IA classifica intencao</div>
-        <div style="font-size: 7px; color: #9CA3AF;">Memoria infinita &middot; Contexto completo</div>
-      </div>
-    </div>
-
-    <!-- Connector with branch -->
-    <div class="flow-connector"><div class="flow-line"></div></div>
-
-    <!-- Node: Conditional -->
-    <div style="display: flex; gap: 8px;">
-      <!-- Branch A -->
-      <div class="flow-node" style="flex: 1; border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.04);">
-        <div>
-          <div style="font-size: 8px; font-weight: 600; color: #3B82F6;">Compra</div>
-          <div style="font-size: 7px; color: #9CA3AF;">→ Agente Sales</div>
-        </div>
-      </div>
-      <!-- Branch B -->
-      <div class="flow-node" style="flex: 1; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04);">
-        <div>
-          <div style="font-size: 8px; font-weight: 600; color: #D97706;">Suporte</div>
-          <div style="font-size: 7px; color: #9CA3AF;">→ Agente CS</div>
-        </div>
-      </div>
-      <!-- Branch C -->
-      <div class="flow-node" style="flex: 1; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
-        <div>
-          <div style="font-size: 8px; font-weight: 600; color: #059669;">Duvida</div>
-          <div style="font-size: 7px; color: #9CA3AF;">→ IA responde</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Connector -->
-    <div class="flow-connector"><div class="flow-line"></div></div>
-
-    <!-- Node: Action -->
-    <div class="flow-node" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.04);">
-      <div class="flow-icon" style="background: #059669;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-      </div>
-      <div>
-        <div style="font-size: 9px; font-weight: 600; color: #1F2937;">Atualiza CRM + Notifica</div>
-        <div style="font-size: 7px; color: #9CA3AF;">Deal criado &middot; Tag aplicada &middot; Alerta enviado</div>
-      </div>
+      <div class="yafl-tool-btn">Templates</div>
+      <div class="yafl-tool-btn">Salvar</div>
     </div>
   </div>
 
-  <!-- Stats bar -->
-  <div style="display: flex; gap: 8px; margin-top: 14px;">
-    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
-      <div style="font-size: 7px; color: #9CA3AF;">Execucoes</div>
-      <div style="font-size: 12px; font-weight: 700; color: #059669;">2.4k</div>
+  <!-- Body: sidebar + canvas + panel -->
+  <div class="yafl-body">
+    <!-- Left sidebar icons -->
+    <div class="yafl-sidebar">
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div>
+      <div class="yafl-side-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
     </div>
-    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
-      <div style="font-size: 7px; color: #9CA3AF;">Sucesso</div>
-      <div style="font-size: 12px; font-weight: 700; color: #059669;">99.2%</div>
+
+    <!-- Canvas -->
+    <div class="yafl-canvas">
+      <!-- Background dots -->
+      <div class="yafl-dots"></div>
+
+      <!-- Trigger node -->
+      <div class="yafl-node-trigger" style="left: 6%; top: 36%;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #2DD4BF); display: flex; align-items: center; justify-content: center; margin: 0 auto 4px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div style="font-size: 7px; font-weight: 600; color: #1F2937; text-align: center;">Conversa Iniciada</div>
+        <div style="font-size: 6px; color: #9CA3AF; text-align: center;">Clique para editar</div>
+      </div>
+
+      <!-- Connection line trigger → IA -->
+      <div class="yafl-line-h" style="left: 17%; top: 42%; width: 10%;"></div>
+
+      <!-- IA Responder node -->
+      <div class="yafl-node" style="left: 27%; top: 32%; border-color: rgba(32,178,170,0.3);">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: #20B2AA; display: flex; align-items: center; justify-content: center;">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <span style="font-size: 8px; font-weight: 600; color: #1F2937;">IA Responder</span>
+          <span class="yafl-badge-ai">YAVEH AI</span>
+        </div>
+        <div style="font-size: 6px; color: #9CA3AF; margin-top: 2px; padding-left: 18px;">Modo: Responder &middot; 3 turnos</div>
+        <div style="display: flex; align-items: center; gap: 3px; margin-top: 4px; padding-left: 18px;">
+          <div style="width: 3px; height: 3px; border-radius: 50%; background: #20B2AA; animation: yafl-pulse 1.5s ease-in-out infinite;"></div>
+          <div style="width: 3px; height: 3px; border-radius: 50%; background: #20B2AA; animation: yafl-pulse 1.5s ease-in-out 0.2s infinite;"></div>
+          <div style="width: 3px; height: 3px; border-radius: 50%; background: #20B2AA; animation: yafl-pulse 1.5s ease-in-out 0.4s infinite;"></div>
+          <span style="font-size: 6px; color: #9CA3AF;">Analisando contexto...</span>
+        </div>
+      </div>
+
+      <!-- Dashed line IA → Teste A/B -->
+      <div class="yafl-line-dash" style="left: 46%; top: 42%; width: 7%;"></div>
+
+      <!-- Teste A/B node -->
+      <div class="yafl-node yafl-node-selected" style="left: 53%; top: 32%; border-color: #10B981;">
+        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">Teste A/B</div>
+        <div style="font-size: 6px; color: #9CA3AF;">Split test</div>
+        <div style="font-size: 6px; color: #22C55E; margin-top: 3px;">Variante A 50%</div>
+        <div style="font-size: 6px; color: #22C55E;">Variante B 50%</div>
+      </div>
+
+      <!-- Lines from A/B → Ação CRM (up) -->
+      <div class="yafl-line-v" style="left: 64%; top: 22%; height: 12%;"></div>
+      <div class="yafl-line-h" style="left: 64%; top: 22%; width: 8%; border-color: #10B981;"></div>
+
+      <!-- Ação CRM node -->
+      <div class="yafl-node" style="left: 66%; top: 14%; border-color: rgba(32,178,170,0.3);">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 14px; height: 14px; border-radius: 4px; background: #10B981; display: flex; align-items: center; justify-content: center;">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+          </div>
+          <span style="font-size: 8px; font-weight: 600; color: #1F2937;">Acao CRM</span>
+          <span class="yafl-badge-deal">YADEALS</span>
+        </div>
+        <div style="font-size: 6px; color: #9CA3AF; padding-left: 18px;">Contato &middot; update</div>
+      </div>
+
+      <!-- Lines from A/B → send_whatsapp (right) -->
+      <div class="yafl-line-h" style="left: 64%; top: 39%; width: 14%; border-color: #10B981;"></div>
+
+      <!-- send_whatsapp node -->
+      <div class="yafl-node" style="left: 74%; top: 34%; border-color: rgba(32,178,170,0.3);">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 14px; height: 14px; border-radius: 4px; background: #6B7280; display: flex; align-items: center; justify-content: center;">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <span style="font-size: 7px; font-weight: 600; color: #1F2937;">send_whatsapp_flow</span>
+          <span class="yafl-badge-wa">WHATS</span>
+        </div>
+      </div>
+
+      <!-- Line from A/B → IA Enriquecer (down-right) -->
+      <div class="yafl-line-v" style="left: 64%; top: 44%; height: 14%; border-color: #8B5CF6;"></div>
+      <div class="yafl-line-h" style="left: 64%; top: 58%; width: 8%; border-color: #8B5CF6;"></div>
+
+      <!-- IA Enriquecer node -->
+      <div class="yafl-node" style="left: 66%; top: 52%; border-color: rgba(139,92,246,0.3);">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: #8B5CF6; display: flex; align-items: center; justify-content: center;">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+          </div>
+          <span style="font-size: 8px; font-weight: 600; color: #1F2937;">IA Enriquecer</span>
+          <span class="yafl-badge-ai">YAVEH AI</span>
+        </div>
+        <div style="font-size: 6px; color: #9CA3AF; padding-left: 18px;">Extrair dados</div>
+      </div>
+
+      <!-- Mini map bottom-left -->
+      <div class="yafl-minimap">
+        <div style="display: flex; gap: 2px; align-items: flex-end; height: 16px; padding: 0 4px;">
+          <div style="width: 4px; height: 6px; background: #D1D5DB; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 10px; background: #8B5CF6; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 8px; background: #10B981; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 14px; background: #10B981; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 10px; background: #20B2AA; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 16px; background: #22C55E; border-radius: 1px;"></div>
+        </div>
+        <div style="display: flex; gap: 2px; padding: 2px 4px;">
+          <div style="width: 4px; height: 6px; background: #8B5CF6; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 6px; background: #10B981; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 6px; background: #22C55E; border-radius: 1px;"></div>
+          <div style="width: 4px; height: 6px; background: #8B5CF6; border-radius: 1px;"></div>
+        </div>
+      </div>
     </div>
-    <div style="flex:1; background: rgba(16,185,129,0.06); border-radius: 8px; padding: 6px 8px; text-align: center;">
-      <div style="font-size: 7px; color: #9CA3AF;">Tempo medio</div>
-      <div style="font-size: 12px; font-weight: 700; color: #059669;">1.2s</div>
+
+    <!-- Right panel: A/B config -->
+    <div class="yafl-panel">
+      <!-- Panel header -->
+      <div style="display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid #F3F4F6; margin-bottom: 10px;">
+        <div style="width: 28px; height: 28px; border-radius: 8px; background: #10B981; display: flex; align-items: center; justify-content: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; color: #1F2937;">Teste A/B</div>
+          <div style="font-size: 8px; color: #9CA3AF;">Teste A/B</div>
+        </div>
+      </div>
+
+      <!-- Nome field -->
+      <div style="margin-bottom: 10px;">
+        <div style="font-size: 8px; font-weight: 500; color: #6B7280; margin-bottom: 4px;">Nome</div>
+        <div style="font-size: 9px; color: #1F2937; padding: 6px 8px; border: 1px solid #E5E7EB; border-radius: 6px;">Teste A/B</div>
+      </div>
+
+      <!-- Info text -->
+      <div style="display: flex; gap: 6px; padding: 8px; background: #F9FAFB; border-radius: 8px; margin-bottom: 12px;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div style="font-size: 7px; color: #6B7280; line-height: 1.5;">Cada variante cria uma saida no canvas. Os contatos sao distribuidos aleatoriamente pelas variantes conforme os pesos definidos. O total deve somar 100%.</div>
+      </div>
+
+      <!-- Variantes label -->
+      <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 8px;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        <div style="font-size: 8px; font-weight: 600; color: #6B7280; letter-spacing: 0.03em;">VARIANTES (ATE 6)</div>
+      </div>
+
+      <!-- Variante A -->
+      <div class="yafl-variant">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #6B7280;">A</div>
+            <span style="font-size: 9px; font-weight: 600; color: #1F2937;">Variante A</span>
+          </div>
+          <span style="font-size: 9px; font-weight: 700; color: #1F2937;">50%</span>
+        </div>
+        <div class="yafl-slider">
+          <div class="yafl-slider-fill" style="width: 50%;"></div>
+          <div class="yafl-slider-thumb" style="left: 50%;"></div>
+        </div>
+      </div>
+
+      <!-- Variante B -->
+      <div class="yafl-variant">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #6B7280;">B</div>
+            <span style="font-size: 9px; font-weight: 600; color: #1F2937;">Variante B</span>
+          </div>
+          <span style="font-size: 9px; font-weight: 700; color: #1F2937;">50%</span>
+        </div>
+        <div class="yafl-slider">
+          <div class="yafl-slider-fill" style="width: 50%;"></div>
+          <div class="yafl-slider-thumb" style="left: 50%;"></div>
+        </div>
+      </div>
+
+      <!-- Add variante -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px; border: 1px dashed #E5E7EB; border-radius: 8px; margin-top: 8px;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span style="font-size: 8px; font-weight: 500; color: #6B7280;">Adicionar Variante</span>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-  .mockup-frame {
-    width: 100%; max-width: 480px; border-radius: 20px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 18px; overflow: hidden;
+  .yafl-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
   }
-  .flow-node {
+
+  /* Toolbar */
+  .yafl-toolbar {
     display: flex; align-items: center; gap: 8px;
-    border: 1px solid; border-radius: 10px; padding: 8px 10px;
+    padding: 8px 12px; border-bottom: 1px solid #F3F4F6;
   }
-  .flow-icon {
-    width: 24px; height: 24px; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  .yafl-tool-btn {
+    display: flex; align-items: center; gap: 3px;
+    font-size: 8px; font-weight: 500; color: #6B7280;
+    padding: 4px 8px; border: 1px solid #E5E7EB; border-radius: 6px;
+    white-space: nowrap;
   }
-  .flow-connector {
-    display: flex; justify-content: center; padding: 4px 0;
+
+  /* Body */
+  .yafl-body {
+    display: grid; grid-template-columns: 28px 1fr 160px;
+    min-height: 260px;
   }
-  .flow-line {
-    width: 2px; height: 14px; background: #D1D5DB; border-radius: 1px;
+
+  /* Sidebar */
+  .yafl-sidebar {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 8px 2px; border-right: 1px solid #F3F4F6;
   }
-  @keyframes mockup-pulse {
+  .yafl-side-icon {
+    width: 22px; height: 22px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Canvas */
+  .yafl-canvas {
+    position: relative; overflow: hidden; background: #FAFBFC;
+  }
+  .yafl-dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 16px 16px; pointer-events: none;
+  }
+
+  /* Nodes */
+  .yafl-node-trigger { position: absolute; z-index: 2; }
+  .yafl-node {
+    position: absolute; z-index: 2;
+    background: white; border: 1px solid #E5E7EB; border-radius: 8px;
+    padding: 6px 8px; min-width: 100px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .yafl-node-selected {
+    box-shadow: 0 0 0 2px rgba(16,185,129,0.3), 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  /* Badges */
+  .yafl-badge-ai {
+    font-size: 5px; font-weight: 700; color: #20B2AA; letter-spacing: 0.04em;
+    padding: 1px 4px; border-radius: 3px; background: rgba(32,178,170,0.08);
+  }
+  .yafl-badge-deal {
+    font-size: 5px; font-weight: 700; color: #F59E0B; letter-spacing: 0.04em;
+    padding: 1px 4px; border-radius: 3px; background: rgba(245,158,11,0.08);
+  }
+  .yafl-badge-wa {
+    font-size: 5px; font-weight: 700; color: #25D366; letter-spacing: 0.04em;
+    padding: 1px 4px; border-radius: 3px; background: rgba(37,211,102,0.08);
+  }
+
+  /* Lines */
+  .yafl-line-h {
+    position: absolute; z-index: 1; height: 2px;
+    background: #D1D5DB; border-radius: 1px;
+  }
+  .yafl-line-dash {
+    position: absolute; z-index: 1; height: 2px;
+    border-top: 2px dashed #D1D5DB;
+  }
+  .yafl-line-v {
+    position: absolute; z-index: 1; width: 2px;
+    background: #D1D5DB; border-radius: 1px;
+  }
+
+  /* Minimap */
+  .yafl-minimap {
+    position: absolute; bottom: 6px; left: 6px; z-index: 3;
+    background: white; border: 1px solid #E5E7EB; border-radius: 6px;
+    padding: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  /* Right panel */
+  .yafl-panel {
+    padding: 12px; border-left: 1px solid #F3F4F6;
+    border-top: 3px solid #10B981;
+    overflow-y: auto;
+  }
+
+  /* Variant cards */
+  .yafl-variant {
+    padding: 8px; border: 1px solid #F3F4F6; border-radius: 8px;
+    margin-bottom: 6px;
+  }
+
+  /* Slider */
+  .yafl-slider {
+    position: relative; height: 6px; background: #E5E7EB; border-radius: 3px;
+  }
+  .yafl-slider-fill {
+    height: 100%; background: linear-gradient(90deg, #10B981, #374151);
+    border-radius: 3px;
+  }
+  .yafl-slider-thumb {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #374151; border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  @keyframes yafl-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .yafl-body { grid-template-columns: 1fr; }
+    .yafl-sidebar, .yafl-canvas { display: none; }
+    .yafl-panel { border-left: none; border-top: 3px solid #10B981; }
   }
 </style>
