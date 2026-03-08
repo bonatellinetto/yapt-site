@@ -1,0 +1,240 @@
+---
+/** MockupEmotion — Emotion Engine with 13 signals & empathic routing (intelligence page) */
+---
+<div class="emot-frame">
+  <!-- Header -->
+  <div class="emot-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #EF4444, #F97316); display: flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Emotion Engine</div>
+        <div style="font-size: 9px; color: #9CA3AF;">13 sinais emocionais — tempo real</div>
+      </div>
+    </div>
+    <div class="emot-live">
+      <div style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E; animation: emot-pulse 2s ease-in-out infinite;"></div>
+      Live
+    </div>
+  </div>
+
+  <!-- Current conversation emotion -->
+  <div class="emot-current">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <div class="emot-avatar">RP</div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; color: #1F2937;">Rodrigo Pimentel</div>
+        <div style="font-size: 8px; color: #9CA3AF;">Conversa ativa · 14 mensagens</div>
+      </div>
+      <div class="emot-sentiment-badge emot-positive">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+        Positivo
+      </div>
+    </div>
+
+    <!-- Emotion timeline mini -->
+    <div class="emot-timeline-bar">
+      <div class="emot-tbar" style="flex: 2; background: #D1D5DB;" title="Neutro"></div>
+      <div class="emot-tbar" style="flex: 1; background: #FCD34D;" title="Curioso"></div>
+      <div class="emot-tbar" style="flex: 1; background: #F87171;" title="Frustrado"></div>
+      <div class="emot-tbar" style="flex: 3; background: #34D399;" title="Satisfeito"></div>
+      <div class="emot-tbar" style="flex: 2; background: #60A5FA;" title="Entusiasmado"></div>
+      <div class="emot-tbar" style="flex: 2; background: #34D399;" title="Satisfeito"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 7px; color: #9CA3AF; margin-top: 2px;">
+      <span>Início</span>
+      <span>Agora</span>
+    </div>
+  </div>
+
+  <!-- 13 Signals grid -->
+  <div class="emot-signals">
+    <div style="font-size: 10px; font-weight: 600; color: #1F2937; margin-bottom: 8px;">13 sinais detectados</div>
+    <div class="emot-signals-grid">
+      <div class="emot-signal emot-sig-active emot-sig-green">
+        <span class="emot-sig-emoji">😊</span>
+        <span class="emot-sig-name">Satisfeito</span>
+        <span class="emot-sig-score">0.82</span>
+      </div>
+      <div class="emot-signal emot-sig-active emot-sig-blue">
+        <span class="emot-sig-emoji">🤩</span>
+        <span class="emot-sig-name">Entusiasmado</span>
+        <span class="emot-sig-score">0.71</span>
+      </div>
+      <div class="emot-signal emot-sig-active emot-sig-yellow">
+        <span class="emot-sig-emoji">🤔</span>
+        <span class="emot-sig-name">Curioso</span>
+        <span class="emot-sig-score">0.65</span>
+      </div>
+      <div class="emot-signal emot-sig-active emot-sig-green">
+        <span class="emot-sig-emoji">🤝</span>
+        <span class="emot-sig-name">Confiante</span>
+        <span class="emot-sig-score">0.58</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😐</span>
+        <span class="emot-sig-name">Neutro</span>
+        <span class="emot-sig-score">0.30</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">⏰</span>
+        <span class="emot-sig-name">Urgente</span>
+        <span class="emot-sig-score">0.22</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😤</span>
+        <span class="emot-sig-name">Frustrado</span>
+        <span class="emot-sig-score">0.15</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😰</span>
+        <span class="emot-sig-name">Ansioso</span>
+        <span class="emot-sig-score">0.12</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😠</span>
+        <span class="emot-sig-name">Irritado</span>
+        <span class="emot-sig-score">0.08</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😞</span>
+        <span class="emot-sig-name">Decepcionado</span>
+        <span class="emot-sig-score">0.05</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">😶</span>
+        <span class="emot-sig-name">Confuso</span>
+        <span class="emot-sig-score">0.04</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">🚨</span>
+        <span class="emot-sig-name">Ameaça</span>
+        <span class="emot-sig-score">0.00</span>
+      </div>
+      <div class="emot-signal">
+        <span class="emot-sig-emoji">💔</span>
+        <span class="emot-sig-name">Churn Risk</span>
+        <span class="emot-sig-score">0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Routing action -->
+  <div class="emot-routing">
+    <div class="emot-routing-header">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <span style="font-size: 10px; font-weight: 600; color: #7C3AED;">Roteamento Empático</span>
+    </div>
+    <div class="emot-routing-cards">
+      <div class="emot-route-card">
+        <div class="emot-route-if">SE frustrado &gt; 0.6</div>
+        <div class="emot-route-then">→ Prioridade Alta + Alerta gestor</div>
+      </div>
+      <div class="emot-route-card">
+        <div class="emot-route-if">SE entusiasmado &gt; 0.5</div>
+        <div class="emot-route-then">→ Rota para Closer (oportunidade quente)</div>
+      </div>
+      <div class="emot-route-card emot-route-active">
+        <div class="emot-route-if">SE ameaça OU churn_risk</div>
+        <div class="emot-route-then">→ Escalar para gestor imediatamente</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .emot-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .emot-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .emot-live {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; font-weight: 600; color: #059669;
+    padding: 3px 8px; border-radius: 8px;
+    background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);
+  }
+
+  /* Current conversation */
+  .emot-current { padding: 12px 14px; border-bottom: 1px solid #F3F4F6; }
+  .emot-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, #60A5FA, #3B82F6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: white; flex-shrink: 0;
+  }
+  .emot-sentiment-badge {
+    margin-left: auto; display: flex; align-items: center; gap: 3px;
+    font-size: 8px; font-weight: 600; padding: 2px 8px; border-radius: 6px;
+  }
+  .emot-positive {
+    color: #059669; background: rgba(5,150,105,0.06);
+    border: 1px solid rgba(5,150,105,0.15);
+  }
+
+  .emot-timeline-bar {
+    display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 1px;
+  }
+  .emot-tbar { border-radius: 2px; }
+
+  /* Signals */
+  .emot-signals { padding: 12px 14px; }
+  .emot-signals-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  }
+  .emot-signal {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 6px 4px; border-radius: 8px;
+    border: 1px solid #F3F4F6; background: #FAFBFC;
+  }
+  .emot-sig-active { background: white; }
+  .emot-sig-green { border-color: rgba(5,150,105,0.2); }
+  .emot-sig-blue { border-color: rgba(59,130,246,0.2); }
+  .emot-sig-yellow { border-color: rgba(245,158,11,0.2); }
+  .emot-sig-emoji { font-size: 14px; }
+  .emot-sig-name { font-size: 7px; color: #6B7280; margin-top: 2px; text-align: center; }
+  .emot-sig-score { font-size: 8px; font-weight: 700; color: #1F2937; }
+  .emot-sig-active .emot-sig-score { color: #059669; }
+
+  /* Routing */
+  .emot-routing {
+    padding: 10px 14px; border-top: 1px solid #F3F4F6; background: #FAFBFC;
+  }
+  .emot-routing-header {
+    display: flex; align-items: center; gap: 4px; margin-bottom: 8px;
+  }
+  .emot-routing-cards { display: flex; flex-direction: column; gap: 4px; }
+  .emot-route-card {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 8px; border-radius: 6px;
+    background: white; border: 1px solid #E5E7EB;
+  }
+  .emot-route-active {
+    border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.02);
+  }
+  .emot-route-if {
+    font-size: 8px; font-weight: 600; color: #6B7280;
+    white-space: nowrap;
+  }
+  .emot-route-then {
+    font-size: 8px; color: #374151;
+  }
+  .emot-route-active .emot-route-if { color: #EF4444; }
+  .emot-route-active .emot-route-then { color: #EF4444; font-weight: 600; }
+
+  @keyframes emot-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @media (max-width: 640px) {
+    .emot-signals-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

@@ -1,0 +1,278 @@
+---
+/** MockupScoring — Lead Score Breakdown with 7 behavioral factors (intelligence page) */
+---
+<div class="scor-frame">
+  <!-- Header -->
+  <div class="scor-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #F59E0B, #EAB308); display: flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Lead Score</div>
+        <div style="font-size: 9px; color: #9CA3AF;">Modo Híbrido — IA + Comportamental</div>
+      </div>
+    </div>
+    <div class="scor-mode-badge">
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="#8B5CF6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Hybrid
+    </div>
+  </div>
+
+  <!-- Score display -->
+  <div class="scor-score-area">
+    <div class="scor-score-ring">
+      <svg viewBox="0 0 120 120" width="100" height="100">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#F3F4F6" stroke-width="8"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="url(#scor-grad)" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="63" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+        <defs><linearGradient id="scor-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#22C55E"/></linearGradient></defs>
+      </svg>
+      <div class="scor-score-center">
+        <span class="scor-score-num">72</span>
+        <span class="scor-score-total">/100</span>
+      </div>
+    </div>
+    <div class="scor-score-meta">
+      <div class="scor-warm-badge">Warm Lead</div>
+      <div style="font-size: 9px; color: #9CA3AF; margin-top: 4px;">Qualificado por <strong style="color: #374151;">yaMentor</strong></div>
+      <div style="display: flex; align-items: center; gap: 4px; margin-top: 4px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        <span style="font-size: 9px; color: #374151; font-weight: 600;">ICP Match: 84%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 Behavioral Factors -->
+  <div class="scor-factors">
+    <div class="scor-factors-header">
+      <span style="font-size: 10px; font-weight: 600; color: #1F2937;">Scoring Comportamental</span>
+      <span style="font-size: 8px; color: #9CA3AF;">Calculado há 11min</span>
+    </div>
+
+    <!-- Factor 1: Engagement 20/25 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #F59E0B;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Engajamento</span>
+          <span class="scor-factor-pts scor-pts-green">+20</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 80%; background: #22C55E;"></div></div>
+      </div>
+      <span class="scor-factor-max">25</span>
+    </div>
+
+    <!-- Factor 2: Recency 18/20 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #3B82F6;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Recência</span>
+          <span class="scor-factor-pts scor-pts-green">+18</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 90%; background: #22C55E;"></div></div>
+      </div>
+      <span class="scor-factor-max">20</span>
+    </div>
+
+    <!-- Factor 3: Profile 7/15 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #8B5CF6;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Perfil Completo</span>
+          <span class="scor-factor-pts scor-pts-blue">+7</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 47%; background: #3B82F6;"></div></div>
+      </div>
+      <span class="scor-factor-max">15</span>
+    </div>
+
+    <!-- Factor 4: Emotion 8/15 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #EF4444;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Sentimento</span>
+          <span class="scor-factor-pts scor-pts-orange">+8</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 53%; background: #F59E0B;"></div></div>
+        <div style="display: flex; align-items: center; gap: 3px; margin-top: 2px;">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+          <span style="font-size: 7px; color: #6B7280;">positive</span>
+        </div>
+      </div>
+      <span class="scor-factor-max">15</span>
+    </div>
+
+    <!-- Factor 5: Channel 10/10 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #10B981;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Canal de Origem</span>
+          <span class="scor-factor-pts scor-pts-green">+10</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 100%; background: #22C55E;"></div></div>
+        <div style="display: flex; align-items: center; gap: 3px; margin-top: 2px;">
+          <span style="font-size: 7px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 3px;">paid &middot; Meta Ads</span>
+        </div>
+      </div>
+      <span class="scor-factor-max">10</span>
+    </div>
+
+    <!-- Factor 6: Deal Activity 4/10 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #6366F1;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Atividade de Deals</span>
+          <span class="scor-factor-pts scor-pts-blue">+4</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 40%; background: #3B82F6;"></div></div>
+      </div>
+      <span class="scor-factor-max">10</span>
+    </div>
+
+    <!-- Factor 7: Lifecycle 5/5 -->
+    <div class="scor-factor">
+      <div class="scor-factor-icon" style="color: #14B8A6;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="scor-factor-info">
+        <div class="scor-factor-row">
+          <span>Velocidade no Funil</span>
+          <span class="scor-factor-pts scor-pts-green">+5</span>
+        </div>
+        <div class="scor-factor-bar"><div class="scor-bar-fill" style="width: 100%; background: #22C55E;"></div></div>
+      </div>
+      <span class="scor-factor-max">5</span>
+    </div>
+  </div>
+
+  <!-- AI Qualification -->
+  <div class="scor-ai-section">
+    <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="#8B5CF6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span style="font-size: 10px; font-weight: 600; color: #7C3AED;">Qualificação IA (BANT)</span>
+    </div>
+    <div class="scor-ai-grid">
+      <div class="scor-ai-item scor-ai-yes">
+        <span class="scor-ai-label">Budget</span>
+        <span class="scor-ai-val">R$15-20k</span>
+      </div>
+      <div class="scor-ai-item scor-ai-yes">
+        <span class="scor-ai-label">Authority</span>
+        <span class="scor-ai-val">Diretor + CFO</span>
+      </div>
+      <div class="scor-ai-item scor-ai-yes">
+        <span class="scor-ai-label">Need</span>
+        <span class="scor-ai-val">Perda de leads</span>
+      </div>
+      <div class="scor-ai-item scor-ai-pending">
+        <span class="scor-ai-label">Timeline</span>
+        <span class="scor-ai-val">Não confirmado</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scor-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .scor-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .scor-mode-badge {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; font-weight: 600; color: #7C3AED;
+    padding: 3px 8px; border-radius: 8px;
+    background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15);
+  }
+
+  .scor-score-area {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 14px 10px;
+  }
+  .scor-score-ring { position: relative; flex-shrink: 0; }
+  .scor-score-center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .scor-score-num { font-size: 26px; font-weight: 700; color: #F59E0B; }
+  .scor-score-total { font-size: 11px; color: #9CA3AF; }
+  .scor-score-meta { flex: 1; }
+  .scor-warm-badge {
+    display: inline-block; font-size: 9px; font-weight: 600; color: #F59E0B;
+    padding: 2px 8px; border-radius: 6px;
+    background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  }
+
+  /* Factors */
+  .scor-factors { padding: 0 14px 12px; }
+  .scor-factors-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid #F3F4F6;
+  }
+  .scor-factor {
+    display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;
+  }
+  .scor-factor-icon { flex-shrink: 0; margin-top: 1px; }
+  .scor-factor-info { flex: 1; }
+  .scor-factor-row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 10px; color: #374151; margin-bottom: 3px;
+  }
+  .scor-factor-pts {
+    font-size: 9px; font-weight: 700;
+    padding: 1px 6px; border-radius: 4px;
+  }
+  .scor-pts-green { color: #059669; background: rgba(5,150,105,0.08); }
+  .scor-pts-blue { color: #3B82F6; background: rgba(59,130,246,0.08); }
+  .scor-pts-orange { color: #F59E0B; background: rgba(245,158,11,0.08); }
+  .scor-factor-bar {
+    height: 4px; background: #F3F4F6; border-radius: 2px; overflow: hidden;
+  }
+  .scor-bar-fill { height: 100%; border-radius: 2px; }
+  .scor-factor-max {
+    font-size: 8px; color: #D1D5DB; flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* AI Section */
+  .scor-ai-section {
+    padding: 10px 14px; border-top: 1px solid #F3F4F6; background: #FAFBFC;
+  }
+  .scor-ai-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+  }
+  .scor-ai-item {
+    border-radius: 8px; padding: 6px 8px;
+  }
+  .scor-ai-yes {
+    background: rgba(5,150,105,0.04); border: 1px solid rgba(5,150,105,0.12);
+  }
+  .scor-ai-pending {
+    background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.12);
+  }
+  .scor-ai-label { font-size: 8px; color: #9CA3AF; display: block; }
+  .scor-ai-val { font-size: 10px; font-weight: 600; color: #1F2937; }
+  .scor-ai-pending .scor-ai-val { color: #F59E0B; }
+</style>
