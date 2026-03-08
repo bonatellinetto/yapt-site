@@ -1,140 +1,380 @@
 ---
-/** MockupYaDeals — Kanban Pipeline (static HTML/CSS mockup) */
+/** MockupYaDeals — yaDeals Pipeline Kanban (replicates real product UI) */
 ---
-<div class="mockup-frame">
-  <!-- Top bar -->
-  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></div>
-    <div style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E;"></div>
-    <div style="flex:1;"></div>
-    <div style="font-size: 10px; font-weight: 600; color: #2563EB; font-family: Poppins, sans-serif;">yaDeals</div>
-  </div>
-
-  <!-- Pipeline header -->
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-    <div>
-      <div style="font-size: 12px; font-weight: 600; color: #1F2937; font-family: Poppins, sans-serif;">Pipeline Vendas</div>
-      <div style="font-size: 9px; color: #9CA3AF;">R$284k em aberto &middot; 23 deals ativos</div>
-    </div>
-    <div style="font-size: 8px; padding: 3px 8px; border-radius: 6px; background: rgba(59,130,246,0.08); color: #2563EB; font-weight: 600;">Kanban</div>
-  </div>
-
-  <!-- Kanban columns -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; margin-bottom: 10px;">
-    <!-- Qualification -->
-    <div class="kanban-col">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-        <div style="font-size: 7px; font-weight: 600; color: #6B7280; text-transform: uppercase;">Qualificacao</div>
-        <div style="font-size: 7px; color: #9CA3AF;">8</div>
+<div class="yad-frame">
+  <!-- Header -->
+  <div class="yad-header">
+    <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
+      <div style="width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #20B2AA, #10B981); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       </div>
-      <div class="kanban-card" style="border-left: 2px solid #3B82F6;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">TechCorp</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$45k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #60A5FA; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">ML</div>
-          <div style="font-size: 6px; color: #9CA3AF;">2d</div>
-        </div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #8B5CF6;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">StartupXYZ</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$12k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #A78BFA; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">
-            <svg width="6" height="6" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-          </div>
-          <div style="font-size: 6px; color: #8B5CF6;">IA</div>
-        </div>
+      <div>
+        <span style="font-size: 11px; font-weight: 700; color: #1F2937; font-family: Poppins, sans-serif;">yaDeals</span>
+        <span style="font-size: 9px; color: #9CA3AF; margin-left: 4px;">Pipeline de Negocios</span>
       </div>
     </div>
-
-    <!-- Negotiation -->
-    <div class="kanban-col">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-        <div style="font-size: 7px; font-weight: 600; color: #6B7280; text-transform: uppercase;">Negociacao</div>
-        <div style="font-size: 7px; color: #9CA3AF;">5</div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #F59E0B;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">MegaStore</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$78k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #F472B6; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">RS</div>
-          <div style="font-size: 6px; color: #F59E0B;">SLA!</div>
-        </div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #3B82F6;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">DigitalCo</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$34k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #60A5FA; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">ML</div>
-          <div style="font-size: 6px; color: #9CA3AF;">5d</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proposal -->
-    <div class="kanban-col">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-        <div style="font-size: 7px; font-weight: 600; color: #6B7280; text-transform: uppercase;">Proposta</div>
-        <div style="font-size: 7px; color: #9CA3AF;">6</div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #22C55E;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">InfoSaude</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$92k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #34D399; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">AC</div>
-          <div style="font-size: 6px; color: #22C55E;">Hot</div>
-        </div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #3B82F6;">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">EduTech</div>
-        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">R$23k</div>
-        <div style="display: flex; align-items: center; gap: 3px; margin-top: 3px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #60A5FA; font-size: 6px; color: white; display: flex; align-items: center; justify-content: center;">ML</div>
-          <div style="font-size: 6px; color: #9CA3AF;">1d</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Won -->
-    <div class="kanban-col">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-        <div style="font-size: 7px; font-weight: 600; color: #22C55E; text-transform: uppercase;">Ganho</div>
-        <div style="font-size: 7px; color: #9CA3AF;">4</div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #22C55E; background: rgba(34,197,94,0.04);">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">LogiPro</div>
-        <div style="font-size: 10px; font-weight: 700; color: #22C55E;">R$56k</div>
-        <div style="font-size: 6px; color: #22C55E; margin-top: 3px;">Fechado hoje</div>
-      </div>
-      <div class="kanban-card" style="border-left: 2px solid #22C55E; background: rgba(34,197,94,0.04);">
-        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">RetailMax</div>
-        <div style="font-size: 10px; font-weight: 700; color: #22C55E;">R$41k</div>
-        <div style="font-size: 6px; color: #22C55E; margin-top: 3px;">Fechado ontem</div>
-      </div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 8px; color: #6B7280; flex-shrink: 0;">
+      <span>28 negocios</span>
+      <span style="color: #D1D5DB;">&middot;</span>
+      <span style="font-weight: 600; color: #1F2937;">R$ 284k</span>
+      <span style="color: #D1D5DB;">&middot;</span>
+      <span style="color: #20B2AA;">R$ 142k ponderado</span>
+      <div class="yad-btn-new">Novo Negocio</div>
     </div>
   </div>
 
-  <!-- AI insight -->
-  <div style="background: linear-gradient(135deg, rgba(59,130,246,0.05), rgba(59,130,246,0.02)); border: 1px dashed rgba(59,130,246,0.2); border-radius: 10px; padding: 8px 10px;">
-    <div style="font-size: 8px; font-weight: 600; color: #2563EB; margin-bottom: 2px;">IA Insight</div>
-    <div style="font-size: 8px; color: #6B7280; line-height: 1.4;">"MegaStore mencionou urgencia na conversa — mova para Proposta e envie o pricing atualizado."</div>
+  <!-- Filter bar -->
+  <div class="yad-filters">
+    <div class="yad-search">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <span>Buscar negocio...</span>
+    </div>
+    <div class="yad-filter-pill">Responsavel</div>
+    <div class="yad-filter-pill">Estagio</div>
+    <div class="yad-filter-pill">Prev. Fechamento</div>
+    <div class="yad-filter-active">Ativos</div>
+    <div class="yad-filter-pill">Ganhos</div>
+    <div class="yad-filter-pill">Perdidos</div>
+  </div>
+
+  <!-- Kanban board -->
+  <div class="yad-board">
+    <!-- Lead column -->
+    <div class="yad-col">
+      <div class="yad-col-header">
+        <div class="yad-col-dot" style="background: #6B7280;"></div>
+        <span class="yad-col-title">Lead</span>
+        <span class="yad-col-count">8</span>
+      </div>
+      <div class="yad-col-sum">S: R$ 4.343</div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">TechCorp Brasil</div>
+        <div class="yad-card-contact">Lucas Mendes</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value">$ -</div>
+        <div class="yad-card-avatar">L</div>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">StartupXYZ</div>
+        <div class="yad-card-contact">Robson Ege</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value">$ -</div>
+        <div class="yad-card-avatar">R</div>
+      </div>
+
+      <div class="yad-card yad-card-warning">
+        <div class="yad-card-name">Edson Teixeira</div>
+        <div class="yad-card-contact">Edson Teixeira</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value">$ -</div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <div class="yad-card-avatar">R</div>
+          <span class="yad-badge-cold">Esfriando</span>
+        </div>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">3 Deal - NB da Silva</div>
+        <div class="yad-card-contact">Netto Bonatelli</div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 4,3 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 4,3 mil Setup</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <span class="yad-badge-call">13/fev</span>
+          <span class="yad-badge-cold">Esfriando</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Qualificação column -->
+    <div class="yad-col">
+      <div class="yad-col-header">
+        <div class="yad-col-dot" style="background: #3B82F6;"></div>
+        <span class="yad-col-title">Qualificacao</span>
+        <span class="yad-col-count">3</span>
+      </div>
+      <div class="yad-col-sum">S: R$ 8.000</div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Deal - Victor Cidade</div>
+        <div class="yad-card-contact">Victor Cidade</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value">$ -</div>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Silvano Gomes</div>
+        <div class="yad-card-contact">Silvano Gomes d...</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 8 mil</div>
+        <span class="yad-badge-setup">R$ 8 mil Setup</span>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Erica Camila dos Santos</div>
+        <div class="yad-card-contact">Erica Camila dos ...</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value">$ -</div>
+        <div class="yad-card-avatar">C</div>
+      </div>
+    </div>
+
+    <!-- Proposta column -->
+    <div class="yad-col">
+      <div class="yad-col-header">
+        <div class="yad-col-dot" style="background: #8B5CF6;"></div>
+        <span class="yad-col-title">Proposta</span>
+        <span class="yad-col-count">14</span>
+      </div>
+      <div class="yad-col-sum">S: R$ 94.100 &nbsp; M: R$ 75.715</div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Mychel Cervantes</div>
+        <div class="yad-card-contact">Mychel Cervante...</div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 13,2 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 6 mil Setup</span>
+          <span class="yad-badge-month">R$ 599/mes</span>
+        </div>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Deal - Thiago</div>
+        <div class="yad-card-contact">Thiago</div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 17,5 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 2 mil Setup</span>
+          <span class="yad-badge-month">R$ 1,3 mil/mes</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 3px; margin-top: 2px;">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span style="font-size: 6px; color: #F59E0B; font-weight: 600;">!</span>
+        </div>
+      </div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Proposta Mktzap</div>
+        <div class="yad-card-contact">Leonardo Lead</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 61,2 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 7,2 mil Setup</span>
+          <span class="yad-badge-month">R$ 4,5 mil/mes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Negociação column -->
+    <div class="yad-col">
+      <div class="yad-col-header">
+        <div class="yad-col-dot" style="background: #F59E0B;"></div>
+        <span class="yad-col-title">Negociacao</span>
+        <span class="yad-col-count">2</span>
+      </div>
+      <div class="yad-col-sum">S: R$ 20.959 &nbsp; M: R$ 4.323</div>
+
+      <div class="yad-card">
+        <div class="yad-card-name">Medicmais Paracatu</div>
+        <div class="yad-card-contact">Tider Dengo</div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 11,3 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 9 mil Setup</span>
+          <span class="yad-badge-month">R$ 197/mes</span>
+        </div>
+        <span class="yad-badge-call">18/fev</span>
+      </div>
+
+      <div class="yad-card yad-card-warning">
+        <div class="yad-card-name">Chatal Ortopedicos LTDA</div>
+        <div class="yad-card-contact">Renata Formiga</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 61,5 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 12 mil Setup</span>
+          <span class="yad-badge-month">R$ 4,1 mil/mes</span>
+        </div>
+        <span class="yad-badge-cold">Esfriando</span>
+      </div>
+    </div>
+
+    <!-- Fechado Ganho column -->
+    <div class="yad-col">
+      <div class="yad-col-header">
+        <div class="yad-col-dot" style="background: #22C55E;"></div>
+        <span class="yad-col-title">Fechado Ganho</span>
+        <span class="yad-col-count">1</span>
+      </div>
+      <div class="yad-col-sum">S: R$ 1.400 &nbsp; M: R$ 590</div>
+
+      <div class="yad-card" style="border-left: 2px solid #22C55E;">
+        <div class="yad-card-name">Mayara Leite</div>
+        <div class="yad-card-contact">Mayara Leite</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-status">Sem compromisso</span>
+        </div>
+        <div class="yad-card-value" style="color: #22C55E;">$ R$ 8,5 mil</div>
+        <div class="yad-card-badge-row">
+          <span class="yad-badge-setup">R$ 1,4 mil Setup</span>
+          <span class="yad-badge-month">R$ 590/mes</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+          <div class="yad-card-avatar">C</div>
+          <span style="font-size: 6px; color: #9CA3AF;">2d</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-  .mockup-frame {
-    width: 100%; max-width: 480px; border-radius: 20px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 18px; overflow: hidden;
+  .yad-frame {
+    width: 100%; max-width: 560px; border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #FAFBFC; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
   }
-  .kanban-col {
-    background: #F9FAFB; border-radius: 8px; padding: 6px;
+
+  /* Header */
+  .yad-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; background: white; border-bottom: 1px solid #F3F4F6;
+    flex-wrap: wrap;
   }
-  .kanban-card {
-    background: white; border-radius: 6px; padding: 6px 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 4px;
+  .yad-btn-new {
+    font-size: 8px; font-weight: 600; color: white;
+    padding: 4px 10px; border-radius: 8px; background: #20B2AA;
+    white-space: nowrap;
+  }
+
+  /* Filters */
+  .yad-filters {
+    display: flex; align-items: center; gap: 4px;
+    padding: 8px 14px; background: white; border-bottom: 1px solid #F3F4F6;
+    overflow-x: auto;
+  }
+  .yad-search {
+    display: flex; align-items: center; gap: 4px;
+    padding: 4px 8px; border: 1px solid #E5E7EB; border-radius: 6px;
+    font-size: 7px; color: #9CA3AF; white-space: nowrap; flex-shrink: 0;
+  }
+  .yad-filter-pill {
+    font-size: 7px; color: #6B7280; padding: 3px 8px;
+    border: 1px solid #E5E7EB; border-radius: 6px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .yad-filter-active {
+    font-size: 7px; font-weight: 600; color: white;
+    padding: 3px 8px; border-radius: 6px; background: #3B82F6;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* Board */
+  .yad-board {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+    padding: 10px; min-height: 200px;
+    overflow-x: auto;
+  }
+
+  /* Column */
+  .yad-col { min-width: 0; }
+  .yad-col-header {
+    display: flex; align-items: center; gap: 4px; margin-bottom: 2px;
+  }
+  .yad-col-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .yad-col-title { font-size: 8px; font-weight: 700; color: #1F2937; }
+  .yad-col-count {
+    font-size: 7px; color: #9CA3AF; background: #F3F4F6;
+    padding: 0 4px; border-radius: 4px;
+  }
+  .yad-col-sum { font-size: 6px; color: #20B2AA; margin-bottom: 6px; }
+
+  /* Card */
+  .yad-card {
+    background: white; border: 1px solid #E5E7EB; border-radius: 8px;
+    padding: 6px 8px; margin-bottom: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .yad-card-warning {
+    border-left: 2px solid #F59E0B;
+  }
+  .yad-card-name {
+    font-size: 8px; font-weight: 600; color: #1F2937;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .yad-card-contact {
+    font-size: 7px; color: #9CA3AF; margin-bottom: 3px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .yad-card-value {
+    font-size: 8px; font-weight: 600; color: #6B7280; margin-bottom: 2px;
+  }
+  .yad-card-badge-row {
+    display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 2px;
+  }
+  .yad-card-avatar {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: #E5E7EB; display: flex; align-items: center; justify-content: center;
+    font-size: 6px; font-weight: 700; color: #6B7280;
+  }
+
+  /* Badges */
+  .yad-badge-status {
+    font-size: 6px; color: #F59E0B; padding: 1px 4px;
+    border-radius: 3px; background: rgba(245,158,11,0.08);
+    display: inline-flex; align-items: center; gap: 2px;
+  }
+  .yad-badge-status::before {
+    content: ''; width: 4px; height: 4px; border-radius: 50%;
+    background: #F59E0B; display: inline-block;
+  }
+  .yad-badge-cold {
+    font-size: 6px; color: #EF4444; font-weight: 600;
+    padding: 1px 4px; border-radius: 3px; background: rgba(239,68,68,0.08);
+    display: inline-flex; align-items: center; gap: 2px;
+  }
+  .yad-badge-cold::before {
+    content: '🔥'; font-size: 6px;
+  }
+  .yad-badge-setup {
+    font-size: 6px; color: #20B2AA; padding: 1px 4px;
+    border-radius: 3px; background: rgba(32,178,170,0.06);
+  }
+  .yad-badge-month {
+    font-size: 6px; color: #20B2AA; padding: 1px 4px;
+    border-radius: 3px; background: rgba(32,178,170,0.06);
+  }
+  .yad-badge-call {
+    font-size: 6px; color: #22C55E; padding: 1px 4px;
+    border-radius: 3px; background: rgba(34,197,94,0.08);
+    display: inline-flex; align-items: center; gap: 2px;
+  }
+  .yad-badge-call::before {
+    content: '📞'; font-size: 6px;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .yad-board { grid-template-columns: repeat(3, 1fr); }
+    .yad-col:nth-child(4), .yad-col:nth-child(5) { display: none; }
+    .yad-filters { display: none; }
   }
 </style>
