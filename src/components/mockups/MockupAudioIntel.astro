@@ -1,0 +1,240 @@
+---
+/** MockupAudioIntel — Audio Intelligence with transcription & analysis (conversations page) */
+---
+<div class="audi-frame">
+  <!-- Contact bar -->
+  <div class="audi-contact">
+    <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #60A5FA, #3B82F6); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; flex-shrink: 0;">RP</div>
+    <div style="flex: 1; min-width: 0;">
+      <div style="font-size: 13px; font-weight: 600; color: #1F2937;">Rodrigo Pimentel</div>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="#25D366"><circle cx="12" cy="12" r="10"/></svg>
+        <span style="font-size: 10px; color: #9CA3AF;">WhatsApp Comercial</span>
+      </div>
+    </div>
+    <div class="audi-badge-lead">Lead</div>
+    <div class="audi-pipeline">
+      <span class="audi-pipe-step audi-pipe-active">LEAD</span>
+      <span class="audi-pipe-step audi-pipe-active">MQL</span>
+      <span class="audi-pipe-step">SAL</span>
+      <span class="audi-pipe-step">SQL</span>
+    </div>
+  </div>
+
+  <!-- Chat area -->
+  <div class="audi-chat">
+    <!-- outgoing question -->
+    <div class="audi-msg-right">
+      <div class="audi-bubble-green">
+        Qual seu nome mesmo? E pra eu personalizar melhor nossa conversa, qual o nome da sua empresa?
+        <span class="audi-ts">07:00 ✓✓</span>
+      </div>
+    </div>
+
+    <!-- Audio message from client -->
+    <div class="audi-msg-left">
+      <!-- Audio player -->
+      <div class="audi-audio-player">
+        <div class="audi-play-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="audi-waveform">
+          <div class="audi-wave" style="height: 30%;"></div>
+          <div class="audi-wave" style="height: 50%;"></div>
+          <div class="audi-wave" style="height: 80%;"></div>
+          <div class="audi-wave" style="height: 45%;"></div>
+          <div class="audi-wave" style="height: 90%;"></div>
+          <div class="audi-wave" style="height: 60%;"></div>
+          <div class="audi-wave" style="height: 100%;"></div>
+          <div class="audi-wave" style="height: 75%;"></div>
+          <div class="audi-wave" style="height: 40%;"></div>
+          <div class="audi-wave" style="height: 85%;"></div>
+          <div class="audi-wave" style="height: 55%;"></div>
+          <div class="audi-wave" style="height: 70%;"></div>
+          <div class="audi-wave" style="height: 95%;"></div>
+          <div class="audi-wave" style="height: 50%;"></div>
+          <div class="audi-wave" style="height: 65%;"></div>
+          <div class="audi-wave" style="height: 35%;"></div>
+          <div class="audi-wave" style="height: 80%;"></div>
+          <div class="audi-wave" style="height: 45%;"></div>
+          <div class="audi-wave" style="height: 60%;"></div>
+          <div class="audi-wave" style="height: 30%;"></div>
+        </div>
+        <div class="audi-audio-meta">
+          <span>0:00 / 0:51</span>
+          <span>1x</span>
+        </div>
+      </div>
+
+      <!-- Transcription -->
+      <div class="audi-transcription">
+        <div class="audi-transcription-header">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          <span style="font-size: 10px; font-weight: 600; color: #374151;">Transcrição</span>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        </div>
+        <div class="audi-transcription-text">
+          Trabalho com produtos digitais, de high ticket, e também tenho um e-commerce. Atualmente minhas vendas estão em 4, 5 milhões por mês e preciso de apoio na criação de uma experiência conversacional que retenha mais clientes e aumente as vendas. Quando me indicaram vocês, tive certeza de que poderia contar com isso.
+        </div>
+
+        <!-- Tags -->
+        <div class="audi-tags">
+          <span class="audi-tag-positive">Positivo</span>
+          <span class="audi-tag-topic">high ticket</span>
+          <span class="audi-tag-topic">experiência conversacional</span>
+        </div>
+
+        <!-- AI Summary -->
+        <div class="audi-summary">
+          <em>O cliente trabalha com produtos digitais e e-commerce, com vendas mensais de 4-5 milhões, busca apoio para criar uma experiência conversacional que retenha clientes e aumente vendas.</em>
+        </div>
+      </div>
+
+      <span class="audi-ts-left">07:44</span>
+    </div>
+
+    <!-- AI response -->
+    <div class="audi-msg-right">
+      <div class="audi-ai-tag">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        IA
+      </div>
+      <div class="audi-bubble-green-ai">
+        Que cenário incrível! <strong>4-5 milhões por mês</strong> é um volume que realmente precisa de uma solução robusta pra experiência conversacional.
+        <span class="audi-ts">07:45 ✓✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input bar -->
+  <div class="audi-input-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+    <span style="flex: 1; font-size: 11px; color: #9CA3AF;">Mensagem...</span>
+    <div style="width: 28px; height: 28px; border-radius: 50%; background: #E5E7EB; display: flex; align-items: center; justify-content: center;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="#9CA3AF"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </div>
+  </div>
+</div>
+
+<style>
+  .audi-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  /* Contact */
+  .audi-contact {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .audi-badge-lead {
+    font-size: 9px; font-weight: 600; color: #3B82F6;
+    padding: 3px 10px; border-radius: 12px;
+    border: 1.5px solid #3B82F6;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .audi-badge-lead::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: #3B82F6;
+  }
+  .audi-pipeline {
+    display: flex; gap: 2px;
+  }
+  .audi-pipe-step {
+    font-size: 7px; font-weight: 600; color: #D1D5DB;
+    padding: 2px 4px;
+  }
+  .audi-pipe-active {
+    color: #1F2937;
+    border-bottom: 2px solid #EF4444;
+  }
+
+  /* Chat */
+  .audi-chat {
+    padding: 12px 14px; background: #FAFBFC;
+    display: flex; flex-direction: column;
+  }
+  .audi-msg-left { align-self: flex-start; max-width: 90%; margin-bottom: 8px; }
+  .audi-msg-right { align-self: flex-end; max-width: 85%; margin-bottom: 8px; }
+
+  .audi-bubble-green {
+    background: #D1FAE5; border-radius: 10px 0 10px 10px;
+    padding: 10px 12px; font-size: 11px; color: #1F2937; line-height: 1.6;
+  }
+  .audi-bubble-green-ai {
+    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+    border-radius: 10px 0 10px 10px;
+    padding: 10px 12px; font-size: 11px; color: #1F2937; line-height: 1.6;
+  }
+  .audi-ai-tag {
+    display: flex; align-items: center; gap: 3px; justify-content: flex-end;
+    margin-bottom: 2px; font-size: 9px; color: #20B2AA; font-weight: 600;
+  }
+  .audi-ts { font-size: 8px; color: #9CA3AF; float: right; margin-top: 3px; margin-left: 8px; }
+  .audi-ts-left { font-size: 8px; color: #9CA3AF; display: block; text-align: right; margin-top: 2px; }
+
+  /* Audio player */
+  .audi-audio-player {
+    background: #F3F4F6; border-radius: 12px; padding: 10px 12px;
+    margin-bottom: 6px;
+  }
+  .audi-play-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: #10B981; display: inline-flex;
+    align-items: center; justify-content: center;
+    vertical-align: middle; margin-right: 8px;
+  }
+  .audi-waveform {
+    display: inline-flex; align-items: center; gap: 2px;
+    height: 24px; vertical-align: middle;
+  }
+  .audi-wave {
+    width: 3px; border-radius: 2px; background: #9CA3AF;
+  }
+  .audi-audio-meta {
+    display: flex; justify-content: space-between;
+    font-size: 9px; color: #6B7280; margin-top: 4px;
+  }
+
+  /* Transcription */
+  .audi-transcription {
+    background: white; border: 1px solid #E5E7EB; border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .audi-transcription-header {
+    display: flex; align-items: center; gap: 5px; margin-bottom: 8px;
+    padding-bottom: 6px; border-bottom: 1px solid #F3F4F6;
+  }
+  .audi-transcription-text {
+    font-size: 11px; color: #374151; line-height: 1.7; margin-bottom: 8px;
+  }
+
+  /* Tags */
+  .audi-tags {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px;
+  }
+  .audi-tag-positive {
+    font-size: 9px; font-weight: 600; color: #059669;
+    padding: 2px 8px; border-radius: 4px;
+    border: 1px solid rgba(5,150,105,0.3); background: rgba(5,150,105,0.06);
+  }
+  .audi-tag-topic {
+    font-size: 9px; font-weight: 500; color: #374151;
+    padding: 2px 8px; border-radius: 4px;
+    border: 1px solid #E5E7EB; background: #F9FAFB;
+  }
+
+  /* AI Summary */
+  .audi-summary {
+    font-size: 10px; color: #059669; line-height: 1.6;
+    padding-top: 8px; border-top: 1px solid #F3F4F6;
+  }
+
+  /* Input bar */
+  .audi-input-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; border-top: 1px solid #F3F4F6;
+  }
+</style>
