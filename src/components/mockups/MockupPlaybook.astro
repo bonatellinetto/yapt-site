@@ -1,0 +1,299 @@
+---
+/** MockupPlaybook — Playbook Wizard de Vendas (intelligence page, yaMentor section) */
+---
+<div class="pb-frame">
+  <!-- Header -->
+  <div class="pb-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #8B5CF6, #A78BFA); display: flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Novo Playbook</div>
+        <div style="font-size: 9px; color: #9CA3AF;">Playbook de Qualificação — SDR Comercial</div>
+      </div>
+    </div>
+    <div class="pb-draft-badge">Rascunho</div>
+  </div>
+
+  <!-- Wizard Steps -->
+  <div class="pb-steps">
+    <div class="pb-step pb-step-done">
+      <div class="pb-step-circle pb-circle-done">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <span class="pb-step-label">Produto</span>
+    </div>
+    <div class="pb-step-line pb-line-done"></div>
+    <div class="pb-step pb-step-active">
+      <div class="pb-step-circle pb-circle-active">2</div>
+      <span class="pb-step-label pb-label-active">Qualificação</span>
+    </div>
+    <div class="pb-step-line"></div>
+    <div class="pb-step">
+      <div class="pb-step-circle">3</div>
+      <span class="pb-step-label">Pipeline</span>
+    </div>
+    <div class="pb-step-line"></div>
+    <div class="pb-step">
+      <div class="pb-step-circle">4</div>
+      <span class="pb-step-label">Situações</span>
+    </div>
+    <div class="pb-step-line"></div>
+    <div class="pb-step">
+      <div class="pb-step-circle">5</div>
+      <span class="pb-step-label">Revisar</span>
+    </div>
+  </div>
+
+  <!-- Qualification Card -->
+  <div class="pb-card">
+    <div class="pb-card-header">
+      <div>
+        <div style="font-size: 12px; font-weight: 700; color: #1F2937;">Critérios de Qualificação</div>
+        <div style="font-size: 9px; color: #9CA3AF;">Defina as perguntas que a IA fará para qualificar leads</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="pb-tabs">
+      <div class="pb-tab pb-tab-active">Dor</div>
+      <div class="pb-tab">Volume</div>
+      <div class="pb-tab">Decisor</div>
+      <div class="pb-tab">Budget</div>
+      <div class="pb-tab">Timing</div>
+    </div>
+
+    <!-- Questions list -->
+    <div class="pb-questions">
+      <div class="pb-question">
+        <div class="pb-q-header">
+          <div class="pb-q-number">1</div>
+          <div class="pb-q-text">Qual o maior desafio no atendimento ao cliente hoje?</div>
+          <div class="pb-q-required">Obrigatória</div>
+        </div>
+        <div class="pb-q-meta">
+          <span class="pb-q-type">Texto livre</span>
+          <span class="pb-q-weight">Peso: 3x</span>
+        </div>
+      </div>
+      <div class="pb-question">
+        <div class="pb-q-header">
+          <div class="pb-q-number">2</div>
+          <div class="pb-q-text">Quantas mensagens por mês a empresa processa?</div>
+          <div class="pb-q-required">Obrigatória</div>
+        </div>
+        <div class="pb-q-meta">
+          <span class="pb-q-type">Múltipla escolha</span>
+          <span class="pb-q-weight">Peso: 2x</span>
+        </div>
+        <div class="pb-q-options">
+          <span class="pb-q-opt">Até 10k</span>
+          <span class="pb-q-opt">10k–100k</span>
+          <span class="pb-q-opt pb-q-opt-hot">100k–1M</span>
+          <span class="pb-q-opt pb-q-opt-hot">+1M</span>
+        </div>
+      </div>
+      <div class="pb-question">
+        <div class="pb-q-header">
+          <div class="pb-q-number">3</div>
+          <div class="pb-q-text">Já usam alguma solução de IA conversacional?</div>
+        </div>
+        <div class="pb-q-meta">
+          <span class="pb-q-type">Sim/Não + follow-up</span>
+          <span class="pb-q-weight">Peso: 1x</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add question button -->
+    <button class="pb-add-btn">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      Adicionar Pergunta
+    </button>
+  </div>
+
+  <!-- SQL Criteria -->
+  <div class="pb-sql">
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      <span style="font-size: 10px; font-weight: 600; color: #7C3AED;">Critérios SQL Gerados</span>
+      <span class="pb-auto-badge">Auto IA</span>
+    </div>
+    <div class="pb-sql-box">
+      <code>dor_score ≥ 7 AND volume_msg > 10000</code>
+      <code>AND tem_decisor = true</code>
+      <code>AND budget_range IN ('50k-100k', '100k+')</code>
+      <code>AND timing ≤ 90 dias</code>
+    </div>
+    <div style="font-size: 8px; color: #9CA3AF; margin-top: 4px;">Leads que atendem ≥ 3 critérios → SQL qualificado automaticamente</div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="pb-nav">
+    <button class="pb-nav-back">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar
+    </button>
+    <button class="pb-nav-next">
+      Próximo
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .pb-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .pb-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .pb-draft-badge {
+    font-size: 8px; font-weight: 600; color: #D97706;
+    padding: 3px 8px; border-radius: 8px;
+    background: rgba(217,119,6,0.06); border: 1px solid rgba(217,119,6,0.15);
+  }
+
+  /* Wizard Steps */
+  .pb-steps {
+    display: flex; align-items: center; justify-content: center;
+    padding: 14px 16px; gap: 0; border-bottom: 1px solid #F3F4F6;
+  }
+  .pb-step {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .pb-step-circle {
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: #9CA3AF;
+    background: #F3F4F6; border: 1.5px solid #E5E7EB;
+  }
+  .pb-circle-done {
+    background: #8B5CF6; border-color: #8B5CF6; color: white;
+  }
+  .pb-circle-active {
+    background: white; border-color: #8B5CF6; color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139,92,246,0.15);
+  }
+  .pb-step-label {
+    font-size: 8px; color: #9CA3AF; font-weight: 500;
+  }
+  .pb-label-active { color: #7C3AED; font-weight: 700; }
+  .pb-step-line {
+    width: 28px; height: 2px; background: #E5E7EB;
+    margin: 0 4px; margin-bottom: 14px;
+  }
+  .pb-line-done { background: #8B5CF6; }
+
+  /* Card */
+  .pb-card { padding: 12px 14px; }
+  .pb-card-header { margin-bottom: 10px; }
+
+  /* Tabs */
+  .pb-tabs {
+    display: flex; gap: 2px; margin-bottom: 10px;
+    background: #F3F4F6; border-radius: 8px; padding: 2px;
+  }
+  .pb-tab {
+    flex: 1; text-align: center;
+    font-size: 9px; font-weight: 500; color: #6B7280;
+    padding: 5px 8px; border-radius: 6px; cursor: default;
+  }
+  .pb-tab-active {
+    background: white; color: #7C3AED; font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  /* Questions */
+  .pb-questions { display: flex; flex-direction: column; gap: 6px; }
+  .pb-question {
+    padding: 8px 10px; border-radius: 8px;
+    border: 1px solid #E5E7EB; background: #FAFBFC;
+  }
+  .pb-q-header { display: flex; align-items: center; gap: 6px; }
+  .pb-q-number {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(139,92,246,0.1); color: #7C3AED;
+    font-size: 8px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .pb-q-text { font-size: 10px; font-weight: 600; color: #1F2937; flex: 1; }
+  .pb-q-required {
+    font-size: 7px; font-weight: 600; color: #EF4444;
+    padding: 1px 5px; border-radius: 4px;
+    background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15);
+    white-space: nowrap;
+  }
+  .pb-q-meta {
+    display: flex; gap: 8px; margin-top: 4px; margin-left: 24px;
+  }
+  .pb-q-type { font-size: 8px; color: #9CA3AF; }
+  .pb-q-weight { font-size: 8px; color: #8B5CF6; font-weight: 600; }
+  .pb-q-options {
+    display: flex; gap: 4px; margin-top: 5px; margin-left: 24px; flex-wrap: wrap;
+  }
+  .pb-q-opt {
+    font-size: 8px; color: #6B7280; padding: 2px 8px;
+    border-radius: 4px; background: white; border: 1px solid #E5E7EB;
+  }
+  .pb-q-opt-hot {
+    color: #059669; border-color: rgba(5,150,105,0.3);
+    background: rgba(5,150,105,0.04);
+  }
+
+  /* Add button */
+  .pb-add-btn {
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+    width: 100%; margin-top: 8px; padding: 7px;
+    border: 1.5px dashed rgba(139,92,246,0.3); border-radius: 8px;
+    background: rgba(139,92,246,0.02); color: #8B5CF6;
+    font-size: 10px; font-weight: 600; cursor: default;
+  }
+
+  /* SQL */
+  .pb-sql {
+    padding: 10px 14px; border-top: 1px solid #F3F4F6;
+  }
+  .pb-auto-badge {
+    font-size: 7px; font-weight: 600; color: #8B5CF6;
+    padding: 1px 5px; border-radius: 4px;
+    background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.15);
+  }
+  .pb-sql-box {
+    display: flex; flex-direction: column; gap: 1px;
+    padding: 8px 10px; border-radius: 6px;
+    background: #1F2937; font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .pb-sql-box code {
+    font-size: 9px; color: #A78BFA; line-height: 1.5;
+  }
+
+  /* Navigation */
+  .pb-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 14px; border-top: 1px solid #F3F4F6; background: #FAFBFC;
+  }
+  .pb-nav-back {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 500; color: #6B7280;
+    background: none; border: 1px solid #E5E7EB; border-radius: 6px;
+    padding: 5px 12px; cursor: default;
+  }
+  .pb-nav-next {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; color: white;
+    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+    border: none; border-radius: 6px; padding: 5px 14px; cursor: default;
+  }
+
+  @media (max-width: 640px) {
+    .pb-step-line { width: 16px; }
+    .pb-tabs { flex-wrap: wrap; }
+  }
+</style>

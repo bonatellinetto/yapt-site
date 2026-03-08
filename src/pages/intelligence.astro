@@ -5,11 +5,11 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
-import MockupYaveh from '../components/mockups/MockupYaveh.astro';
+import MockupYaTeamCentral from '../components/mockups/MockupYaTeamCentral.astro';
 import MockupYaTeam from '../components/mockups/MockupYaTeam.astro';
 import MockupYaMemory from '../components/mockups/MockupYaMemory.astro';
-import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
-import MockupScoring from '../components/mockups/MockupScoring.astro';
+import MockupPlaybook from '../components/mockups/MockupPlaybook.astro';
+import MockupYaContact from '../components/mockups/MockupYaContact.astro';
 import MockupEmotion from '../components/mockups/MockupEmotion.astro';
 import MockupAudioIntel from '../components/mockups/MockupAudioIntel.astro';
 import { t, type Locale } from '../lib/i18n';
@@ -54,11 +54,11 @@ const modules = ['ai','team','memory','mentor','scoring','emotion','audio'] as c
             reversed={i % 2 === 1}
             accentColor="#8B5CF6"
           >
-            {key === 'ai' && <MockupYaveh />}
+            {key === 'ai' && <MockupYaTeamCentral />}
             {key === 'team' && <MockupYaTeam />}
             {key === 'memory' && <MockupYaMemory />}
-            {key === 'mentor' && <MockupMentorResults />}
-            {key === 'scoring' && <MockupScoring />}
+            {key === 'mentor' && <MockupPlaybook />}
+            {key === 'scoring' && <MockupYaContact />}
             {key === 'emotion' && <MockupEmotion />}
             {key === 'audio' && <MockupAudioIntel />}
           </ModuleDeepDive>
