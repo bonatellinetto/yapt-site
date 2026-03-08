@@ -5,6 +5,7 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
 import MockupHandoff from '../components/mockups/MockupHandoff.astro';
 import MockupYaTeamHub from '../components/mockups/MockupYaTeamHub.astro';
 import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
@@ -61,6 +62,7 @@ const modules = ['inbox','handlerState','yavehTeam','mentor','memory','audio','p
             reversed={i % 2 === 1}
             accentColor="#3B82F6"
           >
+            {key === 'inbox' && <MockupYaInbox />}
             {key === 'handlerState' && <MockupHandoff />}
             {key === 'yavehTeam' && <MockupYaTeamHub />}
             {key === 'mentor' && <MockupMentorResults />}
