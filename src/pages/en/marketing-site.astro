@@ -45,38 +45,35 @@ const timelineSteps = timeline?.steps || [];
   />
 
   {/* Statement WOW */}
-  {statement && statement.title && (
+  {statement && (statement.title || statement.headline) && (
     <section data-observe class="py-16 lg:py-24" style="background: linear-gradient(135deg, #1a1a2e, #1e3a5f);">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-4xl font-bold text-white leading-tight">{statement.title}</h2>
-          {statement.subtitle && <p class="text-base text-white/60 mt-6 max-w-2xl mx-auto">{statement.subtitle}</p>}
+          <h2 class="font-poppins text-2xl lg:text-4xl font-bold text-white leading-tight">{statement.headline || statement.title}</h2>
+          {(statement.subtext || statement.subtitle) && <p class="text-base text-white/60 mt-6 max-w-2xl mx-auto">{statement.subtext || statement.subtitle}</p>}
         </div>
       </div>
     </section>
   )}
 
   {/* Pain Points */}
-  {painPointKeys.length > 0 && (
+  {painPoints && (painPoints.items || painPointKeys.length > 0) && (
     <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
-          {painPoints.title && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">{painPoints.title}</h2>}
+          {(painPoints.header || painPoints.title) && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">{painPoints.header || painPoints.title}</h2>}
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {painPointKeys.map((k) => {
-            const pp = painPoints[k];
-            return (
-              <div
-                data-fade
-                style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-                class="bg-white rounded-2xl p-6 border border-amber-100"
-              >
-                <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{pp.title}</h3>
-                <p class="text-sm text-[#656D78] leading-relaxed">{pp.description}</p>
-              </div>
-            );
-          })}
+          {(Array.isArray(painPoints.items) ? painPoints.items : painPoints.items ? Object.values(painPoints.items) : painPointKeys.map(k => painPoints[k])).map((pp: any) => (
+            <div
+              data-fade
+              style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+              class="bg-white rounded-2xl p-6 border border-amber-100"
+            >
+              <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{pp.title}</h3>
+              <p class="text-sm text-[#656D78] leading-relaxed">{pp.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -111,19 +108,22 @@ const timelineSteps = timeline?.steps || [];
         </div>
         <div class="relative">
           <div class="absolute left-6 top-0 bottom-0 w-px bg-amber-400/20"></div>
-          {timelineSteps.map((step: any, i: number) => (
-            <div
-              data-fade
-              style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-              class="relative pl-16 pb-10 last:pb-0"
-            >
-              <div class="absolute left-4 w-5 h-5 rounded-full border-2 border-amber-400 bg-[#1a1a2e] flex items-center justify-center">
-                <span class="text-[10px] text-amber-300 font-bold">{i + 1}</span>
+          {timelineSteps.map((step: any, i: number) => {
+            const isString = typeof step === 'string';
+            return (
+              <div
+                data-fade
+                style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+                class="relative pl-16 pb-10 last:pb-0"
+              >
+                <div class="absolute left-4 w-5 h-5 rounded-full border-2 border-amber-400 bg-[#1a1a2e] flex items-center justify-center">
+                  <span class="text-[10px] text-amber-300 font-bold">{i + 1}</span>
+                </div>
+                <h3 class="font-poppins text-base font-semibold text-white">{isString ? step : step.title}</h3>
+                {!isString && step.description && <p class="text-sm text-white/50 mt-1 leading-relaxed">{step.description}</p>}
               </div>
-              <h3 class="font-poppins text-base font-semibold text-white">{step.title}</h3>
-              <p class="text-sm text-white/50 mt-1 leading-relaxed">{step.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
