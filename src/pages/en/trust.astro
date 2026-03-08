@@ -44,7 +44,7 @@ const statusItems = status?.items || [];
         <div class={`max-w-7xl mx-auto px-6 flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-12 lg:gap-16`}>
           <div class="flex-1 max-w-xl">
             <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-              <span class="inline-block text-xs font-semibold uppercase tracking-wider mb-3" style={`color: ${s.color};`}>
+              <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${s.color};`}>
                 {s.data.subtitle}
               </span>
               <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e] leading-tight">

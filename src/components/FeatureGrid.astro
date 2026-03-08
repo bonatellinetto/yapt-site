@@ -21,7 +21,7 @@ const { title, subtitle, features, columns = 3, accentColor } = Astro.props;
     {(title || subtitle) && (
       <div class="text-center mb-12">
         {subtitle && (
-          <span class="inline-block text-xs font-semibold uppercase tracking-wider mb-3" style={`color: ${accentColor};`}>
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${accentColor};`}>
             {subtitle}
           </span>
         )}
