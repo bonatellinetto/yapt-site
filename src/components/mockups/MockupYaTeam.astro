@@ -50,25 +50,32 @@
 
       <!-- Chat messages (partial, like the screenshot) -->
       <div class="yateam-chat">
+        <!-- IA message (left, white) -->
         <div class="yateam-chat-label">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-          <span style="font-size: 8px; color: #22C55E; font-weight: 600;">IA</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#20B2AA"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          <span style="font-size: 8px; color: #20B2AA; font-weight: 600;">IA</span>
         </div>
-        <div class="yateam-bubble">
+        <div class="yateam-bubble-ia">
           <div style="font-size: 9px; color: #1F2937; line-height: 1.5;">
-            Com base nas conversas anteriores, voce ja demonstrou interesse no plano Pro. Gostaria de agendar uma call com nosso especialista?
+            Oi! Vi que voce tem interesse no plano Pro. Temos <strong>condicoes especiais</strong> para operacoes acima de 10 atendentes. Posso te contar mais?
           </div>
+          <div style="font-size: 7px; color: #9CA3AF; margin-top: 4px;">18:41 <span style="opacity: 0.7;">✓✓</span></div>
         </div>
-        <div class="yateam-bubble">
+
+        <!-- Client message (right, green) -->
+        <div class="yateam-bubble-client">
           <div style="font-size: 9px; color: #1F2937; line-height: 1.5;">
-            Temos <strong>condicoes especiais</strong> e um budget entre R$2-5k/mes. Posso conectar com nosso especialista pra uma proposta personalizada?
+            Sim! Temos 25 pessoas no time e um budget entre R$2-5k/mes. Quero entender melhor.
           </div>
+          <div style="font-size: 7px; color: #6B7280; text-align: right; margin-top: 4px;">18:44</div>
         </div>
-        <div class="yateam-bubble">
+
+        <!-- IA message (left, white) -->
+        <div class="yateam-bubble-ia">
           <div style="font-size: 9px; color: #1F2937; line-height: 1.5;">
-            Perfeito! Qual o nome da sua empresa?
+            Perfeito! Com 25 atendentes, o plano Pro com IA fica ideal. Qual o nome da sua empresa pra eu montar uma proposta?
           </div>
-          <div style="font-size: 7px; color: #22C55E; text-align: right; margin-top: 4px;">18:47 <span style="opacity: 0.7;">✓✓</span></div>
+          <div style="font-size: 7px; color: #9CA3AF; margin-top: 4px;">18:47 <span style="opacity: 0.7;">✓✓</span></div>
         </div>
         <!-- Send button -->
         <div style="display: flex; justify-content: center; margin-top: 12px;">
@@ -208,9 +215,13 @@
   .yateam-chat-label {
     display: flex; align-items: center; gap: 3px; margin-bottom: 6px;
   }
-  .yateam-bubble {
-    background: #D1FAE5; border-radius: 0 10px 10px 10px;
-    padding: 8px 10px; margin-bottom: 6px; max-width: 95%;
+  .yateam-bubble-ia {
+    background: #F3F4F6; border-radius: 0 10px 10px 10px;
+    padding: 8px 10px; margin-bottom: 6px; max-width: 90%; align-self: flex-start;
+  }
+  .yateam-bubble-client {
+    background: #D1FAE5; border-radius: 10px 0 10px 10px;
+    padding: 8px 10px; margin-bottom: 6px; max-width: 90%; align-self: flex-end;
   }
 
   /* Mentor panel */
