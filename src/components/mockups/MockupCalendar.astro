@@ -1,237 +1,346 @@
 ---
-/** MockupCalendar — Agenda & Atividades de Vendas (sales page, calendar section) */
+/** MockupCalendar — Weekly calendar view based on real yapt. UI */
 ---
 <div class="cal-frame">
-  <!-- Header -->
-  <div class="cal-header">
+  <!-- Top Bar -->
+  <div class="cal-topbar">
     <div style="display: flex; align-items: center; gap: 8px;">
-      <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #4F46E5, #818CF8); display: flex; align-items: center; justify-content: center;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div class="cal-logo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M25 50 Q40 35, 55 50" stroke-linecap="round"/><circle cx="18" cy="12" r="3"/></svg>
       </div>
       <div>
-        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Agenda & Atividades</div>
-        <div style="font-size: 9px; color: #9CA3AF;">Marco 2026</div>
+        <div style="font-size: 13px; font-weight: 700; color: #1F2937;">Calendário</div>
+        <div style="font-size: 8px; color: #9CA3AF;">Gerencie seus agendamentos e disponibilidade</div>
       </div>
     </div>
-    <div class="cal-toggle">
-      <div class="cal-toggle-btn cal-toggle-active">Dia</div>
-      <div class="cal-toggle-btn">Semana</div>
-    </div>
-  </div>
-
-  <!-- My Day Label -->
-  <div class="cal-day-label">
-    <div style="display: flex; align-items: center; gap: 6px;">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span style="font-size: 10px; font-weight: 700; color: #1F2937;">My Day</span>
-    </div>
-    <span style="font-size: 8px; color: #9CA3AF;">Dom, 8 Mar 2026</span>
-  </div>
-
-  <!-- Activity Rows -->
-  <div class="cal-activities">
-    <!-- 09:00 — Done -->
-    <div class="cal-row cal-row-done">
-      <div class="cal-time">09:00</div>
-      <div class="cal-dot" style="background: #8B5CF6;"></div>
-      <div class="cal-content">
-        <div class="cal-title">Follow-up Rodrigo Pimentel</div>
-        <div class="cal-tag cal-tag-purple">Deal: Enterprise</div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="cal-stat">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+        <span><strong style="color: #20B2AA;">21</strong> reuniões esta semana</span>
       </div>
-      <div class="cal-check cal-checked">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-    </div>
-
-    <!-- 10:30 -->
-    <div class="cal-row">
-      <div class="cal-time">10:30</div>
-      <div class="cal-dot" style="background: #3B82F6;"></div>
-      <div class="cal-content">
-        <div class="cal-title">Demo yapt. — Marina Costa</div>
-        <div class="cal-tag cal-tag-blue">Google Meet</div>
-      </div>
-      <div class="cal-check">
-        <span class="cal-check-label">Feito</span>
-      </div>
-    </div>
-
-    <!-- 14:00 -->
-    <div class="cal-row">
-      <div class="cal-time">14:00</div>
-      <div class="cal-dot" style="background: #10B981;"></div>
-      <div class="cal-content">
-        <div class="cal-title">Enviar proposta Carlos Mendes</div>
-        <div class="cal-tag cal-tag-green">Deal: Starter</div>
-      </div>
-      <div class="cal-check">
-        <span class="cal-check-label">Feito</span>
-      </div>
-    </div>
-
-    <!-- 16:00 -->
-    <div class="cal-row">
-      <div class="cal-time">16:00</div>
-      <div class="cal-dot" style="background: #F59E0B;"></div>
-      <div class="cal-content">
-        <div class="cal-title">Review semanal com time</div>
-        <div class="cal-tag cal-tag-orange">Recorrente</div>
-      </div>
-      <div class="cal-check">
-        <span class="cal-check-label">Feito</span>
+      <div class="cal-stat">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span><strong style="color: #20B2AA;">30</strong> horas agendadas</span>
       </div>
     </div>
   </div>
 
-  <!-- Summary Bar -->
-  <div class="cal-summary">
-    <div class="cal-summary-left">
-      <span class="cal-summary-count">4 atividades hoje</span>
-      <span class="cal-summary-detail">2 calls · 1 meeting · 1 task</span>
+  <!-- Nav row -->
+  <div class="cal-nav">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span class="cal-today-btn">Hoje</span>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span style="font-size: 11px; font-weight: 700; color: #1F2937;">8 – 14 De Mar De 2026</span>
     </div>
-    <div class="cal-summary-sync">
-      <div class="cal-sync-dot"></div>
-      <span>Google Calendar sync ativo</span>
+    <div class="cal-view-toggle">
+      <span class="cal-vt">Dia</span>
+      <span class="cal-vt cal-vt-active">Semana</span>
+      <span class="cal-vt">Mês</span>
+      <span class="cal-vt">Agenda</span>
+      <span class="cal-vt">Reuniões</span>
+    </div>
+  </div>
+
+  <!-- Main content: sidebar + grid -->
+  <div class="cal-body">
+    <!-- Sidebar -->
+    <div class="cal-sidebar">
+      <!-- Mini calendar -->
+      <div class="cal-mini">
+        <div class="cal-mini-header">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          <span style="font-size: 9px; font-weight: 600; color: #1F2937;">março 2026</span>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="cal-mini-grid">
+          <span class="cal-mini-dh">dom</span><span class="cal-mini-dh">seg</span><span class="cal-mini-dh">ter</span><span class="cal-mini-dh">qua</span><span class="cal-mini-dh">qui</span><span class="cal-mini-dh">sex</span><span class="cal-mini-dh">sáb</span>
+          <span class="cal-mini-d">1</span><span class="cal-mini-d">2</span><span class="cal-mini-d">3</span><span class="cal-mini-d">4</span><span class="cal-mini-d">5</span><span class="cal-mini-d">6</span><span class="cal-mini-d">7</span>
+          <span class="cal-mini-d cal-mini-today">8</span><span class="cal-mini-d">9</span><span class="cal-mini-d">10</span><span class="cal-mini-d">11</span><span class="cal-mini-d">12</span><span class="cal-mini-d">13</span><span class="cal-mini-d">14</span>
+          <span class="cal-mini-d">15</span><span class="cal-mini-d">16</span><span class="cal-mini-d">17</span><span class="cal-mini-d">18</span><span class="cal-mini-d">19</span><span class="cal-mini-d">20</span><span class="cal-mini-d">21</span>
+          <span class="cal-mini-d">22</span><span class="cal-mini-d">23</span><span class="cal-mini-d">24</span><span class="cal-mini-d">25</span><span class="cal-mini-d">26</span><span class="cal-mini-d">27</span><span class="cal-mini-d">28</span>
+          <span class="cal-mini-d">29</span><span class="cal-mini-d">30</span><span class="cal-mini-d">31</span><span class="cal-mini-d cal-mini-dim">1</span><span class="cal-mini-d cal-mini-dim">2</span><span class="cal-mini-d cal-mini-dim">3</span><span class="cal-mini-d cal-mini-dim">4</span>
+        </div>
+      </div>
+
+      <!-- Próximos -->
+      <div class="cal-next">
+        <div style="font-size: 9px; font-weight: 600; color: #6B7280; margin-bottom: 6px; display: flex; align-items: center; gap: 4px;">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Próximos
+        </div>
+        <div class="cal-next-item">
+          <div class="cal-next-title">Travado - Corpo, men...</div>
+          <div class="cal-next-time">Amanhã 06:15</div>
+        </div>
+        <div class="cal-next-item">
+          <div style="display: flex; align-items: center; gap: 3px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: #3B82F6;"></div>
+            <span class="cal-next-title">Alinhamento - Nett...</span>
+          </div>
+          <div class="cal-next-time">Amanhã 08:00</div>
+        </div>
+        <div class="cal-next-item">
+          <div class="cal-next-title">Bate-papo: Léo/Ne...</div>
+          <div class="cal-next-time">Amanhã 09:00</div>
+        </div>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="cal-insights">
+        <div style="font-size: 9px; font-weight: 600; color: #1F2937; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+          <span style="color: #8B5CF6;">✦</span> AI Insights
+        </div>
+        <div style="font-size: 8px; color: #9CA3AF; margin-bottom: 4px;">RESUMO DA SEMANA</div>
+        <div class="cal-insight-row">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+          <span><strong>21</strong> reuniões</span>
+        </div>
+        <div class="cal-insight-row">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span><strong>30h</strong> em reuniões</span>
+        </div>
+        <div class="cal-insight-row">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Dia mais ocupado: <strong>Segunda</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week Grid -->
+    <div class="cal-grid">
+      <!-- Day headers -->
+      <div class="cal-grid-header">
+        <div class="cal-gh cal-gh-time"></div>
+        <div class="cal-gh">DOM<br/><span class="cal-gh-num cal-gh-today">8</span></div>
+        <div class="cal-gh">SEG<br/><span class="cal-gh-num">9</span></div>
+        <div class="cal-gh">TER<br/><span class="cal-gh-num">10</span></div>
+        <div class="cal-gh">QUA<br/><span class="cal-gh-num">11</span></div>
+        <div class="cal-gh">QUI<br/><span class="cal-gh-num">12</span></div>
+        <div class="cal-gh">SEX<br/><span class="cal-gh-num">13</span></div>
+        <div class="cal-gh">SÁB<br/><span class="cal-gh-num">14</span></div>
+      </div>
+
+      <!-- Time rows with events -->
+      <div class="cal-grid-body">
+        <!-- 07:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">07:00</div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green cal-ev-tall">Travado - Corp...<br/><span>06:15 - 08:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green cal-ev-tall">Travado - Corp...<br/><span>06:15 - 08:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green cal-ev-tall">Travado - Corp...<br/><span>06:15 - 08:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green cal-ev-tall">Travado - Corp...<br/><span>06:15 - 08:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green cal-ev-tall">Travado - Corp...<br/><span>06:15 - 08:00</span></div></div>
+          <div class="cal-cell"></div>
+        </div>
+        <!-- 08:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">08:00</div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-blue">Alinhamento...<br/><span>08:00 - 09:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-blue cal-ev-tall">NW Intelligen...<br/><span>08:00 - 10:00</span></div></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+        </div>
+        <!-- 09:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">09:00</div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-red">Bate-papo: L...<br/><span>09:20 - 10:20</span></div></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-blue">[Uni] - Alinha...<br/><span>09:00 - 10:00</span></div></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+        </div>
+        <!-- 10:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">10:00</div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-blue">Reunião de dem...<br/><span>10:00 - 11:00</span></div></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+        </div>
+        <!-- 12:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">12:00</div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-green">Treino<br/><span>12:00 - 14:00</span></div></div>
+          <div class="cal-cell"></div>
+        </div>
+        <!-- 15:00 row -->
+        <div class="cal-time-row">
+          <div class="cal-time-label">15:00</div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"><div class="cal-event cal-ev-blue">Reunião de di...<br/><span>14:50 - 15:35</span></div></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+          <div class="cal-cell"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   .cal-frame {
-    width: 100%; max-width: 540px; border-radius: 16px;
+    width: 100%; max-width: 580px; border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
     background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
     overflow: hidden;
   }
 
-  .cal-header {
+  /* Top bar */
+  .cal-topbar {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+    padding: 10px 12px; border-bottom: 1px solid #F3F4F6;
+  }
+  .cal-logo {
+    width: 24px; height: 24px; border-radius: 6px;
+    background: linear-gradient(135deg, #20B2AA, #14B8A6);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cal-stat {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; color: #6B7280;
   }
 
-  .cal-toggle {
-    display: flex; gap: 2px;
-    background: #F3F4F6; border-radius: 8px; padding: 2px;
+  /* Nav */
+  .cal-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px; border-bottom: 1px solid #F3F4F6;
   }
-  .cal-toggle-btn {
+  .cal-today-btn {
     font-size: 9px; font-weight: 500; color: #6B7280;
-    padding: 4px 10px; border-radius: 6px; cursor: default;
+    padding: 2px 8px; border: 1px solid #E5E7EB; border-radius: 4px;
   }
-  .cal-toggle-active {
-    background: white; color: #4F46E5; font-weight: 700;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  .cal-view-toggle { display: flex; gap: 2px; }
+  .cal-vt {
+    font-size: 8px; font-weight: 500; color: #9CA3AF;
+    padding: 3px 6px; border-radius: 4px; border: 1px solid transparent;
+  }
+  .cal-vt-active {
+    color: #1F2937; font-weight: 600; border-color: #E5E7EB; background: white;
   }
 
-  .cal-day-label {
+  /* Body: sidebar + grid */
+  .cal-body { display: flex; }
+
+  /* Sidebar */
+  .cal-sidebar {
+    width: 130px; flex-shrink: 0;
+    border-right: 1px solid #F3F4F6; padding: 8px;
+  }
+
+  /* Mini calendar */
+  .cal-mini { margin-bottom: 10px; }
+  .cal-mini-header {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 10px 14px; border-bottom: 1px solid #F3F4F6;
-    background: #FAFBFC;
+    margin-bottom: 4px;
+  }
+  .cal-mini-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 0;
+    text-align: center;
+  }
+  .cal-mini-dh { font-size: 6px; color: #9CA3AF; padding: 2px 0; }
+  .cal-mini-d { font-size: 7px; color: #374151; padding: 2px 0; }
+  .cal-mini-today {
+    background: #20B2AA; color: white !important; border-radius: 50%;
+    width: 14px; height: 14px; display: inline-flex;
+    align-items: center; justify-content: center; font-weight: 700;
+  }
+  .cal-mini-dim { color: #D1D5DB !important; }
+
+  /* Próximos */
+  .cal-next { margin-bottom: 10px; }
+  .cal-next-item {
+    padding: 4px 0; border-bottom: 1px solid #F9FAFB;
+  }
+  .cal-next-title { font-size: 8px; font-weight: 500; color: #1F2937; }
+  .cal-next-time { font-size: 7px; color: #9CA3AF; }
+
+  /* AI Insights */
+  .cal-insights {
+    padding: 8px; background: #FAFBFC; border-radius: 8px;
+    border: 1px solid #F3F4F6;
+  }
+  .cal-insight-row {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; color: #6B7280; margin-bottom: 2px;
   }
 
-  /* Activities */
-  .cal-activities {
-    display: flex; flex-direction: column;
-  }
-
-  .cal-row {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 14px;
+  /* Week Grid */
+  .cal-grid { flex: 1; overflow: hidden; }
+  .cal-grid-header {
+    display: grid; grid-template-columns: 30px repeat(7, 1fr);
     border-bottom: 1px solid #F3F4F6;
   }
-  .cal-row:last-child { border-bottom: none; }
-
-  .cal-row-done {
-    background: #FAFBFC;
+  .cal-gh {
+    font-size: 7px; font-weight: 600; color: #9CA3AF;
+    text-align: center; padding: 4px 2px;
+    letter-spacing: 0.05em;
   }
-  .cal-row-done .cal-title {
-    text-decoration: line-through;
-    color: #9CA3AF !important;
+  .cal-gh-time { }
+  .cal-gh-num {
+    font-size: 11px; font-weight: 700; color: #374151;
+    display: block; margin-top: 1px;
   }
-
-  .cal-time {
-    font-size: 10px; font-weight: 700; color: #4B5563;
-    width: 34px; flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
-  }
-  .cal-row-done .cal-time { color: #9CA3AF; }
-
-  .cal-dot {
-    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-  }
-
-  .cal-content {
-    flex: 1; min-width: 0;
-    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-  }
-
-  .cal-title {
-    font-size: 10px; font-weight: 600; color: #1F2937;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-
-  .cal-tag {
-    font-size: 7px; font-weight: 600;
-    padding: 2px 6px; border-radius: 4px;
-    white-space: nowrap; flex-shrink: 0;
-  }
-  .cal-tag-purple {
-    color: #7C3AED; background: rgba(139,92,246,0.08);
-    border: 1px solid rgba(139,92,246,0.15);
-  }
-  .cal-tag-blue {
-    color: #2563EB; background: rgba(59,130,246,0.08);
-    border: 1px solid rgba(59,130,246,0.15);
-  }
-  .cal-tag-green {
-    color: #059669; background: rgba(16,185,129,0.08);
-    border: 1px solid rgba(16,185,129,0.15);
-  }
-  .cal-tag-orange {
-    color: #D97706; background: rgba(245,158,11,0.08);
-    border: 1px solid rgba(245,158,11,0.15);
-  }
-
-  /* Checkbox */
-  .cal-check {
-    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  }
-  .cal-check-label {
-    font-size: 8px; font-weight: 500; color: #9CA3AF;
-    padding: 3px 8px; border-radius: 6px;
-    border: 1.5px solid #E5E7EB; cursor: default;
-  }
-  .cal-checked {
-    width: 20px; height: 20px; border-radius: 6px;
-    background: #4F46E5; display: flex;
+  .cal-gh-today {
+    background: #20B2AA; color: white !important; border-radius: 50%;
+    width: 20px; height: 20px; display: inline-flex;
     align-items: center; justify-content: center;
   }
 
-  /* Summary */
-  .cal-summary {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 10px 14px; border-top: 1px solid #F3F4F6;
-    background: #FAFBFC; flex-wrap: wrap; gap: 6px;
+  /* Time rows */
+  .cal-grid-body { }
+  .cal-time-row {
+    display: grid; grid-template-columns: 30px repeat(7, 1fr);
+    min-height: 32px; border-bottom: 1px solid #F9FAFB;
   }
-  .cal-summary-left {
-    display: flex; align-items: center; gap: 8px;
+  .cal-time-label {
+    font-size: 7px; color: #9CA3AF; padding: 2px 3px;
+    text-align: right; font-variant-numeric: tabular-nums;
   }
-  .cal-summary-count {
-    font-size: 10px; font-weight: 700; color: #1F2937;
-  }
-  .cal-summary-detail {
-    font-size: 8px; color: #9CA3AF; font-weight: 500;
-  }
-  .cal-summary-sync {
-    display: flex; align-items: center; gap: 4px;
-    font-size: 8px; color: #6B7280; font-weight: 500;
-  }
-  .cal-sync-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: #10B981; flex-shrink: 0;
+  .cal-cell {
+    border-left: 1px solid #F9FAFB; padding: 1px;
+    min-height: 32px; position: relative;
   }
 
+  /* Events */
+  .cal-event {
+    font-size: 7px; font-weight: 500; color: #1F2937;
+    padding: 2px 3px; border-radius: 3px;
+    line-height: 1.3; overflow: hidden;
+    border-left: 2px solid;
+  }
+  .cal-event span { font-size: 6px; color: #6B7280; }
+  .cal-ev-green {
+    background: #D1FAE5; border-left-color: #10B981;
+  }
+  .cal-ev-blue {
+    background: #DBEAFE; border-left-color: #3B82F6;
+  }
+  .cal-ev-red {
+    background: #FEE2E2; border-left-color: #EF4444;
+  }
+  .cal-ev-tall { min-height: 28px; }
+
   @media (max-width: 640px) {
-    .cal-content { flex-wrap: wrap; gap: 4px; }
-    .cal-title { max-width: 160px; }
+    .cal-sidebar { display: none; }
+    .cal-topbar { flex-wrap: wrap; gap: 6px; }
+    .cal-nav { flex-wrap: wrap; gap: 4px; }
+    .cal-view-toggle { display: none; }
   }
 </style>
