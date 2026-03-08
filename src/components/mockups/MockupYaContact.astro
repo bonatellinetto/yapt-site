@@ -1,30 +1,33 @@
 ---
-/** MockupYaContact — Lead Intelligence Panel with Score & Behavioral Scoring (conversations page) */
+/** MockupYaContact — Contact 360° drawer based on real yapt. UI */
 ---
 <div class="yact-frame">
   <!-- Contact Header -->
   <div class="yact-header">
-    <div class="yact-avatar">RP</div>
+    <div class="yact-avatar">NB</div>
     <div style="flex: 1;">
-      <div style="font-size: 15px; font-weight: 700; color: white;">Rodrigo Pimentel</div>
-      <div style="display: flex; align-items: center; gap: 10px; margin-top: 2px;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 15px; font-weight: 700; color: white;">Netto Bonatelli</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 3px;">
         <span style="display: flex; align-items: center; gap: 3px; font-size: 10px; color: rgba(255,255,255,0.7);">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-          rodrigo@logtech.com.br
+          marcos@gruponewway.co...
         </span>
         <span style="display: flex; align-items: center; gap: 3px; font-size: 10px; color: rgba(255,255,255,0.7);">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +55 11 98765-4321
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3"/></svg>
+          +5511986980266
         </span>
       </div>
     </div>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" style="cursor: pointer;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </div>
 
   <!-- Tags row -->
   <div class="yact-tags">
     <span class="yact-tag-score">Score: 72</span>
-    <span class="yact-tag-dark">Warm Lead</span>
+    <span class="yact-tag-dark">unknown</span>
     <span class="yact-tag-blue">LEAD</span>
   </div>
 
@@ -48,7 +51,7 @@
     </div>
     <div class="yact-action">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-      <span>Reuniao</span>
+      <span>Reunião</span>
     </div>
     <div class="yact-action">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="#6B7280"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
@@ -56,160 +59,183 @@
   </div>
 
   <!-- Company -->
-  <div class="yact-company">LogTech Solutions</div>
+  <div class="yact-company">Sem empresa vinculada</div>
 
-  <!-- Lead Intelligence section -->
-  <div class="yact-intel">
-    <div class="yact-intel-header">
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <div style="width: 24px; height: 24px; border-radius: 6px; background: #F59E0B; display: flex; align-items: center; justify-content: center;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
-        </div>
-        <span style="font-size: 12px; font-weight: 600; color: #1F2937;">Lead Intelligence</span>
-      </div>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-    </div>
-
-    <!-- Score -->
-    <div class="yact-score-row">
-      <div>
-        <div style="display: flex; align-items: center; gap: 6px;">
-          <div style="width: 20px; height: 20px; border-radius: 4px; background: #F59E0B; display: flex; align-items: center; justify-content: center;">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
-          </div>
-          <div>
-            <div style="font-size: 11px; font-weight: 600; color: #1F2937;">Lead Score</div>
-            <div style="font-size: 9px; color: #F59E0B; font-weight: 500;">Warm Lead</div>
-          </div>
-        </div>
-      </div>
-      <div class="yact-score-big">
-        <span class="yact-score-num">72</span><span class="yact-score-total">/100</span>
-      </div>
-    </div>
-
-    <div class="yact-score-meta">
-      <div style="display: flex; align-items: center; gap: 4px;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        <span>Modo Hibrido — IA + Comportamental</span>
-      </div>
-    </div>
-
-    <div class="yact-score-meta">
-      <div style="display: flex; align-items: center; gap: 4px;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="#20B2AA"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <span>Qualificado por <strong>Mentor de vendas yapt.</strong></span>
-      </div>
-    </div>
-
-    <!-- Score bar -->
-    <div class="yact-score-bar">
-      <div class="yact-score-fill" style="width: 72%;"></div>
-    </div>
-
-    <!-- ICP Match -->
-    <div class="yact-icp-row">
-      <div style="display: flex; align-items: center; gap: 4px;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-        <span style="font-size: 10px; color: #374151;">ICP Match</span>
-      </div>
-      <span style="font-size: 10px; font-weight: 600; color: #374151;">84%</span>
-    </div>
-
-    <!-- Behavioral Scoring -->
-    <div class="yact-scoring-header">
-      <div style="display: flex; align-items: center; gap: 4px;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span style="font-size: 10px; font-weight: 600; color: #374151;">Scoring Comportamental</span>
-      </div>
-      <span style="font-size: 8px; color: #9CA3AF;">Calculado ha 11min</span>
-    </div>
-
-    <div class="yact-metrics">
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Engajamento</span><span class="yact-metric-val yact-val-green">20/20</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-green" style="width: 100%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Recencia</span><span class="yact-metric-val yact-val-green">20/20</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-green" style="width: 100%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Perfil Completo</span><span class="yact-metric-val">7/15</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-blue" style="width: 47%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Sentimento</span><span class="yact-metric-val yact-val-orange">8/15</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-orange" style="width: 53%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Canal de Origem</span><span class="yact-metric-val yact-val-green">10/10</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-green" style="width: 100%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Atividade de Deals</span><span class="yact-metric-val">4/10</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-blue" style="width: 40%;"></div></div>
-      </div>
-      <div class="yact-metric">
-        <div class="yact-metric-header">
-          <span>Estagio no Funil</span><span class="yact-metric-val">2/5</span>
-        </div>
-        <div class="yact-bar-track"><div class="yact-bar-fill-blue" style="width: 40%;"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lifecycle Pipeline -->
-  <div class="yact-pipeline">
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle yact-pipe-done">
-        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+  <!-- Lifecycle Stepper -->
+  <div class="yact-lifecycle">
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle yact-lc-done">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
       <span>Subscriber</span>
     </div>
-    <div class="yact-pipe-line yact-pipe-line-done"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle yact-pipe-active">
-        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+    <div class="yact-lc-line yact-lc-line-done"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle yact-lc-active">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
-      <span style="font-weight: 600;">Lead</span>
+      <span class="yact-lc-label-active">Lead</span>
     </div>
-    <div class="yact-pipe-line"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle"></div>
+    <div class="yact-lc-line"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle"></div>
       <span>MQL</span>
     </div>
-    <div class="yact-pipe-line"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle"></div>
+    <div class="yact-lc-line"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle"></div>
       <span>SAL</span>
     </div>
-    <div class="yact-pipe-line"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle"></div>
+    <div class="yact-lc-line"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle"></div>
       <span>SQL</span>
     </div>
-    <div class="yact-pipe-line"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle"></div>
+    <div class="yact-lc-line"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle"></div>
       <span>Opportunity</span>
     </div>
-    <div class="yact-pipe-line"></div>
-    <div class="yact-pipe-step">
-      <div class="yact-pipe-circle"></div>
+    <div class="yact-lc-line"></div>
+    <div class="yact-lc-step">
+      <div class="yact-lc-circle"></div>
       <span>Customer</span>
+    </div>
+  </div>
+
+  <!-- Current Stage -->
+  <div class="yact-stage">
+    <div class="yact-stage-card">
+      <div>
+        <div style="font-size: 9px; color: #6B7280;">Estágio atual</div>
+        <div style="font-size: 12px; font-weight: 700; color: #1F2937;">Lead</div>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 9px; color: #6B7280;">Desde</div>
+        <div style="font-size: 12px; font-weight: 700; color: #1F2937;">há 19 dias</div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="yact-history-label">HISTÓRICO</div>
+    <div class="yact-history-row">
+      <span>Subscriber → Lead</span>
+      <span>há 19 dias</span>
+    </div>
+  </div>
+
+  <!-- Accordion sections -->
+  <div class="yact-sections">
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #E0E7FF;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+        </div>
+        <span>Formulários Preenchidos</span>
+      </div>
+      <div class="yact-section-right">
+        <span class="yact-section-count">1</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item yact-section-selected">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #D1FAE5;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <span>Dados Pessoais</span>
+      </div>
+      <div class="yact-section-right">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #DBEAFE;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <span>Canais de Contato</span>
+      </div>
+      <div class="yact-section-right">
+        <span class="yact-section-count">12</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #FEE2E2;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <span>Origem & Atribuição</span>
+      </div>
+      <div class="yact-section-right">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #D1FAE5;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <span>Widget Web</span>
+      </div>
+      <div class="yact-section-right">
+        <span class="yact-section-count">2</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #FEF3C7;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span>Jornada do Lead</span>
+      </div>
+      <div class="yact-section-right">
+        <span class="yact-section-count">2</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #DBEAFE;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <span>Conversas</span>
+      </div>
+      <div class="yact-section-right">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #FCE7F3;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span>Negócios</span>
+      </div>
+      <div class="yact-section-right">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="yact-section-item">
+      <div class="yact-section-left">
+        <div class="yact-section-icon" style="background: #E0E7FF;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <span>Compras</span>
+      </div>
+      <div class="yact-section-right">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
     </div>
   </div>
 </div>
@@ -240,7 +266,7 @@
   }
   .yact-tag-score {
     font-size: 9px; font-weight: 700; color: white;
-    padding: 3px 8px; border-radius: 4px; background: #F59E0B;
+    padding: 3px 8px; border-radius: 4px; background: #EF4444;
   }
   .yact-tag-dark {
     font-size: 9px; font-weight: 500; color: #374151;
@@ -264,91 +290,90 @@
 
   /* Company */
   .yact-company {
-    font-size: 10px; color: #6B7280; padding: 8px 14px;
+    font-size: 10px; color: #9CA3AF; padding: 8px 14px;
     border-bottom: 1px solid #F3F4F6;
   }
 
-  /* Intel */
-  .yact-intel { padding: 12px 14px; }
-  .yact-intel-header {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 12px;
-  }
-
-  .yact-score-row {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 8px;
-  }
-  .yact-score-big { text-align: right; }
-  .yact-score-num { font-size: 28px; font-weight: 700; color: #F59E0B; }
-  .yact-score-total { font-size: 12px; color: #9CA3AF; }
-
-  .yact-score-meta {
-    font-size: 9px; color: #6B7280; margin-bottom: 6px;
-  }
-
-  .yact-score-bar {
-    height: 6px; background: #F3F4F6; border-radius: 3px;
-    margin: 10px 0; overflow: hidden;
-  }
-  .yact-score-fill {
-    height: 100%; border-radius: 3px;
-    background: linear-gradient(90deg, #F59E0B, #22C55E);
-  }
-
-  .yact-icp-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 0; border-bottom: 1px solid #F3F4F6; margin-bottom: 10px;
-  }
-
-  .yact-scoring-header {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  /* Metrics */
-  .yact-metrics { display: flex; flex-direction: column; gap: 6px; }
-  .yact-metric {}
-  .yact-metric-header {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 10px; color: #374151; margin-bottom: 3px;
-  }
-  .yact-metric-val { font-weight: 600; }
-  .yact-val-green { color: #059669; }
-  .yact-val-orange { color: #F59E0B; }
-  .yact-bar-track {
-    height: 5px; background: #F3F4F6; border-radius: 3px; overflow: hidden;
-  }
-  .yact-bar-fill-green { height: 100%; border-radius: 3px; background: #22C55E; }
-  .yact-bar-fill-blue { height: 100%; border-radius: 3px; background: #3B82F6; }
-  .yact-bar-fill-orange { height: 100%; border-radius: 3px; background: #F59E0B; }
-
-  /* Pipeline */
-  .yact-pipeline {
+  /* Lifecycle Stepper */
+  .yact-lifecycle {
     display: flex; align-items: center; justify-content: center;
-    gap: 0; padding: 12px 10px; border-top: 1px solid #F3F4F6;
-    background: #FAFBFC; overflow-x: auto;
+    gap: 0; padding: 14px 10px 10px; overflow-x: auto;
   }
-  .yact-pipe-step {
+  .yact-lc-step {
     display: flex; flex-direction: column; align-items: center; gap: 4px;
     flex-shrink: 0;
   }
-  .yact-pipe-step span { font-size: 7px; color: #9CA3AF; }
-  .yact-pipe-circle {
-    width: 18px; height: 18px; border-radius: 50%;
+  .yact-lc-step span { font-size: 7px; color: #9CA3AF; }
+  .yact-lc-label-active { color: #1F2937 !important; font-weight: 600; }
+  .yact-lc-circle {
+    width: 20px; height: 20px; border-radius: 50%;
     border: 2px solid #E5E7EB; display: flex;
-    align-items: center; justify-content: center;
+    align-items: center; justify-content: center; background: white;
   }
-  .yact-pipe-done {
-    background: #E5E7EB; border-color: #E5E7EB;
+  .yact-lc-done {
+    border-color: #D1D5DB;
   }
-  .yact-pipe-active {
-    background: #20B2AA; border-color: #20B2AA;
-    box-shadow: 0 0 0 3px rgba(32,178,170,0.2);
+  .yact-lc-active {
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 3px rgba(32,178,170,0.15);
   }
-  .yact-pipe-line {
-    width: 12px; height: 2px; background: #E5E7EB; flex-shrink: 0;
+  .yact-lc-line {
+    width: 14px; height: 2px; background: #E5E7EB; flex-shrink: 0;
     margin-bottom: 14px;
   }
-  .yact-pipe-line-done { background: #D1D5DB; }
+  .yact-lc-line-done { background: #D1D5DB; }
+
+  /* Current Stage */
+  .yact-stage { padding: 0 14px 10px; }
+  .yact-stage-card {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 12px; border: 1px solid #E5E7EB; border-radius: 8px;
+  }
+  .yact-history-label {
+    font-size: 9px; font-weight: 600; color: #9CA3AF;
+    letter-spacing: 0.05em; margin-top: 10px; margin-bottom: 6px;
+  }
+  .yact-history-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; color: #6B7280;
+    padding: 6px 0; border-bottom: 1px solid #F3F4F6;
+  }
+
+  /* Accordion Sections */
+  .yact-sections {
+    display: flex; flex-direction: column;
+  }
+  .yact-section-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .yact-section-item:last-child { border-bottom: none; }
+  .yact-section-selected {
+    border: 1.5px solid #3B82F6; border-radius: 8px;
+    margin: 2px 8px; background: rgba(59,130,246,0.02);
+  }
+  .yact-section-left {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .yact-section-left span {
+    font-size: 11px; font-weight: 500; color: #1F2937;
+  }
+  .yact-section-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .yact-section-right {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .yact-section-count {
+    font-size: 9px; font-weight: 600; color: #6B7280;
+    background: #F3F4F6; padding: 2px 7px; border-radius: 10px;
+  }
+
+  @media (max-width: 640px) {
+    .yact-actions { flex-wrap: wrap; }
+    .yact-lifecycle { padding: 12px 6px 8px; }
+    .yact-lc-line { width: 8px; }
+  }
 </style>
