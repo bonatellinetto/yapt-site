@@ -11,6 +11,7 @@ import MockupMentorResults from '../components/mockups/MockupMentorResults.astro
 import MockupYaMemory from '../components/mockups/MockupYaMemory.astro';
 import MockupAudioIntel from '../components/mockups/MockupAudioIntel.astro';
 import MockupYaContact from '../components/mockups/MockupYaContact.astro';
+import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
 import { t, type Locale } from '../lib/i18n';
 import { dolphinSvg, genericIcons } from '../lib/fauna';
 
@@ -66,6 +67,7 @@ const modules = ['inbox','handlerState','yavehTeam','mentor','memory','audio','p
             {key === 'memory' && <MockupYaMemory />}
             {key === 'audio' && <MockupAudioIntel />}
             {key === 'people' && <MockupYaContact />}
+            {key === 'connect' && <MockupYaConnect />}
           </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
