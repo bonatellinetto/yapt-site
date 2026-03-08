@@ -5,6 +5,12 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
+import MockupHandoff from '../components/mockups/MockupHandoff.astro';
+import MockupYaTeam from '../components/mockups/MockupYaTeam.astro';
+import MockupEmotion from '../components/mockups/MockupEmotion.astro';
+import MockupYaDeals from '../components/mockups/MockupYaDeals.astro';
+import MockupYaCampaigns from '../components/mockups/MockupYaCampaigns.astro';
 import { t, type Locale } from '../lib/i18n';
 import { antColonySvg, genericIcons } from '../lib/fauna';
 
@@ -50,7 +56,14 @@ const roadmapItems = roadmap?.items || [];
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#10B981"
-          />
+          >
+            {key === 'inbox' && <MockupYaInbox />}
+            {key === 'routing' && <MockupHandoff />}
+            {key === 'sla' && <MockupYaTeam />}
+            {key === 'monitor' && <MockupEmotion />}
+            {key === 'deals' && <MockupYaDeals />}
+            {key === 'analytics' && <MockupYaCampaigns />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );

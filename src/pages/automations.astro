@@ -5,6 +5,10 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import MockupYaFlows from '../components/mockups/MockupYaFlows.astro';
+import MockupHandoff from '../components/mockups/MockupHandoff.astro';
+import MockupYaTeamCentral from '../components/mockups/MockupYaTeamCentral.astro';
+import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
 import { t, type Locale } from '../lib/i18n';
 import { chameleonSvg, genericIcons } from '../lib/fauna';
 
@@ -76,7 +80,12 @@ const waFlows = m('waFlows') as any;
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#20B2AA"
-          />
+          >
+            {key === 'builder' && <MockupYaFlows />}
+            {key === 'dualExperience' && <MockupHandoff />}
+            {key === 'multiAI' && <MockupYaTeamCentral />}
+            {key === 'integrations' && <MockupYaConnect />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );
