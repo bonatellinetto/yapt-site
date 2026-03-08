@@ -1,0 +1,238 @@
+---
+/** MockupYaMemory — Infinite Memory / Lead Context Panel (conversations page) */
+---
+<div class="ymem-frame">
+  <!-- Header -->
+  <div class="ymem-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #60A5FA, #3B82F6); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; flex-shrink: 0;">RP</div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: #1F2937;">Rodrigo Pimentel</div>
+        <div style="font-size: 9px; color: #9CA3AF;">LogTech Solutions · Diretor Comercial</div>
+      </div>
+    </div>
+    <div class="ymem-badge-memory">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      847 dias de contexto
+    </div>
+  </div>
+
+  <!-- Extracted Facts -->
+  <div class="ymem-facts">
+    <div style="font-size: 10px; font-weight: 600; color: #1F2937; margin-bottom: 8px; display: flex; align-items: center; gap: 4px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Fatos extraídos automaticamente
+    </div>
+    <div class="ymem-facts-grid">
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Budget</div>
+        <div class="ymem-fact-value">R$15-20k/mês</div>
+      </div>
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Decisor</div>
+        <div class="ymem-fact-value">Rodrigo + CFO</div>
+      </div>
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Time</div>
+        <div class="ymem-fact-value">18 atendentes</div>
+      </div>
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Volume</div>
+        <div class="ymem-fact-value">3k conv/dia</div>
+      </div>
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Dor principal</div>
+        <div class="ymem-fact-value">Perda de leads</div>
+      </div>
+      <div class="ymem-fact">
+        <div class="ymem-fact-label">Concorrente</div>
+        <div class="ymem-fact-value">Zenvia (insatisfeito)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Semantic Search -->
+  <div class="ymem-search">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <span style="flex: 1; font-size: 10px; color: #9CA3AF;">Buscar por significado...</span>
+    <div class="ymem-search-tag">semântica</div>
+  </div>
+
+  <!-- Memory Timeline -->
+  <div class="ymem-timeline">
+    <div style="font-size: 10px; font-weight: 600; color: #1F2937; margin-bottom: 10px;">Linha do tempo</div>
+
+    <!-- Entry 1 — today -->
+    <div class="ymem-entry">
+      <div class="ymem-entry-dot" style="background: #3B82F6;"></div>
+      <div class="ymem-entry-line"></div>
+      <div class="ymem-entry-content">
+        <div class="ymem-entry-header">
+          <span class="ymem-entry-date">Hoje, 14:36</span>
+          <span class="ymem-channel-wa">WhatsApp</span>
+        </div>
+        <div class="ymem-entry-text">Marina assumiu após handoff da IA. Rodrigo interessado no plano Enterprise. Pediu proposta formal.</div>
+      </div>
+    </div>
+
+    <!-- Entry 2 — 3 days ago -->
+    <div class="ymem-entry">
+      <div class="ymem-entry-dot" style="background: #E1306C;"></div>
+      <div class="ymem-entry-line"></div>
+      <div class="ymem-entry-content">
+        <div class="ymem-entry-header">
+          <span class="ymem-entry-date">5 Mar, 10:12</span>
+          <span class="ymem-channel-ig">Instagram</span>
+        </div>
+        <div class="ymem-entry-text">Comentou no post sobre IA: "Preciso disso pro meu time". IA respondeu e levou pro WhatsApp.</div>
+      </div>
+    </div>
+
+    <!-- Entry 3 — 2 weeks ago -->
+    <div class="ymem-entry">
+      <div class="ymem-entry-dot" style="background: #3B82F6;"></div>
+      <div class="ymem-entry-line"></div>
+      <div class="ymem-entry-content">
+        <div class="ymem-entry-header">
+          <span class="ymem-entry-date">22 Fev, 16:45</span>
+          <span class="ymem-channel-wa">WhatsApp</span>
+        </div>
+        <div class="ymem-entry-text">Primeiro contato. Mencionou insatisfação com Zenvia. Budget entre 15-20k. CFO precisa aprovar.</div>
+      </div>
+    </div>
+
+    <!-- Entry 4 — email -->
+    <div class="ymem-entry">
+      <div class="ymem-entry-dot" style="background: #F59E0B;"></div>
+      <div class="ymem-entry-content">
+        <div class="ymem-entry-header">
+          <span class="ymem-entry-date">18 Fev, 09:30</span>
+          <span class="ymem-channel-email">Email</span>
+        </div>
+        <div class="ymem-entry-text">Baixou e-book "IA no Atendimento". Lead capturado via Meta Ads — campanha "IA-Enterprise-Q1".</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer stat -->
+  <div class="ymem-footer">
+    <div class="ymem-footer-stat">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <span>12 interações</span>
+    </div>
+    <div class="ymem-footer-stat">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg>
+      <span>3 canais</span>
+    </div>
+    <div class="ymem-footer-stat">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>18 dias</span>
+    </div>
+    <div class="ymem-infinity">
+      <span>∞</span> memória ativa
+    </div>
+  </div>
+</div>
+
+<style>
+  .ymem-frame {
+    width: 100%; max-width: 540px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .ymem-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .ymem-badge-memory {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 8px; font-weight: 600; color: #7C3AED;
+    padding: 3px 8px; border-radius: 10px;
+    background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15);
+    white-space: nowrap;
+  }
+
+  /* Facts */
+  .ymem-facts {
+    padding: 12px 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .ymem-facts-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+  }
+  .ymem-fact {
+    background: #F9FAFB; border-radius: 8px; padding: 6px 8px;
+  }
+  .ymem-fact-label { font-size: 8px; color: #9CA3AF; margin-bottom: 1px; }
+  .ymem-fact-value { font-size: 10px; font-weight: 600; color: #1F2937; }
+
+  /* Search */
+  .ymem-search {
+    display: flex; align-items: center; gap: 6px;
+    margin: 10px 14px; padding: 8px 10px;
+    border: 1px solid #E5E7EB; border-radius: 10px;
+  }
+  .ymem-search-tag {
+    font-size: 7px; font-weight: 600; color: #8B5CF6;
+    padding: 2px 6px; border-radius: 4px;
+    background: rgba(139,92,246,0.08);
+  }
+
+  /* Timeline */
+  .ymem-timeline {
+    padding: 12px 14px;
+  }
+  .ymem-entry {
+    display: flex; gap: 10px; position: relative; padding-bottom: 12px;
+  }
+  .ymem-entry:last-child { padding-bottom: 0; }
+  .ymem-entry-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+  }
+  .ymem-entry-line {
+    position: absolute; left: 3.5px; top: 12px; bottom: 0;
+    width: 1px; background: #E5E7EB;
+  }
+  .ymem-entry-content { flex: 1; min-width: 0; }
+  .ymem-entry-header {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 3px;
+  }
+  .ymem-entry-date { font-size: 9px; color: #9CA3AF; }
+  .ymem-entry-text { font-size: 10px; color: #374151; line-height: 1.5; }
+
+  .ymem-channel-wa {
+    font-size: 7px; font-weight: 600; color: #25D366;
+    padding: 1px 6px; border-radius: 4px;
+    background: rgba(37,211,102,0.08); border: 1px solid rgba(37,211,102,0.2);
+  }
+  .ymem-channel-ig {
+    font-size: 7px; font-weight: 600; color: #E1306C;
+    padding: 1px 6px; border-radius: 4px;
+    background: rgba(225,48,108,0.08); border: 1px solid rgba(225,48,108,0.2);
+  }
+  .ymem-channel-email {
+    font-size: 7px; font-weight: 600; color: #F59E0B;
+    padding: 1px 6px; border-radius: 4px;
+    background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  }
+
+  /* Footer */
+  .ymem-footer {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; border-top: 1px solid #F3F4F6;
+    background: #FAFBFC;
+  }
+  .ymem-footer-stat {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 9px; color: #6B7280;
+  }
+  .ymem-infinity {
+    margin-left: auto;
+    font-size: 9px; font-weight: 700; color: #8B5CF6;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .ymem-infinity span {
+    font-size: 16px; line-height: 1;
+  }
+</style>
