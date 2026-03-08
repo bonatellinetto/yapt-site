@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>[yapt. Status] {{incident_status}}: {{incident_title}}</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    table {border-collapse: collapse;}
+    td,th {mso-line-height-rule: exactly;}
+  </style>
+  <![endif]-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #0F0F0F; }
+
+    @media screen and (max-width: 600px) {
+      .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-full { width: 100% !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #0F0F0F; -webkit-font-smoothing: antialiased;">
+  <!-- Preheader -->
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+    {{incident_status}}: {{incident_title}} — {{affected_services}}
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+  </div>
+
+  <!-- Email wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0F0F0F;">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+
+        <!-- Main container -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%;">
+
+          <!-- Header -->
+          <tr>
+            <td align="center" style="padding: 0 0 24px 0;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 28px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.5px;">
+                    yapt<span style="color: #20B2AA;">.</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Severity color bar -->
+          <!--
+            Severity colors (replace inline based on {{incident_severity}}):
+            - critical: #EF4444 (red)
+            - major:    #F59E0B (amber)
+            - minor:    #20B2AA (teal)
+
+            Status colors for badge (replace inline based on {{incident_status}}):
+            - Investigating: #F59E0B (amber)
+            - Identified:    #F97316 (orange)
+            - Monitoring:    #3B82F6 (blue)
+            - Resolved:      #22C55E (green)
+          -->
+          <tr>
+            <td>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-radius: 16px 16px 0 0; overflow: hidden;">
+                <tr>
+                  <!--
+                    SEVERITY BAR — Change background-color based on {{incident_severity}}:
+                    critical=#EF4444 | major=#F59E0B | minor=#20B2AA
+                  -->
+                  <td style="height: 4px; background-color: #F59E0B; font-size: 0; line-height: 0;">
+                    <!--[if mso]>&nbsp;<![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Main card -->
+          <tr>
+            <td>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #1A1A1A; border-radius: 0 0 16px 16px; border: 1px solid #2A2A2A; border-top: none;">
+                <tr>
+                  <td class="mobile-padding" style="padding: 40px 40px 48px 40px;">
+
+                    <!-- Status badge -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="padding-bottom: 24px;">
+                          <!--
+                            STATUS BADGE — Change background-color and border-color based on {{incident_status}}:
+                            Investigating: bg=#F59E0B26, border=#F59E0B40, text=#F59E0B
+                            Identified:    bg=#F9731626, border=#F9731640, text=#F97316
+                            Monitoring:    bg=#3B82F626, border=#3B82F640, text=#3B82F6
+                            Resolved:      bg=#22C55E26, border=#22C55E40, text=#22C55E
+                          -->
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td style="background-color: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); border-radius: 20px; padding: 8px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.5px;">
+                                {{incident_status}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Incident title -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="padding-bottom: 28px; font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px; font-weight: 700; color: #FFFFFF; line-height: 1.3;">
+                          {{incident_title}}
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Affected services -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #111111; border-radius: 12px; border: 1px solid #2A2A2A; margin-bottom: 20px;">
+                      <tr>
+                        <td style="padding: 16px 20px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px;">
+                                SERVIÇOS AFETADOS
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #D1D5DB; line-height: 1.5;">
+                                <span style="color: #F59E0B;">&#9679;</span>&nbsp;&nbsp;{{affected_services}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Timestamp -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #111111; border-radius: 12px; border: 1px solid #2A2A2A; margin-bottom: 20px;">
+                      <tr>
+                        <td style="padding: 16px 20px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px;">
+                                REGISTRADO EM
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #D1D5DB; line-height: 1.5;">
+                                {{incident_time}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Latest update box -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #111111; border-radius: 12px; border: 1px solid #2A2A2A; border-left: 3px solid #20B2AA;">
+                      <tr>
+                        <td style="padding: 20px 24px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 10px;">
+                                ÚLTIMA ATUALIZAÇÃO
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #D1D5DB; line-height: 1.7;">
+                                {{incident_update}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- CTA Button -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 32px;">
+                      <tr>
+                        <td align="center">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td align="center" style="background-color: #20B2AA; border-radius: 8px;">
+                                <!--[if mso]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{status_page_url}}" style="height:48px;v-text-anchor:middle;width:280px;" arcsize="17%" fillcolor="#20B2AA" stroke="f">
+                                <center style="color:#FFFFFF;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:15px;font-weight:600;">Ver detalhes no Status Page</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <!--[if !mso]><!-->
+                                <a href="{{status_page_url}}" target="_blank" style="display: inline-block; padding: 14px 36px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; color: #FFFFFF; text-decoration: none; border-radius: 8px; background-color: #20B2AA;">
+                                  Ver detalhes no Status Page
+                                </a>
+                                <!--<![endif]-->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding-top: 40px; padding-bottom: 20px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <!-- Footer logo -->
+                <tr>
+                  <td align="center" style="padding-bottom: 16px; font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: 700; color: #6B7280;">
+                    yapt<span style="color: #20B2AA;">.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                    by New Way
+                  </td>
+                </tr>
+                <!-- Footer links -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.5;">
+                    <a href="{{unsubscribe_url}}" style="color: #9CA3AF; text-decoration: underline;">Cancelar inscrição</a>
+                    <span style="color: #4B5563;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="https://yapt.ai/privacy" style="color: #9CA3AF; text-decoration: underline;">Privacidade</a>
+                    <span style="color: #4B5563;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="https://yapt.ai/status" style="color: #9CA3AF; text-decoration: underline;">Status Page</a>
+                  </td>
+                </tr>
+                <!-- Disclaimer -->
+                <tr>
+                  <td align="center" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; color: #4B5563; line-height: 1.5;">
+                    Você está recebendo este email porque se inscreveu nas notificações de status do yapt.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Main container -->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

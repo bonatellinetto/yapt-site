@@ -1991,5 +1991,11 @@
       "lifecycle": { "title": "Lifecycle Automático", "description": "Visitante → Lead → MQL → SQL → Opportunity — progressão automática." },
       "autoDeal": { "title": "Deal Auto-Create", "description": "Lead qualificou → deal criado automaticamente no pipeline." }
     }
+  },
+  "status": {
+    "meta": {
+      "title": "System Status — yapt.",
+      "description": "Acompanhe em tempo real a disponibilidade e o desempenho de todos os serviços da plataforma yapt."
+    }
   }
 }
