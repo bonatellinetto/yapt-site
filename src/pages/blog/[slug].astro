@@ -1,6 +1,7 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import BlogSidebar from '../../components/blog/BlogSidebar.astro';
+import CTASection from '../../components/CTASection.astro';
 import { getAllPublishedPosts, getPostBySlug, getAllCategories, getRelatedPosts } from '../../lib/blog';
 
 export async function getStaticPaths() {
@@ -181,4 +182,6 @@ const breadcrumbJsonLd = {
       </div>
     </div>
   </div>
+
+  <CTASection locale="pt-BR" />
 </BlogLayout>
