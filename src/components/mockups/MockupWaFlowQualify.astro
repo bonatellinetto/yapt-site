@@ -1,0 +1,284 @@
+---
+/** MockupWaFlowQualify — WhatsApp Flow lead qualification mockup (phone-like, CSS-only) */
+---
+<div class="wafq-frame">
+  <!-- Phone screen -->
+  <div class="wafq-phone">
+    <!-- WhatsApp header -->
+    <div class="wafq-wa-header">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="white" style="flex-shrink: 0;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <div style="width: 22px; height: 22px; border-radius: 50%; background: #20B2AA; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <span style="font-size: 9px; font-weight: 700; color: white; font-family: 'Poppins', Inter, sans-serif;">Y</span>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 9px; font-weight: 600; color: white; line-height: 1.2; font-family: 'Poppins', Inter, sans-serif;">yapt.</div>
+        <div style="font-size: 6px; color: rgba(255,255,255,0.7); line-height: 1.2;">online</div>
+      </div>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="white" style="flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="white" style="flex-shrink: 0; margin-left: 4px;"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+    </div>
+
+    <!-- Chat background -->
+    <div class="wafq-chat-bg">
+      <!-- Flow overlay card -->
+      <div class="wafq-flow-card">
+        <!-- Flow header -->
+        <div class="wafq-flow-header">
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            <span style="font-size: 9px; font-weight: 700; color: #1F2937;">Qualificacao de Lead</span>
+          </div>
+          <span style="font-size: 7px; color: #9CA3AF; font-weight: 500;">1 de 4</span>
+        </div>
+
+        <!-- Step 1: Company info -->
+        <div class="wafq-flow-body">
+          <!-- Radio: Tamanho da empresa -->
+          <div style="font-size: 8px; font-weight: 600; color: #374151; margin-bottom: 4px;">Qual o tamanho da sua empresa?</div>
+          <div class="wafq-radio-group">
+            <div class="wafq-radio-item">
+              <div class="wafq-radio-circle"></div>
+              <span style="font-size: 7px; color: #4B5563;">1-10 colaboradores</span>
+            </div>
+            <div class="wafq-radio-item wafq-radio-selected">
+              <div class="wafq-radio-circle wafq-radio-filled">
+                <div class="wafq-radio-dot"></div>
+              </div>
+              <span style="font-size: 7px; color: #0F766E; font-weight: 600;">11-50 colaboradores</span>
+            </div>
+            <div class="wafq-radio-item">
+              <div class="wafq-radio-circle"></div>
+              <span style="font-size: 7px; color: #4B5563;">51-200 colaboradores</span>
+            </div>
+            <div class="wafq-radio-item">
+              <div class="wafq-radio-circle"></div>
+              <span style="font-size: 7px; color: #4B5563;">201+ colaboradores</span>
+            </div>
+          </div>
+
+          <!-- Chips: Segmento -->
+          <div style="font-size: 8px; font-weight: 600; color: #374151; margin-bottom: 4px; margin-top: 8px;">Segmento</div>
+          <div class="wafq-chip-group">
+            <div class="wafq-chip wafq-chip-selected">SaaS</div>
+            <div class="wafq-chip wafq-chip-selected">E-commerce</div>
+            <div class="wafq-chip">Servicos</div>
+            <div class="wafq-chip">Industria</div>
+            <div class="wafq-chip">Varejo</div>
+            <div class="wafq-chip">Saude</div>
+          </div>
+
+          <!-- Select: Volume mensal -->
+          <div style="font-size: 8px; font-weight: 600; color: #374151; margin-bottom: 4px; margin-top: 8px;">Volume mensal de conversas</div>
+          <div class="wafq-select">
+            <span style="font-size: 7px; color: #1F2937;">1.000 a 5.000</span>
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="wafq-progress-bar">
+            <div class="wafq-progress-fill"></div>
+          </div>
+
+          <!-- Button -->
+          <div class="wafq-btn">Proximo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp input bar -->
+    <div class="wafq-input-bar">
+      <div class="wafq-input-field">
+        <span style="font-size: 7px; color: #9CA3AF;">Responda o formulario acima</span>
+      </div>
+      <div style="width: 18px; height: 18px; border-radius: 50%; background: #9CA3AF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wafq-frame {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .wafq-phone {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* WhatsApp header */
+  .wafq-wa-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #075E54;
+  }
+
+  /* Chat background */
+  .wafq-chat-bg {
+    background: #ECE5DD;
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* Flow overlay card */
+  .wafq-flow-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .wafq-flow-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  .wafq-flow-body {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Radio group */
+  .wafq-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .wafq-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+
+  .wafq-radio-item.wafq-radio-selected {
+    background: rgba(32, 178, 170, 0.08);
+  }
+
+  .wafq-radio-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid #D1D5DB;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wafq-radio-circle.wafq-radio-filled {
+    border-color: #20B2AA;
+    background: #20B2AA;
+  }
+
+  .wafq-radio-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  /* Chip group */
+  .wafq-chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .wafq-chip {
+    font-size: 7px;
+    font-weight: 500;
+    color: #6B7280;
+    padding: 3px 7px;
+    border-radius: 10px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    line-height: 1.2;
+  }
+
+  .wafq-chip.wafq-chip-selected {
+    background: #20B2AA;
+    color: white;
+    border-color: #20B2AA;
+    font-weight: 600;
+  }
+
+  /* Select dropdown */
+  .wafq-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+  }
+
+  /* Progress bar */
+  .wafq-progress-bar {
+    height: 3px;
+    background: #E5E7EB;
+    border-radius: 2px;
+    margin-top: auto;
+    margin-bottom: 8px;
+    padding-top: 0;
+  }
+
+  .wafq-progress-fill {
+    width: 25%;
+    height: 100%;
+    background: #20B2AA;
+    border-radius: 2px;
+  }
+
+  /* Button */
+  .wafq-btn {
+    background: #20B2AA;
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    padding: 7px;
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Input bar */
+  .wafq-input-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: #F0F0F0;
+  }
+
+  .wafq-input-field {
+    flex: 1;
+    padding: 5px 8px;
+    background: white;
+    border-radius: 12px;
+  }
+</style>

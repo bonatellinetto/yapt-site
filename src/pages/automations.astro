@@ -9,6 +9,9 @@ import MockupYaFlows from '../components/mockups/MockupYaFlows.astro';
 import MockupHandoff from '../components/mockups/MockupHandoff.astro';
 import MockupYaTeamCentral from '../components/mockups/MockupYaTeamCentral.astro';
 import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
+import MockupWaFlowForm from '../components/mockups/MockupWaFlowForm.astro';
+import MockupWaFlowSchedule from '../components/mockups/MockupWaFlowSchedule.astro';
+import MockupWaFlowQualify from '../components/mockups/MockupWaFlowQualify.astro';
 import { t, type Locale } from '../lib/i18n';
 import { chameleonSvg, genericIcons } from '../lib/fauna';
 
@@ -29,7 +32,7 @@ const modules = ['builder','dualExperience','multiAI','integrations'] as const;
 
 // Numbers section
 const numbers = m('numbers') as any;
-const numberKeys = numbers ? Object.keys(numbers).filter(k => k !== 'title') : [];
+const numberItems = numbers?.items ? Object.values(numbers.items) as { value: string; label: string }[] : [];
 
 // SuperMemory section
 const superMemory = m('superMemory') as any;
@@ -48,20 +51,17 @@ const waFlows = m('waFlows') as any;
   />
 
   {/* Numbers */}
-  {numberKeys.length > 0 && (
+  {numberItems.length > 0 && (
     <section data-observe class="py-16 lg:py-20 bg-[#FAFBFC]">
       <div class="max-w-5xl mx-auto px-6">
         {numbers.title && <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e] text-center mb-12">{numbers.title}</h2>}
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {numberKeys.map((k) => {
-            const n = numbers[k];
-            return (
+          {numberItems.map((n) => (
               <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;" class="text-center">
                 <div class="font-poppins text-3xl lg:text-4xl font-bold bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">{n.value}</div>
                 <p class="text-sm text-[#656D78] mt-2">{n.label}</p>
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
@@ -128,6 +128,19 @@ const waFlows = m('waFlows') as any;
             ))}
           </div>
         )}
+
+        {/* WA Flow mockups */}
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;">
+            <MockupWaFlowForm />
+          </div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease 0.1s,transform 0.5s ease 0.1s;">
+            <MockupWaFlowSchedule />
+          </div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease 0.2s,transform 0.5s ease 0.2s;">
+            <MockupWaFlowQualify />
+          </div>
+        </div>
       </div>
     </section>
   )}

@@ -1,0 +1,302 @@
+---
+/** MockupWaFlowSchedule — WhatsApp Flow native scheduling/appointment inside WhatsApp */
+---
+<div class="wfs-frame">
+  <!-- WhatsApp header -->
+  <div style="background: #075E54; padding: 8px 10px; display: flex; align-items: center; gap: 8px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div style="width: 24px; height: 24px; border-radius: 50%; background: #20B2AA; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; font-family: 'Poppins', Inter, sans-serif;">Y</div>
+    <div style="flex: 1; min-width: 0;">
+      <div style="font-size: 10px; font-weight: 600; color: white; font-family: Inter, sans-serif;">yapt.</div>
+      <div style="font-size: 7px; color: rgba(255,255,255,0.7);">online</div>
+    </div>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+  </div>
+
+  <!-- Chat background -->
+  <div style="background: #ECE5DD; padding: 6px 8px; min-height: 14px; position: relative;">
+    <!-- Small chat bubble hint -->
+    <div style="background: white; border-radius: 0 6px 6px 6px; padding: 5px 8px; max-width: 75%; box-shadow: 0 1px 1px rgba(0,0,0,0.06);">
+      <div style="font-size: 7px; color: #303030; line-height: 1.4;">Otimo! Vou abrir nosso agendamento para voce escolher o melhor horario.</div>
+      <div style="font-size: 6px; color: #999; text-align: right; margin-top: 2px;">10:42</div>
+    </div>
+  </div>
+
+  <!-- Flow overlay card -->
+  <div style="background: #ECE5DD; padding: 0 8px 6px;">
+    <div class="wfs-flow-card">
+      <!-- Flow header -->
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid #F3F4F6;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span style="font-size: 9px; font-weight: 700; color: #1F2937;">Agendar Demonstracao</span>
+        </div>
+        <div style="font-size: 7px; color: #9CA3AF; font-weight: 500;">2 de 2</div>
+      </div>
+
+      <!-- Flow body -->
+      <div style="padding: 8px 10px;">
+
+        <!-- Date label -->
+        <div style="font-size: 7px; font-weight: 600; color: #374151; margin-bottom: 5px;">Escolha uma data</div>
+
+        <!-- Mini calendar -->
+        <div class="wfs-calendar">
+          <!-- Month header -->
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            <span style="font-size: 7px; font-weight: 600; color: #1F2937;">Marco 2026</span>
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <!-- Day headers -->
+          <div class="wfs-cal-grid" style="margin-bottom: 2px;">
+            <span class="wfs-cal-header">Seg</span>
+            <span class="wfs-cal-header">Ter</span>
+            <span class="wfs-cal-header">Qua</span>
+            <span class="wfs-cal-header">Qui</span>
+            <span class="wfs-cal-header">Sex</span>
+            <span class="wfs-cal-header">Sab</span>
+            <span class="wfs-cal-header">Dom</span>
+          </div>
+          <!-- Week 1 (Mar starts on Sunday, so offset) -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day wfs-day-past">1</span>
+          </div>
+          <!-- Week 2 -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day wfs-day-past">2</span>
+            <span class="wfs-cal-day wfs-day-past">3</span>
+            <span class="wfs-cal-day wfs-day-past">4</span>
+            <span class="wfs-cal-day wfs-day-past">5</span>
+            <span class="wfs-cal-day wfs-day-past">6</span>
+            <span class="wfs-cal-day wfs-day-past">7</span>
+            <span class="wfs-cal-day wfs-day-past">8</span>
+          </div>
+          <!-- Week 3 (today = 9) -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day wfs-day-today">9</span>
+            <span class="wfs-cal-day wfs-day-available">10</span>
+            <span class="wfs-cal-day wfs-day-available">11</span>
+            <span class="wfs-cal-day wfs-day-selected">12</span>
+            <span class="wfs-cal-day wfs-day-available">13</span>
+            <span class="wfs-cal-day">14</span>
+            <span class="wfs-cal-day">15</span>
+          </div>
+          <!-- Week 4 -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day wfs-day-available">16</span>
+            <span class="wfs-cal-day wfs-day-available">17</span>
+            <span class="wfs-cal-day wfs-day-available">18</span>
+            <span class="wfs-cal-day">19</span>
+            <span class="wfs-cal-day wfs-day-available">20</span>
+            <span class="wfs-cal-day">21</span>
+            <span class="wfs-cal-day">22</span>
+          </div>
+          <!-- Week 5 -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day wfs-day-available">23</span>
+            <span class="wfs-cal-day">24</span>
+            <span class="wfs-cal-day wfs-day-available">25</span>
+            <span class="wfs-cal-day">26</span>
+            <span class="wfs-cal-day wfs-day-available">27</span>
+            <span class="wfs-cal-day">28</span>
+            <span class="wfs-cal-day">29</span>
+          </div>
+          <!-- Week 6 -->
+          <div class="wfs-cal-grid">
+            <span class="wfs-cal-day">30</span>
+            <span class="wfs-cal-day">31</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+            <span class="wfs-cal-day" style="visibility: hidden;">0</span>
+          </div>
+        </div>
+
+        <!-- Time slots label -->
+        <div style="font-size: 7px; font-weight: 600; color: #374151; margin: 8px 0 5px;">Horario disponivel</div>
+
+        <!-- Time slot pills -->
+        <div class="wfs-time-grid">
+          <div class="wfs-time-pill">09:00</div>
+          <div class="wfs-time-pill">10:00</div>
+          <div class="wfs-time-pill">11:00</div>
+          <div class="wfs-time-pill wfs-time-selected">14:00</div>
+          <div class="wfs-time-pill">15:00</div>
+          <div class="wfs-time-pill">16:00</div>
+        </div>
+
+        <!-- Responsavel label -->
+        <div style="font-size: 7px; font-weight: 600; color: #374151; margin: 8px 0 4px;">Responsavel</div>
+
+        <!-- Select dropdown -->
+        <div class="wfs-select">
+          <span style="font-size: 8px; color: #1F2937;">Amanda Costa — Comercial</span>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+
+        <!-- Progress bar -->
+        <div style="margin-top: 10px; margin-bottom: 8px;">
+          <div style="height: 3px; background: #E5E7EB; border-radius: 2px; overflow: hidden;">
+            <div style="width: 100%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+          </div>
+        </div>
+
+        <!-- Confirm button -->
+        <div class="wfs-btn">Confirmar Agendamento</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp input bar -->
+  <div style="background: #F0F0F0; padding: 6px 8px; display: flex; align-items: center; gap: 6px;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    <div style="flex: 1; background: white; border-radius: 12px; padding: 5px 10px; font-size: 7px; color: #BDBDBD;">Mensagem</div>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="#9CA3AF"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+  </div>
+</div>
+
+<style>
+  .wfs-frame {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+  }
+
+  /* Flow overlay card */
+  .wfs-flow-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  /* Calendar container */
+  .wfs-calendar {
+    background: #FAFBFC;
+    border: 1px solid #F3F4F6;
+    border-radius: 8px;
+    padding: 6px;
+  }
+
+  /* Calendar grid */
+  .wfs-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    text-align: center;
+  }
+
+  .wfs-cal-header {
+    font-size: 6px;
+    font-weight: 600;
+    color: #9CA3AF;
+    padding: 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .wfs-cal-day {
+    font-size: 7px;
+    color: #374151;
+    padding: 3px 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .wfs-day-past {
+    color: #D1D5DB;
+  }
+
+  .wfs-day-today {
+    background: #20B2AA;
+    color: white;
+    font-weight: 700;
+  }
+
+  .wfs-day-selected {
+    background: #20B2AA;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 0 0 2px rgba(32,178,170,0.25);
+  }
+
+  .wfs-day-available::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #22C55E;
+  }
+
+  /* Time slots grid */
+  .wfs-time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .wfs-time-pill {
+    font-size: 8px;
+    font-weight: 500;
+    color: #374151;
+    text-align: center;
+    padding: 5px 0;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+  }
+
+  .wfs-time-selected {
+    background: #20B2AA;
+    color: white;
+    border-color: #20B2AA;
+    font-weight: 600;
+  }
+
+  /* Select dropdown */
+  .wfs-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+  }
+
+  /* Confirm button */
+  .wfs-btn {
+    width: 100%;
+    padding: 8px 0;
+    background: #20B2AA;
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    letter-spacing: 0.01em;
+  }
+</style>
