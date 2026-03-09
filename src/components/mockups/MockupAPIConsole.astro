@@ -1,80 +1,199 @@
 ---
-/** MockupAPIConsole — API & Developer Tools console mockup (integrations page) */
+/** MockupAPIConsole — yaConnect Events Log mockup (integrations page) */
 ---
 <div class="ac-frame">
-  <!-- Header bar -->
-  <div class="ac-header">
-    <div class="ac-header-left">
-      <svg class="ac-terminal-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="4 17 10 11 4 5"/>
-        <line x1="12" y1="19" x2="20" y2="19"/>
-      </svg>
-      <span class="ac-header-title">yapt. API Console</span>
+  <div class="ac-layout">
+    <!-- Left sidebar (icon rail) -->
+    <div class="ac-sidebar">
+      <div class="ac-sb-icon ac-sb-icon-active">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="ac-sb-icon">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+      </div>
     </div>
-    <span class="ac-version-badge">v2.1</span>
-  </div>
 
-  <!-- API Key section -->
-  <div class="ac-key-section">
-    <div class="ac-key-label">
-      <span>API Key</span>
-      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-      </svg>
-    </div>
-    <div class="ac-key-row">
-      <span class="ac-key-value">ypt_live_&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;7xKm</span>
-      <span class="ac-active-badge">Ativa</span>
-    </div>
-  </div>
+    <!-- Main content area -->
+    <div class="ac-main">
+      <!-- Top header -->
+      <div class="ac-header">
+        <div class="ac-header-left">
+          <div class="ac-logo-circle">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <span class="ac-header-title">yaConnect</span>
+        </div>
+        <div class="ac-header-stats">
+          <span class="ac-stat-item">2 Apps Ativos</span>
+          <span class="ac-stat-sep"></span>
+          <span class="ac-stat-item">0 Eventos (24h)</span>
+          <span class="ac-stat-sep"></span>
+          <span class="ac-stat-item">100% Taxa de Sucesso</span>
+        </div>
+        <div class="ac-search-box">
+          <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span class="ac-search-text">Buscar apps...</span>
+        </div>
+      </div>
 
-  <!-- Request builder -->
-  <div class="ac-request-section">
-    <div class="ac-endpoint-row">
-      <span class="ac-method-badge">POST</span>
-      <span class="ac-endpoint-url">/v2/messages/send</span>
-    </div>
-    <div class="ac-code-block">
-      <code class="ac-code">
-        <span class="ac-syn-br">&#123;</span><br/>
-        &nbsp;&nbsp;<span class="ac-syn-key">"to"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"+5511999887766"</span><span class="ac-syn-br">,</span><br/>
-        &nbsp;&nbsp;<span class="ac-syn-key">"type"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"template"</span><span class="ac-syn-br">,</span><br/>
-        &nbsp;&nbsp;<span class="ac-syn-key">"template"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"welcome_lead"</span><span class="ac-syn-br">,</span><br/>
-        &nbsp;&nbsp;<span class="ac-syn-key">"params"</span><span class="ac-syn-br">:</span> <span class="ac-syn-br">[</span><span class="ac-syn-str">"Jo&atilde;o"</span><span class="ac-syn-br">,</span> <span class="ac-syn-str">"Premium"</span><span class="ac-syn-br">]</span><br/>
-        <span class="ac-syn-br">&#125;</span>
-      </code>
-    </div>
-  </div>
+      <!-- Tab bar -->
+      <div class="ac-tabs">
+        <span class="ac-tab">Dashboard</span>
+        <span class="ac-tab">Nativos</span>
+        <span class="ac-tab">Apps</span>
+        <span class="ac-tab">Templates</span>
+        <span class="ac-tab ac-tab-active">
+          <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Eventos
+        </span>
+      </div>
 
-  <!-- Response section -->
-  <div class="ac-response-header">
-    <span class="ac-status-badge">200 OK</span>
-    <span class="ac-latency">143ms</span>
-  </div>
-  <div class="ac-code-block ac-code-block-sm">
-    <code class="ac-code">
-      <span class="ac-syn-br">&#123;</span><br/>
-      &nbsp;&nbsp;<span class="ac-syn-key">"id"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"msg_a8f2k9x"</span><span class="ac-syn-br">,</span><br/>
-      &nbsp;&nbsp;<span class="ac-syn-key">"status"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"sent"</span><span class="ac-syn-br">,</span><br/>
-      &nbsp;&nbsp;<span class="ac-syn-key">"timestamp"</span><span class="ac-syn-br">:</span> <span class="ac-syn-num">1741...</span><br/>
-      <span class="ac-syn-br">&#125;</span>
-    </code>
-  </div>
+      <!-- Events table -->
+      <div class="ac-events">
+        <!-- Table header -->
+        <div class="ac-ev-header">
+          <span class="ac-ev-hcol ac-ev-col-time">Timestamp</span>
+          <span class="ac-ev-hcol ac-ev-col-app">App</span>
+          <span class="ac-ev-hcol ac-ev-col-type">Evento</span>
+          <span class="ac-ev-hcol ac-ev-col-id">Event ID</span>
+          <span class="ac-ev-hcol ac-ev-col-lat">Latencia</span>
+          <span class="ac-ev-hcol ac-ev-col-status">Status</span>
+          <span class="ac-ev-hcol ac-ev-col-action"></span>
+        </div>
 
-  <!-- Bottom bar -->
-  <div class="ac-bottom-bar">
-    <span class="ac-stat">REST + WebSocket</span>
-    <span class="ac-stat-div"></span>
-    <span class="ac-stat">Rate: <strong>1000/min</strong></span>
-    <span class="ac-stat-div"></span>
-    <span class="ac-stat">99.99% uptime</span>
+        <!-- Row 1 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">16:49:17</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">iLeadway NB</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">lead.conversation_ended</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">d67b1494-7be7-4001-9b95-88e...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">6342ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">14:25:05</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">iLeadway NB</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">lead.conversation_ended</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">d67b1494-7be7-4001-9b95-88e...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">21529ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">09:56:00</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">iLeadway NB</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">lead.conversation_ended</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">abc1df91-3e4a-48c2-a7f1-0d2...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">739ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">09:50:01</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">iLeadway NB</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">lead.conversation_ended</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">1d60cb97-f142-4a89-b3c8-72a...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">855ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">09:49:01</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">yapt CRM</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">contact.updated</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">2a1531d7-8e9f-4b12-ae67-c5d...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">1062ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="ac-ev-row">
+          <div class="ac-ev-col ac-ev-col-time">
+            <span class="ac-ev-time">09:42:03</span>
+            <span class="ac-ev-ago">ha cerca de 1 mes</span>
+          </div>
+          <span class="ac-ev-col ac-ev-col-app">iLeadway NB</span>
+          <span class="ac-ev-col ac-ev-col-type"><span class="ac-ev-badge">lead.conversation_ended</span></span>
+          <span class="ac-ev-col ac-ev-col-id ac-mono">141dab5d-2c7e-49a0-8f13-b91...</span>
+          <span class="ac-ev-col ac-ev-col-lat ac-mono">1757ms</span>
+          <span class="ac-ev-col ac-ev-col-status"><span class="ac-ev-success">Sucesso</span></span>
+          <span class="ac-ev-col ac-ev-col-action">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
   .ac-frame {
-    max-width: 320px;
+    max-width: 360px;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 8px 24px rgba(0,0,0,0.05);
@@ -83,208 +202,276 @@
     color: #1F2937;
   }
 
-  /* Header */
-  .ac-header {
-    background: #0F172A;
-    padding: 9px 12px;
+  .ac-layout {
+    display: flex;
+  }
+
+  /* Left sidebar — icon rail */
+  .ac-sidebar {
+    width: 24px;
+    min-width: 24px;
+    background: #F8FAFC;
+    border-right: 1px solid #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0 4px;
+    gap: 2px;
+  }
+
+  .ac-sb-icon {
+    width: 18px;
+    height: 18px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    border-radius: 4px;
+    color: #94A3B8;
+    flex-shrink: 0;
+  }
+
+  .ac-sb-icon-active {
+    color: #20B2AA;
+    background: rgba(32, 178, 170, 0.1);
+  }
+
+  /* Main content */
+  .ac-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  .ac-header {
+    padding: 7px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #F1F5F9;
+    flex-wrap: nowrap;
   }
 
   .ac-header-left {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
-  .ac-terminal-icon {
+  .ac-logo-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(32, 178, 170, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
 
   .ac-header-title {
-    font-size: 9px;
+    font-size: 7.5px;
     font-weight: 700;
-    color: #fff;
+    color: #1F2937;
     letter-spacing: 0.01em;
+    white-space: nowrap;
   }
 
-  .ac-version-badge {
-    font-size: 7px;
-    font-weight: 600;
-    color: #20B2AA;
-    background: rgba(32, 178, 170, 0.12);
-    padding: 2px 6px;
-    border-radius: 5px;
-    letter-spacing: 0.02em;
-  }
-
-  /* API Key section */
-  .ac-key-section {
-    padding: 8px 12px;
-    border-bottom: 1px solid #F1F5F9;
-  }
-
-  .ac-key-label {
+  .ac-header-stats {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 7px;
+    flex-shrink: 0;
+  }
+
+  .ac-stat-item {
+    font-size: 5.5px;
+    color: #64748B;
+    white-space: nowrap;
+  }
+
+  .ac-stat-sep {
+    width: 1px;
+    height: 7px;
+    background: #E2E8F0;
+    flex-shrink: 0;
+  }
+
+  .ac-search-box {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .ac-search-text {
+    font-size: 5.5px;
+    color: #94A3B8;
+    white-space: nowrap;
+  }
+
+  /* Tab bar */
+  .ac-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 8px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  .ac-tab {
+    font-size: 6px;
+    font-weight: 500;
+    color: #94A3B8;
+    padding: 6px 6px 5px;
+    border-bottom: 1.5px solid transparent;
+    white-space: nowrap;
+  }
+
+  .ac-tab-active {
+    color: #20B2AA;
+    font-weight: 600;
+    border-bottom-color: #20B2AA;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* Events table */
+  .ac-events {
+    padding: 0;
+    flex: 1;
+  }
+
+  .ac-ev-header {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px 4px;
+    border-bottom: 1px solid #F1F5F9;
+    background: #FAFBFC;
+  }
+
+  .ac-ev-hcol {
+    font-size: 5px;
     font-weight: 700;
-    color: #9CA3AF;
+    color: #94A3B8;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 4px;
   }
 
-  .ac-key-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
+  /* Column widths */
+  .ac-ev-col-time {
+    width: 52px;
+    min-width: 52px;
   }
 
-  .ac-key-value {
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-    font-size: 7px;
-    color: #475569;
-    background: #F8FAFC;
-    padding: 3px 7px;
-    border-radius: 4px;
-    border: 1px solid #E2E8F0;
-    letter-spacing: 0.01em;
+  .ac-ev-col-app {
+    width: 48px;
+    min-width: 48px;
   }
 
-  .ac-active-badge {
-    font-size: 6.5px;
-    font-weight: 700;
-    color: #059669;
-    background: rgba(5, 150, 105, 0.08);
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
+  .ac-ev-col-type {
+    width: 80px;
+    min-width: 80px;
   }
 
-  /* Request section */
-  .ac-request-section {
-    padding: 8px 12px 0;
+  .ac-ev-col-id {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  .ac-endpoint-row {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 6px;
+  .ac-ev-col-lat {
+    width: 34px;
+    min-width: 34px;
+    text-align: right;
   }
 
-  .ac-method-badge {
-    display: inline-block;
-    background: #059669;
-    color: #fff;
-    font-size: 7px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.03em;
+  .ac-ev-col-status {
+    width: 32px;
+    min-width: 32px;
+    text-align: center;
   }
 
-  .ac-endpoint-url {
-    font-size: 8px;
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-    color: #475569;
-    font-weight: 500;
-  }
-
-  /* Code blocks */
-  .ac-code-block {
-    background: #1E293B;
-    margin: 0 0 8px;
-    border-radius: 8px;
-    padding: 8px 10px;
-    overflow-x: auto;
-  }
-
-  .ac-request-section .ac-code-block {
-    margin: 0;
-  }
-
-  .ac-code-block-sm {
-    margin: 0 12px 0;
-  }
-
-  .ac-code {
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-    font-size: 7px;
-    line-height: 1.7;
-    display: block;
-  }
-
-  /* Syntax highlighting */
-  .ac-syn-key {
-    color: #2DD4BF;
-  }
-
-  .ac-syn-str {
-    color: #FBBF24;
-  }
-
-  .ac-syn-num {
-    color: #A78BFA;
-  }
-
-  .ac-syn-br {
-    color: #64748B;
-  }
-
-  /* Response header */
-  .ac-response-header {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px 5px;
-  }
-
-  .ac-status-badge {
-    display: inline-block;
-    background: #059669;
-    color: #fff;
-    font-size: 6.5px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-
-  .ac-latency {
-    font-size: 7px;
-    color: #94A3B8;
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-  }
-
-  /* Bottom bar */
-  .ac-bottom-bar {
+  .ac-ev-col-action {
+    width: 14px;
+    min-width: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 8px 12px;
-    margin-top: 8px;
-    background: #F8FAFC;
-    border-top: 1px solid #F1F5F9;
   }
 
-  .ac-stat {
+  /* Event rows */
+  .ac-ev-row {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    border-bottom: 1px solid #F8FAFC;
+  }
+
+  .ac-ev-row:nth-child(even) {
+    background: #FDFDFE;
+  }
+
+  .ac-ev-col {
+    font-size: 6px;
+    color: #475569;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ac-ev-col-time {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .ac-ev-time {
     font-size: 6.5px;
-    color: #94A3B8;
+    font-weight: 700;
+    color: #1F2937;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   }
 
-  .ac-stat strong {
-    font-weight: 700;
+  .ac-ev-ago {
+    font-size: 4.5px;
+    color: #94A3B8;
+    font-weight: 400;
+  }
+
+  .ac-ev-badge {
+    display: inline-block;
+    font-size: 5px;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    color: #64748B;
+    background: #F1F5F9;
+    padding: 1.5px 4px;
+    border-radius: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .ac-mono {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 5.5px;
     color: #64748B;
   }
 
-  .ac-stat-div {
-    width: 1px;
-    height: 8px;
-    background: #E2E8F0;
+  .ac-ev-success {
+    font-size: 5.5px;
+    font-weight: 600;
+    color: #10B981;
   }
 </style>

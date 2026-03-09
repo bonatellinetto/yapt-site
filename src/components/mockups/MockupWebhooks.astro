@@ -1,74 +1,236 @@
 ---
-/** MockupWebhooks — Webhooks & Connect panel for yapt.ai integrations page */
+/** MockupWebhooks — yaConnect Field Mapping screen for yapt.ai integrations page */
 ---
 <div class="wh-frame">
-  <!-- Header bar -->
-  <div class="wh-header">
-    <svg class="wh-header-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-    <span class="wh-header-title">Webhooks & Connect</span>
-  </div>
-
-  <!-- Endpoint config section -->
-  <div class="wh-config">
-    <div class="wh-config-label">Endpoint URL</div>
-    <div class="wh-url-input">https://api.cliente.com/yapt-events</div>
-
-    <div class="wh-config-label" style="margin-top:6px;">Eventos</div>
-    <div class="wh-chips">
-      <span class="wh-chip wh-chip-selected">Mensagem Recebida</span>
-      <span class="wh-chip">Lead Criado</span>
-      <span class="wh-chip">Atendimento Encerrado</span>
-      <span class="wh-chip">Status Alterado</span>
+  <!-- Tab bar -->
+  <div class="wh-tabs">
+    <div class="wh-tab">
+      <svg class="wh-tab-icon" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Visao Geral</span>
     </div>
-
-    <div class="wh-config-label" style="margin-top:6px;">Secret Key</div>
-    <div class="wh-secret-input">whsec_&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;kX9f</div>
-  </div>
-
-  <!-- Live event stream -->
-  <div class="wh-stream">
-    <div class="wh-stream-header">
-      <span class="wh-pulse-dot"></span>
-      <span class="wh-stream-title">Eventos em tempo real</span>
+    <div class="wh-tab wh-tab-active">
+      <svg class="wh-tab-icon" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 00-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>
+      <span>Mapeamentos</span>
     </div>
-
-    <!-- Event rows -->
-    <div class="wh-event-row">
-      <span class="wh-ts">10:42:03</span>
-      <span class="wh-event-badge wh-badge-green">message.received</span>
-      <span class="wh-status wh-status-ok">200 OK</span>
+    <div class="wh-tab">
+      <svg class="wh-tab-icon" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span>Triggers</span>
     </div>
-    <div class="wh-event-row">
-      <span class="wh-ts">10:42:01</span>
-      <span class="wh-event-badge wh-badge-blue">lead.created</span>
-      <span class="wh-status wh-status-ok">200 OK</span>
+    <div class="wh-tab">
+      <svg class="wh-tab-icon" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.41 6.41-2.12-2.12"/><path d="M2 12h4"/><path d="m6.41 17.59-2.12 2.12"/><path d="M12 18v4"/><path d="m17.59 17.59 2.12 2.12"/><path d="M18 12h4"/><path d="m17.59 6.41 2.12-2.12"/></svg>
+      <span>Eventos</span>
     </div>
-    <div class="wh-event-row">
-      <span class="wh-ts">10:41:58</span>
-      <span class="wh-event-badge wh-badge-purple">ticket.closed</span>
-      <span class="wh-status wh-status-ok">200 OK</span>
-    </div>
-    <div class="wh-event-row">
-      <span class="wh-ts">10:41:55</span>
-      <span class="wh-event-badge wh-badge-green">message.received</span>
-      <span class="wh-status wh-status-retry">408 Retry</span>
+    <div class="wh-tab">
+      <svg class="wh-tab-icon" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 00-2 2v.18a2 2 0 01-1 1.73l-.43.25a2 2 0 01-2 0l-.15-.08a2 2 0 00-2.73.73l-.22.38a2 2 0 00.73 2.73l.15.1a2 2 0 011 1.72v.51a2 2 0 01-1 1.74l-.15.09a2 2 0 00-.73 2.73l.22.38a2 2 0 002.73.73l.15-.08a2 2 0 012 0l.43.25a2 2 0 011 1.73V20a2 2 0 002 2h.44a2 2 0 002-2v-.18a2 2 0 011-1.73l.43-.25a2 2 0 012 0l.15.08a2 2 0 002.73-.73l.22-.39a2 2 0 00-.73-2.73l-.15-.08a2 2 0 01-1-1.74v-.5a2 2 0 011-1.74l.15-.09a2 2 0 00.73-2.73l-.22-.38a2 2 0 00-2.73-.73l-.15.08a2 2 0 01-2 0l-.43-.25a2 2 0 01-1-1.73V4a2 2 0 00-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>Configuracoes</span>
     </div>
   </div>
 
-  <!-- Footer stats bar -->
-  <div class="wh-footer">
-    <span class="wh-footer-stat">347 eventos/hora</span>
-    <span class="wh-footer-sep"></span>
-    <span class="wh-footer-stat">99.7% success</span>
-    <span class="wh-footer-sep"></span>
-    <span class="wh-footer-stat">~120ms</span>
+  <!-- Title section -->
+  <div class="wh-title-section">
+    <div class="wh-title-row">
+      <div>
+        <div class="wh-title">Mapeamento de Campos</div>
+        <div class="wh-subtitle">Configure como os dados do payload sao mapeados para entidades do yapt.</div>
+      </div>
+    </div>
+    <div class="wh-title-actions">
+      <span class="wh-count">11 mapeamentos</span>
+      <div class="wh-actions-right">
+        <button class="wh-btn wh-btn-outline">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 01-1.287 1.288L3 12l5.8 1.9a2 2 0 011.288 1.288L12 21l1.9-5.8a2 2 0 011.287-1.288L21 12l-5.8-1.9a2 2 0 01-1.288-1.288Z"/></svg>
+          Detectar Campos
+          <span class="wh-badge-count">9</span>
+        </button>
+        <button class="wh-btn wh-btn-solid">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="wh-columns">
+    <!-- Left: Payload de Entrada -->
+    <div class="wh-card">
+      <div class="wh-card-header">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span class="wh-card-title">Payload de Entrada</span>
+      </div>
+      <div class="wh-tree">
+        <!-- event -->
+        <div class="wh-tree-row wh-indent-0">
+          <span class="wh-tree-arrow">&#9660;</span>
+          <span class="wh-tree-key">event</span>
+          <span class="wh-type-badge wh-type-object">object</span>
+        </div>
+        <!-- event.id -->
+        <div class="wh-tree-row wh-indent-1">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">id</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"60d687af-e1d6-4..."</span>
+        </div>
+        <!-- event.type -->
+        <div class="wh-tree-row wh-indent-1">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">type</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"lead.conversation..."</span>
+        </div>
+        <!-- event.payload -->
+        <div class="wh-tree-row wh-indent-1">
+          <span class="wh-tree-arrow">&#9660;</span>
+          <span class="wh-tree-key">payload</span>
+          <span class="wh-type-badge wh-type-object">object</span>
+        </div>
+        <!-- event.payload.lead -->
+        <div class="wh-tree-row wh-indent-2">
+          <span class="wh-tree-arrow wh-arrow-right">&#9655;</span>
+          <span class="wh-tree-key">lead</span>
+          <span class="wh-type-badge wh-type-object">object</span>
+        </div>
+        <!-- event.payload.lead.stage -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">stage</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"quick_form"</span>
+        </div>
+        <!-- event.payload.lead.source -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">source</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"widget_quick_for..."</span>
+        </div>
+        <!-- event.payload.lead.channel -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">channel</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"quick_form"</span>
+        </div>
+        <!-- event.payload.lead.lead_id -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">lead_id</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"d786dad2-adfd-4..."</span>
+        </div>
+        <!-- event.payload.lead.widget_id -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">widget_id</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"e5f07d27-ea1c-4..."</span>
+        </div>
+        <!-- event.payload.lead.end_reason -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">end_reason</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"quick_form_subm..."</span>
+        </div>
+        <!-- event.payload.lead.widget_name -->
+        <div class="wh-tree-row wh-indent-3">
+          <span class="wh-tree-colons">::</span>
+          <span class="wh-tree-key">widget_name</span>
+          <span class="wh-type-badge wh-type-string">string</span>
+          <span class="wh-tree-value">"Campanha de ate..."</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Campos do yapt. -->
+    <div class="wh-card">
+      <div class="wh-card-header">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.375 2.625a1 1 0 013 3l-9.013 9.014a2 2 0 01-.853.505l-2.873.84a.5.5 0 01-.62-.62l.84-2.873a2 2 0 01.506-.852z"/></svg>
+        <span class="wh-card-title">Campos do yapt.</span>
+      </div>
+      <div class="wh-fields-subheader">Campos Personalizados</div>
+      <div class="wh-field-list">
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">Estagio do Lead</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead_type</span>
+        </div>
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">UTM Source</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead.utm_data.utm_source</span>
+        </div>
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">UTM Medium</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead.utm_data.utm_medium</span>
+        </div>
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">UTM Campaign</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead.utm_data.utm_campaign</span>
+        </div>
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">UTM Content</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead.utm_data.utm_content</span>
+        </div>
+        <div class="wh-field-row">
+          <span class="wh-field-check">&#10003;</span>
+          <span class="wh-field-name">UTM Term</span>
+          <span class="wh-field-arrow">&larr;</span>
+          <span class="wh-field-path">$.event.payload.lead.utm_data.utm_term</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom: Mapeamentos Ativos -->
+  <div class="wh-active-section">
+    <div class="wh-active-header">Mapeamentos Ativos</div>
+    <div class="wh-active-list">
+      <div class="wh-active-row">
+        <span class="wh-active-path">$.event.payload.lead.email</span>
+        <span class="wh-active-arrow">&rarr;</span>
+        <span class="wh-active-field">Email</span>
+        <span class="wh-active-entity">(contact)</span>
+        <svg class="wh-active-trash" width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+      </div>
+      <div class="wh-active-row">
+        <span class="wh-active-path">$.event.payload.lead.name</span>
+        <span class="wh-active-arrow">&rarr;</span>
+        <span class="wh-active-field">Nome</span>
+        <span class="wh-active-entity">(contact)</span>
+        <svg class="wh-active-trash" width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+      </div>
+      <div class="wh-active-row">
+        <span class="wh-active-path">$.event.payload.lead.phone</span>
+        <span class="wh-active-arrow">&rarr;</span>
+        <span class="wh-active-field">Telefone</span>
+        <span class="wh-active-entity">(contact)</span>
+        <svg class="wh-active-trash" width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+      </div>
+      <div class="wh-active-row">
+        <span class="wh-active-path">$.event.payload.lead.company</span>
+        <span class="wh-active-arrow">&rarr;</span>
+        <span class="wh-active-field">Empresa</span>
+        <span class="wh-active-entity">(contact)</span>
+        <svg class="wh-active-trash" width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
   .wh-frame {
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
     background: #ffffff;
@@ -77,208 +239,354 @@
     font-family: Inter, sans-serif;
   }
 
-  /* Header bar */
-  .wh-header {
+  /* ---- Tab bar ---- */
+  .wh-tabs {
+    display: flex;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0 6px;
+    gap: 0;
+    background: #FAFAFA;
+  }
+
+  .wh-tab {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: #1F2937;
+    gap: 3px;
+    padding: 7px 6px 6px;
+    font-size: 6px;
+    font-weight: 500;
+    color: #9CA3AF;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: default;
   }
 
-  .wh-header-icon {
+  .wh-tab-active {
+    color: #1F2937;
+    font-weight: 600;
+    border-bottom-color: #20B2AA;
+  }
+
+  .wh-tab-icon {
     flex-shrink: 0;
+    width: 8px;
+    height: 8px;
   }
 
-  .wh-header-title {
-    font-size: 9px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.02em;
-  }
-
-  /* Config section */
-  .wh-config {
-    padding: 10px 12px 8px;
+  /* ---- Title section ---- */
+  .wh-title-section {
+    padding: 8px 10px 6px;
     border-bottom: 1px solid #F3F4F6;
   }
 
-  .wh-config-label {
+  .wh-title-row {
+    margin-bottom: 5px;
+  }
+
+  .wh-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+  }
+
+  .wh-subtitle {
+    font-size: 6px;
+    color: #9CA3AF;
+    margin-top: 1px;
+    line-height: 1.3;
+  }
+
+  .wh-title-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wh-count {
+    font-size: 6.5px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+
+  .wh-actions-right {
+    display: flex;
+    gap: 4px;
+  }
+
+  .wh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 6px;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: default;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .wh-btn-outline {
+    color: #20B2AA;
+    background: transparent;
+    border: 1px solid #20B2AA;
+  }
+
+  .wh-btn-solid {
+    color: #ffffff;
+    background: #1F2937;
+  }
+
+  .wh-badge-count {
+    font-size: 5.5px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #20B2AA;
+    border-radius: 6px;
+    padding: 1px 4px;
+    line-height: 1.2;
+  }
+
+  /* ---- Two-column layout ---- */
+  .wh-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .wh-card {
+    background: #FAFAFA;
+    border: 1px solid #F3F4F6;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .wh-card-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 6px;
+    border-bottom: 1px solid #F3F4F6;
+    background: #F9FAFB;
+  }
+
+  .wh-card-title {
     font-size: 7px;
+    font-weight: 700;
+    color: #374151;
+  }
+
+  /* ---- Tree view (left column) ---- */
+  .wh-tree {
+    padding: 4px 5px 5px;
+  }
+
+  .wh-tree-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1.5px 0;
+    line-height: 1;
+  }
+
+  .wh-indent-0 { padding-left: 0; }
+  .wh-indent-1 { padding-left: 10px; }
+  .wh-indent-2 { padding-left: 20px; }
+  .wh-indent-3 { padding-left: 30px; }
+
+  .wh-tree-arrow {
+    font-size: 5.5px;
+    color: #6B7280;
+    width: 7px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .wh-arrow-right {
+    font-size: 5px;
+  }
+
+  .wh-tree-colons {
+    font-size: 6px;
+    color: #D1D5DB;
+    width: 7px;
+    text-align: center;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .wh-tree-key {
+    font-size: 6.5px;
+    font-weight: 600;
+    color: #374151;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  .wh-type-badge {
+    font-size: 5px;
+    font-weight: 600;
+    padding: 1px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .wh-type-object {
+    color: #6B7280;
+    background: #F3F4F6;
+    border: 0.5px solid #E5E7EB;
+  }
+
+  .wh-type-string {
+    color: #0D9488;
+    background: rgba(32,178,170,0.1);
+    border: 0.5px solid rgba(32,178,170,0.2);
+  }
+
+  .wh-tree-value {
+    font-size: 5.5px;
+    color: #9CA3AF;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* ---- Fields list (right column) ---- */
+  .wh-fields-subheader {
+    font-size: 6px;
     font-weight: 600;
     color: #9CA3AF;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    margin-bottom: 3px;
+    padding: 5px 6px 2px;
   }
 
-  .wh-url-input {
-    font-size: 7.5px;
+  .wh-field-list {
+    padding: 2px 6px 5px;
+  }
+
+  .wh-field-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2.5px 0;
+    border-bottom: 1px solid #F9FAFB;
+  }
+
+  .wh-field-row:last-child {
+    border-bottom: none;
+  }
+
+  .wh-field-check {
+    font-size: 7px;
+    color: #20B2AA;
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 8px;
+    text-align: center;
+  }
+
+  .wh-field-name {
+    font-size: 6px;
+    font-weight: 600;
     color: #374151;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
-    border-radius: 5px;
-    padding: 4px 7px;
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    letter-spacing: -0.2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .wh-field-arrow {
+    font-size: 6px;
+    color: #D1D5DB;
+    flex-shrink: 0;
+  }
+
+  .wh-field-path {
+    font-size: 5px;
+    color: #9CA3AF;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
   }
 
-  .wh-chips {
+  /* ---- Mapeamentos Ativos (bottom) ---- */
+  .wh-active-section {
+    padding: 6px 10px 8px;
+    border-top: 1px solid #F3F4F6;
+  }
+
+  .wh-active-header {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 5px;
+  }
+
+  .wh-active-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 3px;
   }
 
-  .wh-chip {
-    font-size: 6.5px;
-    font-weight: 500;
-    color: #6B7280;
-    background: #F3F4F6;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 2px 6px;
-    white-space: nowrap;
-  }
-
-  .wh-chip-selected {
-    color: #ffffff;
-    background: #20B2AA;
-    border-color: #20B2AA;
-  }
-
-  .wh-secret-input {
-    font-size: 7.5px;
-    color: #6B7280;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
-    border-radius: 5px;
-    padding: 4px 7px;
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    letter-spacing: 0.3px;
-  }
-
-  /* Live stream section */
-  .wh-stream {
-    padding: 8px 12px 6px;
-  }
-
-  .wh-stream-header {
+  .wh-active-row {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-bottom: 6px;
-  }
-
-  .wh-pulse-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #22C55E;
-    box-shadow: 0 0 0 2px rgba(34,197,94,0.25);
-    flex-shrink: 0;
-    animation: wh-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes wh-pulse {
-    0%, 100% { box-shadow: 0 0 0 2px rgba(34,197,94,0.25); }
-    50% { box-shadow: 0 0 0 4px rgba(34,197,94,0.12); }
-  }
-
-  .wh-stream-title {
-    font-size: 8px;
-    font-weight: 700;
-    color: #1F2937;
-  }
-
-  /* Event rows */
-  .wh-event-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
     padding: 3px 0;
     border-bottom: 1px solid #F9FAFB;
   }
 
-  .wh-event-row:last-child {
+  .wh-active-row:last-child {
     border-bottom: none;
   }
 
-  .wh-ts {
-    font-size: 7px;
-    color: #9CA3AF;
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    flex-shrink: 0;
-    width: 38px;
+  .wh-active-path {
+    font-size: 6px;
+    font-weight: 500;
+    color: #D1D5DB;
+    background: #1F2937;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
   }
 
-  .wh-event-badge {
+  .wh-active-arrow {
+    font-size: 7px;
+    color: #20B2AA;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .wh-active-field {
     font-size: 6.5px;
     font-weight: 600;
-    padding: 1.5px 5px;
-    border-radius: 4px;
+    color: #374151;
     white-space: nowrap;
-    flex: 1;
-    text-align: center;
-    max-width: fit-content;
   }
 
-  .wh-badge-green {
-    color: #065F46;
-    background: rgba(34,197,94,0.12);
-    border: 1px solid rgba(34,197,94,0.2);
+  .wh-active-entity {
+    font-size: 5.5px;
+    color: #9CA3AF;
+    white-space: nowrap;
   }
 
-  .wh-badge-blue {
-    color: #1E40AF;
-    background: rgba(59,130,246,0.1);
-    border: 1px solid rgba(59,130,246,0.2);
-  }
-
-  .wh-badge-purple {
-    color: #6B21A8;
-    background: rgba(147,51,234,0.1);
-    border: 1px solid rgba(147,51,234,0.2);
-  }
-
-  .wh-status {
-    font-size: 7px;
-    font-weight: 700;
+  .wh-active-trash {
     margin-left: auto;
     flex-shrink: 0;
-    white-space: nowrap;
-  }
-
-  .wh-status-ok {
-    color: #22C55E;
-  }
-
-  .wh-status-retry {
-    color: #F59E0B;
-  }
-
-  /* Footer stats */
-  .wh-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 7px 12px;
-    background: #F9FAFB;
-    border-top: 1px solid #F3F4F6;
-  }
-
-  .wh-footer-stat {
-    font-size: 7px;
-    font-weight: 600;
-    color: #6B7280;
-  }
-
-  .wh-footer-sep {
-    width: 1px;
-    height: 10px;
-    background: #E5E7EB;
+    opacity: 0.5;
   }
 </style>

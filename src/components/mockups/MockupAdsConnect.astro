@@ -1,84 +1,253 @@
 ---
-/** MockupAdsConnect — Meta Ads & Google Ads connection panel for integrations page */
+/** MockupAdsConnect — Ads & Aquisicao dashboard mockup for yapt.ai marketing site */
 ---
-<div class="ad-frame">
-  <div class="ad-header">
+<div class="adc-frame">
+  <!-- Header -->
+  <div class="adc-header">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-    <span style="font-size: 10px; font-weight: 700; color: white;">Ads &amp; Atribuicao</span>
+    <span class="adc-header-title">Ads &amp; Aquisicao</span>
   </div>
-  <div class="ad-body">
-    <div class="ad-platform">
-      <div class="ad-platform-header">
-        <div class="ad-platform-icon" style="background: #1877F2;">M</div>
-        <div class="ad-platform-name">Meta Ads</div>
-        <span class="ad-status-green">Conectado</span>
-      </div>
-      <div class="ad-account">NW Comercial &mdash; ID 1847293...</div>
-      <div class="ad-metrics">
-        <div class="ad-metric"><span class="ad-metric-value">4.2x</span><span class="ad-metric-label">ROAS</span></div>
-        <div class="ad-metric"><span class="ad-metric-value">R$12.40</span><span class="ad-metric-label">CPL</span></div>
-        <div class="ad-metric"><span class="ad-metric-value">127</span><span class="ad-metric-label">leads</span></div>
-      </div>
-      <div class="ad-sync">Ultima sync: 3min atras</div>
-    </div>
-    <div class="ad-platform">
-      <div class="ad-platform-header">
-        <div class="ad-platform-icon" style="background: linear-gradient(135deg, #EA4335, #FBBC05, #34A853, #4285F4);">G</div>
-        <div class="ad-platform-name">Google Ads</div>
-        <span class="ad-status-green">Conectado</span>
-      </div>
-      <div class="ad-account">NewWay MCC &mdash; ID 847-293...</div>
-      <div class="ad-metrics">
-        <div class="ad-metric"><span class="ad-metric-value">3.8x</span><span class="ad-metric-label">ROAS</span></div>
-        <div class="ad-metric"><span class="ad-metric-value">R$18.70</span><span class="ad-metric-label">CPL</span></div>
-        <div class="ad-metric"><span class="ad-metric-value">84</span><span class="ad-metric-label">leads</span></div>
-      </div>
-      <div class="ad-sync">Ultima sync: 5min atras</div>
-    </div>
-    <div style="height: 1px; background: #F3F4F6; margin: 4px 0;"></div>
-    <div class="ad-tracking">
-      <div class="ad-tracking-title">Rastreamento de Conversao</div>
-      <div class="ad-tracking-list">
-        <div class="ad-tracking-item">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Click-to-WhatsApp</span>
+
+  <div class="adc-body">
+    <!-- Two feature cards side by side -->
+    <div class="adc-cards-row">
+      <!-- Inbound Intelligence -->
+      <div class="adc-feature-card">
+        <div class="adc-feature-top">
+          <div class="adc-icon-circle adc-icon-amber">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <div class="adc-feature-info">
+            <div class="adc-feature-title">Inbound Intelligence</div>
+            <div class="adc-feature-sub">Capture e enriqueca leads de Meta e Google Ads</div>
+          </div>
         </div>
-        <div class="ad-tracking-item">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Lead Form Nativo</span>
+        <div class="adc-feature-list">
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-green"></span>Meta Hub</div>
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-gray"></span>Google Hub</div>
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-green"></span>Campaign Intelligence</div>
         </div>
-        <div class="ad-tracking-item">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Conversao Offline</span>
+        <div class="adc-feature-footer">
+          <span class="adc-feature-count">2 de 3 ativos</span>
+          <span class="adc-feature-link">Abrir &rarr;</span>
         </div>
       </div>
+
+      <!-- Outbound Engine -->
+      <div class="adc-feature-card">
+        <div class="adc-feature-top">
+          <div class="adc-icon-circle adc-icon-purple">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <div class="adc-feature-info">
+            <div class="adc-feature-title">Outbound Engine</div>
+            <div class="adc-feature-sub">Campanhas proativas com regua multicanal e IA</div>
+          </div>
+        </div>
+        <div class="adc-feature-list">
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-green"></span>Campaign Builder</div>
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-green"></span>Regua / Sequences</div>
+          <div class="adc-feature-item"><span class="adc-dot adc-dot-gray"></span>AI Optimizer</div>
+        </div>
+        <div class="adc-feature-footer">
+          <span class="adc-feature-count">2 de 3 ativos</span>
+          <span class="adc-feature-link">Abrir &rarr;</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="ad-footer">
-    <span>100% atribuicao real</span>
-    <span class="ad-footer-dot"></span>
-    <span>Tempo real</span>
+
+    <!-- Quick links row -->
+    <div class="adc-quick-links">
+      <span class="adc-quick-link">
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        Ver todos os leads &rarr;
+      </span>
+      <span class="adc-quick-link">
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+        Formularios &amp; Widgets &rarr;
+      </span>
+      <span class="adc-quick-link">
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Relatorios &amp; Attribution &rarr;
+      </span>
+    </div>
+
+    <!-- Period tabs -->
+    <div class="adc-period-tabs">
+      <span class="adc-tab adc-tab-inactive">7d</span>
+      <span class="adc-tab adc-tab-active">30d</span>
+    </div>
+
+    <!-- KPI cards row -->
+    <div class="adc-kpi-row">
+      <div class="adc-kpi">
+        <div class="adc-kpi-icon adc-kpi-icon-teal">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="adc-kpi-label">LEADS</div>
+        <div class="adc-kpi-value">247</div>
+      </div>
+      <div class="adc-kpi">
+        <div class="adc-kpi-icon adc-kpi-icon-green">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="adc-kpi-label">INVESTIMENTO</div>
+        <div class="adc-kpi-value">R$ 12.840</div>
+      </div>
+      <div class="adc-kpi">
+        <div class="adc-kpi-icon adc-kpi-icon-teal">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="adc-kpi-label">CPL</div>
+        <div class="adc-kpi-value">R$ 51,94</div>
+      </div>
+      <div class="adc-kpi">
+        <div class="adc-kpi-icon adc-kpi-icon-purple">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </div>
+        <div class="adc-kpi-label">CAMPANHAS ATIVAS</div>
+        <div class="adc-kpi-value">8</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="adc-charts-row">
+      <!-- Line chart -->
+      <div class="adc-chart-card adc-chart-main">
+        <div class="adc-chart-title">Leads por Dia</div>
+        <div class="adc-chart-area">
+          <div class="adc-y-axis">
+            <span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
+          </div>
+          <div class="adc-chart-plot">
+            <svg class="adc-line-svg" viewBox="0 0 200 60" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="adcGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#20B2AA" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#20B2AA" stop-opacity="0.02"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,48 L25,42 L50,38 L75,44 L100,30 L125,22 L150,18 L175,12 L200,6" fill="none" stroke="#20B2AA" stroke-width="1.5"/>
+              <path d="M0,48 L25,42 L50,38 L75,44 L100,30 L125,22 L150,18 L175,12 L200,6 L200,60 L0,60Z" fill="url(#adcGrad)"/>
+            </svg>
+            <div class="adc-x-axis">
+              <span>01</span><span>05</span><span>10</span><span>15</span><span>20</span><span>25</span><span>28</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Campanhas -->
+      <div class="adc-chart-card adc-chart-side">
+        <div class="adc-chart-title">Top Campanhas</div>
+        <div class="adc-rank-list">
+          <div class="adc-rank-item">
+            <span class="adc-rank-num">1</span>
+            <div class="adc-rank-info">
+              <div class="adc-rank-name">Black Friday WA</div>
+              <div class="adc-rank-bar-bg"><div class="adc-rank-bar" style="width:100%"></div></div>
+            </div>
+            <span class="adc-rank-val">89</span>
+          </div>
+          <div class="adc-rank-item">
+            <span class="adc-rank-num">2</span>
+            <div class="adc-rank-info">
+              <div class="adc-rank-name">Remarketing IG</div>
+              <div class="adc-rank-bar-bg"><div class="adc-rank-bar" style="width:75%"></div></div>
+            </div>
+            <span class="adc-rank-val">67</span>
+          </div>
+          <div class="adc-rank-item">
+            <span class="adc-rank-num">3</span>
+            <div class="adc-rank-info">
+              <div class="adc-rank-name">Cadastro Site</div>
+              <div class="adc-rank-bar-bg"><div class="adc-rank-bar" style="width:58%"></div></div>
+            </div>
+            <span class="adc-rank-val">52</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom ROI section -->
+    <div class="adc-roi-section">
+      <div class="adc-roi-title">ROI por Campanha</div>
+      <div class="adc-roi-fade"></div>
+    </div>
   </div>
 </div>
+
 <style>
-  .ad-frame{width:100%;max-width:320px;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04);background:#fff;border:1px solid rgba(0,0,0,.06);overflow:hidden;font-family:Inter,sans-serif}
-  .ad-header{background:#1F2937;padding:10px 12px;display:flex;align-items:center;gap:6px}
-  .ad-body{padding:8px 10px;display:flex;flex-direction:column;gap:8px}
-  .ad-platform{background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px;padding:8px}
-  .ad-platform-header{display:flex;align-items:center;gap:6px;margin-bottom:4px}
-  .ad-platform-icon{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;flex-shrink:0}
-  .ad-platform-name{font-size:9px;font-weight:700;color:#1F2937;flex:1}
-  .ad-status-green{font-size:6.5px;font-weight:600;color:#059669;background:rgba(16,185,129,.12);padding:1px 5px;border-radius:6px}
-  .ad-account{font-size:6.5px;color:#6B7280;margin-bottom:6px}
-  .ad-metrics{display:flex;gap:10px;margin-bottom:4px}
-  .ad-metric{display:flex;flex-direction:column;gap:1px}
-  .ad-metric-value{font-size:9px;font-weight:700;color:#20B2AA}
-  .ad-metric-label{font-size:6px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.03em}
-  .ad-sync{font-size:6px;color:#9CA3AF;font-style:italic}
-  .ad-tracking{padding:2px 0}
-  .ad-tracking-title{font-size:8px;font-weight:700;color:#1F2937;margin-bottom:4px}
-  .ad-tracking-list{display:flex;flex-direction:column;gap:3px}
-  .ad-tracking-item{display:flex;align-items:center;gap:5px;font-size:7px;color:#374151}
-  .ad-footer{background:#F9FAFB;border-top:1px solid #F3F4F6;padding:6px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:7px;font-weight:600;color:#20B2AA}
-  .ad-footer-dot{width:3px;height:3px;border-radius:50%;background:#20B2AA}
+  .adc-frame{width:100%;max-width:360px;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04);background:#fff;border:1px solid rgba(0,0,0,.06);overflow:hidden;font-family:Inter,system-ui,sans-serif}
+  .adc-header{background:#1F2937;padding:8px 12px;display:flex;align-items:center;gap:6px}
+  .adc-header-title{font-size:9px;font-weight:700;color:#fff;letter-spacing:.02em}
+  .adc-body{padding:8px 10px;display:flex;flex-direction:column;gap:7px}
+
+  /* Feature cards row */
+  .adc-cards-row{display:flex;gap:6px}
+  .adc-feature-card{flex:1;background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px;padding:7px 6px 5px;display:flex;flex-direction:column;gap:5px}
+  .adc-feature-top{display:flex;align-items:flex-start;gap:5px}
+  .adc-icon-circle{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .adc-icon-amber{background:#F59E0B}
+  .adc-icon-purple{background:#8B5CF6}
+  .adc-feature-info{flex:1;min-width:0}
+  .adc-feature-title{font-size:7.5px;font-weight:700;color:#1F2937;line-height:1.2}
+  .adc-feature-sub{font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-top:1px}
+  .adc-feature-list{display:flex;flex-direction:column;gap:2.5px;padding-left:2px}
+  .adc-feature-item{display:flex;align-items:center;gap:4px;font-size:6.5px;color:#374151}
+  .adc-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
+  .adc-dot-green{background:#10B981}
+  .adc-dot-gray{background:#D1D5DB}
+  .adc-feature-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #F3F4F6;padding-top:4px;margin-top:2px}
+  .adc-feature-count{font-size:5.5px;color:#9CA3AF}
+  .adc-feature-link{font-size:6px;font-weight:600;color:#20B2AA}
+
+  /* Quick links */
+  .adc-quick-links{display:flex;gap:8px;justify-content:center;padding:2px 0}
+  .adc-quick-link{display:flex;align-items:center;gap:3px;font-size:6px;font-weight:600;color:#20B2AA;white-space:nowrap}
+
+  /* Period tabs */
+  .adc-period-tabs{display:flex;gap:4px;padding:0 2px}
+  .adc-tab{font-size:6.5px;font-weight:600;padding:2px 8px;border-radius:8px}
+  .adc-tab-inactive{color:#9CA3AF;background:#F3F4F6}
+  .adc-tab-active{color:#fff;background:#20B2AA}
+
+  /* KPI row */
+  .adc-kpi-row{display:flex;gap:5px}
+  .adc-kpi{flex:1;background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px;padding:5px 4px;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .adc-kpi-icon{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .adc-kpi-icon-teal{background:#20B2AA}
+  .adc-kpi-icon-green{background:#10B981}
+  .adc-kpi-icon-purple{background:#8B5CF6}
+  .adc-kpi-label{font-size:4.5px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+  .adc-kpi-value{font-size:8.5px;font-weight:800;color:#1F2937}
+
+  /* Charts row */
+  .adc-charts-row{display:flex;gap:6px}
+  .adc-chart-card{background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px;padding:6px}
+  .adc-chart-main{flex:3}
+  .adc-chart-side{flex:2}
+  .adc-chart-title{font-size:7px;font-weight:700;color:#1F2937;margin-bottom:4px}
+
+  /* Line chart */
+  .adc-chart-area{display:flex;gap:3px}
+  .adc-y-axis{display:flex;flex-direction:column;justify-content:space-between;font-size:4.5px;color:#9CA3AF;text-align:right;padding:0 1px;height:50px}
+  .adc-chart-plot{flex:1;display:flex;flex-direction:column}
+  .adc-line-svg{width:100%;height:50px}
+  .adc-x-axis{display:flex;justify-content:space-between;font-size:4.5px;color:#9CA3AF;padding-top:2px}
+
+  /* Rank list */
+  .adc-rank-list{display:flex;flex-direction:column;gap:5px}
+  .adc-rank-item{display:flex;align-items:center;gap:4px}
+  .adc-rank-num{font-size:6px;font-weight:700;color:#9CA3AF;width:8px;text-align:center}
+  .adc-rank-info{flex:1;min-width:0}
+  .adc-rank-name{font-size:6px;font-weight:600;color:#1F2937;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .adc-rank-bar-bg{height:3px;background:#F3F4F6;border-radius:2px;margin-top:2px}
+  .adc-rank-bar{height:100%;background:#20B2AA;border-radius:2px}
+  .adc-rank-val{font-size:6.5px;font-weight:700;color:#20B2AA;white-space:nowrap}
+
+  /* ROI bottom section */
+  .adc-roi-section{position:relative;padding:4px 0 0}
+  .adc-roi-title{font-size:7px;font-weight:700;color:#1F2937;padding:0 2px}
+  .adc-roi-fade{height:14px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.95));margin-top:2px}
 </style>
