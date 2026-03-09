@@ -1,0 +1,250 @@
+---
+/** MockupAgentMonitor — yaOps Torre de Controle > Equipe tab (operator monitoring) */
+---
+<div style="max-width: 380px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06); font-family: 'Inter', system-ui, sans-serif; overflow: hidden; color: #1F2937;">
+
+  <!-- Header: yaOps Torre de Controle -->
+  <div style="padding: 12px 14px 0; border-bottom: 1px solid #F3F4F6;">
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+      <!-- Tower icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+      <span style="font-size: 11px; font-weight: 700; color: #0F0F0F;">yaOps</span>
+      <span style="font-size: 9px; color: #6B7280; font-weight: 500;">Torre de Controle</span>
+    </div>
+    <!-- Tabs -->
+    <div style="display: flex; gap: 0; margin: 0 -14px; padding: 0 14px;">
+      <div style="padding: 6px 12px; font-size: 8px; color: #9CA3AF; font-weight: 500; cursor: default;">Visão Geral</div>
+      <div style="padding: 6px 12px; font-size: 8px; color: #20B2AA; font-weight: 600; border-bottom: 2px solid #20B2AA; cursor: default;">Equipe</div>
+      <div style="padding: 6px 12px; font-size: 8px; color: #9CA3AF; font-weight: 500; cursor: default;">Filas</div>
+      <div style="padding: 6px 12px; font-size: 8px; color: #9CA3AF; font-weight: 500; cursor: default;">SLA</div>
+    </div>
+  </div>
+
+  <!-- Content area -->
+  <div style="padding: 12px 14px 14px;">
+
+    <!-- Section header -->
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#434A54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #0F0F0F;">Equipe</span>
+    </div>
+    <div style="font-size: 7px; color: #9CA3AF; margin-bottom: 10px; margin-left: 18px;">Setores, operadores e capacidades de atendimento</div>
+
+    <!-- Tab pills: Setores / Operadores -->
+    <div style="display: flex; gap: 4px; margin-bottom: 10px;">
+      <div style="padding: 3px 10px; font-size: 7px; font-weight: 500; color: #6B7280; background: #F3F4F6; border-radius: 100px; cursor: default;">Setores</div>
+      <div style="padding: 3px 10px; font-size: 7px; font-weight: 600; color: #fff; background: #20B2AA; border-radius: 100px; cursor: default;">Operadores</div>
+    </div>
+
+    <!-- 4 Metric cards row -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px;">
+      <!-- Online -->
+      <div style="background: #F9FAFB; border-radius: 10px; padding: 8px 6px; text-align: center;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 2px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div style="font-size: 14px; font-weight: 800; color: #20B2AA; line-height: 1.1;">8</div>
+        <div style="font-size: 6px; color: #9CA3AF; font-weight: 500; margin-top: 1px;">Online</div>
+      </div>
+      <!-- Ocupação média -->
+      <div style="background: #F9FAFB; border-radius: 10px; padding: 8px 6px; text-align: center;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#434A54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 2px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div style="font-size: 14px; font-weight: 800; color: #0F0F0F; line-height: 1.1;">72%</div>
+        <div style="font-size: 6px; color: #9CA3AF; font-weight: 500; margin-top: 1px;">Ocupação média</div>
+      </div>
+      <!-- Perto do Limite -->
+      <div style="background: #F9FAFB; border-radius: 10px; padding: 8px 6px; text-align: center;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div style="font-size: 14px; font-weight: 800; color: #F59E0B; line-height: 1.1;">2</div>
+        <div style="font-size: 6px; color: #9CA3AF; font-weight: 500; margin-top: 1px;">Perto do Limite</div>
+      </div>
+      <!-- Ociosos -->
+      <div style="background: #F9FAFB; border-radius: 10px; padding: 8px 6px; text-align: center;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div style="font-size: 14px; font-weight: 800; color: #9CA3AF; line-height: 1.1;">1</div>
+        <div style="font-size: 6px; color: #9CA3AF; font-weight: 500; margin-top: 1px;">Ociosos</div>
+      </div>
+    </div>
+
+    <!-- Capacidade por Operador section -->
+    <div style="margin-bottom: 6px;">
+      <div style="font-size: 9px; font-weight: 700; color: #0F0F0F; margin-bottom: 1px;">Capacidade por Operador</div>
+      <div style="font-size: 7px; color: #9CA3AF; margin-bottom: 8px;">Operadores atendendo neste momento</div>
+    </div>
+
+    <!-- Table header -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; padding: 0 0 4px; border-bottom: 1px solid #F3F4F6; margin-bottom: 4px;">
+      <div style="font-size: 6px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase;">Operador</div>
+      <div style="font-size: 6px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase;">Status</div>
+      <div style="font-size: 6px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase;">Atual</div>
+      <div style="font-size: 6px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase; text-align: right;">Max</div>
+    </div>
+
+    <!-- Row 1: Lucas Ferreira — 47/50 ~94% amber -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Lucas Ferreira</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Comercial</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #F59E0B;">47</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 94%; height: 100%; background: #F59E0B; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">50</div>
+    </div>
+
+    <!-- Row 2: Amanda Costa — 38/50 ~76% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Amanda Costa</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Comercial</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">38</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 76%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">50</div>
+    </div>
+
+    <!-- Row 3: Rafael Mendes — 42/60 ~70% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Rafael Mendes</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Suporte</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">42</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 70%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">60</div>
+    </div>
+
+    <!-- Row 4: Juliana Santos — 35/50 ~70% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Juliana Santos</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Comercial</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">35</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 70%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">50</div>
+    </div>
+
+    <!-- Row 5: Pedro Almeida — 28/40 ~70% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Pedro Almeida</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Suporte</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">28</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 70%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">40</div>
+    </div>
+
+    <!-- Row 6: Carla Ribeiro — 15/50 ~30% gray (Pausa) -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Carla Ribeiro</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Comercial</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #D97706; background: #FFFBEB; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+          Pausa
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #9CA3AF;">15</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 30%; height: 100%; background: #D1D5DB; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">50</div>
+    </div>
+
+    <!-- Row 7: Bruno Oliveira — 22/40 ~55% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0; border-bottom: 1px solid #F9FAFB;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Bruno Oliveira</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Suporte</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">22</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 55%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">40</div>
+    </div>
+
+    <!-- Row 8: Mariana Lima — 19/50 ~38% teal -->
+    <div style="display: grid; grid-template-columns: 1fr 52px 50px 28px; gap: 4px; align-items: center; padding: 5px 0;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #0F0F0F; line-height: 1.2;">Mariana Lima</div>
+        <span style="font-size: 6px; color: #6B7280; background: #F3F4F6; padding: 1px 4px; border-radius: 4px; font-weight: 500;">Comercial</span>
+      </div>
+      <div>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 7px; font-weight: 600; color: #16A34A; background: #F0FDF4; padding: 2px 6px; border-radius: 100px;">
+          <span style="width: 4px; height: 4px; border-radius: 50%; background: #16A34A; display: inline-block;"></span>
+          Online
+        </span>
+      </div>
+      <div>
+        <div style="font-size: 9px; font-weight: 700; color: #20B2AA;">19</div>
+        <div style="width: 100%; height: 3px; background: #F3F4F6; border-radius: 2px; margin-top: 2px;">
+          <div style="width: 38%; height: 100%; background: #20B2AA; border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div style="font-size: 8px; font-weight: 500; color: #9CA3AF; text-align: right;">50</div>
+    </div>
+
+  </div>
+</div>

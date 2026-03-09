@@ -1,0 +1,125 @@
+---
+/** MockupSLA — SLA configuration drawer panel (Editar Setor > SLA tab) */
+---
+<div style="width: 100%; max-width: 340px; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04); background: #ffffff; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; font-family: Inter, sans-serif;">
+
+  <!-- Header with teal gradient -->
+  <div style="background: linear-gradient(135deg, #20B2AA, #14B8A6); padding: 14px 16px 12px; display: flex; align-items: center; gap: 10px;">
+    <div style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;">C</div>
+    <div>
+      <div style="font-size: 11px; font-weight: 700; color: #fff; font-family: Poppins, Inter, sans-serif;">Editar Setor</div>
+      <div style="font-size: 8px; color: rgba(255,255,255,0.8); margin-top: 1px;">Comercial</div>
+    </div>
+  </div>
+
+  <!-- Tabs row -->
+  <div style="display: flex; align-items: center; gap: 0; border-bottom: 1px solid #E5E7EB; padding: 0 12px; overflow-x: auto; white-space: nowrap;">
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">Geral</div>
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">Membros</div>
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">Canais</div>
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">Horários</div>
+    <div style="font-size: 8px; color: #1F2937; font-weight: 700; padding: 8px 8px 6px; border-bottom: 2px solid #20B2AA; cursor: default;">SLA</div>
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">IA</div>
+    <div style="font-size: 8px; color: #9CA3AF; padding: 8px 8px 7px; cursor: default;">R...</div>
+  </div>
+
+  <!-- Content area -->
+  <div style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+
+    <!-- SLA de Tempo de Resposta card -->
+    <div style="border: 1px solid #E5E7EB; border-radius: 10px; padding: 10px;">
+      <div style="font-size: 9px; font-weight: 700; color: #1F2937; margin-bottom: 8px;">SLA de Tempo de Resposta</div>
+
+      <!-- Two fields side by side -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+        <!-- Primeira resposta -->
+        <div>
+          <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Primeira resposta (minutos)</div>
+          <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">15</div>
+          <div style="font-size: 6px; color: #9CA3AF; margin-top: 2px; line-height: 1.3;">Tempo para considerar SLA violado</div>
+        </div>
+        <!-- Limite de alerta -->
+        <div>
+          <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Limite de alerta (%)</div>
+          <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">80</div>
+          <div style="font-size: 6px; color: #9CA3AF; margin-top: 2px; line-height: 1.3;">Exibir alerta quando atingir este % do tempo</div>
+        </div>
+      </div>
+
+      <!-- Tempo de resolucao -->
+      <div>
+        <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Tempo de resolução (horas)</div>
+        <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">24</div>
+        <div style="font-size: 6px; color: #9CA3AF; margin-top: 2px; line-height: 1.3;">Tempo máximo para resolver a conversa</div>
+      </div>
+    </div>
+
+    <!-- Fechar automaticamente -->
+    <div>
+      <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Fechar automaticamente após (horas)</div>
+      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">48</div>
+      <div style="font-size: 6px; color: #9CA3AF; margin-top: 2px; line-height: 1.3;">Deixe vazio para desabilitar fechamento automático</div>
+    </div>
+
+    <!-- Escalacao card -->
+    <div style="border: 1px solid #FBBF24; border-radius: 10px; padding: 10px; background: rgba(251,191,36,0.04);">
+      <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 8px;">
+        <span style="font-size: 11px;">&#9888;</span>
+        <div style="font-size: 9px; font-weight: 700; color: #1F2937;">Escalação</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <!-- Escalonar apos -->
+        <div>
+          <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Escalonar após (minutos)</div>
+          <div style="background: #fff; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">30</div>
+        </div>
+        <!-- Setor de escalacao -->
+        <div>
+          <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Setor de Escalação</div>
+          <div style="background: #fff; border: 1px solid #20B2AA; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+            <span>Supervisão</span>
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toggle: Exigir nota ao resolver — OFF -->
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; padding: 6px 0;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">Exigir nota ao resolver</div>
+        <div style="font-size: 6.5px; color: #9CA3AF; margin-top: 1px; line-height: 1.3;">Agentes devem adicionar uma nota ao resolver</div>
+      </div>
+      <!-- OFF toggle -->
+      <div style="width: 28px; height: 16px; border-radius: 8px; background: #D1D5DB; position: relative; flex-shrink: 0; margin-top: 1px;">
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: #fff; position: absolute; top: 2px; left: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.15);"></div>
+      </div>
+    </div>
+
+    <!-- Toggle: Permitir reabrir conversa — ON -->
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; padding: 6px 0;">
+      <div>
+        <div style="font-size: 8px; font-weight: 600; color: #1F2937;">Permitir reabrir conversa</div>
+        <div style="font-size: 6.5px; color: #9CA3AF; margin-top: 1px; line-height: 1.3;">Permite reabrir conversas fechadas</div>
+      </div>
+      <!-- ON toggle (teal) -->
+      <div style="width: 28px; height: 16px; border-radius: 8px; background: #20B2AA; position: relative; flex-shrink: 0; margin-top: 1px;">
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: #fff; position: absolute; top: 2px; right: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.15);"></div>
+      </div>
+    </div>
+
+    <!-- Janela de reabertura -->
+    <div>
+      <div style="font-size: 7px; font-weight: 600; color: #6B7280; margin-bottom: 3px;">Janela de reabertura (horas)</div>
+      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 5px 8px; font-size: 9px; color: #1F2937; font-weight: 600;">24</div>
+    </div>
+
+    <!-- Footer buttons -->
+    <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 4px; padding-top: 10px; border-top: 1px solid #F3F4F6;">
+      <div style="font-size: 8px; font-weight: 600; color: #6B7280; padding: 6px 14px; border: 1px solid #E5E7EB; border-radius: 8px; cursor: default;">Cancelar</div>
+      <div style="font-size: 8px; font-weight: 600; color: #fff; padding: 6px 14px; border-radius: 8px; background: linear-gradient(135deg, #20B2AA, #14B8A6); cursor: default;">Salvar Alterações</div>
+    </div>
+
+  </div>
+</div>

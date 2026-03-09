@@ -1,0 +1,375 @@
+---
+/** MockupAnalytics — yaPerformance analytics dashboard (static HTML/CSS mockup) */
+---
+<div class="perf-frame">
+  <!-- Traffic lights + header -->
+  <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+    <div style="width:7px;height:7px;border-radius:50%;background:#EF4444;"></div>
+    <div style="width:7px;height:7px;border-radius:50%;background:#F59E0B;"></div>
+    <div style="width:7px;height:7px;border-radius:50%;background:#22C55E;"></div>
+    <div style="flex:1;"></div>
+  </div>
+
+  <!-- Header -->
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+    <div style="width:24px;height:24px;border-radius:8px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#111827;font-family:Poppins,sans-serif;">yaPerformance</div>
+      <div style="font-size:7px;color:#9CA3AF;line-height:1.3;">Central de relatorios, metricas e analytics</div>
+    </div>
+  </div>
+
+  <!-- Period tabs -->
+  <div style="display:flex;gap:4px;margin:10px 0 12px;">
+    <div class="perf-tab perf-tab-active">Esse mes</div>
+    <div class="perf-tab">Mes passado</div>
+    <div class="perf-tab">Esse trimestre</div>
+  </div>
+
+  <!-- FUNIL DE CONVERSAO -->
+  <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v-2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+    <div style="font-size:7px;font-weight:700;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;">Funil de Conversao</div>
+  </div>
+  <div style="display:flex;gap:4px;margin-bottom:12px;">
+    <!-- TOTAL LEADS -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v-2"/><circle cx="9" cy="7" r="4"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Total Leads</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">1.247</div>
+    </div>
+    <!-- TOTAL CONVERSAS -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Total Conversas</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">3.891</div>
+    </div>
+    <!-- QUALIFICADOS -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Qualificados</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">412</div>
+    </div>
+    <!-- GANHOS -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><path d="M12 2l2.4 7.4H22l-6 4.6L18.4 21 12 16.8 5.6 21 8 14l-6-4.6h7.6z"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Ganhos</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">89</div>
+    </div>
+    <!-- RECEITA TOTAL -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Receita Total</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">R$ 847K</div>
+    </div>
+  </div>
+
+  <!-- AUTOMACAO & IA -->
+  <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    <div style="font-size:7px;font-weight:700;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;">Automacao &amp; IA</div>
+  </div>
+  <div style="display:flex;gap:4px;margin-bottom:12px;">
+    <!-- AUTOMACAO IA -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 017 7c0 3-2 5-3 7H8c-1-2-3-4-3-7a7 7 0 017-7z"/><path d="M9 22h6"/><path d="M10 18h4"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Automacao IA</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">67%</div>
+    </div>
+    <!-- FLOWS EXECUTADOS -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Flows Executados</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">2.341</div>
+    </div>
+    <!-- WHISPER RATE -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Whisper Rate</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">84%</div>
+    </div>
+    <!-- TOKENS (M) -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Tokens (M)</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">12.4</div>
+    </div>
+    <!-- ECONOMIA IA -->
+    <div class="perf-metric">
+      <div style="width:16px;height:16px;border-radius:5px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:3px;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1px;">Economia IA</div>
+      <div style="font-size:11px;font-weight:700;color:#111827;">R$ 43K</div>
+    </div>
+  </div>
+
+  <!-- RELATORIOS DETALHADOS -->
+  <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+    <div style="font-size:7px;font-weight:700;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase;">Relatorios Detalhados</div>
+  </div>
+
+  <!-- Report cards grid: 2 columns x 4 rows -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+
+    <!-- Row 1: Funil de Vendas -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Funil de Vendas</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Lifecycle de leads e pipeline por stage</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Lead&rarr;MQL&rarr;SQL&rarr;Opp</div>
+        <div class="perf-bullet">Alertas de SLA</div>
+        <div class="perf-bullet">Marketing ROI</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 1: Atendimento & SLA -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Atendimento &amp; SLA</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Tempos de resposta e resolucao</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">FRT (P50, P95)</div>
+        <div class="perf-bullet">Taxa de SLA</div>
+        <div class="perf-bullet">Por canal</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 2: Performance Agentes -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v-2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Performance Agentes</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Ranking e carga de trabalho do time</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Ranking por FRT</div>
+        <div class="perf-bullet">CSAT por agente</div>
+        <div class="perf-bullet">Utilizacao</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 2: Pipeline & Revenue -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Pipeline &amp; Revenue</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Forecast e velocidade de vendas</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Win rate</div>
+        <div class="perf-bullet">Ciclo medio</div>
+        <div class="perf-bullet">Deal health</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 3: Atribuicao & ROAS -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(32,178,170,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Atribuicao &amp; ROAS</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Funil por origem e retorno por campanha</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Funil por Origem</div>
+        <div class="perf-bullet">ROAS por Campanha</div>
+        <div class="perf-bullet">Deal&rarr;Campanha</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 3: Conversoes (CAPI) -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Conversoes (CAPI)</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Envio de conversoes para Meta e Google</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Meta CAPI</div>
+        <div class="perf-bullet">Google Conversions</div>
+        <div class="perf-bullet">Logs &amp; Debug</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 4: Campanhas & Ads -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;">Campanhas &amp; Ads</div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">ROI real — do clique ao deal</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">CPL por campanha</div>
+        <div class="perf-bullet">ROAS</div>
+        <div class="perf-bullet">Atribuicao UTM</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+        <div style="font-size:5.5px;color:#20B2AA;font-weight:600;">Abrir &rarr;</div>
+      </div>
+    </div>
+
+    <!-- Row 4: Templates WhatsApp -->
+    <div class="perf-report">
+      <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+        <div style="width:14px;height:14px;border-radius:4px;background:rgba(107,114,128,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div style="font-size:7px;font-weight:700;color:#111827;display:flex;align-items:center;gap:3px;">Templates WhatsApp <span class="perf-badge-soon">Em breve</span></div>
+      </div>
+      <div style="font-size:5.5px;color:#9CA3AF;line-height:1.3;margin-bottom:3px;">Performance de mensageria</div>
+      <div style="display:flex;flex-direction:column;gap:1px;margin-bottom:4px;">
+        <div class="perf-bullet">Taxa de entrega</div>
+        <div class="perf-bullet">Taxa de leitura</div>
+        <div class="perf-bullet">Revenue/template</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:5px;color:#9CA3AF;">3 de 3 ativos</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .perf-frame {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 14px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F2937;
+    overflow: hidden;
+  }
+
+  .perf-tab {
+    font-size: 6.5px;
+    font-weight: 500;
+    color: #9CA3AF;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #F3F4F6;
+  }
+
+  .perf-tab-active {
+    background: #20B2AA;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .perf-metric {
+    flex: 1;
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 6px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .perf-report {
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 7px 8px;
+  }
+
+  .perf-bullet {
+    font-size: 5.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    padding-left: 7px;
+    position: relative;
+  }
+
+  .perf-bullet::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #D1D5DB;
+  }
+
+  .perf-badge-soon {
+    display: inline-block;
+    font-size: 5px;
+    font-weight: 600;
+    color: #9CA3AF;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    padding: 1px 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+</style>
