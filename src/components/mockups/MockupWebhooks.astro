@@ -1,0 +1,284 @@
+---
+/** MockupWebhooks — Webhooks & Connect panel for yapt.ai integrations page */
+---
+<div class="wh-frame">
+  <!-- Header bar -->
+  <div class="wh-header">
+    <svg class="wh-header-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    <span class="wh-header-title">Webhooks & Connect</span>
+  </div>
+
+  <!-- Endpoint config section -->
+  <div class="wh-config">
+    <div class="wh-config-label">Endpoint URL</div>
+    <div class="wh-url-input">https://api.cliente.com/yapt-events</div>
+
+    <div class="wh-config-label" style="margin-top:6px;">Eventos</div>
+    <div class="wh-chips">
+      <span class="wh-chip wh-chip-selected">Mensagem Recebida</span>
+      <span class="wh-chip">Lead Criado</span>
+      <span class="wh-chip">Atendimento Encerrado</span>
+      <span class="wh-chip">Status Alterado</span>
+    </div>
+
+    <div class="wh-config-label" style="margin-top:6px;">Secret Key</div>
+    <div class="wh-secret-input">whsec_&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;kX9f</div>
+  </div>
+
+  <!-- Live event stream -->
+  <div class="wh-stream">
+    <div class="wh-stream-header">
+      <span class="wh-pulse-dot"></span>
+      <span class="wh-stream-title">Eventos em tempo real</span>
+    </div>
+
+    <!-- Event rows -->
+    <div class="wh-event-row">
+      <span class="wh-ts">10:42:03</span>
+      <span class="wh-event-badge wh-badge-green">message.received</span>
+      <span class="wh-status wh-status-ok">200 OK</span>
+    </div>
+    <div class="wh-event-row">
+      <span class="wh-ts">10:42:01</span>
+      <span class="wh-event-badge wh-badge-blue">lead.created</span>
+      <span class="wh-status wh-status-ok">200 OK</span>
+    </div>
+    <div class="wh-event-row">
+      <span class="wh-ts">10:41:58</span>
+      <span class="wh-event-badge wh-badge-purple">ticket.closed</span>
+      <span class="wh-status wh-status-ok">200 OK</span>
+    </div>
+    <div class="wh-event-row">
+      <span class="wh-ts">10:41:55</span>
+      <span class="wh-event-badge wh-badge-green">message.received</span>
+      <span class="wh-status wh-status-retry">408 Retry</span>
+    </div>
+  </div>
+
+  <!-- Footer stats bar -->
+  <div class="wh-footer">
+    <span class="wh-footer-stat">347 eventos/hora</span>
+    <span class="wh-footer-sep"></span>
+    <span class="wh-footer-stat">99.7% success</span>
+    <span class="wh-footer-sep"></span>
+    <span class="wh-footer-stat">~120ms</span>
+  </div>
+</div>
+
+<style>
+  .wh-frame {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+  }
+
+  /* Header bar */
+  .wh-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #1F2937;
+  }
+
+  .wh-header-icon {
+    flex-shrink: 0;
+  }
+
+  .wh-header-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+  }
+
+  /* Config section */
+  .wh-config {
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  .wh-config-label {
+    font-size: 7px;
+    font-weight: 600;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+  }
+
+  .wh-url-input {
+    font-size: 7.5px;
+    color: #374151;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .wh-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .wh-chip {
+    font-size: 6.5px;
+    font-weight: 500;
+    color: #6B7280;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
+  .wh-chip-selected {
+    color: #ffffff;
+    background: #20B2AA;
+    border-color: #20B2AA;
+  }
+
+  .wh-secret-input {
+    font-size: 7.5px;
+    color: #6B7280;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    letter-spacing: 0.3px;
+  }
+
+  /* Live stream section */
+  .wh-stream {
+    padding: 8px 12px 6px;
+  }
+
+  .wh-stream-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .wh-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.25);
+    flex-shrink: 0;
+    animation: wh-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes wh-pulse {
+    0%, 100% { box-shadow: 0 0 0 2px rgba(34,197,94,0.25); }
+    50% { box-shadow: 0 0 0 4px rgba(34,197,94,0.12); }
+  }
+
+  .wh-stream-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: #1F2937;
+  }
+
+  /* Event rows */
+  .wh-event-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 0;
+    border-bottom: 1px solid #F9FAFB;
+  }
+
+  .wh-event-row:last-child {
+    border-bottom: none;
+  }
+
+  .wh-ts {
+    font-size: 7px;
+    color: #9CA3AF;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    flex-shrink: 0;
+    width: 38px;
+  }
+
+  .wh-event-badge {
+    font-size: 6.5px;
+    font-weight: 600;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex: 1;
+    text-align: center;
+    max-width: fit-content;
+  }
+
+  .wh-badge-green {
+    color: #065F46;
+    background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.2);
+  }
+
+  .wh-badge-blue {
+    color: #1E40AF;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+  }
+
+  .wh-badge-purple {
+    color: #6B21A8;
+    background: rgba(147,51,234,0.1);
+    border: 1px solid rgba(147,51,234,0.2);
+  }
+
+  .wh-status {
+    font-size: 7px;
+    font-weight: 700;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .wh-status-ok {
+    color: #22C55E;
+  }
+
+  .wh-status-retry {
+    color: #F59E0B;
+  }
+
+  /* Footer stats */
+  .wh-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 7px 12px;
+    background: #F9FAFB;
+    border-top: 1px solid #F3F4F6;
+  }
+
+  .wh-footer-stat {
+    font-size: 7px;
+    font-weight: 600;
+    color: #6B7280;
+  }
+
+  .wh-footer-sep {
+    width: 1px;
+    height: 10px;
+    background: #E5E7EB;
+  }
+</style>

@@ -1,0 +1,318 @@
+---
+/** MockupProductivity — Connected productivity tools panel with sync status */
+---
+<div class="pt-frame">
+  <!-- Header -->
+  <div class="pt-header">
+    <div class="pt-header-left">
+      <div class="pt-header-icon">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </div>
+      <span class="pt-header-title">Ferramentas Conectadas</span>
+    </div>
+    <span class="pt-header-badge">6 ativas</span>
+  </div>
+
+  <!-- Tools list -->
+  <div class="pt-list">
+    <!-- Google Calendar -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #4285F4;">G</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">Google Calendar</span>
+          <span class="pt-tool-sync">Ultimo: 2min atras</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-green">Sincronizado</span>
+    </div>
+
+    <!-- Google Sheets -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #34A853;">G</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">Google Sheets</span>
+          <span class="pt-tool-sync">347 linhas hoje</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-green">Sincronizado</span>
+    </div>
+
+    <!-- Slack -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #7C3AED;">S</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">Slack</span>
+          <span class="pt-tool-sync">12 alertas/hora</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-green">Conectado</span>
+    </div>
+
+    <!-- HubSpot CRM -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #FF7A59;">H</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">HubSpot CRM</span>
+          <span class="pt-tool-sync">89 leads sync</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-green">Sincronizado</span>
+    </div>
+
+    <!-- Zapier -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #FF4A00;">Z</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">Zapier</span>
+          <span class="pt-tool-sync">1.2k runs/dia</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-amber">5 Zaps ativos</span>
+    </div>
+
+    <!-- Make (Integromat) -->
+    <div class="pt-row">
+      <div class="pt-row-left">
+        <div class="pt-tool-icon" style="background: #6D00CC;">M</div>
+        <div class="pt-tool-info">
+          <span class="pt-tool-name">Make (Integromat)</span>
+          <span class="pt-tool-sync">847 ops/dia</span>
+        </div>
+      </div>
+      <span class="pt-badge pt-badge-green">3 cenarios</span>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="pt-divider"></div>
+
+  <!-- Add tool section -->
+  <div class="pt-add-section">
+    <div class="pt-search-input">
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <span class="pt-search-text">Buscar integracoes...</span>
+    </div>
+    <div class="pt-chips">
+      <span class="pt-chip">Salesforce</span>
+      <span class="pt-chip">Jira</span>
+      <span class="pt-chip">Trello</span>
+    </div>
+  </div>
+
+  <!-- Bottom stats -->
+  <div class="pt-stats">
+    <div class="pt-stat">
+      <span class="pt-stat-value">6</span>
+      <span class="pt-stat-label">conexoes ativas</span>
+    </div>
+    <div class="pt-stat-divider"></div>
+    <div class="pt-stat">
+      <span class="pt-stat-value">99.8%</span>
+      <span class="pt-stat-label">uptime</span>
+    </div>
+    <div class="pt-stat-divider"></div>
+    <div class="pt-stat">
+      <span class="pt-stat-value">2.4k</span>
+      <span class="pt-stat-label">sync/dia</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pt-frame {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Header */
+  .pt-header {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #F3F4F6;
+  }
+  .pt-header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pt-header-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #20B2AA, #2DD4BF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .pt-header-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #1F2937;
+  }
+  .pt-header-badge {
+    font-size: 7px;
+    font-weight: 600;
+    color: #20B2AA;
+    background: rgba(32, 178, 170, 0.08);
+    border: 1px solid rgba(32, 178, 170, 0.15);
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  /* Tools list */
+  .pt-list {
+    padding: 4px 0;
+  }
+  .pt-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 12px;
+  }
+  .pt-row-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+  .pt-tool-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 7px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+  .pt-tool-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+  .pt-tool-name {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #1F2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pt-tool-sync {
+    font-size: 6px;
+    color: #9CA3AF;
+  }
+
+  /* Badges */
+  .pt-badge {
+    font-size: 6px;
+    font-weight: 600;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pt-badge-green {
+    background: rgba(34, 197, 94, 0.08);
+    color: #16A34A;
+    border: 1px solid rgba(34, 197, 94, 0.15);
+  }
+  .pt-badge-amber {
+    background: rgba(245, 158, 11, 0.08);
+    color: #D97706;
+    border: 1px solid rgba(245, 158, 11, 0.15);
+  }
+
+  /* Divider */
+  .pt-divider {
+    height: 1px;
+    background: #F3F4F6;
+    margin: 2px 0;
+  }
+
+  /* Add tool section */
+  .pt-add-section {
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pt-search-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+  }
+  .pt-search-text {
+    font-size: 7px;
+    color: #9CA3AF;
+  }
+  .pt-chips {
+    display: flex;
+    gap: 4px;
+  }
+  .pt-chip {
+    font-size: 6px;
+    font-weight: 500;
+    color: #9CA3AF;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    padding: 2px 6px;
+    border-radius: 4px;
+    opacity: 0.7;
+  }
+
+  /* Bottom stats */
+  .pt-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 7px 12px;
+    background: #FAFBFC;
+    border-top: 1px solid #F3F4F6;
+  }
+  .pt-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    flex: 1;
+  }
+  .pt-stat-value {
+    font-size: 8px;
+    font-weight: 700;
+    color: #20B2AA;
+  }
+  .pt-stat-label {
+    font-size: 6px;
+    color: #9CA3AF;
+  }
+  .pt-stat-divider {
+    width: 1px;
+    height: 16px;
+    background: #E5E7EB;
+  }
+</style>

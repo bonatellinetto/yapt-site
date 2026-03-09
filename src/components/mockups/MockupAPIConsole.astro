@@ -1,0 +1,290 @@
+---
+/** MockupAPIConsole — API & Developer Tools console mockup (integrations page) */
+---
+<div class="ac-frame">
+  <!-- Header bar -->
+  <div class="ac-header">
+    <div class="ac-header-left">
+      <svg class="ac-terminal-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/>
+        <line x1="12" y1="19" x2="20" y2="19"/>
+      </svg>
+      <span class="ac-header-title">yapt. API Console</span>
+    </div>
+    <span class="ac-version-badge">v2.1</span>
+  </div>
+
+  <!-- API Key section -->
+  <div class="ac-key-section">
+    <div class="ac-key-label">
+      <span>API Key</span>
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+      </svg>
+    </div>
+    <div class="ac-key-row">
+      <span class="ac-key-value">ypt_live_&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;7xKm</span>
+      <span class="ac-active-badge">Ativa</span>
+    </div>
+  </div>
+
+  <!-- Request builder -->
+  <div class="ac-request-section">
+    <div class="ac-endpoint-row">
+      <span class="ac-method-badge">POST</span>
+      <span class="ac-endpoint-url">/v2/messages/send</span>
+    </div>
+    <div class="ac-code-block">
+      <code class="ac-code">
+        <span class="ac-syn-br">&#123;</span><br/>
+        &nbsp;&nbsp;<span class="ac-syn-key">"to"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"+5511999887766"</span><span class="ac-syn-br">,</span><br/>
+        &nbsp;&nbsp;<span class="ac-syn-key">"type"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"template"</span><span class="ac-syn-br">,</span><br/>
+        &nbsp;&nbsp;<span class="ac-syn-key">"template"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"welcome_lead"</span><span class="ac-syn-br">,</span><br/>
+        &nbsp;&nbsp;<span class="ac-syn-key">"params"</span><span class="ac-syn-br">:</span> <span class="ac-syn-br">[</span><span class="ac-syn-str">"Jo&atilde;o"</span><span class="ac-syn-br">,</span> <span class="ac-syn-str">"Premium"</span><span class="ac-syn-br">]</span><br/>
+        <span class="ac-syn-br">&#125;</span>
+      </code>
+    </div>
+  </div>
+
+  <!-- Response section -->
+  <div class="ac-response-header">
+    <span class="ac-status-badge">200 OK</span>
+    <span class="ac-latency">143ms</span>
+  </div>
+  <div class="ac-code-block ac-code-block-sm">
+    <code class="ac-code">
+      <span class="ac-syn-br">&#123;</span><br/>
+      &nbsp;&nbsp;<span class="ac-syn-key">"id"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"msg_a8f2k9x"</span><span class="ac-syn-br">,</span><br/>
+      &nbsp;&nbsp;<span class="ac-syn-key">"status"</span><span class="ac-syn-br">:</span> <span class="ac-syn-str">"sent"</span><span class="ac-syn-br">,</span><br/>
+      &nbsp;&nbsp;<span class="ac-syn-key">"timestamp"</span><span class="ac-syn-br">:</span> <span class="ac-syn-num">1741...</span><br/>
+      <span class="ac-syn-br">&#125;</span>
+    </code>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="ac-bottom-bar">
+    <span class="ac-stat">REST + WebSocket</span>
+    <span class="ac-stat-div"></span>
+    <span class="ac-stat">Rate: <strong>1000/min</strong></span>
+    <span class="ac-stat-div"></span>
+    <span class="ac-stat">99.99% uptime</span>
+  </div>
+</div>
+
+<style>
+  .ac-frame {
+    max-width: 320px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 8px 24px rgba(0,0,0,0.05);
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F2937;
+  }
+
+  /* Header */
+  .ac-header {
+    background: #0F172A;
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ac-header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .ac-terminal-icon {
+    flex-shrink: 0;
+  }
+
+  .ac-header-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .ac-version-badge {
+    font-size: 7px;
+    font-weight: 600;
+    color: #20B2AA;
+    background: rgba(32, 178, 170, 0.12);
+    padding: 2px 6px;
+    border-radius: 5px;
+    letter-spacing: 0.02em;
+  }
+
+  /* API Key section */
+  .ac-key-section {
+    padding: 8px 12px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  .ac-key-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 7px;
+    font-weight: 700;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .ac-key-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .ac-key-value {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 7px;
+    color: #475569;
+    background: #F8FAFC;
+    padding: 3px 7px;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+    letter-spacing: 0.01em;
+  }
+
+  .ac-active-badge {
+    font-size: 6.5px;
+    font-weight: 700;
+    color: #059669;
+    background: rgba(5, 150, 105, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Request section */
+  .ac-request-section {
+    padding: 8px 12px 0;
+  }
+
+  .ac-endpoint-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 6px;
+  }
+
+  .ac-method-badge {
+    display: inline-block;
+    background: #059669;
+    color: #fff;
+    font-size: 7px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  .ac-endpoint-url {
+    font-size: 8px;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  /* Code blocks */
+  .ac-code-block {
+    background: #1E293B;
+    margin: 0 0 8px;
+    border-radius: 8px;
+    padding: 8px 10px;
+    overflow-x: auto;
+  }
+
+  .ac-request-section .ac-code-block {
+    margin: 0;
+  }
+
+  .ac-code-block-sm {
+    margin: 0 12px 0;
+  }
+
+  .ac-code {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 7px;
+    line-height: 1.7;
+    display: block;
+  }
+
+  /* Syntax highlighting */
+  .ac-syn-key {
+    color: #2DD4BF;
+  }
+
+  .ac-syn-str {
+    color: #FBBF24;
+  }
+
+  .ac-syn-num {
+    color: #A78BFA;
+  }
+
+  .ac-syn-br {
+    color: #64748B;
+  }
+
+  /* Response header */
+  .ac-response-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px 5px;
+  }
+
+  .ac-status-badge {
+    display: inline-block;
+    background: #059669;
+    color: #fff;
+    font-size: 6.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .ac-latency {
+    font-size: 7px;
+    color: #94A3B8;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  /* Bottom bar */
+  .ac-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    background: #F8FAFC;
+    border-top: 1px solid #F1F5F9;
+  }
+
+  .ac-stat {
+    font-size: 6.5px;
+    color: #94A3B8;
+  }
+
+  .ac-stat strong {
+    font-weight: 700;
+    color: #64748B;
+  }
+
+  .ac-stat-div {
+    width: 1px;
+    height: 8px;
+    background: #E2E8F0;
+  }
+</style>

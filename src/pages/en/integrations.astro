@@ -4,6 +4,12 @@ import PageHero from '../../components/PageHero.astro';
 import ModuleDeepDive from '../../components/ModuleDeepDive.astro';
 import SectionDivider from '../../components/SectionDivider.astro';
 import CTASection from '../../components/CTASection.astro';
+import MockupChannels from '../../components/mockups/MockupChannels.astro';
+import MockupAdsConnect from '../../components/mockups/MockupAdsConnect.astro';
+import MockupWebhooks from '../../components/mockups/MockupWebhooks.astro';
+import MockupIntegrationFlow from '../../components/mockups/MockupIntegrationFlow.astro';
+import MockupAPIConsole from '../../components/mockups/MockupAPIConsole.astro';
+import MockupProductivity from '../../components/mockups/MockupProductivity.astro';
 import { t, type Locale } from '../../lib/i18n';
 import { myceliumSvg } from '../../lib/fauna';
 
@@ -37,7 +43,14 @@ const modules = ['channels','ads','connect','flows','api','productivity'] as con
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#0D9488"
-          />
+          >
+            {key === 'channels' && <MockupChannels />}
+            {key === 'ads' && <MockupAdsConnect />}
+            {key === 'connect' && <MockupWebhooks />}
+            {key === 'flows' && <MockupIntegrationFlow />}
+            {key === 'api' && <MockupAPIConsole />}
+            {key === 'productivity' && <MockupProductivity />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );

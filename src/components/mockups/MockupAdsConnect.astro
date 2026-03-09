@@ -1,0 +1,84 @@
+---
+/** MockupAdsConnect — Meta Ads & Google Ads connection panel for integrations page */
+---
+<div class="ad-frame">
+  <div class="ad-header">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+    <span style="font-size: 10px; font-weight: 700; color: white;">Ads &amp; Atribuicao</span>
+  </div>
+  <div class="ad-body">
+    <div class="ad-platform">
+      <div class="ad-platform-header">
+        <div class="ad-platform-icon" style="background: #1877F2;">M</div>
+        <div class="ad-platform-name">Meta Ads</div>
+        <span class="ad-status-green">Conectado</span>
+      </div>
+      <div class="ad-account">NW Comercial &mdash; ID 1847293...</div>
+      <div class="ad-metrics">
+        <div class="ad-metric"><span class="ad-metric-value">4.2x</span><span class="ad-metric-label">ROAS</span></div>
+        <div class="ad-metric"><span class="ad-metric-value">R$12.40</span><span class="ad-metric-label">CPL</span></div>
+        <div class="ad-metric"><span class="ad-metric-value">127</span><span class="ad-metric-label">leads</span></div>
+      </div>
+      <div class="ad-sync">Ultima sync: 3min atras</div>
+    </div>
+    <div class="ad-platform">
+      <div class="ad-platform-header">
+        <div class="ad-platform-icon" style="background: linear-gradient(135deg, #EA4335, #FBBC05, #34A853, #4285F4);">G</div>
+        <div class="ad-platform-name">Google Ads</div>
+        <span class="ad-status-green">Conectado</span>
+      </div>
+      <div class="ad-account">NewWay MCC &mdash; ID 847-293...</div>
+      <div class="ad-metrics">
+        <div class="ad-metric"><span class="ad-metric-value">3.8x</span><span class="ad-metric-label">ROAS</span></div>
+        <div class="ad-metric"><span class="ad-metric-value">R$18.70</span><span class="ad-metric-label">CPL</span></div>
+        <div class="ad-metric"><span class="ad-metric-value">84</span><span class="ad-metric-label">leads</span></div>
+      </div>
+      <div class="ad-sync">Ultima sync: 5min atras</div>
+    </div>
+    <div style="height: 1px; background: #F3F4F6; margin: 4px 0;"></div>
+    <div class="ad-tracking">
+      <div class="ad-tracking-title">Rastreamento de Conversao</div>
+      <div class="ad-tracking-list">
+        <div class="ad-tracking-item">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Click-to-WhatsApp</span>
+        </div>
+        <div class="ad-tracking-item">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Lead Form Nativo</span>
+        </div>
+        <div class="ad-tracking-item">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Conversao Offline</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ad-footer">
+    <span>100% atribuicao real</span>
+    <span class="ad-footer-dot"></span>
+    <span>Tempo real</span>
+  </div>
+</div>
+<style>
+  .ad-frame{width:100%;max-width:320px;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04);background:#fff;border:1px solid rgba(0,0,0,.06);overflow:hidden;font-family:Inter,sans-serif}
+  .ad-header{background:#1F2937;padding:10px 12px;display:flex;align-items:center;gap:6px}
+  .ad-body{padding:8px 10px;display:flex;flex-direction:column;gap:8px}
+  .ad-platform{background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px;padding:8px}
+  .ad-platform-header{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+  .ad-platform-icon{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;flex-shrink:0}
+  .ad-platform-name{font-size:9px;font-weight:700;color:#1F2937;flex:1}
+  .ad-status-green{font-size:6.5px;font-weight:600;color:#059669;background:rgba(16,185,129,.12);padding:1px 5px;border-radius:6px}
+  .ad-account{font-size:6.5px;color:#6B7280;margin-bottom:6px}
+  .ad-metrics{display:flex;gap:10px;margin-bottom:4px}
+  .ad-metric{display:flex;flex-direction:column;gap:1px}
+  .ad-metric-value{font-size:9px;font-weight:700;color:#20B2AA}
+  .ad-metric-label{font-size:6px;color:#9CA3AF;text-transform:uppercase;letter-spacing:.03em}
+  .ad-sync{font-size:6px;color:#9CA3AF;font-style:italic}
+  .ad-tracking{padding:2px 0}
+  .ad-tracking-title{font-size:8px;font-weight:700;color:#1F2937;margin-bottom:4px}
+  .ad-tracking-list{display:flex;flex-direction:column;gap:3px}
+  .ad-tracking-item{display:flex;align-items:center;gap:5px;font-size:7px;color:#374151}
+  .ad-footer{background:#F9FAFB;border-top:1px solid #F3F4F6;padding:6px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:7px;font-weight:600;color:#20B2AA}
+  .ad-footer-dot{width:3px;height:3px;border-radius:50%;background:#20B2AA}
+</style>

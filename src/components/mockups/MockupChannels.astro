@@ -1,0 +1,89 @@
+---
+/** MockupChannels — Multi-channel connection panel for integrations page */
+---
+<div class="ch-frame">
+  <div class="ch-header">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    <span style="font-size: 10px; font-weight: 700; color: white;">Canais Conectados</span>
+    <span class="ch-badge-active">4 ativos</span>
+  </div>
+  <div class="ch-list">
+    <div class="ch-card">
+      <div class="ch-icon" style="background: #25D366;">W</div>
+      <div class="ch-info">
+        <div class="ch-name">WhatsApp Business API</div>
+        <div class="ch-type">BSP Oficial</div>
+      </div>
+      <div class="ch-right">
+        <span class="ch-status ch-status-green">Conectado</span>
+        <span class="ch-metric">12.4k msg/dia</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);">I</div>
+      <div class="ch-info">
+        <div class="ch-name">Instagram Direct</div>
+        <div class="ch-type">Meta Graph API</div>
+      </div>
+      <div class="ch-right">
+        <span class="ch-status ch-status-green">Conectado</span>
+        <span class="ch-metric">3.2k msg/dia</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background: #3B82F6;">C</div>
+      <div class="ch-info">
+        <div class="ch-name">Webchat</div>
+        <div class="ch-type">Widget JS</div>
+      </div>
+      <div class="ch-right">
+        <span class="ch-status ch-status-green">Ativo</span>
+        <span class="ch-metric">1.8k sessoes/dia</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background: #F59E0B;">E</div>
+      <div class="ch-info">
+        <div class="ch-name">Email</div>
+        <div class="ch-type">SMTP / IMAP</div>
+      </div>
+      <div class="ch-right">
+        <span class="ch-status ch-status-amber">Configurando</span>
+        <span class="ch-metric">&mdash;</span>
+      </div>
+    </div>
+  </div>
+  <div style="height: 1px; background: #F3F4F6; margin: 0 10px;"></div>
+  <div class="ch-summary">
+    <div class="ch-stat"><span class="ch-stat-value">17.4k</span><span class="ch-stat-label">mensagens/dia</span></div>
+    <div class="ch-stat"><span class="ch-stat-value">3</span><span class="ch-stat-label">canais ativos</span></div>
+    <div class="ch-stat"><span class="ch-stat-value">99.9%</span><span class="ch-stat-label">uptime</span></div>
+  </div>
+  <div style="padding: 0 10px 10px;">
+    <div class="ch-add-btn">
+      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>Adicionar Canal</span>
+    </div>
+  </div>
+</div>
+<style>
+  .ch-frame{width:100%;max-width:320px;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04);background:#fff;border:1px solid rgba(0,0,0,.06);overflow:hidden;font-family:Inter,sans-serif}
+  .ch-header{background:#1F2937;padding:10px 12px;display:flex;align-items:center;gap:6px}
+  .ch-badge-active{margin-left:auto;font-size:7px;font-weight:600;color:#10B981;background:rgba(16,185,129,.15);padding:2px 6px;border-radius:8px}
+  .ch-list{padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+  .ch-card{display:flex;align-items:center;gap:8px;padding:7px 8px;background:#FAFBFC;border:1px solid #F3F4F6;border-radius:8px}
+  .ch-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white;flex-shrink:0}
+  .ch-info{flex:1;min-width:0}
+  .ch-name{font-size:8px;font-weight:600;color:#1F2937;line-height:1.2}
+  .ch-type{font-size:6.5px;color:#9CA3AF;line-height:1.2}
+  .ch-right{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+  .ch-status{font-size:6.5px;font-weight:600;padding:1px 5px;border-radius:6px}
+  .ch-status-green{color:#059669;background:rgba(16,185,129,.12)}
+  .ch-status-amber{color:#D97706;background:rgba(245,158,11,.12)}
+  .ch-metric{font-size:6px;color:#6B7280}
+  .ch-summary{display:flex;justify-content:space-around;padding:8px 10px}
+  .ch-stat{display:flex;flex-direction:column;align-items:center;gap:1px}
+  .ch-stat-value{font-size:9px;font-weight:700;color:#20B2AA}
+  .ch-stat-label{font-size:6px;color:#9CA3AF}
+  .ch-add-btn{display:flex;align-items:center;justify-content:center;gap:4px;padding:6px;border:1.5px dashed #20B2AA;border-radius:8px;font-size:8px;font-weight:600;color:#20B2AA}
+</style>
