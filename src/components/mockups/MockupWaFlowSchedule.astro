@@ -120,17 +120,11 @@
           </div>
         </div>
 
-        <!-- Time slots label -->
-        <div style="font-size: 7px; font-weight: 600; color: #374151; margin: 8px 0 5px;">Horario disponivel</div>
-
-        <!-- Time slot pills -->
-        <div class="wfs-time-grid">
-          <div class="wfs-time-pill">09:00</div>
-          <div class="wfs-time-pill">10:00</div>
-          <div class="wfs-time-pill">11:00</div>
-          <div class="wfs-time-pill wfs-time-selected">14:00</div>
-          <div class="wfs-time-pill">15:00</div>
-          <div class="wfs-time-pill">16:00</div>
+        <!-- Time slot — Dropdown (no time picker in WA Flows) -->
+        <div style="font-size: 7px; font-weight: 600; color: #374151; margin: 8px 0 4px;">Horario disponivel</div>
+        <div class="wfs-select">
+          <span style="font-size: 8px; color: #1F2937;">14:00</span>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </div>
 
         <!-- Responsavel label -->
@@ -249,31 +243,6 @@
     height: 3px;
     border-radius: 50%;
     background: #22C55E;
-  }
-
-  /* Time slots grid */
-  .wfs-time-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-  }
-
-  .wfs-time-pill {
-    font-size: 8px;
-    font-weight: 500;
-    color: #374151;
-    text-align: center;
-    padding: 5px 0;
-    border: 1px solid #E5E7EB;
-    border-radius: 6px;
-    background: white;
-  }
-
-  .wfs-time-selected {
-    background: #20B2AA;
-    color: white;
-    border-color: #20B2AA;
-    font-weight: 600;
   }
 
   /* Select dropdown */
