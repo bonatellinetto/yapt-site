@@ -1,0 +1,413 @@
+---
+/** MockupPermissions — Roles & Permissions admin panel (enterprise access control) */
+---
+<div class="pm-frame">
+
+  <!-- Header bar (dark slate) -->
+  <div class="pm-header">
+    <div class="pm-header-left">
+      <svg class="pm-header-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      <span class="pm-header-title">Roles & Permissões</span>
+    </div>
+    <span class="pm-header-badge">5 roles</span>
+  </div>
+
+  <!-- Tabs row -->
+  <div class="pm-tabs">
+    <span class="pm-tab pm-tab--active">Roles</span>
+    <span class="pm-tab">Políticas</span>
+    <span class="pm-tab">Audit Trail</span>
+    <span class="pm-tab">SSO</span>
+  </div>
+
+  <!-- Content -->
+  <div class="pm-content">
+
+    <!-- Role card 1: Admin -->
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <div class="pm-card-icon pm-card-icon--purple">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="pm-card-info">
+          <div class="pm-card-title">Administrador</div>
+          <div class="pm-card-sub">Acesso total</div>
+        </div>
+        <span class="pm-card-users">3 usuários</span>
+      </div>
+      <div class="pm-dots">
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+      </div>
+    </div>
+
+    <!-- Role card 2: Supervisor -->
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <div class="pm-card-icon pm-card-icon--blue">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div class="pm-card-info">
+          <div class="pm-card-title">Supervisor</div>
+          <div class="pm-card-sub">Gestão de equipe</div>
+        </div>
+        <span class="pm-card-users">12 usuários</span>
+      </div>
+      <div class="pm-dots">
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--gray"></span>
+      </div>
+    </div>
+
+    <!-- Role card 3: Operador -->
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <div class="pm-card-icon pm-card-icon--teal">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+          </svg>
+        </div>
+        <div class="pm-card-info">
+          <div class="pm-card-title">Operador</div>
+          <div class="pm-card-sub">Atendimento</div>
+        </div>
+        <span class="pm-card-users">142 usuários</span>
+      </div>
+      <div class="pm-dots">
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--green"></span>
+        <span class="pm-dot pm-dot--gray"></span>
+        <span class="pm-dot pm-dot--gray"></span>
+        <span class="pm-dot pm-dot--gray"></span>
+      </div>
+    </div>
+
+    <!-- Permission matrix section -->
+    <div class="pm-matrix">
+      <div class="pm-matrix-title">Matriz de Permissões</div>
+      <!-- Column headers -->
+      <div class="pm-matrix-row pm-matrix-header">
+        <span class="pm-matrix-label"></span>
+        <span class="pm-matrix-col">Inbox</span>
+        <span class="pm-matrix-col">CRM</span>
+        <span class="pm-matrix-col">Flows</span>
+        <span class="pm-matrix-col">Ads</span>
+        <span class="pm-matrix-col">Ops</span>
+        <span class="pm-matrix-col">Config</span>
+      </div>
+      <!-- Admin row -->
+      <div class="pm-matrix-row">
+        <span class="pm-matrix-label">Admin</span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </div>
+      <!-- Supervisor row -->
+      <div class="pm-matrix-row">
+        <span class="pm-matrix-label">Supervisor</span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--no">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </span>
+      </div>
+      <!-- Operador row -->
+      <div class="pm-matrix-row">
+        <span class="pm-matrix-label">Operador</span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--ok">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--no">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--no">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </span>
+        <span class="pm-matrix-cell pm-matrix-cell--no">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- Bottom feature badges -->
+    <div class="pm-badges">
+      <div class="pm-badge">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span class="pm-badge-text">SSO / SAML 2.0</span>
+        <span class="pm-badge-status">Ativo</span>
+      </div>
+      <div class="pm-badge">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span class="pm-badge-text">2FA Obrigatório</span>
+        <span class="pm-badge-status">Ativo</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .pm-frame {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+  }
+
+  /* Header */
+  .pm-header {
+    background: #1E293B;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pm-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pm-header-icon {
+    flex-shrink: 0;
+  }
+  .pm-header-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    font-family: Poppins, Inter, sans-serif;
+  }
+  .pm-header-badge {
+    font-size: 7px;
+    font-weight: 600;
+    color: #94A3B8;
+    background: rgba(148,163,184,0.15);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* Tabs */
+  .pm-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0 14px;
+  }
+  .pm-tab {
+    font-size: 8px;
+    color: #9CA3AF;
+    padding: 8px 10px 7px;
+    cursor: default;
+  }
+  .pm-tab--active {
+    color: #1F2937;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #475569;
+  }
+
+  /* Content */
+  .pm-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Role cards */
+  .pm-card {
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 9px 10px;
+    background: #FAFBFC;
+  }
+  .pm-card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .pm-card-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .pm-card-icon--purple { background: rgba(124,58,237,0.10); }
+  .pm-card-icon--blue { background: rgba(59,130,246,0.10); }
+  .pm-card-icon--teal { background: rgba(20,184,166,0.10); }
+  .pm-card-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .pm-card-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: #1F2937;
+  }
+  .pm-card-sub {
+    font-size: 6.5px;
+    color: #9CA3AF;
+    margin-top: 1px;
+  }
+  .pm-card-users {
+    font-size: 6.5px;
+    font-weight: 600;
+    color: #6B7280;
+    background: #F3F4F6;
+    padding: 2px 6px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Permission dots */
+  .pm-dots {
+    display: flex;
+    gap: 4px;
+    padding-left: 30px;
+  }
+  .pm-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+  .pm-dot--green { background: #10B981; }
+  .pm-dot--gray { background: #D1D5DB; }
+
+  /* Permission matrix */
+  .pm-matrix {
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 2px;
+  }
+  .pm-matrix-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 8px;
+  }
+  .pm-matrix-row {
+    display: grid;
+    grid-template-columns: 52px repeat(6, 1fr);
+    gap: 3px;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .pm-matrix-header {
+    margin-bottom: 5px;
+  }
+  .pm-matrix-label {
+    font-size: 7px;
+    font-weight: 600;
+    color: #475569;
+  }
+  .pm-matrix-col {
+    font-size: 6px;
+    font-weight: 600;
+    color: #9CA3AF;
+    text-align: center;
+  }
+  .pm-matrix-cell {
+    width: 100%;
+    height: 18px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pm-matrix-cell--ok { background: rgba(16,185,129,0.10); }
+  .pm-matrix-cell--no { background: rgba(239,68,68,0.08); }
+
+  /* Bottom badges */
+  .pm-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .pm-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 7px 8px;
+    background: #FAFBFC;
+  }
+  .pm-badge-text {
+    font-size: 7px;
+    font-weight: 600;
+    color: #475569;
+    flex: 1;
+  }
+  .pm-badge-status {
+    font-size: 6px;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16,185,129,0.10);
+    padding: 1px 5px;
+    border-radius: 6px;
+  }
+</style>

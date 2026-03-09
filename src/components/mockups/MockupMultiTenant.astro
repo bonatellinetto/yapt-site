@@ -1,0 +1,270 @@
+---
+/** MockupMultiTenant — Gestao de Tenants: isolamento e administracao multi-tenant */
+---
+<div class="mt-frame">
+  <!-- Header bar (dark slate) -->
+  <div class="mt-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #ffffff; font-family: Inter, sans-serif;">Gestao de Tenants</span>
+    </div>
+    <div class="mt-badge-active-header">3 ativos</div>
+  </div>
+
+  <!-- Tabs row -->
+  <div class="mt-tabs">
+    <div class="mt-tab mt-tab-active">Visao Geral</div>
+    <div class="mt-tab">Tenants</div>
+    <div class="mt-tab">Config</div>
+    <div class="mt-tab">Auditoria</div>
+  </div>
+
+  <!-- Tenant cards -->
+  <div class="mt-cards">
+    <!-- Card 1: Acme Corp -->
+    <div class="mt-card">
+      <div class="mt-card-top">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="mt-avatar" style="background: #3B82F6;">A</div>
+          <div>
+            <div style="font-size: 9px; font-weight: 700; color: #1F2937;">Acme Corp</div>
+            <span class="mt-plan-badge mt-plan-enterprise">Enterprise</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="mt-status"><div class="mt-dot mt-dot-green"></div><span>Ativo</span></div>
+          <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">847 usuarios &middot; 12 setores</div>
+        </div>
+      </div>
+      <div class="mt-storage">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+          <span style="font-size: 7px; color: #6B7280;">Storage</span>
+          <span style="font-size: 7px; color: #6B7280;">45GB / 100GB</span>
+        </div>
+        <div class="mt-bar-bg"><div class="mt-bar-fill" style="width: 45%; background: #3B82F6;"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 2: Nova Tech -->
+    <div class="mt-card">
+      <div class="mt-card-top">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="mt-avatar" style="background: #20B2AA;">N</div>
+          <div>
+            <div style="font-size: 9px; font-weight: 700; color: #1F2937;">Nova Tech</div>
+            <span class="mt-plan-badge mt-plan-business">Business</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="mt-status"><div class="mt-dot mt-dot-green"></div><span>Ativo</span></div>
+          <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">234 usuarios &middot; 6 setores</div>
+        </div>
+      </div>
+      <div class="mt-storage">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+          <span style="font-size: 7px; color: #6B7280;">Storage</span>
+          <span style="font-size: 7px; color: #6B7280;">12GB / 50GB</span>
+        </div>
+        <div class="mt-bar-bg"><div class="mt-bar-fill" style="width: 24%; background: #20B2AA;"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 3: Global Sales -->
+    <div class="mt-card">
+      <div class="mt-card-top">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="mt-avatar" style="background: #F59E0B;">G</div>
+          <div>
+            <div style="font-size: 9px; font-weight: 700; color: #1F2937;">Global Sales</div>
+            <span class="mt-plan-badge mt-plan-starter">Starter</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div class="mt-status"><div class="mt-dot mt-dot-green"></div><span>Ativo</span></div>
+          <div style="font-size: 7px; color: #6B7280; margin-top: 2px;">52 usuarios &middot; 3 setores</div>
+        </div>
+      </div>
+      <div class="mt-storage">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+          <span style="font-size: 7px; color: #6B7280;">Storage</span>
+          <span style="font-size: 7px; color: #6B7280;">3GB / 10GB</span>
+        </div>
+        <div class="mt-bar-bg"><div class="mt-bar-fill" style="width: 30%; background: #F59E0B;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Isolation section -->
+  <div class="mt-isolation">
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span style="font-size: 9px; font-weight: 700; color: #1F2937;">Isolamento de Dados</span>
+    </div>
+    <div class="mt-check-list">
+      <div class="mt-check-item">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>RLS por tenant em todas as tabelas</span>
+      </div>
+      <div class="mt-check-item">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Schemas isolados por conta</span>
+      </div>
+      <div class="mt-check-item">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Criptografia AES-256 por tenant</span>
+      </div>
+      <div class="mt-check-item">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Backup independente por conta</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom stats bar -->
+  <div class="mt-bottom-bar">
+    <div class="mt-stat">
+      <span class="mt-stat-value">3</span>
+      <span class="mt-stat-label">tenants</span>
+    </div>
+    <div class="mt-stat-divider"></div>
+    <div class="mt-stat">
+      <span class="mt-stat-value">1.133</span>
+      <span class="mt-stat-label">usuarios</span>
+    </div>
+    <div class="mt-stat-divider"></div>
+    <div class="mt-stat">
+      <span class="mt-stat-value">100%</span>
+      <span class="mt-stat-label">isolamento</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mt-frame {
+    width: 100%; max-width: 420px; border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    background: #ffffff; border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden; font-family: Inter, sans-serif;
+  }
+
+  /* Header */
+  .mt-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; background: #1E293B;
+  }
+  .mt-badge-active-header {
+    font-size: 7px; font-weight: 600; color: #22C55E;
+    padding: 2px 8px; border-radius: 10px;
+    background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25);
+  }
+
+  /* Tabs */
+  .mt-tabs {
+    display: flex; gap: 0; padding: 0 14px; border-bottom: 1px solid #F3F4F6;
+  }
+  .mt-tab {
+    padding: 8px 10px; font-size: 8px; font-weight: 500; color: #9CA3AF;
+    border-bottom: 2px solid transparent; white-space: nowrap;
+  }
+  .mt-tab-active {
+    color: #475569; font-weight: 600;
+    border-bottom: 2px solid #475569;
+  }
+
+  /* Cards container */
+  .mt-cards {
+    padding: 10px 14px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .mt-card {
+    border: 1px solid #F3F4F6; border-radius: 10px; padding: 10px 12px;
+    background: #FAFBFC;
+  }
+  .mt-card-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+  }
+
+  /* Avatar */
+  .mt-avatar {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: #ffffff; flex-shrink: 0;
+  }
+
+  /* Plan badges */
+  .mt-plan-badge {
+    font-size: 6px; font-weight: 600; padding: 1px 6px; border-radius: 4px;
+    display: inline-block; margin-top: 2px; text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .mt-plan-enterprise {
+    color: #7C3AED; background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.2);
+  }
+  .mt-plan-business {
+    color: #20B2AA; background: rgba(32,178,170,0.08);
+    border: 1px solid rgba(32,178,170,0.2);
+  }
+  .mt-plan-starter {
+    color: #6B7280; background: rgba(107,114,128,0.08);
+    border: 1px solid rgba(107,114,128,0.2);
+  }
+
+  /* Status */
+  .mt-status {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 7px; font-weight: 600; color: #22C55E;
+  }
+  .mt-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+  }
+  .mt-dot-green {
+    background: #22C55E;
+  }
+
+  /* Storage bar */
+  .mt-storage {
+    margin-top: 8px;
+  }
+  .mt-bar-bg {
+    width: 100%; height: 3px; border-radius: 2px; background: #F3F4F6;
+  }
+  .mt-bar-fill {
+    height: 3px; border-radius: 2px;
+  }
+
+  /* Isolation section */
+  .mt-isolation {
+    padding: 10px 14px; border-top: 1px solid #F3F4F6;
+  }
+  .mt-check-list {
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .mt-check-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 7px; color: #475569; font-weight: 500;
+  }
+
+  /* Bottom stats bar */
+  .mt-bottom-bar {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; padding: 8px 14px;
+    background: #F8FAFC; border-top: 1px solid #F3F4F6;
+  }
+  .mt-stat {
+    display: flex; align-items: center; gap: 3px; padding: 0 12px;
+  }
+  .mt-stat-value {
+    font-size: 9px; font-weight: 700; color: #1F2937;
+  }
+  .mt-stat-label {
+    font-size: 7px; color: #9CA3AF; font-weight: 500;
+  }
+  .mt-stat-divider {
+    width: 1px; height: 12px; background: #E5E7EB;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .mt-tabs { display: none; }
+  }
+</style>

@@ -4,6 +4,10 @@ import PageHero from '../components/PageHero.astro';
 import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import MockupMultiTenant from '../components/mockups/MockupMultiTenant.astro';
+import MockupPermissions from '../components/mockups/MockupPermissions.astro';
+import MockupSLA from '../components/mockups/MockupSLA.astro';
+import MockupYaTrust from '../components/mockups/MockupYaTrust.astro';
 import { t, type Locale } from '../lib/i18n';
 import { elephantSvg } from '../lib/fauna';
 
@@ -41,7 +45,12 @@ const trustBadges = trust?.badges || [];
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#475569"
-          />
+          >
+            {key === 'multiTenant' && <MockupMultiTenant />}
+            {key === 'permissions' && <MockupPermissions />}
+            {key === 'sla' && <MockupSLA />}
+            {key === 'security' && <MockupYaTrust />}
+          </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
       );
