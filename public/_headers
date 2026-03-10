@@ -19,6 +19,11 @@
 /*.png
   Cache-Control: public, max-age=86400
 
+/wa-button.js
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+  Content-Type: application/javascript
+
 /sitemap.xml
   Cache-Control: public, max-age=3600
 
