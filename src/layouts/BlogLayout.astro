@@ -121,5 +121,15 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
       });
     })();
   </script>
+
+  <!-- yapt. Widget SDK — Dogfood: WhatsApp CTA Button -->
+  <script is:inline>
+    (function(w,d,s,o,f,js,fjs){
+      w['YaptWidget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
+      js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
+      js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
+    }(window,document,'script','yapt','https://cdn.yapt.ai/widget/sdk.js'));
+    yapt('init', { instanceId: 'yapt-site-wa-button' });
+  </script>
 </body>
 </html>
