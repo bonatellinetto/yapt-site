@@ -55,9 +55,9 @@ const { locale } = Astro.props;
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
-        <a href="#cta-final" class="inline-flex items-center justify-center font-semibold rounded-xl px-8 py-4 transition-all duration-200 hover:shadow-lg" style="background: #ffffff; color: #064E3B;">
+        <button onclick="typeof yaptwa==='function'&&yaptwa('open')" class="inline-flex items-center justify-center font-semibold rounded-xl px-8 py-4 transition-all duration-200 hover:shadow-lg cursor-pointer border-none" style="background: #ffffff; color: #064E3B;">
           {t('hero.cta', locale)}
-        </a>
+        </button>
         <a href="#journey" class="inline-flex items-center justify-center font-semibold rounded-xl px-8 py-4 border border-white/30 text-white transition-all duration-200 hover:bg-white/10">
           {t('hero.ctaSecondary', locale)}
         </a>
