@@ -1,16 +1,18 @@
 ---
 import type { BlogPost } from '../../lib/blog';
+import { localePath, type Locale } from '../../lib/i18n';
 
 interface Props {
   post: BlogPost;
+  locale?: Locale;
 }
 
-const { post } = Astro.props;
+const { post, locale = 'pt-BR' } = Astro.props;
 const imageUrl = post.cover_image_url || post.card_image_url;
 const date = post.published_at ? new Date(post.published_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }) : '';
 ---
 
-<a href={`/blog/${post.slug}`} class="group block">
+<a href={localePath(`/blog/${post.slug}`, locale)} class="group block">
   <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-200">
     <div class="grid grid-cols-1 lg:grid-cols-2">
       <!-- Image -->

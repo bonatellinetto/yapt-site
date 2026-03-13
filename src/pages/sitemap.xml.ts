@@ -60,10 +60,13 @@ export const GET: APIRoute = async () => {
     }
   }
 
-  // Blog posts (pt-BR only for now)
+  // Blog posts (all locales)
   for (const post of posts) {
     const lastmod = post.updated_at ? post.updated_at.split('T')[0] : today;
-    urls.push(buildUrlEntry(`/blog/${post.slug}`, lastmod, '0.6'));
+    for (const locale of locales) {
+      const fullPath = `${locale.prefix}/blog/${post.slug}`;
+      urls.push(buildUrlEntry(fullPath, lastmod, '0.6'));
+    }
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

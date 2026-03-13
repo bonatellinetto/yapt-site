@@ -48,11 +48,11 @@ const gridPosts = posts.slice(1);
   ) : (
     <div class="max-w-7xl mx-auto px-6 pb-16">
       {featuredPost && (
-        <div class="mb-12"><FeaturedPost post={featuredPost} /></div>
+        <div class="mb-12"><FeaturedPost post={featuredPost} locale={locale} /></div>
       )}
       {gridPosts.length > 0 && (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {gridPosts.map((post) => (<BlogCard post={post} />))}
+          {gridPosts.map((post) => (<BlogCard post={post} locale={locale} />))}
         </div>
       )}
     </div>

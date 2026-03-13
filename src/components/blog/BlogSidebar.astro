@@ -1,14 +1,16 @@
 ---
 import type { BlogPost, BlogCategory } from '../../lib/blog';
+import { localePath, type Locale } from '../../lib/i18n';
 
 interface Props {
   categories: BlogCategory[];
   relatedPosts: BlogPost[];
   currentCategory?: string | null;
   tags?: string[];
+  locale?: Locale;
 }
 
-const { categories, relatedPosts, currentCategory, tags = [] } = Astro.props;
+const { categories, relatedPosts, currentCategory, tags = [], locale = 'pt-BR' } = Astro.props;
 ---
 
 <aside class="space-y-8">
@@ -37,7 +39,7 @@ const { categories, relatedPosts, currentCategory, tags = [] } = Astro.props;
       <div class="space-y-1">
         {categories.map((cat) => (
           <a
-            href={`/blog?category=${cat.slug}`}
+            href={`${localePath('/blog', locale)}?category=${cat.slug}`}
             class={`block px-3 py-2 rounded-lg text-sm transition-colors ${
               currentCategory === cat.slug
                 ? 'bg-teal-50 text-teal-700 font-medium'
@@ -58,7 +60,7 @@ const { categories, relatedPosts, currentCategory, tags = [] } = Astro.props;
       <h3 class="font-poppins text-sm font-semibold text-[#1a1a2e] mb-3">Posts Relacionados</h3>
       <div class="space-y-3">
         {relatedPosts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="block group">
+          <a href={localePath(`/blog/${post.slug}`, locale)} class="block group">
             <h4 class="text-sm text-[#434A54] font-medium group-hover:text-teal-600 transition-colors line-clamp-2">
               {post.title}
             </h4>
