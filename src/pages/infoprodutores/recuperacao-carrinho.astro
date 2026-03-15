@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yapt. — Recuperação de Carrinho Abandonado no WhatsApp</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card2: #161616;
+    --teal: #20B2AA;
+    --teal-light: #2DD4BF;
+    --wa-green: #25D366;
+    --wa-dark: #128C7E;
+    --wa-darker: #075E54;
+    --wa-bg: #0B141A;
+    --wa-header: #202C33;
+    --white: #ffffff;
+    --gray-dim: #8696A0;
+    --gray-mid: #aaaaaa;
+    --border: rgba(255,255,255,0.07);
+    --text: #E8E8E8;
+    --text-dim: #888;
+    --red: #FF6B6B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  /* ─── UTILS ─── */
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25);
+    color: var(--wa-green); font-size: 11px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
+  }
+  .tag-red { background: rgba(255,107,107,0.1); border-color: rgba(255,107,107,0.25); color: #FF6B6B; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--wa-green); margin-bottom: 16px; }
+  h2.section-title { font-size: clamp(26px, 3.8vw, 46px); font-weight: 700; line-height: 1.2; color: var(--white); }
+  h2.section-title span { color: var(--wa-green); }
+  h2.section-title span.red { color: var(--red); }
+  .section-sub { font-size: 17px; color: var(--gray-mid); line-height: 1.7; max-width: 680px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 0; background: rgba(10,10,10,0.88);
+    backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-size: 22px; font-weight: 700; color: var(--white); }
+  .nav-logo .ya { color: var(--teal-light); }
+  .nav-logo .dot { color: var(--wa-green); }
+  .nav-badge {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 600; color: var(--gray-dim);
+    border: 1px solid rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 100px;
+  }
+  .nav-cta {
+    background: var(--wa-green); color: #000; font-size: 13px; font-weight: 700;
+    padding: 10px 22px; border-radius: 8px; text-decoration: none; transition: all .2s;
+  }
+  .nav-cta:hover { background: #1fbb59; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+  .hero-bg::before {
+    content: ''; position: absolute; top: -200px; right: -100px;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; bottom: -100px; left: -150px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(37,211,102,0.07) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+  .hero-grid-line {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+  .hero-headline {
+    font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15;
+    color: var(--white); margin: 16px 0 20px; letter-spacing: -.02em;
+  }
+  .hero-headline .red { color: var(--red); }
+  .hero-headline .green { color: var(--wa-green); }
+  .hero-sub { font-size: 16px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
+  .hero-ctas { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--wa-green); color: #000; font-size: 15px; font-weight: 700;
+    padding: 16px 28px; border-radius: 12px; text-decoration: none;
+    transition: all .2s; box-shadow: 0 8px 32px rgba(37,211,102,0.3);
+  }
+  .btn-wa:hover { background: #1fbb59; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.4); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; color: var(--gray-mid); font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
+  .btn-ghost:hover { color: var(--white); }
+  .hero-stats { display: flex; gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--white); line-height: 1; }
+  .stat-num span { color: var(--wa-green); }
+  .stat-num span.red { color: var(--red); }
+  .stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  /* ─── PHONE SYSTEM ─── */
+  .phone-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
+  .phone-wrap::before {
+    content: ''; position: absolute; top: 55%; left: 50%; transform: translate(-50%,-50%);
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(37,211,102,0.18) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none; filter: blur(30px);
+  }
+  .phone-wrap::after {
+    content: ''; position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 40px; background: rgba(37,211,102,0.2);
+    border-radius: 50%; filter: blur(20px); pointer-events: none;
+    animation: floatHero 5s ease-in-out infinite;
+  }
+  .phone-frame {
+    width: 297px; height: 568px; border-radius: 22px; overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08), 0 12px 24px rgba(0,0,0,0.15), 0 32px 64px rgba(0,0,0,0.25), 0 60px 100px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.06), 0 0 80px rgba(37,211,102,0.08);
+    animation: floatHero 5s ease-in-out infinite;
+  }
+  .phone-frame.sm { width: 260px; height: 530px; border-radius: 22px; }
+  .phone-frame.float { animation: float 4s ease-in-out infinite; }
+  @keyframes floatHero { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .phone-screen { display: flex; flex-direction: column; flex: 1; overflow: hidden; background: #fff; }
+  .wa-status-bar { background:#fff; padding:8px 14px 4px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+  .wa-status-time { font-size:12px; font-weight:700; color:#111; }
+  .wa-status-icons { display:flex; gap:4px; align-items:center; }
+  .wa-header { background:#fff; padding:6px 10px 8px; display:flex; align-items:center; gap:8px; flex-shrink:0; border-bottom:1px solid rgba(0,0,0,0.06); }
+  .wa-avatar { width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#25D366 0%,#008069 100%);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:white;flex-shrink:0; }
+  .wa-contact-name { font-size:15px;font-weight:600;color:#111B21;line-height:1.2; }
+  .wa-contact-status { font-size:12px;color:#008069; }
+  .wa-header-actions { margin-left:auto;display:flex;gap:18px;align-items:center; }
+  .wa-body {
+    flex:1; overflow-y:auto; overflow-x:hidden; padding:8px 8px 4px;
+    display:flex; flex-direction:column; gap:4px;
+    background-color:#E5DDD5; scroll-behavior:smooth;
+    scrollbar-width:none; -ms-overflow-style:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cdefs%3E%3Cstyle%3E.s%7Bfill:none;stroke:%23ccc5bc;stroke-width:.8;opacity:.35%7D%3C/style%3E%3C/defs%3E%3Ccircle class='s' cx='30' cy='30' r='12'/%3E%3Ccircle class='s' cx='80' cy='70' r='8'/%3E%3Ccircle class='s' cx='140' cy='25' r='10'/%3E%3Ccircle class='s' cx='200' cy='60' r='14'/%3E%3Ccircle class='s' cx='270' cy='20' r='9'/%3E%3Ccircle class='s' cx='50' cy='120' r='9'/%3E%3Ccircle class='s' cx='110' cy='140' r='13'/%3E%3Ccircle class='s' cx='180' cy='110' r='8'/%3E%3Ccircle class='s' cx='250' cy='130' r='12'/%3E%3Ccircle class='s' cx='320' cy='100' r='10'/%3E%3Ccircle class='s' cx='20' cy='200' r='11'/%3E%3Ccircle class='s' cx='90' cy='220' r='9'/%3E%3Ccircle class='s' cx='160' cy='190' r='13'/%3E%3Ccircle class='s' cx='230' cy='210' r='8'/%3E%3Ccircle class='s' cx='300' cy='180' r='11'/%3E%3Ccircle class='s' cx='40' cy='290' r='10'/%3E%3Ccircle class='s' cx='120' cy='310' r='12'/%3E%3Ccircle class='s' cx='190' cy='270' r='8'/%3E%3Ccircle class='s' cx='260' cy='300' r='11'/%3E%3Ccircle class='s' cx='70' cy='370' r='11'/%3E%3Ccircle class='s' cx='150' cy='360' r='8'/%3E%3Ccircle class='s' cx='220' cy='380' r='13'/%3E%3Ccircle class='s' cx='290' cy='355' r='9'/%3E%3C/svg%3E");
+    background-size:400px 400px; background-attachment:local;
+  }
+  .wa-body::-webkit-scrollbar { display:none; }
+  .wa-msg { max-width:80%;padding:7px 10px 4px;border-radius:8px;font-size:13px;line-height:1.45;position:relative;word-break:break-word; }
+  .wa-msg.in { background:#fff;color:#111B21;align-self:flex-start;border-radius:0 8px 8px 8px;box-shadow:0 1px 1px rgba(0,0,0,0.13); }
+  .wa-msg.out { background:#D9FDD3;color:#111B21;align-self:flex-end;border-radius:8px 0 8px 8px;box-shadow:0 1px 1px rgba(0,0,0,0.1); }
+  .wa-time { font-size:10px;color:rgba(0,0,0,0.35);margin-top:2px;display:flex;justify-content:flex-end;align-items:center;gap:3px; }
+  .wa-typing { background:#fff;padding:10px 14px;border-radius:0 8px 8px 8px;align-self:flex-start;display:flex;gap:4px;align-items:center;box-shadow:0 1px 1px rgba(0,0,0,0.13); }
+  .dot-typing { width:7px;height:7px;background:#8696A0;border-radius:50%;animation:typing 1.4s infinite; }
+  .dot-typing:nth-child(2){animation-delay:.2s} .dot-typing:nth-child(3){animation-delay:.4s}
+  @keyframes typing { 0%,60%,100%{transform:translateY(0);opacity:.45} 30%{transform:translateY(-4px);opacity:1} }
+  .wa-date-divider { text-align:center;font-size:11px;color:#667781;margin:4px 0; }
+  .wa-date-badge { display:inline-block;background:rgba(255,255,255,0.9);padding:4px 12px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,0.1); }
+  .wa-input-bar { background:#F0F2F5;padding:6px 8px 10px;display:flex;align-items:center;gap:6px;flex-shrink:0; }
+  .wa-input-field { flex:1;background:#fff;border-radius:22px;padding:8px 12px;font-size:12px;color:#667781;box-shadow:0 1px 2px rgba(0,0,0,0.08);font-family:'Poppins',sans-serif; }
+  .wa-home-bar { background:#fff;padding:6px 0 4px;display:flex;justify-content:center;flex-shrink:0; }
+  .wa-home-indicator { width:100px;height:4px;background:#111;border-radius:3px;opacity:0.2; }
+
+  /* message animation */
+  .wa-msg, .wa-typing, .wa-date-divider {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.32s ease, transform 0.35s cubic-bezier(0.34,1.2,0.64,1);
+    transform: translateY(10px) scale(0.97);
+  }
+  .wa-msg.visible, .wa-typing.visible, .wa-date-divider.visible { opacity:1; transform:translateY(0) scale(1); }
+
+  /* ─── SECTIONS ─── */
+  section { position: relative; }
+  section::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); }
+
+  /* ─── PROBLEMA ─── */
+  #problema { padding: 100px 0; }
+  .problema-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .problema-points { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .ponto { display:flex;gap:16px;align-items:flex-start;padding:20px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);transition:all .3s; }
+  .ponto:hover { border-color:rgba(255,255,255,0.12);background:var(--bg-card2); }
+  .ponto-icon { width:36px;height:36px;border-radius:8px;background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0; }
+  .ponto-text strong { display:block;font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px; }
+  .ponto-text p { font-size:13px;color:var(--text-dim);line-height:1.6; }
+  .problema-stat { background:linear-gradient(135deg,#1a0808 0%,#0a0a0a 100%); border:1px solid rgba(255,107,107,0.15); border-radius:20px; padding:36px; margin-top:32px; }
+  .stat-big { font-size: 72px; font-weight: 800; color: var(--red); line-height: 1; }
+  .stat-big-label { font-size: 18px; font-weight: 700; color: var(--white); margin-top: 8px; }
+  .stat-big-sub { font-size: 14px; color: var(--text-dim); margin-top: 8px; line-height: 1.6; }
+  .razoes { display:flex;flex-direction:column;gap:10px;margin-top:24px; }
+  .razao { display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text-dim); }
+  .razao-arrow { color:var(--wa-green);font-weight:700;flex-shrink:0; }
+
+  /* ─── VIRADA ─── */
+  #virada { padding:100px 0; background:linear-gradient(180deg,#0a0a0a 0%,#0c140e 50%,#0a0a0a 100%); }
+  .virada-center { text-align:center;max-width:800px;margin:0 auto; }
+  .virada-features { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:60px;background:var(--border);border-radius:20px;overflow:hidden; }
+  .vfeat { background:var(--bg-card);padding:32px;transition:all .3s;position:relative;overflow:hidden; }
+  .vfeat::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--wa-green),var(--teal));opacity:0;transition:opacity .3s; }
+  .vfeat:hover { background:var(--bg-card2); }
+  .vfeat:hover::before { opacity:1; }
+  .vfeat-arrow { font-size:18px;font-weight:700;color:var(--wa-green);margin-bottom:10px;display:block; }
+  .vfeat h3 { font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px; }
+  .vfeat p { font-size:13px;color:var(--text-dim);line-height:1.6; }
+
+  /* ─── COMO FUNCIONA ─── */
+  #como-funciona { padding:100px 0; }
+  .steps-v { display:flex;flex-direction:column;gap:0;margin-top:60px;position:relative; }
+  .steps-v::before { content:'';position:absolute;left:35px;top:36px;bottom:36px;width:2px;background:linear-gradient(180deg,var(--wa-green),var(--teal)); }
+  .step-v { display:flex;gap:28px;align-items:flex-start;padding:32px 0; border-bottom:1px solid var(--border); }
+  .step-v:last-child { border-bottom:none; }
+  .step-v-num { width:72px;height:72px;border-radius:50%;background:var(--bg-card2);border:2px solid var(--wa-green);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--wa-green);flex-shrink:0;position:relative;z-index:2;box-shadow:0 0 0 6px var(--bg); }
+  .step-v-num.t { border-color:var(--teal);color:var(--teal); }
+  .step-v-body { flex:1;padding-top:12px; }
+  .step-v-tag { font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--wa-green);margin-bottom:8px; }
+  .step-v-tag.t { color:var(--teal-light); }
+  .step-v-title { font-size:19px;font-weight:700;color:var(--white);margin-bottom:10px; }
+  .step-v-desc { font-size:14px;color:var(--text-dim);line-height:1.7; }
+  .step-v-badge { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px; }
+  .badge { display:inline-block;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);color:var(--wa-green);font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px; }
+  .badge.teal { background:rgba(32,178,170,0.08);border-color:rgba(32,178,170,0.2);color:var(--teal-light); }
+
+  /* ─── DIFERENÇA TABLE ─── */
+  #diferenca { padding:100px 0; background:linear-gradient(180deg,#0a0a0a 0%,#0a100a 50%,#0a0a0a 100%); }
+  .comp-table { width:100%;border-collapse:separate;border-spacing:0;border-radius:20px;overflow:hidden; }
+  .comp-table th { padding:20px 28px;font-size:14px;font-weight:700;text-align:left; }
+  .comp-table th:first-child { background:#111;color:var(--text-dim);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;width:40%; }
+  .comp-table th.col-old { background:#1a1010;color:#FF6B6B;border-left:1px solid rgba(255,107,107,0.15);width:30%; }
+  .comp-table th.col-new { background:#0a1a10;color:var(--wa-green);border-left:1px solid rgba(37,211,102,0.15);width:30%; }
+  .comp-table td { padding:14px 28px;font-size:13px;border-top:1px solid rgba(255,255,255,0.04); }
+  .comp-table td:first-child { background:var(--bg-card);color:var(--text-dim);font-weight:500;font-size:12px; }
+  .comp-table td.old { background:rgba(26,16,16,0.5);color:#aaa;border-left:1px solid rgba(255,107,107,0.08); }
+  .comp-table td.new { background:rgba(10,26,16,0.5);color:var(--white);font-weight:500;border-left:1px solid rgba(37,211,102,0.08); }
+  .comp-highlight { margin-top:28px;padding:24px 32px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:16px;display:flex;align-items:center;gap:20px; }
+  .comp-highlight p { font-size:15px;color:var(--white);line-height:1.5; }
+  .comp-highlight strong { color:var(--wa-green); }
+
+  /* ─── FORTALEZAS ─── */
+  #fortalezas { padding:100px 0; }
+  .features-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;background:var(--border);border-radius:20px;overflow:hidden; }
+  .feat-card { background:var(--bg-card);padding:36px 32px;transition:all .3s;position:relative;overflow:hidden; }
+  .feat-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--wa-green),var(--teal));opacity:0;transition:opacity .3s; }
+  .feat-card:hover { background:var(--bg-card2); }
+  .feat-card:hover::before { opacity:1; }
+  .feat-num { font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px; }
+  .feat-icon { width:48px;height:48px;border-radius:12px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px; }
+  .feat-icon.teal { background:rgba(32,178,170,0.1);border-color:rgba(32,178,170,0.2); }
+  .feat-title { font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px; }
+  .feat-desc { font-size:13px;color:var(--text-dim);line-height:1.7; }
+  .feat-badge { display:inline-flex;margin-top:16px;background:rgba(37,211,102,0.1);color:var(--wa-green);font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;border:1px solid rgba(37,211,102,0.2); }
+
+  /* ─── CALCULADORA ─── */
+  #calculadora { padding:100px 0; background:linear-gradient(180deg,#0a0a0a 0%,#08100a 50%,#0a0a0a 100%); }
+  .calc-inner { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center; }
+  .calc-sliders { display:flex;flex-direction:column;gap:28px; }
+  .calc-row label { display:block;font-size:13px;color:var(--text-dim);margin-bottom:8px;font-weight:500; }
+  .calc-row label span { color:var(--white);font-weight:700; }
+  input[type=range] {
+    -webkit-appearance:none;width:100%;height:4px;border-radius:2px;
+    background:linear-gradient(90deg,var(--wa-green) var(--pct,50%),rgba(255,255,255,0.1) var(--pct,50%));
+    outline:none;cursor:pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:var(--wa-green);box-shadow:0 0 0 3px rgba(37,211,102,0.2);
+    cursor:pointer;transition:box-shadow .2s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow:0 0 0 6px rgba(37,211,102,0.25); }
+  .calc-result { background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px; }
+  .calc-result-title { font-size:13px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:24px; }
+  .calc-metric { display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border); }
+  .calc-metric:last-child { border-bottom:none; }
+  .calc-metric-label { font-size:13px;color:var(--text-dim); }
+  .calc-metric-val { font-size:15px;font-weight:700;color:var(--white); }
+  .calc-metric-val.green { color:var(--wa-green);font-size:20px; }
+  .calc-metric-val.red { color:var(--red); }
+  .calc-gain { margin-top:24px;padding:20px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);border-radius:12px;text-align:center; }
+  .calc-gain-label { font-size:12px;color:var(--text-dim);margin-bottom:8px; }
+  .calc-gain-val { font-size:36px;font-weight:800;color:var(--wa-green); }
+  .calc-gain-sub { font-size:12px;color:var(--text-dim);margin-top:4px; }
+
+  /* ─── ALÉM DO CARRINHO ─── */
+  #alem { padding:100px 0; }
+  .alem-inner { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center; }
+  .alem-list { display:flex;flex-direction:column;gap:16px;margin-top:32px; }
+  .alem-item { display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;transition:all .3s; }
+  .alem-item:hover { border-color:rgba(37,211,102,0.25);transform:translateX(4px); }
+  .alem-icon { width:40px;height:40px;border-radius:10px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0; }
+  .alem-text strong { display:block;font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px; }
+  .alem-text p { font-size:13px;color:var(--text-dim);line-height:1.5; }
+
+  /* ─── PRA QUEM ─── */
+  #pra-quem { padding:100px 0; background:linear-gradient(180deg,#0a0a0a 0%,#0a100a 50%,#0a0a0a 100%); }
+  .pra-quem-inner { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center; }
+  .checklist { display:flex;flex-direction:column;gap:12px;margin-top:32px; }
+  .check-item { display:flex;gap:12px;align-items:flex-start;padding:14px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:all .3s; }
+  .check-item:hover { border-color:rgba(37,211,102,0.3); }
+  .check-icon { width:22px;height:22px;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;color:#000;font-weight:700; }
+  .check-text { font-size:13px;color:var(--text);line-height:1.5; }
+  .contraindication { margin-top:20px;padding:18px 22px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px; }
+  .contra-label { font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:6px; }
+  .contra-text { font-size:13px;color:var(--text-dim);line-height:1.6; }
+
+  /* ─── OBJEÇÕES ─── */
+  #objections { padding:100px 0; }
+  .obj-grid { display:flex;flex-direction:column;gap:16px;margin-top:60px; }
+  .obj-item { background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden; }
+  .obj-q { padding:22px 28px;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;color:var(--white); }
+  .obj-q::after { content:'+';font-size:22px;color:var(--wa-green);font-weight:300;flex-shrink:0; }
+  .obj-a { padding:0 28px 22px;font-size:14px;color:var(--text-dim);line-height:1.7;border-top:1px solid var(--border);padding-top:18px; }
+
+  /* ─── BSP STRIP ─── */
+  .bsp-strip { padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:60px 0; }
+  .bsp-inner { display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap; }
+  .bsp-item { display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-dim);font-weight:500; }
+  .bsp-item svg { width:22px;height:22px; }
+  .bsp-item strong { color:var(--white); }
+  .platform-logos { display:flex;gap:8px;flex-wrap:wrap;margin-top:12px; }
+  .platform-pill { background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--text-dim);font-weight:500; }
+
+  /* ─── CTA FINAL ─── */
+  #cta-final {
+    padding:120px 0; background:linear-gradient(135deg,#050f08 0%,#0a0a0a 40%,#030f08 100%);
+    position:relative;overflow:hidden;
+  }
+  #cta-final::before {
+    content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:700px;height:700px;background:radial-gradient(circle,rgba(37,211,102,0.1) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .cta-final-inner { text-align:center;position:relative;z-index:2; }
+  .cta-final-headline { font-size:clamp(28px,5vw,56px);font-weight:800;color:var(--white);line-height:1.2;margin:16px 0; }
+  .cta-final-headline .red { color:var(--red); }
+  .cta-final-sub { font-size:17px;color:var(--gray-mid);margin-bottom:48px;line-height:1.6; }
+  .cta-buttons { display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px; }
+  .btn-wa-lg {
+    display:inline-flex;align-items:center;gap:12px;background:var(--wa-green);color:#000;
+    font-size:17px;font-weight:700;padding:20px 40px;border-radius:14px;text-decoration:none;
+    transition:all .2s;box-shadow:0 8px 40px rgba(37,211,102,0.35);
+  }
+  .btn-wa-lg:hover { background:#1fbb59;transform:translateY(-3px);box-shadow:0 16px 60px rgba(37,211,102,0.45); }
+  .btn-outline-lg {
+    display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);
+    font-size:17px;font-weight:600;padding:20px 40px;border-radius:14px;text-decoration:none;
+    border:1px solid rgba(255,255,255,0.2);transition:all .2s;
+  }
+  .btn-outline-lg:hover { background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.3); }
+  .cta-microcopy { font-size:13px;color:var(--text-dim); }
+
+  /* ─── MID CTA ─── */
+  .mid-cta { text-align:center;padding:48px 0 8px; }
+  .mid-cta a {
+    display:inline-flex;align-items:center;gap:10px;background:var(--wa-green);color:#000;
+    font-size:15px;font-weight:700;padding:16px 32px;border-radius:12px;text-decoration:none;
+    box-shadow:0 8px 32px rgba(37,211,102,0.3);transition:all .2s;
+  }
+  .mid-cta a:hover { transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,0.45); }
+  .mid-cta p { font-size:12px;color:var(--text-dim);margin-top:10px; }
+
+  /* ─── FOOTER ─── */
+  footer { padding:40px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px; }
+  .footer-logo { font-size:18px;font-weight:700;color:var(--white); }
+  .footer-logo span { color:var(--teal-light); }
+  .footer-links { display:flex;gap:24px; }
+  .footer-links a { font-size:13px;color:var(--text-dim);text-decoration:none; }
+  .footer-links a:hover { color:var(--white); }
+  .footer-copy { font-size:12px;color:var(--text-dim); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal { opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease; }
+  .reveal.visible { opacity:1;transform:translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:900px){
+    .hero-inner,.problema-inner,.calc-inner,.alem-inner,.pra-quem-inner{grid-template-columns:1fr;}
+    .virada-features,.features-grid{grid-template-columns:1fr 1fr;}
+    .phone-wrap{margin-top:40px;}
+    .steps-v::before{display:none;}
+  }
+  @media(max-width:600px){
+    .virada-features,.features-grid{grid-template-columns:1fr;}
+    .phone-frame{width:260px;height:520px;}
+    .hero-stats{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo"><span class="ya">ya</span>pt<span class="dot">.</span></div>
+      <div class="nav-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        BSP Oficial Meta · 30M msg/mês
+      </div>
+      <a href="#cta-final" class="nav-cta">Grátis por 7 dias →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"><div class="hero-grid-line"></div></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="reveal">
+        <div class="tag tag-red">💸 Carrinho Abandonado · Recuperação Automática</div>
+        <h1 class="hero-headline">
+          Você já pagou por esse lead.<br>Ele chegou no checkout.<br>
+          E você deixou ele <span class="red">ir embora.</span>
+        </h1>
+        <p class="hero-sub">A yapt. é a IA que recupera carrinhos abandonados automaticamente no WhatsApp — personalizado, em tempo real, integrado com Hotmart, Kiwify, Eduzz, Kirvano e Cakto.</p>
+        <div class="hero-ctas">
+          <a href="#cta-final" class="btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Experimentar grátis por 7 dias
+          </a>
+          <a href="#calculadora" class="btn-ghost">Ver quanto estou perdendo ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num"><span class="red">75%</span></div>
+            <div class="stat-label">dos carrinhos são abandonados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">25<span>%</span></div>
+            <div class="stat-label">taxa de recuperação com yapt.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5<span>min</span></div>
+            <div class="stat-label">para o primeiro contato</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO PHONE: carrinho abandonado -->
+      <div class="phone-wrap reveal">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="wa-status-bar">
+              <span class="wa-status-time">11:03</span>
+              <div class="wa-status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="13" height="11" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#111" stroke="none"/></svg>
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg>
+              </div>
+            </div>
+            <div class="wa-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+              <div class="wa-avatar">y</div>
+              <div style="flex:1;">
+                <div class="wa-contact-name">yapt. IA</div>
+                <div class="wa-contact-status">online</div>
+              </div>
+              <div class="wa-header-actions">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696A0"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+              </div>
+            </div>
+            <div class="wa-body">
+              <div class="wa-date-divider"><span class="wa-date-badge">Hoje</span></div>
+              <div class="wa-msg in">
+                Oi Ana! Vi que você estava no checkout do Método Lançamento 7 Dígitos — R$ 1.497. Ficou alguma dúvida na hora de finalizar? 🤔
+                <div class="wa-time">11:03</div>
+              </div>
+              <div class="wa-msg out">
+                Verdade... tava na dúvida se era certo pra mim
+                <div class="wa-time">11:05 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-msg in">
+                Faz sentido! Qual o seu maior medo agora — o valor, o conteúdo ou se vai funcionar pro seu nicho?
+                <div class="wa-time">11:05</div>
+              </div>
+              <div class="wa-msg out">
+                Valor principalmente. Tô no começo ainda
+                <div class="wa-time">11:07 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-msg in">
+                Entendo! Temos parcelamento em até 12x de R$ 148. E tem garantia de 30 dias — se não gostar, devolvemos 100%. Quer que eu te mande o link parcelado? 💳
+                <div class="wa-time">11:07</div>
+              </div>
+              <div class="wa-msg out">
+                Sim!! Manda!
+                <div class="wa-time">11:08 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+            </div>
+            <div class="wa-input-bar">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+              <div class="wa-input-field">Mensagem</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#8696A0"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+            </div>
+            <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="container">
+    <div class="problema-inner">
+      <div class="reveal">
+        <div class="section-label">O problema</div>
+        <h2 class="section-title">Toda venda perdida no checkout é dinheiro que você já gastou <span class="red">duas vezes.</span></h2>
+        <div class="problema-stat">
+          <div class="stat-big">75%</div>
+          <div class="stat-big-label">dos carrinhos são abandonados no digital brasileiro</div>
+          <div class="stat-big-sub">Não é exceção. É a regra. E o que acontece depois na maioria dos funis:</div>
+          <div class="razoes">
+            <div class="razao"><span class="razao-arrow">→</span><span>Você manda um e-mail automático que vai pro spam</span></div>
+            <div class="razao"><span class="razao-arrow">→</span><span>Você faz um disparo genérico de WhatsApp que parece robô</span></div>
+            <div class="razao"><span class="razao-arrow">→</span><span>Ou pior: você não faz nada</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="problema-points">
+          <div class="ponto">
+            <div class="ponto-icon">💳</div>
+            <div class="ponto-text">
+              <strong>O cartão não passou</strong>
+              <p>E ele esqueceu de tentar outro. Ninguém avisou. A venda morreu por um detalhe técnico.</p>
+            </div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">📱</div>
+            <div class="ponto-text">
+              <strong>Ele se distraiu</strong>
+              <p>Uma notificação, uma ligação. Saiu da página e nunca mais voltou. Ninguém trouxe ele de volta.</p>
+            </div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">❓</div>
+            <div class="ponto-text">
+              <strong>Tinha uma dúvida</strong>
+              <p>Uma objeção simples que ninguém respondeu naquela hora. R$497 perdidos por falta de atenção.</p>
+            </div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">⏰</div>
+            <div class="ponto-text">
+              <strong>Ia voltar "depois"</strong>
+              <p>E "depois" nunca chegou. O lead estava na cara do gol. Faltava alguém empurrar a bola pra dentro.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:18px 22px;background:rgba(37,211,102,0.05);border:1px solid rgba(37,211,102,0.15);border-radius:12px;">
+          <p style="font-size:14px;color:var(--white);line-height:1.6;">Não tem closer que dê conta de 50, 200 abandonos por dia. <strong style="color:var(--wa-green);">Uma IA dá.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 1 -->
+<div class="container">
+  <div class="mid-cta reveal">
+    <a href="#cta-final">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Experimentar grátis por 7 dias
+    </a>
+    <p>Sem cartão · 7 dias grátis · Cancela quando quiser</p>
+  </div>
+</div>
+
+<!-- VIRADA -->
+<section id="virada">
+  <div class="container">
+    <div class="virada-center reveal">
+      <div class="section-label">A virada</div>
+      <h2 class="section-title">E se cada carrinho abandonado recebesse uma conversa <span>personalizada</span> em minutos?</h2>
+      <p class="section-sub" style="margin:16px auto 0;text-align:center;">Não um disparo em massa. Não uma mensagem genérica. Uma conversa real no WhatsApp, onde a IA já sabe tudo.</p>
+    </div>
+    <div class="virada-features reveal">
+      <div class="vfeat">
+        <span class="vfeat-arrow">→</span>
+        <h3>Sabe exatamente o que o lead viu</h3>
+        <p>Produto, preço, página, etapa do checkout em que travou, campanha de origem. Ela não chuta — ela já tem o contexto completo antes de dizer "oi".</p>
+      </div>
+      <div class="vfeat">
+        <span class="vfeat-arrow">→</span>
+        <h3>Entende por que ele parou</h3>
+        <p>Pergunta, escuta, identifica a objeção real — cartão, dúvida, insegurança, distração. Cada lead recebe uma abordagem diferente baseada no que responde.</p>
+      </div>
+      <div class="vfeat">
+        <span class="vfeat-arrow">→</span>
+        <h3>Resolve na hora</h3>
+        <p>Envia link de pagamento alternativo, oferece parcelamento, boleto, pix. Tira dúvida, gera urgência. Fecha a venda ou escalona pro closer com briefing completo.</p>
+      </div>
+      <div class="vfeat">
+        <span class="vfeat-arrow">→</span>
+        <h3>Converte ou faz follow-up</h3>
+        <p>Se não fecha de primeira, volta em D+1, D+3, D+7 com ângulo diferente. Automático. Sem você mexer um dedo. O lead que ia embora agora tem atenção imediata 24h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Como funciona</div>
+      <h2 class="section-title">Do abandono à recuperação em <span>4 passos</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px;" class="reveal">
+      <div class="steps-v">
+        <div class="step-v">
+          <div class="step-v-num">1</div>
+          <div class="step-v-body">
+            <div class="step-v-tag">O Abandono</div>
+            <div class="step-v-title">Webhook dispara em segundos</div>
+            <div class="step-v-desc">Lead chega no checkout e não finaliza. O evento de abandono chega na yapt. via webhook — automático, sem delay.</div>
+            <div class="step-v-badge">
+              <span class="badge">Hotmart</span><span class="badge">Kiwify</span><span class="badge">Eduzz</span><span class="badge">Kirvano</span><span class="badge">Cakto</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-v">
+          <div class="step-v-num">2</div>
+          <div class="step-v-body">
+            <div class="step-v-tag">A Conversa</div>
+            <div class="step-v-title">IA inicia em até 5 minutos</div>
+            <div class="step-v-desc">Não é template genérico. Ela menciona o produto, entende o contexto, adapta o tom e conduz uma conversa natural pra resolver o que travou.</div>
+          </div>
+        </div>
+        <div class="step-v">
+          <div class="step-v-num t">3</div>
+          <div class="step-v-body">
+            <div class="step-v-tag t">A Recuperação</div>
+            <div class="step-v-title">Quebra objeção e fecha venda</div>
+            <div class="step-v-desc">Envia novo link de pagamento, oferece alternativa (boleto, pix, parcelamento), fecha. Se não converte de primeira, faz follow-up inteligente por dias.</div>
+          </div>
+        </div>
+        <div class="step-v">
+          <div class="step-v-num t">4</div>
+          <div class="step-v-body">
+            <div class="step-v-tag t">O Rastreamento</div>
+            <div class="step-v-title">Receita recuperada em tempo real</div>
+            <div class="step-v-desc">Produto, campanha, objeção, conversa, conversão. Você vê exatamente quanto de receita a IA recuperou. ROI real, não CPL ilusório.</div>
+            <div class="step-v-badge">
+              <span class="badge teal">yaPerformance</span><span class="badge teal">yaDeals CRM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone: follow-up D+1 -->
+      <div style="display:flex;justify-content:center;position:relative;">
+        <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:60px;background:rgba(37,211,102,0.18);border-radius:50%;filter:blur(30px);pointer-events:none;"></div>
+        <div class="phone-frame sm float" style="box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.14),0 32px 64px rgba(0,0,0,0.22),0 60px 100px rgba(0,0,0,0.12),0 0 0 1px rgba(255,255,255,0.06),0 0 60px rgba(37,211,102,0.1);">
+          <div class="phone-screen">
+            <div class="wa-status-bar">
+              <span class="wa-status-time">10:15</span>
+              <div class="wa-status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg>
+              </div>
+            </div>
+            <div class="wa-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+              <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+              <div style="flex:1;">
+                <div class="wa-contact-name" style="font-size:13px;">yapt. IA</div>
+                <div class="wa-contact-status" style="font-size:11px;">Follow-up D+1</div>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#8696A0"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+            </div>
+            <div class="wa-body">
+              <div class="wa-date-divider"><span class="wa-date-badge">1 dia depois</span></div>
+              <div class="wa-msg in" style="font-size:12px;">
+                Oi Ana! Ontem você estava quase finalizando o Método 7 Dígitos. Ainda tá pensando? 🙂
+                <div class="wa-time">10:15</div>
+              </div>
+              <div class="wa-msg out" style="font-size:12px;">
+                Sim, mas fiquei na dúvida no parcelamento
+                <div class="wa-time">10:22 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-msg in" style="font-size:12px;">
+                Claro! Você pode parcelar em até 12x de R$ 148 no cartão — ou pagar à vista com 10% de desconto no Pix. Qual funciona melhor pra você?
+                <div class="wa-time">10:22</div>
+              </div>
+              <div class="wa-msg out" style="font-size:12px;">
+                Pix com desconto! Manda o link
+                <div class="wa-time">10:24 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-msg in" style="font-size:12px;">
+                Aqui está: <span style="color:#008069;text-decoration:underline;font-size:11px;">hotmart.com/t/metodo7d-pix</span><br><br>✅ Garantia 30 dias<br>🎯 Acesso imediato
+                <div class="wa-time">10:24</div>
+              </div>
+              <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+            </div>
+            <div class="wa-input-bar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+              <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+            </div>
+            <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 2 -->
+<div class="container">
+  <div class="mid-cta reveal">
+    <a href="#cta-final">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Recuperar meus carrinhos agora
+    </a>
+    <p>Setup em minutos · Integra com Hotmart, Kiwify, Eduzz, Kirvano e Cakto</p>
+  </div>
+</div>
+
+<!-- DIFERENÇA -->
+<section id="diferenca">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">A diferença</div>
+      <h2 class="section-title">Disparo de WhatsApp <span class="red">≠</span> Recuperação de verdade</h2>
+    </div>
+    <div class="reveal" style="margin-top:60px;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-old">❌ O que você faz hoje</th>
+            <th class="col-new">✅ O que a yapt. faz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Canal</td>
+            <td class="old">E-mail automático que vai pro spam</td>
+            <td class="new">Conversa no WhatsApp — 80%+ de abertura</td>
+          </tr>
+          <tr>
+            <td>Personalização</td>
+            <td class="old">Mensagem genérica igual pra todo mundo</td>
+            <td class="new">Sabe o produto, valor, etapa e campanha</td>
+          </tr>
+          <tr>
+            <td>Persistência</td>
+            <td class="old">Um único disparo e acabou</td>
+            <td class="new">Follow-up inteligente por dias até converter</td>
+          </tr>
+          <tr>
+            <td>Objeções</td>
+            <td class="old">Nenhum contexto do por quê abandonou</td>
+            <td class="new">IA descobre a objeção e resolve na hora</td>
+          </tr>
+          <tr>
+            <td>Resultado</td>
+            <td class="old">Sem rastreamento de resultado real</td>
+            <td class="new">Dashboard com receita recuperada por campanha</td>
+          </tr>
+          <tr>
+            <td>Escala</td>
+            <td class="old">Depende de closer pra volume alto</td>
+            <td class="new">200+ abandonos/dia sem contratar ninguém</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="comp-highlight">
+        <span style="font-size:32px;">🎯</span>
+        <p>Isso não é disparo em massa. É uma IA que conversa 1:1 com cada lead que abandonou — <strong>como se você tivesse um vendedor dedicado pra cada carrinho perdido.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORTALEZAS -->
+<section id="fortalezas">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Por que funciona</div>
+      <h2 class="section-title">Por que a yapt. recupera o que<br>e-mail e disparo <span class="red">não conseguem</span></h2>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-card">
+        <div class="feat-num">01</div>
+        <div class="feat-icon">🎯</div>
+        <div class="feat-title">Contexto Total</div>
+        <div class="feat-desc">A IA sabe qual produto o lead viu, quanto custava, em que etapa do checkout travou e de qual campanha veio. Ela não chuta — ela sabe. E isso muda tudo na conversa.</div>
+        <span class="feat-badge">Contexto completo</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">02</div>
+        <div class="feat-icon">💬</div>
+        <div class="feat-title">Conversa, Não Disparo</div>
+        <div class="feat-desc">A diferença entre mandar mensagem e conversar é a diferença entre ser ignorado e ser respondido. A IA conduz uma conversa bidirecional real — tira dúvida, quebra objeção, negocia.</div>
+        <span class="feat-badge">IA Generativa</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">03</div>
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Timing Cirúrgico</div>
+        <div class="feat-desc">O primeiro contato acontece minutos após o abandono — quando o lead ainda lembra, ainda tem interesse, ainda tem o cartão na mão. Não horas depois. Não no dia seguinte.</div>
+        <span class="feat-badge">5 min ou menos</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">04</div>
+        <div class="feat-icon">🔄</div>
+        <div class="feat-title">Follow-up Persistente</div>
+        <div class="feat-desc">Se não converte de primeira, a IA volta. D+1, D+3, D+7, com ângulo diferente. 80% das vendas acontecem entre o 5º e o 12º contato. Exatamente onde todo mundo desiste. A IA não desiste.</div>
+        <span class="feat-badge">Até 7 contatos</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">05</div>
+        <div class="feat-icon teal">🔗</div>
+        <div class="feat-title">Integração Nativa</div>
+        <div class="feat-desc">Hotmart, Kiwify, Eduzz, Kirvano, Cakto — via webhook, sem complicação. O evento de abandono chega na yapt. e a máquina roda. Você configura uma vez e esquece.</div>
+        <span class="feat-badge" style="background:rgba(32,178,170,0.1);color:var(--teal-light);border-color:rgba(32,178,170,0.2);">5 plataformas</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">06</div>
+        <div class="feat-icon teal">🛡️</div>
+        <div class="feat-title">API Oficial + Não Oficial</div>
+        <div class="feat-desc">BSP oficial do Meta. 30 milhões de mensagens por mês na infraestrutura. Sem risco de ban. Também opera com API não oficial pra quem precisa. Você escolhe.</div>
+        <span class="feat-badge" style="background:rgba(32,178,170,0.1);color:var(--teal-light);border-color:rgba(32,178,170,0.2);">Meta BSP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 3 -->
+<div class="container">
+  <div class="mid-cta reveal">
+    <a href="#cta-final">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quero recuperar meus carrinhos
+    </a>
+    <p>Comece hoje · Sem cartão · Sem burocracia</p>
+  </div>
+</div>
+
+<!-- CALCULADORA -->
+<section id="calculadora">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">A matemática</div>
+      <h2 class="section-title">Quanto você tá perdendo <span>por mês?</span></h2>
+      <p class="section-sub" style="margin:16px auto 0;text-align:center;">Ajuste os sliders com seus números reais e veja o impacto.</p>
+    </div>
+    <div class="calc-inner reveal" style="margin-top:60px;">
+      <div class="calc-sliders">
+        <div class="calc-row">
+          <label>Abandonos por mês: <span id="lbl-ab">500</span></label>
+          <input type="range" id="sl-ab" min="50" max="2000" value="500" step="50">
+        </div>
+        <div class="calc-row">
+          <label>Ticket médio: <span id="lbl-tk">R$ 497</span></label>
+          <input type="range" id="sl-tk" min="97" max="2997" value="497" step="50">
+        </div>
+        <div style="padding:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;margin-top:8px;">
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;">Esses números são conservadores. A diferença entre disparar e-mail e conversar no WhatsApp com contexto é brutal. E a yapt. faz isso sem você contratar uma única pessoa.</p>
+        </div>
+        <a href="#cta-final" class="btn-wa" style="margin-top:8px;justify-content:center;">Ver como recuperar essa receita →</a>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-title">Estimativa mensal</div>
+        <div class="calc-metric">
+          <span class="calc-metric-label">Receita total perdida</span>
+          <span class="calc-metric-val red" id="r-total">R$ 248.500</span>
+        </div>
+        <div class="calc-metric">
+          <span class="calc-metric-label">Recuperado com e-mail (4%)</span>
+          <span class="calc-metric-val" id="r-email">R$ 9.940</span>
+        </div>
+        <div class="calc-metric">
+          <span class="calc-metric-label">Recuperado com yapt. (20%)</span>
+          <span class="calc-metric-val green" id="r-yapt">R$ 49.700</span>
+        </div>
+        <div class="calc-gain">
+          <div class="calc-gain-label">💰 Receita adicional com yapt.</div>
+          <div class="calc-gain-val" id="r-gain">R$ 39.760</div>
+          <div class="calc-gain-sub">por mês — sem contratar ninguém</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALÉM DO CARRINHO -->
+<section id="alem">
+  <div class="container">
+    <div class="alem-inner">
+      <div class="reveal">
+        <div class="section-label">Além do carrinho</div>
+        <h2 class="section-title">Recuperar carrinho é só<br>o <span>começo</span></h2>
+        <p class="section-sub" style="margin-top:16px;">A mesma IA que recupera carrinho abandonado também:</p>
+        <div class="alem-list">
+          <div class="alem-item">
+            <div class="alem-icon">📄</div>
+            <div class="alem-text">
+              <strong>Recupera boleto/pix não pago</strong>
+              <p>Lembra o lead antes de vencer, envia novo link se expirou. Automático, no WhatsApp.</p>
+            </div>
+          </div>
+          <div class="alem-item">
+            <div class="alem-icon">🔁</div>
+            <div class="alem-text">
+              <strong>Recupera assinatura cancelada</strong>
+              <p>Aborda o churn antes de perder o cliente. Entende o motivo e tenta reverter com contexto.</p>
+            </div>
+          </div>
+          <div class="alem-item">
+            <div class="alem-icon">⬆️</div>
+            <div class="alem-text">
+              <strong>Faz upsell pós-compra</strong>
+              <p>Comprou o produto A? A IA oferta o B no momento certo, com a argumentação certa.</p>
+            </div>
+          </div>
+          <div class="alem-item">
+            <div class="alem-icon">🔥</div>
+            <div class="alem-text">
+              <strong>Reativa base fria</strong>
+              <p>Leads antigos que nunca compraram voltam pro funil conversacional. Receita parada, ativada.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:18px 22px;background:rgba(37,211,102,0.05);border:1px solid rgba(37,211,102,0.15);border-radius:12px;">
+          <p style="font-size:14px;color:var(--white);line-height:1.6;">Pare de tratar recuperação como "disparo avulso". Comece a tratar como um <strong style="color:var(--wa-green);">motor de receita contínuo.</strong></p>
+        </div>
+      </div>
+
+      <!-- Phone: upsell pós-compra -->
+      <div class="reveal" style="display:flex;justify-content:center;">
+        <div style="position:relative;">
+          <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:60px;background:rgba(32,178,170,0.18);border-radius:50%;filter:blur(28px);pointer-events:none;"></div>
+          <div class="phone-frame sm float" style="animation-delay:.5s;box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.14),0 32px 64px rgba(0,0,0,0.22),0 60px 100px rgba(0,0,0,0.12),0 0 0 1px rgba(255,255,255,0.06),0 0 60px rgba(32,178,170,0.1);">
+            <div class="phone-screen">
+              <div class="wa-status-bar">
+                <span class="wa-status-time">14:33</span>
+                <div class="wa-status-icons">
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg>
+                </div>
+              </div>
+              <div class="wa-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+                <div style="flex:1;">
+                  <div class="wa-contact-name" style="font-size:13px;">yapt. IA</div>
+                  <div class="wa-contact-status" style="font-size:11px;">Upsell pós-compra</div>
+                </div>
+              </div>
+              <div class="wa-body">
+                <div class="wa-date-divider"><span class="wa-date-badge">Hoje</span></div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Ana, sua compra do Método 7 Dígitos foi confirmada! 🎉<br><br>Tenho uma oferta exclusiva pra quem acabou de entrar — acesso ao Mentoria VIP com 60% de desconto. Só hoje.
+                  <div class="wa-time">14:33</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Que isso! Quanto é?
+                  <div class="wa-time">14:35 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  De R$ 2.500 por R$ 997 — só pra quem acabou de comprar o Método. Inclui 4 sessões ao vivo comigo. Quer garantir? 🔥
+                  <div class="wa-time">14:35</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Manda o link sim!!!
+                  <div class="wa-time">14:36 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+              </div>
+              <div class="wa-input-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+              </div>
+              <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRA QUEM -->
+<section id="pra-quem">
+  <div class="container">
+    <div class="pra-quem-inner">
+      <div class="reveal">
+        <div class="section-label">Pra quem é</div>
+        <h2 class="section-title">A yapt. é <span>pra você</span> se:</h2>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você vende em Hotmart, Kiwify, Eduzz, Kirvano ou Cakto</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você tem dezenas ou centenas de abandonos de carrinho por mês</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você já tentou e-mail de recuperação e sabe que não funciona</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você faz disparo de WhatsApp genérico e o resultado é medíocre</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você não tem closer suficiente pra abordar cada abandono manualmente</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você quer saber exatamente quanto de receita está deixando na mesa</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você quer uma máquina que recupera enquanto você dorme</div></div>
+        </div>
+        <div class="contraindication">
+          <div class="contra-label">⚠ Contra-indicação</div>
+          <div class="contra-text">Se você tem menos de 50 abandonos por mês ou ticket abaixo de R$97, talvez o ROI não justifique. A yapt. performa melhor com volume e ticket médio a partir de R$197+.</div>
+        </div>
+      </div>
+
+      <!-- Phone: boleto expirado -->
+      <div class="reveal" style="display:flex;justify-content:center;">
+        <div style="position:relative;">
+          <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:60px;background:rgba(37,211,102,0.18);border-radius:50%;filter:blur(28px);pointer-events:none;"></div>
+          <div class="phone-frame sm float" style="animation-delay:1s;box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.14),0 32px 64px rgba(0,0,0,0.22),0 60px 100px rgba(0,0,0,0.12),0 0 0 1px rgba(255,255,255,0.06);">
+            <div class="phone-screen">
+              <div class="wa-status-bar">
+                <span class="wa-status-time">9:00</span>
+                <div class="wa-status-icons">
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg>
+                </div>
+              </div>
+              <div class="wa-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+                <div style="flex:1;">
+                  <div class="wa-contact-name" style="font-size:13px;">yapt. IA</div>
+                  <div class="wa-contact-status" style="font-size:11px;">Boleto expirado</div>
+                </div>
+              </div>
+              <div class="wa-body">
+                <div class="wa-date-divider"><span class="wa-date-badge">Hoje · vence às 23h</span></div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Carlos, seu boleto do Curso de Tráfego Pago vence hoje às 23h! 📄<br><br>Ainda dá tempo de pagar. Quer que eu te mande o código de barras atualizado?
+                  <div class="wa-time">9:00</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Esqueci completamente! Manda sim
+                  <div class="wa-time">9:14 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Aqui está o código atualizado:<br><br><span style="font-family:monospace;font-size:10px;color:#008069;">1234.5678 9012.3456 7890.1234 5 67890000049700</span><br><br>Ou prefere pagar no Pix? 💳
+                  <div class="wa-time">9:14</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Pix é mais fácil!
+                  <div class="wa-time">9:15 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+              </div>
+              <div class="wa-input-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+              </div>
+              <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 4 -->
+<div class="container">
+  <div class="mid-cta reveal">
+    <a href="#cta-final">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Experimentar grátis por 7 dias
+    </a>
+    <p>Sem cartão de crédito · Cancela quando quiser</p>
+  </div>
+</div>
+
+<!-- OBJEÇÕES -->
+<section id="objections">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Suas dúvidas</div>
+      <h2 class="section-title">"Mas eu já faço recuperação<br>de <span>carrinho...</span>"</h2>
+    </div>
+    <div class="obj-grid reveal">
+      <div class="obj-item">
+        <div class="obj-q">"Já uso o e-mail automático da Hotmart/Kiwify."</div>
+        <div class="obj-a">Ótimo. Mas taxa de abertura de e-mail transacional é 20–30%. Taxa de resposta no WhatsApp é 80%+. E a yapt. não manda mensagem — ela conversa. Descobre por que o lead parou e resolve na hora. E-mail não faz isso.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Já tenho automação de WhatsApp com disparo."</div>
+        <div class="obj-a">Disparo é uma via. Conversa são duas. A diferença entre mandar "seu carrinho tá esperando 😊" e uma IA que pergunta "vi que você estava no checkout do [produto X] — ficou alguma dúvida?" é a diferença entre 3% e 20% de recuperação.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Meu lead vai ficar irritado com robô no WhatsApp?"</div>
+        <div class="obj-a">Pesquisa mostra o oposto: lead prefere resposta rápida a resposta humana lenta. A IA da yapt. conversa com naturalidade — o lead sente que foi atendido, não perseguido. E se ele pedir pra parar, a IA para. Sem spam.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Quanto custa?"</div>
+        <div class="obj-a">Menos do que um closer. Menos do que a receita que você está perdendo. Nos 7 dias grátis você já consegue ver o resultado real com os seus abandonos. Se não fizer sentido, cancela sem pagar nada.</div>
+      </div>
+    </div>
+
+    <!-- BSP Strip -->
+    <div class="bsp-strip reveal">
+      <div class="bsp-inner">
+        <div class="bsp-item">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span><strong>BSP Oficial</strong> Meta</span>
+        </div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item"><span style="font-size:22px;">🌐</span><span><strong>30 milhões</strong> de mensagens/mês</span></div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item">
+          <span style="font-size:20px;">🔗</span>
+          <span>Integra com <strong>Hotmart · Kiwify · Eduzz · Kirvano · Cakto</strong></span>
+        </div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item"><span style="font-size:22px;">🛡️</span><span><strong>11 anos</strong> como Meta Business Solution Provider</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-final-inner reveal">
+      <div class="tag" style="margin:0 auto 24px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        7 dias grátis · Sem cartão · Cancela quando quiser
+      </div>
+      <h2 class="cta-final-headline">
+        Enquanto você lê isso, tem lead<br>
+        abandonando carrinho no <span class="red">seu checkout.</span>
+      </h2>
+      <p class="cta-final-sub">
+        Cada hora sem recuperação automática é receita que evapora.<br>
+        Comece grátis hoje e veja a yapt. recuperando <strong style="color:var(--white);">com os dados reais do seu produto.</strong>
+      </p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-wa-lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Experimentar grátis por 7 dias
+        </a>
+        <a href="#" class="btn-outline-lg">Falar com um especialista →</a>
+      </div>
+      <div class="cta-microcopy">Sem cartão de crédito. Configura em minutos. Cancela quando quiser.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="container">
+  <footer>
+    <a href="/" class="footer-logo"><img src="/yapt-logo-dark.svg" alt="yapt." height="28" style="height:28px;width:auto;"></a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="platform-pill">Hotmart</span>
+      <span class="platform-pill">Kiwify</span>
+      <span class="platform-pill">Eduzz</span>
+      <span class="platform-pill">Kirvano</span>
+      <span class="platform-pill">Cakto</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Termos</a>
+      <a href="#">Privacidade</a>
+    </div>
+    <div class="footer-copy">BSP Oficial Meta · 30M msg/mês · © 2026 New Way</div>
+  </footer>
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Staggered grid reveals
+  document.querySelectorAll('.features-grid .feat-card, .ponto, .check-item, .obj-item, .alem-item, .vfeat').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 55}ms`;
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // ── CALCULADORA ──
+  const slAb = document.getElementById('sl-ab');
+  const slTk = document.getElementById('sl-tk');
+
+  function fmt(n) { return 'R$ ' + Math.round(n).toLocaleString('pt-BR'); }
+  function updateSlider(sl) {
+    const pct = ((sl.value - sl.min) / (sl.max - sl.min)) * 100;
+    sl.style.setProperty('--pct', pct + '%');
+  }
+  function calcUpdate() {
+    const ab = +slAb.value, tk = +slTk.value;
+    document.getElementById('lbl-ab').textContent = ab.toLocaleString('pt-BR');
+    document.getElementById('lbl-tk').textContent = 'R$ ' + tk.toLocaleString('pt-BR');
+    const total = ab * tk;
+    const email = total * 0.04;
+    const yapt  = total * 0.20;
+    const gain  = yapt - email;
+    document.getElementById('r-total').textContent = fmt(total);
+    document.getElementById('r-email').textContent = fmt(email);
+    document.getElementById('r-yapt').textContent  = fmt(yapt);
+    document.getElementById('r-gain').textContent  = fmt(gain);
+    updateSlider(slAb); updateSlider(slTk);
+  }
+  slAb.addEventListener('input', calcUpdate);
+  slTk.addEventListener('input', calcUpdate);
+  calcUpdate();
+
+  // ── WHATSAPP CONVERSATION ENGINE ──
+  function runConversation(bodyEl) {
+    const typingEl    = bodyEl.querySelector('.wa-typing');
+    const msgs        = Array.from(bodyEl.querySelectorAll('.wa-msg'));
+    const dateDivider = bodyEl.querySelector('.wa-date-divider');
+    const TYPING_SPEED = 36, TYPING_MIN = 650, TYPING_MAX = 1900;
+    const GAP_OUT = 280, GAP_AFTER = 240, END_PAUSE = 3500;
+
+    function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function typingDur(text) { return Math.min(TYPING_MAX, Math.max(TYPING_MIN, text.length * TYPING_SPEED)); }
+    function scrollBot() { bodyEl.scrollTo({ top: bodyEl.scrollHeight, behavior: 'smooth' }); }
+
+    // hide = display:none so element takes NO space → scroll stays at top
+    function hideEl(el) {
+      el.style.transition = 'none';
+      el.classList.remove('visible');
+      el.style.display = 'none';
+    }
+
+    // show = make visible in DOM first (flex/block), then fade+slide in
+    function showEl(el) {
+      const isMsg = el.classList.contains('wa-msg');
+      el.style.display = isMsg ? (el.classList.contains('in') ? 'block' : 'block') : 'flex';
+      // force reflow so transition fires
+      void el.offsetHeight;
+      requestAnimationFrame(() => {
+        el.style.transition = '';
+        el.classList.add('visible');
+      });
+    }
+
+    function reset() {
+      const all = [...msgs, typingEl, dateDivider].filter(Boolean);
+      all.forEach(el => hideEl(el));
+      if (typingEl) bodyEl.appendChild(typingEl);
+      bodyEl.scrollTop = 0;
+    }
+
+    async function showTyping(forEl) {
+      if (!typingEl) return;
+      bodyEl.appendChild(typingEl);
+      showEl(typingEl); scrollBot();
+      await delay(typingDur(forEl.textContent.trim()));
+      hideEl(typingEl);
+      await delay(50);
+    }
+
+    async function playOnce() {
+      reset();
+      await delay(300);
+      if (dateDivider) { showEl(dateDivider); scrollBot(); await delay(450); }
+      for (let i = 0; i < msgs.length; i++) {
+        const msg = msgs[i];
+        if (msg.classList.contains('in')) { await showTyping(msg); }
+        else { await delay(GAP_OUT); }
+        showEl(msg); scrollBot();
+        await delay(GAP_AFTER + Math.min(750, msg.textContent.trim().length * 11));
+      }
+      if (typingEl) { bodyEl.appendChild(typingEl); showEl(typingEl); scrollBot(); }
+      await delay(END_PAUSE);
+    }
+
+    async function loop() { while(true) { await playOnce(); } }
+    loop();
+  }
+
+  document.querySelectorAll('.wa-body').forEach((body, i) => {
+    setTimeout(() => runConversation(body), i * 2000);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yapt. — Monetize a Base que Você Já Tem</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0a; --bg-card:#111111; --bg-card2:#161616;
+    --teal:#20B2AA; --teal-light:#2DD4BF;
+    --wa-green:#25D366; --wa-dark:#128C7E;
+    --white:#ffffff; --gray-dim:#8696A0; --gray-mid:#aaaaaa;
+    --border:rgba(255,255,255,0.07); --text:#E8E8E8; --text-dim:#888;
+    --purple:#9B59B6; --purple-light:#A569BD; --purple-glow:rgba(155,89,182,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.25);color:var(--wa-green);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;}
+  .tag-purple{background:rgba(155,89,182,0.12);border-color:rgba(155,89,182,0.3);color:var(--purple-light);}
+  .section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--wa-green);margin-bottom:16px;}
+  h2.section-title{font-size:clamp(26px,3.8vw,46px);font-weight:700;line-height:1.2;color:var(--white);}
+  h2.section-title span{color:var(--wa-green);}
+  h2.section-title span.purple{color:var(--purple-light);}
+  .section-sub{font-size:17px;color:var(--gray-mid);line-height:1.7;max-width:680px;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(10,10,10,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-size:22px;font-weight:700;color:var(--white);}
+  .nav-logo .ya{color:var(--teal-light);}
+  .nav-logo .dot{color:var(--wa-green);}
+  .nav-badge{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:600;color:var(--gray-dim);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:100px;}
+  .nav-cta{background:var(--wa-green);color:#000;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;transition:all .2s;white-space:nowrap;}
+  .nav-cta:hover{background:#1fbb59;transform:translateY(-1px);}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;position:relative;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;pointer-events:none;}
+  .hero-bg::before{content:'';position:absolute;top:-200px;right:-100px;width:800px;height:800px;background:radial-gradient(circle,rgba(155,89,182,0.08) 0%,transparent 65%);border-radius:50%;}
+  .hero-bg::after{content:'';position:absolute;bottom:-100px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(37,211,102,0.07) 0%,transparent 65%);border-radius:50%;}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);}
+  .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+  .hero-headline{font-size:clamp(26px,3.8vw,50px);font-weight:800;line-height:1.15;color:var(--white);margin:16px 0 20px;letter-spacing:-.02em;}
+  .hero-headline .purple{color:var(--purple-light);}
+  .hero-headline .green{color:var(--wa-green);}
+  .hero-sub{font-size:16px;color:var(--gray-mid);line-height:1.7;margin-bottom:36px;max-width:520px;}
+  .hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  .btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--wa-green);color:#000;font-size:15px;font-weight:700;padding:16px 28px;border-radius:12px;text-decoration:none;transition:all .2s;box-shadow:0 8px 32px rgba(37,211,102,0.3);}
+  .btn-wa:hover{background:#1fbb59;transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,0.4);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--gray-mid);font-size:14px;font-weight:500;text-decoration:none;transition:all .2s;}
+  .btn-ghost:hover{color:var(--white);}
+  .hero-stats{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);}
+  .stat-num{font-size:26px;font-weight:800;color:var(--white);line-height:1;}
+  .stat-num .purple{color:var(--purple-light);}
+  .stat-num .green{color:var(--wa-green);}
+  .stat-label{font-size:12px;color:var(--text-dim);margin-top:4px;}
+
+  /* BASE VISUAL */
+  .base-visual{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:20px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);}
+  .bv-side{padding:20px 18px;}
+  .bv-side.cold{background:#0d0a10;border:1px solid rgba(155,89,182,0.12);}
+  .bv-side.hot{background:#071209;border:1px solid rgba(37,211,102,0.15);}
+  .bv-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:10px;}
+  .bv-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;margin-bottom:10px;}
+  .bv-tag.cold-t{background:rgba(155,89,182,0.15);color:var(--purple-light);}
+  .bv-tag.hot-t{background:rgba(37,211,102,0.15);color:var(--wa-green);}
+  .bv-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;font-size:11px;margin-bottom:4px;}
+  .bv-row.inactive{background:rgba(255,107,107,0.06);color:#aaa;}
+  .bv-row.active{background:rgba(37,211,102,0.06);color:var(--text);}
+  .bv-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .bv-dot.red{background:#FF6B6B;}
+  .bv-dot.green{background:var(--wa-green);}
+  .bv-name{font-weight:500;min-width:80px;}
+  .bv-status{font-size:10px;margin-left:auto;opacity:.6;}
+  .bv-divider{position:relative;display:flex;align-items:center;justify-content:center;}
+  .bv-divider-line{width:1px;background:linear-gradient(180deg,transparent,rgba(37,211,102,0.4),transparent);position:absolute;top:0;bottom:0;left:50%;}
+  .bv-arrow{width:40px;height:40px;background:var(--bg);border:2px solid rgba(37,211,102,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;z-index:2;}
+
+  /* PHONE SYSTEM */
+  .phone-wrap{display:flex;justify-content:center;align-items:center;position:relative;}
+  .phone-wrap::before{content:'';position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);width:320px;height:320px;background:radial-gradient(circle,rgba(37,211,102,0.16) 0%,transparent 70%);border-radius:50%;pointer-events:none;filter:blur(30px);}
+  .phone-wrap::after{content:'';position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);width:200px;height:40px;background:rgba(37,211,102,0.18);border-radius:50%;filter:blur(20px);pointer-events:none;animation:floatHero 5s ease-in-out infinite;}
+  .phone-frame{width:297px;height:568px;border-radius:22px;overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.15),0 32px 64px rgba(0,0,0,0.25),0 60px 100px rgba(0,0,0,0.15),0 0 0 1px rgba(255,255,255,0.06),0 0 80px rgba(37,211,102,0.08);animation:floatHero 5s ease-in-out infinite;}
+  .phone-frame.sm{width:260px;height:530px;border-radius:22px;}
+  .phone-frame.float{animation:float 4s ease-in-out infinite;}
+  @keyframes floatHero{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .phone-screen{display:flex;flex-direction:column;flex:1;overflow:hidden;background:#fff;}
+  .wa-status-bar{background:#fff;padding:8px 14px 4px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+  .wa-status-time{font-size:12px;font-weight:700;color:#111;}
+  .wa-status-icons{display:flex;gap:4px;align-items:center;}
+  .wa-header{background:#fff;padding:6px 10px 8px;display:flex;align-items:center;gap:8px;flex-shrink:0;border-bottom:1px solid rgba(0,0,0,0.06);}
+  .wa-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#25D366 0%,#008069 100%);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:white;flex-shrink:0;}
+  .wa-contact-name{font-size:15px;font-weight:600;color:#111B21;line-height:1.2;}
+  .wa-contact-status{font-size:12px;color:#008069;}
+  .wa-header-actions{margin-left:auto;display:flex;gap:18px;align-items:center;}
+  .wa-body{flex:1;overflow-y:auto;overflow-x:hidden;padding:8px 8px 4px;display:flex;flex-direction:column;gap:4px;background-color:#E5DDD5;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cdefs%3E%3Cstyle%3E.s%7Bfill:none;stroke:%23ccc5bc;stroke-width:.8;opacity:.35%7D%3C/style%3E%3C/defs%3E%3Ccircle class='s' cx='30' cy='30' r='12'/%3E%3Ccircle class='s' cx='80' cy='70' r='8'/%3E%3Ccircle class='s' cx='140' cy='25' r='10'/%3E%3Ccircle class='s' cx='200' cy='60' r='14'/%3E%3Ccircle class='s' cx='270' cy='20' r='9'/%3E%3Ccircle class='s' cx='50' cy='120' r='9'/%3E%3Ccircle class='s' cx='110' cy='140' r='13'/%3E%3Ccircle class='s' cx='180' cy='110' r='8'/%3E%3Ccircle class='s' cx='250' cy='130' r='12'/%3E%3Ccircle class='s' cx='20' cy='200' r='11'/%3E%3Ccircle class='s' cx='90' cy='220' r='9'/%3E%3Ccircle class='s' cx='160' cy='190' r='13'/%3E%3Ccircle class='s' cx='230' cy='210' r='8'/%3E%3Ccircle class='s' cx='40' cy='290' r='10'/%3E%3Ccircle class='s' cx='120' cy='310' r='12'/%3E%3Ccircle class='s' cx='70' cy='370' r='11'/%3E%3Ccircle class='s' cx='220' cy='380' r='13'/%3E%3C/svg%3E");background-size:400px 400px;background-attachment:local;}
+  .wa-body::-webkit-scrollbar{display:none;}
+  .wa-msg{max-width:80%;padding:7px 10px 4px;border-radius:8px;font-size:13px;line-height:1.45;position:relative;word-break:break-word;}
+  .wa-msg.in{background:#fff;color:#111B21;align-self:flex-start;border-radius:0 8px 8px 8px;box-shadow:0 1px 1px rgba(0,0,0,0.13);}
+  .wa-msg.out{background:#D9FDD3;color:#111B21;align-self:flex-end;border-radius:8px 0 8px 8px;box-shadow:0 1px 1px rgba(0,0,0,0.1);}
+  .wa-time{font-size:10px;color:rgba(0,0,0,0.35);margin-top:2px;display:flex;justify-content:flex-end;align-items:center;gap:3px;}
+  .wa-typing{background:#fff;padding:10px 14px;border-radius:0 8px 8px 8px;align-self:flex-start;display:flex;gap:4px;align-items:center;box-shadow:0 1px 1px rgba(0,0,0,0.13);}
+  .dot-typing{width:7px;height:7px;background:#8696A0;border-radius:50%;animation:typing 1.4s infinite;}
+  .dot-typing:nth-child(2){animation-delay:.2s}.dot-typing:nth-child(3){animation-delay:.4s}
+  @keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-4px);opacity:1}}
+  .wa-date-divider{text-align:center;font-size:11px;color:#667781;margin:4px 0;}
+  .wa-date-badge{display:inline-block;background:rgba(255,255,255,0.9);padding:4px 12px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,0.1);}
+  .wa-input-bar{background:#F0F2F5;padding:6px 8px 10px;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+  .wa-input-field{flex:1;background:#fff;border-radius:22px;padding:8px 12px;font-size:12px;color:#667781;box-shadow:0 1px 2px rgba(0,0,0,0.08);font-family:'Poppins',sans-serif;}
+  .wa-home-bar{background:#fff;padding:6px 0 4px;display:flex;justify-content:center;flex-shrink:0;}
+  .wa-home-indicator{width:100px;height:4px;background:#111;border-radius:3px;opacity:0.2;}
+  .wa-msg,.wa-typing,.wa-date-divider{display:none;opacity:0;transition:opacity 0.32s ease,transform 0.35s cubic-bezier(0.34,1.2,0.64,1);transform:translateY(10px) scale(0.97);}
+  .wa-msg.visible,.wa-typing.visible,.wa-date-divider.visible{opacity:1;transform:translateY(0) scale(1);}
+
+  section{position:relative;}
+  section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);}
+
+  /* PROBLEMA */
+  #problema{padding:100px 0;}
+  .problema-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+  .custo-box{background:linear-gradient(135deg,#100a18 0%,#0a0a0a 100%);border:1px solid rgba(155,89,182,0.2);border-radius:20px;padding:36px;margin-top:32px;}
+  .custo-num{font-size:72px;font-weight:800;color:var(--purple-light);line-height:1;}
+  .custo-label{font-size:18px;font-weight:700;color:var(--white);margin-top:8px;}
+  .custo-sub{font-size:14px;color:var(--text-dim);margin-top:8px;line-height:1.6;}
+  .versus-strip{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:24px;background:var(--bg-card);border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+  .vs-col{padding:16px 18px;}
+  .vs-col.bad{border-right:1px solid var(--border);}
+  .vs-divider{display:flex;align-items:center;justify-content:center;width:48px;background:rgba(255,255,255,0.03);font-size:11px;font-weight:700;color:var(--text-dim);}
+  .vs-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:6px;}
+  .vs-num{font-size:22px;font-weight:800;}
+  .vs-num.red{color:#FF6B6B;}
+  .vs-num.green{color:var(--wa-green);}
+  .vs-desc{font-size:11px;color:var(--text-dim);margin-top:4px;}
+  .problema-pontos{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+  .ponto{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);transition:all .3s;}
+  .ponto:hover{border-color:rgba(155,89,182,0.2);background:var(--bg-card2);}
+  .ponto-icon{width:34px;height:34px;border-radius:8px;background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+  .ponto-text strong{display:block;font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px;}
+  .ponto-text p{font-size:12px;color:var(--text-dim);line-height:1.5;}
+
+  /* CENÁRIOS */
+  #cenarios{padding:100px 0;background:linear-gradient(180deg,#0a0a0a 0%,#0d0a14 50%,#0a0a0a 100%);}
+  .cenarios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;background:var(--border);border-radius:20px;overflow:hidden;}
+  .cenario-card{background:var(--bg-card);padding:32px;transition:all .3s;position:relative;overflow:hidden;}
+  .cenario-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--teal));opacity:0;transition:opacity .3s;}
+  .cenario-card:hover{background:var(--bg-card2);}
+  .cenario-card:hover::before{opacity:1;}
+  .cenario-num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px;}
+  .cenario-icon{font-size:28px;margin-bottom:12px;display:block;}
+  .cenario-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:10px;}
+  .cenario-desc{font-size:13px;color:var(--text-dim);line-height:1.6;}
+  .cenario-example{margin-top:14px;padding:10px 14px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.15);border-radius:8px;font-size:11.5px;color:var(--text-dim);line-height:1.6;font-style:italic;}
+  .cenario-card.wide{grid-column:span 2;}
+
+  /* COMO FUNCIONA */
+  #como-funciona{padding:100px 0;}
+  .steps-h{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:60px;}
+  .steps-h::before{content:'';position:absolute;top:28px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--purple),var(--wa-green));}
+  .step-h{text-align:center;padding:0 16px;position:relative;}
+  .step-h-num{width:56px;height:56px;border-radius:50%;background:var(--bg-card2);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 20px;position:relative;z-index:2;box-shadow:0 0 0 6px var(--bg);}
+  .step-h-num.purple-b{border:2px solid var(--purple);color:var(--purple-light);}
+  .step-h-num.green-b{border:2px solid var(--wa-green);color:var(--wa-green);}
+  .step-h-num.teal-b{border:2px solid var(--teal);color:var(--teal-light);}
+  .step-h-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px;}
+  .step-h-desc{font-size:12px;color:var(--text-dim);line-height:1.6;}
+  .step-h-badges{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+  .badge{display:inline-block;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);color:var(--wa-green);font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;}
+  .badge.p{background:rgba(155,89,182,0.08);border-color:rgba(155,89,182,0.2);color:var(--purple-light);}
+
+  /* DIFERENÇA */
+  #diferenca{padding:100px 0;background:linear-gradient(180deg,#0a0a0a 0%,#0a100a 50%,#0a0a0a 100%);}
+  .comp-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:20px;overflow:hidden;}
+  .comp-table th{padding:20px 28px;font-size:14px;font-weight:700;text-align:left;}
+  .comp-table th:first-child{background:#111;color:var(--text-dim);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;width:35%;}
+  .comp-table th.col-old{background:#100a18;color:var(--purple-light);border-left:1px solid rgba(155,89,182,0.15);width:32%;}
+  .comp-table th.col-new{background:#0a1a10;color:var(--wa-green);border-left:1px solid rgba(37,211,102,0.15);width:33%;}
+  .comp-table td{padding:14px 28px;font-size:13px;border-top:1px solid rgba(255,255,255,0.04);}
+  .comp-table td:first-child{background:var(--bg-card);color:var(--text-dim);font-weight:500;font-size:12px;}
+  .comp-table td.old{background:rgba(16,10,24,0.5);color:#aaa;border-left:1px solid rgba(155,89,182,0.08);}
+  .comp-table td.new{background:rgba(10,26,16,0.5);color:var(--white);font-weight:500;border-left:1px solid rgba(37,211,102,0.08);}
+  .comp-highlight{margin-top:28px;padding:24px 32px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:16px;display:flex;align-items:center;gap:20px;}
+  .comp-highlight p{font-size:15px;color:var(--white);line-height:1.5;}
+  .comp-highlight strong{color:var(--wa-green);}
+
+  /* FORTALEZAS */
+  #fortalezas{padding:100px 0;}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;background:var(--border);border-radius:20px;overflow:hidden;}
+  .feat-card{background:var(--bg-card);padding:36px 32px;transition:all .3s;position:relative;overflow:hidden;}
+  .feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--teal));opacity:0;transition:opacity .3s;}
+  .feat-card:hover{background:var(--bg-card2);}
+  .feat-card:hover::before{opacity:1;}
+  .feat-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;}
+  .feat-icon{width:48px;height:48px;border-radius:12px;background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px;}
+  .feat-icon.green{background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.2);}
+  .feat-icon.teal{background:rgba(32,178,170,0.1);border-color:rgba(32,178,170,0.2);}
+  .feat-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;}
+  .feat-desc{font-size:13px;color:var(--text-dim);line-height:1.7;}
+  .feat-badge{display:inline-flex;margin-top:16px;background:rgba(155,89,182,0.1);color:var(--purple-light);font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;border:1px solid rgba(155,89,182,0.2);}
+  .feat-badge.green{background:rgba(37,211,102,0.1);color:var(--wa-green);border-color:rgba(37,211,102,0.2);}
+  .feat-badge.teal{background:rgba(32,178,170,0.1);color:var(--teal-light);border-color:rgba(32,178,170,0.2);}
+
+  /* MATEMÁTICA */
+  #matematica{padding:100px 0;background:linear-gradient(180deg,#0a0a0a 0%,#0d0a14 50%,#0a0a0a 100%);}
+  .math-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:60px;}
+  .math-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+  .math-card-header{padding:20px 24px;border-bottom:1px solid var(--border);}
+  .math-card-title{font-size:13px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:8px;}
+  .math-row{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .math-row:last-child{border-bottom:none;}
+  .math-row-label{font-size:12px;color:var(--text-dim);}
+  .math-row-val{font-size:13px;font-weight:600;color:var(--white);}
+  .math-row-val.green{color:var(--wa-green);font-size:16px;font-weight:800;}
+  .math-row-val.purple{color:var(--purple-light);}
+  .math-row.highlight{background:rgba(37,211,102,0.05);}
+  .math-gain{margin:24px;padding:20px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);border-radius:12px;text-align:center;}
+  .math-gain-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .math-gain-val{font-size:32px;font-weight:800;color:var(--wa-green);}
+  .math-gain-sub{font-size:12px;color:var(--text-dim);margin-top:4px;}
+  .math-callout{margin-top:28px;padding:24px 32px;background:rgba(155,89,182,0.06);border:1px solid rgba(155,89,182,0.2);border-radius:16px;}
+  .math-callout p{font-size:15px;color:var(--white);line-height:1.6;}
+  .math-callout strong{color:var(--purple-light);}
+
+  /* PRA QUEM */
+  #pra-quem{padding:100px 0;}
+  .pra-quem-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist{display:flex;flex-direction:column;gap:12px;margin-top:32px;}
+  .check-item{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:all .3s;}
+  .check-item:hover{border-color:rgba(37,211,102,0.3);}
+  .check-icon{width:22px;height:22px;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;color:#000;font-weight:700;}
+  .check-text{font-size:13px;color:var(--text);line-height:1.5;}
+  .contraindication{margin-top:20px;padding:18px 22px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;}
+  .contra-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:6px;}
+  .contra-text{font-size:13px;color:var(--text-dim);line-height:1.6;}
+
+  /* OBJEÇÕES */
+  #objections{padding:100px 0;background:linear-gradient(180deg,#0a0a0a 0%,#0d0a14 50%,#0a0a0a 100%);}
+  .obj-grid{display:flex;flex-direction:column;gap:16px;margin-top:60px;}
+  .obj-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+  .obj-q{padding:22px 28px;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;color:var(--white);}
+  .obj-q::after{content:'+';font-size:22px;color:var(--wa-green);font-weight:300;flex-shrink:0;}
+  .obj-a{padding:0 28px 22px;font-size:14px;color:var(--text-dim);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;}
+
+  /* BSP */
+  .bsp-strip{padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:60px 0;}
+  .bsp-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+  .bsp-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-dim);font-weight:500;}
+  .bsp-item svg{width:22px;height:22px;}
+  .bsp-item strong{color:var(--white);}
+
+  /* CTA */
+  #cta-final{padding:120px 0;background:linear-gradient(135deg,#0d0a14 0%,#0a0a0a 40%,#050f08 100%);position:relative;overflow:hidden;}
+  #cta-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(155,89,182,0.07) 0%,rgba(37,211,102,0.05) 50%,transparent 70%);pointer-events:none;}
+  .cta-final-inner{text-align:center;position:relative;z-index:2;}
+  .cta-final-headline{font-size:clamp(28px,5vw,56px);font-weight:800;color:var(--white);line-height:1.2;margin:16px 0;}
+  .cta-final-headline .purple{color:var(--purple-light);}
+  .cta-final-sub{font-size:17px;color:var(--gray-mid);margin-bottom:48px;line-height:1.6;}
+  .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+  .btn-wa-lg{display:inline-flex;align-items:center;gap:12px;background:var(--wa-green);color:#000;font-size:17px;font-weight:700;padding:20px 40px;border-radius:14px;text-decoration:none;transition:all .2s;box-shadow:0 8px 40px rgba(37,211,102,0.35);}
+  .btn-wa-lg:hover{background:#1fbb59;transform:translateY(-3px);box-shadow:0 16px 60px rgba(37,211,102,0.45);}
+  .btn-outline-lg{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);font-size:17px;font-weight:600;padding:20px 40px;border-radius:14px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:all .2s;}
+  .btn-outline-lg:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.3);}
+  .cta-microcopy{font-size:13px;color:var(--text-dim);}
+
+  /* MID CTA */
+  .mid-cta{text-align:center;padding:48px 0 8px;}
+  .mid-cta a{display:inline-flex;align-items:center;gap:10px;background:var(--wa-green);color:#000;font-size:15px;font-weight:700;padding:16px 32px;border-radius:12px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,0.3);transition:all .2s;}
+  .mid-cta a:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,0.45);}
+  .mid-cta p{font-size:12px;color:var(--text-dim);margin-top:10px;}
+
+  footer{padding:40px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-logo{font-size:18px;font-weight:700;color:var(--white);}
+  .footer-logo span{color:var(--teal-light);}
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;}
+  .footer-links a:hover{color:var(--white);}
+  .footer-copy{font-size:12px;color:var(--text-dim);}
+  .platform-pill{background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--text-dim);font-weight:500;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:900px){
+    .hero-inner,.problema-inner,.pra-quem-inner,.math-grid{grid-template-columns:1fr;}
+    .cenarios-grid,.features-grid{grid-template-columns:1fr 1fr;}
+    .steps-h{grid-template-columns:1fr 1fr;}
+    .steps-h::before{display:none;}
+    .cenario-card.wide{grid-column:span 1;}
+    .phone-wrap{margin-top:40px;}
+  }
+  @media(max-width:600px){
+    .cenarios-grid,.features-grid{grid-template-columns:1fr;}
+    .steps-h{grid-template-columns:1fr;}
+    .phone-frame{width:260px;height:520px;}
+    .base-visual{grid-template-columns:1fr;}
+    .hero-stats{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo"><span class="ya">ya</span>pt<span class="dot">.</span></div>
+      <div class="nav-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        BSP Oficial Meta · 30M msg/mês
+      </div>
+      <a href="#cta-final" class="nav-cta">Grátis por 7 dias →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"><div class="hero-grid"></div></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="reveal">
+        <div class="tag tag-purple">💎 Reativação de Base · Monetização Contínua</div>
+        <h1 class="hero-headline">
+          Sua maior oportunidade de receita não é o próximo lançamento.<br>
+          É a base que você <span class="purple">abandonou.</span>
+        </h1>
+        <p class="hero-sub">A yapt. é a IA que reativa sua base de alunos e leads no WhatsApp — oferta o produto certo, na hora certa, de forma personalizada e automática.</p>
+        <div class="hero-ctas">
+          <a href="#cta-final" class="btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Experimentar grátis por 7 dias
+          </a>
+          <a href="#problema" class="btn-ghost">Ver quanta receita tá parada ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">7<span class="green">x</span></div>
+            <div class="stat-label">mais barato vender pra base existente</div>
+          </div>
+          <div>
+            <div class="stat-num">12<span class="purple">%</span></div>
+            <div class="stat-label">conversão média de base reativada</div>
+          </div>
+          <div>
+            <div class="stat-num">3<span class="green">x</span></div>
+            <div class="stat-label">mais margem vs tráfego novo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL: base fria → conversa quente -->
+      <div class="reveal">
+        <div class="base-visual">
+          <div class="bv-side cold">
+            <div class="bv-label">Sua base hoje</div>
+            <span class="bv-tag cold-t">Inativa 😶</span>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Lucas Ferreira</span><span class="bv-status">há 8 meses</span></div>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Ana Paula</span><span class="bv-status">há 1 ano</span></div>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Carlos Melo</span><span class="bv-status">há 6 meses</span></div>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Mariana S.</span><span class="bv-status">há 4 meses</span></div>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Pedro Alves</span><span class="bv-status">há 2 anos</span></div>
+            <div style="font-size:11px;color:var(--text-dim);margin-top:10px;">+ 4.995 inativos 💸</div>
+          </div>
+          <div class="bv-side hot">
+            <div class="bv-label">Com yapt. IA</div>
+            <span class="bv-tag hot-t">Convertendo 🔥</span>
+            <div class="bv-row active"><div class="bv-dot green"></div><span class="bv-name">Lucas Ferreira</span><span style="font-size:10px;color:var(--wa-green);margin-left:auto;">R$ 997 ✓</span></div>
+            <div class="bv-row active"><div class="bv-dot green"></div><span class="bv-name">Ana Paula</span><span style="font-size:10px;color:var(--wa-green);margin-left:auto;">respondeu 💬</span></div>
+            <div class="bv-row inactive"><div class="bv-dot red"></div><span class="bv-name">Carlos Melo</span><span style="font-size:10px;color:var(--text-dim);margin-left:auto;">follow-up D+2</span></div>
+            <div class="bv-row active"><div class="bv-dot green"></div><span class="bv-name">Mariana S.</span><span style="font-size:10px;color:var(--wa-green);margin-left:auto;">R$ 497 ✓</span></div>
+            <div class="bv-row active"><div class="bv-dot green"></div><span class="bv-name">Pedro Alves</span><span style="font-size:10px;color:var(--wa-green);margin-left:auto;">interesse 🎯</span></div>
+            <div style="font-size:11px;color:var(--wa-green);font-weight:600;margin-top:10px;">R$ 74.550 recuperados 💰</div>
+          </div>
+        </div>
+
+        <!-- phone: reativação -->
+        <div style="display:flex;justify-content:center;margin-top:24px;position:relative;">
+          <div style="position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);width:180px;height:40px;background:rgba(37,211,102,0.2);border-radius:50%;filter:blur(20px);pointer-events:none;"></div>
+          <div class="phone-frame" style="width:280px;height:420px;animation:floatHero 5s ease-in-out infinite .5s;">
+            <div class="phone-screen">
+              <div class="wa-status-bar">
+                <span class="wa-status-time">10:30</span>
+                <div class="wa-status-icons">
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg>
+                </div>
+              </div>
+              <div class="wa-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+                <div style="flex:1;"><div class="wa-contact-name" style="font-size:13px;">yapt. IA</div><div class="wa-contact-status" style="font-size:11px;">Reativação de base</div></div>
+              </div>
+              <div class="wa-body">
+                <div class="wa-date-divider"><span class="wa-date-badge">Hoje</span></div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Oi Lucas! Tudo bem? 😊<br><br>Vi que você fez o Tráfego do Zero com a gente ano passado. Como tá a implementação? Tá rodando campanha hoje?
+                  <div class="wa-time">10:30</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Oi! Tô rodando sim mas tô com dificuldade em copy mesmo
+                  <div class="wa-time">10:34 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Faz todo sentido! Tráfego funcionando + copy fraca = CPM alto e conversão baixa. A gente tem um curso específico pra isso. Quer que eu te mande os detalhes?
+                  <div class="wa-time">10:34</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Sim! Manda 🙏
+                  <div class="wa-time">10:35 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+              </div>
+              <div class="wa-input-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+              </div>
+              <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="container">
+    <div class="problema-inner">
+      <div class="reveal">
+        <div class="section-label">O problema</div>
+        <h2 class="section-title">Você gastou pra conquistar essa base.<br>E nunca mais <span class="purple">falou com ela.</span></h2>
+        <p class="section-sub" style="margin-top:16px;">Faz as contas. Quantos alunos já passaram pelos seus produtos? Cada um custou dinheiro pra adquirir. E depois que entregou o produto...</p>
+
+        <div class="custo-box">
+          <div class="custo-num">7x</div>
+          <div class="custo-label">mais barato vender pra quem já comprou de você</div>
+          <div class="custo-sub">Do que adquirir um cliente novo. Sete vezes. Essa base não é custo passado — é receita futura parada.</div>
+          <div class="versus-strip" style="margin-top:24px;">
+            <div class="vs-col bad">
+              <div class="vs-label">Tráfego Novo</div>
+              <div class="vs-num red">R$300</div>
+              <div class="vs-desc">custo médio por venda</div>
+            </div>
+            <div class="vs-divider">VS</div>
+            <div class="vs-col">
+              <div class="vs-label">Base Reativada</div>
+              <div class="vs-num green">R$40</div>
+              <div class="vs-desc">custo médio por venda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p style="font-size:15px;color:var(--text-dim);line-height:1.7;margin-bottom:24px;">Enquanto isso, você tá lá, brigando por CPM cada vez mais caro, tentando convencer desconhecidos a confiar em você...</p>
+        <div class="problema-pontos">
+          <div class="ponto">
+            <div class="ponto-icon">💸</div>
+            <div class="ponto-text"><strong>Investindo em tráfego pra gente nova</strong><p>Enquanto quem já comprou, já confiou e já teve resultado apodrece numa planilha.</p></div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">📧</div>
+            <div class="ponto-text"><strong>E-mail de upsell genérico que vai pro spam</strong><p>Talvez um disparo 30 dias depois. Talvez nada. O vínculo esfria a cada semana de silêncio.</p></div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">📉</div>
+            <div class="ponto-text"><strong>Conversão de 1-2% na base</strong><p>Porque disparo genérico pra todo mundo não gera conversa — e sem conversa, não gera venda.</p></div>
+          </div>
+          <div class="ponto">
+            <div class="ponto-icon">⏰</div>
+            <div class="ponto-text"><strong>Cada mês que passa, o vínculo enfraquece</strong><p>E a oportunidade de vender pra essa base vai junto. Receita que some sem ruído.</p></div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:16px 20px;background:rgba(37,211,102,0.05);border:1px solid rgba(37,211,102,0.15);border-radius:12px;">
+          <p style="font-size:14px;color:var(--white);line-height:1.5;">Essa base não é custo passado. É <strong style="color:var(--wa-green);">receita futura parada.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 1 -->
+<div class="container"><div class="mid-cta reveal">
+  <a href="#cta-final"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Monetizar minha base agora</a>
+  <p>Sem cartão · 7 dias grátis · Cancela quando quiser</p>
+</div></div>
+
+<!-- CENÁRIOS -->
+<section id="cenarios">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Os cenários</div>
+      <h2 class="section-title">5 formas de monetizar a base<br>que você <span>já tem</span></h2>
+    </div>
+    <div class="cenarios-grid reveal">
+      <div class="cenario-card">
+        <div class="cenario-num">01</div>
+        <span class="cenario-icon">📈</span>
+        <div class="cenario-title">Upsell de Esteira</div>
+        <div class="cenario-desc">Aluno comprou o produto de entrada → IA oferta o intermediário → depois o avançado → depois a mentoria. Cada oferta no momento certo.</div>
+        <div class="cenario-example">"Vi que você terminou o módulo 3. O próximo passo natural é o programa avançado. Quer saber mais?"</div>
+      </div>
+      <div class="cenario-card">
+        <div class="cenario-num">02</div>
+        <span class="cenario-icon">🔀</span>
+        <div class="cenario-title">Cross-sell Inteligente</div>
+        <div class="cenario-desc">Aluno comprou tráfego → IA identifica que precisa de copy → oferta com ângulo personalizado baseado no que ele está tentando resolver.</div>
+        <div class="cenario-example">"Tô rodando campanha mas com dificuldade em copy." → IA oferta o curso de copy na hora.</div>
+      </div>
+      <div class="cenario-card">
+        <div class="cenario-num">03</div>
+        <span class="cenario-icon">🔁</span>
+        <div class="cenario-title">Renovação de Assinatura</div>
+        <div class="cenario-desc">Assinatura vencendo em 15 dias → IA entra em contato → pergunta como tá → resolve insatisfação → renova com desconto ou upgrade. Churn cortado antes de acontecer.</div>
+        <div class="cenario-example">Churn reduzido antes de acontecer — sem precisar de equipe de CS.</div>
+      </div>
+      <div class="cenario-card">
+        <div class="cenario-num">04</div>
+        <span class="cenario-icon">🔥</span>
+        <div class="cenario-title">Reativação de Inativos</div>
+        <div class="cenario-desc">Aluno comprou há 6 meses e sumiu → IA reabre o relacionamento com contexto do produto anterior → lead frio vira lead quente de novo.</div>
+        <div class="cenario-example">"Faz tempo que não nos falamos. Lançamos [novidade] que tem tudo a ver com o que você estudou."</div>
+      </div>
+      <div class="cenario-card wide">
+        <div class="cenario-num">05</div>
+        <span class="cenario-icon">🎯</span>
+        <div class="cenario-title">Pesquisa + Oferta — Product-market fit antes de criar</div>
+        <div class="cenario-desc">IA conversa com a base pra entender dores atuais → identifica demanda → você cria o produto que a base pediu → IA oferta de volta pra quem pediu. Product-market fit validado antes de gastar um centavo em tráfego.</div>
+        <div class="cenario-example">"Qual é sua maior dificuldade hoje depois de implementar o método?" → base responde → você lança o produto que eles precisam → IA oferta pra quem pediu. Taxa de conversão: 20-35%.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Como funciona</div>
+      <h2 class="section-title">Da base fria à receita recorrente<br>em <span>4 passos</span></h2>
+    </div>
+
+    <div class="steps-h reveal">
+      <div class="step-h">
+        <div class="step-h-num purple-b">1</div>
+        <div class="step-h-title">Importação</div>
+        <div class="step-h-desc">Conecta sua base. A yapt. ingere nome, produto comprado, data, progresso, ticket. Tudo vira contexto da IA.</div>
+        <div class="step-h-badges">
+          <span class="badge p">Hotmart</span><span class="badge p">Kiwify</span><span class="badge p">Eduzz</span><span class="badge p">CSV</span>
+        </div>
+      </div>
+      <div class="step-h">
+        <div class="step-h-num purple-b">2</div>
+        <div class="step-h-title">Segmentação</div>
+        <div class="step-h-desc">IA segmenta automaticamente: pronto pro upsell, precisa de reativação, momento de renovar, nunca mais interagiu.</div>
+        <div class="step-h-badges">
+          <span class="badge p">Automático</span><span class="badge p">Sem setup manual</span>
+        </div>
+      </div>
+      <div class="step-h">
+        <div class="step-h-num green-b">3</div>
+        <div class="step-h-title">Conversa</div>
+        <div class="step-h-desc">Cada segmento recebe abordagem diferente no WhatsApp. Não é template — IA adapta baseado no histórico e nas respostas em tempo real.</div>
+        <div class="step-h-badges">
+          <span class="badge">1:1 real</span><span class="badge">Personalizado</span>
+        </div>
+      </div>
+      <div class="step-h">
+        <div class="step-h-num teal-b">4</div>
+        <div class="step-h-title">Monetização</div>
+        <div class="step-h-desc">Upsell, cross-sell, renovação, reativação — tudo automático. CRM rastreia cada conversa e conversão. Receita visível em tempo real.</div>
+        <div class="step-h-badges">
+          <span class="badge" style="background:rgba(32,178,170,0.08);border-color:rgba(32,178,170,0.2);color:var(--teal-light);">yaDeals CRM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone: upsell em ação -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:80px;" class="reveal">
+      <div style="display:flex;justify-content:center;position:relative;">
+        <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:50px;background:rgba(155,89,182,0.18);border-radius:50%;filter:blur(28px);pointer-events:none;"></div>
+        <div class="phone-frame sm float" style="box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.14),0 32px 64px rgba(0,0,0,0.22),0 0 0 1px rgba(255,255,255,0.06),0 0 60px rgba(155,89,182,0.08);">
+          <div class="phone-screen">
+            <div class="wa-status-bar"><span class="wa-status-time">16:15</span><div class="wa-status-icons"><svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg></div></div>
+            <div class="wa-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+              <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+              <div style="flex:1;"><div class="wa-contact-name" style="font-size:13px;">yapt. IA</div><div class="wa-contact-status" style="font-size:11px;">Upsell de esteira</div></div>
+            </div>
+            <div class="wa-body">
+              <div class="wa-date-divider"><span class="wa-date-badge">Hoje</span></div>
+              <div class="wa-msg in" style="font-size:12px;">
+                Mariana! Vi que você concluiu o Módulo 3 do Copy Essencial. Como tá aplicando? 🎯
+                <div class="wa-time">16:15</div>
+              </div>
+              <div class="wa-msg out" style="font-size:12px;">
+                Tô escrevendo meus primeiros anúncios! Mas ainda insegura com o gancho
+                <div class="wa-time">16:18 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-msg in" style="font-size:12px;">
+                Perfeito — gancho é o maior diferencial! Temos o Copy Avançado que foca exatamente nisso, com templates testados em R$2M+ de tráfego. Você que fez o Essencial tem 40% de desconto. Quer ver?
+                <div class="wa-time">16:18</div>
+              </div>
+              <div class="wa-msg out" style="font-size:12px;">
+                Nossa sim! Manda os detalhes 🙏
+                <div class="wa-time">16:20 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+              </div>
+              <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+            </div>
+            <div class="wa-input-bar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+              <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+            </div>
+            <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tag" style="margin-bottom:16px;">Segmentação Automática</div>
+        <h3 style="font-size:26px;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.3;">A IA sabe quem está pronto<br>pro próximo passo.</h3>
+        <p style="font-size:15px;color:var(--text-dim);line-height:1.7;margin-bottom:24px;">Você não precisa criar segmentos manualmente. A IA identifica automaticamente: quem terminou o produto anterior, quem está no momento de renovar, quem ficou parado no meio do caminho.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:10px;align-items:center;font-size:13px;color:var(--text-dim);"><span style="color:var(--wa-green);font-weight:700;">→</span>Terminou produto A → recebe oferta do B</div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:13px;color:var(--text-dim);"><span style="color:var(--wa-green);font-weight:700;">→</span>Parou no módulo 2 → recebe reengajamento</div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:13px;color:var(--text-dim);"><span style="color:var(--wa-green);font-weight:700;">→</span>Inativo há 6 meses → recebe reativação com novidade</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 2 -->
+<div class="container"><div class="mid-cta reveal">
+  <a href="#cta-final"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base</a>
+  <p>Integra com Hotmart · Kiwify · Eduzz · Kirvano · Cakto · Planilha CSV</p>
+</div></div>
+
+<!-- DIFERENÇA -->
+<section id="diferenca">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">A diferença</div>
+      <h2 class="section-title">Disparo pra base <span class="purple">≠</span> Monetização de base</h2>
+    </div>
+    <div class="reveal" style="margin-top:60px;">
+      <table class="comp-table">
+        <thead><tr><th></th><th class="col-old">❌ O que você faz hoje</th><th class="col-new">✅ O que a yapt. faz</th></tr></thead>
+        <tbody>
+          <tr><td>Abordagem</td><td class="old">E-mail de oferta pra lista inteira</td><td class="new">Conversa individual por produto e histórico</td></tr>
+          <tr><td>Canal</td><td class="old">Disparo de WhatsApp genérico</td><td class="new">IA que sabe o histórico e adapta em tempo real</td></tr>
+          <tr><td>Oferta</td><td class="old">Mesmo produto pra todo mundo</td><td class="new">Produto certo pro aluno certo no momento certo</td></tr>
+          <tr><td>Persistência</td><td class="old">Um disparo e acabou</td><td class="new">Follow-up inteligente por dias até converter</td></tr>
+          <tr><td>Visibilidade</td><td class="old">Sem saber quem abriu ou ignorou</td><td class="new">Dashboard completo: resposta, objeção, conversão</td></tr>
+          <tr><td>Operação</td><td class="old">Precisa de equipe comercial manual</td><td class="new">100% automático — 500 ou 50.000 alunos</td></tr>
+        </tbody>
+      </table>
+      <div class="comp-highlight">
+        <span style="font-size:32px;">💡</span>
+        <p>O aluno não sente que tá recebendo oferta. <strong>Sente que alguém lembrou dele. E quem se sente lembrado, compra.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORTALEZAS -->
+<section id="fortalezas">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Por que funciona</div>
+      <h2 class="section-title">O que faz a yapt. transformar<br>base parada em <span>receita</span></h2>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-card">
+        <div class="feat-num">01</div>
+        <div class="feat-icon">♾️</div>
+        <div class="feat-title">Memória Infinita</div>
+        <div class="feat-desc">A IA lembra de tudo. O que o aluno comprou, quando, quanto pagou, o que conversou da última vez. Nenhum contexto se perde. O aluno sente que você conhece ele — porque a IA conhece.</div>
+        <span class="feat-badge">Diferencial único</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">02</div>
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">CRM com Histórico 360°</div>
+        <div class="feat-desc">Cada aluno tem perfil completo: produtos comprados, ticket acumulado, conversas anteriores, objeções, interesses demonstrados. Você vê a base inteira com raio-x individual.</div>
+        <span class="feat-badge green">yaDeals CRM</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">03</div>
+        <div class="feat-icon">🎯</div>
+        <div class="feat-title">Segmentação Automática</div>
+        <div class="feat-desc">A IA identifica: quem está pronto pro upsell, quem precisa de reativação, quem está no momento de renovar. Cada grupo recebe abordagem diferente. Sem trabalho manual.</div>
+        <span class="feat-badge">IA classifica</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">04</div>
+        <div class="feat-icon green">⏱️</div>
+        <div class="feat-title">Timing de Oferta</div>
+        <div class="feat-desc">A IA não oferta no dia 1. Reabre o relacionamento primeiro, entende o momento, e só oferta quando identifica abertura real. É o que separa "vender" de "incomodar".</div>
+        <span class="feat-badge green">Sem pressão</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">05</div>
+        <div class="feat-icon green">🔄</div>
+        <div class="feat-title">Follow-up Persistente</div>
+        <div class="feat-desc">Demonstrou interesse mas não comprou? A IA volta em 2 dias com ângulo diferente. E em 5 dias com outro. A maioria das vendas de base acontece no 3º ao 5º contato.</div>
+        <span class="feat-badge green">Até 5 contatos</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">06</div>
+        <div class="feat-icon teal">📈</div>
+        <div class="feat-title">Rastreamento de Receita</div>
+        <div class="feat-desc">Você sabe exatamente quanto de receita veio da base reativada. Por produto, por segmento, por período. ROI claro, sem achismo, em tempo real.</div>
+        <span class="feat-badge teal">yaPerformance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATEMÁTICA -->
+<section id="matematica">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">A matemática</div>
+      <h2 class="section-title">A receita que tá parada<br>na sua base <span>agora</span></h2>
+    </div>
+    <div class="math-grid reveal">
+      <div class="math-card">
+        <div class="math-card-header">
+          <div class="math-card-title">💰 Reativação — 5.000 alunos · Ticket R$497</div>
+        </div>
+        <div class="math-row"><span class="math-row-label">Receita potencial total</span><span class="math-row-val purple">R$ 2.485.000</span></div>
+        <div class="math-row"><span class="math-row-label">Conversão com e-mail (1–2%)</span><span class="math-row-val">R$ 24.850 – R$49.700</span></div>
+        <div class="math-row highlight"><span class="math-row-label">Conversão com yapt. (5–12%)</span><span class="math-row-val green">R$ 124.250 – R$ 298.200</span></div>
+        <div class="math-gain">
+          <div class="math-gain-label">💸 Receita adicional</div>
+          <div class="math-gain-val">R$ 74.550 – R$ 248.500</div>
+          <div class="math-gain-sub">de uma campanha de reativação</div>
+        </div>
+      </div>
+      <div class="math-card">
+        <div class="math-card-header">
+          <div class="math-card-title">🎯 Custo por venda — Tráfego vs Base</div>
+        </div>
+        <div class="math-row"><span class="math-row-label">Custo por venda — tráfego novo</span><span class="math-row-val" style="color:#FF6B6B;">R$ 150–300</span></div>
+        <div class="math-row highlight"><span class="math-row-label">Custo por venda — base reativada</span><span class="math-row-val green">R$ 20–50</span></div>
+        <div class="math-row"><span class="math-row-label">Confiança — tráfego novo</span><span class="math-row-val" style="color:#aaa;">Zero (desconhecido)</span></div>
+        <div class="math-row highlight"><span class="math-row-label">Confiança — base reativada</span><span class="math-row-val green">Alta (já comprou)</span></div>
+        <div class="math-row"><span class="math-row-label">Tempo até conversão — tráfego</span><span class="math-row-val" style="color:#aaa;">Semanas / meses</span></div>
+        <div class="math-row highlight"><span class="math-row-label">Tempo até conversão — base</span><span class="math-row-val green">Dias</span></div>
+        <div class="math-gain">
+          <div class="math-gain-label">Cada venda na base</div>
+          <div class="math-gain-val" style="font-size:22px;">= venda que você não paga em tráfego</div>
+          <div class="math-gain-sub">Crescer com margem, não queimando dinheiro</div>
+        </div>
+      </div>
+    </div>
+    <div class="math-callout reveal">
+      <p>E isso é de <em>uma</em> campanha de reativação. A yapt. roda continuamente — cada aluno que termina um produto entra automaticamente no ciclo de monetização. <strong>É receita recorrente, não pontual.</strong></p>
+    </div>
+    <div class="mid-cta" style="padding-top:40px;">
+      <a href="#cta-final"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base → Grátis por 7 dias</a>
+      <p>Sem cartão de crédito · Cancela quando quiser</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRA QUEM -->
+<section id="pra-quem">
+  <div class="container">
+    <div class="pra-quem-inner">
+      <div class="reveal">
+        <div class="section-label">Pra quem é</div>
+        <h2 class="section-title">A yapt. é <span>pra você</span> se:</h2>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você tem centenas ou milhares de alunos que nunca mais foram abordados</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você tem esteira de produtos mas só vende pro tráfego novo</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você sente que deixa dinheiro na mesa toda vez que lança e não oferta pra base</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você já tentou e-mail e disparo pra base e o resultado foi decepcionante</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você quer receita recorrente sem depender 100% de lançamento e tráfego pago</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">Você não tem equipe comercial pra abordar a base manualmente</div></div>
+        </div>
+        <div class="contraindication">
+          <div class="contra-label">⚠ Contra-indicação</div>
+          <div class="contra-text">Se você tem menos de 200 alunos e apenas 1 produto sem esteira, o impacto é limitado. A yapt. performa melhor quando existe pelo menos um segundo produto pra ofertar ou quando a base é grande o suficiente pra justificar a automação.</div>
+        </div>
+      </div>
+
+      <!-- Phone: renovação de assinatura -->
+      <div class="reveal" style="display:flex;justify-content:center;">
+        <div style="position:relative;">
+          <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:50px;background:rgba(32,178,170,0.15);border-radius:50%;filter:blur(28px);pointer-events:none;"></div>
+          <div class="phone-frame sm float" style="animation-delay:.8s;box-shadow:0 4px 6px rgba(0,0,0,0.08),0 12px 24px rgba(0,0,0,0.14),0 32px 64px rgba(0,0,0,0.22),0 0 0 1px rgba(255,255,255,0.06),0 0 50px rgba(32,178,170,0.08);">
+            <div class="phone-screen">
+              <div class="wa-status-bar"><span class="wa-status-time">9:00</span><div class="wa-status-icons"><svg width="15" height="11" viewBox="0 0 15 11" fill="#111"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="#111"/><rect x="2" y="2" width="13" height="7" rx="1" fill="#111"/><path d="M20 3.5v4a2 2 0 0 0 0-4z" fill="#111"/></svg></div></div>
+              <div class="wa-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#008069"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <div class="wa-avatar" style="width:34px;height:34px;font-size:13px;">y</div>
+                <div style="flex:1;"><div class="wa-contact-name" style="font-size:13px;">yapt. IA</div><div class="wa-contact-status" style="font-size:11px;">Renovação · 15 dias</div></div>
+              </div>
+              <div class="wa-body">
+                <div class="wa-date-divider"><span class="wa-date-badge">15 dias antes do vencimento</span></div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Oi Pedro! Sua assinatura da Mentoria Elite vence em 15 dias. Como tá sendo a experiência até aqui? 😊
+                  <div class="wa-time">9:00</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Tem sido boa! Mas ainda não consegui implementar tudo
+                  <div class="wa-time">9:14 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-msg in" style="font-size:12px;">
+                  Entendo! Na verdade o 2º semestre é quando a maioria implementa de verdade — você tá exatamente no momento certo. Temos uma condição especial de renovação com 20% de desconto + 2 sessões bônus. Quer ver?
+                  <div class="wa-time">9:14</div>
+                </div>
+                <div class="wa-msg out" style="font-size:12px;">
+                  Tô interessado! Me manda
+                  <div class="wa-time">9:16 <svg width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#53bdeb" stroke-width="2" stroke-linecap="round"><path d="M1 6l3 3 5-5M6 6l3 3 5-5"/></svg></div>
+                </div>
+                <div class="wa-typing"><div class="dot-typing"></div><div class="dot-typing"></div><div class="dot-typing"></div></div>
+              </div>
+              <div class="wa-input-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                <div class="wa-input-field" style="font-size:11px;">Mensagem</div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#8696A0"><path d="M9 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm-1 18.93A7.001 7.001 0 0 1 5 12H3a9 9 0 0 0 7 8.94V23h2v-2.06A9 9 0 0 0 19 12h-2a7 7 0 0 1-3 5.93V20h-6v.93z"/></svg>
+              </div>
+              <div class="wa-home-bar"><div class="wa-home-indicator"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJEÇÕES -->
+<section id="objections">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Suas dúvidas</div>
+      <h2 class="section-title">"Mas a minha base já tá<br>fria <span>demais...</span>"</h2>
+    </div>
+    <div class="obj-grid reveal">
+      <div class="obj-item">
+        <div class="obj-q">"Faz mais de um ano que não falo com esses leads."</div>
+        <div class="obj-a">Melhor tarde do que nunca — literalmente. A IA não chega com "compra meu produto novo". Ela reabre com contexto: "Oi [nome], vi que você fez o [curso X] com a gente ano passado. Como tá a aplicação?" O lead não sente que tá recebendo oferta. Sente que alguém lembrou dele. Isso reativa o vínculo antes de ofertar qualquer coisa.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Não quero queimar minha base com spam."</div>
+        <div class="obj-a">Exatamente por isso que disparo não funciona e a yapt. funciona. Disparo é mensagem igual pra todo mundo — parece spam porque é spam. A yapt. conversa individualmente, adapta tom, respeita o tempo do lead e para se ele pedir. O lead sente atenção, não pressão.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Não tenho esteira de produtos, só tenho um."</div>
+        <div class="obj-a">Três caminhos: upsell pra mentoria/consultoria individual. Renovação se for assinatura. Ou use a IA pra fazer pesquisa conversacional com a base — descubra o que eles precisam agora, crie o produto e oferte pra quem pediu. A base te diz o que vender.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Meus alunos compraram em plataformas diferentes ao longo dos anos."</div>
+        <div class="obj-a">A yapt. ingere de qualquer fonte — Hotmart, Kiwify, Eduzz, planilha, CSV. Consolida tudo num CRM único. Aluno que comprou produto A na Hotmart em 2024 e produto B na Kiwify em 2025 aparece como um perfil só com histórico completo.</div>
+      </div>
+      <div class="obj-item">
+        <div class="obj-q">"Quanto da base realmente vai responder?"</div>
+        <div class="obj-a">WhatsApp tem taxa de leitura acima de 90%. A questão não é se vão ler — é o que você diz. A IA da yapt. conversa com contexto, então a taxa de resposta fica entre 30–50% da base. Desses, 5–12% convertem. Faça a conta com a sua base — o número vai te surpreender.</div>
+      </div>
+    </div>
+
+    <div class="bsp-strip reveal">
+      <div class="bsp-inner">
+        <div class="bsp-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span><strong>BSP Oficial</strong> Meta</span></div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item"><span style="font-size:22px;">🌐</span><span><strong>30 milhões</strong> de mensagens/mês</span></div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item"><span style="font-size:20px;">🔗</span><span>Ingere: <strong>Hotmart · Kiwify · Eduzz · Kirvano · Cakto · CSV</strong></span></div>
+        <div style="width:1px;height:40px;background:var(--border);"></div>
+        <div class="bsp-item"><span style="font-size:22px;">🛡️</span><span><strong>11 anos</strong> como Meta Business Solution Provider</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-final-inner reveal">
+      <div class="tag" style="margin:0 auto 24px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> 7 dias grátis · Sem cartão · Cancela quando quiser</div>
+      <h2 class="cta-final-headline">
+        Cada dia que passa,<br>sua base esfria mais.<br>E a receita que tá ali <span class="purple">evapora junto.</span>
+      </h2>
+      <p class="cta-final-sub">Comece hoje e veja como a yapt. abordaria a sua base —<br><strong style="color:var(--white);">com o seu produto, o seu histórico e os seus números reais.</strong></p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-wa-lg"><svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Experimentar grátis por 7 dias</a>
+        <a href="#" class="btn-outline-lg">Falar com um especialista →</a>
+      </div>
+      <div class="cta-microcopy">Sem cartão de crédito. Configura em minutos. Cancela quando quiser.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="container">
+  <footer>
+    <a href="/" class="footer-logo"><img src="/yapt-logo-dark.svg" alt="yapt." height="28" style="height:28px;width:auto;"></a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="platform-pill">Hotmart</span><span class="platform-pill">Kiwify</span><span class="platform-pill">Eduzz</span><span class="platform-pill">Kirvano</span><span class="platform-pill">Cakto</span><span class="platform-pill">CSV</span>
+    </div>
+    <div class="footer-links"><a href="#">Termos</a><a href="#">Privacidade</a></div>
+    <div class="footer-copy">BSP Oficial Meta · 30M msg/mês · © 2026 New Way</div>
+  </footer>
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.features-grid .feat-card,.ponto,.check-item,.obj-item,.cenario-card,.step-h').forEach((el,i) => {
+    el.style.transitionDelay = `${i*55}ms`;
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // Conversation engine
+  function runConversation(bodyEl) {
+    const typingEl    = bodyEl.querySelector('.wa-typing');
+    const msgs        = Array.from(bodyEl.querySelectorAll('.wa-msg'));
+    const dateDivider = bodyEl.querySelector('.wa-date-divider');
+    const TYPING_SPEED = 36, TYPING_MIN = 650, TYPING_MAX = 1900;
+    const GAP_OUT = 280, GAP_AFTER = 240, END_PAUSE = 3500;
+
+    function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function typingDur(text) { return Math.min(TYPING_MAX, Math.max(TYPING_MIN, text.length * TYPING_SPEED)); }
+    function scrollBot() { bodyEl.scrollTo({ top: bodyEl.scrollHeight, behavior: 'smooth' }); }
+    function hideEl(el) { el.style.transition='none'; el.classList.remove('visible'); el.style.display='none'; }
+    function showEl(el) { el.style.display='block'; void el.offsetHeight; requestAnimationFrame(() => { el.style.transition=''; el.classList.add('visible'); }); }
+
+    function reset() {
+      [...msgs, typingEl, dateDivider].filter(Boolean).forEach(el => hideEl(el));
+      if (typingEl) bodyEl.appendChild(typingEl);
+      bodyEl.scrollTop = 0;
+    }
+
+    async function showTyping(forEl) {
+      if (!typingEl) return;
+      bodyEl.appendChild(typingEl);
+      showEl(typingEl); scrollBot();
+      await delay(typingDur(forEl.textContent.trim()));
+      hideEl(typingEl); await delay(50);
+    }
+
+    async function playOnce() {
+      reset(); await delay(300);
+      if (dateDivider) { showEl(dateDivider); scrollBot(); await delay(450); }
+      for (let i = 0; i < msgs.length; i++) {
+        const msg = msgs[i];
+        if (msg.classList.contains('in')) { await showTyping(msg); } else { await delay(GAP_OUT); }
+        showEl(msg); scrollBot();
+        await delay(GAP_AFTER + Math.min(750, msg.textContent.trim().length * 11));
+      }
+      if (typingEl) { bodyEl.appendChild(typingEl); showEl(typingEl); scrollBot(); }
+      await delay(END_PAUSE);
+    }
+
+    async function loop() { while(true) { await playOnce(); } }
+    loop();
+  }
+
+  document.querySelectorAll('.wa-body').forEach((body, i) => {
+    setTimeout(() => runConversation(body), i * 2200);
+  });
+</script>
+</body>
+</html>
