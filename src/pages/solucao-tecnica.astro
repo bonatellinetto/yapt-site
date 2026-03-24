@@ -1,0 +1,755 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import MockupYaFlows from '../components/mockups/MockupYaFlows.astro';
+import MockupYaveh from '../components/mockups/MockupYaveh.astro';
+import MockupPlaybook from '../components/mockups/MockupPlaybook.astro';
+import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
+import MockupScoring from '../components/mockups/MockupScoring.astro';
+import MockupEmotion from '../components/mockups/MockupEmotion.astro';
+import MockupYaTrust from '../components/mockups/MockupYaTrust.astro';
+import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
+import MockupInstantEngage from '../components/mockups/MockupInstantEngage.astro';
+import { toucanSvg, genericIcons } from '../lib/fauna';
+
+const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20yapt.';
+const ACCENT = '#20B2AA';
+const GRADIENT = 'linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%)';
+
+const solutionModules = [
+  {
+    subtitle: 'yaFlows — Builder Visual',
+    title: 'Automação de WhatsApp sem código, sem limite.',
+    description: 'Um builder visual com 33 tipos de nó, 15 gatilhos, execução paralela, lógica condicional avançada e dry-run para testar antes de publicar. Você arrasta, conecta e publica. Inclui WhatsApp Flows nativos com 20 componentes Meta — formulários, pesquisas e processos que rodam dentro da conversa, sem tirar o cliente do WhatsApp.',
+    features: [
+      '33 tipos de nó e 15 gatilhos configuráveis',
+      'Execução paralela com lógica condicional avançada',
+      'Dry-run para testar automações antes de publicar',
+      'WhatsApp Flows nativos com 20 componentes Meta',
+      'Criar automação WhatsApp sem código — zero dependência de dev',
+    ],
+    mockup: 'flows',
+  },
+  {
+    subtitle: 'yaveh AI — Multi-IA Orquestrada',
+    title: 'Orquestração de IA no WhatsApp com fallback automático.',
+    description: 'A plataforma multi-IA para atendimento que não depende de um modelo só. O motor yaveh AI opera com fallback chain — se um modelo falha, outro assume automaticamente. Três tiers de processamento: ya-Flash para volume, ya-Pro para inteligência avançada e ya-Ultra para raciocínio profundo.',
+    features: [
+      'Fallback chain automático entre múltiplos modelos de IA',
+      'ya-Flash, ya-Pro e ya-Ultra — três tiers de processamento',
+      '40+ ações automáticas: qualificar lead, criar deal, agendar reunião',
+      'Escalada automática de conversa com contexto preservado',
+      'Orquestrador de IA para empresas com governança completa',
+    ],
+    mockup: 'yaveh',
+  },
+  {
+    subtitle: 'Agentes de IA Treináveis',
+    title: 'Builder visual de chatbot com IA — não é árvore de decisão.',
+    description: '8 tipos de agentes treináveis (SDR, Closer, Suporte, Scheduler, Engager, Analyst, Guardian, Pipeline Guardian). Cada agente segue seu playbook, suas perguntas qualificatórias (BANT, SPIN, MEDDIC ou custom) e personalidade configurável. Handoff IA para humano com 100% do contexto preservado.',
+    features: [
+      '8 tipos de agentes configuráveis por função e personalidade',
+      'Qualificação automática: BANT, SPIN, MEDDIC ou framework custom',
+      'Treinamento por playbook — a IA segue seus processos, não os dela',
+      'Handoff IA → humano com histórico 100% preservado',
+      'Chatbot IA com integração via API para qualquer sistema',
+    ],
+    mockup: 'playbook',
+  },
+  {
+    subtitle: 'Omnichannel Nativo',
+    title: 'Ferramenta de automação omnichannel B2B — tudo num inbox.',
+    description: 'WhatsApp Business API (BSP oficial), Instagram DM, Messenger, Email e Widget num inbox unificado. Identity Resolution automático: mesmo lead vindo de canais diferentes = 1 contato, zero duplicatas. Toda automação que você monta no builder visual roda em qualquer canal sem reconfiguração.',
+    features: [
+      'WhatsApp, Instagram, Messenger, Email e Widget no mesmo inbox',
+      'Identity Resolution: mesmo lead em canais diferentes = 1 contato',
+      'Automações omnichannel — build once, run everywhere',
+      'BSP oficial Meta — estabilidade garantida, sem risco de banimento',
+      'Integração ChatGPT e WhatsApp Business com contexto cross-canal',
+    ],
+    mockup: 'inbox',
+  },
+] as const;
+
+const technicalFeatures = [
+  {
+    icon: genericIcons.automation,
+    title: 'Automação de processos completos (RPA no WhatsApp)',
+    description: 'Captura de lead → qualificação IA → criação de deal → distribuição → envio de proposta → follow-up → evento de conversão para Meta/Google Ads. Tudo numa única automação com execução paralela.',
+  },
+  {
+    icon: genericIcons.database,
+    title: 'Integração ChatGPT + WhatsApp com contexto real',
+    description: 'A IA acessa a SuperMemória do lead — toda conversa, objeção, preferência e budget. Histórico cross-canal, cross-agente e score comportamental. Ela responde com contexto, não com achismo.',
+  },
+  {
+    icon: genericIcons.link,
+    title: 'API-first para quando o no-code não basta',
+    description: 'API completa, webhooks de entrada e saída, HTTP requests dentro dos flows. Zapier (5.000+ apps), Meta Ads, Google Ads, Shopify, Bling, Stripe, Hotmart, Google Calendar, Google Sheets e OpenAI.',
+  },
+  {
+    icon: genericIcons.score,
+    title: 'Lead Scoring híbrido com ICP Matching',
+    description: '7 fatores comportamentais + qualificação IA + matching semântico contra seu perfil de cliente ideal em linguagem natural. Score atualiza a cada 10 minutos. Lead quente vai pro closer automaticamente.',
+  },
+  {
+    icon: genericIcons.emotion,
+    title: 'Emotion Engine em tempo real',
+    description: '13 sinais emocionais detectados durante a conversa. Lead frustrado → prioridade alta + alerta ao gestor. Lead entusiasmado → rota direto para o closer. Ameaça de churn → escala imediatamente.',
+  },
+];
+
+const resultItems = [
+  {
+    tag: 'Instant Engage',
+    title: 'Resposta em menos de 30 segundos',
+    description: 'Lead preenche formulário no Meta ou Google e recebe mensagem no WhatsApp em menos de 30 segundos — antes de abrir outra aba. Automação de processos RPA no WhatsApp do clique até o contato.',
+    metric: '< 30s',
+    metricLabel: 'do lead ao primeiro contato',
+  },
+  {
+    tag: 'yaMentor — Coaching em Tempo Real',
+    title: 'IA que murmura sugestões ao vendedor durante a conversa',
+    description: 'O agente de IA acompanha cada conversa e sugere próximos passos, respostas a objeções e alertas de oportunidade em tempo real — sem o lead saber.',
+    metric: '31%',
+    metricLabel: 'de conversão (era 18%)',
+  },
+  {
+    tag: 'yaCampaigns — ROAS Real',
+    title: 'Loop fechado com Meta Ads e Google Ads',
+    description: 'Conversions API envia dados reais de venda de volta para as plataformas. Seu algoritmo aprende com receita, não com clique. ROAS calculado com dados de vendas — não estimativa do gerenciador.',
+    metric: 'CAPI',
+    metricLabel: 'loop fechado com Ads',
+  },
+  {
+    tag: 'Distribuição Inteligente',
+    title: '6 modos de distribuição + sticky routing',
+    description: 'Round-robin, least-loaded, skill-based, por keyword, campanha ou horário. Sticky routing e overflow automático. O lead certo vai pro vendedor certo, sempre.',
+    metric: '6',
+    metricLabel: 'modos de distribuição',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'O que é uma plataforma de automação IA no-code e como a yapt. se diferencia?',
+    a: 'Uma plataforma de automação IA no-code permite criar fluxos, agentes e integrações sem escrever código. A yapt. vai além: o builder visual yaFlows tem 33 tipos de nó, 15 gatilhos e execução paralela — não é arrastar blocos simples. O diferencial está na orquestração: a IA não é plugada depois, ela nasce dentro de cada módulo. E quando você precisar ir além do no-code, a API completa está disponível.',
+  },
+  {
+    q: 'Como criar automação de WhatsApp sem código com a yapt.?',
+    a: 'No yaFlows, você constrói automações arrastando nós no builder visual — sem escrever uma linha de código. Cada nó pode ser um gatilho (lead clicou no anúncio, formulário preenchido, horário agendado), uma ação (enviar mensagem, criar deal, acionar IA, chamar webhook) ou uma condição (if/else, score do lead, canal de origem). O flow é testado em dry-run antes de publicar. Setup completo em menos de 24h.',
+  },
+  {
+    q: 'O que é orquestração de IA no WhatsApp e por que importa?',
+    a: 'Orquestração de IA é a capacidade de coordenar múltiplos modelos, agentes e ações de forma inteligente — não apenas responder a uma mensagem com o ChatGPT. Na yapt., o motor yaveh AI decide qual tier usar (ya-Flash para volume, ya-Pro para inteligência, ya-Ultra para raciocínio), faz fallback automático se um modelo falhar e executa 40+ ações: qualificar, escalar, agendar, criar deal, enviar proposta. Tudo orquestrado, sem intervenção manual.',
+  },
+  {
+    q: 'Como funciona a integração ChatGPT e WhatsApp Business na yapt.?',
+    a: 'A integração não é "conectar a OpenAI API e torcer". A IA na yapt. acessa a SuperMemória do lead (toda conversa, objeção, preferência, budget — gravados cross-canal e cross-agente), o score comportamental e o ICP Matching semântico. Ela responde com contexto real. Além disso, a yapt. é BSP oficial Meta — a integração com WhatsApp Business API é estável, dentro dos Termos de Uso e com acesso a recursos exclusivos como WhatsApp Flows nativos.',
+  },
+  {
+    q: 'O que significa ser uma ferramenta de automação omnichannel B2B?',
+    a: 'Significa que o mesmo builder visual e os mesmos agentes de IA operam em WhatsApp, Instagram DM, Messenger, Email e Widget — sem reconfigurações. Quando um lead entra pelo WhatsApp e depois manda uma DM no Instagram, a plataforma reconhece que é o mesmo contato via Identity Resolution. Um único inbox, um único histórico, uma única automação que roda em todos os canais.',
+  },
+  {
+    q: 'A yapt. é um orquestrador de IA para empresas enterprise?',
+    a: 'Sim. A plataforma foi construída com isolamento multi-tenant nativo (RLS), criptografia AES-256 por tenant, +700 regras de segurança, score de segurança 94/100, conformidade LGPD/GDPR/SOC 2/ISO 27001 e AI Governance com audit trail completo. Seus dados nunca são usados para treinar modelos. Empresas enterprise contam com CSM dedicado, SLA contratual e DPA para compliance.',
+  },
+];
+
+const integrationTags = [
+  'Meta Ads', 'Google Ads', 'Shopify', 'Bling', 'Stripe',
+  'Hotmart', 'Kiwify', 'Google Calendar', 'Google Sheets',
+  'OpenAI', 'Zapier (5.000+ apps)', 'Webhooks', 'HTTP Requests', 'API Completa',
+];
+
+const stats = [
+  { value: '30M+', label: 'mensagens processadas por mês' },
+  { value: '+1.900', label: 'empresas na plataforma' },
+  { value: '99,97%', label: 'de uptime garantido' },
+  { value: '11 anos', label: 'de mercado (by New Way)' },
+  { value: 'BSP', label: 'oficial Meta WhatsApp' },
+  { value: '24h', label: 'setup com suporte dedicado' },
+];
+---
+
+<SiteLayout
+  title="Plataforma de Automação IA No-Code para WhatsApp — yapt."
+  description="Builder visual no-code com multi-IA orquestrada, omnichannel B2B e integração WhatsApp Business API. 33 tipos de nó, agentes treináveis, orquestração de IA e API-first. BSP oficial Meta."
+  path="/solucao-tecnica"
+  locale="pt-BR"
+>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <div
+    data-observe
+    class="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 80 C80 50, 160 20, 240 40 C320 60, 400 10, 480 35 C560 60, 640 15, 720 38 C800 61, 880 18, 960 42 C1040 66, 1120 22, 1200 45 C1280 68, 1360 30, 1440 50 L1440 0 L0 0Z" fill="rgba(255,255,255,0.25)"/>
+      </svg>
+    </div>
+    <div class="absolute pointer-events-none hidden lg:block" style="top: 12%; right: 6%; animation: yapt-float 6s ease-in-out infinite; opacity: 0.25;" set:html={toucanSvg} />
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 0 C120 40, 240 15, 360 30 C480 45, 600 10, 720 25 C840 40, 960 8, 1080 22 C1200 36, 1320 12, 1440 20 L1440 60 L0 60Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block rounded-full px-4 py-1.5 text-xs font-medium text-white/90 mb-6" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">
+          Builder visual no-code | Multi-IA | Omnichannel | BSP oficial Meta
+        </span>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h1 class="font-poppins text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          Automação de WhatsApp com IA —<br class="hidden lg:block" />
+          sem código, sem limite, sem gambiarra.
+        </h1>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          A yapt. é a plataforma onde você monta automações complexas num builder visual, orquestra múltiplos modelos de IA e conecta WhatsApp, Instagram, Email e mais — tudo sem escrever uma linha de código. E quando quiser ir além, a API está ali.
+        </p>
+      </div>
+      <div data-fade class="mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proof bar -->
+  <div class="bg-white border-b border-gray-100 py-4">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-10 text-sm text-[#656D78]">
+        {['30M+ mensagens/mês', '99,97% uptime', '+1.900 clientes', 'BSP oficial Meta', '11 anos de mercado'].map((item) => (
+          <span class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`}></span>
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO DOR / PROBLEMA
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Sua automação de WhatsApp parou onde o chatbot básico começa?
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
+            Você conectou o ChatGPT ao WhatsApp, montou algumas automações e achou que estava resolvido. Mas na prática, a stack montada peça por peça sem uma plataforma que orquestre tudo revela os mesmos problemas.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: genericIcons.ai,
+            title: 'IA sem contexto',
+            description: 'A IA responde coisas erradas porque não tem histórico do lead — sem memória cross-canal, sem objeções anteriores, sem score.',
+          },
+          {
+            icon: genericIcons.automation,
+            title: 'Automação que trava',
+            description: 'A automação funciona para casos simples. Quando precisa de lógica condicional complexa ou execução paralela, para no meio.',
+          },
+          {
+            icon: genericIcons.omnichannel,
+            title: 'Canais fragmentados',
+            description: 'WhatsApp, Instagram e Email rodam em lugares diferentes. O mesmo lead entra duas vezes, o vendedor responde sem contexto.',
+          },
+          {
+            icon: genericIcons.settings,
+            title: 'Stack que não escala',
+            description: 'CRM, RPA, Zapier e mais 3 ferramentas pra cada integração. Quando o time cresce, a operação inteira precisa ser refeita.',
+          },
+        ].map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-white rounded-2xl p-6 border border-red-100"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-red-400"
+              set:html={item.icon}
+            />
+            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div data-fade class="text-center mt-10" style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="text-sm text-[#656D78] max-w-2xl mx-auto">
+          O problema não é a IA. É que sua stack foi montada peça por peça, sem uma plataforma que orquestre tudo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA 1 — após problema -->
+  <div class="bg-white py-10 border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="font-poppins text-lg font-semibold text-[#1a1a2e] mb-2">Pronto para ver uma plataforma que orquestra tudo?</p>
+      <p class="text-sm text-[#656D78] mb-6">Demo de 30 minutos. Sem compromisso. Você vê o builder, a IA e a orquestração ao vivo.</p>
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+        style={`background: ${GRADIENT};`}
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO SOLUÇÃO — header
+  ════════════════════════════════════════════ -->
+  <section data-observe class="pt-16 lg:pt-20 pb-4 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          A solução
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          Uma plataforma. Builder visual. Múltiplos modelos de IA. Zero código.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          A yapt. não é mais um chatbot com integração de IA. É uma Conversational Revenue Platform AI-Native com um builder visual completo onde você constrói automações de qualquer complexidade — sem depender de desenvolvedor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Módulos de solução -->
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {solutionModules.map((mod, i) => (
+      <>
+        <ModuleDeepDive
+          title={mod.title}
+          subtitle={mod.subtitle}
+          description={mod.description}
+          features={mod.features as unknown as string[]}
+          reversed={i % 2 === 1}
+          accentColor={ACCENT}
+        >
+          {mod.mockup === 'flows' && <MockupYaFlows />}
+          {mod.mockup === 'yaveh' && <MockupYaveh />}
+          {mod.mockup === 'playbook' && <MockupPlaybook />}
+          {mod.mockup === 'inbox' && <MockupYaInbox />}
+        </ModuleDeepDive>
+        {i < solutionModules.length - 1 && <SectionDivider variant="light" />}
+      </>
+    ))}
+  </div>
+
+
+  <!-- CTA 2 — após módulos de solução -->
+  <div class="py-10" style={`background: ${GRADIENT};`}>
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
+        <div>
+          <p class="font-poppins font-semibold text-white text-base">Builder visual, multi-IA e omnichannel — tudo numa plataforma.</p>
+          <p class="text-sm text-white/70 mt-0.5">Em 30 minutos você vê funcionando na prática, aplicado à sua operação.</p>
+        </div>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-block bg-white font-poppins font-semibold px-7 py-3 rounded-xl text-base hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+          style="color: #064E3B;"
+        >
+          Agendar demo gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO CAPACIDADES TÉCNICAS
+  ════════════════════════════════════════════ -->
+  <FeatureGrid
+    title="Para quem precisa ir além de arrastar blocos simples."
+    subtitle="Capacidades técnicas"
+    features={technicalFeatures}
+    columns={3}
+    accentColor={ACCENT}
+  />
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO LEAD SCORING — módulo isolado
+  ════════════════════════════════════════════ -->
+  <SectionDivider variant="light" />
+
+  <ModuleDeepDive
+    title="Lead Scoring híbrido com ICP Matching semântico."
+    subtitle="Qualificação Inteligente"
+    description="7 fatores comportamentais + qualificação IA + matching semântico contra seu perfil de cliente ideal descrito em linguagem natural. Score atualiza a cada 10 minutos. Lead quente vai pro closer automaticamente — sem intervenção manual, sem lead esfriando na fila."
+    features={[
+      '7 fatores comportamentais analisados em tempo real',
+      'ICP Matching semântico — descreva seu cliente ideal em texto',
+      'Score atualizado a cada 10 minutos automaticamente',
+      'Routing automático: lead quente → closer, lead frio → nurture',
+      'Distribuição com 6 modos: round-robin, skill-based, por campanha e mais',
+    ]}
+    reversed={false}
+    accentColor={ACCENT}
+  >
+    <MockupScoring />
+  </ModuleDeepDive>
+
+  <SectionDivider variant="light" />
+
+  <ModuleDeepDive
+    title="Emotion Engine — 13 sinais emocionais detectados em tempo real."
+    subtitle="Inteligência Emocional"
+    description="A plataforma detecta frustração, entusiasmo, dúvida e ameaça de churn durante a conversa. Roteamento empático: o lead vai para o canal, vendedor ou ação certa baseado no seu estado emocional — não na ordem da fila."
+    features={[
+      '13 sinais emocionais detectados durante a conversa',
+      'Lead frustrado → prioridade alta + alerta automático ao gestor',
+      'Lead entusiasmado → rota direto para o closer',
+      'Ameaça de churn → escalada imediata com contexto completo',
+      'Coaching em tempo real para o vendedor via yaMentor',
+    ]}
+    reversed={true}
+    accentColor={ACCENT}
+  >
+    <MockupEmotion />
+  </ModuleDeepDive>
+
+
+  <!-- CTA 3 — após capacidades técnicas -->
+  <div class="bg-[#FAFBFC] py-12 border-y border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="font-poppins text-xl font-bold text-[#1a1a2e] mb-2">Técnica que gera resultado de verdade.</p>
+        <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver o Lead Scoring, o Emotion Engine e o builder visual funcionando na sua operação? Agende uma demo de 30 minutos.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+            style={`background: ${GRADIENT};`}
+          >
+            Quero ver funcionando →
+          </a>
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#1a1a2e] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
+          >
+            Falar com especialista
+          </a>
+        </div>
+        <p class="text-xs text-[#656D78] mt-4">Setup em 24h · Sem compromisso · Suporte dedicado</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO RESULTADOS
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            Resultados
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            A técnica serve ao resultado.
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+            A yapt. não existe pra você montar automações bonitas. Existe pra você vender mais com a operação que já tem.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {resultItems.map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-[#FAFBFC] rounded-2xl p-8 border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style={`background: rgba(32,178,170,0.1); color: ${ACCENT};`}>
+                {item.tag}
+              </span>
+              <div class="text-right flex-shrink-0">
+                <div class="font-poppins text-2xl font-bold" style={`color: ${ACCENT};`}>{item.metric}</div>
+                <div class="text-xs text-[#656D78]">{item.metricLabel}</div>
+              </div>
+            </div>
+            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO SEGURANÇA
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#0F1623]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+
+        <!-- Texto -->
+        <div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+              Segurança & Compliance
+            </span>
+            <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white leading-tight">
+              Enterprise-grade. Sem atalhos.
+            </h2>
+          </div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <p class="text-base text-white/60 mt-4 leading-relaxed">
+              Score de segurança 94/100. Isolamento multi-tenant nativo com RLS. Criptografia AES-256 por tenant. Para orquestrar IA em escala, a infraestrutura precisa ser inegociável.
+            </p>
+          </div>
+          <ul class="mt-6 space-y-3">
+            {[
+              'LGPD, GDPR, SOC 2 e ISO 27001',
+              'Criptografia AES-256 por tenant',
+              'Multi-tenant com isolamento nativo (RLS)',
+              '+700 regras de segurança ativas',
+              'Backup com point-in-time recovery de 30 dias',
+              'AI Governance — audit trail completo, dados nunca usados para treino',
+              'Roles e permissões granulares por módulo',
+            ].map((feat) => (
+              <li
+                data-fade
+                style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
+                class="flex items-start gap-3"
+              >
+                <span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`} />
+                <span class="text-sm text-white/70 leading-relaxed">{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Mockup -->
+        <div
+          data-fade
+          class="mt-12 lg:mt-0"
+          style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
+        >
+          <MockupYaTrust />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO PROVA SOCIAL / NÚMEROS
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Infraestrutura que aguenta.
+          </h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {stats.map((stat) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-[#FAFBFC] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <div class="font-poppins text-2xl font-bold mb-1" style={`color: ${ACCENT};`}>{stat.value}</div>
+            <div class="text-xs text-[#656D78] leading-snug">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO INTEGRAÇÕES
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          Integrações
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          API-first para quando o no-code não basta.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          API completa, webhooks de entrada e saída e HTTP requests dentro dos flows. Se a ferramenta existe, a yapt. conecta.
+        </p>
+      </div>
+      <div data-fade class="flex flex-wrap justify-center gap-3 mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        {integrationTags.map((tag) => (
+          <span class="inline-block rounded-full px-4 py-2 text-sm font-medium text-[#434A54] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-colors duration-200">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO FAQ
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            Perguntas frequentes
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Dúvidas sobre automação de WhatsApp com IA.
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {faqItems.map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-[#FAFBFC] rounded-2xl p-6 border border-gray-100"
+          >
+            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{item.q}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ════════════════════════════════════════════ -->
+  <section
+    data-observe
+    class="relative py-16 lg:py-24 xl:py-32 overflow-hidden"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+      <div class="absolute" style="top: -30%; left: 5%; width: 40%; height: 130%; background: linear-gradient(140deg, rgba(255,255,255,0.6) 0%, transparent 35%); transform: rotate(-25deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
+      <svg viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 100 C80 60, 160 30, 240 50 C320 70, 400 20, 480 45 C560 70, 640 15, 720 40 C800 65, 880 20, 960 45 C1040 70, 1120 25, 1200 50 C1280 75, 1360 35, 1440 55 L1440 0 L0 0Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+    <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:18%;left:12%;animation:yapt-float 6s ease-in-out infinite;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.35);top:35%;right:15%;animation:yapt-float 7s ease-in-out infinite;animation-delay:2s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:6px;height:6px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:60%;left:8%;animation:yapt-float 5s ease-in-out infinite;animation-delay:4s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.3);top:72%;right:10%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade class="flex justify-center flex-wrap gap-4 mb-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        {['Setup em 24h', 'Suporte dedicado', 'Sem compromisso'].map((badge) => (
+          <span class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white/80">{badge}</span>
+        ))}
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          Veja o builder, a IA e a orquestração funcionando ao vivo.
+        </h2>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          Demo personalizada de 30 minutos. Sem compromisso. Você vai ver na prática como montar automações complexas sem código, orquestrar múltiplos modelos de IA e conectar tudo numa única plataforma.
+        </p>
+      </div>
+      <div data-fade class="flex flex-col sm:flex-row justify-center gap-4 mt-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 inline-block"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-2 border-white/30 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/10 transition-all duration-300 inline-block"
+        >
+          Falar com especialista
+        </a>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-sm text-white/50 mt-6">
+          Setup em 24h | Suporte dedicado | Sem compromisso
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       STICKY CTA — mobile only
+  ════════════════════════════════════════════ -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden" style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);">
+    <div class="px-4 py-3">
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base"
+        style="color: #064E3B;"
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+</SiteLayout>

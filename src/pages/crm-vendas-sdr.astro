@@ -1,0 +1,732 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import MockupPlaybook from '../components/mockups/MockupPlaybook.astro';
+import MockupYaMemory from '../components/mockups/MockupYaMemory.astro';
+import MockupCalendar from '../components/mockups/MockupCalendar.astro';
+import MockupYaContact from '../components/mockups/MockupYaContact.astro';
+import MockupYaDeals from '../components/mockups/MockupYaDeals.astro';
+import MockupScoring from '../components/mockups/MockupScoring.astro';
+import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
+import MockupInstantEngage from '../components/mockups/MockupInstantEngage.astro';
+import MockupYaTrust from '../components/mockups/MockupYaTrust.astro';
+import { toucanSvg, genericIcons } from '../lib/fauna';
+
+const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20yapt.';
+const ACCENT = '#20B2AA';
+const GRADIENT = 'linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%)';
+
+const painPoints = [
+  {
+    icon: genericIcons.queue,
+    title: 'Fila sem contexto',
+    description: 'O lead entra pelo WhatsApp e cai numa fila. O SDR responde sem saber de qual campanha veio, o que já conversou ou qual o budget — cada atendimento começa do zero.',
+  },
+  {
+    icon: genericIcons.crm,
+    title: 'CRM desatualizado',
+    description: 'O deal não existe porque ninguém gosta de preencher campo. O pipeline reflete o que o vendedor lembrou de atualizar — não o que de fato aconteceu.',
+  },
+  {
+    icon: genericIcons.calendar,
+    title: 'Agendamento por ping-pong',
+    description: '"Terça pode? Não, quarta? Qual horário?" — troca de mensagens para agendar uma reunião que podia ser feita em 10 segundos com automação.',
+  },
+  {
+    icon: genericIcons.chart,
+    title: 'Forecast é chute',
+    description: 'Sem visibilidade real de onde o funil trava. Leads quentes esfriam, time perde tempo com quem não tem perfil e o gestor não consegue projetar receita.',
+  },
+];
+
+const agentModules = [
+  {
+    subtitle: 'Agente SDR — Ferramenta de SDR com IA',
+    title: 'Qualificador de leads com inteligência artificial. Treinado com seu playbook.',
+    description: 'O agente SDR conversa com o lead no WhatsApp como um membro real do seu time comercial. Segue BANT, SPIN, MEDDIC ou sua metodologia custom. Identifica budget, autoridade, necessidade e timing naturalmente, dentro da conversa — não com formulário de 10 campos que ninguém responde.',
+    features: [
+      'Qualificação por BANT, SPIN, MEDDIC ou framework custom',
+      'Perguntas adaptadas ao momento da conversa, não um roteiro rígido',
+      'Detecta red flags e objeções em tempo real',
+      'Registra tudo no CRM automaticamente — sem intervenção manual',
+      'Disponível 24/7 — nenhum lead esfria por falta de resposta',
+    ],
+    mockup: 'playbook',
+    reversed: false,
+  },
+  {
+    subtitle: 'SuperMemória — Atendimento Automatizado com Memória IA',
+    title: 'IA que lembra de tudo. Cross-canal, cross-tempo, cross-agente.',
+    description: 'Cada conversa, objeção, preferência, budget mencionado e stakeholder citado fica gravado na SuperMemória — para sempre. Lead falou algo 6 meses atrás? Está lá. Trocou de vendedor? O contexto vai junto, inteiro. WhatsApp, Instagram e Email = uma memória só. Busca semântica: a IA encontra por significado, não por keyword.',
+    features: [
+      'Histórico completo: objeções, preferências, budget, stakeholders',
+      'Cross-canal — WhatsApp, Instagram, Email num único histórico',
+      'Cross-agente — troca de vendedor sem perder contexto',
+      'Cross-tempo — informação de 6 meses atrás disponível agora',
+      'Busca semântica por significado, não por palavra-chave exata',
+    ],
+    mockup: 'memory',
+    reversed: true,
+  },
+  {
+    subtitle: 'Agente Scheduler — Agendar Reunião Automaticamente no WhatsApp',
+    title: 'Reunião agendada dentro do WhatsApp. Sem ping-pong, sem link genérico.',
+    description: 'O agente Scheduler verifica disponibilidade, propõe horários, confirma e envia lembrete — tudo dentro do WhatsApp. Integração nativa com Google Calendar. Sem link de Calendly genérico. Sem troca manual de mensagens. O lead escolhe, confirma e recebe confirmação em segundos.',
+    features: [
+      'Integração nativa com Google Calendar',
+      'Proposta de horários, confirmação e lembrete automáticos',
+      'Tudo dentro da conversa — sem redirecionar para link externo',
+      'Cancelamento e reagendamento automáticos com atualização no CRM',
+      'Notificação para o vendedor responsável com contexto completo',
+    ],
+    mockup: 'calendar',
+    reversed: false,
+  },
+] as const;
+
+const humanTeamFeatures = [
+  {
+    icon: genericIcons.ai,
+    title: 'yaMentor — Coaching em tempo real',
+    description: 'IA murmura sugestões ao vendedor durante a conversa. Detecta objeções e sugere respostas. Resultado: onboarding de 21 para 3 dias, conversão de 18% para 31%, objeções perdidas de 42% para 12%.',
+  },
+  {
+    icon: genericIcons.emotion,
+    title: 'Emotion Engine — 13 sinais emocionais',
+    description: 'Frustrado → prioridade alta + alerta ao gestor. Entusiasmado → rota direto para o closer. Ameaça de churn → escalada imediata. Roteamento empático baseado no estado real do lead.',
+  },
+  {
+    icon: genericIcons.crm,
+    title: 'Handoff IA → humano sem perda de contexto',
+    description: 'Quando o agente identifica que é hora do humano assumir, o vendedor recebe qualificação completa, objeções, sentimento atual, score e histórico. Sem pedir pro lead repetir nada.',
+  },
+  {
+    icon: genericIcons.queue,
+    title: 'Distribuição inteligente de conversas',
+    description: '6 modos: round-robin, least-loaded, skill-based, por keyword, campanha ou horário. Sticky routing — mesmo vendedor mantém o lead. Overflow automático quando sobrecarregado.',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'O que é um agente de IA para qualificação de leads e como funciona na yapt.?',
+    a: 'Um agente de IA para qualificação de leads é um sistema que conduz conversas de qualificação de forma autônoma — seguindo seu playbook, sua metodologia (BANT, SPIN, MEDDIC) e seus critérios de ICP. Na yapt., você treina o agente com suas perguntas qualificatórias, tom de voz e critérios de fit. Ele opera 24/7 no WhatsApp, qualifica naturalmente dentro da conversa, registra tudo no CRM e passa pro closer quando o lead atinge o score.',
+  },
+  {
+    q: 'Como funciona a integração de IA com CRM no WhatsApp?',
+    a: 'Na yapt., o CRM não é uma ferramenta separada — ele vive dentro da plataforma. A IA cria deals automaticamente quando o lead atinge o score de qualificação, avança stages conforme a conversa progride, registra objeções e preferências em tempo real e mantém o pipeline atualizado sem depender de preenchimento manual. Cada contato carrega lifecycle stage automático, scoring dual (comportamental + IA) e histórico completo de todos os canais.',
+  },
+  {
+    q: 'A yapt. consegue agendar reuniões automaticamente pelo WhatsApp?',
+    a: 'Sim. O agente Scheduler da yapt. tem integração nativa com Google Calendar. Ele verifica disponibilidade, propõe horários, confirma com o lead e envia lembretes automáticos — tudo dentro da conversa de WhatsApp, sem link externo, sem troca manual de mensagens. O lead escolhe, confirma e a reunião aparece na agenda do vendedor responsável com contexto completo da qualificação.',
+  },
+  {
+    q: 'O que é a SuperMemória e por que ela é diferente de um histórico de conversa comum?',
+    a: 'A SuperMemória é persistência semântica cross-canal e cross-tempo. Diferente de um log de mensagens, ela entende o que foi dito — objeções, preferências, budget mencionado, stakeholders citados — e torna isso pesquisável por significado. Um lead que falou algo 6 meses atrás, em outro canal, com outro vendedor, tem essa informação disponível em tempo real para a IA e para o time. É a diferença entre um chatbot que esquece tudo e um assistente virtual de vendas B2B com memória real.',
+  },
+  {
+    q: 'A yapt. substitui o SDR humano?',
+    a: 'Não — ela amplifica. O agente SDR com IA assume a qualificação inicial, o follow-up e o agendamento. Isso libera o SDR humano para conversas de alto valor, fechamento e relacionamento. O yaMentor ainda murmura sugestões em tempo real enquanto o humano conversa. O resultado não é demissão — é o mesmo time vendendo mais: conversão reportada de 18% para 31%, onboarding de novos vendedores de 21 para 3 dias.',
+  },
+  {
+    q: 'O que é IA para pré-vendas B2B e quais empresas se beneficiam?',
+    a: 'IA para pré-vendas B2B cobre o processo de identificar, qualificar e preparar leads antes de chegar ao closer — tipicamente o trabalho do SDR. Empresas que se beneficiam mais: operações com alto volume de leads inbound (Meta Ads, Google Ads, orgânico), ciclos de venda com etapas de qualificação definidas, times onde o SDR consome mais de 30% do tempo em tarefas repetitivas (follow-up, agendamento, atualização de CRM) e negócios onde o speed-to-lead é crítico.',
+  },
+];
+
+const stats = [
+  { value: '30M+', label: 'mensagens processadas por mês' },
+  { value: '+1.900', label: 'empresas na plataforma' },
+  { value: '99,97%', label: 'de uptime garantido' },
+  { value: '11 anos', label: 'de mercado (by New Way)' },
+  { value: '31%', label: 'conversão (era 18%)' },
+  { value: '24h', label: 'setup com suporte dedicado' },
+];
+---
+
+<SiteLayout
+  title="Agente de IA para Qualificação de Leads e CRM no WhatsApp — yapt."
+  description="Agentes de IA que qualificam leads, agendam reuniões e alimentam o CRM — direto no WhatsApp. Ferramenta de SDR com IA, memória infinita, bot de vendas integrado ao CRM. BSP oficial Meta."
+  path="/crm-vendas-sdr"
+  locale="pt-BR"
+>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <div
+    data-observe
+    class="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 80 C80 50, 160 20, 240 40 C320 60, 400 10, 480 35 C560 60, 640 15, 720 38 C800 61, 880 18, 960 42 C1040 66, 1120 22, 1200 45 C1280 68, 1360 30, 1440 50 L1440 0 L0 0Z" fill="rgba(255,255,255,0.25)"/>
+      </svg>
+    </div>
+    <div class="absolute pointer-events-none hidden lg:block" style="top: 12%; right: 6%; animation: yapt-float 6s ease-in-out infinite; opacity: 0.25;" set:html={toucanSvg} />
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 0 C120 40, 240 15, 360 30 C480 45, 600 10, 720 25 C840 40, 960 8, 1080 22 C1200 36, 1320 12, 1440 20 L1440 60 L0 60Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block rounded-full px-4 py-1.5 text-xs font-medium text-white/90 mb-6" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">
+          Agentes de IA para vendas | CRM integrado ao WhatsApp | BSP oficial Meta
+        </span>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h1 class="font-poppins text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          IA que qualifica leads, agenda reuniões<br class="hidden lg:block" />
+          e alimenta seu CRM — direto no WhatsApp.
+        </h1>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          A yapt. coloca agentes de IA treinados com o seu playbook de vendas dentro do WhatsApp. Eles qualificam, agendam, fazem follow-up e criam deals automaticamente — com memória infinita de cada lead e integração nativa com seu pipeline.
+        </p>
+      </div>
+      <div data-fade class="mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proof bar -->
+  <div class="bg-white border-b border-gray-100 py-4">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-10 text-sm text-[#656D78]">
+        {['30M+ mensagens/mês', '99,97% uptime', '+1.900 clientes', 'BSP oficial Meta', '11 anos de mercado'].map((item) => (
+          <span class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`}></span>
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO DOR / PROBLEMA
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Seu time comercial ainda qualifica lead no braço?
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
+            A qualificação é manual e inconsistente. Um vendedor segue BANT, outro vai no feeling. O CRM fica desatualizado porque ninguém gosta de preencher campo. E o gestor não tem visibilidade real de onde o funil está travando.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {painPoints.map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-white rounded-2xl p-6 border border-red-100"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-red-400"
+              set:html={item.icon}
+            />
+            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div data-fade class="text-center mt-10" style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="text-sm text-[#656D78] max-w-2xl mx-auto">
+          O resultado: leads quentes esfriam, o time perde tempo com quem não tem perfil e o forecast é chute.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA 1 — após problema -->
+  <div class="bg-white py-10 border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="font-poppins text-lg font-semibold text-[#1a1a2e] mb-2">Pronto para ver a qualificação acontecendo automaticamente?</p>
+      <p class="text-sm text-[#656D78] mb-6">Demo de 30 minutos. Sem compromisso. Você vê o agente SDR com IA qualificando com seu playbook ao vivo.</p>
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+        style={`background: ${GRADIENT};`}
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO AGENTES — header
+  ════════════════════════════════════════════ -->
+  <section data-observe class="pt-16 lg:pt-20 pb-4 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          Assistente virtual de vendas B2B
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          Agentes de IA que vendem como seu melhor SDR. Só que 24/7.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          A yapt. não é um bot de vendas com respostas fixas. São 8 tipos de agentes de IA treináveis que operam como membros reais do seu time comercial — com playbook, metodologia e memória.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Módulos de agentes -->
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {agentModules.map((mod, i) => (
+      <>
+        <ModuleDeepDive
+          title={mod.title}
+          subtitle={mod.subtitle}
+          description={mod.description}
+          features={mod.features as unknown as string[]}
+          reversed={mod.reversed}
+          accentColor={ACCENT}
+        >
+          {mod.mockup === 'playbook' && <MockupPlaybook />}
+          {mod.mockup === 'memory' && <MockupYaMemory />}
+          {mod.mockup === 'calendar' && <MockupCalendar />}
+        </ModuleDeepDive>
+        {i < agentModules.length - 1 && <SectionDivider variant="light" />}
+      </>
+    ))}
+  </div>
+
+
+  <!-- CTA 2 — após agentes -->
+  <div class="py-10" style={`background: ${GRADIENT};`}>
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
+        <div>
+          <p class="font-poppins font-semibold text-white text-base">Seu SDR de IA pode começar a qualificar em 24h.</p>
+          <p class="text-sm text-white/70 mt-0.5">Veja ao vivo como o agente usa seu playbook para qualificar leads reais.</p>
+        </div>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-block bg-white font-poppins font-semibold px-7 py-3 rounded-xl text-base hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+          style="color: #064E3B;"
+        >
+          Agendar demo gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO CRM — header
+  ════════════════════════════════════════════ -->
+  <section data-observe class="pt-16 lg:pt-20 pb-4 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          IA com integração CRM WhatsApp
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          CRM que se preenche sozinho. Pipeline que avança sem empurrar.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          O bot de vendas integrado ao CRM não é uma ferramenta separada — é o CRM que vive dentro da conversa. A IA cria deals, avança stages e registra objeções sem depender do vendedor lembrar de atualizar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- yaContact -->
+  <ModuleDeepDive
+    title="yaContact — CRM 360° nativo. Cada lead com tudo que importa."
+    subtitle="CRM de Contatos"
+    description="Cada contato carrega lifecycle stage automático (Lead → MQL → SQL → Cliente), scoring dual (comportamental + IA), histórico completo de todos os canais e timeline de emoções. Não é um CRM que você abre em outra aba — é o CRM que vive dentro da conversa."
+    features={[
+      'Lifecycle stage automático atualizado pela IA',
+      'Score comportamental + score de IA em dual layer',
+      'Histórico unificado: WhatsApp, Instagram, Email num único contato',
+      'Timeline de emoções — estado emocional do lead ao longo do tempo',
+      'Identity Resolution: mesmo lead em canais diferentes = 1 contato',
+    ]}
+    reversed={false}
+    accentColor={ACCENT}
+  >
+    <MockupYaContact />
+  </ModuleDeepDive>
+
+  <SectionDivider variant="light" />
+
+  <!-- yaDeals -->
+  <ModuleDeepDive
+    title="yaDeals — Pipeline que avança automaticamente com a qualificação."
+    subtitle="Pipeline de Vendas"
+    description="Kanban drag-and-drop com multi-pipeline (vendas, onboarding, CS). SLA por stage com timer visual e alertas automáticos. Win/loss analysis. O deal é criado automaticamente quando o lead atinge o score — sem depender do vendedor lembrar de abrir o CRM."
+    features={[
+      'Deal criado automaticamente quando lead atinge o score de qualificação',
+      'Stage avança conforme a conversa progride — sem entrada manual',
+      'SLA por stage com timer visual e alerta de prazo',
+      'Multi-pipeline: vendas, onboarding e CS no mesmo lugar',
+      'Win/loss analysis para identificar onde o funil perde',
+    ]}
+    reversed={true}
+    accentColor={ACCENT}
+  >
+    <MockupYaDeals />
+  </ModuleDeepDive>
+
+  <SectionDivider variant="light" />
+
+  <!-- Lead Scoring -->
+  <ModuleDeepDive
+    title="Lead Scoring híbrido — qualificador de leads com IA que prioriza a fila."
+    subtitle="ICP Matching + Lead Scoring"
+    description="7 fatores comportamentais + qualificação IA + matching semântico contra seu ICP descrito em linguagem natural. Score atualiza a cada 10 minutos. Lead quente sobe na fila automaticamente. Lead frio vai para nurture. O closer recebe só quem tem perfil."
+    features={[
+      '7 fatores: engajamento, recência, canal, sentimento, velocidade no funil e mais',
+      'ICP Matching semântico — descreva seu cliente ideal em texto',
+      'Score atualizado a cada 10 minutos sem intervenção manual',
+      'Priorização automática da fila: lead quente → closer',
+      'Integrado ao roteamento: 6 modos de distribuição de conversas',
+    ]}
+    reversed={false}
+    accentColor={ACCENT}
+  >
+    <MockupScoring />
+  </ModuleDeepDive>
+
+
+  <!-- CTA 3 — após CRM -->
+  <div class="bg-[#FAFBFC] py-12 border-y border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="font-poppins text-xl font-bold text-[#1a1a2e] mb-2">Do lead ao deal fechado — sem entrada manual em nenhum ponto.</p>
+        <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver o CRM se preenchendo sozinho e o pipeline avançando com a qualificação da IA? Agende uma demo de 30 minutos.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+            style={`background: ${GRADIENT};`}
+          >
+            Quero ver funcionando →
+          </a>
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#1a1a2e] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
+          >
+            Falar com especialista
+          </a>
+        </div>
+        <p class="text-xs text-[#656D78] mt-4">Setup em 24h · Sem compromisso · Suporte dedicado</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO TIME HUMANO + yaMentor
+  ════════════════════════════════════════════ -->
+  <FeatureGrid
+    title="A IA não substitui seu time. Ela faz seu time vender mais."
+    subtitle="IA para pré-vendas B2B"
+    features={humanTeamFeatures}
+    columns={2}
+    accentColor={ACCENT}
+  />
+
+
+  <!-- yaMentor módulo completo com resultados -->
+  <SectionDivider variant="light" />
+
+  <ModuleDeepDive
+    title="yaMentor — Coaching em tempo real que transforma novos vendedores em closers."
+    subtitle="Coaching com IA"
+    description="Enquanto o vendedor conversa com o lead, a IA murmura sugestões baseadas no playbook, no histórico do lead e no momento da conversa. Detecta objeções e sugere respostas. Identifica red flags. Recomenda próximas ações. Tudo invisível para o lead."
+    features={[
+      'Onboarding de novos vendedores de 21 para 3 dias',
+      'Taxa de conversão de 18% para 31% reportada',
+      'Objeções perdidas de 42% para 12%',
+      'Times 34% mais eficientes no mesmo período',
+      'Sugestões contextuais baseadas no playbook e no histórico do lead',
+    ]}
+    reversed={true}
+    accentColor={ACCENT}
+  >
+    <MockupMentorResults />
+  </ModuleDeepDive>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO LOOP COM ADS — Timeline
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24" style={`background: ${GRADIENT};`}>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white">
+            Do anúncio ao deal fechado. Rastreio completo.
+          </h2>
+          <p class="text-base text-white/60 mt-4 max-w-2xl mx-auto">
+            A qualificação de leads não começa no WhatsApp — começa no clique. A yapt. rastreia tudo e fecha o loop com Meta e Google Ads.
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 top-0 bottom-0 w-px" style="background: rgba(45,212,191,0.25);"></div>
+        {[
+          { title: 'Lead clica no anúncio', description: '10 campos de atribuição capturados automaticamente: campanha, headline, creative, UTMs. Sem intervenção manual. Você sabe exatamente qual anúncio gerou cada lead.' },
+          { title: 'Instant Engage — WhatsApp em menos de 30 segundos', description: 'Mensagem personalizada via API oficial disparada antes do lead esfriar. Antes de ele abrir outra aba, seu agente de IA já está na conversa.' },
+          { title: 'Agente SDR qualifica com seu playbook', description: 'BANT, SPIN, MEDDIC ou metodologia custom. O agente conversa naturalmente, identifica fit, score e timing — sem formulário, sem atrito.' },
+          { title: 'Deal criado e reunião agendada automaticamente', description: 'Lead qualificado = deal aberto no pipeline + reunião no Google Calendar do closer + notificação com contexto completo. Zero entrada manual.' },
+          { title: 'yaMentor acompanha o fechamento', description: 'Enquanto o closer fala com o lead, a IA sugere próximas ações em tempo real com base no histórico, objeções e sentimento detectados.' },
+          { title: 'Loop fechado com Conversions API', description: 'Evento real de venda enviado para Meta e Google Ads. Seu algoritmo aprende com receita, não com clique. ROAS calculado com dados reais — não estimativa do gerenciador.' },
+        ].map((step, i) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="relative pl-16 pb-10 last:pb-0"
+          >
+            <div class="absolute left-4 w-5 h-5 rounded-full border-2 flex items-center justify-center" style="border-color: #2DD4BF; background: #064E3B;">
+              <span class="text-[10px] font-bold" style="color: #2DD4BF;">{i + 1}</span>
+            </div>
+            <h3 class="font-poppins text-base font-semibold text-white">{step.title}</h3>
+            <p class="text-sm text-white/50 mt-1 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO SEGURANÇA
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#0F1623]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+
+        <!-- Texto -->
+        <div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+              Segurança & Compliance
+            </span>
+            <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white leading-tight">
+              Seus dados de vendas protegidos com padrão enterprise.
+            </h2>
+          </div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <p class="text-base text-white/60 mt-4 leading-relaxed">
+              Score de segurança 94/100. Os dados do seu pipeline, leads e conversas comerciais ficam isolados, criptografados e com audit trail completo de cada ação — da IA e do time humano.
+            </p>
+          </div>
+          <ul class="mt-6 space-y-3">
+            {[
+              'LGPD, GDPR, SOC 2 e ISO 27001',
+              'Criptografia AES-256 por tenant',
+              'Isolamento multi-tenant nativo (RLS)',
+              '+700 regras de segurança ativas',
+              'Backup com point-in-time recovery de 30 dias',
+              'AI Governance — seus dados nunca treinam modelos externos',
+              'Audit trail completo — cada ação da IA e de cada agente humano',
+            ].map((feat) => (
+              <li
+                data-fade
+                style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
+                class="flex items-start gap-3"
+              >
+                <span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`} />
+                <span class="text-sm text-white/70 leading-relaxed">{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Mockup -->
+        <div
+          data-fade
+          class="mt-12 lg:mt-0"
+          style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
+        >
+          <MockupYaTrust />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO PROVA SOCIAL / NÚMEROS
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Infraestrutura de quem faz isso há 11 anos.
+          </h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {stats.map((stat) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-[#FAFBFC] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <div class="font-poppins text-2xl font-bold mb-1" style={`color: ${ACCENT};`}>{stat.value}</div>
+            <div class="text-xs text-[#656D78] leading-snug">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO FAQ
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            Perguntas frequentes
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+            Dúvidas sobre agentes de IA para vendas e CRM no WhatsApp.
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {faqItems.map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-white rounded-2xl p-6 border border-gray-100"
+          >
+            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{item.q}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ════════════════════════════════════════════ -->
+  <section
+    data-observe
+    class="relative py-16 lg:py-24 xl:py-32 overflow-hidden"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+      <div class="absolute" style="top: -30%; left: 5%; width: 40%; height: 130%; background: linear-gradient(140deg, rgba(255,255,255,0.6) 0%, transparent 35%); transform: rotate(-25deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
+      <svg viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 100 C80 60, 160 30, 240 50 C320 70, 400 20, 480 45 C560 70, 640 15, 720 40 C800 65, 880 20, 960 45 C1040 70, 1120 25, 1200 50 C1280 75, 1360 35, 1440 55 L1440 0 L0 0Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+    <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:18%;left:12%;animation:yapt-float 6s ease-in-out infinite;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.35);top:35%;right:15%;animation:yapt-float 7s ease-in-out infinite;animation-delay:2s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:6px;height:6px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:60%;left:8%;animation:yapt-float 5s ease-in-out infinite;animation-delay:4s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.3);top:72%;right:10%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade class="flex justify-center flex-wrap gap-4 mb-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        {['Setup em 24h', 'Suporte dedicado', 'Sem compromisso'].map((badge) => (
+          <span class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white/80">{badge}</span>
+        ))}
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          Veja seus agentes de IA qualificando leads ao vivo.
+        </h2>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          Demo personalizada de 30 minutos. Sem compromisso. Você vai ver na prática como a IA qualifica com seu playbook, agenda reuniões automaticamente, alimenta o CRM sozinha e dá coaching em tempo real pro seu time.
+        </p>
+      </div>
+      <div data-fade class="flex flex-col sm:flex-row justify-center gap-4 mt-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 inline-block"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-2 border-white/30 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/10 transition-all duration-300 inline-block"
+        >
+          Falar com especialista
+        </a>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-sm text-white/50 mt-6">
+          Setup em 24h | Suporte dedicado | Sem compromisso
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       STICKY CTA — mobile only
+  ════════════════════════════════════════════ -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden" style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);">
+    <div class="px-4 py-3">
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base"
+        style="color: #064E3B;"
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+</SiteLayout>
