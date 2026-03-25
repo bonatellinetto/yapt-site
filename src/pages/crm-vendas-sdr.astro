@@ -41,7 +41,16 @@ const painPoints = [
   },
 ];
 
-const agentModules = [
+interface AgentModule {
+  subtitle: string;
+  title: string;
+  description: string;
+  features: string[];
+  mockup: string;
+  reversed: boolean;
+}
+
+const agentModules: AgentModule[] = [
   {
     subtitle: 'Agente SDR — Ferramenta de SDR com IA',
     title: 'Qualificador de leads com inteligência artificial. Treinado com seu playbook.',
@@ -151,6 +160,7 @@ const stats = [
   description="Agentes de IA que qualificam leads, agendam reuniões e alimentam o CRM — direto no WhatsApp. Ferramenta de SDR com IA, memória infinita, bot de vendas integrado ao CRM. BSP oficial Meta."
   path="/crm-vendas-sdr"
   locale="pt-BR"
+  noHreflang
 >
 
   <!-- ═══════════════════════════════════════════
@@ -229,7 +239,7 @@ const stats = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Seu time comercial ainda qualifica lead no braço?
           </h2>
           <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
@@ -249,7 +259,7 @@ const stats = [
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-red-400"
               set:html={item.icon}
             />
-            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
             <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
           </div>
         ))}
@@ -267,7 +277,7 @@ const stats = [
   <!-- CTA 1 — após problema -->
   <div class="bg-white py-10 border-b border-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <p class="font-poppins text-lg font-semibold text-[#1a1a2e] mb-2">Pronto para ver a qualificação acontecendo automaticamente?</p>
+      <p class="font-poppins text-lg font-semibold text-[#0F0F0F] mb-2">Pronto para ver a qualificação acontecendo automaticamente?</p>
       <p class="text-sm text-[#656D78] mb-6">Demo de 30 minutos. Sem compromisso. Você vê o agente SDR com IA qualificando com seu playbook ao vivo.</p>
       <a
         href={CTA_LINK}
@@ -291,7 +301,7 @@ const stats = [
         <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
           Assistente virtual de vendas B2B
         </span>
-        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
           Agentes de IA que vendem como seu melhor SDR. Só que 24/7.
         </h2>
         <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -309,7 +319,7 @@ const stats = [
           title={mod.title}
           subtitle={mod.subtitle}
           description={mod.description}
-          features={mod.features as unknown as string[]}
+          features={mod.features}
           reversed={mod.reversed}
           accentColor={ACCENT}
         >
@@ -354,7 +364,7 @@ const stats = [
         <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
           IA com integração CRM WhatsApp
         </span>
-        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
           CRM que se preenche sozinho. Pipeline que avança sem empurrar.
         </h2>
         <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -427,7 +437,7 @@ const stats = [
   <div class="bg-[#FAFBFC] py-12 border-y border-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center">
       <div data-fade style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
-        <p class="font-poppins text-xl font-bold text-[#1a1a2e] mb-2">Do lead ao deal fechado — sem entrada manual em nenhum ponto.</p>
+        <p class="font-poppins text-xl font-bold text-[#0F0F0F] mb-2">Do lead ao deal fechado — sem entrada manual em nenhum ponto.</p>
         <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver o CRM se preenchendo sozinho e o pipeline avançando com a qualificação da IA? Agende uma demo de 30 minutos.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a
@@ -443,7 +453,7 @@ const stats = [
             href={CTA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#1a1a2e] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#0F0F0F] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
           >
             Falar com especialista
           </a>
@@ -593,7 +603,7 @@ const stats = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Infraestrutura de quem faz isso há 11 anos.
           </h2>
         </div>
@@ -624,7 +634,7 @@ const stats = [
           <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
             Perguntas frequentes
           </span>
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Dúvidas sobre agentes de IA para vendas e CRM no WhatsApp.
           </h2>
         </div>
@@ -637,7 +647,7 @@ const stats = [
             style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
             class="bg-white rounded-2xl p-6 border border-gray-100"
           >
-            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{item.q}</h3>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-3">{item.q}</h3>
             <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
           </div>
         ))}

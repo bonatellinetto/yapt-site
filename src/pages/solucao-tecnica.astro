@@ -18,7 +18,15 @@ const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20a
 const ACCENT = '#20B2AA';
 const GRADIENT = 'linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%)';
 
-const solutionModules = [
+interface SolutionModule {
+  subtitle: string;
+  title: string;
+  description: string;
+  features: string[];
+  mockup: string;
+}
+
+const solutionModules: SolutionModule[] = [
   {
     subtitle: 'yaFlows — Builder Visual',
     title: 'Automação de WhatsApp sem código, sem limite.',
@@ -180,6 +188,7 @@ const stats = [
   description="Builder visual no-code com multi-IA orquestrada, omnichannel B2B e integração WhatsApp Business API. 33 tipos de nó, agentes treináveis, orquestração de IA e API-first. BSP oficial Meta."
   path="/solucao-tecnica"
   locale="pt-BR"
+  noHreflang
 >
 
   <!-- ═══════════════════════════════════════════
@@ -258,7 +267,7 @@ const stats = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Sua automação de WhatsApp parou onde o chatbot básico começa?
           </h2>
           <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
@@ -299,7 +308,7 @@ const stats = [
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-red-400"
               set:html={item.icon}
             />
-            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
             <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
           </div>
         ))}
@@ -317,7 +326,7 @@ const stats = [
   <!-- CTA 1 — após problema -->
   <div class="bg-white py-10 border-b border-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <p class="font-poppins text-lg font-semibold text-[#1a1a2e] mb-2">Pronto para ver uma plataforma que orquestra tudo?</p>
+      <p class="font-poppins text-lg font-semibold text-[#0F0F0F] mb-2">Pronto para ver uma plataforma que orquestra tudo?</p>
       <p class="text-sm text-[#656D78] mb-6">Demo de 30 minutos. Sem compromisso. Você vê o builder, a IA e a orquestração ao vivo.</p>
       <a
         href={CTA_LINK}
@@ -341,7 +350,7 @@ const stats = [
         <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
           A solução
         </span>
-        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
           Uma plataforma. Builder visual. Múltiplos modelos de IA. Zero código.
         </h2>
         <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -359,7 +368,7 @@ const stats = [
           title={mod.title}
           subtitle={mod.subtitle}
           description={mod.description}
-          features={mod.features as unknown as string[]}
+          features={mod.features}
           reversed={i % 2 === 1}
           accentColor={ACCENT}
         >
@@ -454,7 +463,7 @@ const stats = [
   <div class="bg-[#FAFBFC] py-12 border-y border-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center">
       <div data-fade style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
-        <p class="font-poppins text-xl font-bold text-[#1a1a2e] mb-2">Técnica que gera resultado de verdade.</p>
+        <p class="font-poppins text-xl font-bold text-[#0F0F0F] mb-2">Técnica que gera resultado de verdade.</p>
         <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver o Lead Scoring, o Emotion Engine e o builder visual funcionando na sua operação? Agende uma demo de 30 minutos.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a
@@ -470,7 +479,7 @@ const stats = [
             href={CTA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#1a1a2e] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#0F0F0F] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
           >
             Falar com especialista
           </a>
@@ -491,7 +500,7 @@ const stats = [
           <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
             Resultados
           </span>
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             A técnica serve ao resultado.
           </h2>
           <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -516,7 +525,7 @@ const stats = [
                 <div class="text-xs text-[#656D78]">{item.metricLabel}</div>
               </div>
             </div>
-            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
             <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
           </div>
         ))}
@@ -589,7 +598,7 @@ const stats = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Infraestrutura que aguenta.
           </h2>
         </div>
@@ -619,7 +628,7 @@ const stats = [
         <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
           Integrações
         </span>
-        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
           API-first para quando o no-code não basta.
         </h2>
         <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -647,7 +656,7 @@ const stats = [
           <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
             Perguntas frequentes
           </span>
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
             Dúvidas sobre automação de WhatsApp com IA.
           </h2>
         </div>
@@ -660,7 +669,7 @@ const stats = [
             style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
             class="bg-[#FAFBFC] rounded-2xl p-6 border border-gray-100"
           >
-            <h3 class="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{item.q}</h3>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-3">{item.q}</h3>
             <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
           </div>
         ))}
