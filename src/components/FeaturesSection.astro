@@ -52,28 +52,28 @@ const blocks = [
       <div
         data-fade
         class={`feat-section${block.reverse ? ' feat-reverse' : ''}`}
-        style={`position: relative; max-width: 1200px; margin: 0 auto; padding: 50px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; overflow: hidden; opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease;`}
+        style="opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease;"
       >
         {block.reverse ? (
           <>
             <!-- Visual mockup -->
-            <div class="feat-visual" style="position: relative; z-index: 2; display: flex; justify-content: center;">
+            <div class="feat-visual">
               {block.mockup === 'yaTeam' && <MockupYaTeam />}
               {block.mockup === 'yaFlows' && <MockupYaFlows />}
               {block.mockup === 'yaDeals' && <MockupYaDeals />}
             </div>
             <!-- Content -->
-            <div class="feat-content" style="position: relative; z-index: 2; max-width: 480px;">
+            <div class="feat-content">
               <div style={`display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-bottom: 16px; padding: 6px 14px; border-radius: 20px; background: ${block.colorBg}; color: ${block.colorText};`}>
                 {block.module}
               </div>
               <h2 style="font-family: Poppins, sans-serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #1d1d1f; margin-bottom: 20px;">
                 {t(`${i18nKey}.title`, locale)}
               </h2>
-              <p style="font-size: 17px; color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
+              <p style="font-size: clamp(15px, 4vw, 17px); color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
                 {t(`${i18nKey}.description`, locale)}
               </p>
-              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 14px 24px; background: ${block.color}; border-radius: 50px; transition: all 0.25s ease; font-family: Inter, sans-serif;`}>
+              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`background: ${block.color};`}>
                 {t(`${i18nKey}.cta`, locale)}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
@@ -82,23 +82,23 @@ const blocks = [
         ) : (
           <>
             <!-- Content -->
-            <div class="feat-content" style="position: relative; z-index: 2; max-width: 480px;">
+            <div class="feat-content">
               <div style={`display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-bottom: 16px; padding: 6px 14px; border-radius: 20px; background: ${block.colorBg}; color: ${block.colorText};`}>
                 {block.module}
               </div>
               <h2 style="font-family: Poppins, sans-serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #1d1d1f; margin-bottom: 20px;">
                 {t(`${i18nKey}.title`, locale)}
               </h2>
-              <p style="font-size: 17px; color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
+              <p style="font-size: clamp(15px, 4vw, 17px); color: #6e6e73; line-height: 1.75; margin-bottom: 32px; font-family: Inter, sans-serif;">
                 {t(`${i18nKey}.description`, locale)}
               </p>
-              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 14px 24px; background: ${block.color}; border-radius: 50px; transition: all 0.25s ease; font-family: Inter, sans-serif;`}>
+              <a href={localePath(block.link, locale)} class="feat-btn-link" style={`background: ${block.color};`}>
                 {t(`${i18nKey}.cta`, locale)}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
             <!-- Visual mockup -->
-            <div class="feat-visual" style="position: relative; z-index: 2; display: flex; justify-content: center;">
+            <div class="feat-visual">
               {block.mockup === 'yaveh' && <MockupYaveh />}
               {block.mockup === 'yaCampaigns' && <MockupYaCampaigns />}
               {block.mockup === 'yaEnterprise' && <MockupYaEnterprise />}
@@ -110,3 +110,65 @@ const blocks = [
     );
   })}
 </section>
+
+<style>
+  /* ── feat-section: grid responsivo ── */
+  .feat-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+    overflow: hidden;
+  }
+  @media (min-width: 640px) {
+    .feat-section { padding: 48px 32px; gap: 40px; }
+  }
+  @media (min-width: 1024px) {
+    .feat-section { grid-template-columns: 1fr 1fr; padding: 50px 60px; gap: 60px; }
+  }
+
+  /* mobile: conteudo sempre antes do mockup */
+  @media (max-width: 1023px) {
+    .feat-reverse .feat-content { order: -1; }
+  }
+
+  /* ── coluna de conteudo ── */
+  .feat-content {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .feat-content { max-width: 480px; }
+  }
+
+  /* ── coluna do mockup ── */
+  .feat-visual {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ── botao CTA ── */
+  .feat-btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+    font-family: Inter, sans-serif;
+  }
+  @media (min-width: 768px) {
+    .feat-btn-link { font-size: 15px; padding: 14px 24px; }
+  }
+</style>
