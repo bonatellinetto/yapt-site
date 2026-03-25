@@ -11,7 +11,9 @@ import MockupYaDeals from '../components/mockups/MockupYaDeals.astro';
 import MockupScoring from '../components/mockups/MockupScoring.astro';
 import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
 import MockupInstantEngage from '../components/mockups/MockupInstantEngage.astro';
-import MockupYaTrust from '../components/mockups/MockupYaTrust.astro';
+import SecuritySection from '../components/SecuritySection.astro';
+import StatsGrid from '../components/StatsGrid.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { toucanSvg, genericIcons } from '../lib/fauna';
 
 const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20yapt.';
@@ -542,118 +544,32 @@ const stats = [
   <!-- ═══════════════════════════════════════════
        SEÇÃO SEGURANÇA
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-[#0F1623]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-        <!-- Texto -->
-        <div>
-          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-            <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
-              Segurança & Compliance
-            </span>
-            <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white leading-tight">
-              Seus dados de vendas protegidos com padrão enterprise.
-            </h2>
-          </div>
-          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-            <p class="text-base text-white/60 mt-4 leading-relaxed">
-              Score de segurança 94/100. Os dados do seu pipeline, leads e conversas comerciais ficam isolados, criptografados e com audit trail completo de cada ação — da IA e do time humano.
-            </p>
-          </div>
-          <ul class="mt-6 space-y-3">
-            {[
-              'LGPD, GDPR, SOC 2 e ISO 27001',
-              'Criptografia AES-256 por tenant',
-              'Isolamento multi-tenant nativo (RLS)',
-              '+700 regras de segurança ativas',
-              'Backup com point-in-time recovery de 30 dias',
-              'AI Governance — seus dados nunca treinam modelos externos',
-              'Audit trail completo — cada ação da IA e de cada agente humano',
-            ].map((feat) => (
-              <li
-                data-fade
-                style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
-                class="flex items-start gap-3"
-              >
-                <span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`} />
-                <span class="text-sm text-white/70 leading-relaxed">{feat}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <!-- Mockup -->
-        <div
-          data-fade
-          class="mt-12 lg:mt-0"
-          style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
-        >
-          <MockupYaTrust />
-        </div>
-      </div>
-    </div>
-  </section>
+  <SecuritySection
+    accentColor={ACCENT}
+    title="Seus dados de vendas protegidos com padrão enterprise."
+    description="Score de segurança 94/100. Os dados do seu pipeline, leads e conversas comerciais ficam isolados, criptografados e com audit trail completo de cada ação — da IA e do time humano."
+  />
 
 
   <!-- ═══════════════════════════════════════════
        SEÇÃO PROVA SOCIAL / NÚMEROS
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
-            Infraestrutura de quem faz isso há 11 anos.
-          </h2>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {stats.map((stat) => (
-          <div
-            data-fade
-            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-            class="bg-[#FAFBFC] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div class="font-poppins text-2xl font-bold mb-1" style={`color: ${ACCENT};`}>{stat.value}</div>
-            <div class="text-xs text-[#656D78] leading-snug">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <StatsGrid
+    title="Infraestrutura de quem faz isso há 11 anos."
+    stats={stats}
+    accentColor={ACCENT}
+  />
 
 
   <!-- ═══════════════════════════════════════════
        SEÇÃO FAQ
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
-            Perguntas frequentes
-          </span>
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
-            Dúvidas sobre agentes de IA para vendas e CRM no WhatsApp.
-          </h2>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        {faqItems.map((item) => (
-          <div
-            data-fade
-            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-            class="bg-white rounded-2xl p-6 border border-gray-100"
-          >
-            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-3">{item.q}</h3>
-            <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <FAQSection
+    title="Dúvidas sobre agentes de IA para vendas e CRM no WhatsApp."
+    subtitle="Perguntas frequentes"
+    accentColor={ACCENT}
+    items={faqItems}
+  />
 
 
   <!-- ═══════════════════════════════════════════

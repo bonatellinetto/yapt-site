@@ -1,0 +1,85 @@
+---
+import MockupYaTrust from './mockups/MockupYaTrust.astro';
+
+interface Props {
+  accentColor: string;
+  title: string;
+  description: string;
+  features?: string[];
+  /** Use 'dark' for bg-[#0F1623] sections, 'light' for default bg */
+  variant?: 'dark' | 'light';
+}
+
+const {
+  accentColor,
+  title,
+  description,
+  features = [
+    'LGPD, GDPR, SOC 2 e ISO 27001',
+    'Criptografia AES-256 por tenant',
+    'Isolamento multi-tenant nativo (RLS)',
+    '+700 regras de segurança ativas',
+    'Backup com point-in-time recovery de 30 dias',
+    'AI Governance — seus dados nunca treinam modelos externos',
+    'Audit trail completo — cada ação da IA e de cada agente humano',
+  ],
+  variant = 'dark',
+} = Astro.props;
+
+const isDark = variant === 'dark';
+const sectionBg = isDark ? 'bg-[#0F1623]' : '';
+const headingColor = isDark ? 'text-white' : 'text-[#0F0F0F]';
+const bodyColor = isDark ? 'text-white/60' : 'text-[#656D78]';
+const featureColor = isDark ? 'text-white/70' : 'text-[#434A54]';
+---
+
+<section data-observe class={`py-16 lg:py-24 ${sectionBg}`}>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      <!-- Texto -->
+      <div>
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span
+            class="inline-block text-xs font-semibold tracking-wider mb-3"
+            style={`color: ${accentColor};`}
+          >
+            Segurança & Compliance
+          </span>
+          <h2 class={`font-poppins text-2xl lg:text-3xl font-bold ${headingColor} leading-tight`}>
+            {title}
+          </h2>
+        </div>
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <p class={`text-base ${bodyColor} mt-4 leading-relaxed`}>
+            {description}
+          </p>
+        </div>
+        <ul class="mt-6 space-y-3">
+          {features.map((feat) => (
+            <li
+              data-fade
+              style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
+              class="flex items-start gap-3"
+            >
+              <span
+                class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                style={`background-color: ${accentColor};`}
+              />
+              <span class={`text-sm ${featureColor} leading-relaxed`}>{feat}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Mockup -->
+      <div
+        data-fade
+        class="mt-12 lg:mt-0"
+        style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
+      >
+        <MockupYaTrust />
+      </div>
+    </div>
+  </div>
+</section>

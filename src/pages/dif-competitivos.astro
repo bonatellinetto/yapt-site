@@ -3,6 +3,8 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
+import StatsGrid from '../components/StatsGrid.astro';
+import FAQSection from '../components/FAQSection.astro';
 import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
 import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
 import MockupWaFlowForm from '../components/mockups/MockupWaFlowForm.astro';
@@ -725,61 +727,23 @@ const stats = [
   <!-- ═══════════════════════════════════════════
        SEÇÃO PROVA SOCIAL / NÚMEROS
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
-            Números que falam por si.
-          </h2>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {stats.map((stat) => (
-          <div
-            data-fade
-            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-            class="bg-[#FAFBFC] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div class="font-poppins text-2xl font-bold mb-1" style={`color: ${ACCENT};`}>{stat.value}</div>
-            <div class="text-xs text-[#656D78] leading-snug">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <StatsGrid
+    title="Números que falam por si."
+    stats={stats}
+    accentColor={ACCENT}
+  />
 
 
   <!-- ═══════════════════════════════════════════
        SEÇÃO FAQ
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
-            Perguntas frequentes
-          </span>
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
-            Dúvidas comuns sobre WhatsApp Business API.
-          </h2>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        {faqItems.map((item) => (
-          <div
-            data-fade
-            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-            class="bg-white rounded-2xl p-6 border border-gray-100"
-          >
-            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-3">{item.q}</h3>
-            <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <FAQSection
+    title="Dúvidas comuns sobre WhatsApp Business API."
+    subtitle="Perguntas frequentes"
+    accentColor={ACCENT}
+    items={faqItems}
+    bg="gray"
+  />
 
 
   <!-- ═══════════════════════════════════════════
