@@ -1,0 +1,51 @@
+---
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  accentColor: string;
+  items: FAQItem[];
+  /** Background color variant */
+  bg?: 'white' | 'gray';
+}
+
+const { title, subtitle, accentColor, items, bg = 'gray' } = Astro.props;
+
+const sectionBg = bg === 'white' ? 'bg-white' : 'bg-[#FAFBFC]';
+const cardBg = bg === 'white' ? 'bg-[#FAFBFC]' : 'bg-white';
+---
+
+<section data-observe class={`py-16 lg:py-24 ${sectionBg}`}>
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span
+          class="inline-block text-xs font-semibold tracking-wider mb-3"
+          style={`color: ${accentColor};`}
+        >
+          {subtitle}
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+          {title}
+        </h2>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      {items.map((item) => (
+        <div
+          data-fade
+          style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+          class={`${cardBg} rounded-2xl p-6 border border-gray-100`}
+        >
+          <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-3">{item.q}</h3>
+          <p class="text-sm text-[#656D78] leading-relaxed">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

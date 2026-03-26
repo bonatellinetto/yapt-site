@@ -1,0 +1,40 @@
+---
+interface StatItem {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  stats: StatItem[];
+  accentColor: string;
+}
+
+const { title, stats, accentColor } = Astro.props;
+---
+
+<section data-observe class="py-16 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+          {title}
+        </h2>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {stats.map((stat) => (
+        <div
+          data-fade
+          style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+          class="bg-[#FAFBFC] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="font-poppins text-2xl font-bold mb-1" style={`color: ${accentColor};`}>
+            {stat.value}
+          </div>
+          <div class="text-xs text-[#656D78] leading-snug">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

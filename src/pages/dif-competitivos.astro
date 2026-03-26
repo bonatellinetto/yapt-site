@@ -1,0 +1,832 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ModuleDeepDive from '../components/ModuleDeepDive.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import StatsGrid from '../components/StatsGrid.astro';
+import FAQSection from '../components/FAQSection.astro';
+import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
+import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
+import MockupWaFlowForm from '../components/mockups/MockupWaFlowForm.astro';
+import MockupYaMemory from '../components/mockups/MockupYaMemory.astro';
+import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
+import MockupSLA from '../components/mockups/MockupSLA.astro';
+import { toucanSvg, genericIcons } from '../lib/fauna';
+
+const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20yapt.';
+const ACCENT = '#20B2AA';
+const GRADIENT = 'linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%)';
+
+interface SolutionModule {
+  subtitle: string;
+  title: string;
+  description: string;
+  features: string[];
+  mockup: string;
+}
+
+const solutionModules: SolutionModule[] = [
+  {
+    subtitle: 'API Oficial Meta',
+    title: 'WhatsApp Business API com estabilidade real',
+    description: 'BSP oficial da Meta. Múltiplos números, envio em massa com templates aprovados e Conversions API nativa (CAPI) que fecha o loop com Meta e Google Ads. Integração WhatsApp Business API com infraestrutura enterprise — sem risco de banimento, sem instabilidade.',
+    features: [
+      'BSP oficial Meta com múltiplos números gerenciados',
+      'Envio em massa com templates aprovados',
+      'CAPI nativa — loop fechado com Meta Ads e Google Ads',
+      'Sem risco de banimento ou instabilidade de API não-oficial',
+    ],
+    mockup: 'connect',
+  },
+  {
+    subtitle: 'IA Generativa',
+    title: 'IA que vende — não é chatbot, é agente',
+    description: 'Agentes de IA treináveis (SDR, Closer, Suporte, Scheduler) que seguem seu playbook, qualificam com BANT/SPIN/MEDDIC, detectam 13 sinais emocionais em tempo real e fazem handoff para o humano com 100% do contexto preservado.',
+    features: [
+      'Agentes configuráveis por função: SDR, Closer, Suporte, Scheduler',
+      'Qualificação automática BANT / SPIN / MEDDIC',
+      'Detecção de 13 sinais emocionais em tempo real',
+      'Handoff inteligente com contexto 100% preservado',
+    ],
+    mockup: 'mentor',
+  },
+  {
+    subtitle: 'WhatsApp Flows B2B',
+    title: 'Automação com WhatsApp Flows nativos',
+    description: 'Builder visual com 33 tipos de nó, 15 gatilhos e execução paralela. WhatsApp Flows para empresas com 20 componentes Meta — automação de formulários no WhatsApp rodando dentro da conversa, sem tirar o cliente do app.',
+    features: [
+      '33 tipos de nó e 15 gatilhos no builder visual',
+      'WhatsApp Flows nativos com 20 componentes Meta',
+      'Automação de formulários no WhatsApp: captura, qualificação, checkout e NPS',
+      'Execução paralela sem bloquear o atendimento',
+    ],
+    mockup: 'flows',
+  },
+  {
+    subtitle: 'Memória Infinita',
+    title: 'Memória de lead que nunca esquece',
+    description: 'Cada conversa, objeção, preferência e budget fica gravado para sempre. Cross-canal, cross-tempo, cross-agente. Trocou de vendedor? O contexto vai junto. A plataforma de atendimento WhatsApp API que trata cada lead como único.',
+    features: [
+      'Histórico completo por lead: objeções, preferências, budget',
+      'Persistência cross-canal e cross-agente',
+      'Contexto preservado ao trocar de vendedor',
+      'Disponível em tempo real para IA e time humano',
+    ],
+    mockup: 'memory',
+  },
+] as const;
+
+const formUseCases = [
+  { icon: '🎯', title: 'Qualificação de lead', description: 'Formulário BANT/SPIN/MEDDIC dentro do WhatsApp. O lead responde no próprio app — sem links externos, sem abandono.' },
+  { icon: '📅', title: 'Agendamento de reunião', description: 'Calendário nativo no WhatsApp. O lead escolhe data e horário sem sair da conversa. Confirmação e lembrete automáticos.' },
+  { icon: '🛒', title: 'Checkout e pagamento', description: 'Coleta de dados de compra, endereço e preferências via formulário dentro do WhatsApp. Zero fricção no momento da decisão.' },
+  { icon: '⭐', title: 'Pesquisa e NPS', description: 'Pesquisa de satisfação pós-atendimento enviada automaticamente. Coleta estruturada, sem pedir para acessar outro canal.' },
+];
+
+const technicalFeatures = [
+  {
+    icon: genericIcons.queue,
+    title: 'Distribuição inteligente de conversas',
+    description: '6 modos: round-robin, least-loaded, skill-based, por keyword, campanha ou horário. Sticky routing e overflow automático.',
+  },
+  {
+    icon: genericIcons.ai,
+    title: 'Coaching em tempo real para o time',
+    description: 'yaMentor murmura sugestões ao vendedor durante a conversa. Onboarding de 21 para 3 dias. Conversão de 18% para 31%.',
+  },
+  {
+    icon: genericIcons.score,
+    title: 'Lead Scoring híbrido com ICP Matching',
+    description: '7 fatores comportamentais + qualificação IA + matching semântico contra seu cliente ideal. Score atualiza a cada 10 minutos.',
+  },
+  {
+    icon: genericIcons.omnichannel,
+    title: 'Omnichannel real',
+    description: 'WhatsApp, Instagram, Messenger, Email e Widget num inbox unificado. Mesmo lead em canais diferentes = 1 contato, zero duplicatas.',
+  },
+  {
+    icon: genericIcons.chart,
+    title: 'ROAS real, não estimativa',
+    description: 'yaCampaigns sincroniza Meta Ads e Google Ads e calcula ROAS com dados reais de vendas — não estimativa do gerenciador.',
+  },
+  {
+    icon: genericIcons.bolt,
+    title: 'Instant Engage',
+    description: 'Mensagem personalizada via API oficial em menos de 30s após o lead clicar no anúncio. Lead quente, resposta quente.',
+  },
+];
+
+const comparisonRows = [
+  { feature: 'API WhatsApp', generic: 'Não-oficial — risco de banimento', yapt: 'BSP Oficial Meta — estabilidade garantida' },
+  { feature: 'Inteligência', generic: 'Árvore de decisão / respostas fixas', yapt: 'IA generativa treinável com seu playbook' },
+  { feature: 'Atribuição de anúncios', generic: 'Sem rastreio de origem', yapt: '10 campos automáticos (campanha, creative, UTMs)' },
+  { feature: 'Memória do lead', generic: 'Sem histórico entre sessões', yapt: 'Infinita — cross-canal e cross-agente' },
+  { feature: 'Formulários no WhatsApp', generic: 'Link externo ou não tem', yapt: 'WhatsApp Flows nativos com 20 componentes' },
+  { feature: 'CRM', generic: 'Ferramenta separada', yapt: 'Pipeline nativo com SLA por stage' },
+  { feature: 'Loop com Ads (CAPI)', generic: 'Sem integração', yapt: 'Meta Ads + Google Ads em tempo real' },
+  { feature: 'Suporte enterprise', generic: 'Ticket de suporte genérico', yapt: 'CSM dedicado + SLA contratual' },
+];
+
+const faqItems = [
+  {
+    q: 'O que é BSP oficial Meta e por que faz diferença?',
+    a: 'BSP (Business Solution Provider) é a certificação oficial da Meta para empresas que distribuem o WhatsApp Business API. Apenas BSPs credenciados podem oferecer a API com estabilidade, suporte Meta, templates aprovados e integração com Conversions API. Plataformas que usam API não-oficial operam em zona cinzenta: sujeitas a bloqueio de número, instabilidade e sem acesso a recursos avançados como WhatsApp Flows.',
+  },
+  {
+    q: 'A yapt. é um chatbot de WhatsApp?',
+    a: 'Não. Chatbots tradicionais operam por árvores de decisão: respostas fixas para perguntas previstas. A yapt. usa IA generativa nativa — agentes treináveis que entendem contexto, seguem seu playbook comercial, qualificam leads por BANT/SPIN/MEDDIC e fazem handoff para o time humano com 100% do histórico preservado. É a diferença entre um FAQ automático e um SDR inteligente.',
+  },
+  {
+    q: 'Como funciona a automação de formulários no WhatsApp?',
+    a: 'Com WhatsApp Flows nativos, a yapt. embeds formulários diretamente na conversa do WhatsApp — sem links externos. O lead preenche dados, escolhe horários ou responde pesquisas sem sair do app. Os dados chegam estruturados na plataforma e disparam automações: criar deal, agendar reunião, acionar IA de follow-up.',
+  },
+  {
+    q: 'O que são WhatsApp Flows para empresas e como a yapt. usa?',
+    a: 'WhatsApp Flows são componentes nativos da Meta que permitem criar interfaces ricas dentro de uma conversa de WhatsApp: formulários, seletores de data, listas, pagamentos. A yapt. oferece um builder visual com 33 tipos de nó e 20 componentes Meta para criar qualquer fluxo B2B — qualificação, agendamento, checkout, NPS — sem código.',
+  },
+  {
+    q: 'A yapt. atende operações enterprise?',
+    a: 'Sim. A plataforma foi construída com isolamento multi-tenant nativo, score de segurança 94/100, conformidade LGPD/GDPR/SOC 2, criptografia AES-256, +700 regras de segurança ativas e backup com point-in-time recovery de 30 dias. Empresas enterprise contam com CSM dedicado, SLA contratual, onboarding estruturado e contrato DPA para compliance.',
+  },
+  {
+    q: 'Quanto tempo leva para fazer o setup e começar a usar?',
+    a: 'Setup completo em 24 horas com suporte dedicado. Isso inclui conexão do número oficial, aprovação de templates, configuração dos agentes de IA, integração com CRM e primeiras automações rodando. Sem semanas de implementação, sem dependência de desenvolvedor.',
+  },
+];
+
+const integrationTags = [
+  'Meta Ads', 'Google Ads', 'Shopify', 'Bling', 'Stripe',
+  'Hotmart', 'Kiwify', 'Google Calendar', 'Google Sheets',
+  'OpenAI', 'Zapier (5.000+ apps)', 'Webhooks', 'HTTP Requests', 'API Completa',
+];
+
+const stats = [
+  { value: '30M+', label: 'mensagens processadas por mês' },
+  { value: '+1.900', label: 'empresas usando a plataforma' },
+  { value: '11 anos', label: 'de mercado (by New Way)' },
+  { value: '99,97%', label: 'de uptime garantido' },
+  { value: 'BSP', label: 'oficial Meta WhatsApp' },
+  { value: '24h', label: 'de setup com suporte dedicado' },
+];
+---
+
+<SiteLayout
+  title="WhatsApp Business API com IA Nativa — yapt."
+  description="A yapt. é a plataforma que unifica WhatsApp API oficial, automação inteligente e IA generativa. BSP oficial Meta. Setup em 24h. +1.900 empresas."
+  path="/dif-competitivos"
+  locale="pt-BR"
+  noHreflang
+>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <div
+    data-observe
+    class="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 80 C80 50, 160 20, 240 40 C320 60, 400 10, 480 35 C560 60, 640 15, 720 38 C800 61, 880 18, 960 42 C1040 66, 1120 22, 1200 45 C1280 68, 1360 30, 1440 50 L1440 0 L0 0Z" fill="rgba(255,255,255,0.25)"/>
+      </svg>
+    </div>
+    <div class="absolute pointer-events-none hidden lg:block" style="top: 12%; right: 6%; animation: yapt-float 6s ease-in-out infinite; opacity: 0.25;" set:html={toucanSvg} />
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="opacity: 0.1;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 0 C120 40, 240 15, 360 30 C480 45, 600 10, 720 25 C840 40, 960 8, 1080 22 C1200 36, 1320 12, 1440 20 L1440 60 L0 60Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block rounded-full px-4 py-1.5 text-xs font-medium text-white/90 mb-6" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">
+          BSP Oficial Meta | 11 anos de mercado | +1.900 empresas
+        </span>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h1 class="font-poppins text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          WhatsApp Business API com IA nativa.<br class="hidden lg:block" />
+          Setup em 24h, não em semanas.
+        </h1>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          A yapt. é a plataforma de atendimento WhatsApp API que unifica automação inteligente e IA generativa numa única operação — do primeiro contato ao fechamento da venda, com rastreio completo de cada lead.
+        </p>
+      </div>
+      <div data-fade class="mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proof bar -->
+  <div class="bg-white border-b border-gray-100 py-4">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-10 text-sm text-[#656D78]">
+        {['30M+ mensagens/mês', '99,97% uptime', '+1.900 clientes', 'BSP oficial Meta'].map((item) => (
+          <span class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`}></span>
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO BSP — O que significa ser BSP Oficial
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#0F1623]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            BSP Oficial Meta WhatsApp
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white">
+            O que muda quando você usa a API oficial — e não uma alternativa.
+          </h2>
+          <p class="text-base text-white/60 mt-4 max-w-2xl mx-auto leading-relaxed">
+            BSP (Business Solution Provider) é a certificação oficial da Meta para distribuir o WhatsApp Business API. Sem esse credenciamento, a operação inteira fica exposta a riscos que nenhuma empresa pode ignorar.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Coluna: riscos da API não-oficial -->
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;" class="rounded-2xl p-8 border border-red-500/20" style="background: rgba(239,68,68,0.06);">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center text-sm">⚠️</div>
+            <span class="font-poppins font-semibold text-white/80 text-sm">API não-oficial / soluções sem BSP</span>
+          </div>
+          <ul class="space-y-3">
+            {[
+              'Número banido sem aviso prévio',
+              'Instabilidade e quedas de serviço',
+              'Sem acesso a templates aprovados',
+              'Sem WhatsApp Flows nativos',
+              'Sem Conversions API (CAPI) — ROAS no escuro',
+              'Violação dos Termos de Uso da Meta',
+              'Sem suporte oficial em caso de problemas',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm text-white/50">
+                <span class="mt-0.5 text-red-400 flex-shrink-0">✕</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Coluna: garantias BSP yapt. -->
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;" class="rounded-2xl p-8 border border-[#20B2AA]/20" style="background: rgba(32,178,170,0.06);">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background: rgba(32,178,170,0.15);">✓</div>
+            <span class="font-poppins font-semibold text-white/80 text-sm">yapt. — BSP Oficial Meta</span>
+          </div>
+          <ul class="space-y-3">
+            {[
+              'Número protegido com garantia Meta',
+              '99,97% de uptime com SLA contratual',
+              'Templates aprovados e envio em massa',
+              'WhatsApp Flows B2B nativos (20 componentes)',
+              'CAPI nativa — loop fechado com Meta e Google Ads',
+              'Operação 100% dentro dos Termos de Uso',
+              'Suporte técnico com canal direto Meta',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <span class="mt-0.5 flex-shrink-0 font-bold" style={`color: ${ACCENT};`}>✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA 1 — após BSP -->
+  <div class="bg-white py-10 border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="font-poppins text-lg font-semibold text-[#0F0F0F] mb-2">Pronto para operar com API oficial e sem risco?</p>
+      <p class="text-sm text-[#656D78] mb-6">Veja a yapt. ao vivo — setup em 24h, sem compromisso.</p>
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+        style={`background: ${GRADIENT};`}
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO DOR / PROBLEMA
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+            Sua operação de vendas no WhatsApp ainda depende de gambiarras?
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
+            A maioria das empresas que investe em tráfego pago vive o mesmo cenário: o lead chega, mas ninguém sabe de qual campanha veio. O vendedor responde sem contexto. A IA é um chatbot engessado que só responde FAQ. Os dados ficam espalhados entre 3, 4, 5 ferramentas que não se conversam. O resultado: lead esfria, vendedor perde tempo, gestor não tem visibilidade e o ROAS fica no escuro.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: '📭', title: 'Lead sem atribuição', description: 'O lead chega mas ninguém sabe de qual campanha, headline ou creative ele veio.' },
+          { icon: '🤖', title: 'Bot engessado', description: 'Chatbot de árvore de decisão que só responde FAQ e trava na primeira variação da pergunta.' },
+          { icon: '🧩', title: 'Ferramentas fragmentadas', description: 'CRM, atendimento, automação e IA em sistemas separados que não se conversam.' },
+          { icon: '📉', title: 'ROAS no escuro', description: 'Lead esfria, vendedor perde tempo, gestor sem visibilidade e ROAS baseado em estimativa.' },
+        ].map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-white rounded-2xl p-6 border border-red-100"
+          >
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-xl">
+              {item.icon}
+            </div>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO COMPARAÇÃO — Chatbot vs yapt.
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            Por que a yapt. não é um chatbot
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+            Chatbot com API oficial vs plataforma de atendimento WhatsApp API.
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+            A diferença não é de preço. É de resultado. Veja o que muda na operação.
+          </p>
+        </div>
+      </div>
+
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;" class="overflow-x-auto rounded-2xl border border-gray-100">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-100">
+              <th class="text-left px-6 py-4 font-poppins font-semibold text-[#0F0F0F] bg-[#FAFBFC] w-1/3">Funcionalidade</th>
+              <th class="text-left px-6 py-4 font-poppins font-semibold text-[#656D78] bg-[#FAFBFC]">Chatbot / ferramenta tradicional</th>
+              <th class="text-left px-6 py-4 font-poppins font-semibold bg-[#FAFBFC]" style={`color: ${ACCENT};`}>yapt.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonRows.map((row, i) => (
+              <tr class={`border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-[#FAFBFC]/50'}`}>
+                <td class="px-6 py-4 font-medium text-[#0F0F0F]">{row.feature}</td>
+                <td class="px-6 py-4 text-[#656D78]">
+                  <span class="flex items-start gap-2">
+                    <span class="text-red-400 flex-shrink-0 mt-0.5">✕</span>
+                    {row.generic}
+                  </span>
+                </td>
+                <td class="px-6 py-4 text-[#0F0F0F]">
+                  <span class="flex items-start gap-2">
+                    <span class="flex-shrink-0 mt-0.5 font-bold" style={`color: ${ACCENT};`}>✓</span>
+                    {row.yapt}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA 2 — após tabela de comparação -->
+  <div class="py-10" style={`background: ${GRADIENT};`}>
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
+        <div>
+          <p class="font-poppins font-semibold text-white text-base">Viu a diferença?</p>
+          <p class="text-sm text-white/70 mt-0.5">Em 30 minutos você vê tudo isso funcionando na prática.</p>
+        </div>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-block bg-white font-poppins font-semibold px-7 py-3 rounded-xl text-base hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+          style="color: #064E3B;"
+        >
+          Agendar demo gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO SOLUÇÃO — header
+  ════════════════════════════════════════════ -->
+  <section data-observe class="pt-16 lg:pt-20 pb-4 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          A solução
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+          Uma plataforma. WhatsApp API oficial. IA que vende de verdade.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          A yapt. é uma Conversational Revenue Platform AI-Native. A IA não foi plugada depois — ela nasceu dentro de cada módulo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Módulos -->
+  <div class="[&>section]:py-12 [&>section]:lg:py-16">
+    {solutionModules.map((mod, i) => (
+      <>
+        <ModuleDeepDive
+          title={mod.title}
+          subtitle={mod.subtitle}
+          description={mod.description}
+          features={mod.features}
+          reversed={i % 2 === 1}
+          accentColor={ACCENT}
+        >
+          {mod.mockup === 'connect' && <MockupYaConnect />}
+          {mod.mockup === 'mentor' && <MockupMentorResults />}
+          {mod.mockup === 'flows' && <MockupWaFlowForm />}
+          {mod.mockup === 'memory' && <MockupYaMemory />}
+        </ModuleDeepDive>
+        {i < solutionModules.length - 1 && <SectionDivider variant="light" />}
+      </>
+    ))}
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO FORMULÁRIOS — casos de uso específicos
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-20 bg-[#FAFBFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+            Automação de formulários no WhatsApp
+          </span>
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+            Formulários que rodam dentro do WhatsApp — sem sair do app.
+          </h2>
+          <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+            Com WhatsApp Flows para empresas, o lead preenche, escolhe e responde sem abrir um único link externo. Zero fricção, dados estruturados na plataforma em tempo real.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {formUseCases.map((item) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="bg-white rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-xl" style="background: rgba(32,178,170,0.1);">
+              {item.icon}
+            </div>
+            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO COMO FUNCIONA — Timeline
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24" style={`background: ${GRADIENT};`}>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-white">
+            Do anúncio à venda: tudo rastreado, tudo conectado.
+          </h2>
+          <p class="text-base text-white/60 mt-4">
+            Automação WhatsApp API oficial do clique até o fechamento.
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 top-0 bottom-0 w-px" style="background: rgba(45,212,191,0.25);"></div>
+        {[
+          { title: 'Lead clica no anúncio', description: 'Atribuição completa capturada: campanha, headline, creative, UTMs — 10 campos automáticos, sem intervenção manual.' },
+          { title: 'WhatsApp em menos de 30 segundos', description: 'Instant Engage dispara mensagem personalizada via API oficial antes do lead esfriar.' },
+          { title: 'IA qualifica e engaja', description: 'Agente de IA segue seu playbook, identifica fit, agenda reunião ou passa para o closer com contexto completo.' },
+          { title: 'Deal criado automaticamente', description: 'Pipeline Kanban com SLA por stage, multi-pipeline e win/loss analysis. Zero entrada manual.' },
+          { title: 'Proposta enviada pelo WhatsApp', description: 'Link direto, aceite mobile, tracking completo de visualização e interação dentro da conversa.' },
+          { title: 'Loop fechado com Conversions API', description: 'Evento de venda real enviado para Meta e Google Ads. Seu algoritmo aprende com dados de receita, não de clique.' },
+        ].map((step, i) => (
+          <div
+            data-fade
+            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
+            class="relative pl-16 pb-10 last:pb-0"
+          >
+            <div class="absolute left-4 w-5 h-5 rounded-full border-2 flex items-center justify-center" style="border-color: #2DD4BF; background: #064E3B;">
+              <span class="text-[10px] font-bold" style="color: #2DD4BF;">{i + 1}</span>
+            </div>
+            <h3 class="font-poppins text-base font-semibold text-white">{step.title}</h3>
+            <p class="text-sm text-white/50 mt-1 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA 3 — após timeline (jornada completa) -->
+  <div class="bg-[#FAFBFC] py-12 border-y border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="font-poppins text-xl font-bold text-[#0F0F0F] mb-2">Esse é o processo. Do anúncio ao fechamento.</p>
+        <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver cada etapa funcionando na sua operação? Agende uma demo de 30 minutos com um especialista.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+            style={`background: ${GRADIENT};`}
+          >
+            Quero ver funcionando →
+          </a>
+          <a
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#0F0F0F] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
+          >
+            Falar com especialista
+          </a>
+        </div>
+        <p class="text-xs text-[#656D78] mt-4">Setup em 24h · Sem compromisso · Suporte dedicado</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO PLATAFORMA DE ATENDIMENTO
+  ════════════════════════════════════════════ -->
+  <ModuleDeepDive
+    title="Inbox unificado. SLA por conversa. Time completo."
+    subtitle="Plataforma de atendimento WhatsApp API"
+    description="A yapt. não é só automação — é a plataforma de atendimento onde seu time opera. Inbox unificado com WhatsApp, Instagram, Messenger, Email e Widget. Filas inteligentes, SLA por stage, relatórios de desempenho por agente e gestão de time completa numa única tela."
+    features={[
+      'Inbox omnichannel: WhatsApp, Instagram, Messenger, Email, Widget',
+      'SLA por conversa com alertas automáticos de prazo',
+      'Filas inteligentes com 6 modos de distribuição',
+      'Relatórios de desempenho por agente, time e canal',
+      'Transferência de conversa com contexto preservado',
+      'Supervisor view: visibilidade em tempo real de toda operação',
+    ]}
+    reversed={false}
+    accentColor={ACCENT}
+  >
+    <MockupYaInbox />
+  </ModuleDeepDive>
+
+  <SectionDivider variant="light" />
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO DIFERENCIAIS TÉCNICOS
+  ════════════════════════════════════════════ -->
+  <FeatureGrid
+    title="Para quem precisa de mais do que um chatbot."
+    subtitle="Diferenciais técnicos"
+    features={technicalFeatures}
+    columns={3}
+    accentColor={ACCENT}
+  />
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO ENTERPRISE
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Texto -->
+        <div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+              Solução enterprise WhatsApp Business
+            </span>
+            <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F] leading-tight">
+              Construída para operações que não aceitam margem de erro.
+            </h2>
+          </div>
+          <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+            <p class="text-base text-[#656D78] mt-4 leading-relaxed">
+              Score de segurança 94/100. Isolamento multi-tenant nativo com RLS. Criptografia AES-256 por tenant. +700 regras de segurança ativas. Conformidade LGPD, GDPR, SOC 2 e ISO 27001 — para você escalar sem abrir mão de compliance.
+            </p>
+          </div>
+          <ul class="mt-6 space-y-3">
+            {[
+              'CSM dedicado com contato direto e SLA contratual',
+              'Onboarding estruturado: setup em 24h com suporte dedicado',
+              'Contrato DPA para compliance com processamento de dados',
+              'Permissões granulares por role e por organização',
+              'Backup com point-in-time recovery de 30 dias',
+              'AI Governance — seus dados nunca são usados para treino de modelos',
+              'Multi-tenant nativo: isolamento total entre organizações',
+            ].map((feat) => (
+              <li
+                data-fade
+                style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;"
+                class="flex items-start gap-3"
+              >
+                <span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${ACCENT};`} />
+                <span class="text-sm text-[#434A54] leading-relaxed">{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Mockup -->
+        <div
+          data-fade
+          class="mt-12 lg:mt-0"
+          style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
+        >
+          <MockupSLA />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO INTEGRAÇÕES
+  ════════════════════════════════════════════ -->
+  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="inline-block text-xs font-semibold tracking-wider mb-3" style={`color: ${ACCENT};`}>
+          Integrações
+        </span>
+        <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
+          Conecta com o que você já usa.
+        </h2>
+        <p class="text-base text-[#656D78] mt-4 max-w-2xl mx-auto leading-relaxed">
+          Integração WhatsApp Business API com o ecossistema completo. A yapt. é API-first por design — se a ferramenta existe, ela conecta.
+        </p>
+      </div>
+      <div data-fade class="flex flex-wrap justify-center gap-3 mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        {integrationTags.map((tag) => (
+          <span class="inline-block rounded-full px-4 py-2 text-sm font-medium text-[#434A54] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-colors duration-200">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO PROVA SOCIAL / NÚMEROS
+  ════════════════════════════════════════════ -->
+  <StatsGrid
+    title="Números que falam por si."
+    stats={stats}
+    accentColor={ACCENT}
+  />
+
+
+  <!-- ═══════════════════════════════════════════
+       SEÇÃO FAQ
+  ════════════════════════════════════════════ -->
+  <FAQSection
+    title="Dúvidas comuns sobre WhatsApp Business API."
+    subtitle="Perguntas frequentes"
+    accentColor={ACCENT}
+    items={faqItems}
+    bg="gray"
+  />
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ════════════════════════════════════════════ -->
+  <section
+    data-observe
+    class="relative py-16 lg:py-24 xl:py-32 overflow-hidden"
+    style={`background: ${GRADIENT};`}
+  >
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
+      <div class="absolute" style="top: -30%; left: 5%; width: 40%; height: 130%; background: linear-gradient(140deg, rgba(255,255,255,0.6) 0%, transparent 35%); transform: rotate(-25deg);"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
+      <svg viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 100 C80 60, 160 30, 240 50 C320 70, 400 20, 480 45 C560 70, 640 15, 720 40 C800 65, 880 20, 960 45 C1040 70, 1120 25, 1200 50 C1280 75, 1360 35, 1440 55 L1440 0 L0 0Z" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
+    <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:18%;left:12%;animation:yapt-float 6s ease-in-out infinite;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.35);top:35%;right:15%;animation:yapt-float 7s ease-in-out infinite;animation-delay:2s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:6px;height:6px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:60%;left:8%;animation:yapt-float 5s ease-in-out infinite;animation-delay:4s;"></div>
+    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.3);top:72%;right:10%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div data-fade class="flex justify-center flex-wrap gap-4 mb-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        {['Setup em 24h', 'Suporte dedicado', 'Sem compromisso'].map((badge) => (
+          <span class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white/80">{badge}</span>
+        ))}
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+          Veja a yapt. funcionando na sua operação.
+        </h2>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          Demo personalizada, sem compromisso. Em 30 minutos, você vai entender por que empresas estão migrando de ferramentas fragmentadas para uma plataforma que conecta anúncio, atendimento, IA e vendas num único lugar.
+        </p>
+      </div>
+      <div data-fade class="flex flex-col sm:flex-row justify-center gap-4 mt-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 inline-block"
+          style="color: #064E3B;"
+        >
+          Agendar demonstração gratuita →
+        </a>
+        <a
+          href={CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-2 border-white/30 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/10 transition-all duration-300 inline-block"
+        >
+          Falar com especialista
+        </a>
+      </div>
+      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
+        <p class="text-sm text-white/50 mt-6">
+          Setup em 24h | Suporte dedicado | Sem compromisso
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       STICKY CTA — mobile only
+  ════════════════════════════════════════════ -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden" style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);">
+    <div class="px-4 py-3">
+      <a
+        href={CTA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base"
+        style="color: #064E3B;"
+      >
+        Agendar demonstração gratuita →
+      </a>
+    </div>
+  </div>
+
+</SiteLayout>
