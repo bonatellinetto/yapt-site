@@ -1,12 +1,41 @@
 ---
 import { t, type Locale } from '../lib/i18n';
 
-interface Props {
-  locale: Locale;
+interface ProblemCard {
+  title: string;
+  description: string;
+  icon?: string;
+  iconSvg?: string;
 }
 
-const { locale } = Astro.props;
-const cards = t('problem.cards', locale) as { title: string; description: string }[];
+interface Props {
+  locale?: Locale;
+  title?: string;
+  description?: string;
+  footerNote?: string;
+  cards?: ProblemCard[];
+  gridCols?: 3 | 4;
+}
+
+const {
+  locale,
+  title,
+  description,
+  footerNote,
+  cards: directCards,
+  gridCols = 3,
+} = Astro.props;
+
+const useI18n = !!locale;
+const resolvedTitle = title ?? (useI18n ? t('problem.title', locale!) : '');
+const resolvedDescription = description ?? (useI18n ? t('problem.description', locale!) : '');
+const resolvedCards: ProblemCard[] = directCards ?? (useI18n
+  ? (t('problem.cards', locale!) as ProblemCard[])
+  : []);
+const gridClass = gridCols === 4
+  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
+  : 'grid grid-cols-1 md:grid-cols-3 gap-5';
+const useDirectIcons = resolvedCards.some((c) => c.icon || c.iconSvg);
 ---
 
 <section class="relative overflow-hidden" style="background: #f5f5f7;">
@@ -36,23 +65,35 @@ const cards = t('problem.cards', locale) as { title: string; description: string
     <!-- Header -->
     <div data-fade class="max-w-[700px] mb-14" style="opacity: 0; transform: translateY(2rem); transition: opacity 700ms ease, transform 700ms ease;">
       <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: #1d1d1f; margin-bottom: 20px;">
-        {t('problem.title', locale)}
+        {resolvedTitle}
       </h2>
       <p style="font-size: 18px; color: #6e6e73; line-height: 1.7;">
-        {t('problem.description', locale)}
+        {resolvedDescription}
       </p>
     </div>
 
     <!-- Problem Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      {Array.isArray(cards) && cards.map((card, i) => (
+    <div class={gridClass}>
+      {Array.isArray(resolvedCards) && resolvedCards.map((card, i) => (
         <div
           data-fade
           class="rounded-2xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           style={`background: #ffffff; border: 1px solid rgba(0,0,0,0.06); padding: 32px 28px; opacity: 0; transform: translateY(2rem); transition: all 0.5s ease ${i * 150}ms;`}
         >
-          <!-- Animal icon -->
-          {i === 0 && (
+          {/* Direct icon (emoji or SVG) */}
+          {useDirectIcons && card.iconSvg && (
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-red-400"
+              set:html={card.iconSvg}
+            />
+          )}
+          {useDirectIcons && card.icon && !card.iconSvg && (
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-xl">
+              {card.icon}
+            </div>
+          )}
+          {/* Default animal icons (i18n mode) */}
+          {!useDirectIcons && i === 0 && (
             <svg viewBox="0 0 56 56" fill="none" class="w-14 h-14 mb-6" style="opacity: 0.25;">
               <path d="M8 26 Q18 18, 28 22 Q34 24, 36 28" fill="#6e6e73"/>
               <path d="M48 26 Q38 18, 28 22" fill="#6e6e73"/>
@@ -61,7 +102,7 @@ const cards = t('problem.cards', locale) as { title: string; description: string
               <path d="M24 24 L28 28 M28 24 L24 28" stroke="#6e6e73" stroke-width="2" stroke-linecap="round"/>
             </svg>
           )}
-          {i === 1 && (
+          {!useDirectIcons && i === 1 && (
             <svg viewBox="0 0 56 56" fill="none" class="w-14 h-14 mb-6" style="opacity: 0.25;">
               <ellipse cx="28" cy="34" rx="16" ry="18" fill="#6e6e73"/>
               <ellipse cx="28" cy="18" rx="13" ry="11" fill="#6e6e73"/>
@@ -72,7 +113,7 @@ const cards = t('problem.cards', locale) as { title: string; description: string
               <path d="M26 26 L28 30 L30 26 Z" fill="#86868b"/>
             </svg>
           )}
-          {i === 2 && (
+          {!useDirectIcons && i === 2 && (
             <svg viewBox="0 0 56 56" fill="none" class="w-14 h-14 mb-6" style="opacity: 0.25;">
               <ellipse cx="28" cy="32" rx="16" ry="14" fill="#6e6e73"/>
               <ellipse cx="28" cy="20" rx="10" ry="8" fill="#6e6e73"/>
@@ -90,5 +131,11 @@ const cards = t('problem.cards', locale) as { title: string; description: string
         </div>
       ))}
     </div>
+
+    {footerNote && (
+      <div data-fade class="text-center mt-10" style="opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;">
+        <p class="text-sm text-[#656D78] max-w-2xl mx-auto">{footerNote}</p>
+      </div>
+    )}
   </div>
 </section>

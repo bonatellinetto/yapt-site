@@ -1,0 +1,25 @@
+---
+interface Props {
+  href: string;
+  text?: string;
+}
+
+const { href, text = 'Agendar demonstração gratuita →' } = Astro.props;
+---
+
+<div
+  class="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
+  style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);"
+>
+  <div class="px-4 py-3">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base"
+      style="color: #064E3B;"
+    >
+      {text}
+    </a>
+  </div>
+</div>

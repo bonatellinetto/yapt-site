@@ -5,6 +5,9 @@ import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import StatsGrid from '../components/StatsGrid.astro';
 import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import StickyCtaMobile from '../components/StickyCtaMobile.astro';
 import MockupYaConnect from '../components/mockups/MockupYaConnect.astro';
 import MockupMentorResults from '../components/mockups/MockupMentorResults.astro';
 import MockupWaFlowForm from '../components/mockups/MockupWaFlowForm.astro';
@@ -340,41 +343,17 @@ const stats = [
   <!-- ═══════════════════════════════════════════
        SEÇÃO DOR / PROBLEMA
   ════════════════════════════════════════════ -->
-  <section data-observe class="py-16 lg:py-24 bg-[#FAFBFC]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <div data-fade style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <h2 class="font-poppins text-2xl lg:text-3xl font-bold text-[#0F0F0F]">
-            Sua operação de vendas no WhatsApp ainda depende de gambiarras?
-          </h2>
-          <p class="text-base text-[#656D78] mt-4 max-w-3xl mx-auto leading-relaxed">
-            A maioria das empresas que investe em tráfego pago vive o mesmo cenário: o lead chega, mas ninguém sabe de qual campanha veio. O vendedor responde sem contexto. A IA é um chatbot engessado que só responde FAQ. Os dados ficam espalhados entre 3, 4, 5 ferramentas que não se conversam. O resultado: lead esfria, vendedor perde tempo, gestor não tem visibilidade e o ROAS fica no escuro.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          { icon: '📭', title: 'Lead sem atribuição', description: 'O lead chega mas ninguém sabe de qual campanha, headline ou creative ele veio.' },
-          { icon: '🤖', title: 'Bot engessado', description: 'Chatbot de árvore de decisão que só responde FAQ e trava na primeira variação da pergunta.' },
-          { icon: '🧩', title: 'Ferramentas fragmentadas', description: 'CRM, atendimento, automação e IA em sistemas separados que não se conversam.' },
-          { icon: '📉', title: 'ROAS no escuro', description: 'Lead esfria, vendedor perde tempo, gestor sem visibilidade e ROAS baseado em estimativa.' },
-        ].map((item) => (
-          <div
-            data-fade
-            style="opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;"
-            class="bg-white rounded-2xl p-6 border border-red-100"
-          >
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-red-50 text-xl">
-              {item.icon}
-            </div>
-            <h3 class="font-poppins text-base font-semibold text-[#0F0F0F] mb-2">{item.title}</h3>
-            <p class="text-sm text-[#656D78] leading-relaxed">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <ProblemSection
+    title="Sua operação de vendas no WhatsApp ainda depende de gambiarras?"
+    description="A maioria das empresas que investe em tráfego pago vive o mesmo cenário: o lead chega, mas ninguém sabe de qual campanha veio. O vendedor responde sem contexto. A IA é um chatbot engessado que só responde FAQ. Os dados ficam espalhados entre 3, 4, 5 ferramentas que não se conversam. O resultado: lead esfria, vendedor perde tempo, gestor não tem visibilidade e o ROAS fica no escuro."
+    cards={[
+      { icon: '📭', title: 'Lead sem atribuição', description: 'O lead chega mas ninguém sabe de qual campanha, headline ou creative ele veio.' },
+      { icon: '🤖', title: 'Bot engessado', description: 'Chatbot de árvore de decisão que só responde FAQ e trava na primeira variação da pergunta.' },
+      { icon: '🧩', title: 'Ferramentas fragmentadas', description: 'CRM, atendimento, automação e IA em sistemas separados que não se conversam.' },
+      { icon: '📉', title: 'ROAS no escuro', description: 'Lead esfria, vendedor perde tempo, gestor sem visibilidade e ROAS baseado em estimativa.' },
+    ]}
+    gridCols={4}
+  />
 
 
   <!-- ═══════════════════════════════════════════
@@ -749,84 +728,25 @@ const stats = [
   <!-- ═══════════════════════════════════════════
        CTA FINAL
   ════════════════════════════════════════════ -->
-  <section
-    data-observe
-    class="relative py-16 lg:py-24 xl:py-32 overflow-hidden"
-    style={`background: ${GRADIENT};`}
-  >
-    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
-      <div class="absolute" style="top: -20%; left: -10%; width: 60%; height: 140%; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, transparent 40%); transform: rotate(-15deg);"></div>
-      <div class="absolute" style="top: -30%; left: 5%; width: 40%; height: 130%; background: linear-gradient(140deg, rgba(255,255,255,0.6) 0%, transparent 35%); transform: rotate(-25deg);"></div>
-    </div>
-    <div class="absolute top-0 left-0 right-0 pointer-events-none" style="opacity: 0.15;">
-      <svg viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="w-full h-auto">
-        <path d="M0 100 C80 60, 160 30, 240 50 C320 70, 400 20, 480 45 C560 70, 640 15, 720 40 C800 65, 880 20, 960 45 C1040 70, 1120 25, 1200 50 C1280 75, 1360 35, 1440 55 L1440 0 L0 0Z" fill="rgba(255,255,255,0.2)"/>
-      </svg>
-    </div>
-    <div class="absolute rounded-full pointer-events-none" style="width:5px;height:5px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:18%;left:12%;animation:yapt-float 6s ease-in-out infinite;"></div>
-    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.35);top:35%;right:15%;animation:yapt-float 7s ease-in-out infinite;animation-delay:2s;"></div>
-    <div class="absolute rounded-full pointer-events-none" style="width:6px;height:6px;background-color:#2DD4BF;box-shadow:0 0 10px 3px rgba(45,212,191,0.4);top:60%;left:8%;animation:yapt-float 5s ease-in-out infinite;animation-delay:4s;"></div>
-    <div class="absolute rounded-full pointer-events-none" style="width:4px;height:4px;background-color:white;box-shadow:0 0 10px 3px rgba(255,255,255,0.3);top:72%;right:10%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
+  <CTASection
+    title="Veja a yapt. funcionando na sua operação."
+    subtitle="Demo personalizada, sem compromisso. Em 30 minutos, você vai entender por que empresas estão migrando de ferramentas fragmentadas para uma plataforma que conecta anúncio, atendimento, IA e vendas num único lugar."
+    badges={['Setup em 24h', 'Suporte dedicado', 'Sem compromisso']}
+    primaryButtonText="Agendar demonstração gratuita →"
+    primaryButtonHref={CTA_LINK}
+    secondaryButtonText="Falar com especialista"
+    secondaryButtonHref={CTA_LINK}
+    smallText="Setup em 24h | Suporte dedicado | Sem compromisso"
+    gradient={GRADIENT}
+  />
 
-    <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <div data-fade class="flex justify-center flex-wrap gap-4 mb-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        {['Setup em 24h', 'Suporte dedicado', 'Sem compromisso'].map((badge) => (
-          <span class="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white/80">{badge}</span>
-        ))}
-      </div>
-      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-          Veja a yapt. funcionando na sua operação.
-        </h2>
-      </div>
-      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <p class="text-base lg:text-lg text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
-          Demo personalizada, sem compromisso. Em 30 minutos, você vai entender por que empresas estão migrando de ferramentas fragmentadas para uma plataforma que conecta anúncio, atendimento, IA e vendas num único lugar.
-        </p>
-      </div>
-      <div data-fade class="flex flex-col sm:flex-row justify-center gap-4 mt-10" style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <a
-          href={CTA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 inline-block"
-          style="color: #064E3B;"
-        >
-          Agendar demonstração gratuita →
-        </a>
-        <a
-          href={CTA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="border-2 border-white/30 text-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/10 transition-all duration-300 inline-block"
-        >
-          Falar com especialista
-        </a>
-      </div>
-      <div data-fade style="opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <p class="text-sm text-white/50 mt-6">
-          Setup em 24h | Suporte dedicado | Sem compromisso
-        </p>
-      </div>
-    </div>
-  </section>
 
+  <!-- Spacer for sticky CTA on mobile -->
+  <div class="h-16 lg:hidden"></div>
 
   <!-- ═══════════════════════════════════════════
        STICKY CTA — mobile only
   ════════════════════════════════════════════ -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden" style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);">
-    <div class="px-4 py-3">
-      <a
-        href={CTA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base"
-        style="color: #064E3B;"
-      >
-        Agendar demonstração gratuita →
-      </a>
-    </div>
-  </div>
+  <StickyCtaMobile href={CTA_LINK} />
 
 </SiteLayout>
