@@ -27,19 +27,24 @@ const locales = [
   { prefix: '/es', hreflang: 'es' },
 ];
 
-function buildUrlEntry(path: string, lastmod?: string, priority?: string): string {
+function buildUrlEntry(
+  locPath: string,
+  basePath: string,
+  lastmod?: string,
+  priority?: string,
+): string {
   const lines: string[] = [];
   lines.push('  <url>');
-  lines.push(`    <loc>${SITE}${path}</loc>`);
+  lines.push(`    <loc>${SITE}${locPath}</loc>`);
   if (lastmod) lines.push(`    <lastmod>${lastmod}</lastmod>`);
   if (priority) lines.push(`    <priority>${priority}</priority>`);
 
-  // hreflang alternates
+  // hreflang alternates — always based on basePath (without locale prefix)
   for (const locale of locales) {
-    const href = path === '/' ? (locale.prefix || '/') : `${locale.prefix}${path}`;
+    const href = basePath === '/' ? (locale.prefix || '/') : `${locale.prefix}${basePath}`;
     lines.push(`    <xhtml:link rel="alternate" hreflang="${locale.hreflang}" href="${SITE}${href}" />`);
   }
-  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${path}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${basePath}" />`);
 
   lines.push('  </url>');
   return lines.join('\n');
@@ -56,16 +61,17 @@ export const GET: APIRoute = async () => {
     const priority = page === '/' ? '1.0' : page === '/blog' ? '0.8' : '0.7';
     for (const locale of locales) {
       const fullPath = page === '/' ? (locale.prefix || '/') : `${locale.prefix}${page}`;
-      urls.push(buildUrlEntry(fullPath, today, priority));
+      urls.push(buildUrlEntry(fullPath, page, today, priority));
     }
   }
 
   // Blog posts (all locales)
   for (const post of posts) {
     const lastmod = post.updated_at ? post.updated_at.split('T')[0] : today;
+    const baseBlogPath = `/blog/${post.slug}`;
     for (const locale of locales) {
-      const fullPath = `${locale.prefix}/blog/${post.slug}`;
-      urls.push(buildUrlEntry(fullPath, lastmod, '0.6'));
+      const fullPath = `${locale.prefix}${baseBlogPath}`;
+      urls.push(buildUrlEntry(fullPath, baseBlogPath, lastmod, '0.6'));
     }
   }
 
