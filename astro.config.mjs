@@ -6,6 +6,9 @@ export default defineConfig({
   site: 'https://yapt.ai',
   output: 'static',
   trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
   integrations: [
     tailwind(),
     react(),
