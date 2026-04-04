@@ -43,13 +43,6 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
 <!DOCTYPE html>
 <html lang={htmlLang}>
 <head>
-  <!-- Google Tag Manager -->
-  <script is:inline define:vars={{ GTM_ID }}>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer',GTM_ID);</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{fullTitle}</title>
@@ -63,10 +56,18 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <!-- Fonts: Inter + Poppins (self-hosted) -->
+  <!-- Fonts: Inter + Poppins — preloaded to avoid render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
 
   <!-- Open Graph -->
   <meta property="og:type" content={ogType} />
@@ -131,6 +132,26 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
           observer.observe(el);
         }
       });
+    })();
+  </script>
+
+  <!-- Google Tag Manager — deferred to avoid blocking initial render -->
+  <script is:inline define:vars={{ GTM_ID }}>
+    (function(){
+      // Defer GTM until after first paint to avoid blocking LCP
+      function loadGTM() {
+        var w=window,d=document,s='script',l='dataLayer',i=GTM_ID;
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      }
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(loadGTM, { timeout: 3000 });
+      } else {
+        setTimeout(loadGTM, 1500);
+      }
     })();
   </script>
 
