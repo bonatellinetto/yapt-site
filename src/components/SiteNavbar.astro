@@ -27,11 +27,18 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
   style="background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;"
 >
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <!-- Logo -->
-    <a href={localePath('/', locale)} class="flex items-center gap-2">
-      <img src="/yapt-logo.svg" alt="yapt." class="nav-logo-dark h-8 lg:h-10 w-auto" width="112" height="40" />
-      <img src="/yapt-logo-dark.svg" alt="yapt." class="nav-logo-light h-8 lg:h-10 w-auto hidden" width="112" height="40" fetchpriority="high" />
-    </a>
+    <!-- Logo (clickable only when not minimal — LPs de ads não devem sair pra home) -->
+    {minimal ? (
+      <div class="flex items-center gap-2">
+        <img src="/yapt-logo.svg" alt="yapt." class="nav-logo-dark h-8 lg:h-10 w-auto" width="112" height="40" />
+        <img src="/yapt-logo-dark.svg" alt="yapt." class="nav-logo-light h-8 lg:h-10 w-auto hidden" width="112" height="40" fetchpriority="high" />
+      </div>
+    ) : (
+      <a href={localePath('/', locale)} class="flex items-center gap-2">
+        <img src="/yapt-logo.svg" alt="yapt." class="nav-logo-dark h-8 lg:h-10 w-auto" width="112" height="40" />
+        <img src="/yapt-logo-dark.svg" alt="yapt." class="nav-logo-light h-8 lg:h-10 w-auto hidden" width="112" height="40" fetchpriority="high" />
+      </a>
+    )}
 
     <!-- Desktop Nav -->
     {!minimal && (
