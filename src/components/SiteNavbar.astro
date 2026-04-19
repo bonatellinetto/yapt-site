@@ -3,9 +3,10 @@ import { t, type Locale, localePath, languages } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
+  minimal?: boolean;
 }
 
-const { locale } = Astro.props;
+const { locale, minimal = false } = Astro.props;
 
 const productLinks = [
   { key: 'conversations', href: '/conversations' },
@@ -33,6 +34,7 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
     </a>
 
     <!-- Desktop Nav -->
+    {!minimal && (
     <div class="hidden md:flex items-center gap-8">
       <!-- Product dropdown -->
       <div class="relative" id="product-dropdown">
@@ -79,15 +81,18 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
         Blog
       </a>
     </div>
+    )}
 
     <!-- CTAs -->
     <div class="hidden md:flex items-center gap-4">
+      {!minimal && (
       <a
         href="https://app.yapt.ai/auth"
         class="nav-link font-poppins text-sm font-medium transition-colors"
       >
         {t('nav.login', locale)}
       </a>
+      )}
       <button
         onclick="typeof yaptwa==='function'&&yaptwa('open')"
         class="font-poppins text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 text-white cursor-pointer border-none"
@@ -97,6 +102,7 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
       </button>
 
       <!-- Language Selector -->
+      {!minimal && (
       <div class="relative" id="lang-dropdown">
         <button
           class="nav-lang-btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-all duration-150"
@@ -140,20 +146,33 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
           })}
         </div>
       </div>
+      )}
     </div>
 
-    <!-- Mobile hamburger -->
-    <button
-      class="md:hidden flex items-center justify-center w-11 h-11 -mr-2"
-      id="mobile-menu-btn"
-      aria-label="Menu"
-    >
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#434A54" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" id="hamburger-icon" />
-      </svg>
-    </button>
+    {minimal ? (
+      <!-- Mobile CTA (minimal mode — no hamburger) -->
+      <button
+        onclick="typeof yaptwa==='function'&&yaptwa('open')"
+        class="md:hidden font-poppins text-xs font-semibold px-4 py-2 rounded-xl text-white cursor-pointer border-none"
+        style="background: linear-gradient(135deg, #20B2AA, #0D9488);"
+      >
+        {t('nav.scheduleDemo', locale)}
+      </button>
+    ) : (
+      <!-- Mobile hamburger -->
+      <button
+        class="md:hidden flex items-center justify-center w-11 h-11 -mr-2"
+        id="mobile-menu-btn"
+        aria-label="Menu"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#434A54" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" id="hamburger-icon" />
+        </svg>
+      </button>
+    )}
   </div>
 
+  {!minimal && (
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
@@ -221,6 +240,7 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
       </div>
     </div>
   </div>
+  )}
 </nav>
 
 <style>
@@ -300,19 +320,25 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
   updateNavbar();
   window.addEventListener('scroll', updateNavbar);
 
-  // Product dropdown
-  var productBtn = document.querySelector('#product-dropdown > button');
+  // Product dropdown (may be absent in minimal mode)
+  var productDropdown = document.getElementById('product-dropdown');
+  var productBtn = productDropdown && productDropdown.querySelector('button');
   var productMenu = document.getElementById('product-menu');
-  productBtn.addEventListener('click', function() {
-    productMenu.classList.toggle('hidden');
-  });
+  if (productBtn && productMenu) {
+    productBtn.addEventListener('click', function() {
+      productMenu.classList.toggle('hidden');
+    });
+  }
 
-  // Lang dropdown
-  var langBtn = document.querySelector('#lang-dropdown > button');
+  // Lang dropdown (may be absent in minimal mode)
+  var langDropdown = document.getElementById('lang-dropdown');
+  var langBtn = langDropdown && langDropdown.querySelector('button');
   var langMenu = document.getElementById('lang-menu');
-  langBtn.addEventListener('click', function() {
-    langMenu.classList.toggle('hidden');
-  });
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function() {
+      langMenu.classList.toggle('hidden');
+    });
+  }
 
   // Save language preference on click
   document.querySelectorAll('[data-lang]').forEach(function(el) {
@@ -323,18 +349,20 @@ const currentLang = languages.find(l => l.code === locale) || languages[0];
 
   // Close dropdowns on outside click
   document.addEventListener('mousedown', function(e) {
-    if (!document.getElementById('product-dropdown').contains(e.target)) {
+    if (productDropdown && productMenu && !productDropdown.contains(e.target)) {
       productMenu.classList.add('hidden');
     }
-    if (!document.getElementById('lang-dropdown').contains(e.target)) {
+    if (langDropdown && langMenu && !langDropdown.contains(e.target)) {
       langMenu.classList.add('hidden');
     }
   });
 
-  // Mobile menu
+  // Mobile menu (may be absent in minimal mode)
   var mobileBtn = document.getElementById('mobile-menu-btn');
   var mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn.addEventListener('click', function() {
-    mobileMenu.classList.toggle('hidden');
-  });
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
 </script>
