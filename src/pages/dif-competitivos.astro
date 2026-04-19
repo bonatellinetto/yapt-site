@@ -16,7 +16,6 @@ import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
 import MockupSLA from '../components/mockups/MockupSLA.astro';
 import { toucanSvg, genericIcons } from '../lib/fauna';
 
-const CTA_LINK = 'https://wa.me/5511913673185?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20yapt.';
 const ACCENT = '#20B2AA';
 const GRADIENT = 'linear-gradient(135deg, #064E3B 0%, #065F46 30%, #0D9488 70%, #20B2AA 100%)';
 
@@ -179,6 +178,7 @@ const stats = [
   path="/dif-competitivos"
   locale="pt-BR"
   noHreflang
+  minimalNav
 >
 
   <!-- ═══════════════════════════════════════════
@@ -222,15 +222,14 @@ const stats = [
         </p>
       </div>
       <div data-fade class="mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <a
-          href={CTA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onclick="typeof yaptwa==='function'&&yaptwa('open')"
           class="inline-block bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
           style="color: #064E3B;"
         >
           Agendar demonstração gratuita →
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -327,15 +326,14 @@ const stats = [
     <div class="max-w-3xl mx-auto px-6 text-center">
       <p class="font-poppins text-lg font-semibold text-[#0F0F0F] mb-2">Pronto para operar com API oficial e sem risco?</p>
       <p class="text-sm text-[#656D78] mb-6">Veja a yapt. ao vivo — setup em 24h, sem compromisso.</p>
-      <a
-        href={CTA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+          type="button"
+          onclick="typeof yaptwa==='function'&&yaptwa('open')"
         class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
         style={`background: ${GRADIENT};`}
       >
         Agendar demonstração gratuita →
-      </a>
+      </button>
     </div>
   </div>
 
@@ -417,15 +415,14 @@ const stats = [
           <p class="font-poppins font-semibold text-white text-base">Viu a diferença?</p>
           <p class="text-sm text-white/70 mt-0.5">Em 30 minutos você vê tudo isso funcionando na prática.</p>
         </div>
-        <a
-          href={CTA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onclick="typeof yaptwa==='function'&&yaptwa('open')"
           class="flex-shrink-0 inline-block bg-white font-poppins font-semibold px-7 py-3 rounded-xl text-base hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
           style="color: #064E3B;"
         >
           Agendar demo gratuita →
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -559,23 +556,21 @@ const stats = [
         <p class="font-poppins text-xl font-bold text-[#0F0F0F] mb-2">Esse é o processo. Do anúncio ao fechamento.</p>
         <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver cada etapa funcionando na sua operação? Agende uma demo de 30 minutos com um especialista.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href={CTA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+          type="button"
+          onclick="typeof yaptwa==='function'&&yaptwa('open')"
             class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
             style={`background: ${GRADIENT};`}
           >
             Quero ver funcionando →
-          </a>
-          <a
-            href={CTA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          </button>
+          <button
+          type="button"
+          onclick="typeof yaptwa==='function'&&yaptwa('open')"
             class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#0F0F0F] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
           >
             Falar com especialista
-          </a>
+          </button>
         </div>
         <p class="text-xs text-[#656D78] mt-4">Setup em 24h · Sem compromisso · Suporte dedicado</p>
       </div>
@@ -733,9 +728,7 @@ const stats = [
     subtitle="Demo personalizada, sem compromisso. Em 30 minutos, você vai entender por que empresas estão migrando de ferramentas fragmentadas para uma plataforma que conecta anúncio, atendimento, IA e vendas num único lugar."
     badges={['Setup em 24h', 'Suporte dedicado', 'Sem compromisso']}
     primaryButtonText="Agendar demonstração gratuita →"
-    primaryButtonHref={CTA_LINK}
     secondaryButtonText="Falar com especialista"
-    secondaryButtonHref={CTA_LINK}
     smallText="Setup em 24h | Suporte dedicado | Sem compromisso"
     gradient={GRADIENT}
   />
@@ -747,6 +740,6 @@ const stats = [
   <!-- ═══════════════════════════════════════════
        STICKY CTA — mobile only
   ════════════════════════════════════════════ -->
-  <StickyCtaMobile href={CTA_LINK} />
+  <StickyCtaMobile />
 
 </SiteLayout>

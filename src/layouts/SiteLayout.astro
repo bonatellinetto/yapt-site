@@ -15,6 +15,7 @@ export interface Props {
   jsonLd?: Record<string, any>[];
   noindex?: boolean;
   noHreflang?: boolean;
+  minimalNav?: boolean;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   jsonLd = [],
   noindex = false,
   noHreflang = false,
+  minimalNav = false,
 } = Astro.props;
 
 const GTM_ID = 'GTM-M442SZSJ';
@@ -100,7 +102,7 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
   <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <SiteNavbar locale={locale} />
+  <SiteNavbar locale={locale} minimal={minimalNav} />
   <slot />
   <SiteFooter locale={locale} />
 
