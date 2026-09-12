@@ -3,3 +3,6 @@ dist
 .astro
 .env
 .wrangler/
+
+test-results/
+playwright-report/
