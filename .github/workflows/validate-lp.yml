@@ -1,0 +1,26 @@
+name: Validate campaign pages
+on:
+  pull_request:
+    paths:
+      - 'src/pages/lp/**'
+      - 'src/scripts/lp-*.ts'
+      - 'src/components/lp/**'
+      - 'tests/**'
+      - 'package*.json'
+      - '.github/workflows/validate-lp.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check:lp
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
