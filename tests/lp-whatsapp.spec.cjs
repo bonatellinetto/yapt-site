@@ -57,3 +57,20 @@ test('opens WhatsApp before a slow capture completes, without duplicate capture'
   await expect.poll(() => page.evaluate(() => window.dataLayer.filter(x => x.event === 'lp_whatsapp_lead').length)).toBe(1);
   expect(requests).toBe(1);
 });
+
+test('preserves campaign identity after anchor and opens WhatsApp immediately', async ({page}) => {
+  await page.goto('http://127.0.0.1:4329/lp/'+pages[0]+'?gclid=current&gad_campaignid=24282362831#cta-final&utm_source=adwords&utm_medium=ppc&utm_id=24282362831');
+  await page.locator('#yapt-wa-button').waitFor();
+  await page.evaluate(()=>{document.cookie='yapt_gclid=stale; path=/';window.open=()=>null;window.fbq=()=>{};window.dataLayer=[];});
+  let payload;
+  await page.route('**/functions/v1/webhook-widget', r => {
+    payload=r.request().postDataJSON();return r.fulfill({json:{success:true,data:{phone:'5511000000000',message:'teste'}}});
+  });
+  await page.locator('#yapt-wa-button').click();
+  await page.locator('input[name=phone]').fill('5511999999999');
+  await page.locator('button[type=submit]').click();
+  await expect.poll(()=>payload).toBeTruthy();
+  expect(payload.utm).toMatchObject({source:'adwords',medium:'ppc',id:'24282362831'});
+  expect(payload.clickIds).toMatchObject({gclid:'current',gad_campaignid:'24282362831'});
+  expect(payload.pageUrl).toContain('#cta-final');
+});
