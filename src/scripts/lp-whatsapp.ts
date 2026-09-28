@@ -75,7 +75,7 @@ function capturePayload(form: HTMLFormElement, phone: string) {
   return {
     action: 'wa_button_submit', instanceId, visitorId: visitorId(), phone,
     name: field('name'), email: field('email'), pageUrl: location.href,
-    pageTitle: document.title, referrer: document.referrer || null,
+    pageTitle: document.title.replace(/\s*\|\s*yapt\.\s*$/i, '').trim(), referrer: document.referrer || null,
     scrollDepth: maxScroll, timeOnPage: Math.round((Date.now() - started) / 1000),
     screenWidth: innerWidth, isMobile: innerWidth <= 640,
     utm: Object.fromEntries(['source', 'medium', 'campaign', 'content', 'term'].map(key => [key, params.get('utm_' + key)])),
