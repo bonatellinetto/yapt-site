@@ -1,3 +1,4 @@
+import { acquisitionParams } from './lp-attribution';
 // Adapter for the public yapt. WA widget: immediate navigation and confirmed campaign measurement.
 // The CDN widget still owns config, routing and modal rendering.
 const instanceId = 'a28b6328-6021-4b00-8d2b-af875173ec4b';
@@ -27,7 +28,7 @@ type TrackingWindow = Window & {
 };
 const tracking = window as TrackingWindow;
 const clickKeys = ['gclid', 'gbraid', 'wbraid', 'fbclid'] as const;
-const params = new URLSearchParams(location.search);
+const params = acquisitionParams(location.href);
 function cookie(key: string): string {
   const match = document.cookie.match(new RegExp('(?:^|; )yapt_' + key + '=([^;]*)'));
   try { return match ? decodeURIComponent(match[1]) : ''; } catch { return ''; }
@@ -70,6 +71,7 @@ function status(form: HTMLFormElement, message: string, error = true) {
   return notice;
 }
 function capturePayload(form: HTMLFormElement, phone: string) {
+  const params = acquisitionParams(location.href);
   const data = new FormData(form);
   const field = (key: string) => String(data.get(key) || '').trim();
   return {
@@ -78,9 +80,12 @@ function capturePayload(form: HTMLFormElement, phone: string) {
     pageTitle: document.title.replace(/\s*\|\s*yapt\.\s*$/i, '').trim(), referrer: document.referrer || null,
     scrollDepth: maxScroll, timeOnPage: Math.round((Date.now() - started) / 1000),
     screenWidth: innerWidth, isMobile: innerWidth <= 640,
-    utm: Object.fromEntries(['source', 'medium', 'campaign', 'content', 'term'].map(key => [key, params.get('utm_' + key)])),
-    clickIds: { gclid: cookie('gclid') || undefined, gbraid: cookie('gbraid') || undefined,
-      wbraid: cookie('wbraid') || undefined, fbclid: cookie('fbclid') || undefined },
+    utm: Object.fromEntries(['source', 'medium', 'campaign', 'content', 'term', 'id'].map(key => [key, params.get('utm_' + key)])),
+    clickIds: { gclid: params.get('gclid') || cookie('gclid') || undefined,
+      gbraid: params.get('gbraid') || cookie('gbraid') || undefined,
+      wbraid: params.get('wbraid') || cookie('wbraid') || undefined,
+      fbclid: params.get('fbclid') || cookie('fbclid') || undefined,
+      ...Object.fromEntries(['hsa_cam', 'gad_campaignid', 'fb_campaign_id', 'fb_ad_id'].map(key => [key, params.get(key)])) },
   };
 }
 function whatsappNotice(form: HTMLFormElement, url: string, message: string, error = false) {
