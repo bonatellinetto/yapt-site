@@ -1,7 +1,21 @@
-// Adapter for the public yapt. WA widget: confirmation, validation and campaign measurement.
+// Adapter for the public yapt. WA widget: immediate navigation and confirmed campaign measurement.
 // The CDN widget still owns config, routing and modal rendering.
 const instanceId = 'a28b6328-6021-4b00-8d2b-af875173ec4b';
 const apiUrl = 'https://vkrwduoawdhsbkoufurl.supabase.co/functions/v1/webhook-widget';
+// Resolve routing while the visitor reads the page, never after capturing the lead.
+let whatsappUrl: string | null = null;
+async function loadDestination() {
+  try {
+    const response = await fetch(apiUrl.replace('webhook-widget', `widget-api?action=config&instanceId=${instanceId}`), { signal: AbortSignal.timeout(8000) });
+    const result = await response.json();
+    const config = result.data;
+    if (!response.ok || result.success !== true || config?.is_active !== true || typeof config.wa_button_phone !== 'string') return;
+    const phone = config.wa_button_phone.replace(/\D/g, '');
+    if (!phone) return;
+    whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(config.wa_button_message || '')}`;
+  } catch { /* Keep the form usable; a later click can retry configuration. */ }
+}
+void loadDestination();
 const lp = location.pathname.split('/').filter(Boolean).at(-1) || '';
 const started = Date.now();
 const pending = new WeakSet<HTMLFormElement>();
@@ -69,33 +83,39 @@ function capturePayload(form: HTMLFormElement, phone: string) {
       wbraid: cookie('wbraid') || undefined, fbclid: cookie('fbclid') || undefined },
   };
 }
+function whatsappNotice(form: HTMLFormElement, url: string, message: string, error = false) {
+  const notice = status(form, message, error);
+  const link = document.createElement('a');
+  link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+  link.textContent = 'Abrir WhatsApp'; notice.append(' ', link);
+}
+function openWhatsApp(form: HTMLFormElement, url: string) {
+  const tab = window.open(url, '_blank');
+  if (tab) { tab.opener = null; return; }
+  whatsappNotice(form, url, 'Continue sua conversa:');
+}
 async function capture(form: HTMLFormElement, phone: string) {
+  if (!whatsappUrl) {
+    status(form, 'Carregando o WhatsApp. Tente novamente em instantes.', false);
+    void loadDestination();
+    return;
+  }
+  const payload = capturePayload(form, phone);
   pending.add(form);
   const button = form.querySelector<HTMLButtonElement>('button[type=submit]');
   if (button) button.disabled = true;
-  status(form, 'Salvando seu contato…', false);
-  // Reserve the tab during the user gesture; navigate only after the server confirms.
-  const tab = window.open('about:blank', '_blank');
-  if (tab) tab.opener = null;
+  status(form, 'WhatsApp aberto. Seu contato está sendo registrado.', false);
+  openWhatsApp(form, whatsappUrl);
   try {
-    const payload = capturePayload(form, phone);
-    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(15000) });
+    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true, signal: AbortSignal.timeout(15000) });
     const result = await response.json();
-    if (!response.ok || result.success !== true || !result.data || typeof result.data.phone !== 'string' || !result.data.phone.replace(/\D/g, '')) throw new Error('Capture failed');
+    if (!response.ok || result.success !== true) throw new Error('Capture failed');
     track('lp_whatsapp_lead', { telefone: phone, email: payload.email, gclid: payload.clickIds.gclid, gbraid: payload.clickIds.gbraid, wbraid: payload.clickIds.wbraid });
     tracking.fbq?.('track', 'Lead');
-    const url = `https://wa.me/${result.data.phone.replace(/\D/g, '')}?text=${encodeURIComponent(result.data.message || '')}`;
-    if (tab && !tab.closed) { tab.location.href = url; tracking.yaptwa?.('close'); }
-    else {
-      const notice = status(form, 'Contato salvo. ', false);
-      const link = document.createElement('a'); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Abrir WhatsApp'; notice.append(link);
-    }
-    // Keep submit disabled after success to prevent duplicate captures/conversions.
+    whatsappNotice(form, whatsappUrl, 'Contato registrado. Continue sua conversa:');
+    // Keep the form locked: repeated clicks must not resend the template.
   } catch {
-    tab?.close();
-    pending.delete(form);
-    if (button) button.disabled = false;
-    status(form, 'Não conseguimos salvar seu contato. Tente novamente.');
+    whatsappNotice(form, whatsappUrl, 'Não foi possível confirmar o cadastro. Você pode continuar pelo WhatsApp.', true);
   }
 }
 document.addEventListener('submit', event => {

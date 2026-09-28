@@ -28,3 +28,32 @@ for (const slug of pages) test('page interactions '+slug,async({page})=>{
  expect((await page.locator('#plan-price').textContent()).replace(/\s/g,'')).toBe(expected);
  await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','noindex, nofollow');
 });
+
+
+test('opens WhatsApp before a slow capture completes, without duplicate capture', async ({ page }) => {
+  let release;
+  let requests = 0;
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route('**/functions/v1/webhook-widget', async route => {
+    requests++;
+    await gate;
+    await route.fulfill({ json: { success: true, data: { phone: '5511000000000', message: 'teste' } } });
+  });
+  await page.evaluate(() => {
+    window.openedUrls = [];
+    window.open = url => { window.openedUrls.push(url); return null; };
+  });
+  await page.locator('#yapt-wa-button').click();
+  await page.locator('input[name=phone]').fill('5511999999999');
+  await page.locator('button[type=submit]').click();
+  try {
+    expect(await page.evaluate(() => window.openedUrls)).toEqual(['https://wa.me/5511000000000?text=teste']);
+    await expect.poll(() => requests).toBe(1);
+    expect(await page.evaluate(() => window.dataLayer.filter(x => x.event === 'lp_whatsapp_lead').length)).toBe(0);
+    await expect(page.getByRole('link', { name: 'Abrir WhatsApp' })).toHaveAttribute('href', 'https://wa.me/5511000000000?text=teste');
+    await page.locator('form').evaluate(form => form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true })));
+    expect(requests).toBe(1);
+  } finally { release(); }
+  await expect.poll(() => page.evaluate(() => window.dataLayer.filter(x => x.event === 'lp_whatsapp_lead').length)).toBe(1);
+  expect(requests).toBe(1);
+});
