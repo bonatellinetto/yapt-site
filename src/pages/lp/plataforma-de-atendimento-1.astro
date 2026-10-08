@@ -676,10 +676,10 @@ import CampaignScripts from '../../components/lp/CampaignScripts.astro';
   /* v8 (CEO 2): preço como protagonista, CTA alto, diferenças em lista limpa */
   .plano-card { padding: 32px 28px 28px; }
   .plano-nome { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
-  .plano-price { display: flex; align-items: flex-start; gap: 3px; margin: 14px 0 10px; font-family: 'Poppins', sans-serif; color: var(--heading); line-height: 1; }
-  .plano-price .pp-cur { font-size: 20px; font-weight: 600; margin-top: 7px; }
-  .plano-price .pp-val { font-size: 48px; font-weight: 700; letter-spacing: -.02em; }
-  .plano-price .pp-per { align-self: flex-end; font: 500 14px 'Inter', sans-serif; color: #8A97A1; margin: 0 0 6px 4px; }
+  .plano-preco { display: flex; align-items: flex-start; gap: 3px; margin: 14px 0 10px; font-family: 'Poppins', sans-serif; color: var(--heading); line-height: 1; }
+  .plano-preco .pp-cur { font-size: 20px; font-weight: 600; margin-top: 7px; }
+  .plano-preco .pp-val { font-size: 48px; font-weight: 700; letter-spacing: -.02em; }
+  .plano-preco .pp-per { align-self: flex-end; font: 500 14px 'Inter', sans-serif; color: #8A97A1; margin: 0 0 6px 4px; }
   .plano-resumo { font-size: 15px; font-weight: 500; color: var(--heading); line-height: 1.45; }
   .plano-sobe { font-size: 13px; color: #8A97A1; margin-top: 4px; min-height: 19px; }
   .plano-ia { display: flex; gap: 8px; align-items: flex-start; margin-top: 14px; font-size: 14px; line-height: 1.45; color: var(--heading); }
@@ -699,11 +699,11 @@ import CampaignScripts from '../../components/lp/CampaignScripts.astro';
   @media (max-width: 900px) {
     .plano-sobe:empty { display: none; }
     .plano-card { padding: 28px 22px 22px; }
-    .plano-price .pp-val { font-size: 44px; }
+    .plano-preco .pp-val { font-size: 44px; }
   }
 
   /* v9 (CEO 3): selo ao lado do preço, sem linha-resumo */
-  .plano-price { flex-wrap: wrap; align-items: flex-start; margin-bottom: 4px; }
+  .plano-preco { flex-wrap: wrap; align-items: flex-start; margin-bottom: 4px; }
   .plano-selo { align-self: center; margin-left: 10px; background: #E3F5F3; color: #13857F; font: 600 12px/1 'Inter', sans-serif; padding: 6px 10px; border-radius: 100px; white-space: nowrap; letter-spacing: 0; }
   .plano-card > .btn.plano-cta { margin-top: 18px; }
   @media (max-width: 520px) { .plano-selo { margin: 8px 0 0; } }
@@ -1119,9 +1119,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container planos-grid">
     <div data-nivel="0" class="plano-card" data-reveal>
       <div class="plano-nome">Essencial</div>
-      <div class="plano-price" hidden>R$ 687</div>
+      <div class="plano-price" hidden>R$ 687<span>/mês</span></div>
       <div class="plano-meta" hidden>600 conversas · 3 usuários</div>
-      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">687</span><span class="pp-per">/mês</span></div>
+      <div class="plano-preco"><span class="pp-cur">R$</span><span class="pp-val">687</span><span class="pp-per">/mês</span></div>
       <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-ghost btn-sm">Agendar demo</a>
       <ul class="plano-spec">
         <li><span class="k">Conversas por mês</span><b>600</b></li>
@@ -1151,9 +1151,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div data-nivel="0" class="plano-card destaque" data-reveal>
       <div class="plano-nome">Evolução</div>
-      <div class="plano-price" hidden>R$ 1.287</div>
+      <div class="plano-price" hidden>R$ 1.287<span>/mês</span></div>
       <div class="plano-meta" hidden>1.500 conversas · 6 usuários</div>
-      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">1.287</span><span class="pp-per">/mês</span><span class="plano-selo" title="2,5x mais conversas que o Essencial">2,5x mais conversas</span></div>
+      <div class="plano-preco"><span class="pp-cur">R$</span><span class="pp-val">1.287</span><span class="pp-per">/mês</span><span class="plano-selo" title="2,5x mais conversas que o Essencial">2,5x mais conversas</span></div>
       <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-primary btn-sm">Agendar demo</a>
       <ul class="plano-spec">
         <li><span class="k">Conversas por mês</span><b>1.500</b></li>
@@ -1183,9 +1183,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div data-nivel="0" class="plano-card" data-reveal>
       <div class="plano-nome">Escala</div>
-      <div class="plano-price" hidden>R$ 3.877</div>
+      <div class="plano-price" hidden>R$ 3.877<span>/mês</span></div>
       <div class="plano-meta" hidden>4.500 conversas · usuários ilimitados</div>
-      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">3.877</span><span class="pp-per">/mês</span><span class="plano-selo" title="3x mais conversas que o Evolução">3x mais conversas</span></div>
+      <div class="plano-preco"><span class="pp-cur">R$</span><span class="pp-val">3.877</span><span class="pp-per">/mês</span><span class="plano-selo" title="3x mais conversas que o Evolução">3x mais conversas</span></div>
       <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-ghost btn-sm">Agendar demo</a>
       <ul class="plano-spec">
         <li><span class="k">Conversas por mês</span><b>4.500</b></li>
