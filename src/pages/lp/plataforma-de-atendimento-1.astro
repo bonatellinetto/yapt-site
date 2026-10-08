@@ -671,6 +671,43 @@ import CampaignScripts from '../../components/lp/CampaignScripts.astro';
   .plano-toggle:hover { border: 0; color: var(--teal); text-decoration: underline; }
   .plano-toggle:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
   .plano-rec { margin-bottom: 0; }
+
+
+  /* v8 (CEO 2): preço como protagonista, CTA alto, diferenças em lista limpa */
+  .plano-card { padding: 32px 28px 28px; }
+  .plano-nome { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  .plano-price { display: flex; align-items: flex-start; gap: 3px; margin: 14px 0 10px; font-family: 'Poppins', sans-serif; color: var(--heading); line-height: 1; }
+  .plano-price .pp-cur { font-size: 20px; font-weight: 600; margin-top: 7px; }
+  .plano-price .pp-val { font-size: 48px; font-weight: 700; letter-spacing: -.02em; }
+  .plano-price .pp-per { align-self: flex-end; font: 500 14px 'Inter', sans-serif; color: #8A97A1; margin: 0 0 6px 4px; }
+  .plano-resumo { font-size: 15px; font-weight: 500; color: var(--heading); line-height: 1.45; }
+  .plano-sobe { font-size: 13px; color: #8A97A1; margin-top: 4px; min-height: 19px; }
+  .plano-ia { display: flex; gap: 8px; align-items: flex-start; margin-top: 14px; font-size: 14px; line-height: 1.45; color: var(--heading); }
+  .plano-ia svg { color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+  .plano-ia b { font-weight: 700; }
+  .plano-card > .btn.plano-cta { margin: 22px 0 24px; width: 100%; padding: 14px 20px; font-size: 15px; }
+  .plano-spec { list-style: none; padding: 0; margin: 0 0 22px; font-size: 14px; }
+  .plano-spec li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0; border-bottom: 1px solid #F1F4F6; color: var(--body-text); }
+  .plano-spec li:last-child { border-bottom: 0; }
+  .plano-spec li .k { display: flex; gap: 8px; align-items: baseline; white-space: nowrap; }
+  .plano-spec li .k::before { content: '\2713'; color: #9FD9D5; font-weight: 700; font-size: 12px; }
+  .plano-spec li b { color: var(--heading); font-weight: 600; text-align: right; }
+  .plano-rec-title { border-top: 1px solid var(--border); padding-top: 18px; margin-bottom: 8px; font-size: 12px; color: #8A97A1; }
+  .plano-rec details summary { font-size: 14px; color: #3D4852; padding: 8px 0; }
+  .plano-rec details summary::before { color: #9FD9D5; }
+  .plano-toggle { margin-bottom: 0; }
+  @media (max-width: 900px) {
+    .plano-sobe:empty { display: none; }
+    .plano-card { padding: 28px 22px 22px; }
+    .plano-price .pp-val { font-size: 44px; }
+  }
+
+  /* v9 (CEO 3): selo ao lado do preço, sem linha-resumo */
+  .plano-price { flex-wrap: wrap; align-items: flex-start; margin-bottom: 4px; }
+  .plano-selo { align-self: center; margin-left: 10px; background: #E3F5F3; color: #13857F; font: 600 12px/1 'Inter', sans-serif; padding: 6px 10px; border-radius: 100px; white-space: nowrap; letter-spacing: 0; }
+  .plano-card > .btn.plano-cta { margin-top: 18px; }
+  @media (max-width: 520px) { .plano-selo { margin: 8px 0 0; } }
+  .plano-card [hidden] { display: none !important; }
 </style>
 <!-- Google Tag Manager — diferido, pra não bloquear a primeira pintura.
      Mesmo padrão e mesmo contêiner do site (src/layouts/SiteLayout.astro),
@@ -1082,13 +1119,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container planos-grid">
     <div data-nivel="0" class="plano-card" data-reveal>
       <div class="plano-nome">Essencial</div>
-      <div class="plano-price">R$ 687<span style="font-size:13px;font-weight:500;">/mês</span></div>
-      <div class="plano-meta">600 conversas · 3 usuários</div>
-      <ul class="plano-base">
-        <li>API oficial ou coexistência</li>
-        <li>Suporte especializado e humanizado</li>
+      <div class="plano-price" hidden>R$ 687</div>
+      <div class="plano-meta" hidden>600 conversas · 3 usuários</div>
+      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">687</span><span class="pp-per">/mês</span></div>
+      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-ghost btn-sm">Agendar demo</a>
+      <ul class="plano-spec">
+        <li><span class="k">Conversas por mês</span><b>600</b></li>
+        <li><span class="k">Usuários</span><b>3</b></li>
+        <li><span class="k">Suporte</span><b>Especializado e humanizado</b></li>
+        <li><span class="k">Conexão</span><b>API oficial ou coexistência</b></li>
       </ul>
-      <div class="plano-rec-title">Recursos incluídos</div>
+      <div class="plano-rec-title">Todos os planos incluem</div>
       <ul class="plano-rec">
         <li><details><summary><span class="t">Plataforma nativa em IA</span></summary><p>Inteligência faz parte da plataforma: sinais de interesse, emoção e contexto ajudam seu time a decidir a próxima ação. A IA que conversa com o cliente é contratada separadamente.</p></details></li>
         <li><details><summary><span class="t">Formulários no WhatsApp</span></summary><p>Reúna informações dos clientes em formulários no WhatsApp; criação pelo nosso time é serviço separado.</p></details></li>
@@ -1106,17 +1147,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><details><summary><span class="t">yaTickets</span></summary><p>Dê visibilidade a casos, responsáveis, prioridades e prazos definidos para o suporte.</p></details></li>
       </ul>
       <button type="button" class="plano-toggle" aria-expanded="false" onclick="var c=this.closest('.plano-card');var n=((+c.dataset.nivel||0)+1)%3;var alvo=window.matchMedia('(min-width: 901px)').matches?c.parentElement.querySelectorAll('.plano-card'):[c];alvo.forEach(function(k){k.dataset.nivel=n;var b=k.querySelector('.plano-toggle');b.textContent=n===2?'Mostrar menos recursos':'Clique para ver mais recursos';b.setAttribute('aria-expanded',n===2);});">Clique para ver mais recursos</button>
-      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="btn btn-ghost btn-sm">Agendar demo</a>
+      
     </div>
     <div data-nivel="0" class="plano-card destaque" data-reveal>
       <div class="plano-nome">Evolução</div>
-      <div class="plano-price">R$ 1.287<span style="font-size:13px;font-weight:500;">/mês</span></div>
-      <div class="plano-meta">1.500 conversas · 6 usuários</div>
-      <ul class="plano-base">
-        <li>API oficial ou coexistência</li>
-        <li>Suporte especializado e humanizado</li>
+      <div class="plano-price" hidden>R$ 1.287</div>
+      <div class="plano-meta" hidden>1.500 conversas · 6 usuários</div>
+      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">1.287</span><span class="pp-per">/mês</span><span class="plano-selo" title="2,5x mais conversas que o Essencial">2,5x mais conversas</span></div>
+      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-primary btn-sm">Agendar demo</a>
+      <ul class="plano-spec">
+        <li><span class="k">Conversas por mês</span><b>1.500</b></li>
+        <li><span class="k">Usuários</span><b>6</b></li>
+        <li><span class="k">Suporte</span><b>Especializado e humanizado</b></li>
+        <li><span class="k">Conexão</span><b>API oficial ou coexistência</b></li>
       </ul>
-      <div class="plano-rec-title">Recursos incluídos</div>
+      <div class="plano-rec-title">Todos os planos incluem</div>
       <ul class="plano-rec">
         <li><details><summary><span class="t">Plataforma nativa em IA</span></summary><p>Inteligência faz parte da plataforma: sinais de interesse, emoção e contexto ajudam seu time a decidir a próxima ação. A IA que conversa com o cliente é contratada separadamente.</p></details></li>
         <li><details><summary><span class="t">Formulários no WhatsApp</span></summary><p>Reúna informações dos clientes em formulários no WhatsApp; criação pelo nosso time é serviço separado.</p></details></li>
@@ -1134,17 +1179,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><details><summary><span class="t">yaTickets</span></summary><p>Dê visibilidade a casos, responsáveis, prioridades e prazos definidos para o suporte.</p></details></li>
       </ul>
       <button type="button" class="plano-toggle" aria-expanded="false" onclick="var c=this.closest('.plano-card');var n=((+c.dataset.nivel||0)+1)%3;var alvo=window.matchMedia('(min-width: 901px)').matches?c.parentElement.querySelectorAll('.plano-card'):[c];alvo.forEach(function(k){k.dataset.nivel=n;var b=k.querySelector('.plano-toggle');b.textContent=n===2?'Mostrar menos recursos':'Clique para ver mais recursos';b.setAttribute('aria-expanded',n===2);});">Clique para ver mais recursos</button>
-      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="btn btn-primary btn-sm">Agendar demo</a>
+      
     </div>
     <div data-nivel="0" class="plano-card" data-reveal>
       <div class="plano-nome">Escala</div>
-      <div class="plano-price">R$ 3.877<span style="font-size:13px;font-weight:500;">/mês</span></div>
-      <div class="plano-meta">4.500 conversas · ilimitados</div>
-      <ul class="plano-base">
-        <li>API oficial ou coexistência</li>
-        <li>Suporte dedicado</li>
+      <div class="plano-price" hidden>R$ 3.877</div>
+      <div class="plano-meta" hidden>4.500 conversas · usuários ilimitados</div>
+      <div class="plano-price"><span class="pp-cur">R$</span><span class="pp-val">3.877</span><span class="pp-per">/mês</span><span class="plano-selo" title="3x mais conversas que o Evolução">3x mais conversas</span></div>
+      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="plano-cta btn btn-ghost btn-sm">Agendar demo</a>
+      <ul class="plano-spec">
+        <li><span class="k">Conversas por mês</span><b>4.500</b></li>
+        <li><span class="k">Usuários</span><b>Ilimitados</b></li>
+        <li><span class="k">Suporte</span><b>Dedicado</b></li>
+        <li><span class="k">Conexão</span><b>API oficial ou coexistência</b></li>
       </ul>
-      <div class="plano-rec-title">Recursos incluídos</div>
+      <div class="plano-rec-title">Todos os planos incluem</div>
       <ul class="plano-rec">
         <li><details><summary><span class="t">Plataforma nativa em IA</span></summary><p>Inteligência faz parte da plataforma: sinais de interesse, emoção e contexto ajudam seu time a decidir a próxima ação. A IA que conversa com o cliente é contratada separadamente.</p></details></li>
         <li><details><summary><span class="t">Formulários no WhatsApp</span></summary><p>Reúna informações dos clientes em formulários no WhatsApp; criação pelo nosso time é serviço separado.</p></details></li>
@@ -1162,7 +1211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><details><summary><span class="t">yaTickets</span></summary><p>Dê visibilidade a casos, responsáveis, prioridades e prazos definidos para o suporte.</p></details></li>
       </ul>
       <button type="button" class="plano-toggle" aria-expanded="false" onclick="var c=this.closest('.plano-card');var n=((+c.dataset.nivel||0)+1)%3;var alvo=window.matchMedia('(min-width: 901px)').matches?c.parentElement.querySelectorAll('.plano-card'):[c];alvo.forEach(function(k){k.dataset.nivel=n;var b=k.querySelector('.plano-toggle');b.textContent=n===2?'Mostrar menos recursos':'Clique para ver mais recursos';b.setAttribute('aria-expanded',n===2);});">Clique para ver mais recursos</button>
-      <a href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b" class="btn btn-ghost btn-sm">Agendar demo</a>
+      
     </div>
   </div>
   <div class="container">
