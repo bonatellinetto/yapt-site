@@ -6,9 +6,10 @@ interface Props {
   features: string[];
   reversed?: boolean;
   accentColor: string;
+  wide?: boolean;
 }
 
-const { title, subtitle, description, features, reversed = false, accentColor } = Astro.props;
+const { title, subtitle, description, features, reversed = false, accentColor, wide = false } = Astro.props;
 ---
 
 <section data-observe class="py-16 lg:py-24">
@@ -44,7 +45,7 @@ const { title, subtitle, description, features, reversed = false, accentColor } 
 
     <!-- Mockup side (slot) -->
     <div
-      class="flex-1 max-w-lg w-full"
+      class={wide ? 'flex-1 lg:flex-[1.3] max-w-2xl w-full space-y-4' : 'flex-1 max-w-lg w-full'}
       data-fade
       style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;"
     >

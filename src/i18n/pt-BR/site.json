@@ -647,86 +647,112 @@
       "subtitle": "Roteamento inteligente, SLA em tempo real, monitor de equipe, pipeline visual e analytics de verdade. Tudo que antes dependia de planilha e boa vontade agora roda sozinho."
     },
     "inbox": {
-      "subtitle": "Inbox V2 — Smart Queue",
+      "subtitle": "Filas inteligentes",
       "title": "Fila inteligente. Prioridade certa.",
-      "description": "4 views fixas com priorização automática por score, emoção e SLA. A fila se organiza sozinha — leads quentes sempre na frente.",
+      "description": "O gestor vê a saúde de cada fila numa tela só: quantos aguardam, quantos estão com uma pessoa, a maior espera e quem está disponível agora. A fila se organiza por prioridade, emoção e prazo, e o que está para vencer aparece antes de virar problema.",
       "features": [
-        "4 views: Meu Inbox, Smart Queue (IA prioriza), Abertos, Aguardando",
-        "Lead Scoring (0-100): 7 fatores comportamentais calculados a cada 10 min",
-        "Sorting por SLA, prioridade, tempo de espera ou última atividade",
-        "Emotion Engine: 13 sinais emocionais por mensagem (frustração, urgência, hesitação)",
-        "Handler State: controle bot ↔ humano, pausa automação quando agente assume"
+        "Agora na operação: aguardando humano, em atendimento humano, com IA ou bot, maior espera e espera vencida",
+        "Saúde das filas por setor: aguardando, com humano, maior espera e operadores disponíveis",
+        "Tempo médio de espera e de atendimento do dia, por fila",
+        "Priorização automática por nota do lead, emoção e prazo",
+        "Controle de quem conduz a conversa: quando o operador assume, a automação pausa",
+        "Exportação das filas"
       ]
     },
     "routing": {
-      "subtitle": "yaOps — Roteamento",
-      "title": "6 modos de distribuição. Zero lead perdido.",
-      "description": "Round-robin, least-loaded, skill-based, por keyword, campanha ou horário. Sticky routing mantém o mesmo agente. Overflow redireciona automaticamente.",
+      "subtitle": "Distribuição inteligente",
+      "title": "Distribuição inteligente: cada conversa com a pessoa certa, na hora certa.",
+      "description": "Você define, por setor, como as conversas são distribuídas: por rodízio ou para quem está menos ocupado, com limite por operador e setor reserva para quando a equipe lota. Se alguém entra em pausa, fica offline ou ninguém está online, a regra já diz o que acontece, e a IA pode assumir até um humano voltar.",
       "features": [
-        "Round-robin com peso e capacidade por agente",
-        "Least-loaded: envia para quem tem menos conversas",
-        "Skill-based: direcione por idioma, produto, região ou certificação",
-        "Sticky routing: mantém o agente por N dias (sem perda de contexto)",
-        "Agent Pull: agente puxa da fila quando estiver pronto",
-        "Overflow: se setor cheio, redireciona automaticamente"
+        "Automática ou manual, por rodízio ou para quem está menos ocupado",
+        "Limite de conversas por operador e tamanho da fila",
+        "Setor reserva: quando todos estão no limite, a conversa transborda para outro setor",
+        "Etapas que não ocupam capacidade: o operador segue com o caso e libera vaga para novos atendimentos",
+        "Pausa e offline com regra própria: fica com o operador, volta para a fila, devolve para a IA ou transfere de setor",
+        "Ninguém online, fora do horário ou feriado: aguardar na fila, enviar mensagem ou a IA assume o atendimento",
+        "Enquanto o cliente aguarda na fila, a IA continua a conversa"
       ]
     },
     "sla": {
       "subtitle": "SLA & Escalação",
       "title": "SLA por setor. Escalação automática.",
-      "description": "Defina tempo de resposta e resolução por setor. Timer visível no Inbox. Quando o SLA está em risco, a escalação sobe automaticamente na cadeia.",
+      "description": "Cada setor tem as suas metas de tempo, e cada meta é um relógio que você liga ou desliga. O prazo aparece na conversa, o aviso chega antes de vencer e a escalação sobe sozinha quando o prazo está em risco.",
       "features": [
-        "SLA de resposta + resolução configurável por setor",
-        "Timer visual no Inbox: verde, amarelo, vermelho",
-        "Escalação automática quando deadline se aproxima",
-        "Horário comercial e feriados respeitados no cálculo",
-        "Window Guardian: fora do expediente, routing alternativo"
+        "Primeira resposta: do primeiro contato até a primeira resposta do setor, humana ou da IA",
+        "Próxima resposta: cada mensagem do cliente reinicia o relógio",
+        "Resposta humana após pedir atendente: conta a partir do momento em que a IA passou para uma pessoa",
+        "Resposta após atribuição: da atribuição a um responsável até a primeira resposta humana",
+        "Resolução: da abertura até a conversa ser resolvida",
+        "Objetivo de cumprimento do SLA humano, em percentual, como referência para os painéis",
+        "Aviso quando a conversa atinge um percentual do prazo",
+        "Contagem só no horário de atendimento do setor",
+        "Escalação automática para outro setor quando o prazo se aproxima"
       ]
     },
     "monitor": {
-      "subtitle": "Monitor de Agentes",
+      "subtitle": "Visibilidade da equipe",
       "title": "Visibilidade total da equipe em tempo real.",
-      "description": "Quem está online, ocupado, em pausa. Capacidade usada vs disponível. Utilização por agente. Tudo ao vivo, atualizado instantaneamente.",
+      "description": "Quem está disponível, ausente ou offline, em quais setores atende e quantas conversas tem agora contra o limite. Você vê quem está sobrecarregado e quem tem espaço antes de a fila travar.",
       "features": [
-        "Status real-time: online, busy, away, break, offline",
-        "Capacidade: conversas atuais vs máximo configurado",
-        "Utilização %: indicadores verde (<50%), amarelo (50-80%), vermelho (>80%)",
-        "Filtros por status, setor ou busca por nome",
-        "Atualização instantânea — sem refresh"
+        "Carga por operador: conversas atuais contra o limite configurado",
+        "Status ao vivo: disponível, ausente e offline",
+        "Setores em que cada operador atende",
+        "Barra de carga que muda de cor quando o operador chega ao limite",
+        "Total de conversas atribuídas entre conectados e offline"
       ]
     },
     "deals": {
-      "subtitle": "yaDeals",
-      "title": "Pipeline visual. Cada deal rastreado.",
-      "description": "Kanban drag-and-drop com multi-pipeline, stakeholders, produtos, SLA por stage e análise win/loss automática.",
+      "subtitle": "Pipelines",
+      "title": "Pipeline visual dos atendimentos e dos negócios, com gestão inteligente.",
+      "description": "O atendimento também tem pipeline. Cada conversa aparece com etapa, setor, responsável e prazo, em vistas que você cria por operação. Os negócios seguem no funil de vendas, com valor por etapa, previsão e meta do mês.",
       "features": [
-        "Kanban visual com drag-and-drop entre stages",
-        "Multi-pipeline: vendas, onboarding, CS — cada um com seus stages",
-        "Stakeholders: vincule múltiplos contatos ao mesmo deal",
-        "SLA por stage: alerta quando um deal fica parado",
-        "Win/Loss analysis: entenda por que deals são ganhos ou perdidos"
+        "Vistas por operação: vendas, financeiro, relacionamento, suporte, cada uma com o seu contador",
+        "SLA em risco, atendimentos ativos e tempo médio sempre no topo",
+        "Cada conversa com etapa, setor, responsável e tempo de espera",
+        "Filas prontas: aguardando atribuição, IA ativa, aguardando cliente, soneca e fila inteligente",
+        "Pipelines de conversas para suporte e escalações",
+        "Funil de negócios com valor por etapa, ponderado, previsão e meta do mês"
       ]
     },
     "grid": {
       "title": "Tudo que sua operação precisa",
       "subtitle": "Módulos Complementares",
-      "calendar": { "title": "Calendar", "description": "Sincronização com Google Calendar, visão multi-seller e agendamentos integrados ao deal." },
-      "activities": { "title": "Activities Hub", "description": "Tasks, calls, meetings e My Day — tudo centralizado com lembretes e vinculação a deals." },
-      "proposals": { "title": "Propostas", "description": "Editor visual, link público com tracking de visualização e integração direta com deals." },
-      "scoring": { "title": "Lead Scoring Híbrido", "description": "7 fatores comportamentais + IA. Score atualiza a cada 10 min e prioriza sua fila automaticamente." },
-      "emotion": { "title": "Emotion Engine", "description": "13 sinais emocionais em tempo real. Frustração redireciona pro agente sênior automaticamente." },
-      "handoff": { "title": "Bot ↔ Humano", "description": "Handler state gerenciado. Automações pausam quando agente assume. Zero mensagem duplicada." }
+      "calendar": {
+        "title": "Calendar",
+        "description": "Sincronização com Google Calendar, visão multi-seller e agendamentos integrados ao deal."
+      },
+      "activities": {
+        "title": "Activities Hub",
+        "description": "Tasks, calls, meetings e My Day — tudo centralizado com lembretes e vinculação a deals."
+      },
+      "proposals": {
+        "title": "Propostas",
+        "description": "Editor visual, link público com tracking de visualização e integração direta com deals."
+      },
+      "scoring": {
+        "title": "Lead Scoring Híbrido",
+        "description": "7 fatores comportamentais + IA. Score atualiza a cada 10 min e prioriza sua fila automaticamente."
+      },
+      "emotion": {
+        "title": "Emotion Engine",
+        "description": "13 sinais emocionais em tempo real. Frustração redireciona pro agente sênior automaticamente."
+      },
+      "handoff": {
+        "title": "Bot ↔ Humano",
+        "description": "Handler state gerenciado. Automações pausam quando agente assume. Zero mensagem duplicada."
+      }
     },
     "analytics": {
       "subtitle": "yaAnalytics",
-      "title": "Analytics de verdade. Não dashboard de vaidade.",
-      "description": "Dados estruturados para análise avançada, CSAT, NPS, funil de conversão e métricas que importam para decisão de negócio.",
+      "title": "Indicadores de atendimento e de suporte, sem planilha.",
+      "description": "Os números da operação separados por área, prontos para a reunião de gestão: quanto entrou, quanto foi resolvido, em quanto tempo e por quem.",
       "features": [
-        "Dados estruturados para análise avançada",
-        "CSAT e NPS integrados ao fluxo de conversa",
-        "Funil de conversão: do lead ao deal fechado",
-        "Métricas por agente, canal, campanha e período",
-        "Export para CSV e integração com BI externo"
+        "Atendimento: conversas, resolvidas, na fila, primeira resposta, tempo médio e violações de SLA",
+        "Resolução por IA e por humano, lado a lado",
+        "Suporte: tempo de resposta humano, resolução no primeiro contato, rechamadas e escalações",
+        "Volume por dia: iniciadas, resolvidas pela IA, resolvidas por humano e escaladas",
+        "Visões por área: atendimento, vendas, eficiência dos funis, suporte, marketing, disparos, agentes, IA e pesquisas",
+        "Exportação dos dados"
       ]
     },
     "roadmap": {
@@ -1840,68 +1866,70 @@
   "sales": {
     "meta": {
       "title": "Vendas & Pipeline — yapt.",
-      "description": "Do lead qualificado ao negócio fechado. Pipeline visual, qualificação por IA, coaching em tempo real e propostas pelo WhatsApp."
+      "description": "IA em toda a jornada de venda no WhatsApp: origem de cada lead, follow-up automático, réguas de vendas, funis de prospecção e vendas e metas por vendedor."
     },
     "hero": {
       "badge": "Vendas & Pipeline",
-      "title": "Do lead qualificado ao negócio fechado. Sem planilha.",
-      "subtitle": "yapt. une IA, pipeline visual e coaching em tempo real pra transformar conversas em receita. Cada lead qualificado, cada deal rastreado, cada proposta acompanhada."
+      "title": "IA em toda a jornada de venda. Eficiência para o time, visão para o gestor.",
+      "subtitle": "Do primeiro contato ao fechamento, a IA trabalha junto com o seu time: mostra de onde veio cada lead, aponta quem tem mais potencial, faz o follow-up sozinha e orienta o vendedor na conversa. O gestor acompanha a produtividade de cada vendedor e o caminho até a meta."
     },
     "painPoints": {
-      "title": "Seu time vende pelo WhatsApp, mas sofre com isso todo dia...",
+      "title": "O que trava a venda hoje",
       "items": {
-        "noFollowUp": {
-          "title": "Lead esfria sem follow-up",
-          "description": "Vendedor demora 2h pra responder e o lead já comprou do concorrente. Sem priorização, todo mundo perde."
+        "noContext": {
+          "title": "O lead chega sem contexto",
+          "description": "O vendedor recebe o lead sem saber de onde ele veio nem o que já foi conversado, e começa do zero. Vendedores gastam 70% do tempo em tarefas que não são vender (Salesforce, 2024)."
         },
-        "invisiblePipeline": {
-          "title": "Pipeline invisível",
-          "description": "Deals na cabeça do vendedor, no post-it, na planilha. Gestor não sabe o forecast real."
+        "forgotten": {
+          "title": "Oportunidade esquecida no funil",
+          "description": "A proposta fica sem retorno e o negócio esfria sem ninguém perceber. De 40% a 60% dos negócios terminam sem decisão do cliente (The JOLT Effect, citado pelo LinkedIn B2B Institute, 2022)."
         },
-        "feelingQualification": {
-          "title": "Qualificação no feeling",
-          "description": "Vendedor gasta 1h com lead frio e ignora o hot lead que mandou mensagem 3x. Sem score, sem critério."
+        "lateGoal": {
+          "title": "A meta só aparece no fim do mês",
+          "description": "O gestor descobre que não bateu a meta quando já não dá para reagir. Só 45% dos líderes de vendas confiam muito na própria previsão (Gartner, 2020)."
         },
-        "noCoaching": {
-          "title": "Coaching inexistente",
-          "description": "Vendedor erra objeção e ninguém corrige em tempo real. Treinamento só acontece na reunião de sexta."
+        "spreadsheet": {
+          "title": "Prospecção na planilha",
+          "description": "Sem histórico de ligação nem visão do que virou oportunidade. No Brasil, 31% das operações de pré-vendas ainda dependem de planilhas ou sistemas improvisados (Receita Previsível e Academia Rapport, 2025)."
         }
       }
     },
     "deals": {
-      "subtitle": "yaDeals",
-      "title": "Pipeline visual. Cada deal rastreado do WhatsApp à receita.",
-      "description": "Kanban drag-and-drop com multi-pipeline, stakeholders, produtos vinculados e SLA por stage. Saiba exatamente onde cada negócio está, por que está travando e quando vai fechar. Integrado a cada conversa — o deal nasce da conversa.",
+      "subtitle": "Pipelines",
+      "title": "Um funil para prospectar. Outro para vender.",
+      "description": "Prospecção e vendas têm ritmos diferentes, então cada uma tem o seu funil. Na prospecção, o time vê quem abordar, em qual tentativa está e o melhor horário para ligar. Em vendas, cada etapa mostra valor, prazo e probabilidade, e o gestor acompanha previsão e meta do mês na mesma tela.",
       "features": [
-        "Kanban visual com drag-and-drop entre stages",
-        "Multi-pipeline: vendas, onboarding, CS — cada um com seus stages",
-        "Stakeholders: vincule múltiplos contatos ao mesmo deal",
-        "SLA por stage: alerta quando um deal fica parado demais",
-        "Win/Loss analysis: entenda por que deals são ganhos ou perdidos"
+        "Funil de prospecção: a abordar, tentativas e contatado, com horário sugerido para ligar e registro da ligação",
+        "Funil de vendas: valor, prazo e probabilidade por etapa",
+        "Vários funis lado a lado: vendas consultivas, renovações, projetos, enterprise",
+        "Em aberto, ponderado, previsão do mês e meta com o realizado, sempre no topo",
+        "Negócios parados e esfriando sinalizados no quadro",
+        "Nota de 0 a 100 em cada negócio"
       ]
     },
     "qualification": {
-      "subtitle": "Qualificação Inteligente",
-      "title": "Treine a IA com suas perguntas. Ela qualifica cada lead automaticamente.",
-      "description": "Escolha sua metodologia (BANT, SPIN, MEDDIC, Challenger ou custom), cadastre suas perguntas com peso e critério, e defina os thresholds. A IA extrai as respostas direto da conversa e calcula o score. Quando o lead atinge o ponto certo — vira deal automaticamente.",
+      "subtitle": "yaAgents",
+      "title": "Crie a sua SDR de IA conversando com outra IA.",
+      "description": "No yaAgents você não preenche formulário técnico. Você descreve, numa conversa, como quer que a sua SDR atenda, qualifique e passe o lead adiante, e o Construtor monta o agente. Tudo vira rascunho: nada vai ao ar sem você publicar.",
       "features": [
-        "6 metodologias: BANT, SPIN, MEDDIC, GPCT, Challenger ou Custom",
-        "Cadastre suas perguntas com peso (1-5) e critério por tipo",
-        "Thresholds visuais: Lead → MQL → SQL → Opportunity",
-        "Modo ICP: descreva seu cliente ideal e a IA avalia semanticamente",
-        "Score híbrido: 7 fatores comportamentais + qualificação IA"
+        "Construir, testar e configurar no mesmo lugar",
+        "Espelho do agente: quem é, como conduz, o que sabe, o que faz e onde atua",
+        "Jornada em etapas, ligada ao funil real do yapt.",
+        "Conhecimento da sua empresa ligado ao agente",
+        "Ferramentas e habilidades que o agente usa durante a conversa",
+        "Ajustes por conversa: peça para deixar o tom mais direto ou criar um especialista"
       ]
     },
     "playbooks": {
-      "subtitle": "Playbooks",
-      "title": "Codifique sua metodologia. O time inteiro executa igual.",
-      "description": "Monte seu playbook em 5 passos: produto, qualificação, pipeline, objeções e sinais de compra. O yaMentor é treinado no playbook e guia cada vendedor em tempo real. Junior recebe script completo. Sênior recebe bullet points. Todo mundo vende no padrão.",
+      "subtitle": "Réguas de vendas",
+      "title": "Crie réguas autônomas e inteligentes de vendas.",
+      "description": "A régua acompanha cada negócio e age sozinha: envia mensagem, cria tarefa, avisa o gestor e move de etapa. Comece por um modelo pronto e ajuste do seu jeito. E a IA pode sussurrar ao vendedor o contexto do negócio na hora certa.",
       "features": [
-        "Wizard 5 steps: produto, qualificação, pipeline, situações, revisão",
-        "Objeções mapeadas com resposta ideal por cenário",
-        "Sinais de compra + ação recomendada",
-        "Conectado ao yaMentor — IA treinada no seu playbook",
-        "Nível do vendedor: Junior (script completo) → Sênior (bullet points)"
+        "Modelos prontos: proposta sem resposta, negócio esfriando, pós-venda e lead novo da campanha",
+        "Rodízio de vendedores para o lead novo que entra sem responsável",
+        "Ações por WhatsApp e e-mail, tarefas e avisos",
+        "A IA fala com o vendedor: um sussurro com o contexto do negócio",
+        "Acompanhe quantos negócios estão na régua, concluíram e saíram"
       ]
     },
     "mentor": {
@@ -1917,79 +1945,171 @@
       ]
     },
     "proposals": {
-      "subtitle": "Propostas",
-      "title": "Proposta pelo WhatsApp. Cliente aceita no celular.",
-      "description": "Envie propostas via link direto no WhatsApp. O cliente abre no celular, vê tudo formatado, e aceita online. Tracking: visualizou, quanto tempo ficou na página, quando aceitou. Sem PDF, sem email, sem intermediário.",
+      "subtitle": "Negócio completo",
+      "title": "Tudo do negócio numa tela: pessoas, atividades, conversas e proposta.",
+      "description": "Cada negócio reúne quem participa da decisão, o que já foi feito e o que foi conversado. O vendedor abre e sabe em que pé está. O gestor abre e sabe o que falta para fechar.",
       "features": [
-        "Template builder de propostas (título, descrição, preço, termos)",
-        "Link público — cliente abre e aceita pelo celular",
-        "Tracking: visualizações, tempo no site, cliques, aceites",
-        "Integrado com Deals — proposta vinculada ao negócio",
-        "Versionamento: proposta v1, v2, v3 com histórico"
+        "Pessoas no negócio com papel: contato principal, influenciador, decisor e defensor, com aviso quando falta alguém",
+        "Atividades, reuniões, notas internas e histórico",
+        "Conversas vinculadas ao negócio",
+        "Produtos com valor de implantação e de recorrência",
+        "Próximo passo sugerido, pronto para aceitar e agendar",
+        "Propostas com assinatura digital"
       ]
     },
     "contacts": {
-      "subtitle": "Contacts 360",
-      "title": "Cada lead como um banco de dados vivo.",
-      "description": "Visão 360 de cada contato: lifecycle stage, lead score com breakdown, emotion trends, deals associados, atividades, propostas e atribuição de campanha. O vendedor nunca mais pergunta 'quem é esse lead?' — tudo está ali.",
+      "subtitle": "yaLeads",
+      "title": "Todos os leads, todas as origens, uma visão.",
+      "description": "Cada lead aparece com a nota, o primeiro e o último clique, a etapa da jornada e o negócio ligado a ele. O time prioriza pelo que importa, não pela ordem de chegada.",
       "features": [
-        "Lifecycle: visitante → lead → MQL → SQL → opportunity → cliente",
-        "Score com breakdown visual (7 fatores + IA)",
-        "Emotion trends: últimas mensagens com sentimento",
-        "Deals, propostas e atividades vinculados",
-        "Atribuição de campanha: de onde veio (Google, Meta, direto)"
+        "Nota do lead visível na lista",
+        "Primeiro e último clique de cada lead",
+        "Etapa da jornada e negócio vinculado",
+        "Fonte e canal: Meta Ads, Instagram, site, e-mail e importação",
+        "Status de cada lead"
       ]
     },
     "calendar": {
       "subtitle": "Agenda & Atividades",
       "title": "Calendário sincronizado. Cada ação registrada.",
-      "description": "Google Calendar sync bidirecional com visão multi-seller. Activities Hub rastreia calls, meetings, tasks e emails — tudo vinculado ao deal. My Day mostra as tarefas do dia. Gestor sabe exatamente o que cada vendedor fez.",
+      "description": "A IA qualifica o lead, oferece os horários pelo WhatsApp e entrega a reunião já agendada na agenda do vendedor. A agenda sincroniza com o Google Calendar e cada atividade fica ligada ao negócio, para o gestor saber o que cada vendedor fez.",
       "features": [
-        "Google Calendar sync bidirecional automático",
-        "Visão multi-seller: veja a agenda do time inteiro",
-        "Activities Hub: tasks, calls, meetings com duração e notas",
-        "My Day: tarefas do dia pra cumprir",
-        "Tudo vinculado ao deal e ao contato"
+        "Agendamento com IA pelo WhatsApp Flows: a IA qualifica, agenda e entrega a reunião marcada",
+        "Sincronização com o Google Calendar nos dois sentidos",
+        "Agenda do time inteiro numa visão",
+        "Atividades: tarefas, ligações e reuniões com duração e notas",
+        "Meu dia: as tarefas do dia do vendedor",
+        "Tudo vinculado ao negócio e ao contato"
       ]
     },
     "autoDeal": {
-      "subtitle": "Automação de Pipeline",
-      "title": "Lead qualificou? Deal criado. Time notificado.",
-      "description": "Configure o estágio gatilho (MQL, SQL ou Opportunity) e o deal é criado automaticamente no pipeline. Notificações por email em tempo real: deal ganho, proposta aceita, lead qualificado, handoff da IA. Cada evento com destinatário configurável.",
+      "subtitle": "Venda na conversa",
+      "title": "Venda fechada na própria conversa, simples como um carrinho de compras.",
+      "description": "O operador busca o produto, ajusta quantidade e desconto e finaliza a venda sem sair do atendimento. A venda já nasce ligada à campanha que trouxe o cliente.",
       "features": [
-        "Auto-deal: lead atinge score → deal criado no pipeline automaticamente",
-        "3 gatilhos: por lifecycle stage, por score threshold, ou via Flow",
-        "Notificações: deal ganho/perdido, proposta aceita, auto-deal criado",
-        "Destinatários configuráveis: dono, admins ou time personalizado",
-        "Handoff inteligente: IA escala pro humano com motivo (frustração, alto valor)"
+        "Busca de produto e carrinho ao lado da conversa",
+        "Quantidade, ajuste de valor e desconto",
+        "Pedidos anteriores do cliente à vista",
+        "Venda com atribuição: a campanha e a origem ficam ligadas ao pedido",
+        "Simples para qualquer operador usar"
       ]
     },
     "timeline": {
       "title": "Da conversa à receita. Cada etapa conectada.",
       "subtitle": "Lead chega, IA qualifica, deal é criado, proposta enviada, venda fechada — tudo automático, tudo rastreado.",
       "steps": [
-        { "title": "Conversa", "description": "Lead chega pelo WhatsApp. yaveh AI atende, entende contexto e inicia qualificação." },
-        { "title": "IA Qualifica", "description": "Perguntas do playbook extraídas automaticamente. BANT, SPIN ou metodologia custom." },
-        { "title": "Score", "description": "Lead Score híbrido: 7 fatores comportamentais + qualificação IA. Threshold atingido = SQL." },
-        { "title": "Deal", "description": "Deal criado automaticamente no pipeline. Vendedor notificado com contexto completo." },
-        { "title": "Proposta", "description": "Proposta enviada via link no WhatsApp. Cliente abre no celular e aceita online." },
-        { "title": "Venda", "description": "Negócio fechado. Conversão enviada para Meta/Google via CAPI. Loop fechado." }
+        {
+          "title": "Conversa",
+          "description": "Lead chega pelo WhatsApp. yaveh AI atende, entende contexto e inicia qualificação."
+        },
+        {
+          "title": "IA Qualifica",
+          "description": "Perguntas do playbook extraídas automaticamente. BANT, SPIN ou metodologia custom."
+        },
+        {
+          "title": "Score",
+          "description": "Lead Score híbrido: 7 fatores comportamentais + qualificação IA. Threshold atingido = SQL."
+        },
+        {
+          "title": "Deal",
+          "description": "Deal criado automaticamente no pipeline. Vendedor notificado com contexto completo."
+        },
+        {
+          "title": "Proposta",
+          "description": "Proposta enviada via link no WhatsApp. Cliente abre no celular e aceita online."
+        },
+        {
+          "title": "Venda",
+          "description": "Negócio fechado. Conversão enviada para Meta/Google via CAPI. Loop fechado."
+        }
       ]
     },
     "grid": {
       "title": "Cada detalhe pensado pra vender mais",
-      "scoring": { "title": "Lead Scoring Híbrido", "description": "7 fatores comportamentais + qualificação IA combinados num score único." },
-      "methodology": { "title": "BANT / SPIN / MEDDIC", "description": "Metodologia configurável por agente. Escolha a que faz sentido pro seu time." },
-      "icp": { "title": "ICP Matching", "description": "Descreva seu cliente ideal — IA avalia semanticamente cada lead." },
-      "multiPipeline": { "title": "Multi-Pipeline", "description": "Vendas, onboarding, CS — cada um com stages e SLA próprios." },
-      "sla": { "title": "SLA por Stage", "description": "Alerta quando deal fica parado demais. Nunca mais perca negócio por inação." },
-      "winLoss": { "title": "Win/Loss Analysis", "description": "Entenda por que deals são ganhos ou perdidos. Melhore o processo." },
-      "emotion": { "title": "Emotion Engine", "description": "13 sinais emocionais integrados ao score e visíveis no deal." },
-      "proposalTracking": { "title": "Proposal Tracking", "description": "Visualizações, tempo na página, cliques e aceites — tudo rastreado." },
-      "handlerState": { "title": "Handler State", "description": "Bot ↔ Humano sem mensagem duplicada. Transição limpa." },
-      "myDay": { "title": "My Day", "description": "Tarefas do dia do vendedor em 1 tela. Foco total." },
-      "lifecycle": { "title": "Lifecycle Automático", "description": "Visitante → Lead → MQL → SQL → Opportunity — progressão automática." },
-      "autoDeal": { "title": "Deal Auto-Create", "description": "Lead qualificou → deal criado automaticamente no pipeline." }
+      "scoring": {
+        "title": "Lead Scoring Híbrido",
+        "description": "7 fatores comportamentais + qualificação IA combinados num score único."
+      },
+      "methodology": {
+        "title": "BANT / SPIN / MEDDIC",
+        "description": "Metodologia configurável por agente. Escolha a que faz sentido pro seu time."
+      },
+      "icp": {
+        "title": "ICP Matching",
+        "description": "Descreva seu cliente ideal — IA avalia semanticamente cada lead."
+      },
+      "multiPipeline": {
+        "title": "Multi-Pipeline",
+        "description": "Vendas, onboarding, CS — cada um com stages e SLA próprios."
+      },
+      "sla": {
+        "title": "SLA por Stage",
+        "description": "Alerta quando deal fica parado demais. Nunca mais perca negócio por inação."
+      },
+      "winLoss": {
+        "title": "Win/Loss Analysis",
+        "description": "Entenda por que deals são ganhos ou perdidos. Melhore o processo."
+      },
+      "emotion": {
+        "title": "Emotion Engine",
+        "description": "13 sinais emocionais integrados ao score e visíveis no deal."
+      },
+      "proposalTracking": {
+        "title": "Proposal Tracking",
+        "description": "Visualizações, tempo na página, cliques e aceites — tudo rastreado."
+      },
+      "handlerState": {
+        "title": "Handler State",
+        "description": "Bot ↔ Humano sem mensagem duplicada. Transição limpa."
+      },
+      "myDay": {
+        "title": "My Day",
+        "description": "Tarefas do dia do vendedor em 1 tela. Foco total."
+      },
+      "lifecycle": {
+        "title": "Lifecycle Automático",
+        "description": "Visitante → Lead → MQL → SQL → Opportunity — progressão automática."
+      },
+      "autoDeal": {
+        "title": "Deal Auto-Create",
+        "description": "Lead qualificou → deal criado automaticamente no pipeline."
+      }
+    },
+    "followUp": {
+      "subtitle": "Follow-up automático",
+      "title": "O cliente não respondeu? O follow-up sai sozinho.",
+      "description": "Monte a sequência uma vez: depois de quanto tempo sem resposta ela começa, quanto espera entre uma tentativa e outra e como cada mensagem é escrita. A IA pode redigir cada tentativa com o contexto da conversa, em vez de repetir o mesmo texto.",
+      "features": [
+        "Gatilho por tempo sem resposta do cliente",
+        "Sequência de tentativas com espera configurável entre elas",
+        "Quatro formas de enviar: IA contextual, texto fixo, variações ou template",
+        "Orientação para a IA em cada tentativa",
+        "Desfecho definido ao fim da sequência"
+      ]
+    },
+    "goals": {
+      "subtitle": "Metas e times",
+      "title": "Metas por vendedor e por time, com o caminho até bater.",
+      "description": "A meta deixa de ser um número na planilha. Você vê o realizado contra o ritmo que bate a meta no fim do período, a previsão e quem está puxando ou segurando o resultado.",
+      "features": [
+        "Vendas fechadas, meta e previsão do período",
+        "Caminho da meta: realizado acumulado contra o ritmo esperado",
+        "Por vendedor: meta, realizado, atingido, previsão, negócios abertos e esfriando",
+        "Taxa de ganho, ciclo médio e ticket médio",
+        "Filtros por período, funil, vendedor e origem",
+        "Resumo semanal por e-mail"
+      ]
+    },
+    "attribution": {
+      "subtitle": "Origem do lead",
+      "title": "O lead chega da campanha e o vendedor já sabe de onde.",
+      "description": "Ao lado da conversa, o vendedor vê o anúncio que trouxe o lead: a imagem, o texto e a campanha. Ele começa sabendo o que a pessoa viu e o que ela quer.",
+      "features": [
+        "O anúncio que originou a conversa, com imagem e texto",
+        "Campanha e origem identificadas",
+        "Primeiro toque e linha do tempo de origem",
+        "Tudo ao lado da conversa, sem trocar de tela"
+      ]
     }
   },
   "status": {

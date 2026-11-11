@@ -1,0 +1,19 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  narrow?: boolean;
+}
+const { src, alt, width, height, narrow = false } = Astro.props;
+---
+<a
+  href={src}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`block rounded-2xl overflow-hidden border border-black/[0.06] bg-white shadow-[0_18px_50px_-18px_rgba(26,26,46,0.28)] ${narrow ? 'max-w-sm mx-auto' : ''}`}
+  aria-label={`${alt} (abrir imagem ampliada)`}
+>
+  <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" class="block w-full h-auto" />
+</a>

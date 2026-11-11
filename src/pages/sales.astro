@@ -5,14 +5,9 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
-import MockupYaDeals from '../components/mockups/MockupYaDeals.astro';
-import MockupScoring from '../components/mockups/MockupScoring.astro';
-import MockupPlaybook from '../components/mockups/MockupPlaybook.astro';
+import ScreenShot from '../components/ScreenShot.astro';
 import MockupYaTeam from '../components/mockups/MockupYaTeam.astro';
-import MockupProposals from '../components/mockups/MockupProposals.astro';
-import MockupYaContact from '../components/mockups/MockupYaContact.astro';
 import MockupCalendar from '../components/mockups/MockupCalendar.astro';
-import MockupAutoDeal from '../components/mockups/MockupAutoDeal.astro';
 import { t, type Locale } from '../lib/i18n';
 import { wolfSvg, genericIcons } from '../lib/fauna';
 
@@ -29,7 +24,10 @@ const gridFeatures = gridKeys.map(k => ({
   description: gridData[k].description,
 }));
 
-const modules = ['deals','qualification','playbooks','mentor','proposals','contacts','calendar','autoDeal'] as const;
+const ctaBadges = ['Parceiro Oficial Meta', '40M+ msg/mês', '16 anos'];
+
+const modules = ['deals','qualification','followUp','playbooks','mentor','proposals','goals','attribution','contacts','calendar','autoDeal'] as const;
+const mockupModules = ['mentor','calendar'];
 
 // Pain points
 const painPoints = m('painPoints') as any;
@@ -89,15 +87,24 @@ const timelineSteps = timeline?.steps || [];
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#4F46E5"
+            wide={!mockupModules.includes(key)}
           >
-            {key === 'deals' && <MockupYaDeals />}
-            {key === 'qualification' && <MockupScoring />}
-            {key === 'playbooks' && <MockupPlaybook />}
+            {key === 'deals' && (
+              <>
+                <ScreenShot src="/produto/vendas-prospeccao.webp" alt="Funil de prospecção do yapt. com tentativas de contato e horário sugerido para ligar" width={1600} height={937} />
+                <ScreenShot src="/produto/vendas-funil.webp" alt="Funil de vendas do yapt. com valor por etapa, previsão e meta do mês" width={1600} height={301} />
+              </>
+            )}
+            {key === 'qualification' && <ScreenShot src="/produto/vendas-yaagents.webp" alt="Construtor do yaAgents: o agente é criado e ajustado por conversa, com o espelho do agente ao lado" width={1600} height={1193} />}
+            {key === 'followUp' && <ScreenShot src="/produto/vendas-followup.webp" alt="Sequência de follow-up no yapt. com tentativas escritas pela IA conforme o contexto" width={1600} height={1055} />}
+            {key === 'playbooks' && <ScreenShot src="/produto/vendas-reguas.webp" alt="Réguas de vendas do yapt. com modelos prontos e a IA falando com o vendedor" width={1600} height={565} />}
             {key === 'mentor' && <MockupYaTeam />}
-            {key === 'proposals' && <MockupProposals />}
-            {key === 'contacts' && <MockupYaContact />}
+            {key === 'proposals' && <ScreenShot src="/produto/vendas-negocio.webp" alt="Tela de um negócio no yapt. com pessoas, atividades, conversas e produtos" width={1510} height={1560} />}
+            {key === 'goals' && <ScreenShot src="/produto/vendas-metas.webp" alt="Relatório de vendas do yapt. com meta, caminho da meta e resultado por vendedor" width={1600} height={1091} />}
+            {key === 'attribution' && <ScreenShot src="/produto/vendas-atribuicao.webp" alt="Painel de atribuição ao lado da conversa, mostrando o anúncio que trouxe o lead" width={757} height={1510} narrow />}
+            {key === 'contacts' && <ScreenShot src="/produto/vendas-leads.webp" alt="Lista de leads do yapt. com fonte, primeiro e último clique, jornada, negócio e nota" width={1600} height={664} />}
             {key === 'calendar' && <MockupCalendar />}
-            {key === 'autoDeal' && <MockupAutoDeal />}
+            {key === 'autoDeal' && <ScreenShot src="/produto/vendas-vender.webp" alt="Conversa aberta no yapt. com o painel Vender ao lado: produto, quantidade, desconto e finalização" width={1600} height={839} />}
           </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
@@ -143,5 +150,5 @@ const timelineSteps = timeline?.steps || [];
     accentColor="#4F46E5"
   />
 
-  <CTASection locale={locale} />
+  <CTASection locale={locale} badges={ctaBadges} />
 </SiteLayout>
