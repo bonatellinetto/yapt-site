@@ -5,12 +5,7 @@ import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
-import MockupYaInbox from '../components/mockups/MockupYaInbox.astro';
-import MockupRouting from '../components/mockups/MockupRouting.astro';
-import MockupSLA from '../components/mockups/MockupSLA.astro';
-import MockupAgentMonitor from '../components/mockups/MockupAgentMonitor.astro';
-import MockupYaDeals from '../components/mockups/MockupYaDeals.astro';
-import MockupAnalytics from '../components/mockups/MockupAnalytics.astro';
+import ScreenShot from '../components/ScreenShot.astro';
 import { t, type Locale } from '../lib/i18n';
 import { antColonySvg, genericIcons } from '../lib/fauna';
 
@@ -26,6 +21,8 @@ const gridFeatures = gridKeys.map(k => ({
   title: gridData[k].title,
   description: gridData[k].description,
 }));
+
+const ctaBadges = ['Parceiro Oficial Meta', '40M+ msg/mês', '16 anos'];
 
 const modules = ['inbox','routing','sla','monitor','deals','analytics'] as const;
 
@@ -56,13 +53,40 @@ const roadmapItems = roadmap?.items || [];
             features={mod.features || []}
             reversed={i % 2 === 1}
             accentColor="#10B981"
+            wide={key !== 'routing'}
           >
-            {key === 'inbox' && <MockupYaInbox />}
-            {key === 'routing' && <MockupRouting />}
-            {key === 'sla' && <MockupSLA />}
-            {key === 'monitor' && <MockupAgentMonitor />}
-            {key === 'deals' && <MockupYaDeals />}
-            {key === 'analytics' && <MockupAnalytics />}
+            {key === 'inbox' && <ScreenShot src="/produto/ops-filas.webp" alt="Saúde das filas no yapt.: conversas aguardando, com humano, maior espera e operadores disponíveis por setor" width={1600} height={670} />}
+            {key === 'routing' && (
+              <div class="rounded-2xl overflow-hidden border border-black/[0.06] bg-white shadow-[0_18px_50px_-18px_rgba(26,26,46,0.28)] max-w-md mx-auto">
+                <video
+                  src="/produto/ops-distribuicao.mp4"
+                  poster="/produto/ops-distribuicao.jpg"
+                  width="720"
+                  height="994"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  class="block w-full h-auto"
+                  aria-label="Tela de regras de distribuição de um setor no yapt."
+                ></video>
+              </div>
+            )}
+            {key === 'sla' && <ScreenShot src="/produto/ops-prazos.webp" alt="Metas de tempo de um setor no yapt.: primeira resposta, próxima resposta, resposta humana e resolução" width={1600} height={1291} />}
+            {key === 'monitor' && <ScreenShot src="/produto/ops-equipe.webp" alt="Carga dos operadores no yapt., com conversas atuais contra o limite de cada um" width={1600} height={1057} />}
+            {key === 'deals' && (
+              <>
+                <ScreenShot src="/produto/ops-conversas.webp" alt="Central de conversas do yapt. com vistas por operação e pipelines de conversas" width={1600} height={896} />
+                <ScreenShot src="/produto/vendas-funil.webp" alt="Funil de negócios do yapt. com valor por etapa, previsão e meta do mês" width={1600} height={301} />
+              </>
+            )}
+            {key === 'analytics' && (
+              <>
+                <ScreenShot src="/produto/ops-indicadores-atendimento.webp" alt="Indicadores de atendimento no yapt.: conversas, resolvidas, fila, primeira resposta e volume por dia" width={1600} height={513} />
+                <ScreenShot src="/produto/ops-indicadores-suporte.webp" alt="Indicadores de suporte no yapt.: tempo de resposta humano, resolução no primeiro contato e volume diário" width={1600} height={692} />
+              </>
+            )}
           </ModuleDeepDive>
           {i < modules.length - 1 && <SectionDivider variant="light" />}
         </>
@@ -102,5 +126,5 @@ const roadmapItems = roadmap?.items || [];
     </section>
   )}
 
-  <CTASection locale={locale} />
+  <CTASection locale={locale} badges={ctaBadges} />
 </SiteLayout>
