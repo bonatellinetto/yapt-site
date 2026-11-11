@@ -1,0 +1,573 @@
+---
+import CampaignScripts from '../../components/lp/CampaignScripts.astro';
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agente de IA para atendimento e suporte no WhatsApp | yapt.</title>
+<meta name="description" content="A IA cuida do primeiro e do segundo nível do suporte e entrega ao seu time só o que precisa de gente.">
+<!-- MODO DA PEÇA: M2 · Produto yapt. (Bíblia Visual "Inteligência Viva", §04). Metáfora única: colmeia/favo (filas e distribuição). -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://yapt.ai/solucao/agente-ia-atendimento">
+<!-- Página de tráfego pago: fica fora do índice de busca. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yapt.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Agente de IA para atendimento e suporte no WhatsApp | yapt.">
+<meta property="og:description" content="A IA cuida do primeiro e do segundo nível do suporte e entrega ao seu time só o que precisa de gente.">
+<meta property="og:url" content="https://yapt.ai/solucao/agente-ia-atendimento">
+<meta property="og:image" content="https://yapt.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style is:global>
+:root{
+  /* base da casa: papel e luz */
+  --papel:#FAF8F3; --papel2:#F2EEE5; --linha:#E3DED2; --cinza:#5F6770;
+  /* paleta M2 · Produto yapt. */
+  --yapt-fundo:#F7FBFA; --yapt-fundo2:#E9F6F3; --yapt-borda:#D6EBE6; --favo:#BFE8E0;
+  --yapt:#0D9488; --yapt-claro:#2DD4BF; --yapt-tinta:#123B37; --yapt-texto:#4E706C;
+  --yapt-forte:#0B6B62; /* teal de texto pequeno e botão: contraste AA sobre claro */
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--papel);color:var(--yapt-tinta);font:400 17px/1.65 'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+/* ---------- cabeçalho ---------- */
+.topo-bar{position:sticky;top:0;z-index:20;background:rgba(250,248,243,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.topo-bar.rolou{border-bottom-color:var(--linha)}
+.topo-bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo-yapt{display:block;height:40px;width:auto;flex:none}
+.topo-dir{display:flex;align-items:center;gap:18px}
+
+.selo.selo-img{padding:5px 12px;background:#fff}
+.selo-meta{display:block;height:32px;width:auto;max-width:100%}
+.hero .selo-meta{height:40px}
+.provas li.meta-img{background:#fff;display:flex;align-items:center}
+.provas li.meta-img .selo-meta{height:auto;width:100%;max-width:300px}
+/* ---------- selo e botão ---------- */
+.selo{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--yapt-borda);background:#fff;color:var(--yapt-forte);font-size:13px;font-weight:600;letter-spacing:.01em;padding:7px 14px 7px 10px;border-radius:99px;white-space:nowrap}
+.selo svg{width:16px;height:16px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--yapt-forte);color:#fff;font-family:inherit;font-weight:600;font-size:17px;line-height:1.2;text-decoration:none;padding:18px 30px;border-radius:14px;box-shadow:0 10px 24px rgba(11,107,98,.22);transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{background:#095a52;transform:translateY(-1px);box-shadow:0 14px 28px rgba(11,107,98,.28)}
+.btn:focus-visible{outline:3px solid var(--yapt-claro);outline-offset:3px}
+.btn svg{width:18px;height:18px}
+.btn.pequeno{font-size:14.5px;padding:11px 18px;border-radius:11px;box-shadow:none}
+
+/* ---------- dobras ---------- */
+section{padding:104px 0;border-bottom:1px solid var(--linha)}
+.olho{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yapt-forte);margin-bottom:18px}
+h1{font-size:clamp(34px,4.3vw,58px);font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--yapt-tinta)}
+h1 b{font-weight:700;color:var(--yapt)}
+h2{font-size:clamp(28px,3.1vw,42px);font-weight:700;letter-spacing:-.02em;line-height:1.15;color:var(--yapt-tinta)}
+.texto{font-size:clamp(17px,1.45vw,20px);line-height:1.65;color:var(--yapt-texto);max-width:54ch}
+h2 + .texto{margin-top:20px}
+
+/* ---------- 1 · topo ---------- */
+.hero{position:relative;padding:72px 0 96px;background:linear-gradient(170deg,var(--yapt-fundo),var(--yapt-fundo2));border-bottom:1px solid var(--yapt-borda);overflow:hidden}
+.hero::before{content:"";position:absolute;right:-60px;top:-40px;width:620px;height:520px;opacity:.5;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48.5' viewBox='0 0 84 48.5'%3E%3Cg fill='none' stroke='%23BFE8E0' stroke-width='1.4'%3E%3Cpath d='M14 0h28l14 24.25L42 48.5H14L0 24.25z'/%3E%3Cpath d='M56 24.25h28'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:radial-gradient(closest-side,#000 20%,transparent 100%);mask-image:radial-gradient(closest-side,#000 20%,transparent 100%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center}
+.hero .sub{font-size:clamp(18px,1.6vw,22px);line-height:1.55;color:var(--yapt-texto);margin:24px 0 34px;max-width:36ch}
+.hero .acao{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero .selo-linha{margin-bottom:26px}
+
+/* ---------- 2 · a realidade ---------- */
+.realidade{background:#fff}
+.destaque{font-size:clamp(30px,4.4vw,60px);font-weight:700;letter-spacing:-.03em;line-height:1.12;max-width:20ch}
+.destaque b{color:var(--yapt);font-weight:700}
+.fonte{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;color:var(--cinza);margin-top:20px}
+.dores{list-style:none;padding:0;margin-top:64px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--linha)}
+.dores li{padding:28px 28px 4px 0;font-size:19px;font-weight:500;line-height:1.4;color:var(--yapt-tinta)}
+.dores li + li{padding-left:28px;border-left:1px solid var(--linha)}
+
+/* ---------- 3–8 · dobras de produto ---------- */
+.dobra .wrap{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:72px;align-items:center}
+.dobra.inv .wrap{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.dobra.inv .copy{order:2}
+.dobra.tom{background:var(--yapt-fundo)}
+
+/* ---------- 9 · integrações ---------- */
+.integra .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.chips li{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:13px 20px;font-size:16.5px;font-weight:600;color:var(--yapt-tinta)}
+.chips li.seu{background:var(--yapt-fundo2);border:1.5px dashed var(--yapt);color:var(--yapt-forte)}
+
+/* ---------- 10 · quem está por trás ---------- */
+.confianca{background:#fff}
+.confianca .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:72px;align-items:center}
+.provas{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.provas li{border:1px solid var(--linha);border-radius:18px;padding:28px;background:var(--papel);font-size:clamp(20px,1.9vw,26px);font-weight:700;letter-spacing:-.015em;line-height:1.25;color:var(--yapt-tinta);display:flex;align-items:center;gap:14px;min-height:132px}
+.provas li.meta{background:var(--yapt-fundo2);border-color:var(--yapt-borda);color:var(--yapt-forte)}
+.provas li svg{width:30px;height:30px;flex:none}
+
+/* ---------- 11 · a virada ---------- */
+.virada{text-align:center}
+.virada .olho{margin-bottom:22px}
+.virada h2{max-width:24ch;margin:0 auto;font-weight:600}
+.virada h2 b{color:var(--yapt);font-weight:700}
+.pilares{list-style:none;padding:0;margin:56px auto 0;display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0}
+.pilares li{display:flex;align-items:center;font-size:clamp(14px,1.35vw,18px);font-weight:600;color:var(--yapt-tinta);white-space:nowrap}
+.pilares li span{border:1px solid var(--linha);background:#fff;border-radius:99px;padding:11px 20px}
+.pilares li.aqui span{background:var(--yapt-forte);border-color:var(--yapt-forte);color:#fff}
+.pilares li + li::before{content:"→";color:var(--yapt);font-weight:400;margin:0 12px}
+
+/* ---------- 12 · fecho ---------- */
+.fecho{background:linear-gradient(170deg,var(--yapt-fundo2),var(--yapt-fundo));text-align:center;border-bottom:0;padding:120px 0}
+.fecho p{font-size:clamp(24px,2.9vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.3;max-width:27ch;margin:0 auto 40px;color:var(--yapt-tinta)}
+
+/* ---------- rodapé ---------- */
+footer{background:var(--papel);border-top:1px solid var(--linha);padding:36px 0}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.assina{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--cinza)}
+.logo-nw{display:block;height:30px;width:auto}
+
+/* ---------- telas menores ---------- */
+@media (max-width:980px){
+  section{padding:76px 0}
+  .hero{padding:48px 0 68px}
+  .hero .wrap,.dobra .wrap,.dobra.inv .wrap,.integra .wrap,.confianca .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
+  .dobra.inv .copy{order:0}
+  .hero .sub{max-width:44ch}
+  .dores{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dores li{padding:24px 20px 24px 0;border-bottom:1px solid var(--linha)}
+  .dores li + li{padding-left:0;border-left:0}
+  .dores li:nth-child(even){padding-left:20px;padding-right:0;border-left:1px solid var(--linha)}
+  .pilares{flex-wrap:wrap;gap:10px 0}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  section{padding:60px 0}
+  .topo-bar .wrap{height:62px}
+  .logo-yapt{height:32px}
+  .topo-bar .selo{display:none}
+  .btn{width:100%;padding:17px 22px}
+  .btn.pequeno{width:auto;font-size:13.5px;padding:10px 14px}
+  .hero .acao{gap:14px}
+  .dores{grid-template-columns:minmax(0,1fr);margin-top:44px}
+  .dores li,.dores li:nth-child(even){padding:20px 0;border-left:0;font-size:18px}
+  .provas{grid-template-columns:minmax(0,1fr)}
+  .provas li{min-height:0;padding:22px}
+  .chips li{padding:11px 16px;font-size:15.5px}
+  .pilares{flex-direction:column;gap:0}
+  .pilares li{flex-direction:column}
+  .pilares li + li::before{content:"↓";margin:6px 0}
+  .fecho{padding:76px 0}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+.dores.falas{margin-top:8px}
+.dores.falas li{font-size:19px;font-weight:500;line-height:1.45}
+.tela-real{margin:0;border:1px solid var(--yapt-borda);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -22px rgba(18,59,55,.35)}
+.tela-real img{display:block;width:100%;height:auto}
+
+/* ---------- mídia real: pilhas, palco, celular de demonstração, fila ---------- */
+.tela-real img{background:#fff}
+.pilha{display:grid;gap:14px;min-width:0}
+.pilha .menor{width:83%;justify-self:end}
+.palco{display:grid;place-items:center;padding:36px 24px 26px;border:1px solid var(--yapt-borda);border-radius:18px;background:var(--yapt-fundo2)}
+.hero-midia{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:20px;align-items:center;min-width:0}
+.hero-midia .nota{grid-column:1/-1}
+.hero-midia.dupla{grid-template-columns:minmax(0,270px) minmax(0,1fr)}
+.fone-col{width:100%;max-width:290px;min-width:0;justify-self:center}
+.fone{background:#102C29;border-radius:36px;padding:9px;box-shadow:0 26px 50px -24px rgba(18,59,55,.55)}
+.fone-tela{border-radius:28px;overflow:hidden;display:flex;flex-direction:column;background-color:#EFEAE2;background-image:radial-gradient(rgba(18,59,55,.07) 1.2px,transparent 1.3px);background-size:16px 16px}
+.fone.anim .fone-tela{aspect-ratio:9/17.2}
+.fone-topo{flex:none;display:flex;align-items:center;gap:9px;background:var(--yapt-forte);color:#fff;padding:12px 12px 11px}
+.fone-topo .volta{width:8px;height:14px;flex:none}
+.fone-topo .avatar{flex:none;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--yapt-forte);display:grid;place-items:center;font-size:12px;font-weight:700;letter-spacing:.02em}
+.fone-topo .nome{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.fone-topo .nome b{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fone-topo .nome i{font-style:normal;font-size:10.5px;opacity:.85}
+.fone-msgs{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:5px;padding:10px 9px;transition:opacity .4s}
+.fone-msgs.some{opacity:0}
+.msg{display:flex;flex-direction:column;max-width:86%}
+.msg.in{align-self:flex-start;align-items:flex-start}
+.msg.out{align-self:flex-end;align-items:flex-end}
+.msg .quem{font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--yapt-forte);margin:1px 4px 2px}
+.msg .balao{font-size:12.5px;line-height:1.38;color:#111B21;padding:6px 8px 5px;border-radius:9px;box-shadow:0 1px .5px rgba(11,20,26,.13);overflow-wrap:anywhere}
+.msg.in .balao{background:#fff;border-top-left-radius:2px}
+.msg.out .balao{background:#D9FDD3;border-top-right-radius:2px}
+.msg .hora{float:right;display:inline-flex;align-items:center;gap:3px;font-size:9.5px;color:#667781;margin:5px 0 -1px 10px;line-height:1}
+.msg .hora svg{width:15px;height:9px}
+.dig{display:none;align-items:center;gap:4px;padding:9px 10px;border-radius:9px;box-shadow:0 1px .5px rgba(11,20,26,.13)}
+.dig i{width:6px;height:6px;border-radius:50%;background:#8696A0;animation:digita 1s infinite ease-in-out}
+.dig i:nth-child(2){animation-delay:.15s}.dig i:nth-child(3){animation-delay:.3s}
+.fone.anim .msg{display:none}
+.fone.anim .msg.on{display:flex;animation:msgin .3s ease-out}
+.fone.anim .dig.on{display:flex}
+.dig.in{align-self:flex-start;background:#fff}
+.dig.out{align-self:flex-end;background:#D9FDD3}
+.fone-barra{flex:none;display:flex;align-items:center;gap:7px;padding:7px 8px 10px}
+.fone-barra span{flex:1;background:#fff;border-radius:99px;padding:8px 14px;font-size:12px;color:#8696A0;line-height:1.2}
+.fone-barra b{flex:none;width:32px;height:32px;border-radius:50%;background:var(--yapt-forte);display:grid;place-items:center}
+.fone-barra b svg{width:14px;height:14px}
+.demo-leg{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--cinza);text-align:center;margin-top:10px;letter-spacing:.02em}
+@keyframes msgin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes digita{0%,60%,100%{transform:none;opacity:.45}30%{transform:translateY(-3px);opacity:1}}
+.fila-anim{position:relative;aspect-ratio:740/363;background:#F6F6F6}
+.fila-anim .quadro{position:absolute;inset:0;display:flex;flex-direction:column;background:#F6F6F6}
+.fila-anim .quadro img{width:100%;height:auto;flex:none;background:transparent}
+.fila-anim .quadro img.tira{width:90.405%}
+.fila-anim .quadro.inteiro{background:#fff}
+.fila-anim .quadro.inteiro img{height:100%;object-fit:cover;object-position:left top}
+.fila-anim .quadro + .quadro{opacity:0}
+.fila-anim.n2 .quadro:nth-child(2){animation:fila2 11s infinite}
+.fila-anim.n3 .quadro:nth-child(2){animation:fila3a 16s infinite}
+.fila-anim.n3 .quadro:nth-child(3){animation:fila3b 16s infinite}
+@keyframes fila2{0%,44%{opacity:0;transform:translateY(10px)}50%,94%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+@keyframes fila3a{0%,29%{opacity:0;transform:translateY(10px)}33%,96%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+@keyframes fila3b{0%,62%{opacity:0;transform:translateY(10px)}66%,96%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+.confianca .wrap{display:block}
+.so-mob{display:none}
+.dobra .wrap > .larga{grid-column:1/-1;margin-top:-36px}
+#painel .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
+#painel .wrap > *{order:1}
+#painel .wrap > .copy{max-width:760px;order:0}
+#painel .wrap > .larga{margin-top:0}
+.painel-mob{display:none}
+@media (max-width:720px){#painel .wrap > .painel-desk{display:none}.painel-mob{display:block}}
+@media (max-width:980px){
+  .dobra .wrap > .larga{margin-top:-20px}
+  .hero-midia{max-width:620px;margin:0 auto;width:100%}
+}
+@media (max-width:600px){
+  .hero-midia,.hero-midia.dupla{grid-template-columns:minmax(0,1fr)}
+  .palco{padding:26px 16px 20px}
+  .pilha .menor{width:100%}
+  .dobra .wrap > .larga,.so-desk{display:none}
+  .so-mob{display:block}
+}
+@media (prefers-reduced-motion:reduce){
+  .fila-anim .quadro + .quadro{animation:none!important;opacity:0}
+  .dig i{animation:none}
+}
+
+/* ---------- mapa: o que trava x como fica ---------- */
+.mapa{padding:104px 0;background:var(--yapt-fundo)}
+.mapa h2{font-size:clamp(30px,3.6vw,46px);font-weight:700;letter-spacing:-.02em;line-height:1.12;color:var(--yapt-tinta);max-width:760px;margin-bottom:40px;text-wrap:balance}
+.mapa-lista{list-style:none;padding:0;border:1px solid var(--yapt-borda);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -26px rgba(18,59,55,.35)}
+.mapa-lista li{border-top:1px solid var(--yapt-borda)}
+.mapa-lista li:first-child{border-top:0}
+.mapa-lista .lin{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) 28px;gap:28px;align-items:center;padding:20px 28px;text-decoration:none;color:inherit}
+.mapa-lista .cab{font:500 12px/1.3 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--yapt-texto);background:var(--yapt-fundo2);padding-top:14px;padding-bottom:14px}
+.mapa-lista .antes{color:var(--yapt-texto);font-size:16.5px;line-height:1.45}
+.mapa-lista .depois{font-weight:600;font-size:17.5px;line-height:1.4;color:var(--yapt-tinta)}
+.mapa-lista .seta{color:var(--yapt-forte);font-size:20px;text-align:right;transition:transform .2s}
+.mapa-lista a.lin:hover{background:var(--yapt-fundo)}
+.mapa-lista a.lin:hover .seta{transform:translateX(4px)}
+.mapa-lista a.lin:focus-visible{outline:2px solid var(--yapt);outline-offset:-2px}
+@media (max-width:720px){
+  .mapa{padding:64px 0}
+  .mapa-lista .cab{display:none}
+  .mapa-lista .lin{grid-template-columns:minmax(0,1fr) 20px;gap:4px 12px;padding:18px 18px}
+  .mapa-lista .antes{grid-column:1/-1;font-size:14.5px}
+  .mapa-lista .depois{font-size:16.5px}
+}
+@media (prefers-reduced-motion:reduce){.mapa-lista .seta{transition:none}}
+
+/* ---------- clientes ---------- */
+.clientes{background:#fff;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:36px 0}
+.clientes .wrap{display:flex;flex-direction:column;align-items:center;gap:26px}
+.clientes-t{font:500 12px/1.5 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--yapt-texto);text-align:center}
+.clientes-l{list-style:none;padding:0;display:flex;width:100%;align-items:center;justify-content:center;gap:28px 64px;flex-wrap:wrap;max-width:940px;margin:0 auto}
+.clientes-l li{display:flex;align-items:center}
+.clientes-l img{width:auto;display:block;filter:grayscale(1);opacity:.72;mix-blend-mode:multiply}
+@media (max-width:980px){.clientes .wrap{flex-direction:column;align-items:flex-start;gap:22px}.clientes-t{text-align:left}.clientes-l{justify-content:flex-start;width:100%}}
+@media (max-width:600px){.clientes{padding:28px 0}.clientes-l{gap:20px 28px}.clientes-l img{transform-origin:left center;max-height:34px}}
+
+/* ---------- por que confiar ---------- */
+.clientes{padding:26px 0}
+.clientes .wrap{gap:18px}
+.clientes-l{zoom:.7}
+.clientes-l img{opacity:.6}
+.porque{background:#fff;padding:104px 0}
+.porque h2{font-size:clamp(30px,3.6vw,46px);font-weight:700;letter-spacing:-.02em;line-height:1.12;color:var(--yapt-tinta);margin-bottom:14px}
+.porque .sub2{color:var(--yapt-texto);font-size:19px;max-width:640px;margin-bottom:44px}
+.nwc-l{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.nwc-l li{border:1px solid var(--linha);border-radius:18px;padding:26px 24px;background:var(--papel);display:flex;flex-direction:column;gap:10px}
+.nwc-l .nwc-g{font-size:clamp(22px,2vw,27px);font-weight:700;letter-spacing:-.015em;line-height:1.2;color:var(--yapt-tinta)}
+.nwc-l .nwc-p{font-size:15.5px;line-height:1.5;color:var(--yapt-texto)}
+.porque-base{margin-top:16px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:16px}
+.porque-base > div{border:1px solid var(--yapt-borda);border-radius:18px;padding:22px 24px;background:var(--yapt-fundo2);display:flex;align-items:center;gap:14px;font-weight:600;font-size:17px;line-height:1.35;color:var(--yapt-forte)}
+.porque-base .selo-meta{height:44px;width:auto}
+@media (max-width:980px){.nwc-l{grid-template-columns:repeat(2,minmax(0,1fr))}.porque-base{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.porque{padding:64px 0}.nwc-l{grid-template-columns:minmax(0,1fr)}.porque .sub2{font-size:17px;margin-bottom:28px}}
+.clientes-t b{color:var(--yapt-forte);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="topo-bar" id="barra">
+  <div class="wrap">
+    <a href="#topo" aria-label="yapt. — início">
+      <svg class="logo-yapt" viewBox="4 4 240 92" role="img" aria-label="yapt." xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <rect x="10" y="10" width="80" height="80" rx="20" stroke="#20B2AA" stroke-width="5" fill="none"/>
+        <path d="M25 50 Q40 35, 55 50" stroke="#20B2AA" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <circle cx="70" cy="50" r="8" fill="#20B2AA"/>
+    </g>
+    <text x="110" y="65" font-family="Poppins, sans-serif" font-size="48" font-weight="600" letter-spacing="-2" fill="#434A54">yapt</text>
+    <text x="215" y="65" font-family="Poppins, sans-serif" font-size="48" font-weight="400" fill="#434A54">.</text>
+</svg>
+    </a>
+    <div class="topo-dir">
+      <span class="selo selo-img"><img class="selo-meta" src="/solucao/img/a4a404521baf.svg" alt="Meta Business Partner — Parceiro Oficial Meta"></span>
+      <a class="btn pequeno" href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b">Fazer meu diagnóstico</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <div class="selo-linha"><span class="selo selo-img"><img class="selo-meta" src="/solucao/img/a4a404521baf.svg" alt="Meta Business Partner — Parceiro Oficial Meta"></span></div>
+      <h1>Agente de IA para atendimento: <b>resolve, não só responde.</b></h1>
+      <p class="sub">A IA cuida do primeiro e do segundo nível do suporte e entrega ao seu time só o que precisa de gente, com o caso já montado.</p>
+      <div class="acao">
+        <a class="btn" href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b">Fazer meu diagnóstico
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-midia dupla">
+    <div class="fone-col">
+      <div class="fone" role="group" aria-label="Conversa de demonstração: a IA atende um chamado sobre pedido atrasado até o encerramento">
+        <div class="fone-tela">
+          <div class="fone-topo" aria-hidden="true">
+            <svg class="volta" viewBox="0 0 10 16"><path d="M8 2L2 8l6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="avatar">DS</span>
+            <span class="nome"><b>Diego Santos</b><i>online</i></span>
+          </div>
+          <div class="fone-msgs">
+            <div class="msg in"><p class="balao">Olá, meu pedido PV-25956 era para ter chegado ontem e nada.<span class="hora">16:32</span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">Olá, Diego! Sinto muito pelo atraso. Vou consultar o rastreio agora.<span class="hora">16:32<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">O pedido saiu do nosso centro de distribuição há 4 dias e está parado na base da transportadora desde anteontem.<span class="hora">16:32<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="msg in"><p class="balao">E quando chega?<span class="hora">16:36</span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">A transportadora ainda não deu nova previsão. Você precisa com urgência?<span class="hora">16:37<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="msg in"><p class="balao">Preciso, é para um funcionário que começa segunda.<span class="hora">16:41</span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">Entendi a urgência. Vou passar para o time de logística, que pode acionar a transportadora ou fazer um reenvio.<span class="hora">16:41<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="msg in"><p class="balao">Por favor!<span class="hora">16:47</span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">Conseguiu resolver com essas orientações, Diego?<span class="hora">16:48<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="msg in"><p class="balao">Consegui sim, funcionou. Obrigado!<span class="hora">16:50</span></p></div>
+            <div class="msg out"><span class="quem">IA</span><p class="balao">Que ótimo! Vou encerrar o atendimento. Qualquer coisa, estamos por aqui.<span class="hora">16:51<svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3.2 3.4L11 1.6M7.4 9.4L14.6 1.6" transform="translate(1 0)" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p></div>
+            <div class="dig" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="fone-barra" aria-hidden="true"><span>Mensagem</span><b><svg viewBox="0 0 20 20"><path d="M3 10l14-6-6 14-2-6z" fill="#fff"/></svg></b></div>
+        </div>
+      </div>
+      <p class="demo-leg">conversa de demonstração</p>
+    </div>
+    <figure class="tela-real origem"><img src="/solucao/img/4e93f9eafd22.jpg" width="520" height="200" alt="Jornada do atendimento no yapt: o cliente iniciou a conversa às 16:32 e a conversa foi resolvida às 16:53" width="520" height="200"></figure>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENTES · menção de confiança, sem número atrelado -->
+<section class="clientes" id="clientes">
+  <div class="wrap">
+    <p class="clientes-t"><b>+1.900 empresas</b> já confiaram sua operação à New Way</p>
+    <ul class="clientes-l">
+      <li><img src="/solucao/img/8699d7137d73.png" width="215" height="162" alt="Natura" style="height:48px"></li>
+      <li><img src="/solucao/img/9608d1eaa9f0.png" width="438" height="120" alt="White Martins" style="height:36px"></li>
+      <li><img src="/solucao/img/b21f91429554.png" width="582" height="138" alt="Nutrivet" style="height:40px"></li>
+      <li><img src="/solucao/img/6a4de923852c.png" width="511" height="108" loading="lazy" decoding="async" alt="Seanet" style="height:32px"></li>
+      <li><img src="/solucao/img/19935ed934f0.png" width="542" height="83" loading="lazy" decoding="async" alt="ML Gomes" style="height:22px"></li>
+      <li><img src="/solucao/img/20acab0f34c8.png" width="262" height="120" loading="lazy" decoding="async" alt="Fleury" style="height:40px"></li>
+      <li><img src="/solucao/img/f496e942868d.png" width="300" height="39" loading="lazy" decoding="async" alt="Banco Daycoval" style="height:21px"></li>
+      <li><img src="/solucao/img/852d0f506a61.svg" loading="lazy" decoding="async" alt="Volvo" style="height:30px"></li>
+    </ul>
+  </div>
+</section>
+
+<section class="realidade" id="realidade">
+  <div class="wrap">
+    <div class="olho">A realidade</div>
+    <ul class="dores falas">
+      <li>“Se continuar crescendo assim, vou ter que contratar mais três.”</li>
+      <li>“Só descubro que a fila estourou quando o cliente reclama em público.”</li>
+      <li>“Uns atendentes afogados e outros parados, e eu não vejo.”</li>
+      <li>“Meu relatório chega uma semana depois do problema.”</li>
+    </ul>
+  </div>
+</section>
+
+<section class="dobra" id="resolve">
+  <div class="wrap">
+    <div class="copy">
+      <h2>A IA resolve o que se repete</h2>
+      <p class="texto">Responde em segundos, 24 horas, com o material aprovado da sua empresa. Entende áudio, foto, vídeo e documento que o cliente manda. Quando não sabe, passa para uma pessoa em vez de inventar.</p>
+    </div>
+    <figure class="tela-real"><img src="/solucao/img/5b1af837ef26.jpg" width="1400" height="1059" loading="lazy" decoding="async" alt="Conversa de suporte no yapt: a IA faz o diagnóstico de um notebook que não liga, passo a passo" width="1400" height="1059" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="dobra inv tom" id="nivel2">
+  <div class="wrap">
+    <div class="copy">
+      <h2>Segundo nível com procedimento</h2>
+      <p class="texto">A IA segue o passo a passo técnico da sua empresa, pede as evidências, consulta os chamados já abertos e o seu sistema. O que precisa de gente chega com tudo pronto.</p>
+    </div>
+    <figure class="tela-real"><img src="/solucao/img/5b06e8411e63.jpg" width="1280" height="792" loading="lazy" decoding="async" alt="Conversa de suporte no yapt: a IA testa, transfere e o técnico confere o número de série" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="dobra" id="prioridade">
+  <div class="wrap">
+    <div class="copy">
+      <h2>A pessoa certa, na hora certa</h2>
+      <p class="texto">A fila distribui pela carga de cada atendente e pelas suas regras. Cliente irritado, urgente ou de conta grande sobe na frente. Ninguém repete a história ao ser transferido.</p>
+    </div>
+    <div class="tela-real fila-anim n2" role="img" aria-label="Fila de conversas do yapt ordenada por tempo de espera e depois por prioridade"><div class="quadro"><img class="tira" src="/solucao/img/5caa8b365c00.jpg" width="1338" height="80" loading="lazy" decoding="async" alt=""><img src="/solucao/img/e543b40abd3f.jpg" width="1400" height="611" loading="lazy" decoding="async" alt=""></div><div class="quadro"><img class="tira" src="/solucao/img/ad811b444ebd.jpg" width="1338" height="80" loading="lazy" decoding="async" alt=""><img src="/solucao/img/11df78bafa07.jpg" width="1400" height="611" loading="lazy" decoding="async" alt=""></div></div>
+  </div>
+</section>
+
+<section class="dobra inv tom" id="painel">
+  <div class="wrap">
+    <div class="copy">
+      <h2>Você vê a operação agora</h2>
+      <p class="texto">Quem está atendendo o quê, fila por setor, prazo em risco com aviso antes de estourar. A supervisora comanda a fila escrevendo o que quer.</p>
+    </div>
+    <figure class="tela-real larga painel-desk"><img src="/solucao/img/c1d1f3e4be94.jpg" width="2000" height="831" loading="lazy" decoding="async" alt="Painel do yapt: o dia até agora, com os números da IA e do time humano, e a situação da operação neste momento"></figure>
+    <figure class="tela-real painel-mob"><img src="/solucao/img/70c53c938a31.jpg" width="978" height="523" loading="lazy" decoding="async" alt="Painel do yapt: números do dia da IA, com recebidos, atendidos, tempo de primeira resposta e fila agora"></figure>
+  </div>
+</section>
+
+<section class="dobra" id="medida">
+  <div class="wrap">
+    <div class="copy">
+      <h2>Você sabe o que a IA resolveu</h2>
+      <p class="texto">Quanto a IA resolveu sozinha, tempo de resposta por atendente, pesquisa de satisfação ao fim de cada atendimento, com a IA lendo os comentários e apontando o que mais se repete.</p>
+    </div>
+    <div class="pilha"><figure class="tela-real"><img src="/solucao/img/88837221834a.jpg" width="1328" height="234" loading="lazy" decoding="async" alt="Pesquisa de satisfação no yapt: CSAT, NPS e taxa de resposta" width="1328" height="234" loading="lazy"></figure><figure class="tela-real so-desk"><img src="/solucao/img/61c67bd52783.jpg" width="1400" height="391" loading="lazy" decoding="async" alt="Desempenho por agente no yapt: respostas, CSAT, notas e sentimento dos comentários, com o Agente IA na primeira linha" width="1400" height="391" loading="lazy"></figure><figure class="tela-real so-mob"><img src="/solucao/img/fd8229d94a20.jpg" width="1368" height="560" loading="lazy" decoding="async" alt="Desempenho por agente no yapt: respostas, CSAT e notas, com o Agente IA na primeira linha" width="1368" height="560" loading="lazy"></figure></div>
+  </div>
+</section>
+
+<section class="integra" id="integracoes">
+  <div class="wrap">
+    <div class="copy">
+      <h2>Integra com qualquer sistema</h2>
+      <p class="texto">A IA consulta pedido, cadastro e chamado no seu sistema durante a conversa. O que não tem conexão pronta a gente cria, como integração ou como ferramenta da própria IA.</p>
+    </div>
+    <ul class="chips" aria-label="Sistemas">
+      <li>Shopify</li><li>Nuvemshop</li><li>WooCommerce</li><li>Bling</li><li>Omie</li><li>Hotmart</li><li>Kiwify</li><li>Google Agenda</li>
+      <li class="seu">o seu sistema</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MAPA · o que trava x como fica -->
+<section class="mapa" id="mapa">
+  <div class="wrap">
+    <h2>O que trava o suporte hoje, e como fica</h2>
+    <ul class="mapa-lista">
+      <li><div class="lin cab"><span>O que trava hoje</span><span>Como fica com o yapt.</span><span></span></div></li>
+      <li><a class="lin" href="#resolve"><span class="antes">“IA burra”, que responde genérico ou inventa</span><span class="depois">A IA responde a partir do conhecimento da sua empresa: yaAgents ligados ao yaBrain</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><a class="lin" href="#nivel2"><span class="antes">Produto com muita especificidade, onde a IA não dá conta</span><span class="depois">A IA aprende com manuais, procedimentos e documentos técnicos de cada produto</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><a class="lin" href="#medida"><span class="antes">IA que só segura o cliente no robô</span><span class="depois">Resolve o primeiro e o segundo nível e passa ao time só o que precisa</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><a class="lin" href="#integracoes"><span class="antes">IA cega, sem acesso aos sistemas</span><span class="depois">Consulta e age nos seus sistemas</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><a class="lin" href="#prioridade"><span class="antes">Fila sem ordem</span><span class="depois">A distribuição é por prioridade e emoção</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><a class="lin" href="#painel"><span class="antes">Gestor descobre o problema depois</span><span class="depois">A operação aparece em tempo real, com a IA e o time humano lado a lado</span><span class="seta" aria-hidden="true">→</span></a></li>
+      <li><div class="lin"><span class="antes">Time afogado em pergunta repetida</span><span class="depois">O time fica com o que é difícil</span><span></span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="porque" id="quem">
+  <div class="wrap">
+    <h2>Por que confiar na New Way</h2>
+    <p class="sub2">A empresa por trás do yapt. implanta, opera e acompanha a sua operação.</p>
+    <ul class="nwc-l">
+      <li><span class="nwc-g">16 anos</span><span class="nwc-p">Desde 2010 cuidando de atendimento e vendas por conversa.</span></li>
+      <li><span class="nwc-g">Pioneira no WhatsApp</span><span class="nwc-p">Pioneira do WhatsApp Business no Brasil, desde 2015.</span></li>
+      <li><span class="nwc-g">Um time que opera junto</span><span class="nwc-p">Gente que implanta, configura a IA e acompanha o resultado com você.</span></li>
+      <li><span class="nwc-g">Inovação no DNA</span><span class="nwc-p">Mais de 1 milhão de atendimentos feitos por IA nos nossos clientes.</span></li>
+    </ul>
+    <div class="porque-base">
+      <div><img class="selo-meta" src="/solucao/img/a4a404521baf.svg" loading="lazy" decoding="async" alt="Meta Business Partner — Parceiro Oficial Meta"></div>
+      <div>Mais de 40 milhões de mensagens por mês</div>
+      <div>Mais de 1.900 empresas já cresceram com a New Way</div>
+    </div>
+  </div>
+</section>
+
+<section class="virada" id="virada">
+  <div class="wrap">
+    <div class="olho">A virada</div>
+    <h2><b>Começa no suporte.</b> O mesmo lugar cuida das vendas e das campanhas, quando você quiser.</h2>
+    <ol class="pilares">
+      <li><span>Aquisição</span></li>
+      <li><span>Pré-venda</span></li>
+      <li><span>Venda</span></li>
+      <li><span>Atendimento</span></li>
+      <li class="aqui"><span>Suporte</span></li>
+      <li><span>Expansão</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="fecho" id="diagnostico">
+  <div class="wrap">
+    <p>Faça um diagnóstico com um especialista e entenda onde sua operação pode ser mais eficiente, com um time que opera junto com você.</p>
+    <a class="btn" href="#" data-yapt-wa="a28b6328-6021-4b00-8d2b-af875173ec4b">Fazer meu diagnóstico
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg class="logo-yapt" viewBox="4 4 240 92" role="img" aria-label="yapt." style="height:32px" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <rect x="10" y="10" width="80" height="80" rx="20" stroke="#20B2AA" stroke-width="5" fill="none"/>
+        <path d="M25 50 Q40 35, 55 50" stroke="#20B2AA" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <circle cx="70" cy="50" r="8" fill="#20B2AA"/>
+    </g>
+    <text x="110" y="65" font-family="Poppins, sans-serif" font-size="48" font-weight="600" letter-spacing="-2" fill="#434A54">yapt</text>
+    <text x="215" y="65" font-family="Poppins, sans-serif" font-size="48" font-weight="400" fill="#434A54">.</text>
+</svg>
+    <div class="assina"><span>uma empresa</span><svg class="logo-nw" xmlns="http://www.w3.org/2000/svg" viewBox="40 198 426 100" role="img" aria-label="New Way"> <g> <g> <path fill="#8725FF" d="M397.9,270.8c-0.2-1.6-0.5-1.9-2.3-0.1c-3,3.4-6.3,5.6-11.2,5.6c-8.8,0-13.9-5.4-13.9-14.6 c0-10.7,6.3-25.3,23.2-25.3c2.6,0,5,0.4,8.2,1.2l7.8,1.9c0.5,0.2,0.8,0.5,0.7,1.1l-5.8,34.1c-0.1,0.5-0.5,0.9-1,0.9h-4.9 c-0.6,0-0.9-0.3-0.9-0.9V270.8z M397.2,246.3c-1.3-0.4-2.3-0.5-3.9-0.5c-8.8,0-12.3,9.6-12.3,14.9c0,3.8,2,6.1,5.4,6.1 c5.6,0,10.1-6.7,11.9-16.6l0.6-3.3L397.2,246.3z"/> <path fill="#8725FF" d="M422.5,291.7c-0.3,0.4-0.6,0.6-1.2,0.6h-9.1c-0.7,0-1-0.5-0.6-1.1l4.9-8.9c3.2-6.2,3.4-12.6,0.9-24.4 l-4.5-19.8c-0.2-0.6,0.2-1,0.9-1h8.9c0.5,0,0.9,0.2,1,0.9l2.7,11.7c0.8,3.8,1.3,9.2,1.2,12.5c0,1.3,0.9,1.3,1.4,0 c1.2-3.3,3.6-8.8,5.6-12.5l6.7-12c0.3-0.4,0.6-0.6,1.2-0.6h9.3c0.7,0,1,0.5,0.6,1.1L422.5,291.7z"/> <g> <path fill="#8725FF" d="M323.4,237.2h-6.9c-0.6,0-0.9,0.4-0.9,1l1.5,12.5L323.4,237.2z"/> <path fill="#8725FF" d="M373.2,237.2h-9.2c-0.5,0-0.9,0.2-1.1,0.7l-4.8,10.7c-2.5,5.9-3.9,9.6-5.5,14.1c-0.3,0.9-1.3,0.9-1.3,0 c-0.2-4.5-0.9-10.2-1.4-15.9l-1.4-8.8c-0.1-0.5-0.5-0.9-1-0.9h-5.7c-0.5,0-0.9,0.2-1.1,0.7l-4.3,8.9c-2.6,5.9-5.2,11.4-7,15.9 c-0.3,0.9-1.3,0.9-1.3,0c0-4.5-0.2-8.5-0.5-14.1l-0.6-5.7l-8.5,18.1c0.6,5.7,0.9,9,1.3,13.4c0.1,0.6,0.4,0.9,1,0.9h10.9 c0.5,0,0.9-0.2,1.1-0.7c0.9-2.4,2.1-4.8,3.3-7.5l2.8-5.8c0.5-1.5,1.9-4.6,2.7-6.4c0.4-1,1-1.1,1.1,0c0,1.7,0.2,4.8,0.5,6.4 l0.9,5.8l0.6,7.4c0.1,0.5,0.4,0.9,1,0.9h11c0.5,0,0.9-0.2,1.1-0.7c2-5.1,3.8-8.8,7-15.9l9.5-20.5 C374.2,237.6,373.9,237.2,373.2,237.2z"/> </g> <path fill="#4D4D4D" d="M313.8,258.8c-3.2,7-4.9,10.8-7,15.9c-0.2,0.5-0.5,0.7-1.1,0.7h-11c-0.6,0-0.9-0.3-1-0.9l-0.6-7.4l-0.9-5.8 c-0.2-1.6-0.5-4.7-0.5-6.4c-0.1-1.1-0.7-1-1.1,0c-0.8,1.8-2.1,4.9-2.7,6.4l-2.8,5.8c-1.2,2.7-2.4,5.1-3.3,7.5 c-0.2,0.5-0.5,0.7-1.1,0.7h-10.9c-0.6,0-0.9-0.3-1-0.9c-0.4-4.9-0.8-8.5-1.5-15.7l-2.4-20.6c0-0.6,0.3-1,0.9-1h8.7 c0.5,0,0.9,0.3,0.9,0.9l1.2,10.6c0.4,5.6,0.5,9.6,0.5,14.1c0,0.9,1,0.9,1.3,0c1.9-4.5,4.5-10,7-15.9l4.3-8.9 c0.2-0.5,0.5-0.7,1.1-0.7h5.7c0.5,0,0.9,0.3,1,0.9l1.4,8.8c0.5,5.7,1.2,11.4,1.4,15.9c0.1,0.9,1,0.9,1.3,0c1.6-4.5,3-8.2,5.5-14.1 l4.8-10.7c0.2-0.5,0.5-0.7,1.1-0.7h9.2c0.8,0,1,0.5,0.8,1.1L313.8,258.8z"/> <path fill="#4D4D4D" d="M199.2,240.2c0.5,1.1,0.9,0.9,2.2,0c3.6-3,7.7-3.9,10.5-3.9c9.4,0,13.8,5.9,12.1,15.1l-4,23.1 c-0.1,0.5-0.5,0.9-1,0.9h-8.8c-0.6,0-0.9-0.4-0.9-1l3.9-22.5c0.7-4.1-0.8-6.1-3.9-6.1c-5.1,0-8.8,3.9-9.9,10.3l-2,12 c-0.1,0.5-0.5,0.9-1,0.9h-8.8c-0.6,0-0.9-0.4-0.9-1l5.2-29.8c0.1-0.5,0.5-0.9,1-0.9h4.7c0.5,0,0.9,0.2,1,0.8L199.2,240.2z"/> <path fill="#4D4D4D" d="M250.4,275.3c-2.7,0.7-5,0.9-7.5,0.9c-10.7,0-16.4-6-16.4-15.7c0-10.3,5.7-24.2,21.5-24.2 c8.8,0,13.9,4.2,13.9,11.1c0,6-2.7,11.4-13.7,12.9l-11.4,1.6c0.2,2.9,2.2,4.9,6.3,4.9c2.4,0,4.3-0.2,6.6-0.8l4.1-1.1 c0.6-0.2,1,0.2,1.1,0.8l0.6,7.4c0.1,0.5-0.2,0.9-0.8,1.1L250.4,275.3z M247.4,252.6c3.1-0.5,4.4-2,4.4-3.8c0-1.9-1.5-3-4.3-3 c-4.4,0-7.9,2.4-9.9,8.1L247.4,252.6z"/> </g> <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="107.8217" y1="260.8148" x2="179.6103" y2="219.3676"> <stop offset="0.3065" style="stop-color:#A125FF"/> <stop offset="0.4276" style="stop-color:#A92AFE"/> <stop offset="0.6193" style="stop-color:#C039FD"/> <stop offset="0.8563" style="stop-color:#E550FB"/> <stop offset="1" style="stop-color:#FF61F9"/> </linearGradient> <path fill="url(#SVGID_1_)" d="M173.8,210.9c0-3.3-2.7-6-6-6c-2.8,0-5.2,2-5.8,4.6l-19.7,54.1l-27.9-43.8l0,0c-1.1-1.7-2.9-2.8-5.1-2.8 c-2.8,0-5.1,1.9-5.8,4.4l-5.1,14.1c0,0-1.4,4-1.3,5.4c0.4,3.8,7.5,12.8,7.5,12.8l6.3-17.2l27.5,43h0c0.9,2.1,3,3.6,5.5,3.6 c2.6,0,4.8-1.7,5.7-4l0,0l24-66l0,0C173.7,212.4,173.8,211.7,173.8,210.9z"/> <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="55.6465" y1="275.0249" x2="102.7232" y2="247.8452"> <stop offset="0.3065" style="stop-color:#8725FF"/> <stop offset="0.4371" style="stop-color:#8B28FF"/> <stop offset="0.5713" style="stop-color:#9731FE"/> <stop offset="0.7072" style="stop-color:#AC3FFC"/> <stop offset="0.8434" style="stop-color:#C953FA"/> <stop offset="0.9194" style="stop-color:#DC61F9"/> </linearGradient> <path fill="url(#SVGID_2_)" d="M101,275.6l-31.7-49.8l0,0c-1.1-1.7-2.9-2.8-5.1-2.8c-2.8,0-5.1,1.9-5.8,4.4L47.7,257l0,0 c-0.2,0.6-0.4,1.3-0.4,2.1c0,3.3,2.7,6,6,6c2.6,0,4.8-1.6,5.6-4l0,0l6.8-18.6l31.7,49.7l0,0c1.1,1.7,2.9,2.8,5.1,2.8 c2.4,0,4.5-1.4,5.5-3.5l0,0l5.7-15.6c0,0,1.6-4.3,1.4-5.5c-0.4-3.8-7.8-12.1-7.8-12.1L101,275.6z"/> <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="100.4589" y1="274.5598" x2="112.5781" y2="267.5628"> <stop offset="0" style="stop-color:#6913D4"/> <stop offset="0.2627" style="stop-color:#7017DE;stop-opacity:0.663"/> <stop offset="0.7163" style="stop-color:#8423FB;stop-opacity:8.118355e-02"/> <stop offset="0.7796" style="stop-color:#8725FF;stop-opacity:0"/> </linearGradient> <path fill="url(#SVGID_3_)" d="M101,275.6c0,0,3.5,6.8,11.2,4.4c3.5-9.6,2.6-8.2,2.6-8.2l-7.6-13.3"/> <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="140.8594" y1="261.167" x2="162.1943" y2="248.8493"> <stop offset="0" style="stop-color:#6913D4"/> <stop offset="0.2627" style="stop-color:#7017DE;stop-opacity:0.663"/> <stop offset="0.7163" style="stop-color:#8423FB;stop-opacity:8.118355e-02"/> <stop offset="0.7796" style="stop-color:#8725FF;stop-opacity:0"/> </linearGradient> <path fill="url(#SVGID_4_)" d="M142.3,263.6c0,0,2.3,6.3,11.7,3c3.5-9.6,7.1-19.6,7.1-19.6l-11.3-4"/> </g> </svg> </div>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){var b=document.getElementById('barra');function f(){b.classList.toggle('rolou',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();
+
+(function(){
+  if(!window.matchMedia||matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window))return;
+  [].forEach.call(document.querySelectorAll('.fone'),function(f){
+    var box=f.querySelector('.fone-msgs'),ms=[].slice.call(box.querySelectorAll('.msg')),dig=box.querySelector('.dig'),t=null,run=false;
+    f.classList.add('anim');
+    function reset(){ms.forEach(function(m){m.classList.remove('on')});dig.className='dig';box.classList.remove('some')}
+    function step(i){
+      if(!run)return;
+      if(i>=ms.length){t=setTimeout(function(){box.classList.add('some');t=setTimeout(function(){reset();step(0)},600)},5000);return}
+      var m=ms[i],out=m.classList.contains('out');
+      box.insertBefore(dig,m);
+      dig.className='dig on '+(out?'out':'in');
+      t=setTimeout(function(){dig.className='dig';m.classList.add('on');t=setTimeout(function(){step(i+1)},1250)},i?(out?1100:900):500);
+    }
+    new IntersectionObserver(function(e){
+      var v=e[0].isIntersecting;
+      if(v&&!run){run=true;reset();step(0)}
+      else if(!v&&run){run=false;clearTimeout(t)}
+    },{threshold:.2}).observe(f);
+  });
+})();
+</script>
+<CampaignScripts />
+</body>
+</html>
