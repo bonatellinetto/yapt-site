@@ -4,6 +4,7 @@ const {test,expect}=require('@playwright/test');
 test.beforeEach(async({page})=>{
  await page.route('https://www.googletagmanager.com/**',r=>r.fulfill({body:''}));
  await page.route('https://connect.facebook.net/**',r=>r.fulfill({body:''}));
+ await page.route('https://snap.licdn.com/**',r=>r.fulfill({body:''}));
  await page.route('**/functions/v1/widget-api?**',r=>r.fulfill({json:{success:true,data:{is_active:true,wa_button_phone:'5511000000000',wa_button_message:'teste',wa_button_capture_fields:['phone','name','email']}}}));
  await page.goto('http://127.0.0.1:4329/lp/'+pages[0]+'?gclid=review-test');
  await page.locator('#yapt-wa-button').waitFor();
@@ -74,3 +75,6 @@ test('preserves campaign identity after anchor and opens WhatsApp immediately', 
   expect(payload.clickIds).toMatchObject({gclid:'current',gad_campaignid:'24282362831'});
   expect(payload.pageUrl).toContain('#cta-final');
 });
+test('linkedin insight tag is installed with the account partner id',async({page})=>{expect(await page.evaluate(()=>window._linkedin_data_partner_ids)).toEqual(['10064090']);expect(await page.evaluate(()=>typeof window.lintrk)).toBe('function')});
+test('confirmed capture sends the linkedin conversion once',async({page})=>{await page.evaluate(()=>{window.__li=[];window.lintrk=(a,b)=>window.__li.push([a,b])});await page.route('**/functions/v1/webhook-widget',r=>r.fulfill({json:{success:true,data:{phone:'5511000000000',message:'teste'}}}));await page.locator('#yapt-wa-button').click();await page.locator('input[name=phone]').fill('5511999999999');await page.locator('button[type=submit]').click();await expect.poll(()=>page.evaluate(()=>window.__li.length)).toBe(1);expect(await page.evaluate(()=>window.__li[0])).toEqual(['track',{conversion_id:32221082}])});
+test('failed capture does not send the linkedin conversion',async({page})=>{await page.evaluate(()=>{window.__li=[];window.lintrk=(a,b)=>window.__li.push([a,b])});await page.route('**/functions/v1/webhook-widget',r=>r.fulfill({status:500,json:{success:false}}));await page.locator('#yapt-wa-button').click();await page.locator('input[name=phone]').fill('5511999999999');await page.locator('button[type=submit]').click();await expect(page.getByRole('alert')).toBeVisible();expect(await page.evaluate(()=>window.__li.length)).toBe(0)});

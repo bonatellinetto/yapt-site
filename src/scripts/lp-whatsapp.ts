@@ -24,9 +24,12 @@ let maxScroll = 0;
 type TrackingWindow = Window & {
   dataLayer?: Record<string, unknown>[];
   fbq?: (...args: unknown[]) => void;
+  lintrk?: (command: 'track', data: { conversion_id: number }) => void;
   yaptwa?: (command: string) => void;
 };
 const tracking = window as TrackingWindow;
+// LinkedIn Campaign Manager: conversão "Site - Formulário enviado".
+const linkedinLeadConversionId = 32221082;
 const clickKeys = ['gclid', 'gbraid', 'wbraid', 'fbclid'] as const;
 const params = acquisitionParams(location.href);
 function cookie(key: string): string {
@@ -117,6 +120,7 @@ async function capture(form: HTMLFormElement, phone: string) {
     if (!response.ok || result.success !== true) throw new Error('Capture failed');
     track('lp_whatsapp_lead', { telefone: phone, email: payload.email, gclid: payload.clickIds.gclid, gbraid: payload.clickIds.gbraid, wbraid: payload.clickIds.wbraid });
     tracking.fbq?.('track', 'Lead');
+    tracking.lintrk?.('track', { conversion_id: linkedinLeadConversionId });
     whatsappNotice(form, whatsappUrl, 'Contato registrado. Continue sua conversa:');
     // Keep the form locked: repeated clicks must not resend the template.
   } catch {
