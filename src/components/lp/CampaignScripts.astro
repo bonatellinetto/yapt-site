@@ -34,6 +34,29 @@ fbq('init', '26923785453912756');
 fbq('track', 'PageView');
 </script>
 <script is:inline>
+  // LinkedIn Insight Tag — conta 560688229. A fila lintrk existe antes do carregamento,
+  // então a conversão disparada em lp-whatsapp.ts nunca se perde.
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push('10064090');
+  (function (l) {
+    if (!l) {
+      window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); };
+      window.lintrk.q = [];
+    }
+    function loadInsight() {
+      var s = document.getElementsByTagName('script')[0], b = document.createElement('script');
+      b.async = true;
+      b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+      s.parentNode.insertBefore(b, s);
+    }
+    if (typeof requestIdleCallback === 'function') {
+      requestIdleCallback(loadInsight, { timeout: 3000 });
+    } else {
+      setTimeout(loadInsight, 1500);
+    }
+  })(window.lintrk);
+</script>
+<script is:inline>
   (function(w,d,s,o,f,js,fjs){
     w['YaptWA']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
     js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
