@@ -22,6 +22,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm run test:retired-routes
+
       - run: npm run check
 
       - run: npm run build
