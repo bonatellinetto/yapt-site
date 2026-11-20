@@ -11,7 +11,6 @@ interface FooterCopy {
   together: string;
   team: string;
   trust: string;
-  conversations: string;
   diagnosis: string;
   terms: string;
   privacy: string;
@@ -23,21 +22,21 @@ const dictionary: Record<Locale, FooterCopy> = {
     navigation: 'Navegação do rodapé',
     description: 'Inteligência artificial, automações e pessoas na mesma operação.',
     solutions: 'Soluções', platform: 'Plataforma', together: 'Com você',
-    team: 'Quem faz', trust: 'Confiança', conversations: 'Conversas', diagnosis: 'Diagnóstico',
+    team: 'Quem faz', trust: 'Confiança', diagnosis: 'Diagnóstico',
     terms: 'Termos de uso', privacy: 'Privacidade', rights: 'Todos os direitos reservados.',
   },
   'en-US': {
     navigation: 'Footer navigation',
     description: 'Artificial intelligence, automations and people in one operation.',
     solutions: 'Solutions', platform: 'Platform', together: 'With you',
-    team: 'Our people', trust: 'Trust', conversations: 'Conversations', diagnosis: 'Diagnosis',
+    team: 'Our people', trust: 'Trust', diagnosis: 'Diagnosis',
     terms: 'Terms of use', privacy: 'Privacy', rights: 'All rights reserved.',
   },
   'es-ES': {
     navigation: 'Navegación del pie de página',
     description: 'Inteligencia artificial, automatizaciones y personas en la misma operación.',
     solutions: 'Soluciones', platform: 'Plataforma', together: 'Contigo',
-    team: 'Quién lo hace', trust: 'Confianza', conversations: 'Conversaciones', diagnosis: 'Diagnóstico',
+    team: 'Quién lo hace', trust: 'Confianza', diagnosis: 'Diagnóstico',
     terms: 'Términos de uso', privacy: 'Privacidad', rights: 'Todos los derechos reservados.',
   },
 };
@@ -53,7 +52,6 @@ const groups: NavigationGroup[] = [
   { label: copy.platform, links: [
     ...navigation.groups[1].links,
     ...navigation.groups[0].links.filter(link => link.href === '/teams'),
-    { label: copy.conversations, href: '/conversations' },
   ] },
   { label: copy.together, links: [
     { label: copy.team, href: '/#time' },

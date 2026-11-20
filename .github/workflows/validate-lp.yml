@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'src/pages/lp/**'
+      - 'src/pages/solucao/**'
       - 'src/scripts/lp-*.ts'
       - 'src/components/lp/**'
       - 'tests/**'

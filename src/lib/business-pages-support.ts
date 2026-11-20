@@ -26,7 +26,7 @@ export const supportPages: Record<Locale, BusinessPageContent> = {
       ],
       caption: 'Telas de filas e indicadores de suporte do yapt. Toque nas imagens para ver os detalhes.',
     },
-    connection: { title: 'O suporte faz parte da relação inteira.', description: 'Conecte quem atende, quem vende e quem acompanha a operação. O cliente continua sendo o mesmo entre uma área e outra.', links: [{ label: 'Operações', path: '/operations' }, { label: 'Vendas', path: '/sales' }, { label: 'Expansão e pós-venda', path: '/expansion' }] },
+    connection: { title: 'O suporte faz parte da relação inteira.', description: 'Conecte quem atende, quem vende e quem acompanha a operação. O cliente continua sendo o mesmo entre uma área e outra.', links: [{ label: 'Operações', path: '/operations' }, { label: 'Vendas', path: '/sales' }, { label: 'Times e colaboração', path: '/teams' }] },
     cta: { title: 'Onde o contexto se perde no seu suporte?', description: 'Vamos olhar para a sua operação e identificar onde conversas, pessoas e IA podem trabalhar melhor juntas.' },
   },
   'en-US': {
@@ -52,7 +52,7 @@ export const supportPages: Record<Locale, BusinessPageContent> = {
       ],
       caption: 'Queue and support reporting screens in Portuguese. Select an image to see the details.',
     },
-    connection: { title: 'Support is part of the whole relationship.', description: 'Connect service, sales and operations. Your customer remains the same person as work moves between teams.', links: [{ label: 'Operations', path: '/operations' }, { label: 'Sales', path: '/sales' }, { label: 'Expansion and customer growth', path: '/expansion' }] },
+    connection: { title: 'Support is part of the whole relationship.', description: 'Connect service, sales and operations. Your customer remains the same person as work moves between teams.', links: [{ label: 'Operations', path: '/operations' }, { label: 'Sales', path: '/sales' }, { label: 'Teams and collaboration', path: '/teams' }] },
     cta: { title: 'Where does your support team lose context?', description: 'Let’s look at your operation and identify where conversations, people and AI can work better together.' },
   },
   'es-ES': {
@@ -78,7 +78,7 @@ export const supportPages: Record<Locale, BusinessPageContent> = {
       ],
       caption: 'Pantallas de colas e indicadores de soporte en portugués. Abre las imágenes para ver los detalles.',
     },
-    connection: { title: 'El soporte forma parte de toda la relación.', description: 'Conecta a quienes atienden, venden y acompañan la operación. El cliente sigue siendo el mismo entre un área y otra.', links: [{ label: 'Operaciones', path: '/operations' }, { label: 'Ventas', path: '/sales' }, { label: 'Expansión y posventa', path: '/expansion' }] },
+    connection: { title: 'El soporte forma parte de toda la relación.', description: 'Conecta a quienes atienden, venden y acompañan la operación. El cliente sigue siendo el mismo entre un área y otra.', links: [{ label: 'Operaciones', path: '/operations' }, { label: 'Ventas', path: '/sales' }, { label: 'Equipos y colaboración', path: '/teams' }] },
     cta: { title: '¿Dónde se pierde el contexto en tu soporte?', description: 'Revisemos tu operación para identificar dónde las conversaciones, las personas y la IA pueden trabajar mejor juntas.' },
   },
 };
