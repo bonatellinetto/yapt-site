@@ -28,31 +28,35 @@ const assets = {
   },
 };
 
-test('removed URLs return404 rather than an old retained asset, including ad queries and file aliases', async () => {
+test('removed URLs permanently redirect home, including ad queries and file aliases', async () => {
   assert.ok(worker, 'An explicit retirement handler must exist');
   for (const host of ['yapt.ai', 'www.yapt.ai']) for (const path of removed) {
     for (const suffix of ['', '/', '.html', '?utm_source=google&gclid=review']) {
       const response = await worker.fetch(new Request(`https://${host}${path}${suffix}`), { ASSETS: assets });
-      assert.equal(response.status, 404, `${host}${path}${suffix}`);
+      assert.equal(response.status, 301, `${host}${path}${suffix}`);
+      const locale = path.startsWith('/en/') ? '/en' : path.startsWith('/es/') ? '/es' : '';
+      const query = suffix.startsWith('?') ? suffix : '';
+      assert.equal(response.headers.get('Location'), `https://yapt.ai${locale || '/'}${query}`);
       assert.match(response.headers.get('Cache-Control'), /no-store/);
-      assert.match(response.headers.get('X-Robots-Tag'), /noindex/);
+      assert.equal(response.headers.get('X-Robots-Tag'), null);
       assert.doesNotMatch(await response.text(), /OLD_PAGE_OR_ACTIVE_ASSET/);
     }
   }
 });
 
-test('the not-found page keeps its requested locale', async () => {
+test('localized URLs redirect directly to their localized home', async () => {
   assert.ok(worker);
-  for (const [path, errorPath] of [['/pricing', '/404'], ['/en/pricing', '/en/404'], ['/es/pricing', '/es/404']]) {
+  for (const [path, home] of [['/pricing', '/'], ['/en/pricing', '/en'], ['/es/pricing', '/es']]) {
     const response = await worker.fetch(new Request(`https://yapt.ai${path}`), { ASSETS: assets });
-    assert.match(await response.text(), new RegExp(`Not found: ${errorPath}<`));
+    assert.equal(response.headers.get('Location'), `https://yapt.ai${home}`);
   }
 });
 
-test('HEAD reports404 with no response body', async () => {
+test('HEAD reports the permanent redirect with no response body', async () => {
   assert.ok(worker);
   const response = await worker.fetch(new Request('https://yapt.ai/pricing', { method: 'HEAD' }), { ASSETS: assets });
-  assert.equal(response.status, 404);
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('Location'), 'https://yapt.ai/');
   assert.equal(await response.text(), '');
 });
 
