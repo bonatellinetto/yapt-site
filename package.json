@@ -10,6 +10,7 @@
     "check": "astro check",
     "verify:site": "node scripts/verify-site.mjs",
     "test": "playwright test",
+    "test:retired-routes": "node --test scripts/tests/retired-routes.test.mjs",
     "check:lp": "tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution Bundler --lib ES2022,DOM,DOM.Iterable --skipLibCheck src/scripts/lp-ui.ts src/scripts/lp-whatsapp.ts"
   },
   "dependencies": {
