@@ -39,16 +39,11 @@ export default {
     if (!retiredPaths.has(path)) return env.ASSETS.fetch(request);
 
     const locale = path.match(/^(\/(?:en|es))(?=\/|$)/)?.[1] || '';
-    const errorUrl = new URL(`${locale}/404`, url);
-    const errorPage = await env.ASSETS.fetch(new Request(errorUrl, { method: 'GET' }));
-    const headers = new Headers(errorPage.headers);
-    headers.set('Cache-Control', 'no-store');
-    headers.set('X-Robots-Tag', 'noindex, nofollow');
-    headers.delete('Location');
-    return new Response(request.method === 'HEAD' ? null : errorPage.body, {
-      status: 404,
-      statusText: 'Not Found',
-      headers,
+    const home = new URL(locale || '/', 'https://yapt.ai');
+    home.search = url.search;
+    return new Response(null, {
+      status: 301,
+      headers: { Location: home.href, 'Cache-Control': 'no-store' },
     });
   },
 };
