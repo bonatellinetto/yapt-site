@@ -1,0 +1,68 @@
+---
+import ForestScene from './ForestScene.astro';
+import UIIcon from '../UIIcon.astro';
+import OriginalHeroForest from './OriginalHeroForest.astro';
+import HeroConnections from './HeroConnections.astro';
+import { homeCopy } from './content';
+import type { Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale).hero;
+import { whatsappHref } from '../../lib/whatsapp';
+---
+<section class="home-hero" aria-labelledby="home-title">
+  <div class="hero-original-backdrop"><OriginalHeroForest /></div>
+  <div class="home-shell hero-layout">
+    <div class="hero-copy">
+      <div class="hero-introduction"><p class="hero-eyebrow"><span>{c.eyebrow}</span><strong>{c.eyebrowAreas}</strong></p><p class="hero-brand">{c.platformBy} <a href="https://gonewway.ai" target="_blank" rel="noopener noreferrer">New Way</a></p></div>
+      <h1 id="home-title">{c.title} <span>{c.ending}</span></h1>
+      <p class="hero-description">{c.description}</p>
+      <div class="hero-actions">
+        <div class="hero-primary">
+          <a class="home-button light" href={whatsappHref} target="_blank" rel="noopener noreferrer" data-diagnostic-trigger data-diagnostic-topic="home" data-diagnostic-placement="hero">{c.cta}</a>
+          <ul class="hero-proof">
+            <li class="hero-partner"><img src="/brand/meta-business-partners-light.png" alt="Meta Business Partners" width="1200" height="196" decoding="async" /></li>
+            <li class="hero-proof-metric"><strong>40M+</strong><span>{c.proofMessagesLabel}</span></li>
+            <li class="hero-proof-metric"><strong>16</strong><span>{c.proofYearsLabel}</span></li>
+          </ul>
+        </div>
+        <a class="hero-secondary" href="#visao-geral">{c.secondary}<span aria-hidden="true"><UIIcon name="arrow-down" size={20}/></span></a>
+      </div>
+    </div>
+    <div class="hero-art"><ForestScene locale={locale} /><HeroConnections locale={locale} /><p class="hero-art-caption">{c.sceneCaption}</p></div>
+  </div>
+</section>
+<style>
+  .home-hero{position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#064E3B 0%,#065F46 30%,#0D9488 70%,#20B2AA 100%);color:#fff;padding:148px 0 76px;isolation:isolate}
+  .hero-original-backdrop{position:absolute;inset-block:0;left:50%;width:50%;pointer-events:none;animation:original-hero-mount 1s ease both}
+  .hero-layout{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:34px;animation:original-hero-mount 1s ease both}
+  .hero-introduction{margin-bottom:25px}
+  .hero-eyebrow{font-size:12px;font-weight:400;line-height:1.8;letter-spacing:.015em;color:#cff0dd;margin:0}
+  .hero-eyebrow>span,.hero-eyebrow>strong{display:block}
+  .hero-eyebrow>strong{font-size:16px;line-height:1.55;font-weight:600;color:#effff4;margin-top:3px}
+  .hero-brand{font-size:11px;line-height:1.6;color:#b4d7c3;margin:7px 0 0}
+  .hero-brand a{color:#e4f7eb;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#b4d7c380}
+  .hero-brand a:hover{text-decoration-color:currentColor}
+  h1{font:600 clamp(39px,3.9vw,58px)/1.12 Poppins,sans-serif;letter-spacing:-.052em;max-width:17ch;margin:0;text-wrap:balance}
+  h1>span{display:block;background:linear-gradient(110deg,#b7f6bc,#6fdcc6);background-clip:text;-webkit-background-clip:text;color:transparent;margin-top:5px}
+  .hero-description{font-size:16px;line-height:1.8;color:#d1e5da;max-width:55ch;margin:27px 0 0;text-wrap:pretty}
+  .hero-actions{display:grid;grid-template-columns:auto 1fr;gap:25px;align-items:start;margin-top:32px}
+  .hero-primary{display:contents}.hero-primary .home-button{grid-column:1;grid-row:1}
+  .hero-secondary{font-size:13px;font-weight:500;color:#e0f4e7;text-decoration:none;display:inline-flex;align-items:center;gap:10px;min-height:56px;line-height:1.5;grid-column:2;grid-row:1}
+  .hero-secondary>span{font-size:20px;font-weight:400}
+  .hero-proof{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;max-width:480px;list-style:none;padding:0;margin:-11px 0 0;grid-column:1/-1;grid-row:2;color:#c8e5d5;line-height:1.5}
+  .hero-partner{flex:0 1 220px;min-width:0}
+  .hero-partner img{display:block;width:100%;height:auto}
+  .hero-proof-metric{position:relative;display:flex;align-items:baseline;gap:4px;flex-shrink:0;white-space:nowrap}
+  .hero-proof-metric:before{content:"";position:absolute;left:-11px;top:50%;width:1px;height:16px;background:#b4d7c34d;transform:translateY(-50%)}
+  .hero-proof-metric strong{font-size:12px;font-weight:600;color:#effff4}
+  .hero-proof-metric>span{font-size:10px}
+  .hero-art{min-width:0;position:relative;margin:0 -10px 0 0}
+  .hero-art-caption{font-size:11px;text-align:center;letter-spacing:.025em;color:#d9efe1;margin:22px 0 0}
+  @keyframes original-hero-mount{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @media(min-width:1500px){.home-hero{padding-block:164px 105px}.hero-layout{gap:60px}}
+  @media(max-width:1100px) and (min-width:1024px){.hero-layout{gap:12px}.hero-actions{gap:15px}h1{font-size:43px}.hero-secondary{font-size:11px}}
+  @media(max-width:1023px){.home-hero{padding:128px 0 50px}.hero-original-backdrop{display:none}.hero-layout{grid-template-columns:1fr;gap:40px}.hero-copy{max-width:720px}h1{font-size:clamp(39px,6.7vw,60px);max-width:23ch}.hero-description{max-width:65ch}.hero-art{width:min(100%,610px);margin:0 auto}.hero-art-caption{margin-top:10px}}
+  @media(max-width:600px){.home-hero{padding:112px 0 35px}.hero-layout{gap:20px}.hero-introduction{margin-bottom:21px}.hero-eyebrow{font-size:11px;line-height:1.65}.hero-eyebrow>strong{font-size:14px}.hero-brand{font-size:10px}h1{font-size:clamp(33px,8.7vw,40px);letter-spacing:-.05em;line-height:1.13;max-width:19ch}h1>span{margin-top:5px}.hero-description{font-size:14px;line-height:1.75;margin-top:22px}.hero-actions{display:block;margin-top:25px}.hero-primary{display:block}.hero-secondary{font-size:12px;justify-content:center;width:100%;margin-top:7px;min-height:44px}.hero-proof{margin:12px 0 0;max-width:none;gap:12px}.hero-proof-metric{flex-direction:column;align-items:center;gap:0}.hero-proof-metric:before{left:-7px;height:22px}.hero-proof-metric strong{font-size:12px}.hero-proof-metric>span{font-size:8.5px}.hero-art{margin-top:0}.hero-art-caption{font-size:10px;margin-top:8px}}
+  @media(prefers-reduced-motion:reduce){.hero-layout,.hero-original-backdrop{animation:none}}
+</style>

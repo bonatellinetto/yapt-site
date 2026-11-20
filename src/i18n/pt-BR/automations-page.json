@@ -1,0 +1,449 @@
+{
+  "meta": {
+    "title": "Automações com inteligência artificial",
+    "description": "Automatize WhatsApp, processos e follow-ups com yaFlows e réguas inteligentes. Conecte conversas, dados e sistemas na plataforma yapt."
+  },
+  "hero": {
+    "eyebrow": "Automações com inteligência artificial",
+    "title": "Automatize o trabalho.",
+    "ending": "Com inteligência artificial.",
+    "description": "Use automações com inteligência artificial para conectar etapas, conversas no WhatsApp e dados dos seus sistemas. Combine o builder yaFlows e réguas inteligentes para tarefas, follow-ups e continuidade. Sua equipe pode operar com apoio de especialistas. A construção de fluxos por conversa com a iavéh está em liberação gradual.",
+    "cta": "Quero automatizar minha operação",
+    "secondary": "Veja as automações em movimento",
+    "proof": "yaFlows · réguas inteligentes · automação de processos.",
+    "frameBrand": "Automações",
+    "screenLabel": "Da entrada ao próximo passo, com contexto",
+    "screenNote": "Exemplo ilustrativo de uma operação automatizada.",
+    "image": "/produto/automations/flow-chat-prompt.jpg",
+    "imageWidth": 1502,
+    "imageHeight": 802,
+    "imageAlt": "Tela real da iavéh no modo Construir, com um pedido digitado para preparar um fluxo no yaFlows.",
+    "tags": [
+      "Evento",
+      "Contexto",
+      "Ação",
+      "Resultado"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore onde automatizar sua operação",
+    "mechanismLabel": "Como o yapt. resolve",
+    "actionLabel": "Na prática",
+    "measurementLabel": "O que acompanhar",
+    "exampleLabel": "Exemplo de aplicação",
+    "moreLabel": "Ampliar tela do produto",
+    "imageNote": "Interfaces do produto e exemplos de configuração. Construção com a iavéh em liberação gradual; réguas de serviços em breve.",
+    "eyebrow": "Automação de processos, da entrada ao próximo passo",
+    "title": "O que fica parado quando alguém precisa lembrar, copiar ou cobrar?",
+    "description": "Um contato sem follow-up, uma tarefa que não foi criada e um dado que ficou em outro sistema interrompem a jornada. Explore oito situações de automação de processos e WhatsApp para dar continuidade ao trabalho com IA, fluxos e réguas.",
+    "items": [
+      {
+        "id": "fluxos",
+        "short": "Processos que não avançam",
+        "pain": "“Cada nova rotina depende de alguém montar, explicar e cobrar todas as etapas.”",
+        "title": "Transforme a rotina em um fluxo que faz o trabalho avançar.",
+        "description": "No yaFlows, conecte mensagens, condições, esperas, agendamentos, IA e ações do negócio em um roteiro visual. A criação por conversa com a iavéh está em liberação gradual: você descreve o que precisa, revisa a proposta e ajusta as etapas no builder.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Descreva",
+            "text": "Defina a entrada, o objetivo e o que precisa acontecer."
+          },
+          {
+            "title": "Construa",
+            "text": "Combine condições, dados, IA e ações no builder visual."
+          },
+          {
+            "title": "Valide",
+            "text": "Revise o caminho e acompanhe a execução antes de evoluir."
+          }
+        ],
+        "benefits": [
+          "Alterne etapas com IA e com pessoas, conectando qualificação, coleta de dados e encaminhamento para a equipe.",
+          "Use botões, listas e formulários do WhatsApp Flows para obter as informações necessárias e continuar a jornada."
+        ],
+        "metric": "Tempo entre etapas, intervenções manuais, abandonos e conclusão do fluxo no período escolhido.",
+        "example": {
+          "title": "Da solicitação ao próximo passo",
+          "when": "Uma solicitação chega e precisa passar por triagem e qualificação.",
+          "then": "O fluxo coleta informações, aplica condições e encaminha a demanda com o contexto reunido.",
+          "outcome": "A equipe recebe o caso no ponto em que precisa atuar e acompanha o caminho executado."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "Roteiro real de um yaFlow, com início, etapa de mensagem e conclusão.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "campanhas",
+        "short": "Contatos sem continuidade",
+        "pain": "“Investimos na campanha, mas a comunicação para depois do primeiro contato.”",
+        "title": "Faça o interesse continuar até a próxima oportunidade.",
+        "description": "Combine campanhas e réguas de comunicação para nutrir, recuperar e acompanhar contatos. Use público, eventos, condições e intervalos para decidir quem recebe cada mensagem, por WhatsApp ou e-mail, e quando a sequência deve continuar ou parar.",
+        "icon": "marketing",
+        "steps": [
+          {
+            "title": "Segmente",
+            "text": "Escolha o público e o momento de entrada na comunicação."
+          },
+          {
+            "title": "Converse",
+            "text": "Prepare mensagens, datas, intervalos e caminhos conforme a interação."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Observe respostas, cliques e saídas para ajustar a sequência."
+          }
+        ],
+        "benefits": [
+          "Dê continuidade à comunicação com nutrição, lembretes e retomadas conforme o interesse do contato.",
+          "Conecte os disparos de campanhas e as réguas ao histórico que marketing e vendas usam na operação."
+        ],
+        "metric": "Entregas, respostas, cliques, saídas e avanço das oportunidades por campanha e período.",
+        "example": {
+          "title": "O interesse não fica parado na primeira mensagem",
+          "when": "Um contato entra em uma campanha e demonstra interesse.",
+          "then": "A régua acompanha a interação e prepara a continuidade conforme os eventos e filtros definidos.",
+          "outcome": "Marketing e vendas encontram o histórico para continuar a conversa e avaliar o resultado."
+        },
+        "image": "/produto/marketing/campanhas-canais-real.png",
+        "imageAlt": "Tela real de configuração de campanha com canais de envio.",
+        "imageWidth": 2032,
+        "imageHeight": 1532
+      },
+      {
+        "id": "vendas",
+        "short": "Negócios esfriando",
+        "pain": "“A proposta foi enviada. O retorno depende de o vendedor lembrar.”",
+        "title": "Mantenha oportunidades em movimento, com a próxima ação preparada.",
+        "description": "Use réguas de vendas para acompanhar propostas sem resposta, negócios parados e pós-venda. As etapas podem gerar atividades, avisar responsáveis, organizar o rodízio e pedir uma orientação da IA com o contexto do negócio.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Identifique",
+            "text": "Defina a etapa, o sinal de parada ou a mudança no negócio."
+          },
+          {
+            "title": "Prepare",
+            "text": "Combine retomada, atividade e aviso para a pessoa responsável."
+          },
+          {
+            "title": "Dê continuidade",
+            "text": "Acompanhe respostas e mudanças para seguir ou encerrar a régua."
+          }
+        ],
+        "benefits": [
+          "Transforme negócios sem avanço em próximas ações visíveis para o vendedor e para a gestão.",
+          "Leve contexto e orientação da IA ao responsável, com tarefas e comunicações conectadas ao funil."
+        ],
+        "metric": "Negócios sem próxima ação, tempo parado por etapa, atividades concluídas e avanço após a retomada.",
+        "example": {
+          "title": "Uma proposta recebe acompanhamento",
+          "when": "Uma oportunidade fica sem resposta na etapa de proposta.",
+          "then": "A régua preparada organiza uma mensagem de retomada, uma atividade ou um aviso conforme as regras.",
+          "outcome": "O vendedor encontra a próxima ação e o histórico para dar continuidade à negociação."
+        },
+        "image": "/produto/vendas-reguas.webp",
+        "imageAlt": "Tela real de réguas de vendas, com modelos de proposta sem resposta, negócio esfriando e pós-venda.",
+        "imageWidth": 1600,
+        "imageHeight": 565
+      },
+      {
+        "id": "servicos",
+        "short": "Serviços · em breve",
+        "pain": "“O ticket muda de etapa e a equipe precisa conferir tudo para o serviço continuar.”",
+        "title": "Leve a continuidade das réguas também para os serviços.",
+        "description": "Em breve, as réguas de serviços vão ampliar a automação de tickets e etapas do atendimento. A proposta é organizar atividades, atualizações e avisos conforme o andamento do caso, conectando o acompanhamento à jornada que sua empresa precisa entregar.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Mapeie",
+            "text": "Defina as etapas, as pendências e os momentos que pedem atenção."
+          },
+          {
+            "title": "Prepare",
+            "text": "Planeje atividades, dados e comunicações para cada situação."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Defina indicadores para avaliar a rotina quando o recurso for liberado."
+          }
+        ],
+        "benefits": [
+          "Planeje a continuidade de casos que dependem de retorno, documentação ou passagem entre responsáveis.",
+          "Prepare o acompanhamento de cada serviço com eventos, condições e ações ligados às suas etapas."
+        ],
+        "metric": "Na aplicação, acompanhar tempo por etapa, pendências, retornos e conclusão dos casos.",
+        "example": {
+          "title": "A próxima etapa do acompanhamento de serviços",
+          "when": "Um caso de serviço muda de etapa ou fica aguardando uma informação.",
+          "then": "A régua de serviços poderá organizar a continuidade conforme os eventos e as condições definidos.",
+          "outcome": "A equipe poderá acompanhar as pendências e os próximos passos do caso. Recurso em breve."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "Exemplo de roteiro visual do produto; as réguas de serviços são apresentadas como recurso em breve.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "atividades",
+        "short": "Registros repetidos",
+        "pain": "“A conversa avança, mas alguém ainda precisa criar a tarefa e preencher os campos.”",
+        "title": "Transforme acontecimentos em atividades e dados organizados.",
+        "description": "Crie atividades a partir de eventos do negócio ou da conversa, atualize campos definidos e mantenha o processo com a informação necessária. Combine regras, variáveis, consultas e IA para reduzir o trabalho repetido entre uma etapa e outra.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Defina",
+            "text": "Escolha o evento e os dados necessários para o processo."
+          },
+          {
+            "title": "Automatize",
+            "text": "Configure a atividade, o campo ou a atualização prevista."
+          },
+          {
+            "title": "Conecte",
+            "text": "Mantenha a rotina ligada ao negócio, ao contato ou ao atendimento."
+          }
+        ],
+        "benefits": [
+          "Prepare tarefas de acompanhamento no contexto em que o trabalho acontece.",
+          "Reduza cópias e preenchimentos repetidos com campos e ações configurados para cada situação."
+        ],
+        "metric": "Atividades criadas e concluídas, campos pendentes, tempo gasto em registros e retrabalho.",
+        "example": {
+          "title": "O próximo trabalho já fica registrado",
+          "when": "Uma oportunidade ou um caso chega a um momento que exige acompanhamento.",
+          "then": "A automação cria a atividade prevista e atualiza os dados configurados para a etapa.",
+          "outcome": "O responsável encontra o trabalho organizado no contexto do negócio ou do atendimento."
+        },
+        "image": "/produto/sales/academy-atividades-negocio-real.webp",
+        "imageAlt": "Tela real de atividades ligadas a um negócio no yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 320
+      },
+      {
+        "id": "distribuicao",
+        "short": "Demandas sem destino",
+        "pain": "“Os contatos chegam, mas a distribuição e a triagem ainda ocupam o time.”",
+        "title": "Dê um destino ao trabalho que chega.",
+        "description": "Combine coleta de informações, condições e qualificação com IA para direcionar a demanda. Use transferências para os setores e regras de atribuição, como o rodízio, para preparar a passagem ao responsável com o contexto disponível.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Entenda",
+            "text": "Colete o assunto, o perfil e as informações da demanda."
+          },
+          {
+            "title": "Direcione",
+            "text": "Aplique filtros, condições e regras de atribuição."
+          },
+          {
+            "title": "Continue",
+            "text": "Encaminhe ao setor ou responsável com os dados reunidos."
+          }
+        ],
+        "benefits": [
+          "Prepare o direcionamento conforme assunto, perfil e informações do contato.",
+          "Conecte triagem e distribuição às atividades e ao contexto que a equipe precisa para continuar."
+        ],
+        "metric": "Tempo até o direcionamento, reencaminhamentos, distribuição da demanda e espera por setor.",
+        "example": {
+          "title": "Do contato recebido ao responsável",
+          "when": "Um novo contato chega e precisa encontrar o time certo.",
+          "then": "O fluxo coleta o assunto, usa as condições definidas e encaminha a demanda; a régua pode organizar atribuição e atividade.",
+          "outcome": "A equipe recebe o contexto para continuar o trabalho com menos triagem manual."
+        },
+        "image": "/produto/ops-filas.webp",
+        "imageAlt": "Tela real de gestão de filas do yapt., usada para ilustrar o destino das demandas.",
+        "imageWidth": 1600,
+        "imageHeight": 670
+      },
+      {
+        "id": "conexoes",
+        "short": "Dados presos nos sistemas",
+        "pain": "“Cada ferramenta tem uma parte da informação, e o time precisa fazer a ponte.”",
+        "title": "Faça os dados participarem da automação.",
+        "description": "Crie conexões por conversa no yaAgents e configure consultas e ações para o processo. Fluxos, réguas e agentes podem trocar dados com sistemas por APIs e webhooks, conforme os recursos e acessos definidos. O Mentor usa as consultas autorizadas para orientar a equipe.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Conecte",
+            "text": "Descreva a API, o dado necessário e a capacidade de consulta ou ação."
+          },
+          {
+            "title": "Use os dados",
+            "text": "Leve entradas e resultados às condições e às ações do processo."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Confira o retorno para decidir como a jornada deve continuar."
+          }
+        ],
+        "benefits": [
+          "Evite que a passagem entre sistemas dependa de alguém copiar a informação.",
+          "Combine dados e ações nas automações, com consultas também disponíveis para IA e pessoas autorizadas."
+        ],
+        "metric": "Trocas manuais entre sistemas, consultas e ações concluídas, erros de integração e tempo até o retorno.",
+        "example": {
+          "title": "O dado do sistema muda o próximo passo",
+          "when": "A jornada precisa consultar uma informação registrada em outro sistema.",
+          "then": "A integração recebe o dado de entrada e devolve o resultado para o processo configurado.",
+          "outcome": "O resultado pode orientar uma condição, uma resposta ou a próxima ação do trabalho."
+        },
+        "image": "/produto/intelligence/connection-fields.jpg",
+        "imageAlt": "Tela real de uma conexão configurada por conversa no yaAgents.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "controle",
+        "short": "Automações sem visibilidade",
+        "pain": "“A rotina deveria ter rodado, mas só descobrimos a falha depois.”",
+        "title": "Veja o que executou. Encontre onde o processo parou.",
+        "description": "Acompanhe execuções, etapas e retornos para entender o caminho de cada fluxo. Nas réguas, configure entradas, condições e saídas para que a comunicação acompanhe o momento do contato e do negócio. Revise a automação e evolua com o que a operação mostra.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Revise",
+            "text": "Confira gatilhos, mensagens, condições e ações antes de ativar."
+          },
+          {
+            "title": "Observe",
+            "text": "Consulte a execução e o retorno das etapas."
+          },
+          {
+            "title": "Ajuste",
+            "text": "Investigue falhas e revise os caminhos com a equipe."
+          }
+        ],
+        "benefits": [
+          "Localize a etapa e o retorno que precisam de investigação nos detalhes da execução.",
+          "Use condições de entrada, saída e reentrada para organizar a continuidade das réguas."
+        ],
+        "metric": "Execuções concluídas, falhas, interrupções, saídas das réguas e necessidade de intervenção manual.",
+        "example": {
+          "title": "Encontre o passo que precisa de ajuste",
+          "when": "Uma integração retorna um erro durante o fluxo.",
+          "then": "A equipe consulta os detalhes da execução e identifica o retorno da etapa.",
+          "outcome": "O ajuste parte de um ponto concreto, com nova revisão do caminho antes de ampliar o uso."
+        },
+        "image": "/produto/operations/academy-fluxo-execucao-real.webp",
+        "imageAlt": "Tela real dos detalhes de execução de um fluxo, com exemplo de falha de integração para investigação.",
+        "imageWidth": 1400,
+        "imageHeight": 719
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Da necessidade à execução",
+    "title": "Uma jornada conectada, etapa por etapa.",
+    "description": "Veja como desenhar a rotina no yaFlows, preparar réguas para os momentos da jornada e usar conexões para levar os dados ao processo. A equipe revisa os caminhos e acompanha a execução.",
+    "note": "Demonstração com interfaces do produto e dados de exemplo. Construção por conversa em liberação gradual; réguas de serviços em breve."
+  },
+  "foundation": {
+    "eyebrow": "Automação de WhatsApp e processos",
+    "title": "Fluxos para executar. Réguas para acompanhar. IA e conexões para dar contexto.",
+    "description": "Combine automação no WhatsApp, follow-ups e dados dos sistemas com o roteiro do trabalho. O builder visual e as réguas inteligentes executam as condições e ações configuradas para o processo da sua empresa.",
+    "items": [
+      {
+        "icon": "automation",
+        "title": "yaFlows: builder de automações",
+        "text": "Um builder visual para combinar mensagens, condições, esperas, inteligência artificial e ações do negócio."
+      },
+      {
+        "icon": "marketing",
+        "title": "Réguas inteligentes de follow-up",
+        "text": "Nutrição, follow-ups, atividades e atualizações ligadas aos eventos de marketing e vendas. Serviços em breve."
+      },
+      {
+        "icon": "integrations",
+        "title": "IA e conexões levam contexto",
+        "text": "Consultas, dados e ações integram os sistemas ao trabalho, com os acessos e recursos configurados."
+      }
+    ],
+    "builderLabel": "yaFlows + iavéh · liberação gradual",
+    "builderTitle": "Descreva o processo. Revise o fluxo. Coloque a operação para avançar.",
+    "builderDescription": "A construção de fluxos por conversa com a iavéh está em liberação gradual. Descreva o processo, revise a proposta e aplique quando estiver adequada. A aplicação cria o fluxo desligado no yaFlows; revise as etapas e ative-o em uma ação separada. Depois, acompanhe as execuções e os resultados com o time.",
+    "builderLink": "Conheça IA e integrações",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Tela real da iavéh no modo Construir, com um pedido digitado para preparar um fluxo no yaFlows."
+  },
+  "adoption": {
+    "eyebrow": "Seu time, com apoio especializado se precisar",
+    "title": "Automatizar começa por entender o que precisa melhorar.",
+    "description": "Sua equipe pode localizar o esforço repetido, organizar as regras e escolher um primeiro processo. Você pode contar com especialistas para construir e evoluir as automações, conforme a forma de atuação escolhida.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Mapear a jornada, os gargalos, os dados e o esforço manual que afeta a entrega."
+      },
+      {
+        "title": "Construir e revisar",
+        "text": "Preparar fluxos, réguas e integrações com as pessoas que conhecem o processo."
+      },
+      {
+        "title": "Acompanhar e evoluir",
+        "text": "Observar a execução e os indicadores para ajustar as rotinas com o time."
+      }
+    ],
+    "footnote": "Escopo, canais, acessos e integrações são definidos conforme a operação. A construção com a iavéh está em liberação gradual; réguas de serviços chegam em breve."
+  },
+  "faq": {
+    "eyebrow": "Antes de automatizar",
+    "title": "Clareza para desenhar. Visibilidade para evoluir.",
+    "items": [
+      {
+        "question": "Como usar yaFlows e réguas na automação de processos?",
+        "answer": "Na automação de processos, o yaFlows organiza o roteiro: coleta informações, aplica condições e executa as ações configuradas. As réguas inteligentes acompanham momentos da jornada com comunicações, follow-ups, atividades e atualizações conforme eventos, intervalos e condições. Os dois podem participar do mesmo processo."
+      },
+      {
+        "question": "Já podemos criar um fluxo conversando com a iavéh?",
+        "answer": "A construção de yaFlows por conversa com a iavéh está em liberação gradual. Você descreve a necessidade e revisa a proposta antes de aplicar. O builder visual permite conferir e ajustar as etapas; a disponibilidade do construtor por conversa depende da liberação da conta."
+      },
+      {
+        "question": "Em quais áreas podemos usar as réguas?",
+        "answer": "As réguas de marketing e vendas acompanham nutrição, retomadas, propostas, negócios parados e pós-venda, conforme a configuração. As réguas de serviços chegam em breve para ampliar a continuidade de tickets e etapas do atendimento."
+      },
+      {
+        "question": "O yaFlows permite automação no WhatsApp?",
+        "answer": "Sim. O builder combina mensagens e templates, botões, listas e formulários do WhatsApp Flows. Também permite coletar dados, aplicar pesquisas, condições e testes A/B, aguardar respostas ou eventos, agendar etapas e conectar IA, atividades e ações de CRM. Conforme os canais, as permissões e os recursos habilitados, pode enviar mensagens no Instagram e notificações internas, encaminhar conversas e integrar sistemas."
+      },
+      {
+        "question": "As automações conseguem enviar e receber dados de outros sistemas?",
+        "answer": "Sim. APIs, webhooks e conexões podem levar dados de entrada e resultados às rotinas do builder, às réguas e aos agentes de IA, conforme a configuração de cada caminho. O Mentor pode usar consultas autorizadas para orientar o operador. Uma integração depende da API disponível, da documentação e dos acessos do sistema."
+      },
+      {
+        "question": "Como acompanhamos a execução e controlamos a continuidade?",
+        "answer": "Revise os caminhos antes de ativar e acompanhe os detalhes das execuções para investigar etapas e retornos. Nas réguas, defina condições de entrada, saída e reentrada, como resposta do contato ou mudança de etapa, conforme o cenário. A equipe mantém o controle sobre os ajustes e a aplicação."
+      },
+      {
+        "question": "Por onde começamos e como avaliamos o resultado?",
+        "answer": "Comece por um processo com esforço manual ou falta de continuidade. Sua equipe pode organizar regras, dados e ações e contar com especialistas quando precisar. Defina indicadores e períodos comparáveis para acompanhar tempo entre etapas, atividades, falhas, intervenções e avanço da jornada, considerando os dados e os custos da sua operação."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "O próximo avanço da sua operação",
+    "title": "Vamos encontrar o trabalho que pode avançar com automação.",
+    "description": "Analisamos onde o processo para, quem precisa agir e quais dados faltam. Construímos um primeiro caminho com fluxos, réguas, IA e integrações para melhorar a continuidade e reduzir o esforço repetido.",
+    "points": [
+      "Um processo relevante e o esforço manual que precisa melhorar.",
+      "Regras, dados e indicadores definidos com quem opera.",
+      "Plataforma e especialistas para construir, acompanhar e evoluir."
+    ],
+    "cta": "Quero automatizar minha operação",
+    "footnote": "Converse com nosso time sobre a sua operação.",
+    "error": "O atendimento não carregou agora. Tente novamente ou abra o WhatsApp pelo link abaixo.",
+    "fallback": "Abrir direto no WhatsApp",
+    "noScript": "Você também pode falar com nosso time pelo WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Fechar imagem ampliada",
+    "imageLabel": "Tela do produto",
+    "openImage": "Ampliar a tela",
+    "skip": "Ir para o conteúdo",
+    "imageNote": "Use os controles da imagem para ampliar e fechar."
+  }
+}

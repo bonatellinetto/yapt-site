@@ -1,0 +1,200 @@
+---
+import ProductJourney from '../home/ProductJourney.astro';
+import SupportJourneyScreens from '../home/SupportJourneyScreens.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+
+interface Props { locale: Locale; kind: 'contexto' | 'filas' }
+const { locale, kind } = Astro.props;
+
+const contextFrames: JourneyFrame[] = [
+  {screen:'support-conversation',focus:'support-conversation-overview',zoom:1,duration:900,chapter:0,state:'arrival'},
+  {screen:'support-conversation',focus:'support-known-customer',zoom:1.65,duration:1800,chapter:0,state:'identified'},
+  {screen:'support-conversation',focus:'support-open-tickets',zoom:1.8,duration:3000,chapter:0,state:'tickets'},
+  {screen:'support-conversation',focus:'support-open-tickets',zoom:1.6,duration:1200,chapter:1,state:'choice'},
+  {screen:'support-conversation',focus:'support-ai-answer',zoom:1.75,duration:1900,chapter:1,state:'answer'},
+  {screen:'support-conversation',focus:'support-ai-answer',zoom:1.55,duration:1000,chapter:1,state:'handoff-request'},
+  {screen:'support-conversation',focus:'support-conversation-overview',zoom:1,duration:1000,chapter:1,state:'handoff-ready'},
+  {screen:'support-handoff',focus:'support-handoff-overview',zoom:1,duration:1400,chapter:2,state:'handoff-ready'},
+  {screen:'support-handoff',focus:'support-ai-summary',zoom:1.8,duration:3400,chapter:2,state:'handoff-ready'},
+  {screen:'support-handoff',focus:'support-human-response',zoom:1.8,duration:2300,chapter:2,state:'handoff-ready'},
+  {screen:'support-conversation',focus:'support-conversation-overview',zoom:1,duration:1200,chapter:2,state:'arrival'},
+];
+
+const queueFrames: JourneyFrame[] = [
+  {screen:'support-pipelines',focus:'support-pipelines-overview',zoom:1,duration:1300,chapter:0},
+  {screen:'support-pipelines',focus:'support-pipeline-stages',zoom:1.7,duration:1800,chapter:0},
+  {screen:'support-pipelines',focus:'sp-menu-operations',zoom:1.7,duration:800,chapter:0,cursor:'sp-menu-operations',click:true},
+  {screen:'support-pipelines',focus:'sp-nav-queues',zoom:1.7,duration:1400,chapter:0,menu:true,menuGroup:'operations',cursor:'sp-nav-queues',click:true},
+  {screen:'support-queues',focus:'support-queues-overview',zoom:1,duration:1700,chapter:0},
+  {screen:'support-queues',focus:'support-waiting-time',zoom:1.9,duration:2400,chapter:0},
+  {screen:'support-capacity',focus:'support-capacity-overview',zoom:1,duration:1600,chapter:1},
+  {screen:'support-capacity',focus:'support-operator-capacity',zoom:1.8,duration:2800,chapter:1},
+  {screen:'support-distribution',focus:'support-distribution-overview',zoom:1,duration:1600,chapter:1},
+  {screen:'support-distribution',focus:'support-routing-rules',zoom:1.65,duration:2700,chapter:1},
+  {screen:'support-report',focus:'support-report-overview',zoom:1,duration:1900,chapter:2,state:'report-team'},
+  {screen:'support-report',focus:'support-team-metrics',zoom:1.55,duration:3200,chapter:2,state:'report-team'},
+  {screen:'support-pipelines',focus:'support-pipelines-overview',zoom:1,duration:1400,chapter:2},
+];
+
+const controls = {
+  'pt-BR': {demo:'Demonstração · dados ilustrativos',play:'Reproduzir',pause:'Pausar',replay:'Recomeçar a jornada',expand:'Ampliar demonstração',collapse:'Sair da tela cheia'},
+  'en-US': {demo:'Demo · sample data · UI in Portuguese',play:'Play',pause:'Pause',replay:'Restart journey',expand:'Expand demo',collapse:'Exit full screen'},
+  'es-ES': {demo:'Demo · datos ilustrativos · UI en portugués',play:'Reproducir',pause:'Pausar',replay:'Reiniciar recorrido',expand:'Ampliar demostración',collapse:'Salir de pantalla completa'},
+}[locale];
+
+type ScenarioCopy = Omit<JourneyCopy, keyof typeof controls> & {sourceNote:string;staticLabels:string[];staticValues:string[]};
+const copies: Record<Locale, Record<'contexto'|'filas', ScenarioCopy>> = {
+  'pt-BR': {
+    contexto: {
+      title:'O cliente é o mesmo. O contexto continua.',
+      label:'Demonstração do atendimento no WhatsApp: IA reconhece o cliente, consulta dois tickets e prepara a transferência com resumo para uma pessoa.',
+      chapters:['Reconhecer','Continuar','Encaminhar'],
+      captions:[
+        'O cliente chega pelo WhatsApp. A conversa começa com o contexto disponível.',
+        'A IA reconhece o cliente e identifica a empresa antes de pedir que repita a história.',
+        'Dois tickets em aberto: a IA consulta os casos e pergunta por onde continuar.',
+        'O cliente escolhe o ticket. A conversa segue ligada ao caso certo.',
+        'Com o histórico do ticket, a IA verifica o que ainda precisa ser resolvido.',
+        'O cliente pede uma pessoa para continuar o atendimento.',
+        'O fluxo configurado prepara a transferência com o contexto já reunido.',
+        'Uma pessoa assume com acesso ao ticket e ao histórico da conversa.',
+        'Uma nota interna reúne o resumo da IA e o que já foi feito.',
+        'O atendente continua de onde a IA parou, sem pedir tudo de novo.',
+        'Do atendimento com contexto para o próximo cliente. A demonstração recomeça.',
+      ],
+      staticLabels:['Cliente','Tickets','Equipe'],staticValues:['Contexto','Histórico','Resumo'],
+      sourceNote:'Interface reproduzida a partir do produto, com cliente e conversa ilustrativos. Consulta de tickets, resumo e transferência dependem do fluxo configurado.',
+    },
+    filas: {
+      title:'Da fila à produtividade do time.',
+      label:'Demonstração da gestão de filas, capacidade dos operadores, distribuição e relatório de produtividade no yapt.',
+      chapters:['Filas','Capacidade','Produtividade'],
+      captions:[
+        'As conversas de suporte aparecem por setor e etapa do atendimento.',
+        'Encontre o trabalho em triagem, em atendimento ou aguardando o cliente.',
+        'Em Operações, a gestão acompanha as filas e a distribuição do trabalho.',
+        'Abra Filas para investigar a espera e as regras de atendimento.',
+        'A visão das filas mostra a demanda que precisa de atenção.',
+        'Compare volume e tempo de espera antes de redistribuir a demanda.',
+        'Na visão dos operadores, acompanhe a carga e os limites de atendimento.',
+        'Veja conversas ativas e capacidade por operador; presença online não significa vaga livre.',
+        'As regras de distribuição são configuradas para cada setor.',
+        'Rodízio, menos ocupado e limites ajudam a equilibrar o trabalho.',
+        'O relatório de agentes amplia a visão para o trabalho realizado no período.',
+        'Compare volume e tempos por operador para identificar sobrecarga e onde apoiar o time.',
+        'Da análise para a gestão das conversas. A demonstração recomeça.',
+      ],
+      staticLabels:['Fila','Operadores','Gestão'],staticValues:['Espera','Capacidade','Produtividade'],
+      sourceNote:'Capturas reais e interfaces reproduzidas do produto, com exemplos de operação. Configurações e disponibilidade variam conforme a operação; os números não representam promessa de ganho.',
+    },
+  },
+  'en-US': {
+    contexto: {
+      title:'Same customer. Context preserved.',
+      label:'WhatsApp service demo: AI recognizes the customer, checks two tickets and prepares a handoff with a summary for a human agent.',
+      chapters:['Recognize','Continue','Hand off'],
+      captions:[
+        'The customer arrives on WhatsApp. The conversation starts with the available context.',
+        'AI recognizes the customer and identifies the company before asking them to repeat their story.',
+        'Two open tickets: AI checks the cases and asks where to continue.',
+        'The customer selects a ticket. The conversation stays linked to the right case.',
+        'Using the ticket history, AI checks what still needs to be resolved.',
+        'The customer asks for a person to continue the conversation.',
+        'The configured workflow prepares the handoff with the context already gathered.',
+        'A human agent takes over with access to the ticket and conversation history.',
+        'An internal note brings together the AI summary and actions already taken.',
+        'The agent continues where AI left off, without asking for everything again.',
+        'From contextual service to the next customer. The demo restarts.',
+      ],
+      staticLabels:['Customer','Tickets','Team'],staticValues:['Context','History','Summary'],
+      sourceNote:'Interface reproduced from the product, with an illustrative customer and conversation. Ticket lookup, summaries and handoff depend on the configured workflow.',
+    },
+    filas: {
+      title:'From queues to team productivity.',
+      label:'Demo of queue management, operator capacity, routing and productivity reporting in yapt.',
+      chapters:['Queues','Capacity','Productivity'],
+      captions:[
+        'Support conversations are organized by team and service stage.',
+        'Find work in triage, in progress or waiting for the customer.',
+        'In Operations, managers monitor queues and workload distribution.',
+        'Open Queues to investigate waiting times and service rules.',
+        'The queue view shows demand that needs attention.',
+        'Compare volume and waiting times before redistributing demand.',
+        'In the operator view, track workload and conversation limits.',
+        'Check active conversations and capacity per operator; being online does not mean having a free slot.',
+        'Routing rules are configured for each team.',
+        'Round-robin, least busy and capacity limits help balance the work.',
+        'The agent report expands the view to work completed during the period.',
+        'Compare volume and times per operator to identify overload and where the team needs support.',
+        'From analysis to conversation management. The demo restarts.',
+      ],
+      staticLabels:['Queue','Operators','Management'],staticValues:['Waiting','Capacity','Productivity'],
+      sourceNote:'Real screenshots and reproduced product interfaces, with operational examples. Configuration and availability vary by operation; figures are not a promise of improvement.',
+    },
+  },
+  'es-ES': {
+    contexto: {
+      title:'El cliente es el mismo. El contexto continúa.',
+      label:'Demostración de atención por WhatsApp: la IA reconoce al cliente, consulta dos tickets y prepara una transferencia con resumen para una persona.',
+      chapters:['Reconocer','Continuar','Transferir'],
+      captions:[
+        'El cliente llega por WhatsApp. La conversación empieza con el contexto disponible.',
+        'La IA reconoce al cliente e identifica la empresa antes de pedirle que repita su historia.',
+        'Dos tickets abiertos: la IA consulta los casos y pregunta por dónde continuar.',
+        'El cliente elige un ticket. La conversación sigue vinculada al caso correcto.',
+        'Con el historial del ticket, la IA comprueba lo que aún falta por resolver.',
+        'El cliente pide a una persona para continuar la atención.',
+        'El flujo configurado prepara la transferencia con el contexto ya reunido.',
+        'Una persona asume con acceso al ticket y al historial de la conversación.',
+        'Una nota interna reúne el resumen de la IA y lo que ya se hizo.',
+        'El agente continúa donde terminó la IA, sin volver a pedirlo todo.',
+        'De la atención con contexto al siguiente cliente. La demostración vuelve a empezar.',
+      ],
+      staticLabels:['Cliente','Tickets','Equipo'],staticValues:['Contexto','Historial','Resumen'],
+      sourceNote:'Interfaz reproducida a partir del producto, con cliente y conversación ilustrativos. La consulta de tickets, el resumen y la transferencia dependen del flujo configurado.',
+    },
+    filas: {
+      title:'De las colas a la productividad del equipo.',
+      label:'Demostración de gestión de colas, capacidad de los agentes, distribución e informe de productividad en yapt.',
+      chapters:['Colas','Capacidad','Productividad'],
+      captions:[
+        'Las conversaciones de soporte aparecen por sector y etapa de atención.',
+        'Encuentra el trabajo en clasificación, en atención o esperando al cliente.',
+        'En Operaciones, la gestión sigue las colas y la distribución del trabajo.',
+        'Abre Colas para investigar la espera y las reglas de atención.',
+        'La vista de las colas muestra la demanda que necesita atención.',
+        'Compara el volumen y los tiempos de espera antes de redistribuir la demanda.',
+        'En la vista de los agentes, sigue la carga y los límites de atención.',
+        'Consulta las conversaciones activas y la capacidad por agente; estar conectado no significa tener una plaza libre.',
+        'Las reglas de distribución se configuran para cada sector.',
+        'La rotación, el menos ocupado y los límites ayudan a equilibrar el trabajo.',
+        'El informe de agentes amplía la visión al trabajo realizado durante el período.',
+        'Compara el volumen y los tiempos por agente para identificar sobrecarga y dónde apoyar al equipo.',
+        'Del análisis a la gestión de conversaciones. La demostración vuelve a empezar.',
+      ],
+      staticLabels:['Cola','Agentes','Gestión'],staticValues:['Espera','Capacidad','Productividad'],
+      sourceNote:'Capturas reales e interfaces reproducidas del producto, con ejemplos de operación. La configuración y la disponibilidad varían según la operación; las cifras no son una promesa de mejora.',
+    },
+  },
+};
+const { sourceNote, staticLabels, staticValues, ...scenarioCopy } = copies[locale][kind];
+const copy: JourneyCopy = {...controls,...scenarioCopy};
+const frames = kind === 'contexto' ? contextFrames : queueFrames;
+const chapterFrames = kind === 'contexto' ? [2,4,8] : [4,7,11];
+---
+<div class="support-scenario-journey" data-support-scenario-journey={kind}>
+  <ProductJourney locale={locale} variant="support" copy={copy} frames={frames} chapterFrames={chapterFrames} staticLabels={staticLabels} staticValues={staticValues} sourceNote={sourceNote}>
+    <SupportJourneyScreens idPrefix={kind === 'contexto' ? 'sp-context-' : 'sp-queues-'}/>
+  </ProductJourney>
+</div>
+
+<style>
+  .support-scenario-journey{min-width:0;padding:0 clamp(14px,3vw,24px) 24px}
+  .support-scenario-journey :global(.mj-heading){flex-wrap:wrap;row-gap:6px}
+  .support-scenario-journey :global(.mj-chapters){grid-template-columns:repeat(3,minmax(0,1fr))}
+  .support-scenario-journey :global(.mj-chapters button){grid-column:auto;min-height:44px}
+  .support-scenario-journey :global(.mj-static>div){grid-template-columns:repeat(3,minmax(0,1fr))}
+  .support-scenario-journey :global(.mj-source-note){font-size:10px;line-height:1.6}
+  @media(max-width:600px){.support-scenario-journey :global(.mj-controls){gap:6px}.support-scenario-journey :global(.mj-controls button){padding-inline:6px}}
+</style>

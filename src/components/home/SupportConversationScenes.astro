@@ -1,0 +1,82 @@
+---
+interface Props { idPrefix?: string }
+const { idPrefix = '' } = Astro.props;
+import './support-conversation-scenes.css';
+const panels = ['academy','actions','ticket','person','megaphone','clipboard','chat','note','dollar','handshake','calendar','check-square','chat','flow','brain'];
+const stages = ['LEAD','MQL','SAL','SQL','OPORT','GANHO'];
+---
+<svg class="spc-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id={`${idPrefix}spc-i-copy`} viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-external`} viewBox="0 0 24 24"><path d="M15 3h6v6M21 3l-9 9M10 5H3v16h16v-7"/></symbol>
+  <symbol id={`${idPrefix}spc-i-close`} viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id={`${idPrefix}spc-i-down`} viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id={`${idPrefix}spc-i-up`} viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+  <symbol id={`${idPrefix}spc-i-note`} viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-download`} viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-bot`} viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M12 3v4M1 12h2m18 0h2M8 12v2m8-2v2M8 18h8"/><circle cx="12" cy="2" r="1"/></symbol>
+  <symbol id={`${idPrefix}spc-i-clock`} viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id={`${idPrefix}spc-i-activity`} viewBox="0 0 24 24"><path d="M2 12h4l3-8 5 16 3-8h5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-academy`} viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5ZM6 11v6c3 3 9 3 12 0v-6M22 9v8"/></symbol>
+  <symbol id={`${idPrefix}spc-i-actions`} viewBox="0 0 24 24"><path d="m8 7 3 13 3-5 6-2ZM4 5 2 3M8 3V1M3 9H1M12 4l2-2M4 13l-2 2"/></symbol>
+  <symbol id={`${idPrefix}spc-i-ticket`} viewBox="0 0 24 24"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 12H2v8h5v-8Zm16 0h2v8h-5v-8Z"/></symbol>
+  <symbol id={`${idPrefix}spc-i-person`} viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+  <symbol id={`${idPrefix}spc-i-clipboard`} viewBox="0 0 24 24"><path d="M9 4H5v18h14V4h-4M9 2h6v5H9ZM8 12h8m-8 4h6"/></symbol>
+  <symbol id={`${idPrefix}spc-i-chat`} viewBox="0 0 24 24"><path d="M3 3h14v12H8l-5 4Zm14 5h4v13l-4-3h-6v-3"/></symbol>
+  <symbol id={`${idPrefix}spc-i-dollar`} viewBox="0 0 24 24"><path d="M12 1v22M18 5H9a4 4 0 0 0 0 8h6a4 4 0 0 1 0 8H5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-handshake`} viewBox="0 0 24 24"><path d="m2 8 4-4 5 1 3-1 8 4-3 10-4 3-3-2-3-1-4-4Zm5-3 4 1-3 5 3 2 4-4 4 6m-8 4 2-3m2 5 2-4"/></symbol>
+  <symbol id={`${idPrefix}spc-i-check-square`} viewBox="0 0 24 24"><path d="M12 3H3v18h18v-9M8 11l4 4L22 3"/></symbol>
+  <symbol id={`${idPrefix}spc-i-flow`} viewBox="0 0 24 24"><rect x="2" y="2" width="7" height="6" rx="2"/><rect x="15" y="16" width="7" height="6" rx="2"/><path d="M5 8v7a4 4 0 0 0 4 4h6m3-3V9a4 4 0 0 0-4-4H9"/></symbol>
+  <symbol id={`${idPrefix}spc-i-brain`} viewBox="0 0 24 24"><path d="M12 4C7-1 3 3 4 7c-4 2-3 7 0 8-1 5 4 8 8 5Zm0 0c5-5 9-1 8 3 4 2 3 7 0 8 1 5-4 8-8 5ZM8 8v5m8-5v5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-megaphone`} viewBox="0 0 24 24"><path d="m3 9 18-5v16L3 15Zm4 7 2 5h4l-2-4"/></symbol>
+  <symbol id={`${idPrefix}spc-i-calendar`} viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 2v6m8-6v6M3 11h18"/></symbol>
+  <symbol id={`${idPrefix}spc-i-wallet`} viewBox="0 0 24 24"><path d="M3 6V4h17v4H4a2 2 0 0 0 0 4h17v8H3V6Zm18 6h-5v4h5"/></symbol>
+  <symbol id={`${idPrefix}spc-i-tag`} viewBox="0 0 24 24"><path d="M3 3h8l10 10-8 8L3 11Z"/><circle cx="7" cy="7" r="1"/></symbol>
+  <symbol id={`${idPrefix}spc-i-check`} viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id={`${idPrefix}spc-i-send`} viewBox="0 0 24 24"><path d="m22 2-7 20-4-9L2 9Zm0 0L11 13"/></symbol>
+  <symbol id={`${idPrefix}spc-i-attachment`} viewBox="0 0 24 24"><path d="m8 12 7-7a4 4 0 0 1 6 6L10 22a6 6 0 0 1-8-8L13 3m-8 14 10-10"/></symbol>
+  <symbol id={`${idPrefix}spc-i-whatsapp`} viewBox="0 0 24 24"><path d="M20.6 15.5A9 9 0 0 1 7 20.1L2 22l1.8-5A9 9 0 1 1 20.6 15.5Z"/><path d="m8 7-1 2c1 4 3 6 7 7l2-1-2-3-2 1-2-2 1-2Z"/></symbol>
+</defs></svg>
+
+{['support-conversation','support-handoff'].map(scene => {
+  const human = scene === 'support-handoff';
+  return <div class={`sp-screen spc-scene ${human?'spc-human-scene':'spc-ai-scene'}`} data-j-screen={scene}>
+    <div class="spc-backdrop"><img src="/produto/ops-conversas.webp" width="1600" height="896" alt="" decoding="async"/></div><div class="spc-shade"></div>
+    <div class="spc-modal" data-j-target={human?'support-handoff-overview':'support-conversation-overview'}>
+      <header class="spc-header">
+        <span class="spc-avatar">CC</span>
+        <div class="spc-contact"><div><strong>Caio Cavalcanti</strong><small>#C-801630 <svg class="spc-icon"><use href={`#${idPrefix}spc-i-copy`}/></svg></small><svg class="spc-icon spc-external"><use href={`#${idPrefix}spc-i-external`}/></svg></div><p>cliente0630@showcase.example <i>›</i><b><svg class="spc-icon"><use href={`#${idPrefix}spc-i-whatsapp`}/></svg>Showcase · WhatsApp</b><i>•</i><span class="spc-channel-dot"></span>Suporte</p></div>
+        <span class="spc-client-badge"><i></i>Cliente</span><div class="spc-journey">{stages.map((stage,index)=><span><small>{stage}</small><i class={index===5?'spc-won':''}></i></span>)}</div><span class="spc-status">Aberta</span><svg class="spc-icon spc-header-download"><use href={`#${idPrefix}spc-i-download`}/></svg><svg class="spc-icon spc-header-close"><use href={`#${idPrefix}spc-i-close`}/></svg>
+      </header>
+      <div class="spc-body">
+        <div class="spc-chat">
+          <div class="spc-company"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-clipboard`}/></svg>yapt. Business — Solare Saúde 40<svg class="spc-icon"><use href={`#${idPrefix}spc-i-close`}/></svg></div>
+          <div class={`spc-feed ${human?'spc-handoff-feed':'spc-flow'}`}>
+            <span class="spc-date">Hoje</span>
+            {!human ? <>
+              <div class="spc-message spc-incoming spc-turn spc-turn-arrival">Olá! Preciso de ajuda com o atendimento.<time>10:22</time></div>
+              <div class="spc-message spc-outgoing spc-turn spc-turn-identified" data-j-target="support-known-customer"><span class="spc-ai-label"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg>IA</span>Olá, Caio! Você é da <strong>Solare Saúde 40</strong>. Já localizei o seu cadastro.<time>10:22 <b>✓✓</b></time></div>
+              <div class="spc-message spc-outgoing spc-ticket-message spc-turn spc-turn-tickets" data-j-target="support-open-tickets"><span class="spc-ai-label"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg>IA</span><p>Você tem <strong>dois tickets em aberto</strong>:</p><p><b>#T-1042</b> · Instalação dos headsets<br/><span>Em atendimento</span></p><p><b>#T-1087</b> · Ajuste de faturamento<br/><span>Em atendimento</span></p><p>Quer falar de algum deles ou é um novo caso?</p><time>10:22 <b>✓✓</b></time></div>
+              <div class="spc-message spc-incoming spc-turn spc-turn-choice">É sobre a instalação, o ticket #T-1042.<time>10:23</time></div>
+              <div class="spc-message spc-outgoing spc-turn spc-turn-answer" data-j-target="support-ai-answer"><span class="spc-ai-label"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg>IA</span>Encontrei o histórico da instalação. O último passo foi conferir a conexão dos headsets. O problema continua em todos os equipamentos?<time>10:23 <b>✓✓</b></time></div>
+              <div class="spc-message spc-incoming spc-turn spc-turn-request">Sim. Quero falar com uma pessoa para continuar.<time>10:23</time></div>
+              <div class="spc-message spc-outgoing spc-turn spc-turn-ready"><span class="spc-ai-label"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg>IA</span>Vou encaminhar para o time de suporte com o histórico e o que você já me contou.<time>10:24 <b>✓✓</b></time></div>
+              <div class="spc-typing"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg><i></i><i></i><i></i></div>
+            </> : <>
+              <div class="spc-message spc-incoming">Quero continuar o ticket #T-1042 com uma pessoa.<time>10:23</time></div>
+              <div class="spc-message spc-outgoing spc-handoff-ai"><span class="spc-ai-label"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-bot`}/></svg>IA</span>Vou chamar o time de suporte. O histórico do ticket e o resumo desta conversa vão junto.<time>10:24 <b>✓✓</b></time></div>
+              <div class="spc-system-event"><svg class="spc-icon"><use href={`#${idPrefix}spc-i-person`}/></svg>Conversa atribuída a Ana Pereira</div>
+              <div class="spc-note" data-j-target="support-ai-summary"><div><svg class="spc-icon"><use href={`#${idPrefix}spc-i-note`}/></svg><strong>NOTA INTERNA</strong><time>Sistema · 10:24</time></div><p><strong>Resumo para o time:</strong> Caio, da Solare Saúde 40, quer continuar o ticket #T-1042 (instalação dos headsets). A falha continua em todos os equipamentos. Já consultamos o histórico; cliente pediu atendimento humano. O ticket #T-1087, de faturamento, segue separado.</p></div>
+              <div class="spc-message spc-outgoing spc-human-response" data-j-target="support-human-response"><strong class="spc-human-sender">Ana Pereira</strong>Olá, Caio! Já li o resumo e o histórico do #T-1042. Vou continuar daqui com você.<time>10:24 <b>✓✓</b></time></div>
+            </>}
+          </div>
+          <div class="spc-composer"><div><span>Responder</span><span>Nota interna</span></div><p>Escreva sua mensagem...</p><footer><svg class="spc-icon"><use href={`#${idPrefix}spc-i-attachment`}/></svg><span>☺</span><svg class="spc-icon"><use href={`#${idPrefix}spc-i-send`}/></svg></footer></div>
+        </div>
+        <div class="spc-action-rail">{panels.map((panel,index)=><span class={`spc-rail-${panel} ${(human?index===2:index===1)?'spc-panel-selected':''}`}><svg class="spc-icon"><use href={`#${idPrefix}spc-i-${panel}`}/></svg>{panel==='note'&&human&&<i>1</i>}</span>)}</div>
+        <aside class="spc-context">
+          <div class="spc-actions-panel"><div class="spc-panel-heading"><strong>Ações</strong><span><i></i>Orgânico</span><svg class="spc-icon"><use href={`#${idPrefix}spc-i-close`}/></svg></div><section class="spc-action-card"><h4><svg class="spc-icon"><use href={`#${idPrefix}spc-i-activity`}/></svg>Andamento</h4><div class="spc-action-buttons"><span>Resolver</span><span>Adiar</span></div></section><section class="spc-action-card"><h4>Gestão<svg class="spc-icon"><use href={`#${idPrefix}spc-i-up`}/></svg></h4><dl><div><dt>Reservar conversa</dt><dd><i class="spc-switch"></i></dd></div><div><dt>Prioridade</dt><dd class="spc-field">Normal <svg class="spc-icon"><use href={`#${idPrefix}spc-i-down`}/></svg></dd></div><div><dt>Tags</dt><dd>＋</dd></div></dl><span class="spc-tag">Suporte · Instalação ×</span></section><section class="spc-action-card"><h4>SLA &amp; Métricas<svg class="spc-icon"><use href={`#${idPrefix}spc-i-up`}/></svg></h4><dl><div><dt>Status SLA</dt><dd class="spc-green">✓ No Prazo</dd></div><div><dt>Tempo 1ª Resposta</dt><dd class="spc-green-text">18s</dd></div></dl></section></div>
+          <div class="spc-ticket-panel"><div class="spc-panel-heading"><strong>Ticket</strong><svg class="spc-icon"><use href={`#${idPrefix}spc-i-close`}/></svg></div><section class="spc-native-ticket"><div class="spc-ticket-header"><h4><svg class="spc-icon"><use href={`#${idPrefix}spc-i-ticket`}/></svg>Ticket #T-1042</h4><p>Instalação dos headsets <svg class="spc-icon"><use href={`#${idPrefix}spc-i-note`}/></svg></p><dl><div><dt>Etapa</dt><dd class="spc-stage-chip">Em atendimento <svg class="spc-icon"><use href={`#${idPrefix}spc-i-down`}/></svg></dd></div><div><dt><svg class="spc-icon"><use href={`#${idPrefix}spc-i-tag`}/></svg>Prioridade</dt><dd class="spc-priority-chip">Normal <svg class="spc-icon"><use href={`#${idPrefix}spc-i-down`}/></svg></dd></div><div><dt><svg class="spc-icon"><use href={`#${idPrefix}spc-i-wallet`}/></svg>Carteira</dt><dd>Clientes B2B</dd></div><div><dt><svg class="spc-icon"><use href={`#${idPrefix}spc-i-person`}/></svg>Responsável</dt><dd>{human?'Ana Pereira':'Sem responsável'} <svg class="spc-icon"><use href={`#${idPrefix}spc-i-down`}/></svg></dd></div></dl></div><div class="spc-ticket-sla"><div class="spc-sla-progress"><i></i></div><dl><div><dt>SLA da etapa</dt><dd class="spc-green-text">No prazo</dd></div><div><dt>Aberto em</dt><dd>12/11/2026, 14:10</dd></div><div><dt>1ª resposta</dt><dd class="spc-green">18s · No prazo</dd></div><div><dt>Tempo nesta etapa</dt><dd>22 min</dd></div></dl></div></section><section class="spc-action-card"><h4><svg class="spc-icon"><use href={`#${idPrefix}spc-i-activity`}/></svg>Andamento</h4><div class="spc-ticket-buttons"><span>Mover etapa</span><span>Adiar</span><span>Escalar</span><span class="spc-primary">Finalizar ticket</span></div></section><section class="spc-action-card spc-company-card"><h4><svg class="spc-icon"><use href={`#${idPrefix}spc-i-clipboard`}/></svg>Empresa</h4><strong>Solare Saúde 40</strong><p>Caio Cavalcanti</p></section><section class="spc-action-card spc-linked-conversations"><h4><svg class="spc-icon"><use href={`#${idPrefix}spc-i-chat`}/></svg>Conversas vinculadas <small>2</small></h4><span>#C-801630 · WhatsApp</span></section></div>
+        </aside>
+      </div>
+    </div>
+  </div>;
+})}

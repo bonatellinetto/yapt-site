@@ -1,0 +1,44 @@
+---
+interface Props { kind: 'activity' | 'field' }
+const { kind } = Astro.props;
+// Product references, checked read-only in _wt/yapt1124:
+// ActionCard.tsx, ActionConfigForm.tsx and UpdatePropertyActionConfig.tsx.
+// These are inert reproductions. Activity titles and custom-field values are
+// illustrative; no configuration is submitted or connected to a customer.
+---
+<div class:list={['ors-screen', `ors-screen--${kind}`]} aria-hidden="true">
+  {kind === 'activity' ? <div class="ors-card ors-activity-card">
+    <div class="ors-card-heading"><span class="ors-icon">▤</span><span class="ors-step">1.</span><strong>Criar atividade</strong><span class="ors-chevron">⌃</span></div>
+    <div class="ors-form">
+      <div class="ors-field"><span class="ors-label">Tipo de atividade *</span><div class="ors-input ors-select">📋 Tarefa<span>⌄</span></div></div>
+      <div class="ors-field"><span class="ors-label">Título *</span><div class="ors-input">Retornar ao cliente</div><small>Use {'{{contact.name}}'}, {'{{deal.title}}'} para variáveis</small></div>
+      <div class="ors-field ors-description"><span class="ors-label">Descrição (opcional)</span><div class="ors-input ors-textarea">Conferir o andamento e retornar.</div></div>
+      <div class="ors-row"><div class="ors-field"><span class="ors-label">Vence em (dias)</span><div class="ors-input">1</div></div><div class="ors-field"><span class="ors-label">Horário (opcional)</span><div class="ors-input">10:00</div></div></div>
+      <div class="ors-row"><div class="ors-field"><span class="ors-label">Prioridade</span><div class="ors-input ors-select">Normal<span>⌄</span></div></div><div class="ors-field ors-assignment"><span class="ors-label">Atribuir a</span><div class="ors-input ors-select">Responsável da conversa<span>⌄</span></div><div class="ors-options"><div>Responsável do deal</div><div class="ors-option-selected"><span>✓</span>Responsável da conversa</div></div></div></div>
+    </div>
+  </div> : <div class="ors-card ors-field-card">
+    <div class="ors-card-heading"><span class="ors-icon">✎</span><span class="ors-step">2.</span><strong>Atualizar campo do contato</strong><span class="ors-chevron">⌃</span></div>
+    <div class="ors-form">
+      <div class="ors-field"><span class="ors-label">Campo do contato</span><div class="ors-input ors-select">Acompanhamento<span>⌄</span></div></div>
+      <div class="ors-field"><span class="ors-label">Valor</span><div class="ors-input">Aguardando retorno</div></div>
+    </div>
+  </div>}
+</div>
+
+<style>
+  .ors-screen{position:absolute;inset:0;width:1120px;height:700px;overflow:hidden;background:#f8fafb;color:#1e293b;font-family:Inter,sans-serif;font-size:24px;line-height:1.35}
+  .ors-card{position:absolute;border:1px solid #e2e8f0;border-radius:18px;background:white}
+  .ors-card-heading{display:flex;align-items:center;gap:14px;height:72px;padding:0 24px;border-bottom:1px solid #e2e8f0}
+  .ors-card-heading strong{font-size:24px;font-weight:500;white-space:nowrap}.ors-step{color:#64748b;font-size:21px}.ors-chevron{margin-left:auto;color:#64748b;font-size:23px}
+  .ors-icon{display:grid;place-items:center;flex:0 0 46px;height:46px;border-radius:12px;background:#e4f4f2;color:#26998f;font-size:27px}
+  .ors-form{display:grid;gap:20px;padding:24px}
+  .ors-field{position:relative;min-width:0;display:grid;gap:8px}
+  .ors-label{font-size:23px;font-weight:500}.ors-description .ors-label{color:#64748b;font-weight:400}
+  .ors-input{min-height:52px;padding:11px 16px;border:1px solid #dce2e8;border-radius:9px;background:white;font-size:23px;box-sizing:border-box;line-height:1.3;white-space:nowrap}
+  .ors-select{display:flex;align-items:center;justify-content:space-between;gap:10px}.ors-select>span{color:#7c8794;font-size:20px}
+  .ors-textarea{height:66px;white-space:normal}.ors-form small{font-size:18px;color:#64748b}.ors-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .ors-activity-card{left:168px;top:-124px;width:784px}.ors-assignment .ors-input{font-size:21px}
+  .ors-options{position:absolute;z-index:2;top:calc(100% + 5px);left:0;right:0;padding:6px;border:1px solid #dce2e8;border-radius:9px;background:white;box-shadow:0 5px 13px #0f172a1a;color:#1e293b;font-size:21px}
+  .ors-options>div{position:relative;padding:11px 8px 11px 28px;border-radius:6px;white-space:nowrap}.ors-option-selected{background:#f0f7f6}.ors-option-selected>span{position:absolute;left:7px;color:#26998f}
+  .ors-field-card{left:300px;top:140px;width:520px}.ors-field-card .ors-card-heading{gap:10px;padding-inline:20px}.ors-field-card .ors-card-heading strong{font-size:22px}.ors-field-card .ors-icon{flex-basis:38px;height:38px;font-size:24px}.ors-field-card .ors-step{font-size:19px}.ors-field-card .ors-form{gap:24px}.ors-field-card .ors-label,.ors-field-card .ors-input{font-size:26px}
+</style>

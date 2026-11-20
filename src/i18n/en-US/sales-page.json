@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "title": "Artificial intelligence for sales on WhatsApp",
+    "description": "Artificial intelligence for sales: qualify leads, automate follow-ups and connect your WhatsApp CRM to the sales pipeline and your business data."
+  },
+  "hero": {
+    "eyebrow": "Artificial intelligence for sales",
+    "title": "Artificial intelligence for sales.",
+    "ending": "More revenue and productivity.",
+    "description": "Cold leads and manual tasks cost revenue. yapt. applies AI to qualification and follow-ups, with a WhatsApp CRM, sales pipeline, conversations and activities connected to your systems. Your team runs the operation and can choose support from our specialists.",
+    "cta": "I'd like a sales assessment",
+    "secondary": "See how deals move forward",
+    "proof": "Official Meta Partner · 40M+ messages per month · 16 years.",
+    "frameBrand": "Sales",
+    "screenLabel": "The next step for every deal",
+    "screenNote": "Real product screen · sample data",
+    "image": "/solucao/img/14aec716d998.jpg",
+    "imageWidth": 1376,
+    "imageHeight": 714,
+    "imageAlt": "A real yapt. screen with deals organized by sales pipeline stage.",
+    "tags": [
+      "Qualification",
+      "Negotiation",
+      "Proposal",
+      "Management"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore sales operation challenges",
+    "mechanismLabel": "How yapt. solves it",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Operational example",
+    "moreLabel": "Expand real product screen",
+    "imageNote": "Product screens in Portuguese · configuration examples.",
+    "eyebrow": "Revenue and productivity at every stage",
+    "title": "How much of your target is lost before closing?",
+    "description": "Every opportunity without a next step, negotiation without context and hour spent looking for information reduces selling capacity. Explore where yapt. applies AI, organization and data to move deals forward.",
+    "items": [
+      {
+        "id": "qualificacao",
+        "short": "AI qualification",
+        "pain": "“The salesperson spends time finding out who can actually buy.”",
+        "title": "Prepare the opportunity before involving the salesperson.",
+        "description": "AI agents use your company's criteria to qualify, gather available context and distinguish who is ready, needs nurturing or is not a fit. The team receives a foundation to continue the sale.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Understand",
+            "text": "Source, needs and available context."
+          },
+          {
+            "title": "Qualify",
+            "text": "Your own criteria and conversation information."
+          },
+          {
+            "title": "Prepare",
+            "text": "Summary and next step for the team."
+          }
+        ],
+        "benefits": [
+          "Transcribe audio and extract information from documents in enabled workflows, reducing the time needed to reconstruct the customer's needs.",
+          "When configured, the agent checks available times and books the selected option, rechecking availability."
+        ],
+        "metric": "Time to qualification and progress of opportunities that fit.",
+        "example": {
+          "title": "The salesperson receives what matters",
+          "when": "A contact arrives through a campaign and explains their needs.",
+          "then": "AI gathers the responses and applies the configured qualification criteria.",
+          "outcome": "The salesperson receives the source, context and an opportunity ready to continue."
+        },
+        "image": "/produto/vendas-leads.webp",
+        "imageAlt": "A real yapt. screen with leads, source, score and relationship stage.",
+        "imageWidth": 1600,
+        "imageHeight": 664
+      },
+      {
+        "id": "prospeccao",
+        "short": "Organized prospecting",
+        "pain": "“We make attempts, but lose track of callbacks and history.”",
+        "title": "Turn isolated attempts into prospecting with continuity.",
+        "description": "Organize the prospecting queue, record call outcomes and keep agreed callbacks linked to the opportunity. When the contact progresses, context follows the handoff to Sales.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Queue, priorities and contact windows."
+          },
+          {
+            "title": "Record",
+            "text": "Outcome, notes and next attempt."
+          },
+          {
+            "title": "Advance",
+            "text": "Opportunity and history in the sales pipeline."
+          }
+        ],
+        "benefits": [
+          "Import contacts with duplicate handling and identification of existing customers or deals.",
+          "Record calls and callbacks so the day's work follows a clear sequence."
+        ],
+        "metric": "Attempts, completed callbacks and prospecting-to-opportunity conversion.",
+        "example": {
+          "title": "The next attempt already has context",
+          "when": "A contact asks to resume the conversation at another time.",
+          "then": "The team records the outcome and organizes the callback in prospecting.",
+          "outcome": "The next approach builds on what was already agreed."
+        },
+        "image": "/produto/vendas-prospeccao.webp",
+        "imageAlt": "A real yapt. prospecting screen with an opportunity queue and next actions.",
+        "imageWidth": 1600,
+        "imageHeight": 937
+      },
+      {
+        "id": "continuidade",
+        "short": "Priorities and follow-up",
+        "pain": "“Opportunities go cold while the team tries to keep up with the day.”",
+        "title": "Give every opportunity a next step.",
+        "description": "My day brings together overdue, current and upcoming activities, as well as deals without a next step. Alerts and sequences help continue deals that need attention.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "See",
+            "text": "Activities and opportunities that call for action."
+          },
+          {
+            "title": "Prioritize",
+            "text": "Overdue work, stage deadlines and inactivity."
+          },
+          {
+            "title": "Continue",
+            "text": "Configured tasks, messages and alerts."
+          }
+        ],
+        "benefits": [
+          "Complete, reschedule or postpone activities without losing their link to the deal or conversation.",
+          "Configure sequences for stalled opportunities and proposals at the defined stage, with tasks and alerts for the team."
+        ],
+        "metric": "Overdue activities, opportunities without a next step and progress by stage.",
+        "example": {
+          "title": "The stalled deal returns to the day's plan",
+          "when": "An opportunity stays at the configured stage without progressing.",
+          "then": "The sequence can create an activity and notify the owner according to the defined conditions.",
+          "outcome": "The team gains visibility to resume the next step."
+        },
+        "image": "/produto/sales/academy-atividades-negocio-real.webp",
+        "imageAlt": "A real screen of activities linked to a deal in yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 320
+      },
+      {
+        "id": "negociacao",
+        "short": "Context and copilot",
+        "pain": "“Every salesperson has to look for information and reconstruct the negotiation.”",
+        "title": "Less time searching. More context to negotiate.",
+        "description": "Bring together conversations, activities, participants and history in the deal. The copilot prepares summaries, suggests responses and proposes next steps, while the team decides what to send and apply.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Gather",
+            "text": "Conversations, participants and deal information."
+          },
+          {
+            "title": "Guide",
+            "text": "Summary, sources and copilot suggestions."
+          },
+          {
+            "title": "Apply",
+            "text": "Actions approved by the salesperson."
+          }
+        ],
+        "benefits": [
+          "Identify decision-makers, buyers and other participants to understand who is involved in the negotiation.",
+          "Bring data from enabled integrations into the conversation and use the copilot to prepare tasks, follow-ups or contact updates."
+        ],
+        "metric": "Preparation time, negotiation continuity and completed activities.",
+        "example": {
+          "title": "The conversation continues without starting over",
+          "when": "Another salesperson needs to take over an opportunity.",
+          "then": "The record brings together history and participants; the copilot helps summarize and prepare the next action.",
+          "outcome": "The team continues the negotiation with clear context and ownership."
+        },
+        "image": "/produto/vendas-negocio.webp",
+        "imageAlt": "A real yapt. deal screen with details, owner and sales context.",
+        "imageWidth": 1510,
+        "imageHeight": 1560
+      },
+      {
+        "id": "propostas",
+        "short": "Proposals and closing",
+        "pain": "“We send the proposal, but tracking versions and decisions becomes manual work.”",
+        "title": "Shape the proposal. Keep the negotiation visible.",
+        "description": "Prepare proposals linked to the deal, reusing products, templates and terms. Track versions and status, and provide a link for the customer to view and accept.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Prepare",
+            "text": "Products, recipient, template and terms."
+          },
+          {
+            "title": "Track",
+            "text": "Versions and status linked to the deal."
+          },
+          {
+            "title": "Formalize",
+            "text": "Customer viewing and acceptance."
+          }
+        ],
+        "benefits": [
+          "Keep the proposal and negotiation connected so the team knows which version is being discussed.",
+          "Record continuity in the deal and preserve the distinction between an accepted proposal, a confirmed sale and payment."
+        ],
+        "metric": "Time to decision, accepted proposals and conversion to a confirmed sale.",
+        "example": {
+          "title": "A proposal with negotiation history",
+          "when": "The customer asks for an adjustment to the terms.",
+          "then": "The team prepares the new version while keeping the proposal linked to the deal.",
+          "outcome": "The customer reviews it through the link and the team tracks the proposal's status."
+        },
+        "image": "/produto/sales/academy-propostas-produtos-real.webp",
+        "imageAlt": "A real proposal preparation screen with products and terms linked to the deal.",
+        "imageWidth": 1400,
+        "imageHeight": 964
+      },
+      {
+        "id": "gestao",
+        "short": "Targets and bottlenecks",
+        "pain": "“The pipeline is full, but we only discover too late that the target is at risk.”",
+        "title": "See what is missing from your target while you can still act.",
+        "description": "Track targets, actual results and the pace of salespeople and teams. The sales report shows conversion, time by stage and loss reasons, with clear criteria for interpreting the forecast.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Compare",
+            "text": "Target, actual results and pace for the period."
+          },
+          {
+            "title": "Locate",
+            "text": "Stages, conversion and loss reasons."
+          },
+          {
+            "title": "Act",
+            "text": "Management priorities to support the team."
+          }
+        ],
+        "benefits": [
+          "See where deals stall and which loss reasons need investigation.",
+          "Read the forecast according to the rules and history used; it guides assessment and does not guarantee closing."
+        ],
+        "metric": "Actual results, conversion, time by stage, losses and progress toward the target.",
+        "example": {
+          "title": "The results meeting turns into a decision",
+          "when": "The team is below the expected pace for the period.",
+          "then": "Management checks the results and sales pipeline bottlenecks.",
+          "outcome": "The team identifies where to act and tracks the effect of changes."
+        },
+        "image": "/produto/vendas-metas.webp",
+        "imageAlt": "A real yapt. sales target screen with results and tracking for the period.",
+        "imageWidth": 1600,
+        "imageHeight": 1091
+      },
+      {
+        "id": "carteira",
+        "short": "Accounts and after-sales",
+        "pain": "“After the sale, account follow-through depends on memory.”",
+        "title": "Keep the relationship moving with an owner and a next step.",
+        "description": "Organize customers into portfolios with owners, deals, conversations and relationship information. Use tasks and alerts to guide follow-up after the sale.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Portfolio, owners and team roles."
+          },
+          {
+            "title": "Connect",
+            "text": "Customer history, conversations and deals."
+          },
+          {
+            "title": "Track",
+            "text": "Follow-up tasks and alerts."
+          }
+        ],
+        "benefits": [
+          "Make it clear who looks after each account and what has already been agreed in the relationship.",
+          "Configure kickoff, after-sales and renewal follow-up with tasks and alerts, according to the company's process."
+        ],
+        "metric": "Accounts with an owner, planned follow-ups and opportunities to continue the relationship.",
+        "example": {
+          "title": "The sale starts the next stage of the relationship",
+          "when": "A deal is completed and the customer needs to move to the next stage.",
+          "then": "The team organizes owners and follow-up activities.",
+          "outcome": "The relationship continues with visible history and responsibilities."
+        },
+        "image": "",
+        "imageAlt": "",
+        "imageWidth": 0,
+        "imageHeight": 0
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Inside the sales operation",
+    "title": "From conversation to decision. The deal stays connected.",
+    "description": "Follow AI preparing context, prospecting, negotiation and sales indicators. Explore the journey and next steps in the product.",
+    "note": "Demonstration with sample data. Features and results depend on the company's configuration, data and process."
+  },
+  "foundation": {
+    "eyebrow": "Artificial intelligence in your sales operation",
+    "title": "AI prepares opportunities. Your team moves deals forward.",
+    "description": "In the same AI-powered CRM, the sales pipeline, conversations and activities share customer context. Agents prepare opportunities, copilots guide your team and integrations bring in data from your systems. Our specialists can support implementation and ongoing improvement.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "Qualification for SDRs",
+        "text": "AI agents collect information and qualify leads against configured criteria, preparing context for the sales team."
+      },
+      {
+        "icon": "teams",
+        "title": "Copilots that guide",
+        "text": "Summaries, suggestions and proposed actions during the conversation, with the seller deciding what to do."
+      },
+      {
+        "icon": "automation",
+        "title": "Follow-ups with context",
+        "text": "Intelligent sequences and activities keep follow-ups connected to the deal, conversations and pipeline stage."
+      },
+      {
+        "icon": "data",
+        "title": "Sales pipeline management",
+        "text": "Lead source, history, targets and indicators help managers find bottlenecks and track opportunities."
+      }
+    ],
+    "builderLabel": "yaAgents · build through conversation",
+    "builderTitle": "Describe how your team sells. Prepare AI to work with them.",
+    "builderDescription": "In yaAgents, describe the qualification criteria, guidance and tools your operation needs. Your team reviews and tests the setup and can choose support from our specialists to implement and improve the solution.",
+    "builderLink": "Explore yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "A real screen of yapt.'s AI agent builder."
+  },
+  "adoption": {
+    "eyebrow": "From assessment to AI in action",
+    "title": "Your sales process has its own needs. AI needs to know them.",
+    "description": "Define where to apply AI to prospecting, negotiation and follow-up. Your team can use the platform or choose our specialists to support implementation and ongoing improvement.",
+    "steps": [
+      {
+        "title": "Assess",
+        "text": "Understand incoming opportunities, pipeline bottlenecks and the team's time spent."
+      },
+      {
+        "title": "Apply",
+        "text": "Configure the first scenario, AI criteria, rules and necessary connections."
+      },
+      {
+        "title": "Improve",
+        "text": "Guide the team, track indicators and adjust what needs to improve."
+      }
+    ],
+    "footnote": "Scope, channels, integrations and features are defined according to each company's needs and configuration."
+  },
+  "faq": {
+    "eyebrow": "Before getting started",
+    "title": "Clarity for management. Continuity for salespeople.",
+    "items": [
+      {
+        "question": "How does a WhatsApp CRM with artificial intelligence work?",
+        "answer": "yapt. brings contacts, conversations, deals and activities into the same context. AI can qualify leads, summarize history and suggest replies; sequences organize follow-ups under defined rules. Your company decides where an agent acts and where a seller reviews, approves or takes over the negotiation."
+      },
+      {
+        "question": "How does the manager track productivity and targets?",
+        "answer": "My day organizes activities, overdue work, next steps and signs of deals that need attention. The sales report brings together targets, actual results, conversion, time by stage and loss reasons, helping management decide where to support the team."
+      },
+      {
+        "question": "How does artificial intelligence help SDRs and prospecting?",
+        "answer": "Agents can qualify leads against configured criteria and prepare context for an SDR or seller. The queue organizes opportunities and planned follow-ups; your team records calls, notes and next attempts in the deal. Sequences and activities help maintain follow-up continuity."
+      },
+      {
+        "question": "Is the sales forecast a revenue guarantee?",
+        "answer": "No. The forecast uses rules, stage probabilities and history to help assess the period. A won deal, accepted proposal, confirmed order and money received are different situations and must be interpreted using the right criteria."
+      },
+      {
+        "question": "Can AI read audio, documents and data from our systems?",
+        "answer": "Transcription, document analysis and integration tools can prepare information for AI and the team when enabled and configured. Format and processing limits apply; integrations depend on available systems, APIs and access."
+      },
+      {
+        "question": "Do we need to implement everything at once?",
+        "answer": "We can prioritize one bottleneck and define a first scenario with clear indicators. Modules, permissions, data, integrations and team readiness guide the scope and its evolution."
+      },
+      {
+        "question": "Do I need to hire specialists to use the platform?",
+        "answer": "You can use the platform with your own team or combine yapt. with specialists supporting its application. New Way also offers consulting for a defined problem, with or without the platform. The assessment helps identify the right approach for your operation."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Discover where your operation can sell more",
+    "title": "Let's find where your sales operation loses revenue and productivity.",
+    "description": "We analyze incoming opportunities, your team’s work and bottlenecks between the first conversation and closing. We define where to apply AI and which delivery approach suits your company.",
+    "points": [
+      "A view of your sales bottlenecks.",
+      "A first scenario with clear priorities.",
+      "The platform, with specialist support if you need it."
+    ],
+    "cta": "I'd like a sales assessment",
+    "footnote": "Talk to our team about your operation.",
+    "error": "The chat could not load right now. Try again or open WhatsApp using the link below.",
+    "fallback": "Open directly in WhatsApp",
+    "noScript": "You can also talk to our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close expanded image",
+    "imageLabel": "Real product screen",
+    "openImage": "Expand screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to expand and close it."
+  }
+}

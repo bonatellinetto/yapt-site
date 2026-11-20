@@ -1,0 +1,72 @@
+---
+import { homeCopy } from './content';
+import type { Locale } from '../../lib/i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale).results;
+const results = c.items.map(item => {
+  const parts = item.value.match(/^(.*?)(\d+)(.*)$/);
+  return { ...item, prefix: parts?.[1] ?? '', number: parts?.[2] ?? item.value, suffix: parts?.[3] ?? '' };
+});
+---
+
+<section id="resultados" class="home-section results" aria-labelledby="results-heading">
+  <div class="home-shell">
+    <div class="home-section-head home-reveal">
+      <div>
+        <p class="home-label">{c.eyebrow}</p>
+        <h2 id="results-heading" class="home-heading">{c.title}</h2>
+      </div>
+      <p class="home-intro">{c.description}</p>
+    </div>
+    <dl class="results__figures home-reveal" aria-describedby="results-source">
+      {results.map(item => (
+        <div class="results__figure">
+          <dt>{item.label}</dt>
+          <dd aria-label={item.value}>
+            <span aria-hidden="true" class="results__value">
+              {item.prefix && <span class="results__prefix">{item.prefix}</span>}
+              <span class="results__number">{item.number}</span>
+              {item.suffix && <span class="results__suffix">{item.suffix}</span>}
+            </span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+    <p id="results-source" class="results__source">{c.note}</p>
+  </div>
+</section>
+
+<style>
+  .results { background: #fff; }
+  .results__figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-block: 1px solid #dce7e1; }
+  .results__figure { display: flex; flex-direction: column; min-width: 0; padding: 40px 32px 35px; }
+  .results__figure:first-child { padding-left: 0; }
+  .results__figure:last-child { padding-right: 0; }
+  .results__figure + .results__figure { border-left: 1px solid #dce7e1; }
+  .results__figure dt { order: 2; max-width: 29ch; margin-top: 19px; color: #426252; font-size: 14px; line-height: 1.8; text-wrap: pretty; }
+  .results__figure dd { order: 1; margin: 0; color: #164b3b; font-family: Poppins, sans-serif; }
+  .results__value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; }
+  .results__number { font-size: clamp(58px, 6.3vw, 88px); font-weight: 500; line-height: 1.12; letter-spacing: -.065em; }
+  .results__prefix, .results__suffix { font-size: clamp(17px, 1.8vw, 25px); font-weight: 500; letter-spacing: -.045em; line-height: 1.5; }
+  .results__prefix { flex-basis: 100%; margin-bottom: -5px; color: #4b705c; font-size: 15px; letter-spacing: -.01em; }
+  .results__figure:not(:has(.results__prefix)) .results__value { padding-top: 17.5px; }
+  .results__source { max-width: 100ch; margin: 21px 0 0; color: #607568; font-size: 12px; line-height: 1.8; text-wrap: pretty; }
+  @media (max-width: 1023px) {
+    .results__figure { padding-inline: 23px; }
+    .results__number { font-size: 65px; }
+    .results__prefix, .results__suffix { font-size: 19px; }
+    .results__prefix { font-size: 15px; }
+  }
+  @media (max-width: 700px) {
+    .results__figures { grid-template-columns: 1fr; }
+    .results__figure, .results__figure:first-child, .results__figure:last-child { padding: 26px 0; }
+    .results__figure + .results__figure { border-left: 0; border-top: 1px solid #dce7e1; }
+    .results__figure dt { max-width: 34ch; margin-top: 10px; font-size: 14px; }
+    .results__number { font-size: 74px; }
+    .results__suffix { font-size: 25px; }
+    .results__figure:not(:has(.results__prefix)) .results__value { padding-top: 0; }
+    .results__source { font-size: 12px; }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import NatureGlyph from './NatureGlyph.astro';
+import IntelligenceJourney from '../intelligence/IntelligenceJourney.astro';
+import { homeCopy } from './content';
+import { localePath, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale).foundation;
+const foundationIcons: Record<string, 'ai' | 'automation' | 'data' | 'integrations'> = {
+  ai: 'ai', automation: 'automation', data: 'data', integrations: 'integrations',
+};
+---
+<section class="home-section intelligence-foundation" id="yaagents" aria-labelledby="foundation-heading">
+  <div class="home-shell">
+    <div class="foundation-intro home-reveal"><p class="home-label">{c.eyebrow}</p><h2 class="home-heading" id="foundation-heading">{c.title}</h2><p class="home-intro">{c.description}</p></div>
+    <div class="foundation-demo home-reveal"><IntelligenceJourney locale={locale} /></div>
+    <a class="home-link foundation-link" href={localePath('/intelligence',locale)}>{c.builderLink}</a>
+    <div class="foundation-cards">
+      {c.cards.map(card => (
+        <article class="foundation-card home-reveal">
+          <div class="foundation-icon"><NatureGlyph name={foundationIcons[card.key] ?? 'ai'} size={52}/></div>
+          <span class="foundation-card-label">{card.label}</span>
+          <h3>{card.title}</h3>
+          <p>{card.text}</p>
+          {card.bullets?.length > 0 && <ul class="foundation-benefits">{card.bullets?.map(benefit => <li>{benefit}</li>)}</ul>}
+          <a class="home-link" href={localePath(card.href,locale)}>{card.link}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .intelligence-foundation{background:#0b3028;color:#f1faf2;position:relative;isolation:isolate;overflow:hidden}
+  .intelligence-foundation:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 95% 65%,#19765822,transparent 60%),radial-gradient(ellipse at 0 5%,#3da27818,transparent 55%)}
+  .foundation-intro{max-width:840px;margin:0 auto;text-align:center}.foundation-intro .home-label{color:#80c7a4;justify-content:center}.foundation-intro .home-heading{max-width:28ch;margin:auto}.foundation-intro .home-intro{max-width:71ch;margin:24px auto 0;color:#b0c9bb;font-size:16px}
+  .foundation-demo{margin:54px auto 0;padding:24px;border-radius:23px;background:#fcfdf9;box-shadow:0 35px 90px #001e2180,0 0 0 8px #c9f9dd08;border:1px solid #b9d7c4;max-width:1000px;min-width:0}
+  .foundation-link{margin:28px auto 0;color:#b0ddbd;justify-content:center;width:100%;font-size:12px}
+  .foundation-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:57px}.foundation-card{display:flex;flex-direction:column;border:1px solid #80b49432;border-radius:21px;background:linear-gradient(140deg,#d0ffe30c,#d0ffe303);padding:36px;position:relative;overflow:hidden}.foundation-icon{position:absolute;right:29px;top:25px}.foundation-card-label{display:flex;align-items:center;min-height:30px;padding-right:60px;font-size:10px;letter-spacing:.07em;color:#8ec5a3;margin-bottom:24px}.foundation-card h3{font:500 26px/1.3 Poppins,sans-serif;letter-spacing:-.04em;max-width:25ch;margin:0}.foundation-card p{font-size:13px;line-height:1.8;color:#b0c9bb;margin:18px 0 20px;max-width:54ch}.foundation-benefits{display:grid;gap:12px;list-style:none;padding:0;margin:0 0 28px}.foundation-benefits li{position:relative;padding-left:18px;color:#c6dccf;font-size:12px;line-height:1.75}.foundation-benefits li:before{content:"";position:absolute;left:0;top:.7em;width:5px;height:5px;border-radius:50%;background:#70c79f;box-shadow:0 0 0 3px #70c79f0c}.foundation-card .home-link{align-self:flex-start;margin-top:auto;color:#b7e0c3;font-size:12px}
+  @media(max-width:900px){.foundation-card{padding:28px}.foundation-card h3{font-size:24px}.foundation-icon{right:22px;top:20px}}
+  @media(max-width:600px){.foundation-intro{text-align:left}.foundation-intro .home-label{justify-content:flex-start}.foundation-intro .home-heading{margin:0;font-size:31px}.foundation-intro .home-intro{font-size:15px;line-height:1.75;margin-top:20px}.foundation-demo{margin-top:35px;padding:16px 12px;border-radius:16px;box-shadow:0 20px 50px #001e2150,0 0 0 5px #c9f9dd08}.foundation-link{font-size:11px;margin-top:21px}.foundation-cards{grid-template-columns:1fr;margin-top:35px;gap:15px}.foundation-card{padding:26px 23px;border-radius:17px}.foundation-card h3{font-size:25px}.foundation-card p{font-size:13px}.foundation-card-label{font-size:10px;margin-bottom:23px}.foundation-benefits{gap:11px;margin-bottom:25px}.foundation-benefits li{font-size:12px}.foundation-icon{top:21px;right:23px}.foundation-icon :global(img){width:40px;height:40px}}
+</style>

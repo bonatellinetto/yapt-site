@@ -1,0 +1,43 @@
+---
+interface Props {
+  name: 'gmail' | 'drive' | 'calendar' | 'rcs' | 'sms' | 'whatsapp' | 'instagram' | 'messenger';
+}
+const { name } = Astro.props;
+// Google icons are served locally from gstatic.com/images/branding/product/2x/*_2020q4_48dp.png.
+const google = ['gmail', 'drive', 'calendar'].includes(name);
+---
+
+<span class:list={['channel-icon', `channel-icon--${name}`]} aria-hidden="true">
+  {google ? <img src={`/brand/channels/${name}.png`} width="25" height="25" alt="" decoding="async" /> : (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      {name === 'whatsapp' && <>
+        <path d="M20.5 11.6a8.6 8.6 0 0 1-12.8 7.5L3 20.5l1.4-4.6a8.6 8.6 0 1 1 16.1-4.3Z" />
+        <path d="m8 7.3 1.3-.3 1.2 2.5-.9 1.1a9.1 9.1 0 0 0 3.9 3.8l1.1-.9 2.5 1.2-.3 1.3c-.2.9-1.3 1.4-2.2 1.1A12.3 12.3 0 0 1 7 9.5c-.3-.9.1-2 1-2.2Z" fill="currentColor" stroke="none" />
+      </>}
+      {name === 'instagram' && <>
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.7" r="1" fill="currentColor" stroke="none" />
+      </>}
+      {name === 'messenger' && <>
+        <path d="M12 3a8.6 8.6 0 0 0-9 8.3 8 8 0 0 0 3 6.2V21l3.1-1.7a10 10 0 0 0 2.9.4 8.6 8.6 0 0 0 9-8.4A8.6 8.6 0 0 0 12 3Z" fill="currentColor" stroke="none" />
+        <path d="m6.3 14.4 4.4-4.8 2.8 2.2 4.3-2.2-4.2 4.8-2.8-2.2Z" fill="white" stroke="none" />
+      </>}
+      {name === 'rcs' && <>
+        <path d="M6 14H4l-2 2V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1" />
+        <path d="M9 8h11a2 2 0 0 1 2 2v11l-4-3H9a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Z" />
+        <path d="M11 12h7m-7 3h4" />
+      </>}
+      {name === 'sms' && <>
+        <path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-5 3V6a2 2 0 0 1 2-2Z" />
+        <path d="M8 9h8m-8 4h5" />
+      </>}
+    </svg>
+  )}
+</span>
+
+<style>
+  .channel-icon{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#f9fff7;box-shadow:0 2px 8px #00352d1a;flex-shrink:0}
+  .channel-icon img{display:block;width:22px;height:22px;object-fit:contain}.channel-icon svg{width:21px;height:21px}
+  .channel-icon--whatsapp{color:#16a55d}.channel-icon--instagram{color:#fff;background:linear-gradient(35deg,#ffb548,#e54b78 52%,#8751c3)}
+  .channel-icon--messenger{color:#2878ed}.channel-icon--rcs{color:#2878ed}.channel-icon--sms{color:#18836a}
+</style>

@@ -1,0 +1,454 @@
+{
+  "meta": {
+    "title": "Inteligência artificial para operações e gestão",
+    "description": "Inteligência artificial para operações e gestão. Integre sistemas, automatize processos e acompanhe filas e produtividade para ganhar eficiência operacional."
+  },
+  "hero": {
+    "eyebrow": "Inteligência artificial para operações e gestão",
+    "title": "Inteligência artificial para operações.",
+    "ending": "Mais capacidade e eficiência.",
+    "description": "O yapt. conecta pessoas, dados e sistemas para aplicar IA na gestão da operação. Organize filas, automatize processos e acompanhe indicadores de produtividade para reduzir esforço repetitivo. Especialistas podem apoiar o diagnóstico e a implantação.",
+    "cta": "Quero um diagnóstico da operação",
+    "secondary": "Veja a operação em movimento",
+    "proof": "Parceiro Oficial Meta · 40M+ mensagens por mês · 16 anos.",
+    "frameBrand": "Operações",
+    "screenLabel": "Demanda, IA e equipe na mesma visão",
+    "screenNote": "Tela real do produto · exemplo de operação",
+    "image": "/produto/support/monitoria-periodo-privacidade.png",
+    "imageWidth": 1669,
+    "imageHeight": 942,
+    "imageAlt": "Tela real da monitoria do yapt., com volume, espera, filas e visões de IA e pessoas. Nomes protegidos.",
+    "tags": [
+      "Demanda",
+      "Pessoas",
+      "Processos",
+      "Resultados"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore os problemas da sua operação",
+    "mechanismLabel": "Como o yapt. resolve",
+    "actionLabel": "Na prática",
+    "measurementLabel": "O que acompanhar",
+    "exampleLabel": "Exemplo de operação",
+    "moreLabel": "Ampliar tela real",
+    "imageNote": "Capturas de diferentes setores e períodos. Interface em português. Os indicadores de cada tela têm seu próprio recorte.",
+    "eyebrow": "Encontre o esforço que não vira entrega",
+    "title": "Onde sua operação está perdendo tempo, dinheiro e capacidade?",
+    "description": "A fila que cresce, a tarefa refeita e a informação espalhada têm o mesmo efeito: mais esforço para entregar. Explore oito situações e veja como conectar gestão, IA e processos para agir sobre o desperdício.",
+    "items": [
+      {
+        "id": "visibilidade",
+        "short": "Falta de visibilidade",
+        "pain": "“Só descobrimos o problema quando a fila já cresceu.”",
+        "title": "Veja onde o trabalho está acumulando.",
+        "description": "Reúna a leitura da demanda, das filas e da atuação de IA e pessoas. Diferencie o movimento do dia do trabalho ainda ativo, inclusive de dias anteriores, para localizar o gargalo e decidir onde agir.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Observe",
+            "text": "Demanda do dia e trabalho ainda ativo."
+          },
+          {
+            "title": "Localize",
+            "text": "Filas, maior espera e passagem para pessoas."
+          },
+          {
+            "title": "Priorize",
+            "text": "O setor e os casos que exigem atenção."
+          }
+        ],
+        "benefits": [
+          "Veja o que a IA recebeu, resolveu ou encaminhou e o que chegou à equipe, respeitando o critério de cada indicador.",
+          "Consulte a saúde das filas e a maior espera para investigar o acúmulo antes de decidir a intervenção."
+        ],
+        "metric": "Trabalho ativo, conversas aguardando, maior espera e volume por setor no recorte escolhido.",
+        "example": {
+          "title": "Do volume geral ao ponto de atenção",
+          "when": "A gestão percebe que há trabalho acumulado na operação.",
+          "then": "Compara a visão de IA e pessoas e consulta a saúde das filas para localizar o setor com espera.",
+          "outcome": "A equipe tem um ponto concreto para investigar e definir a próxima ação."
+        },
+        "image": "/produto/support/monitoria-periodo-privacidade.png",
+        "imageAlt": "Monitoria real do yapt., com demanda, atuação de IA e pessoas e saúde das filas. Nomes protegidos.",
+        "imageWidth": 1669,
+        "imageHeight": 942
+      },
+      {
+        "id": "distribuicao",
+        "short": "Distribuição desigual",
+        "pain": "“Algumas pessoas estão sobrecarregadas enquanto outras poderiam ajudar.”",
+        "title": "Distribua o trabalho com critérios e limites.",
+        "description": "Configure a distribuição por setor e acompanhe a carga de cada operador. Rodízio, menor carga, prioridades e limites orientam a entrada de trabalho conforme as regras da operação.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Compare",
+            "text": "Carga atual, limites e disponibilidade."
+          },
+          {
+            "title": "Configure",
+            "text": "Critério, prioridades e limite por operador."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Distribuição, espera e necessidade de apoio."
+          }
+        ],
+        "benefits": [
+          "Escolha distribuição manual ou automática por rodízio ou menor carga, conforme a configuração do setor.",
+          "Equilibre a entrada de demandas com limites por operador e alternativas de espera ou encaminhamento para outra equipe."
+        ],
+        "metric": "Carga por operador, conversas em espera e distribuição do trabalho entre pessoas e setores.",
+        "example": {
+          "title": "Nova demanda respeita a regra do setor",
+          "when": "Uma conversa chega enquanto parte da equipe já está no limite.",
+          "then": "A distribuição automática considera o critério e as condições configuradas; sem vaga, aplica a regra de espera ou reserva definida.",
+          "outcome": "A gestão consegue acompanhar a carga e decidir quando ajustar o apoio."
+        },
+        "image": "/produto/ops-equipe.webp",
+        "imageAlt": "Tela real de carga dos operadores no yapt., com conversas atuais, limites e disponibilidade.",
+        "imageWidth": 1600,
+        "imageHeight": 1057
+      },
+      {
+        "id": "produtividade",
+        "short": "Capacidade desperdiçada",
+        "pain": "“O time trabalha o dia inteiro, mas não sabemos onde a capacidade se perde.”",
+        "title": "Encontre capacidade para entregar mais.",
+        "description": "Acompanhe produtividade por operador e período, combinando volume, tempos de atendimento, ocupação e registros de status. Investigue diferenças de carga e processo antes de comparar pessoas ou mudar a equipe.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Delimite",
+            "text": "Período, setores e critérios da análise."
+          },
+          {
+            "title": "Compare",
+            "text": "Volume, tempos, ocupação e status."
+          },
+          {
+            "title": "Investigue",
+            "text": "Rotinas e condições por trás dos números."
+          }
+        ],
+        "benefits": [
+          "Consulte conversas resolvidas, tempo médio de atendimento, primeira resposta e conversas por hora com o mesmo recorte.",
+          "Analise o tempo por status e os motivos de pausa registrados para orientar conversas com a equipe e ajustes de rotina."
+        ],
+        "metric": "Conversas resolvidas, tempo de atendimento, primeira resposta, ocupação e tempo por status no período.",
+        "example": {
+          "title": "O relatório abre uma investigação",
+          "when": "Dois operadores apresentam volumes diferentes em um mesmo período.",
+          "then": "A gestão verifica tempos, ocupação, status e contexto do trabalho antes de interpretar a diferença.",
+          "outcome": "O ajuste pode considerar carga, processo e necessidade de orientação com base em evidências."
+        },
+        "image": "/produto/ops-equipe.webp",
+        "imageAlt": "Tela real do yapt. com a carga e a disponibilidade dos operadores para apoiar a análise da capacidade.",
+        "imageWidth": 1600,
+        "imageHeight": 1057
+      },
+      {
+        "id": "prazos",
+        "short": "Prazos e espera",
+        "pain": "“A mensagem foi respondida, mas o cliente ainda espera o que precisa.”",
+        "title": "Dê um prazo a cada parte da espera.",
+        "description": "Defina metas por setor e diferencie primeira resposta, próxima resposta, resposta humana e resolução. Acompanhe os controles habilitados para investigar onde a jornada demora, mesmo depois de uma resposta automática.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Defina",
+            "text": "Metas e horário de atendimento do setor."
+          },
+          {
+            "title": "Distinga",
+            "text": "Atribuição, resposta e resolução."
+          },
+          {
+            "title": "Investigue",
+            "text": "Casos e etapas com espera além do esperado."
+          }
+        ],
+        "benefits": [
+          "Configure metas próprias para os tempos relevantes e habilite os controles adequados ao processo.",
+          "Consulte os casos ligados aos indicadores; atribuir a um operador não equivale a responder ao cliente."
+        ],
+        "metric": "Espera, primeira resposta humana, próxima resposta, resolução e cumprimento das metas habilitadas.",
+        "example": {
+          "title": "A transferência não encerra a espera",
+          "when": "A IA responde e encaminha uma conversa para uma pessoa.",
+          "then": "A operação acompanha o prazo da resposta humana conforme o controle e a meta configurados.",
+          "outcome": "A gestão consegue investigar a espera que continua depois da atuação da IA."
+        },
+        "image": "/produto/ops-prazos.webp",
+        "imageAlt": "Configuração real de metas de tempo por setor no yapt., com prazos de resposta e resolução.",
+        "imageWidth": 1600,
+        "imageHeight": 1291
+      },
+      {
+        "id": "continuidade",
+        "short": "Trabalho sem continuidade",
+        "pain": "“O caso troca de mãos e precisamos reconstruir tudo para continuar.”",
+        "title": "Mantenha contexto, responsável e próximo passo.",
+        "description": "Conecte conversas, chamados e histórico disponível para acompanhar o trabalho entre pessoas e setores. Registre etapas e encaminhamentos para que a próxima pessoa encontre o que já aconteceu e o que precisa continuar.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Conecte",
+            "text": "Cliente, conversa e chamado correspondente."
+          },
+          {
+            "title": "Registre",
+            "text": "Etapa, responsável e motivo do encaminhamento."
+          },
+          {
+            "title": "Continue",
+            "text": "Histórico e pendências disponíveis para o time."
+          }
+        ],
+        "benefits": [
+          "Organize os casos e suas conversas para consultar o percurso do trabalho sem depender apenas da memória da equipe.",
+          "Inclua resumo ou nota no fluxo configurado e registre destino e motivo ao encaminhar para outro setor."
+        ],
+        "metric": "Casos sem avanço, transferências, reaberturas e tempo de passagem entre etapas.",
+        "example": {
+          "title": "A próxima equipe encontra o contexto",
+          "when": "Uma solicitação precisa seguir para outro setor.",
+          "then": "O encaminhamento mantém os registros disponíveis e identifica o destino e o motivo da passagem.",
+          "outcome": "O responsável pode consultar o que já foi tratado e dar continuidade ao caso."
+        },
+        "image": "/produto/support/ticket-encaminhamento-real.png",
+        "imageAlt": "Ticket real do yapt. com etapa, responsável e opções de encaminhamento para continuar o trabalho.",
+        "imageWidth": 1090,
+        "imageHeight": 1634
+      },
+      {
+        "id": "automacoes",
+        "short": "Rotinas manuais",
+        "pain": "“Criar tarefas, preencher campos e lembrar cada próximo passo ainda depende do time.”",
+        "title": "Tire as rotinas repetitivas do caminho do time.",
+        "description": "Crie atividades automaticamente em negócios e no suporte, preencha os campos definidos e organize réguas inteligentes em todas as etapas da jornada. O yapt. conecta eventos, condições, IA e ações para manter o trabalho avançando com menos esforço manual.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Dispare",
+            "text": "O evento do negócio ou atendimento inicia a rotina."
+          },
+          {
+            "title": "Execute",
+            "text": "Atividades, campos e próximos passos seguem as regras definidas."
+          },
+          {
+            "title": "Dê continuidade",
+            "text": "Réguas inteligentes acompanham cada etapa da jornada."
+          }
+        ],
+        "benefits": [
+          "Crie atividades com responsáveis e prazos a partir do que acontece no negócio ou no atendimento.",
+          "Preencha os campos definidos automaticamente e aplique réguas inteligentes de comunicação e ação ao longo de toda a jornada."
+        ],
+        "metric": "Atividades criadas, registros preenchidos, próximos passos executados e tempo entre etapas.",
+        "example": {
+          "title": "Uma rotina com próximos passos definidos",
+          "when": "Um caso chega a uma etapa que exige atualização e encaminhamento.",
+          "then": "O fluxo avalia as condições e executa os registros e as ações configuradas, com os agentes e as permissões definidos.",
+          "outcome": "A equipe consulta o histórico da execução para acompanhar o avanço e tratar o que precisar de atenção."
+        },
+        "image": "/produto/vendas-reguas.webp",
+        "imageAlt": "Tela real de réguas de automação do yapt., com rotinas e condições para avançar o trabalho.",
+        "imageWidth": 1600,
+        "imageHeight": 565
+      },
+      {
+        "id": "sistemas",
+        "short": "Sistemas desconectados",
+        "pain": "“Para concluir uma tarefa, precisamos abrir várias telas e copiar informações.”",
+        "title": "Sua integração com APIs criada por conversa no yaAgents.",
+        "description": "Descreva o que precisa consultar ou executar e crie a conexão com APIs por conversa no yaAgents. Leve os dados dos sistemas internos para o modal da conversa e disponibilize consultas e ações para os agentes de IA e para o time.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Descreva",
+            "text": "O sistema, a API e o que precisa acontecer."
+          },
+          {
+            "title": "Construa",
+            "text": "A conversa no yaAgents vira uma conexão com consultas e ações."
+          },
+          {
+            "title": "Use",
+            "text": "Dados para o operador e ferramentas para a IA, no contexto do trabalho."
+          }
+        ],
+        "benefits": [
+          "Construa conexões com APIs e webhooks por conversa, com os dados, acessos e ações que a operação precisa.",
+          "Exiba as informações dos sistemas internos dentro do atendimento e permita que a IA consulte ou execute as ações configuradas."
+        ],
+        "metric": "Troca de telas, consultas e cópias manuais, tempo de execução e falhas de passagem de informação.",
+        "example": {
+          "title": "O dado chega ao ponto de decisão",
+          "when": "A equipe precisa consultar uma pendência registrada em outro sistema.",
+          "then": "A conexão configurada traz a informação disponível para o contexto da conversa.",
+          "outcome": "A pessoa continua o trabalho com o dado consultado sem refazer a busca em outra tela."
+        },
+        "image": "/produto/support/dados-na-conversa-real.png",
+        "imageAlt": "Tela real do yapt. com informações de um sistema interno dentro do modal da conversa.",
+        "imageWidth": 1398,
+        "imageHeight": 1678
+      },
+      {
+        "id": "resultados",
+        "short": "Melhoria sem medida",
+        "pain": "“Mudamos a operação, mas não sabemos se o resultado melhorou.”",
+        "title": "Acompanhe a mudança com critérios comparáveis.",
+        "description": "Defina o problema, o período e o indicador antes de alterar a rotina. Combine monitoria, produtividade e jornada dos casos para verificar o que mudou e investigar o que ainda exige ajuste.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Defina",
+            "text": "O cenário, o indicador e o recorte inicial."
+          },
+          {
+            "title": "Compare",
+            "text": "Períodos com o mesmo critério de leitura."
+          },
+          {
+            "title": "Evolua",
+            "text": "O processo a partir dos casos e dos dados."
+          }
+        ],
+        "benefits": [
+          "Leia espera, trabalho, transferências e produtividade conforme o período e as definições de cada relatório.",
+          "Quando necessário, conte com especialistas para revisar os casos, escolher o próximo ajuste e acompanhar o mesmo cenário."
+        ],
+        "metric": "Evolução da espera, do trabalho acumulado, dos tempos, das transferências e da produtividade no recorte definido.",
+        "example": {
+          "title": "A melhoria tem uma pergunta para responder",
+          "when": "A empresa ajusta a distribuição para tratar o acúmulo em um setor.",
+          "then": "Acompanha carga e espera em períodos comparáveis e investiga os casos que continuam parados.",
+          "outcome": "A gestão tem evidência para manter, corrigir ou ampliar o ajuste."
+        },
+        "image": "/produto/demo-vendas-eficiencia.webp",
+        "imageAlt": "Relatório real de eficiência do yapt., com tempos e percurso dos casos de um funil de suporte.",
+        "imageWidth": 2458,
+        "imageHeight": 2308
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Por dentro da operação",
+    "title": "Do trabalho acumulado à próxima decisão.",
+    "description": "Acompanhe uma leitura da monitoria, encontre a fila com espera e compare a carga da equipe. Depois, veja onde configurar a distribuição e os prazos e volte aos indicadores para acompanhar.",
+    "note": "Telas reais de diferentes setores e períodos, com indicadores próprios de cada recorte."
+  },
+  "foundation": {
+    "eyebrow": "Uma base conectada para a operação",
+    "title": "IA, automações, dados e integrações trabalhando com o seu time.",
+    "description": "Automação de processos e integração de sistemas conectam a demanda ao trabalho que precisa acontecer. Sua equipe pode contar com especialistas para configurar regras, dados e IA conforme as necessidades da operação.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "IA na gestão da operação",
+        "text": "Conhecimento e orientações preparam agentes e sugestões para os cenários definidos."
+      },
+      {
+        "icon": "automation",
+        "title": "Automação de processos",
+        "text": "Regras, ferramentas e limites configurados organizam as rotinas e a passagem para pessoas."
+      },
+      {
+        "icon": "data",
+        "title": "Indicadores de produtividade",
+        "text": "A gestão de filas usa indicadores de volume, carga e tempo para identificar gargalos e avaliar a eficiência operacional."
+      },
+      {
+        "icon": "integrations",
+        "title": "Integração de sistemas",
+        "text": "APIs e acessos disponíveis permitem trazer consultas e ações para o contexto do trabalho."
+      }
+    ],
+    "builderLabel": "yaAgents · construção por conversa",
+    "builderTitle": "Descreva sua operação. Construa a IA e as conexões para trabalhar com ela.",
+    "builderDescription": "Organize conhecimento, orientações e ferramentas por conversa no yaAgents. Especialistas podem apoiar sua equipe na revisão da configuração, nos testes e na evolução da IA conforme o processo.",
+    "builderLink": "Conheça o yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Tela real do construtor de agentes e ferramentas de IA do yapt."
+  },
+  "adoption": {
+    "eyebrow": "Tecnologia própria e apoio especializado",
+    "title": "Sua operação tem particularidades. A melhoria começa por entendê-las.",
+    "description": "O diagnóstico considera filas, processos manuais e sistemas para priorizar a aplicação de IA e automação. Sua equipe pode contar com apoio especializado na implantação e na evolução da operação.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Entender a demanda, os gargalos, a capacidade do time e os sistemas envolvidos."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Configurar um primeiro cenário com regras, IA, conhecimento e conexões necessárias."
+      },
+      {
+        "title": "Evoluir",
+        "text": "Orientar o time, acompanhar os indicadores e ajustar o processo com base no trabalho real."
+      }
+    ],
+    "footnote": "Escopo, canais, integrações e recursos são definidos conforme a necessidade e a configuração de cada empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de começar",
+    "title": "Clareza para organizar. Evidência para evoluir.",
+    "items": [
+      {
+        "question": "Inteligência artificial para operações se limita ao atendimento?",
+        "answer": "A plataforma conecta conversas, tickets, responsáveis, filas, IA e sistemas para organizar o trabalho ligado à jornada do cliente. O diagnóstico identifica onde aplicar automação de processos e quais etapas acompanhar no yapt. ou em sistemas integrados."
+      },
+      {
+        "question": "Como equilibrar a carga de trabalho da equipe?",
+        "answer": "Combine a visão das filas, da carga atual, dos limites e da disponibilidade dos operadores para decidir onde apoiar a operação. Configure distribuição manual ou automática por rodízio ou menor carga, prioridades e alternativas de espera ou setor reserva. A capacidade deve ser lida junto com a carga e os limites, além do status online."
+      },
+      {
+        "question": "O que podemos automatizar com IA?",
+        "answer": "Podemos combinar fluxos, réguas e agentes para consultar informações, preparar respostas, atualizar registros e encaminhar demandas conforme os gatilhos e as condições definidos. O cenário usa conhecimento, ferramentas e permissões configurados, com revisão ou continuidade humana quando necessário. Nas sugestões do mentor, o operador decide o que aplicar."
+      },
+      {
+        "question": "Como os prazos são acompanhados depois da resposta da IA?",
+        "answer": "Resposta automática, atribuição e primeira resposta humana são eventos diferentes. O setor configura metas e habilita os controles de tempo relevantes ao processo, incluindo os prazos de resposta e resolução. Atribuir uma conversa não equivale a responder ao cliente."
+      },
+      {
+        "question": "Precisamos substituir nossos sistemas?",
+        "answer": "O diagnóstico define o que concentrar no yapt. e o que conectar. No yaAgents, construímos conexões por conversa para disponibilizar dados, consultas e ações no trabalho. A viabilidade depende dos sistemas, das APIs, dos acessos e das ferramentas disponíveis."
+      },
+      {
+        "question": "Como avaliamos a produtividade e o retorno da mudança?",
+        "answer": "Definimos cenário, período e critérios comparáveis para acompanhar espera, carga, volume, tempos e produtividade. A análise considera os casos e as condições da rotina para orientar os próximos ajustes. Para avaliar o impacto econômico, combinamos os indicadores operacionais com os custos e dados do negócio."
+      },
+      {
+        "question": "Por onde começamos e como os especialistas participam?",
+        "answer": "Você pode começar por um problema concreto, como acúmulo em uma fila ou consultas manuais repetidas. Especialistas estão disponíveis para apoiar a configuração do primeiro cenário, os testes com o time e a análise dos indicadores. A participação e o escopo são definidos conforme as necessidades da operação."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Encontre a capacidade que sua operação está perdendo",
+    "title": "Vamos encontrar onde sua operação perde tempo, dinheiro e capacidade.",
+    "description": "Analisamos demanda, pessoas, processos e sistemas para localizar esperas e esforço repetido. Definimos um primeiro cenário para aplicar IA e plataforma, com apoio especializado conforme a necessidade.",
+    "points": [
+      "Uma visão dos gargalos e do esforço repetido.",
+      "Um primeiro cenário com prioridades e indicadores claros.",
+      "Plataforma com apoio especializado disponível."
+    ],
+    "cta": "Quero um diagnóstico da operação",
+    "footnote": "Converse com nosso time sobre a sua operação.",
+    "error": "O atendimento não carregou agora. Tente novamente ou abra o WhatsApp pelo link abaixo.",
+    "fallback": "Abrir direto no WhatsApp",
+    "noScript": "Você também pode falar com nosso time pelo WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Fechar imagem ampliada",
+    "imageLabel": "Tela real do produto",
+    "openImage": "Ampliar a tela",
+    "skip": "Ir para o conteúdo",
+    "imageNote": "Use os controles da imagem para ampliar e fechar."
+  }
+}

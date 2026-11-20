@@ -2,48 +2,23 @@
 import '../styles/global.css';
 import SiteNavbar from '../components/SiteNavbar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { type Locale, localeHtmlLang, locales, localeHreflang } from '../lib/i18n';
-import { getCanonical, getHreflangAlternates, organizationJsonLd, websiteJsonLd } from '../lib/seo';
+import DiagnosticRecovery from '../components/diagnostic/DiagnosticRecovery.astro';
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import { localeHtmlLang } from '../lib/i18n';
+import type { SEOProps } from '../lib/seo';
+import SiteSEO from '../components/SiteSEO.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 
-export interface Props {
-  title: string;
-  description: string;
-  path: string;
-  locale: Locale;
-  ogType?: string;
-  ogImage?: string;
-  jsonLd?: Record<string, any>[];
-}
-
-const {
-  title,
-  description,
-  path,
-  locale,
-  ogType = 'article',
-  ogImage = '/og-image.png',
-  jsonLd = [],
-} = Astro.props;
-
-const canonical = getCanonical(path, locale);
-const alternates = getHreflangAlternates(path);
+export interface Props extends SEOProps { noHreflang?: boolean }
+const { locale, path } = Astro.props;
 const htmlLang = localeHtmlLang[locale];
-const fullTitle = `${title} | yapt. Blog`;
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://yapt.ai${ogImage}`;
-
-const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
+const ogType = Astro.props.ogType || (path === '/blog' ? 'website' : 'article');
 ---
 
 <!DOCTYPE html>
 <html lang={htmlLang}>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{fullTitle}</title>
-  <meta name="description" content={description} />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <link rel="canonical" href={canonical} />
-
+  <SiteSEO {...Astro.props} ogType={ogType} />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
   <!-- Fonts: Inter + Poppins — preloaded to avoid render-blocking -->
@@ -59,30 +34,13 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <meta property="og:type" content={ogType} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:site_name" content="yapt." />
-  <meta property="og:image" content={ogImageUrl} />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImageUrl} />
-
-  {alternates.map(({ hreflang, href }) => (
-    <link rel="alternate" hreflang={hreflang} href={href} />
-  ))}
-
-  {allJsonLd.map((ld) => (
-    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
-  ))}
 </head>
 <body class="min-h-screen bg-[#FAFBFC]">
+  <SiteAnalytics />
   <SiteNavbar locale={locale} />
   <slot />
   <SiteFooter locale={locale} />
+  <DiagnosticRecovery locale={locale} />
 
   <!-- Blog pages: start navbar in solid state (no hero gradient) -->
   <script is:inline>
@@ -130,14 +88,7 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
     })();
   </script>
 
-  <!-- yapt. WhatsApp Button — lead capture + wa.me redirect -->
-  <script is:inline>
-    (function(w,d,s,o,f,js,fjs){
-      w['YaptWA']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-      js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-      js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
-    }(window,document,'script','yaptwa','https://cdn.yapt.ai/wa-button.js'));
-    yaptwa('init', { id: 'a28b6328-6021-4b00-8d2b-af875173ec4b', mode: 'both' });
-  </script>
+  <WhatsAppWidget />
+  <script>import '../scripts/diagnostic';</script>
 </body>
 </html>

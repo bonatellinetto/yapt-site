@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "title": "Artificial intelligence for customer support",
+    "description": "Artificial intelligence for customer support on WhatsApp. Connect tickets, SLAs and knowledge to resolve more with less waiting and rework."
+  },
+  "hero": {
+    "eyebrow": "Artificial intelligence for customer support",
+    "title": "Artificial intelligence for support.",
+    "ending": "More resolutions and efficiency.",
+    "description": "yapt. applies AI to WhatsApp customer service, connecting tickets, queues and a knowledge base. Agents and copilots help resolve requests with context and reduce waiting and rework. Specialists can support implementation and ongoing improvement.",
+    "cta": "I'd like a support assessment",
+    "secondary": "See how service moves forward",
+    "proof": "Official Meta Partner · 40M+ messages per month · 16 years.",
+    "frameBrand": "Support",
+    "screenLabel": "AI and your team in one efficiency view",
+    "screenNote": "Real product screen · operational example",
+    "image": "/produto/support/monitoria-periodo-privacidade.png",
+    "imageWidth": 1669,
+    "imageHeight": 942,
+    "imageAlt": "Real yapt. monitoring screen with volumes, times and service indicators for AI and people. Names protected.",
+    "tags": [
+      "AI",
+      "Team",
+      "Times",
+      "Efficiency"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore support operation challenges",
+    "mechanismLabel": "How yapt. solves it",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Operational example",
+    "moreLabel": "Expand real product screen",
+    "imageNote": "Screens from different teams and configuration examples. Interface in Portuguese.",
+    "eyebrow": "The cost of inefficient support",
+    "title": "What is inefficient support costing you in revenue, productivity and trust?",
+    "description": "Customers left waiting, recurring problems and agents stuck on manual tasks: the cost goes beyond support. It shows up in poor experiences, wasted capacity and revenue that never materializes. yapt. connects AI and the platform to organize support. Specialists can help identify bottlenecks and implement the solution.",
+    "items": [
+      {
+        "id": "contexto",
+        "short": "Customer and context",
+        "pain": "“The customer comes back and has to explain everything again.”",
+        "title": "Continue where the customer left off.",
+        "description": "When the customer is identified, AI and the team can use available history and linked tickets to understand the reason for contact. Service gains context before asking for the story to start again.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Recognize",
+            "text": "Customer and available history."
+          },
+          {
+            "title": "Understand",
+            "text": "Open tickets and the reason for contact."
+          },
+          {
+            "title": "Continue",
+            "text": "Next step with AI and the team."
+          }
+        ],
+        "benefits": [
+          "Configure AI to check the contact's tickets and help distinguish an ongoing case from a new request.",
+          "Prepare a summary or note in the configured workflow and hand over to a person with the available history and context."
+        ],
+        "metric": "Repeated information, preparation time and service continuity.",
+        "example": {
+          "title": "Two tickets, one clear choice",
+          "when": "An identified customer contacts the company again.",
+          "then": "AI checks the available tickets and asks which one they want to continue, or whether it is a new topic.",
+          "outcome": "The conversation stays linked to the context chosen by the customer."
+        },
+        "image": "/produto/support/academy-tickets-historico-real.webp",
+        "imageAlt": "A real yapt. ticket history screen with cases and owners.",
+        "imageWidth": 1400,
+        "imageHeight": 493
+      },
+      {
+        "id": "filas",
+        "short": "Queues and productivity",
+        "pain": "“The queue grows, urgent requests stay hidden and part of the team is overloaded.”",
+        "title": "Balance queues, capacity and team productivity.",
+        "description": "See demand, waiting time and workload by agent and queue. Combine priorities, capacity and customer portfolios to distribute work better and discover where the team needs support.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "See",
+            "text": "Queues, waiting time and agent productivity."
+          },
+          {
+            "title": "Distribute",
+            "text": "Rules, priorities and team capacity."
+          },
+          {
+            "title": "Track",
+            "text": "Workload, continuity and progress by queue."
+          }
+        ],
+        "benefits": [
+          "Use round-robin or least-busy routing in the configured automatic mode, respecting priorities and team limits.",
+          "Track productivity by agent and queue, and organize owners and portfolios, when enabled, to keep service moving."
+        ],
+        "metric": "Waiting time, workload, agent productivity and conversations awaiting service.",
+        "example": {
+          "title": "Routing considers capacity",
+          "when": "New conversations arrive in a team that is busy.",
+          "then": "Routing checks the configured conditions and keeps the conversation waiting when no slot is available.",
+          "outcome": "Management sees the backlog and can decide where to support the operation."
+        },
+        "image": "/produto/ops-filas.webp",
+        "imageAlt": "A real yapt. queue health screen with waiting time and availability by team.",
+        "imageWidth": 1600,
+        "imageHeight": 670
+      },
+      {
+        "id": "chamados",
+        "short": "Cases and routing",
+        "pain": "“Service changes hands and nobody knows what still needs to be resolved.”",
+        "title": "Keep track of the entire case.",
+        "description": "Connect tickets, conversations, stages and owners. Separate topics when necessary and track specialist routing without losing the trail of what has already happened.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Case, topic and linked conversations."
+          },
+          {
+            "title": "Track",
+            "text": "Stages, owners and pending work."
+          },
+          {
+            "title": "Route",
+            "text": "Reason, destination and case history."
+          }
+        ],
+        "benefits": [
+          "Check open tickets and organize new topics or sub-tickets according to the team's defined triage.",
+          "Record the handoff to another team with a reason and ownership, preserving case continuity."
+        ],
+        "metric": "Stalled cases, transfers and time between stages.",
+        "example": {
+          "title": "A case that continues across teams",
+          "when": "Service needs help from a specialist team.",
+          "then": "The handoff records the reason and destination and keeps the ticket trail available.",
+          "outcome": "The next team takes over knowing what has been addressed and what needs to continue."
+        },
+        "image": "/produto/support/ticket-encaminhamento-real.png",
+        "imageAlt": "Real yapt. ticket screen with stage, priority, owner, assignment and handoff actions.",
+        "imageWidth": 1090,
+        "imageHeight": 1634
+      },
+      {
+        "id": "conhecimento",
+        "short": "Knowledge and copilot",
+        "pain": "“The agent looks for answers across several manuals and repeats attempts.”",
+        "title": "Apply business knowledge to every interaction.",
+        "description": "Organize manuals, product knowledge and procedures to support L1 and L2 routines. AI and the copilot help prepare responses and next steps using the guidance configured for the scenario.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Products, manuals and guidance."
+          },
+          {
+            "title": "Guide",
+            "text": "Procedures and applicable context."
+          },
+          {
+            "title": "Review",
+            "text": "Team responses and next steps."
+          }
+        ],
+        "benefits": [
+          "Configure stages, prerequisites and routing for when a routine does not progress.",
+          "Review knowledge and procedures with the people responsible for approval; the agent decides what to use from copilot suggestions."
+        ],
+        "metric": "Time to find answers, repeated attempts and the need for knowledge review.",
+        "example": {
+          "title": "A procedure with a defined next step",
+          "when": "A customer reports a problem covered by the company's knowledge.",
+          "then": "AI applies the configured procedure, considering context, stages and routing alternatives.",
+          "outcome": "The team follows the guidance and continues when human intervention is needed."
+        },
+        "image": "/produto/support/mentor-privacidade.png",
+        "imageAlt": "Real yapt. mentor screen within a conversation, with a suggested response, guidance and an option to use the response. Brand name protected.",
+        "imageWidth": 1058,
+        "imageHeight": 1487
+      },
+      {
+        "id": "integracoes",
+        "short": "Systems and automations",
+        "pain": "“The customer waits while the agent opens other screens and copies information.”",
+        "title": "Build integrations through conversation. Bring data into service.",
+        "description": "In yaAgents, describe what you need to look up or do and build the integration through conversation, using available systems and APIs. Display internal system data within the conversation modal and give AI tools to look up information and perform configured actions.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "The need, system and API documentation."
+          },
+          {
+            "title": "Connect",
+            "text": "Queries, actions and required permissions."
+          },
+          {
+            "title": "Serve",
+            "text": "Data and tools in the conversation, for AI and agents."
+          }
+        ],
+        "benefits": [
+          "Build and adjust connections through conversation in yaAgents, with configuration and access review.",
+          "At least 30% higher agent productivity, with internal system data in the conversation and less screen switching, copying and manual lookup."
+        ],
+        "metric": "Handling time, manual queries, screen switching and agent productivity.",
+        "example": {
+          "title": "The system answers within the conversation",
+          "when": "A customer asks about an order or an outstanding issue held in another system.",
+          "then": "The configured connection retrieves the data and makes it available to AI and the agent in the service context.",
+          "outcome": "The team continues with the available information without repeating the lookup on another screen."
+        },
+        "image": "/produto/support/dados-na-conversa-real.png",
+        "imageAlt": "Real yapt. screen with internal system data inside the conversation modal, including customer health and financial status.",
+        "imageWidth": 1398,
+        "imageHeight": 1678
+      },
+      {
+        "id": "prazos",
+        "short": "Deadlines and continuity",
+        "pain": "“AI responds quickly, but the customer is still waiting for a person or a resolution.”",
+        "title": "See the waiting that an automatic response does not resolve.",
+        "description": "Define deadlines and track the handoff between AI and the team. Distinguish waiting, first human response, continuity and resolution to investigate where service is taking too long.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Time targets and service hours."
+          },
+          {
+            "title": "Distinguish",
+            "text": "AI response, waiting and human response."
+          },
+          {
+            "title": "Track",
+            "text": "Operational deadlines and issues."
+          }
+        ],
+        "benefits": [
+          "Configure targets by team and enable the time controls that fit the process.",
+          "Open the cases behind the indicators to investigate delays, without confusing assignment with a response to the customer."
+        ],
+        "metric": "Waiting time, human response, case duration and compliance with configured deadlines.",
+        "example": {
+          "title": "Waiting stays visible after the handoff",
+          "when": "AI routes a conversation to the team.",
+          "then": "Enabled controls track the deadline and first human response according to the team's configuration.",
+          "outcome": "Management can investigate the wait and decide what action is needed."
+        },
+        "image": "/produto/ops-prazos.webp",
+        "imageAlt": "A real example of time target configuration by team in yapt.",
+        "imageWidth": 1600,
+        "imageHeight": 1291
+      },
+      {
+        "id": "qualidade",
+        "short": "Quality and bottlenecks",
+        "pain": "“We close tickets, but don't know where time is lost or how the customer felt afterward.”",
+        "title": "Measure the journey to resolution. Investigate rework.",
+        "description": "Track waiting, work, stage progress, reopenings and transfers. Combine case analysis with available satisfaction surveys to decide where to improve.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Observe",
+            "text": "Cases, times and handoffs between teams."
+          },
+          {
+            "title": "Investigate",
+            "text": "Reopenings, bottlenecks and feedback received."
+          },
+          {
+            "title": "Improve",
+            "text": "Priorities and tracking changes."
+          }
+        ],
+        "benefits": [
+          "Check case journeys and identify waiting or repeated team transfers.",
+          "Read CSAT, NPS, comments and response rates when surveys have been sent and answered."
+        ],
+        "metric": "Waiting and working time, reopenings, transfers and satisfaction within the defined scope.",
+        "example": {
+          "title": "The indicator leads to what needs investigation",
+          "when": "Management notices a buildup at a support stage.",
+          "then": "The report lets you consult cases and analyze their journey according to the scope and available data.",
+          "outcome": "The team defines an improvement and tracks indicators for the same scenario."
+        },
+        "image": "/produto/demo-vendas-eficiencia.webp",
+        "imageAlt": "A real screen of the Support and warranty pipeline efficiency report in yapt.",
+        "imageWidth": 2458,
+        "imageHeight": 2308
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Inside the support operation",
+    "title": "The customer is the same. Context continues.",
+    "description": "Follow customer recognition, ticket lookup, configured records and handoff to a person. Then explore queues, capacity and operational indicators.",
+    "note": "Demonstration with sample data. Features, records and actions depend on configuration. Indicators must be read according to each report's period and criteria."
+  },
+  "foundation": {
+    "eyebrow": "Intelligence applied to resolution",
+    "title": "AI prepares service. People and processes connect to resolution.",
+    "description": "The platform connects knowledge and customer history to tickets and service actions. Your team can work with specialists to configure AI and improve processes.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "AI in customer service",
+        "text": "History, tickets and the knowledge base help agents respond and route each case with context."
+      },
+      {
+        "icon": "teams",
+        "title": "A copilot for the team",
+        "text": "Knowledge, summaries and suggestions support the agent, who keeps control over what to apply."
+      },
+      {
+        "icon": "automation",
+        "title": "Smart queues",
+        "text": "Configured rules, priorities and routing organize the next steps in customer service."
+      },
+      {
+        "icon": "data",
+        "title": "Tickets and SLAs in view",
+        "text": "Waiting times, deadlines and the ticket journey help identify bottlenecks and guide support decisions."
+      }
+    ],
+    "builderLabel": "yaAgents · build through conversation",
+    "builderTitle": "Describe how your support works. Prepare AI to work with it.",
+    "builderDescription": "Organize instructions, knowledge and tools through conversation in yaAgents. Specialists can help your team review the configuration, test scenarios and improve AI in customer service.",
+    "builderLink": "Explore yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "A real screen of yapt.'s AI agent builder."
+  },
+  "adoption": {
+    "eyebrow": "Our platform, with specialist support available",
+    "title": "Your support operation has its own needs. AI implementation needs to understand them.",
+    "description": "The assessment considers contact reasons, the knowledge base, queues and systems. Specialists can help choose the first scenario and implement AI.",
+    "steps": [
+      {
+        "title": "Assess",
+        "text": "Understand where there is waiting, repeated work and context loss in the customer journey."
+      },
+      {
+        "title": "Apply",
+        "text": "Configure the first scenario, AI, knowledge, queues and necessary connections."
+      },
+      {
+        "title": "Improve",
+        "text": "Guide the team, review knowledge and track the scenario's indicators."
+      }
+    ],
+    "footnote": "Scope, channels, integrations and features are defined according to each company's needs and configuration."
+  },
+  "faq": {
+    "eyebrow": "Before getting started",
+    "title": "Clarity for those who serve. Visibility for those who decide.",
+    "items": [
+      {
+        "question": "Can AI work in L1 and L2 support?",
+        "answer": "We can configure agents and procedures for service routines using company knowledge and permitted actions. Scope is defined and tested by scenario, with a handoff to the team when the routine needs human intervention."
+      },
+      {
+        "question": "Does AI know who the customer is and which tickets they already have?",
+        "answer": "When the contact is identified and tools are configured, AI can check tickets and use available context. Data, memory and inherited history follow the operation's settings and limits."
+      },
+      {
+        "question": "What happens when a person needs to take over?",
+        "answer": "The workflow can check context, generate a summary or note and route service according to configured actions. The handoff preserves available records; generating a summary and transferring are steps that must be part of the workflow."
+      },
+      {
+        "question": "How do we track deadlines after AI responds?",
+        "answer": "An automatic response and the first human response are different situations. The team can configure targets and enable time controls according to its process. Assigning a conversation to an agent is not the same as responding to the customer."
+      },
+      {
+        "question": "Do we need to replace the systems we already use?",
+        "answer": "The diagnosis defines what to centralize in yapt. and what needs to stay connected. In yaAgents, we can build connections through conversation and make queries, actions and data available within service. Integration depends on the systems, APIs, access and tools available."
+      },
+      {
+        "question": "How do we assess whether support has become more efficient?",
+        "answer": "We define the period, cases and criteria before comparing. Waiting, working time, stage progress, reopenings, transfers and answered surveys help investigate bottlenecks. An isolated indicator does not prove quality or savings."
+      },
+      {
+        "question": "Does AI learn and change procedures on its own?",
+        "answer": "Knowledge and procedures need organization, review and responsible owners. The implementation can define approval criteria and guide which content AI uses; improvements follow the review process and the company's configuration."
+      },
+      {
+        "question": "How do an AI chatbot, tickets and the team work together?",
+        "answer": "An implementation can combine an AI chatbot for WhatsApp customer service, tickets to track each case and copilots to guide the team. The knowledge base provides context; queue rules and SLAs help organize the work. Actions and handoffs depend on the workflow and permissions defined for the operation."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Discover where support can resolve issues better",
+    "title": "Let's find where your support loses time, money and trust.",
+    "description": "We analyze the journey from first contact to resolution to identify waiting, rework and context loss. We define how to apply AI and the platform, with specialist support according to your needs.",
+    "points": [
+      "A view of your service bottlenecks.",
+      "A first scenario with clear priorities.",
+      "Platform with specialist support available."
+    ],
+    "cta": "I'd like a support assessment",
+    "footnote": "Talk to our team about your operation.",
+    "error": "The chat could not load right now. Try again or open WhatsApp using the link below.",
+    "fallback": "Open directly in WhatsApp",
+    "noScript": "You can also talk to our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close expanded image",
+    "imageLabel": "Real product screen",
+    "openImage": "Expand screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to expand and close it."
+  }
+}

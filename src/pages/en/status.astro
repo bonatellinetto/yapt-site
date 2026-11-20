@@ -214,7 +214,7 @@ function pulseDotClass(status: string) {
 }
 ---
 
-<SiteLayout title={meta.title} description={meta.description} path="/status" locale={locale}>
+<SiteLayout title={meta.title} description={meta.description} path="/status" locale={locale} noindex={true} noHreflang={true}>
 
 <!-- Dark status page wrapper -->
 <div class="status-page">
@@ -222,7 +222,8 @@ function pulseDotClass(status: string) {
   <!-- HERO -->
   <div class="status-hero">
     <div class="status-hero-inner">
-      <div class="hero-eyebrow">System Status</div>
+      <h1 class="hero-eyebrow">Platform status</h1>
+      <p class="status-demo-note">Illustrative preview. This dashboard is not yet connected to live monitoring.</p>
 
       <div class={`hero-status-banner ${overallStatus !== 'operational' ? overallStatus : ''}`}>
         <div class="banner-left">
@@ -416,6 +417,7 @@ function pulseDotClass(status: string) {
 </SiteLayout>
 
 <style>
+  .status-demo-note { margin: 0 0 24px; max-width: 72ch; font-size: 14px; line-height: 1.7; color: #d6dce5; }
   /* ─── STATUS PAGE DARK THEME ─── */
   .status-page {
     background: #0a0a0a;

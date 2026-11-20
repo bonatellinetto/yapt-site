@@ -53,7 +53,7 @@ const POST_SELECT = `
  * Get all published blog posts ordered by publish date.
  */
 export async function getAllPublishedPosts(): Promise<BlogPost[]> {
-  if (!supabase) return [];
+  if (!supabase) return unavailablePosts('As credenciais do Supabase não estão configuradas.');
 
   const { data, error } = await supabase
     .from('blog_posts')
@@ -62,18 +62,25 @@ export async function getAllPublishedPosts(): Promise<BlogPost[]> {
     .order('published_at', { ascending: false });
 
   if (error) {
-    console.error('Error fetching blog posts:', error.message);
-    return [];
+    return unavailablePosts(`Falha ao consultar os artigos publicados: ${error.message}`);
   }
 
+  if (!data?.length) return unavailablePosts('A consulta retornou zero artigos publicados.');
   return (data || []).map(normalizePost);
+}
+
+function unavailablePosts(reason: string): BlogPost[] {
+  const message = `Blog indisponível: ${reason}`;
+  if (import.meta.env.PROD) throw new Error(`${message} A publicação foi interrompida para preservar as URLs existentes.`);
+  console.warn(`${message} O ambiente de desenvolvimento continuará sem os artigos.`);
+  return [];
 }
 
 /**
  * Get a single blog post by slug.
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!supabase) return null;
+  if (!supabase) { unavailablePosts('As credenciais do Supabase não estão configuradas.'); return null; }
 
   const { data, error } = await supabase
     .from('blog_posts')
@@ -82,7 +89,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     .eq('status', 'published')
     .single();
 
-  if (error || !data) return null;
+  if (error || !data) {
+    unavailablePosts(`Não foi possível carregar o artigo publicado com slug "${slug}".`);
+    return null;
+  }
 
   return normalizePost(data);
 }

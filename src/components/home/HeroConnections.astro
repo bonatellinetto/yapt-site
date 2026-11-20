@@ -1,0 +1,56 @@
+---
+import HeroChannelIcon from './HeroChannelIcon.astro';
+import UIIcon from '../UIIcon.astro';
+import NatureGlyph from './NatureGlyph.astro';
+import { homeCopy } from './content';
+import { localePath, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale).hero.connections;
+const channels = [
+  { name: 'gmail', label: 'Gmail' }, { name: 'drive', label: 'Drive' },
+  { name: 'calendar', label: 'Calendar' }, { name: 'rcs', label: 'RCS' },
+  { name: 'sms', label: 'SMS' }, { name: 'whatsapp', label: 'WhatsApp' },
+  { name: 'instagram', label: 'Instagram' }, { name: 'messenger', label: 'Messenger' },
+] as const;
+---
+
+<div class="hero-connections" role="group" aria-label={c.label}>
+  <div class="connections-bridge" aria-hidden="true"><i></i></div>
+  <ul class="connections-grid">
+    {channels.map(channel => <li class="connection-card"><HeroChannelIcon name={channel.name} /><span>{channel.label}</span></li>)}
+    <li class="connection-card connection-card--smart">
+      <a href={localePath('/intelligence', locale)}>
+        <span class="connection-nature"><NatureGlyph name="integrations" size={26} tone="light" /></span>
+        <span>{c.smart}</span><span class="connection-arrow" aria-hidden="true"><UIIcon name="arrow-up-right" size={16}/></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .hero-connections{position:relative;margin:-12px 9px 0}
+  .connections-bridge{height:24px;position:relative;display:flex;justify-content:center}
+  .connections-bridge:before{content:"";position:absolute;top:0;width:1px;height:16px;background:linear-gradient(#b2efd455,#b2efd4a6)}
+  .connections-bridge i{position:absolute;top:15px;left:10%;right:10%;height:9px;border:1px solid #b2efd45c;border-bottom:0;border-radius:9px 9px 0 0}
+  .connections-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
+  .connection-card{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-width:0;min-height:60px;padding:7px 5px;border:1px solid #c2f5de38;border-radius:12px;background:linear-gradient(145deg,#e3ffe61f,#e3ffe60b);box-shadow:inset 0 1px #ffffff12,0 8px 22px #002e2514;color:#f1fff6;font:500 9px/1.4 Poppins,sans-serif;text-align:center}
+  .connection-card--smart{grid-column:span 2;padding:0;background:linear-gradient(125deg,#d9ffe027,#c5ffec0e);border-color:#c2f5de57}
+  .connection-card--smart a{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;min-height:60px;padding:7px;color:inherit;text-decoration:none;border-radius:inherit;transition:background .2s,border-color .2s}
+  .connection-card--smart a:hover{background:#ddffed14}
+  .connection-card--smart a:focus-visible{outline:2px solid #b7f6bc;outline-offset:4px}
+  .connection-card--smart a>span:nth-child(2){max-width:11ch;text-align:left}
+  .connection-nature{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#deffe712;flex-shrink:0}
+  .connection-arrow{color:#b6e9ce;font-size:16px;margin-left:1px}
+  .connection-arrow :global(svg){width:1em;height:1em}
+  @media(max-width:600px){
+    .hero-connections{margin:-12px 0 0}.connections-bridge{height:18px}.connections-bridge:before{height:11px}.connections-bridge i{top:10px}
+    .connections-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+    .connection-card{min-height:60px;gap:4px;padding:7px 4px;font-size:9px;border-radius:10px;background:#0b745a9e}
+    .connection-card--smart{grid-column:auto;padding:0;background:#2c8b697d}
+    .connection-card--smart a{position:relative;flex-direction:column;gap:3px;min-height:62px;padding:5px 4px}
+    .connection-card--smart a>span:nth-child(2){text-align:center;max-width:13ch;font-size:9px;line-height:1.3}
+    .connection-nature{width:26px;height:26px}.connection-arrow{position:absolute;right:5px;top:4px;font-size:12px}
+  }
+  @media(prefers-reduced-motion:reduce){.connection-card--smart a{transition:none}}
+</style>

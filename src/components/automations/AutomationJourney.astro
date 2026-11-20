@@ -1,0 +1,72 @@
+---
+import UIIcon from '../UIIcon.astro';
+import ProductJourney from '../home/ProductJourney.astro';
+import AutomationReproductions from './AutomationReproductions.astro';
+import {automationScenes,automationSequences,automationTitles,type AutomationKind,type AutomationScreen} from '../../lib/automation-motions';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy,JourneyFrame } from '../../scripts/marketing-journey';
+import rawCaptures from '../../../public/produto/automations/captures.json';
+interface Props {locale:Locale;kind?:AutomationKind}
+type Capture={src:string;width:number;height:number;focus?:{x:number;y:number};mobileScale?:number};
+type CaptureManifest={version:number;captures:Partial<Record<AutomationScreen,Capture>>};
+const {locale,kind='overview'}=Astro.props;
+const native:Partial<Record<AutomationScreen,Capture>>={
+ 'marketing-channel':{src:'/produto/marketing/campanhas-canais-real.png',width:2032,height:1532},
+ 'sales-rule':{src:'/produto/vendas-reguas.webp',width:1600,height:565},
+ distribution:{src:'/produto/ops-distribuicao.jpg',width:720,height:992},
+ capacity:{src:'/produto/ops-equipe.webp',width:1600,height:1057},
+ connection:{src:'/produto/intelligence/connection-fields.jpg',width:1471,height:979},
+};
+const captureMap={...native,...(rawCaptures as CaptureManifest).captures};
+const selected=automationSequences[kind].map(id=>automationScenes[id]);
+const ui={
+ 'pt-BR':{demo:'Produto · demonstração',play:'Reproduzir',pause:'Pausar',replay:'Recomeçar demonstração',expand:'Ampliar demonstração',collapse:'Sair da tela cheia',label:'Demonstração de automações do yapt.: configuração, passos e acompanhamento.',source:'Telas reais e interfaces reproduzidas do produto, com exemplos de demonstração. Interface em português.',gradual:'Construção com IA · liberação gradual',soon:'Réguas de serviços · em breve',open:'Ampliar tela real',overviewChapters:['Construir','Dar continuidade','Acompanhar']},
+ 'en-US':{demo:'Product demo · Portuguese UI',play:'Play',pause:'Pause',replay:'Restart demo',expand:'Expand demo',collapse:'Exit full screen',label:'A yapt. automation demonstration: configuration, steps and monitoring.',source:'Real screens and reproduced product interfaces with demonstration examples. Interface in Portuguese.',gradual:'AI building · gradual rollout',soon:'Service rules · coming soon',open:'Enlarge real screen',overviewChapters:['Build','Keep work moving','Monitor']},
+ 'es-ES':{demo:'Demostración · interfaz en portugués',play:'Reproducir',pause:'Pausar',replay:'Reiniciar demostración',expand:'Ampliar demostración',collapse:'Salir de pantalla completa',label:'Demostración de automatizaciones de yapt.: configuración, pasos y seguimiento.',source:'Pantallas reales e interfaces reproducidas del producto con ejemplos de demostración. Interfaz en portugués.',gradual:'Construcción con IA · despliegue gradual',soon:'Reglas de servicios · próximamente',open:'Ampliar pantalla real',overviewChapters:['Construir','Dar continuidad','Acompañar']},
+}[locale];
+const isMain=kind==='overview';
+const chapterLabels=isMain?ui.overviewChapters:selected.map(scene=>scene.chapter[locale]);
+const copy:JourneyCopy={...ui,title:automationTitles[kind][locale],chapters:chapterLabels,captions:selected.flatMap(scene=>[scene.lead[locale],scene.detail[locale]])};
+const frames:JourneyFrame[]=selected.flatMap((scene,index)=>[
+ {screen:`automation-${scene.id}`,focus:`automation-${scene.id}-${scene.id==='flow-chat'&&captureMap[scene.id]?'request':'overview'}`,zoom:scene.id==='flow-chat'&&captureMap[scene.id]?2.25:1,duration:isMain?2400:1000,chapter:isMain?Math.floor(index/2):index,state:scene.id==='flow-chat'?'request':undefined},
+ {screen:`automation-${scene.id}`,focus:`automation-${scene.id}-detail`,zoom:scene.zoom,duration:isMain?3600:4300,chapter:isMain?Math.floor(index/2):index,state:scene.id==='flow-chat'?'proposal':undefined},
+]);
+const clamp=(n:number,min:number,max:number)=>Math.min(max,Math.max(min,n));
+const positioning=(id:AutomationScreen)=>{
+ const capture=captureMap[id],scene=automationScenes[id];
+ if(!capture)return{x:1120*scene.focus.x,y:700*scene.focus.y,mobileScale:1,mobileX:0,mobileY:0,mobileFocusX:1120*scene.focus.x,mobileFocusY:700*scene.focus.y};
+ const fit=Math.min(1120/capture.width,700/capture.height),left=(1120-capture.width*fit)/2,top=(700-capture.height*fit)/2;
+ const focus=capture.focus||scene.focus,x=left+capture.width*fit*focus.x,y=top+capture.height*fit*focus.y;
+ const mobileScale=clamp(capture.mobileScale||scene.mobileScale,1,3);
+ const bound=(desired:number,start:number,end:number,extent:number)=>end-start>=extent?clamp(desired,extent-end,-start):(extent-start-end)/2;
+ const mobileX=bound(560-x*mobileScale,left*mobileScale,(1120-left)*mobileScale,1120),mobileY=bound(350-y*mobileScale,top*mobileScale,(700-top)*mobileScale,700);
+ return{x,y,mobileScale,mobileX,mobileY,mobileFocusX:x*mobileScale+mobileX,mobileFocusY:y*mobileScale+mobileY};
+};
+const chapterFrames=isMain?[1,5,9]:[1,3,5];
+const unique=[...new Set(selected.map(s=>s.id))];
+const images=unique.flatMap(id=>captureMap[id]?[{id,capture:captureMap[id]!}]:[]);
+const status=kind==='servicos'?ui.soon:(kind==='fluxos'||isMain)?ui.gradual:'';
+const firstCapture=captureMap[selected[0].id];
+---
+<div class:list={['automation-journey',{'automation-journey--main':isMain}]} data-automation-journey={kind} style={firstCapture?`--am-poster:url('${firstCapture.src}')`:undefined}>
+  {status&&<p class:list={['am-availability',{'am-availability--soon':kind==='servicos'}]}>{status}</p>}
+  <ProductJourney locale={locale} variant="marketing" copy={copy} frames={frames} chapterFrames={chapterFrames} staticLabels={chapterLabels} staticValues={chapterLabels} sourceNote={ui.source}>
+    {unique.map(id=>{
+      const capture=captureMap[id],point=positioning(id),requestOnly=id==='flow-chat'&&!!capture;
+      const detail=requestOnly?{x:1120*automationScenes[id].focus.x,y:700*automationScenes[id].focus.y}:point;
+      return <div class:list={['am-scene',{'is-active':id===selected[0].id,'am-scene--capture':!!capture&&!requestOnly,'am-scene--request-capture':requestOnly}]} data-j-screen={`automation-${id}`} style={`--am-source-focus-x:${detail.x}px;--am-source-focus-y:${detail.y}px;--am-mobile-scale:${point.mobileScale};--am-mobile-x:${point.mobileX}px;--am-mobile-y:${point.mobileY}px;--am-mobile-focus-x:${point.mobileFocusX}px;--am-mobile-focus-y:${point.mobileFocusY}px`}>
+        {capture?<img class:list={['am-real-capture',{'am-request-photo':requestOnly}]} src={capture.src} width={capture.width} height={capture.height} alt="" loading="lazy" decoding="async" draggable="false"/>:<AutomationReproductions screen={id}/>}
+        {requestOnly&&<div class="am-request-proposal"><AutomationReproductions screen={id}/></div>}
+        {requestOnly&&<span class="am-focus" data-j-target={`automation-${id}-request`} style={`left:${point.x}px;top:${point.y}px`}/>}
+        <span class="am-focus am-focus--overview" data-j-target={`automation-${id}-overview`} style="left:560px;top:350px"/>
+        <span class="am-focus am-focus--detail" data-j-target={`automation-${id}-detail`}/>
+      </div>;
+    })}
+  </ProductJourney>
+  <p class="am-transcript">{ui.label} {copy.captions.join(' ')}</p>
+  {images.length>0&&!isMain&&<div class="am-real-links">{images.slice(0,2).map(({id,capture})=><a href={capture.src} data-marketing-image data-image-title={automationScenes[id].chapter[locale]} data-image-alt={automationScenes[id].lead[locale]} aria-label={`${ui.open}: ${automationScenes[id].chapter[locale]}`} target="_blank" rel="noopener noreferrer">{ui.open}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a>)}</div>}
+</div>
+<style>
+.automation-journey{min-width:0;width:100%;padding:0 18px 22px;box-sizing:border-box}.automation-journey--main{padding:0}.am-scene{position:absolute;inset:0;width:1120px;height:700px;overflow:hidden;opacity:0;background:#f7f9f9}.am-scene.is-active{opacity:1}.am-real-capture{display:block;width:1120px;height:700px;object-fit:contain;max-width:none;user-select:none}.am-request-proposal{display:none;position:absolute;inset:0}:global(.automation-journey .marketing-journey[data-state=proposal]) .am-request-proposal{display:block}:global(.automation-journey .marketing-journey[data-state=proposal]) .am-request-photo{opacity:0}.am-focus{position:absolute;width:1px;height:1px;pointer-events:none}.am-focus--detail{left:var(--am-source-focus-x);top:var(--am-source-focus-y)}.am-availability{display:inline-flex;align-items:center;gap:6px;border:1px solid #d6e9d7;border-radius:7px;padding:5px 8px;margin:0 0 12px;font:500 11px/1.5 Inter,sans-serif;color:#507e5b;background:#f2f8ec}.am-availability--soon{color:#9a7235;border-color:#f1dfb7;background:#fff9ec}.automation-journey :global(.mj-heading){flex-wrap:wrap;gap:6px;font-size:11px}.automation-journey :global(.mj-heading small){font-size:9px;white-space:normal}.automation-journey[data-automation-journey] :global(.marketing-journey .mj-chapters){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.automation-journey[data-automation-journey] :global(.marketing-journey .mj-chapters button:nth-child(n)){grid-column:auto;min-height:44px;font-size:10px;gap:4px;padding-inline:4px}.automation-journey :global(.mj-controls button){min-height:44px}.automation-journey :global(.mj-controls .mj-icon-button){min-width:44px}.automation-journey :global(.mj-caption){min-height:58px;font-size:13px;max-width:90ch}.automation-journey :global(.mj-source-note){font-size:9px;line-height:1.6}.automation-journey :global(.mj-static){background:#f7faf7 var(--am-poster,none) center/contain no-repeat}.automation-journey[style] :global(.mj-static>*){display:none}.am-real-links{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:5px}.am-real-links a{display:inline-flex;align-items:center;gap:7px;min-height:44px;color:#4a7759;text-decoration:underline;text-underline-offset:4px;font:500 10px/1.5 Inter,sans-serif}.am-real-links a:focus-visible{outline:2px solid #20b2aa;outline-offset:3px;border-radius:3px}.am-transcript{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}:global(.automation-journey .marketing-journey[data-state=request]) .am-scene :global(.am-proposal),:global(.automation-journey .marketing-journey[data-state=request]) .am-scene :global(.am-ai-bubble){opacity:0}
+@media(max-width:600px){.automation-journey{padding:0 12px 18px}.automation-journey--main{padding:0}.automation-journey :global(.mj-viewport){aspect-ratio:1/1;min-height:235px}.automation-journey :global(.mj-caption){font-size:12px;min-height:76px}.automation-journey :global(.mj-heading){font-size:10px}.automation-journey :global(.mj-heading small){font-size:8px}.automation-journey :global(.mj-controls){gap:5px}.automation-journey :global(.mj-controls button){padding-inline:6px}.am-scene--capture .am-real-capture{transform:translate(var(--am-mobile-x),var(--am-mobile-y)) scale(var(--am-mobile-scale));transform-origin:0 0}.am-scene--capture .am-focus--detail{left:var(--am-mobile-focus-x);top:var(--am-mobile-focus-y)}.automation-journey :global(.marketing-journey:fullscreen .mj-viewport){min-height:0;aspect-ratio:auto}.automation-journey :global(.marketing-journey:fullscreen .mj-caption){font-size:11px;min-height:44px}.automation-journey :global(.marketing-journey:fullscreen .mj-source-note){font-size:8px;line-height:1.4}.automation-journey :global(.marketing-journey:fullscreen .mj-heading){font-size:9px}}
+</style>

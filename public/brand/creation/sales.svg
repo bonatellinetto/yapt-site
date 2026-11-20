@@ -1,0 +1,10 @@
+<!-- Source: yapt-creation-library.html, element "Golfinhos". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <path d="M25 55 Q40 35, 70 45 Q85 50, 90 55 Q85 62, 70 60 Q40 65, 25 55Z" fill="#0891B2"/>
+    <path d="M90 55 L105 50 L105 60 Z" fill="#0891B2"/>
+    <circle cx="35" cy="50" r="3" fill="#1a1a1a"/>
+    <path d="M55 40 Q60 30, 65 35" stroke="#0891B2" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M35 80 Q45 68, 65 73 Q75 76, 78 80 Q75 85, 65 83 Q45 87, 35 80Z" fill="#06B6D4" opacity="0.8"/>
+    <path d="M78 80 L88 77 L88 83 Z" fill="#06B6D4" opacity="0.8"/>
+    <circle cx="42" cy="76" r="2" fill="#1a1a1a"/>
+</svg>

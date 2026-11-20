@@ -1,0 +1,66 @@
+---
+import UIIcon from '../UIIcon.astro';
+import NatureGlyph from '../home/NatureGlyph.astro';
+import { diagnosticCopy, type DiagnosticTopic } from '../../lib/diagnostic-cta';
+import type { Locale } from '../../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  topic?: DiagnosticTopic;
+  placement?: 'scenario' | 'journey' | 'closing';
+  scenario?: string;
+  compact?: boolean;
+}
+
+const { locale, topic = 'general', placement = 'journey', scenario, compact = false } = Astro.props;
+const c = diagnosticCopy(locale, topic);
+const Heading = compact ? 'h4' : 'h2';
+---
+
+<aside class:list={['dc-callout', { 'dc-callout--compact': compact, 'dc-callout--closing': placement === 'closing' }]} data-diagnostic-callout data-diagnostic-error={c.error} aria-label={c.eyebrow}>
+  <div class="dc-art" aria-hidden="true"><NatureGlyph name="integrations" size={250} tone="light" /></div>
+  <div class="dc-layout">
+    <div class="dc-copy">
+      <p class="dc-eyebrow"><span aria-hidden="true"></span>{c.eyebrow}</p>
+      <Heading class="dc-title">{c.title}</Heading>
+      <p class="dc-description">{c.description}</p>
+    </div>
+    <div class="dc-action">
+      <a class="dc-button" href={c.contactHref} data-diagnostic-trigger data-diagnostic-topic={topic} data-diagnostic-placement={placement} data-diagnostic-scenario={scenario} data-diagnostic-error={c.error} target="_blank" rel="noopener noreferrer"><span data-diagnostic-button-label>{c.button}</span><span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
+      <p class="dc-footnote">{c.footnote}</p>
+      <p class="dc-status" data-diagnostic-status role="status" hidden></p>
+      <a class="dc-fallback" href={c.contactHref} data-diagnostic-fallback target="_blank" rel="noopener noreferrer" hidden>{c.fallback}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
+    </div>
+  </div>
+  {placement === 'closing' && <div class="dc-delivery"><p>{c.deliveryLabel}</p><ul>{c.deliveryModes.map(mode => <li>{mode}</li>)}</ul></div>}
+</aside>
+
+<style>
+  .dc-callout{position:relative;isolation:isolate;container-type:inline-size;width:100%;min-width:0;overflow:hidden;padding:32px;border:1px solid #a2e5c64d;border-radius:22px;background:linear-gradient(125deg,#12473b 0%,#0b7168 100%);box-shadow:0 20px 42px -30px #04352a66;color:#fff;box-sizing:border-box}
+  .dc-layout{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,240px);gap:32px;align-items:center}
+  .dc-copy,.dc-action{min-width:0}
+  .dc-eyebrow{display:flex;align-items:center;gap:8px;margin:0 0 13px;color:#cdf4dc;font:600 10px/1.5 Poppins,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+  .dc-eyebrow>span{width:5px;height:5px;background:currentColor;border-radius:50%;flex-shrink:0}
+  .dc-title{margin:0;max-width:29ch;color:#fff;font:600 clamp(23px,2.4vw,32px)/1.2 Poppins,sans-serif;letter-spacing:-.04em;text-wrap:balance}
+  .dc-description{max-width:65ch;margin:15px 0 0;color:#e0f1e9;font:400 14px/1.75 Inter,sans-serif;text-wrap:pretty}
+  .dc-button{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;min-height:52px;padding:14px 18px;border:1px solid #fff;border-radius:12px;background:#fff;color:#12473b;font:600 13px/1.5 Poppins,sans-serif;text-decoration:none;box-shadow:0 4px 16px #002f2412;transition:background .2s,box-shadow .2s;box-sizing:border-box}
+  .dc-button>span[aria-hidden]{font-size:19px;font-weight:400}
+  .dc-button:hover{background:#eaffeF;box-shadow:0 6px 20px #002f2433}
+  .dc-callout .dc-button:focus-visible,.dc-callout .dc-fallback:focus-visible{outline:3px solid #b7f6bc;outline-offset:4px}
+  .dc-footnote{margin:11px 0 0;color:#e0f1e9;font:400 11px/1.7 Inter,sans-serif;text-align:center}
+  .dc-status{margin:13px 0 0;padding:11px 12px;border:1px solid #f7e4bd66;border-radius:9px;background:#073f35;color:#fff2d9;font:400 12px/1.6 Inter,sans-serif}
+  .dc-fallback{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;width:100%;margin-top:4px;border-radius:8px;color:#fff;font:500 12px/1.5 Inter,sans-serif;text-decoration:underline;text-underline-offset:4px}
+  .dc-art{position:absolute;right:-65px;bottom:-115px;z-index:-1;opacity:.07;pointer-events:none;transform:rotate(-12deg)}
+  .dc-delivery{position:relative;margin-top:25px;padding-top:19px;border-top:1px solid #c6f3dc38}
+  .dc-delivery>p{margin:0 0 12px;color:#d7eee1;font:500 11px/1.5 Poppins,sans-serif}
+  .dc-delivery ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+  .dc-delivery li{padding:7px 11px;border:1px solid #d3f8e538;border-radius:8px;background:#effff50a;color:#edfff5;font:500 11px/1.5 Inter,sans-serif}
+  .dc-callout--compact{padding:25px;border-radius:16px;box-shadow:none}
+  .dc-callout--compact .dc-title{font-size:23px;max-width:30ch}
+  .dc-callout--compact .dc-description{font-size:13px;line-height:1.7;margin-top:12px}
+  .dc-callout--compact .dc-eyebrow{font-size:9px;margin-bottom:11px}
+  .dc-callout [hidden]{display:none}
+  @container(max-width:620px){.dc-layout{grid-template-columns:1fr;gap:21px}.dc-title{font-size:27px;max-width:30ch}.dc-action{width:100%;max-width:none}.dc-footnote{text-align:left}.dc-button{max-width:none}}
+  @media(max-width:600px){.dc-callout{padding:25px 22px;border-radius:18px}.dc-layout{grid-template-columns:1fr;gap:21px}.dc-title{font-size:26px}.dc-description{font-size:14px}.dc-eyebrow{font-size:9px;letter-spacing:.08em}.dc-button{font-size:12px;min-height:52px}.dc-footnote{font-size:11px;text-align:left}.dc-callout--compact{padding:22px 18px;border-radius:14px}.dc-callout--compact .dc-title{font-size:23px}.dc-delivery li{font-size:11px}.dc-art{right:-90px;bottom:-125px}}
+  @media(prefers-reduced-motion:reduce){.dc-button{transition:none}}
+</style>

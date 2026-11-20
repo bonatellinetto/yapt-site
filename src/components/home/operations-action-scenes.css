@@ -1,0 +1,27 @@
+.op-ui .opa-scene{color:#202723;font-family:Inter,Arial,sans-serif;letter-spacing:0;background:#f6f7f8}
+.op-ui .opa-hotspot{position:absolute;display:block;background:transparent;pointer-events:none}
+.op-ui .opa-hotspot.is-emphasized{position:absolute}
+
+/* Close-ups retain only the source captures, without reconstructing a shell. */
+.op-ui .opa-queues-capture{position:absolute;left:64px;right:0;top:16px;height:684px;padding:0 12px;overflow:hidden;background:#f6f7f8}
+.op-ui .opa-queues-capture>img{display:block;width:1032px;height:auto;max-width:none}
+/* Suporte row: queue name, waiting, with human and longest wait. */
+.op-ui .opa-critical-queue{left:12px;top:157px;width:590px;height:41px;border-radius:5px}
+
+.op-ui .opa-capacity-capture{position:absolute;left:64px;right:0;top:16px;height:684px;overflow:hidden;background:#fff}
+.op-ui .opa-capacity-capture>img{display:block;width:1056px;height:auto;max-width:none}
+/* Source values remain 26/10 and 4/10. No simulated redistribution. */
+.op-ui .opa-operator-load{left:932px;top:107px;width:111px;height:41px;border-radius:5px}
+.op-ui .opa-available-capacity{left:932px;top:296px;width:111px;height:43px;border-radius:5px}
+
+.op-ui .opa-modal-backdrop{position:absolute;inset:0;overflow:hidden;background:#f5f7f8}
+.op-ui .opa-modal-backdrop>img{display:block;width:1120px;height:auto;max-width:none;transform:translateY(100px);filter:blur(2px)}
+.op-ui .opa-modal-shade{position:absolute;inset:0;background:#0005}
+.op-ui .opa-routing-capture{position:absolute;left:330px;top:10px;width:494px;height:680px;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px #0003;background:#fff}
+.op-ui .opa-routing-capture>img{display:block;width:494px;height:auto;max-width:none}
+.op-ui .opa-routing-rules{left:17px;top:239px;width:461px;height:163px;border-radius:6px}
+
+/* Complete native settings view, including its original sector and values. */
+.op-ui .opa-sla-capture{position:absolute;left:168px;top:8px;width:848px;height:684px;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px #0003;background:#fff}
+.op-ui .opa-sla-capture>img{display:block;width:848px;height:auto;max-width:none}
+.op-ui .opa-sla-goal{left:204px;top:155px;width:621px;height:59px;border-radius:9px}

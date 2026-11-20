@@ -1,0 +1,449 @@
+{
+  "meta": {
+    "title": "Automations with artificial intelligence",
+    "description": "Automate WhatsApp, processes and follow-ups with yaFlows and intelligent rules. Connect conversations, data and systems in the yapt. platform."
+  },
+  "hero": {
+    "eyebrow": "Automations with artificial intelligence",
+    "title": "Automate everyday work.",
+    "ending": "With artificial intelligence.",
+    "description": "Use automations with artificial intelligence to connect steps, WhatsApp conversations and data from your systems. Combine the yaFlows builder and intelligent rules for tasks, follow-ups and continuity. Your team can operate with specialist support. Building workflows through conversation with iavéh is rolling out gradually.",
+    "cta": "I want to automate my operation",
+    "secondary": "See automations in motion",
+    "proof": "yaFlows · intelligent rules · process automation.",
+    "frameBrand": "Automations",
+    "screenLabel": "From the starting event to the next step, with context",
+    "screenNote": "Illustrative example of an automated operation.",
+    "image": "/produto/automations/flow-chat-prompt.jpg",
+    "imageWidth": 1502,
+    "imageHeight": 802,
+    "imageAlt": "Real iavéh screen in Build mode, with a typed request to prepare a workflow in yaFlows.",
+    "tags": [
+      "Event",
+      "Context",
+      "Action",
+      "Result"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore where to automate your operation",
+    "mechanismLabel": "How yapt. helps",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Application example",
+    "moreLabel": "Expand product screen",
+    "imageNote": "Product interfaces and configuration examples. Building with iavéh is rolling out gradually; service journeys are coming soon.",
+    "eyebrow": "Process automation, from input to the next step",
+    "title": "What stalls when someone has to remember, copy or chase?",
+    "description": "A contact without a follow-up, a task that was not created and data left in another system interrupt the journey. Explore eight process and WhatsApp automation scenarios to keep work moving with AI, workflows and intelligent rules.",
+    "items": [
+      {
+        "id": "fluxos",
+        "short": "Processes that stall",
+        "pain": "“Every new routine depends on someone building, explaining and chasing each step.”",
+        "title": "Turn everyday work into a process that moves forward.",
+        "description": "In yaFlows, connect messages, conditions, waits, schedules, AI and business actions in a visual workflow. Building through conversation with iavéh is rolling out gradually: describe what you need, review the proposal and adjust the steps in the builder.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "Define the starting point, the objective and what needs to happen."
+          },
+          {
+            "title": "Build",
+            "text": "Combine conditions, data, AI and actions in the visual builder."
+          },
+          {
+            "title": "Review",
+            "text": "Check the path and follow its execution before improving it."
+          }
+        ],
+        "benefits": [
+          "Alternate AI and human steps, connecting qualification, data collection and handoff to the team.",
+          "Use buttons, lists and WhatsApp Flows forms to gather the information needed and continue the journey."
+        ],
+        "metric": "Time between steps, manual interventions, drop-offs and workflow completion over the selected period.",
+        "example": {
+          "title": "From a request to the next step",
+          "when": "A request arrives and needs triage and qualification.",
+          "then": "The workflow gathers information, applies conditions and routes the request with its context.",
+          "outcome": "The team receives the case when it needs to act and can follow the executed path."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "A real yaFlow workflow outline, with a start, a message step and an end.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "campanhas",
+        "short": "Contacts without follow-through",
+        "pain": "“We invest in the campaign, but communication stops after the first contact.”",
+        "title": "Keep interest moving toward the next opportunity.",
+        "description": "Combine campaigns and communication journeys to nurture, recover and follow up with contacts. Use audiences, events, conditions and intervals to decide who receives each message through WhatsApp or email, and when the sequence should continue or stop.",
+        "icon": "marketing",
+        "steps": [
+          {
+            "title": "Segment",
+            "text": "Choose the audience and the moment they enter the communication."
+          },
+          {
+            "title": "Communicate",
+            "text": "Prepare messages, dates, intervals and paths based on interaction."
+          },
+          {
+            "title": "Monitor",
+            "text": "Observe replies, clicks and exits to adjust the sequence."
+          }
+        ],
+        "benefits": [
+          "Continue the conversation with nurture messages, reminders and follow-ups based on contact interest.",
+          "Connect campaign sends and automated journeys to the history that marketing and sales use in their work."
+        ],
+        "metric": "Deliveries, replies, clicks, exits and opportunity progress by campaign and period.",
+        "example": {
+          "title": "Interest continues after the first message",
+          "when": "A contact enters a campaign and shows interest.",
+          "then": "The automated journey follows their interaction and prepares the next step based on defined events and filters.",
+          "outcome": "Marketing and sales find the history to continue the conversation and assess the result."
+        },
+        "image": "/produto/marketing/campanhas-canais-real.png",
+        "imageAlt": "A real campaign configuration screen with delivery channels.",
+        "imageWidth": 2032,
+        "imageHeight": 1532
+      },
+      {
+        "id": "vendas",
+        "short": "Deals going cold",
+        "pain": "“The proposal was sent. Following up depends on the seller remembering.”",
+        "title": "Keep opportunities moving, with the next action ready.",
+        "description": "Use sales journeys to follow up on unanswered proposals, stalled deals and after-sales work. Steps can create activities, notify owners, organize round-robin assignment and request AI guidance using the deal context.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Identify",
+            "text": "Define the stage, the sign of a stall or the change in the deal."
+          },
+          {
+            "title": "Prepare",
+            "text": "Combine follow-up, an activity and a notification for the owner."
+          },
+          {
+            "title": "Continue",
+            "text": "Track replies and changes to continue or end the journey."
+          }
+        ],
+        "benefits": [
+          "Turn deals with no progress into visible next actions for sellers and managers.",
+          "Bring context and AI guidance to the owner, with tasks and communications connected to the pipeline."
+        ],
+        "metric": "Deals without a next action, time stalled by stage, completed activities and progress after follow-up.",
+        "example": {
+          "title": "A proposal receives follow-up",
+          "when": "An opportunity remains unanswered in the proposal stage.",
+          "then": "The configured journey organizes a follow-up message, an activity or a notification according to its rules.",
+          "outcome": "The seller finds the next action and the history to continue the negotiation."
+        },
+        "image": "/produto/vendas-reguas.webp",
+        "imageAlt": "A real sales journey screen with templates for unanswered proposals, stalled deals and after-sales work.",
+        "imageWidth": 1600,
+        "imageHeight": 565
+      },
+      {
+        "id": "servicos",
+        "short": "Services · coming soon",
+        "pain": "“A ticket changes stage and the team has to check everything for the service to continue.”",
+        "title": "Bring automated follow-through to service cases too.",
+        "description": "Coming soon, service journeys will extend automation to tickets and service stages. The aim is to organize activities, updates and notifications as a case progresses, connecting follow-through to the journey your company needs to deliver.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Map",
+            "text": "Define stages, outstanding items and moments that need attention."
+          },
+          {
+            "title": "Prepare",
+            "text": "Plan activities, data and communications for each situation."
+          },
+          {
+            "title": "Measure",
+            "text": "Define indicators to assess the routine when the feature is released."
+          }
+        ],
+        "benefits": [
+          "Plan continuity for cases that depend on a reply, documentation or a handoff between owners.",
+          "Prepare service follow-through with events, conditions and actions tied to its stages."
+        ],
+        "metric": "When applied, track time by stage, outstanding items, responses and case completion.",
+        "example": {
+          "title": "The next step in service follow-through",
+          "when": "A service case changes stage or waits for information.",
+          "then": "The service journey will be able to organize follow-through based on defined events and conditions.",
+          "outcome": "The team will be able to track outstanding items and next steps. Coming soon."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "An example of a visual workflow in the product; service journeys are shown as a coming-soon feature.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "atividades",
+        "short": "Repetitive data entry",
+        "pain": "“The conversation moves forward, but someone still has to create the task and fill in the fields.”",
+        "title": "Turn events into activities and organized data.",
+        "description": "Create activities from deal or conversation events, update defined fields and keep the process supplied with the information it needs. Combine rules, variables, lookups and AI to reduce repetitive work between steps.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Choose the event and the data needed by the process."
+          },
+          {
+            "title": "Automate",
+            "text": "Configure the planned activity, field or update."
+          },
+          {
+            "title": "Connect",
+            "text": "Keep the routine linked to the deal, contact or service conversation."
+          }
+        ],
+        "benefits": [
+          "Prepare follow-up tasks in the context where the work happens.",
+          "Reduce copying and repeated data entry with fields and actions configured for each situation."
+        ],
+        "metric": "Activities created and completed, outstanding fields, time spent recording information and rework.",
+        "example": {
+          "title": "The next task is already recorded",
+          "when": "An opportunity or case reaches a point that needs follow-up.",
+          "then": "The automation creates the planned activity and updates the data configured for the stage.",
+          "outcome": "The owner finds the work organized in the deal or service context."
+        },
+        "image": "/produto/sales/academy-atividades-negocio-real.webp",
+        "imageAlt": "A real screen showing activities linked to a deal in yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 320
+      },
+      {
+        "id": "distribuicao",
+        "short": "Demand without an owner",
+        "pain": "“Contacts arrive, but routing and triage still take up the team’s time.”",
+        "title": "Give incoming work a destination.",
+        "description": "Combine information gathering, conditions and AI qualification to direct incoming demand. Use transfers to teams and assignment rules such as round-robin to prepare the handoff to the owner with the available context.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Understand",
+            "text": "Gather the topic, profile and information behind the request."
+          },
+          {
+            "title": "Route",
+            "text": "Apply filters, conditions and assignment rules."
+          },
+          {
+            "title": "Continue",
+            "text": "Hand off to the team or owner with the data already gathered."
+          }
+        ],
+        "benefits": [
+          "Prepare routing based on the topic, profile and contact information.",
+          "Connect triage and assignment to the activities and context the team needs to continue."
+        ],
+        "metric": "Time to routing, reroutes, demand distribution and waiting by team.",
+        "example": {
+          "title": "From an incoming contact to an owner",
+          "when": "A new contact arrives and needs to reach the right team.",
+          "then": "The workflow gathers the topic, applies the defined conditions and routes the request; the journey can organize assignment and an activity.",
+          "outcome": "The team receives the context to continue with less manual triage."
+        },
+        "image": "/produto/ops-filas.webp",
+        "imageAlt": "A real yapt. queue management screen, illustrating where incoming demand is routed.",
+        "imageWidth": 1600,
+        "imageHeight": 670
+      },
+      {
+        "id": "conexoes",
+        "short": "Data trapped in systems",
+        "pain": "“Each tool holds part of the information, and the team has to bridge the gap.”",
+        "title": "Make data part of the automation.",
+        "description": "Build connections through conversation in yaAgents and configure queries and actions for the process. Workflows, automated journeys and agents can exchange data with systems through APIs and webhooks according to the defined resources and access. The Mentor uses authorized queries to guide the team.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Connect",
+            "text": "Describe the API, required data and query or action capability."
+          },
+          {
+            "title": "Use the data",
+            "text": "Bring inputs and results into process conditions and actions."
+          },
+          {
+            "title": "Monitor",
+            "text": "Check the response to decide how the journey should continue."
+          }
+        ],
+        "benefits": [
+          "Keep handoffs between systems from depending on someone copying information.",
+          "Combine data and actions in automations, with queries also available to authorized AI and people."
+        ],
+        "metric": "Manual data transfers, completed queries and actions, integration errors and time to a response.",
+        "example": {
+          "title": "System data changes the next step",
+          "when": "A journey needs information recorded in another system.",
+          "then": "The integration receives the input data and returns the result to the configured process.",
+          "outcome": "The result can guide a condition, an answer or the next action in the work."
+        },
+        "image": "/produto/intelligence/connection-fields.jpg",
+        "imageAlt": "A real connection configured through conversation in yaAgents.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "controle",
+        "short": "Automations without visibility",
+        "pain": "“The routine should have run, but we only find the failure later.”",
+        "title": "See what ran. Find where the process stopped.",
+        "description": "Follow executions, steps and responses to understand the path of each workflow. In automated journeys, configure entry conditions and exits so communication follows the contact and deal context. Review the automation and improve it based on what the operation shows.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Review",
+            "text": "Check triggers, messages, conditions and actions before activation."
+          },
+          {
+            "title": "Observe",
+            "text": "Inspect the execution and the response from each step."
+          },
+          {
+            "title": "Adjust",
+            "text": "Investigate failures and review paths with the team."
+          }
+        ],
+        "benefits": [
+          "Locate the step and response that need investigation in the execution details.",
+          "Use entry, exit and re-entry conditions to organize journey continuity."
+        ],
+        "metric": "Completed executions, failures, interruptions, journey exits and the need for manual intervention.",
+        "example": {
+          "title": "Find the step that needs attention",
+          "when": "An integration returns an error during a workflow.",
+          "then": "The team checks the execution details and identifies the response from the step.",
+          "outcome": "The adjustment starts from a concrete point, with the path reviewed again before wider use."
+        },
+        "image": "/produto/operations/academy-fluxo-execucao-real.webp",
+        "imageAlt": "A real workflow execution details screen with a sample integration failure for investigation.",
+        "imageWidth": 1400,
+        "imageHeight": 719
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "From a need to execution",
+    "title": "A connected journey, step by step.",
+    "description": "See how to design the routine in yaFlows, prepare journeys for key moments and use connections to bring data into the process. The team reviews the paths and follows the execution.",
+    "note": "Demonstration using product interfaces and sample data. Conversational workflow building is rolling out gradually; service journeys are coming soon."
+  },
+  "foundation": {
+    "eyebrow": "WhatsApp and process automation",
+    "title": "Workflows execute. Journeys follow up. AI and connections add context.",
+    "description": "Combine WhatsApp automation, follow-ups and system data with the workflow. The visual builder and intelligent rules execute the conditions and actions configured for your business process.",
+    "items": [
+      {
+        "icon": "automation",
+        "title": "yaFlows: automation builder",
+        "text": "A visual builder combining messages, conditions, waits, artificial intelligence and business actions."
+      },
+      {
+        "icon": "marketing",
+        "title": "Intelligent follow-up rules",
+        "text": "Nurturing, follow-ups, activities and updates linked to marketing and sales events. Services coming soon."
+      },
+      {
+        "icon": "integrations",
+        "title": "AI and connections bring context",
+        "text": "Queries, data and actions integrate systems with the work, using configured access and resources."
+      }
+    ],
+    "builderLabel": "yaFlows + iavéh · gradual rollout",
+    "builderTitle": "Describe the process. Review the workflow. Move the operation forward.",
+    "builderDescription": "Building workflows through conversation with iavéh is rolling out gradually. Describe the process, review the proposal and apply it when ready. Applying it creates an inactive workflow in yaFlows; review the steps and activate it in a separate action. Then follow executions and results with the team.",
+    "builderLink": "Explore AI and integrations",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Real iavéh screen in Build mode, with a typed request to prepare a workflow in yaFlows."
+  },
+  "adoption": {
+    "eyebrow": "Your team, with specialist support if needed",
+    "title": "Automation starts with understanding what needs to improve.",
+    "description": "Your team can identify repeated effort, organize rules and select an initial process. You can work with specialists to build and improve automations, depending on the delivery model you choose.",
+    "steps": [
+      {
+        "title": "Diagnose",
+        "text": "Map the journey, bottlenecks, data and manual effort affecting delivery."
+      },
+      {
+        "title": "Build and review",
+        "text": "Prepare workflows, journeys and integrations with the people who know the process."
+      },
+      {
+        "title": "Monitor and improve",
+        "text": "Observe execution and indicators to adjust routines with the team."
+      }
+    ],
+    "footnote": "Scope, channels, access and integrations are defined for each operation. Building with iavéh is rolling out gradually; service journeys are coming soon."
+  },
+  "faq": {
+    "eyebrow": "Before automating",
+    "title": "Clarity to design. Visibility to improve.",
+    "items": [
+      {
+        "question": "How can yaFlows and intelligent rules automate processes?",
+        "answer": "In process automation, yaFlows organizes the workflow: it collects information, applies conditions and performs configured actions. Intelligent rules follow moments in the journey with communications, follow-ups, activities and updates based on events, intervals and conditions. Both can participate in the same process."
+      },
+      {
+        "question": "Can we already create workflows by talking to iavéh?",
+        "answer": "Building yaFlows through conversation with iavéh is rolling out gradually. You describe the need and review the proposal before applying it. The visual builder lets you check and adjust the steps; conversational building availability depends on the rollout for your account."
+      },
+      {
+        "question": "Which areas can use intelligent journeys?",
+        "answer": "Marketing and sales journeys support nurture sequences, follow-ups, proposals, stalled deals and after-sales work according to configuration. Service journeys are coming soon to extend follow-through to tickets and service stages."
+      },
+      {
+        "question": "Can yaFlows automate WhatsApp conversations?",
+        "answer": "Yes. The builder combines messages and templates, buttons, lists and WhatsApp Flows forms. It also collects data, applies surveys, conditions and A/B tests, waits for responses or events, schedules steps and connects AI, activities and CRM actions. Depending on enabled channels, permissions and features, it can send Instagram messages and internal notifications, route conversations and integrate systems."
+      },
+      {
+        "question": "Can automations send and receive data from other systems?",
+        "answer": "Yes. APIs, webhooks and connections can bring input data and results into builder workflows, automated journeys and AI agents according to the configuration of each path. The Mentor can use authorized queries to guide the operator. An integration depends on the available API, documentation and system access."
+      },
+      {
+        "question": "How do we monitor execution and control follow-through?",
+        "answer": "Review paths before activation and follow execution details to investigate steps and responses. In journeys, define entry, exit and re-entry conditions, such as a contact reply or stage change, according to the scenario. The team retains control over adjustments and use."
+      },
+      {
+        "question": "Where do we start, and how do we assess the result?",
+        "answer": "Start with a process involving manual effort or missing follow-through. Your team can organize rules, data and actions and work with specialists when needed. Define indicators and comparable periods to track time between steps, activities, failures, interventions and journey progress, considering your operation’s data and costs."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "The next step for your operation",
+    "title": "Let’s find the work that can move forward with automation.",
+    "description": "We analyze where the process stops, who needs to act and what data is missing. We build a first path using workflows, journeys, AI and integrations to improve continuity and reduce repetitive effort.",
+    "points": [
+      "A relevant process and the manual effort that needs to improve.",
+      "Rules, data and indicators defined with the people doing the work.",
+      "Platform and specialists to build, monitor and improve."
+    ],
+    "cta": "I want to automate my operation",
+    "footnote": "Talk to our team about your operation.",
+    "error": "The chat did not load this time. Try again or open WhatsApp using the link below.",
+    "fallback": "Open directly in WhatsApp",
+    "noScript": "You can also contact our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close enlarged image",
+    "imageLabel": "Product screen",
+    "openImage": "Expand screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to expand and close."
+  }
+}

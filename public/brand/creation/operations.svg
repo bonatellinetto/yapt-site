@@ -1,0 +1,16 @@
+<!-- Source: yapt-creation-library.html, element "Favos de Mel". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <g fill="#FBBF24" stroke="#F59E0B" stroke-width="1">
+        <path d="M40 30 L52 25 L64 30 L64 42 L52 47 L40 42 Z"/>
+        <path d="M64 30 L76 25 L88 30 L88 42 L76 47 L64 42 Z"/>
+        <path d="M28 47 L40 42 L52 47 L52 59 L40 64 L28 59 Z"/>
+        <path d="M52 47 L64 42 L76 47 L76 59 L64 64 L52 59 Z"/>
+        <path d="M76 47 L88 42 L100 47 L100 59 L88 64 L76 59 Z"/>
+        <path d="M40 64 L52 59 L64 64 L64 76 L52 81 L40 76 Z"/>
+        <path d="M64 64 L76 59 L88 64 L88 76 L76 81 L64 76 Z"/>
+        <path d="M52 81 L64 76 L76 81 L76 93 L64 98 L52 93 Z"/>
+    </g>
+    <circle cx="52" cy="36" r="3" fill="#FEF3C7" opacity="0.6"/>
+    <circle cx="76" cy="36" r="3" fill="#FEF3C7" opacity="0.6"/>
+    <circle cx="64" cy="53" r="3" fill="#FEF3C7" opacity="0.6"/>
+</svg>

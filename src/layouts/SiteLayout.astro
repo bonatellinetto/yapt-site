@@ -2,59 +2,22 @@
 import '../styles/global.css';
 import SiteNavbar from '../components/SiteNavbar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { type Locale, localeHtmlLang, localePath, locales, localePrefix, localeHreflang } from '../lib/i18n';
-import { getCanonical, getHreflangAlternates, organizationJsonLd, websiteJsonLd } from '../lib/seo';
+import DiagnosticRecovery from '../components/diagnostic/DiagnosticRecovery.astro';
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import { localeHtmlLang } from '../lib/i18n';
+import type { SEOProps } from '../lib/seo';
+import SiteSEO from '../components/SiteSEO.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 
-export interface Props {
-  title: string;
-  description: string;
-  path: string; // path without locale prefix, e.g. "/" or "/pricing"
-  locale: Locale;
-  ogType?: string;
-  ogImage?: string;
-  jsonLd?: Record<string, any>[];
-  noindex?: boolean;
-  noHreflang?: boolean;
-  minimalNav?: boolean;
-}
-
-const {
-  title,
-  description,
-  path,
-  locale,
-  ogType = 'website',
-  ogImage = '/og-image.png',
-  jsonLd = [],
-  noindex = false,
-  noHreflang = false,
-  minimalNav = false,
-} = Astro.props;
-
-const GTM_ID = 'GTM-WPH76KZH';
-
-const canonical = getCanonical(path, locale);
-const alternates = noHreflang ? [] : getHreflangAlternates(path);
+export interface Props extends SEOProps { noHreflang?: boolean; minimalNav?: boolean }
+const { locale, minimalNav = false } = Astro.props;
 const htmlLang = localeHtmlLang[locale];
-const fullTitle = `${title} | yapt.`;
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://yapt.ai${ogImage}`;
-
-const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
 ---
 
 <!DOCTYPE html>
 <html lang={htmlLang}>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{fullTitle}</title>
-  <meta name="description" content={description} />
-  {noindex
-    ? <meta name="robots" content="noindex, nofollow" />
-    : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  }
-  <link rel="canonical" href={canonical} />
-
+  <SiteSEO {...Astro.props} />
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
@@ -71,40 +34,13 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content={ogType} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:site_name" content="yapt." />
-  <meta property="og:image" content={ogImageUrl} />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImageUrl} />
-
-  <!-- hreflang alternates -->
-  {alternates.map(({ hreflang, href }) => (
-    <link rel="alternate" hreflang={hreflang} href={href} />
-  ))}
-
-  <!-- JSON-LD structured data -->
-  {allJsonLd.map((ld) => (
-    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
-  ))}
-
-  <!-- i18n handled via hreflang tags above — no JS redirect needed -->
 </head>
 <body class="min-h-screen bg-white">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <SiteAnalytics />
   <SiteNavbar locale={locale} minimal={minimalNav} />
   <slot />
   <SiteFooter locale={locale} />
+  <DiagnosticRecovery locale={locale} />
 
   <!-- Scroll-triggered fade-in observer -->
   <script is:inline>
@@ -137,34 +73,7 @@ const allJsonLd = [organizationJsonLd(), websiteJsonLd(), ...jsonLd];
     })();
   </script>
 
-  <!-- Google Tag Manager — deferred to avoid blocking initial render -->
-  <script is:inline define:vars={{ GTM_ID }}>
-    (function(){
-      // Defer GTM until after first paint to avoid blocking LCP
-      function loadGTM() {
-        var w=window,d=document,s='script',l='dataLayer',i=GTM_ID;
-        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      }
-      if (typeof requestIdleCallback === 'function') {
-        requestIdleCallback(loadGTM, { timeout: 3000 });
-      } else {
-        setTimeout(loadGTM, 1500);
-      }
-    })();
-  </script>
-
-  <!-- yapt. WhatsApp Button — lead capture + wa.me redirect -->
-  <script is:inline>
-    (function(w,d,s,o,f,js,fjs){
-      w['YaptWA']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-      js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-      js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
-    }(window,document,'script','yaptwa','https://cdn.yapt.ai/wa-button.js'));
-    yaptwa('init', { id: 'a28b6328-6021-4b00-8d2b-af875173ec4b', mode: 'both' });
-  </script>
+  <WhatsAppWidget />
+  <script>import '../scripts/diagnostic';</script>
 </body>
 </html>

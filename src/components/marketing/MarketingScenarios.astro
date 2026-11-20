@@ -1,0 +1,154 @@
+---
+import UIIcon from '../UIIcon.astro';
+import NatureGlyph from '../home/NatureGlyph.astro';
+import DiagnosticCallout from '../diagnostic/DiagnosticCallout.astro';
+import type { DiagnosticTopic } from '../../lib/diagnostic-cta';
+import type { Locale } from '../../lib/i18n';
+import type { SolutionScenariosCopy } from '../../lib/marketing-page';
+import './marketing-scenarios.css';
+import './scenario-scroll.css';
+
+interface Props { copy: SolutionScenariosCopy; prefix?: string; mode?: 'tabs' | 'scroll'; locale?: Locale; topic?: DiagnosticTopic }
+type GlyphName = 'marketing' | 'sales' | 'support' | 'operations' | 'ai' | 'teams' | 'automation' | 'data' | 'integrations';
+const { copy: c, prefix = 'market', mode = 'tabs', locale = 'pt-BR', topic = 'marketing' } = Astro.props;
+const scrollHint = { 'pt-BR': 'Role para explorar', 'en-US': 'Scroll to explore', 'es-ES': 'Desliza para explorar' }[locale];
+---
+
+<section id="cenarios" class="mk-section mk-scenarios" aria-labelledby="mk-scenarios-heading" data-marketing-scenarios data-scenario-prefix={prefix} data-scenario-mode={mode} data-scenario-default-mode={mode} data-scenario-mobile="scroll">
+  <div class="mk-shell">
+    <header class="mk-scenarios__heading">
+      <p class="mk-label">{c.eyebrow}</p>
+      <h2 class="mk-title" id="mk-scenarios-heading">{c.title}</h2>
+      <p class="mk-intro">{c.description}</p>
+    </header>
+
+    <div class="mk-scenarios__layout">
+      <nav class="mk-scenarios__nav" aria-label={c.navLabel}>
+        <p class="mk-scenarios__scroll-hint"><span>{scrollHint}<span aria-hidden="true"><UIIcon name="arrow-down" /></span></span><span data-scenario-progress aria-hidden="true">01 / {String(c.items.length).padStart(2, '0')}</span></p>
+        <ol>
+          {c.items.map((item, index) => (
+            <li>
+              <a href={`#${prefix}-${item.id}`} data-scenario-link={item.id}>
+                <span class="mk-scenarios__nav-icon"><NatureGlyph name={item.icon as GlyphName} size={26}/></span>
+                <span class="mk-scenarios__nav-copy"><strong>{item.short}</strong><span>{item.pain}</span></span>
+                <span class="mk-scenarios__nav-number" aria-hidden="true">0{index + 1}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <div class="mk-scenarios__panels">
+        {c.items.map((item, index) => (
+          <article class={`mk-case mk-case--${item.id}`} id={`${prefix}-${item.id}`} data-scenario-panel={item.id} aria-labelledby={`${prefix}-${item.id}-heading`}>
+            <div class="mk-case__body">
+              <div class="mk-case__context"><span>{c.mechanismLabel}</span><span aria-hidden="true">0{index + 1} / 0{c.items.length}</span></div>
+              <p class="mk-case__pain">{item.pain}</p>
+              <h3 id={`${prefix}-${item.id}-heading`}>{item.title}</h3>
+              <p class="mk-case__description">{item.description}</p>
+              {c.channels && item.id === 'controle' && <div class="mk-case__channels"><ul aria-label={c.channelsLabel}>{c.channels.map(channel => <li>{channel}</li>)}</ul>{c.channelsNote && <p>{c.channelsNote}</p>}</div>}
+              <ul class="mk-case__benefits">
+                {item.benefits.map(benefit => (
+                  <li><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{benefit}</span></li>
+                ))}
+              </ul>
+
+              {c.conversionFeedback && item.id === 'retorno' && <aside class="mk-case__feedback" aria-labelledby="mk-feedback-heading">
+                <p class="mk-case__label">{c.conversionFeedback.label}</p>
+                <h4 id="mk-feedback-heading">{c.conversionFeedback.title}</h4>
+                <p>{c.conversionFeedback.description}</p>
+                <ul>{c.conversionFeedback.events.map(event => <li><span aria-hidden="true"><UIIcon name="arrow-up-right" /></span>{event}</li>)}</ul>
+              </aside>}
+
+              <div class="mk-case__action">
+                <p class="mk-case__label">{c.actionLabel}</p>
+                <ol class="mk-case__steps">
+                  {item.steps.map((step, stepIndex) => (
+                    <li><span class="mk-case__step-number" aria-hidden="true">0{stepIndex + 1}</span><strong>{step.title}</strong><p>{step.text}</p></li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            {item.id === 'grupos' && Astro.slots.has('scenario-grupos') ? (
+              <slot name="scenario-grupos"/>
+            ) : item.id === 'decisoes' && Astro.slots.has('scenario-decisoes') ? (
+              <slot name="scenario-decisoes"/>
+            ) : item.id === 'busca' && Astro.slots.has('scenario-busca') ? (
+              <slot name="scenario-busca"/>
+            ) : item.id === 'voz' && Astro.slots.has('scenario-voz') ? (
+              <slot name="scenario-voz"/>
+            ) : item.id === 'acesso' && Astro.slots.has('scenario-acesso') ? (
+              <slot name="scenario-acesso"/>
+            ) : item.id === 'fluxos' && Astro.slots.has('scenario-fluxos') ? (
+              <slot name="scenario-fluxos"/>
+            ) : item.id === 'campanhas' && Astro.slots.has('scenario-campanhas') ? (
+              <slot name="scenario-campanhas"/>
+            ) : item.id === 'vendas' && Astro.slots.has('scenario-vendas') ? (
+              <slot name="scenario-vendas"/>
+            ) : item.id === 'servicos' && Astro.slots.has('scenario-servicos') ? (
+              <slot name="scenario-servicos"/>
+            ) : item.id === 'atividades' && Astro.slots.has('scenario-atividades') ? (
+              <slot name="scenario-atividades"/>
+            ) : item.id === 'controle' && Astro.slots.has('scenario-controle') ? (
+              <slot name="scenario-controle"/>
+            ) : item.id === 'agentes' && Astro.slots.has('scenario-agentes') ? (
+              <slot name="scenario-agentes"/>
+            ) : item.id === 'copilotos' && Astro.slots.has('scenario-copilotos') ? (
+              <slot name="scenario-copilotos"/>
+            ) : item.id === 'conexoes' && Astro.slots.has('scenario-conexoes') ? (
+              <slot name="scenario-conexoes"/>
+            ) : item.id === 'conhecimento' && Astro.slots.has('scenario-conhecimento') ? (
+              <slot name="scenario-conhecimento"/>
+            ) : item.id === 'acoes' && Astro.slots.has('scenario-acoes') ? (
+              <slot name="scenario-acoes"/>
+            ) : item.id === 'contexto' && Astro.slots.has('scenario-contexto') ? (
+              <slot name="scenario-contexto"/>
+            ) : item.id === 'filas' && Astro.slots.has('scenario-filas') ? (
+              <slot name="scenario-filas"/>
+            ) : item.id === 'integracoes' && Astro.slots.has('scenario-integracoes') ? (
+              <slot name="scenario-integracoes"/>
+            ) : item.id === 'visibilidade' && Astro.slots.has('scenario-visibilidade') ? (
+              <slot name="scenario-visibilidade"/>
+            ) : item.id === 'distribuicao' && Astro.slots.has('scenario-distribuicao') ? (
+              <slot name="scenario-distribuicao"/>
+            ) : item.id === 'produtividade' && Astro.slots.has('scenario-produtividade') ? (
+              <slot name="scenario-produtividade"/>
+            ) : item.id === 'prazos' && Astro.slots.has('scenario-prazos') ? (
+              <slot name="scenario-prazos"/>
+            ) : item.id === 'continuidade' && Astro.slots.has('scenario-continuidade') ? (
+              <slot name="scenario-continuidade"/>
+            ) : item.id === 'automacoes' && Astro.slots.has('scenario-automacoes') ? (
+              <slot name="scenario-automacoes"/>
+            ) : item.id === 'sistemas' && Astro.slots.has('scenario-sistemas') ? (
+              <slot name="scenario-sistemas"/>
+            ) : item.id === 'resultados' && Astro.slots.has('scenario-resultados') ? (
+              <slot name="scenario-resultados"/>
+            ) : item.image ? (
+              <figure class="mk-case__screen">
+                <a href={item.image} target="_blank" rel="noopener noreferrer" data-marketing-image aria-label={`${c.moreLabel}: ${item.short}`}>
+                  <img src={item.image} width={item.imageWidth} height={item.imageHeight} alt={item.imageAlt} loading="lazy" decoding="async"/>
+                  <span class="mk-case__expand"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" stroke-linecap="round" stroke-linejoin="round"/></svg>{c.moreLabel}</span>
+                </a>
+              <figcaption class="mk-case__screen-note">{c.imageNote}</figcaption>
+              </figure>
+            ) : (
+              <div class="mk-case__example">
+                <div class="mk-case__example-top"><span class="mk-case__example-icon"><NatureGlyph name={item.icon as GlyphName} size={25}/></span><p class="mk-case__label">{c.exampleLabel}</p></div>
+                <h4>{item.example.title}</h4>
+                <ol>
+                  {[item.example.when, item.example.then, item.example.outcome].map((text, stepIndex) => (
+                    <li><span class="mk-case__example-dot" aria-hidden="true">{stepIndex + 1}</span><p>{text}</p></li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            <footer class="mk-case__measurement"><span aria-hidden="true"></span><div><p class="mk-case__label">{c.measurementLabel}</p><p>{item.metric}</p></div></footer>
+            {(mode === 'tabs' || index === 2 || index === c.items.length - 1) && <div data-scenario-cta={index === 2 || index === c.items.length - 1 ? 'strategic' : 'contextual'} style="padding:18px clamp(14px,2vw,24px) 24px"><DiagnosticCallout locale={locale} topic={topic} placement="scenario" scenario={item.id} compact /></div>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

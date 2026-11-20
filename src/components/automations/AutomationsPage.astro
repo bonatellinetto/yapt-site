@@ -1,0 +1,87 @@
+---
+import UIIcon from '../UIIcon.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import DiagnosticCallout from '../diagnostic/DiagnosticCallout.astro';
+import ClientStrip from '../home/ClientStrip.astro';
+import NatureGlyph from '../home/NatureGlyph.astro';
+import AutomationJourney from './AutomationJourney.astro';
+import AutomationHeroDiagram from './AutomationHeroDiagram.astro';
+import MarketingScenarios from '../marketing/MarketingScenarios.astro';
+import { automationsCopy } from '../../lib/automations-page';
+import { localePath, type Locale } from '../../lib/i18n';
+import '../marketing/marketing-page.css';
+import './automations-page.css';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = automationsCopy(locale);
+const report = c.hero.image;
+import { whatsappHref } from '../../lib/whatsapp';
+import { faqJsonLd } from '../../lib/seo';
+---
+<SiteLayout title={c.meta.title} description={c.meta.description} path="/automations" locale={locale} jsonLd={[faqJsonLd(c.faq.items)]}>
+  <main class="marketing-page automations-page" id="main-content">
+    <section class="mk-hero" aria-labelledby="automations-heading">
+      <div class="mk-hero-glow" aria-hidden="true"></div>
+      <div class="mk-shell mk-hero-layout">
+        <div class="mk-hero-copy">
+          <p class="mk-label"><NatureGlyph name="automation" size={27}/>{c.hero.eyebrow}</p>
+          <h1 id="automations-heading">{c.hero.title}<span>{c.hero.ending}</span></h1>
+          <p class="mk-hero-description">{c.hero.description}</p>
+          <div class="mk-hero-actions"><a class="mk-button" href={whatsappHref} target="_blank" rel="noopener noreferrer" data-diagnostic-trigger data-diagnostic-topic="automations" data-diagnostic-placement="hero">{c.hero.cta}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a><a class="mk-text-link" href="#jornada">{c.hero.secondary}<span aria-hidden="true"><UIIcon name="arrow-down" /></span></a></div>
+          <p class="mk-proof">{c.hero.proof}</p>
+        </div>
+        <div class="mk-hero-stage">
+          <div class="mk-stage-orbit" aria-hidden="true"><NatureGlyph name="automation" size={330}/></div>
+          <div class="mk-product-frame">
+            <div class="mk-frame-heading"><span class="mk-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>yapt. · {c.hero.frameBrand}</span><NatureGlyph name="automation" size={20}/></div>
+            <div class="mk-hero-frame-title"><span class="mk-live-dot" aria-hidden="true"></span>{c.hero.screenLabel}</div>
+            <a class="mk-report-window am-diagram-window" href="#jornada" aria-label={c.hero.secondary}><AutomationHeroDiagram locale={locale}/><span class="mk-image-expand" aria-hidden="true"><UIIcon name="play" size={14} /></span></a>
+            <div class="mk-hero-flow" aria-hidden="true">{c.hero.tags.map((tag,i)=><span><small>0{i+1}</small>{tag}{i < c.hero.tags.length - 1 && <b><UIIcon name="arrow-right" size={12} /></b>}</span>)}</div>
+            <p class="mk-screen-note">{c.hero.screenNote}</p>
+          </div>
+          <a class="mk-stage-link" href="#jornada"><span class="mk-play-circle" aria-hidden="true"><UIIcon name="play" size={14} /></span>{c.journey.eyebrow}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a>
+        </div>
+      </div>
+    </section>
+    <ClientStrip locale={locale}/>
+    <MarketingScenarios copy={c.scenarios} locale={locale} topic="automations" prefix="automations" mode="scroll">
+      <AutomationJourney slot="scenario-fluxos" locale={locale} kind="fluxos"/>
+      <AutomationJourney slot="scenario-campanhas" locale={locale} kind="campanhas"/>
+      <AutomationJourney slot="scenario-vendas" locale={locale} kind="vendas"/>
+      <AutomationJourney slot="scenario-servicos" locale={locale} kind="servicos"/>
+      <AutomationJourney slot="scenario-atividades" locale={locale} kind="atividades"/>
+      <AutomationJourney slot="scenario-distribuicao" locale={locale} kind="distribuicao"/>
+      <AutomationJourney slot="scenario-conexoes" locale={locale} kind="conexoes"/>
+      <AutomationJourney slot="scenario-controle" locale={locale} kind="controle"/>
+    </MarketingScenarios>
+    <section class="mk-section mk-foundation" aria-labelledby="mk-foundation-heading">
+      <div class="mk-shell">
+        <div class="mk-foundation-head"><p class="mk-label">{c.foundation.eyebrow}</p><h2 class="mk-title" id="mk-foundation-heading">{c.foundation.title}</h2><p class="mk-intro">{c.foundation.description}</p></div>
+        <div class="mk-foundation-grid">{c.foundation.items.map(item=><article class="mk-capability"><NatureGlyph name={item.icon as 'ai'|'teams'|'automation'|'data'|'integrations'} size={42}/><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+
+      </div>
+    </section>
+    <section class="mk-section mk-journey-section" id="jornada" aria-labelledby="mk-journey-heading">
+      <div class="mk-shell">
+        <div class="mk-section-head"><div><p class="mk-label">{c.journey.eyebrow}</p><h2 class="mk-title" id="mk-journey-heading">{c.journey.title}</h2></div><p class="mk-intro">{c.journey.description}</p></div>
+        <div class="mk-journey-shell"><AutomationJourney locale={locale}/></div>
+        <p class="mk-fineprint">{c.journey.note}</p>
+        <div style="margin-top:32px"><DiagnosticCallout locale={locale} topic="automations" placement="journey" /></div>
+      </div>
+    </section>
+    <section class="mk-section am-builder" aria-labelledby="am-builder-heading"><div class="mk-shell">
+        <article class="mk-builder-card">
+          <div class="mk-builder-copy"><p class="mk-label">{c.foundation.builderLabel}</p><h2 id="am-builder-heading">{c.foundation.builderTitle}</h2><p>{c.foundation.builderDescription}</p><a class="mk-text-link" href={localePath(c.foundation.builderHref,locale)}>{c.foundation.builderLink}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a></div>
+          <a class="mk-builder-image" href={report} data-marketing-image data-image-title="yaFlows" data-image-alt={c.foundation.builderImageAlt} target="_blank" rel="noopener noreferrer" aria-label={`${c.ui.openImage}: yaFlows`}><img src={report} width={c.hero.imageWidth} height={c.hero.imageHeight} alt={c.foundation.builderImageAlt} loading="lazy" decoding="async"/><span class="mk-image-expand" aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a>
+        </article>
+    </div></section>
+    <section class="mk-section mk-adoption" aria-labelledby="mk-adoption-heading"><div class="mk-shell">
+      <div class="mk-section-head"><div><p class="mk-label">{c.adoption.eyebrow}</p><h2 class="mk-title" id="mk-adoption-heading">{c.adoption.title}</h2></div><p class="mk-intro">{c.adoption.description}</p></div>
+      <div class="mk-adoption-steps">{c.adoption.steps.map((step,i)=><article><span class="mk-step-number">0{i+1}</span><h3>{step.title}</h3><p>{step.text}</p></article>)}</div><p class="mk-fineprint">{c.adoption.footnote}</p>
+    </div></section>
+    <section class="mk-section mk-faq" aria-labelledby="mk-faq-heading"><div class="mk-shell mk-faq-layout"><div><p class="mk-label">{c.faq.eyebrow}</p><h2 class="mk-title" id="mk-faq-heading">{c.faq.title}</h2></div><div class="mk-faq-items">{c.faq.items.map(item=><details><summary>{item.question}<span aria-hidden="true"><UIIcon name="plus" size={16} /></span></summary><p>{item.answer}</p></details>)}</div></div></section>
+    <section class="mk-section mk-cta-closing" id="diagnostico" aria-label={c.diagnostic.eyebrow}><div class="mk-shell"><DiagnosticCallout locale={locale} topic="automations" placement="closing" /></div></section>
+    <dialog class="mk-image-dialog" data-marketing-dialog aria-labelledby="mk-dialog-heading"><div class="mk-dialog-toolbar"><h2 id="mk-dialog-heading" data-marketing-dialog-title>{c.ui.imageLabel}</h2><button type="button" data-marketing-dialog-close aria-label={c.ui.close}><UIIcon name="close" size={18} /></button></div><div class="mk-dialog-image"><img alt="" data-marketing-dialog-image/></div><p>{c.ui.imageNote}</p></dialog>
+  </main>
+</SiteLayout>
+<script>import '../../scripts/home-experience';import '../../scripts/marketing-page';</script>

@@ -1,135 +1,121 @@
 ---
-import { t, type Locale, localePath } from '../lib/i18n';
+import { localePath, type Locale } from '../lib/i18n';
+import { navigationCopy, type NavigationGroup } from '../lib/navigation';
 
-interface Props {
-  locale: Locale;
+interface Props { locale: Locale; }
+interface FooterCopy {
+  navigation: string;
+  description: string;
+  solutions: string;
+  platform: string;
+  together: string;
+  team: string;
+  trust: string;
+  conversations: string;
+  diagnosis: string;
+  terms: string;
+  privacy: string;
+  rights: string;
 }
 
+const dictionary: Record<Locale, FooterCopy> = {
+  'pt-BR': {
+    navigation: 'Navegação do rodapé',
+    description: 'Inteligência artificial, automações e pessoas na mesma operação.',
+    solutions: 'Soluções', platform: 'Plataforma', together: 'Com você',
+    team: 'Quem faz', trust: 'Confiança', conversations: 'Conversas', diagnosis: 'Diagnóstico',
+    terms: 'Termos de uso', privacy: 'Privacidade', rights: 'Todos os direitos reservados.',
+  },
+  'en-US': {
+    navigation: 'Footer navigation',
+    description: 'Artificial intelligence, automations and people in one operation.',
+    solutions: 'Solutions', platform: 'Platform', together: 'With you',
+    team: 'Our people', trust: 'Trust', conversations: 'Conversations', diagnosis: 'Diagnosis',
+    terms: 'Terms of use', privacy: 'Privacy', rights: 'All rights reserved.',
+  },
+  'es-ES': {
+    navigation: 'Navegación del pie de página',
+    description: 'Inteligencia artificial, automatizaciones y personas en la misma operación.',
+    solutions: 'Soluciones', platform: 'Plataforma', together: 'Contigo',
+    team: 'Quién lo hace', trust: 'Confianza', conversations: 'Conversaciones', diagnosis: 'Diagnóstico',
+    terms: 'Términos de uso', privacy: 'Privacidad', rights: 'Todos los derechos reservados.',
+  },
+};
+
 const { locale } = Astro.props;
-
-const productLinks = [
-  { label: t('nav.productLinks.conversations', locale), href: '/conversations' },
-  { label: t('nav.productLinks.intelligence', locale), href: '/intelligence' },
-  { label: t('nav.productLinks.marketing', locale), href: '/marketing-site' },
-  { label: t('nav.productLinks.operations', locale), href: '/operations' },
-  { label: 'Integrations', href: '/integrations' },
-  { label: 'Enterprise', href: '/for-enterprise' },
-  { label: t('nav.pricing', locale), href: '/pricing' },
+const copy = dictionary[locale];
+const navigation = navigationCopy[locale];
+const groups: NavigationGroup[] = [
+  { label: copy.solutions, links: [
+    ...navigation.primary.filter(link => link.href !== '/'),
+    ...navigation.groups[0].links.filter(link => link.href !== '/#time' && link.href !== '/teams'),
+  ] },
+  { label: copy.platform, links: [
+    ...navigation.groups[1].links,
+    ...navigation.groups[0].links.filter(link => link.href === '/teams'),
+    { label: copy.conversations, href: '/conversations' },
+  ] },
+  { label: copy.together, links: [
+    { label: copy.team, href: '/#time' },
+    { label: navigation.insights, href: '/blog' },
+    { label: copy.trust, href: '/trust' },
+    { label: copy.diagnosis, href: '/#diagnostico' },
+  ] },
 ];
-
-const resourceLinks = [
-  { label: t('footer.docs', locale), href: '#' },
-  { label: t('footer.apiReference', locale), href: '#' },
-  { label: t('footer.blog', locale), href: '/blog' },
-  { label: t('footer.cases', locale), href: '#' },
-];
-
-const companyLinks = [
-  { label: t('footer.about', locale), href: '#' },
-  { label: t('footer.careers', locale), href: '#' },
-  { label: t('footer.contact', locale), href: '#' },
-  { label: t('footer.press', locale), href: '#' },
-  { label: t('footer.trustCenter', locale), href: '/trust' },
-];
+import { whatsappHref } from '../lib/whatsapp';
 ---
 
-<footer style="background: #0F0F0F;" class="relative overflow-hidden py-16">
-  <!-- Organic wave top border -->
-  <div class="absolute top-0 left-0 right-0 pointer-events-none">
-    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none" class="w-full h-auto">
-      <path
-        d="M0 20 C80 8, 160 32, 240 18 C320 4, 400 30, 480 16 C560 2, 640 28, 720 14 C800 0, 880 26, 960 12 C1040 -2, 1120 24, 1200 10 C1280 -4, 1360 22, 1440 8 L1440 0 L0 0Z"
-        fill="rgba(6, 78, 59, 0.15)"
-      />
-      <path
-        d="M0 14 C100 6, 200 26, 300 14 C400 2, 500 22, 600 12 C700 2, 800 20, 900 10 C1000 0, 1100 18, 1200 8 C1300 -2, 1400 16, 1440 6 L1440 0 L0 0Z"
-        fill="rgba(6, 78, 59, 0.08)"
-      />
-    </svg>
-  </div>
-
-  <!-- Root SVGs -->
-  <div class="absolute inset-0 pointer-events-none" style="opacity: 0.05;">
-    <svg class="absolute bottom-0 left-0 w-full h-full" viewBox="0 0 1440 400" fill="none" preserveAspectRatio="none">
-      <path d="M200 180 C210 220, 195 260, 205 300 C215 340, 190 370, 200 400" stroke="#064E3B" stroke-width="3" fill="none" />
-      <path d="M200 240 C180 260, 165 290, 160 320" stroke="#064E3B" stroke-width="2" fill="none" />
-      <path d="M550 200 C560 250, 540 290, 555 340 C570 380, 545 395, 550 400" stroke="#3B2F1A" stroke-width="2.5" fill="none" />
-      <path d="M1050 190 C1040 230, 1060 270, 1045 310 C1030 350, 1055 380, 1050 400" stroke="#064E3B" stroke-width="2.5" fill="none" />
-      <path d="M1300 210 C1310 260, 1295 300, 1305 360 C1315 390, 1300 400, 1300 400" stroke="#3B2F1A" stroke-width="2" fill="none" />
-    </svg>
-  </div>
-
-  <!-- Fireflies -->
-  <div class="absolute rounded-full pointer-events-none" style="width:3px;height:3px;background-color:#2DD4BF;box-shadow:0 0 8px 2px rgba(45,212,191,0.3);opacity:0.4;top:30%;left:8%;animation:yapt-float 7s ease-in-out infinite;"></div>
-  <div class="absolute rounded-full pointer-events-none" style="width:3px;height:3px;background-color:#2DD4BF;box-shadow:0 0 8px 2px rgba(45,212,191,0.3);opacity:0.3;top:50%;left:15%;animation:yapt-float 8s ease-in-out infinite;animation-delay:3s;"></div>
-  <div class="absolute rounded-full pointer-events-none" style="width:2px;height:2px;background-color:white;box-shadow:0 0 6px 2px rgba(255,255,255,0.2);opacity:0.35;top:40%;left:22%;animation:yapt-float 6s ease-in-out infinite;animation-delay:5s;"></div>
-
-  <div class="relative max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-      <!-- Brand -->
-      <div class="md:col-span-1">
-        <img src="/yapt-logo-dark.svg" alt="yapt." class="h-8 w-auto mb-4" width="90" height="32" />
-        <p class="text-xs text-white/50 mb-2">{t('footer.tagline', locale)}</p>
-        <p class="text-sm text-white/70 leading-relaxed">{t('footer.description', locale)}</p>
-      </div>
-
-      <!-- Produto -->
-      <div>
-        <h4 class="font-poppins text-sm font-semibold text-white mb-4">{t('footer.product', locale)}</h4>
-        <ul class="space-y-1">
-          {productLinks.map((item) => (
-            <li>
-              <a href={localePath(item.href, locale)} class="text-sm text-white/50 hover:text-[#20B2AA] transition-colors inline-block py-1.5">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Recursos -->
-      <div>
-        <h4 class="font-poppins text-sm font-semibold text-white mb-4">{t('footer.resources', locale)}</h4>
-        <ul class="space-y-1">
-          {resourceLinks.map((item) => (
-            <li>
-              <a href={item.href.startsWith('/') ? localePath(item.href, locale) : item.href} class="text-sm text-white/50 hover:text-[#20B2AA] transition-colors">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Empresa -->
-      <div>
-        <h4 class="font-poppins text-sm font-semibold text-white mb-4">{t('footer.company', locale)}</h4>
-        <ul class="space-y-1">
-          {companyLinks.map((item) => (
-            <li>
-              <a href={item.href.startsWith('/') ? localePath(item.href, locale) : item.href} class="text-sm text-white/50 hover:text-[#20B2AA] transition-colors">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-white/40">{t('footer.copyright', locale)}</p>
-      <div class="flex gap-6">
-        <a href={localePath('/terms', locale)} class="text-xs text-white/40 hover:text-white/60 transition-colors py-1">
-          {t('footer.terms', locale)}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-grid" aria-label={copy.navigation}>
+      <div class="footer-brand">
+        <a class="footer-logo" href={localePath('/', locale)} aria-label={navigation.home}>
+          <img src="/yapt-logo-dark.svg" alt="yapt." width="112" height="40" loading="lazy" />
         </a>
-        <a href={localePath('/privacy', locale)} class="text-xs text-white/40 hover:text-white/60 transition-colors py-1">
-          {t('footer.privacy', locale)}
-        </a>
-        <a href={localePath('/privacy', locale)} class="text-xs text-white/40 hover:text-white/60 transition-colors py-1">
-          {t('footer.cookies', locale)}
-        </a>
+        <p>{copy.description}</p>
+      </div>
+      {groups.map(group => (
+        <div class="footer-group">
+          <h2>{group.label}</h2>
+          <ul>
+            {group.links.map(link => <li><a href={link.href === '/#diagnostico' ? whatsappHref : localePath(link.href, locale)} target={link.href === '/#diagnostico' ? '_blank' : undefined} rel={link.href === '/#diagnostico' ? 'noopener noreferrer' : undefined} data-diagnostic-trigger={link.href === '/#diagnostico' ? '' : undefined} data-diagnostic-placement={link.href === '/#diagnostico' ? 'footer' : undefined}>{link.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </nav>
+    <div class="footer-bottom">
+      <p>© {new Date().getFullYear()} yapt. {copy.rights}</p>
+      <div class="footer-legal">
+        <a href={localePath('/terms', locale)}>{copy.terms}</a>
+        <a href={localePath('/privacy', locale)}>{copy.privacy}</a>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer { position:relative; overflow:hidden; padding:64px 24px 20px; background:#092c25; color:#f4f9f5; font-family:Poppins,sans-serif; }
+  .site-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,#20b2aa65,transparent); }
+  .footer-inner { position:relative; max-width:1240px; margin:auto; }
+  .footer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 22px; }
+  .footer-brand { padding-right:2px; }
+  .footer-logo { display:inline-flex; align-items:center; min-width:112px; min-height:44px; border-radius:8px; }
+  .footer-logo img { display:block; width:112px; height:auto; }
+  .footer-brand p { max-width:250px; margin:18px 0 0; color:#bdd0c6; font-family:Inter,sans-serif; font-size:13px; line-height:1.8; }
+  .footer-group h2 { margin:10px 0 14px; color:#fff; font-size:12px; font-weight:600; letter-spacing:.02em; }
+  .footer-group ul { list-style:none; padding:0; margin:0; }
+  .footer-group li { margin:0; }
+  .footer-group a { display:flex; align-items:center; min-height:44px; padding:8px 0; color:#bdd0c6; font-size:12px; line-height:1.5; text-decoration:none; transition:color .18s; }
+  .site-footer a:hover { color:#2dd4bf; }
+  .site-footer a:focus-visible { outline:2px solid #2dd4bf; outline-offset:4px; border-radius:4px; }
+  .footer-bottom { display:flex; flex-direction:column; gap:10px; margin-top:42px; padding-top:20px; border-top:1px solid #ffffff1a; }
+  .footer-bottom p { margin:0; color:#9bb5a8; font-family:Inter,sans-serif; font-size:11px; line-height:1.8; }
+  .footer-legal { display:flex; flex-wrap:wrap; gap:12px 26px; }
+  .footer-legal a { display:flex; align-items:center; min-width:44px; min-height:44px; color:#bdd0c6; font-size:11px; text-decoration:none; transition:color .18s; }
+  @media (min-width:768px) {
+    .site-footer { padding:72px 32px 24px; }
+    .footer-grid { grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; }
+    .footer-bottom { flex-direction:row; align-items:center; justify-content:space-between; margin-top:58px; padding-top:20px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .site-footer a { transition:none; } }
+</style>

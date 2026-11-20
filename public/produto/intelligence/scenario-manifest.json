@@ -1,0 +1,742 @@
+{
+  "version": 1,
+  "source": {
+    "environment": "DEV/TEST e referências do produto",
+    "tenant": "yapt.operations",
+    "language": "pt-BR",
+    "capturedAt": "2026-11-14T15:04:50.585Z",
+    "assembledAt": "2026-11-14T19:14:52.407350+00:00"
+  },
+  "scenarios": {
+    "agentes": {
+      "title": {
+        "pt": "Do agente ao atendimento",
+        "en": "From agent to customer service",
+        "es": "Del agente a la atención"
+      },
+      "label": {
+        "pt": "Do agente ao atendimento",
+        "en": "From agent to customer service",
+        "es": "Del agente a la atención"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto, com exemplos de demonstração. Interface em português.",
+        "en": "Real product screens with demonstration examples. Interface in Portuguese.",
+        "es": "Pantallas reales del producto, con ejemplos de demostración. Interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "agents",
+          "frames": [
+            {
+              "id": "agent-request",
+              "src": "/produto/intelligence/agent-prompt.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 3800,
+              "focus": {
+                "x": 0.52,
+                "y": 0.61
+              },
+              "zoom": 1.45,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "Descreva o atendimento que o agente deve realizar. A conversa prepara um rascunho.",
+                "en": "Describe the service the agent should provide. The conversation prepares a draft.",
+                "es": "Describe la atención que debe realizar el agente. La conversación prepara un borrador."
+              }
+            },
+            {
+              "id": "agent-capability",
+              "src": "/produto/intelligence/agent-created.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 3600,
+              "focus": {
+                "x": 0.86,
+                "y": 0.74
+              },
+              "zoom": 2.05,
+              "mobileScale": 1.45,
+              "caption": {
+                "pt": "O rascunho recebe a capacidade de consultar o catálogo, junto das orientações do atendimento.",
+                "en": "The draft receives the catalog lookup capability alongside the service instructions.",
+                "es": "El borrador recibe la capacidad de consultar el catálogo junto con las instrucciones de atención."
+              }
+            },
+            {
+              "id": "agent-test",
+              "src": "/produto/intelligence/agent-test-result.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 2600,
+              "focus": {
+                "x": 0.604,
+                "y": 0.048
+              },
+              "zoom": 1.8,
+              "mobileScale": 1.2,
+              "caption": {
+                "pt": "Na aba Testar, valide a conversa com o cliente antes de publicar em um canal.",
+                "en": "In the Test tab, validate the customer conversation before publishing to a channel.",
+                "es": "En la pestaña Probar, valida la conversación con el cliente antes de publicar en un canal."
+              }
+            },
+            {
+              "id": "agent-result",
+              "src": "/produto/intelligence/agent-test-result.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 4600,
+              "focus": {
+                "x": 0.29,
+                "y": 0.63
+              },
+              "zoom": 1.7,
+              "mobileScale": 1.1,
+              "caption": {
+                "pt": "O teste consulta o produto e responde com nome, preço e estoque do catálogo de demonstração.",
+                "en": "The test looks up the product and responds with its name, price and stock from the demonstration catalog.",
+                "es": "La prueba consulta el producto y responde con nombre, precio y existencias del catálogo de demostración."
+              }
+            }
+          ],
+          "label": {
+            "pt": "Construir e testar",
+            "en": "Build and test",
+            "es": "Construir y probar"
+          }
+        }
+      ]
+    },
+    "copilotos": {
+      "title": {
+        "pt": "A experiência dos melhores, com todo o time.",
+        "en": "Your best expertise, with the whole team.",
+        "es": "La experiencia de los mejores, con todo el equipo."
+      },
+      "label": {
+        "pt": "O conhecimento dos melhores, com o time",
+        "en": "Your best expertise, with the team",
+        "es": "La experiencia de los mejores, con el equipo"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto. Exemplos de configuração e uso; interface em português.",
+        "en": "Real product screens. Configuration and usage examples; interface in Portuguese.",
+        "es": "Pantallas reales del producto. Ejemplos de configuración y uso; interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "prepare",
+          "label": {
+            "pt": "Preparar",
+            "en": "Prepare",
+            "es": "Preparar"
+          },
+          "frames": [
+            {
+              "id": "mentor-build",
+              "src": "/produto/intelligence/copilot-prompt.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 2600,
+              "focus": {
+                "x": 0.52,
+                "y": 0.61
+              },
+              "zoom": 1.45,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "Para o time humano, descreva um copiloto que orienta o operador durante o atendimento.",
+                "en": "For the human team, describe a copilot that guides the operator during service.",
+                "es": "Para el equipo humano, describe un copiloto que oriente al operador durante la atención."
+              }
+            },
+            {
+              "id": "mentor-role",
+              "src": "/produto/intelligence/copilot-created.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 2400,
+              "focus": {
+                "x": 0.86,
+                "y": 0.39
+              },
+              "zoom": 1.9,
+              "mobileScale": 1.45,
+              "caption": {
+                "pt": "O espelho registra o papel “Para operador”. O exemplo continua em rascunho, sem canal.",
+                "en": "The preview records the “For operator” role. This example remains a draft, with no channel.",
+                "es": "La vista previa registra el papel «Para operador». El ejemplo sigue en borrador, sin canal."
+              }
+            }
+          ]
+        },
+        {
+          "id": "guide",
+          "label": {
+            "pt": "Orientar",
+            "en": "Guide",
+            "es": "Orientar"
+          },
+          "frames": [
+            {
+              "id": "mentor-in-conversation",
+              "src": "/produto/support/mentor-privacidade.png",
+              "width": 1058,
+              "height": 1487,
+              "durationMs": 4000,
+              "focus": {
+                "x": 0.65,
+                "y": 0.42
+              },
+              "zoom": 2.3,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "Na própria conversa, o Mentor sugere a resposta para o operador revisar.",
+                "en": "Within the conversation, the Mentor suggests a reply for the operator to review.",
+                "es": "En la propia conversación, el Mentor sugiere una respuesta para que el operador la revise."
+              }
+            },
+            {
+              "id": "mentor-why",
+              "src": "/produto/support/mentor-privacidade.png",
+              "width": 1058,
+              "height": 1487,
+              "durationMs": 3700,
+              "focus": {
+                "x": 0.64,
+                "y": 0.7
+              },
+              "zoom": 2.4,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "A explicação ajuda a equipe a aprender com o caso e aplicar boas práticas.",
+                "en": "The explanation helps the team learn from the case and apply good practices.",
+                "es": "La explicación ayuda al equipo a aprender del caso y aplicar buenas prácticas."
+              }
+            }
+          ]
+        },
+        {
+          "id": "consult",
+          "label": {
+            "pt": "Consultar",
+            "en": "Look up",
+            "es": "Consultar"
+          },
+          "frames": [
+            {
+              "id": "mentor-system-query",
+              "src": "/produto/intelligence/copilot-test-result.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 4200,
+              "focus": {
+                "x": 0.29,
+                "y": 0.61
+              },
+              "zoom": 1.7,
+              "mobileScale": 1.1,
+              "caption": {
+                "pt": "No teste real, o copiloto consultou o catálogo e orientou a próxima ação com dados de produto.",
+                "en": "In the real test, the copilot queried the catalogue and suggested the next action using product data.",
+                "es": "En la prueba real, el copiloto consultó el catálogo y orientó la siguiente acción con datos del producto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "conexoes": {
+      "title": {
+        "pt": "Da conexão à conversa",
+        "en": "From connection to conversation",
+        "es": "De la conexión a la conversación"
+      },
+      "label": {
+        "pt": "Da conexão à conversa",
+        "en": "From connection to conversation",
+        "es": "De la conexión a la conversación"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto. Exemplos de configuração e uso; interface em português.",
+        "en": "Real product screens. Configuration and usage examples; interface in Portuguese.",
+        "es": "Pantallas reales del producto. Ejemplos de configuración y uso; interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "create",
+          "label": {
+            "pt": "Construir",
+            "en": "Build",
+            "es": "Construir"
+          },
+          "frames": [
+            {
+              "id": "connection-build",
+              "src": "/produto/intelligence/connection-proposal.jpg",
+              "width": 1471,
+              "height": 979,
+              "durationMs": 3000,
+              "focus": {
+                "x": 0.4,
+                "y": 0.31
+              },
+              "zoom": 1.45,
+              "mobileScale": 1.15,
+              "caption": {
+                "pt": "Informe a documentação e o que precisa consultar. O construtor propõe a conexão para conferir.",
+                "en": "Provide the documentation and what you need to look up. The builder proposes a connection for review.",
+                "es": "Indica la documentación y lo que necesitas consultar. El constructor propone una conexión para revisar."
+              }
+            },
+            {
+              "id": "connection-fields-review",
+              "src": "/produto/intelligence/connection-fields-proposal.jpg",
+              "width": 1471,
+              "height": 979,
+              "durationMs": 3200,
+              "focus": {
+                "x": 0.4,
+                "y": 0.55
+              },
+              "zoom": 1.6,
+              "mobileScale": 1.25,
+              "caption": {
+                "pt": "Confira a proposta e os nomes dos dados que vão aparecer: produto, preço, estoque e categoria.",
+                "en": "Review the proposal and the displayed data names: product, price, stock and category.",
+                "es": "Revisa la propuesta y los nombres de los datos que se mostrarán: producto, precio, existencias y categoría."
+              }
+            }
+          ]
+        },
+        {
+          "id": "release",
+          "label": {
+            "pt": "Disponibilizar",
+            "en": "Make available",
+            "es": "Habilitar"
+          },
+          "frames": [
+            {
+              "id": "connection-operator-access",
+              "src": "/produto/intelligence/connection-human-release.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 3200,
+              "focus": {
+                "x": 0.86,
+                "y": 0.52
+              },
+              "zoom": 2.1,
+              "mobileScale": 1.4,
+              "caption": {
+                "pt": "Libere a consulta para o atendente, conforme papel e caixas de entrada.",
+                "en": "Make the query available to operators according to role and inbox permissions.",
+                "es": "Habilita la consulta para el operador según su rol y las bandejas autorizadas."
+              }
+            }
+          ]
+        },
+        {
+          "id": "conversation",
+          "label": {
+            "pt": "Na conversa",
+            "en": "In conversation",
+            "es": "En la conversación"
+          },
+          "frames": [
+            {
+              "id": "connection-modal-app",
+              "src": "/produto/intelligence/vitrine-app-open.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 3000,
+              "focus": {
+                "x": 0.745,
+                "y": 0.47
+              },
+              "zoom": 2.1,
+              "mobileScale": 1.6,
+              "caption": {
+                "pt": "A conexão aparece como um app na lateral do modal da conversa.",
+                "en": "The connection appears as an app in the conversation sidebar.",
+                "es": "La conexión aparece como una app en el lateral de la conversación."
+              }
+            },
+            {
+              "id": "connection-modal-result",
+              "src": "/produto/intelligence/vitrine-app-result.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 4400,
+              "focus": {
+                "x": 0.745,
+                "y": 0.67
+              },
+              "zoom": 2.4,
+              "mobileScale": 1.6,
+              "caption": {
+                "pt": "Consulta feita: nome, preço e estoque chegam ao operador dentro do atendimento.",
+                "en": "Query completed: name, price and stock reach the operator within the service conversation.",
+                "es": "Consulta realizada: nombre, precio y existencias llegan al operador dentro de la atención."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "conhecimento": {
+      "title": {
+        "pt": "yaBrain: conhecimento conectado à resposta.",
+        "en": "yaBrain: knowledge connected to the answer.",
+        "es": "yaBrain: conocimiento conectado a la respuesta."
+      },
+      "label": {
+        "pt": "Conhecimento que sustenta a resposta",
+        "en": "Knowledge behind every answer",
+        "es": "Conocimiento que sustenta la respuesta"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto. Exemplos de configuração e uso; interface em português.",
+        "en": "Real product screens. Configuration and usage examples; interface in Portuguese.",
+        "es": "Pantallas reales del producto. Ejemplos de configuración y uso; interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "library",
+          "label": {
+            "pt": "Organizar",
+            "en": "Organize",
+            "es": "Organizar"
+          },
+          "frames": [
+            {
+              "id": "brain-library",
+              "src": "/produto/intelligence/yabrain-library.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 2800,
+              "focus": {
+                "x": 0.3,
+                "y": 0.2
+              },
+              "zoom": 1.6,
+              "mobileScale": 1.2,
+              "caption": {
+                "pt": "A yaBrain reúne o conhecimento que a IA consulta, em uma biblioteca pesquisável.",
+                "en": "yaBrain brings together the knowledge AI can consult in a searchable library.",
+                "es": "yaBrain reúne el conocimiento que la IA puede consultar en una biblioteca con búsqueda."
+              }
+            },
+            {
+              "id": "brain-reference",
+              "src": "/produto/intelligence/yabrain-library.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 3000,
+              "focus": {
+                "x": 0.29,
+                "y": 0.31
+              },
+              "zoom": 2.0,
+              "mobileScale": 1.35,
+              "caption": {
+                "pt": "Documentos organizados por pasta mantêm as referências disponíveis para o trabalho.",
+                "en": "Documents organized by folder keep references available for work.",
+                "es": "Los documentos organizados por carpetas mantienen las referencias disponibles para el trabajo."
+              }
+            }
+          ]
+        },
+        {
+          "id": "connect",
+          "label": {
+            "pt": "Conectar",
+            "en": "Connect",
+            "es": "Conectar"
+          },
+          "frames": [
+            {
+              "id": "brain-agent-folder",
+              "src": "/produto/intelligence/yabrain-access.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 3400,
+              "focus": {
+                "x": 0.88,
+                "y": 0.335
+              },
+              "zoom": 2.2,
+              "mobileScale": 1.5,
+              "caption": {
+                "pt": "As pastas podem ser vinculadas aos agentes, delimitando o conhecimento de cada papel.",
+                "en": "Folders can be linked to agents, defining the knowledge available to each role.",
+                "es": "Las carpetas pueden vincularse a los agentes para delimitar el conocimiento de cada función."
+              }
+            },
+            {
+              "id": "brain-content-governance",
+              "src": "/produto/intelligence/yabrain-document.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 3200,
+              "focus": {
+                "x": 0.77,
+                "y": 0.17
+              },
+              "zoom": 1.9,
+              "mobileScale": 1.4,
+              "caption": {
+                "pt": "Público de acesso e versões ajudam a revisar e governar as referências da IA.",
+                "en": "Audience settings and versions help review and govern AI references.",
+                "es": "El público de acceso y las versiones ayudan a revisar y gestionar las referencias de la IA."
+              }
+            }
+          ]
+        },
+        {
+          "id": "apply",
+          "label": {
+            "pt": "Aplicar",
+            "en": "Apply",
+            "es": "Aplicar"
+          },
+          "frames": [
+            {
+              "id": "brain-mentor-context",
+              "src": "/produto/support/mentor-privacidade.png",
+              "width": 1058,
+              "height": 1487,
+              "durationMs": 4000,
+              "focus": {
+                "x": 0.65,
+                "y": 0.44
+              },
+              "zoom": 2.3,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "Conhecimento e contexto apoiam a orientação do Mentor durante o atendimento.",
+                "en": "Knowledge and context support the Mentor’s guidance during service.",
+                "es": "El conocimiento y el contexto apoyan la orientación del Mentor durante la atención."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "acoes": {
+      "title": {
+        "pt": "Os dados, onde a equipe atende.",
+        "en": "Data where the team serves customers.",
+        "es": "Los datos, donde el equipo atiende."
+      },
+      "label": {
+        "pt": "Os dados, onde a pessoa trabalha",
+        "en": "Data where your team works",
+        "es": "Los datos, donde trabaja el equipo"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto. Exemplos de configuração e uso; interface em português.",
+        "en": "Real product screens. Configuration and usage examples; interface in Portuguese.",
+        "es": "Pantallas reales del producto. Ejemplos de configuración y uso; interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "context",
+          "label": {
+            "pt": "Contexto",
+            "en": "Context",
+            "es": "Contexto"
+          },
+          "frames": [
+            {
+              "id": "operator-context-app",
+              "src": "/produto/support/dados-na-conversa-real.png",
+              "width": 1398,
+              "height": 1678,
+              "durationMs": 3500,
+              "focus": {
+                "x": 0.55,
+                "y": 0.3
+              },
+              "zoom": 2.8,
+              "mobileScale": 1.05,
+              "caption": {
+                "pt": "O app reúne dados do cliente e do sistema interno na própria conversa.",
+                "en": "The app brings customer and internal system data into the conversation.",
+                "es": "La app reúne datos del cliente y del sistema interno en la propia conversación."
+              }
+            },
+            {
+              "id": "operator-customer-health",
+              "src": "/produto/support/dados-na-conversa-real.png",
+              "width": 1398,
+              "height": 1678,
+              "durationMs": 3500,
+              "focus": {
+                "x": 0.55,
+                "y": 0.58
+              },
+              "zoom": 2.8,
+              "mobileScale": 1.05,
+              "caption": {
+                "pt": "Relacionamento, uso e financeiro ficam à mão para orientar a resposta.",
+                "en": "Relationship, usage and financial context stay at hand to guide the reply.",
+                "es": "La relación, el uso y la situación financiera quedan a mano para orientar la respuesta."
+              }
+            }
+          ]
+        },
+        {
+          "id": "query",
+          "label": {
+            "pt": "Consultar",
+            "en": "Look up",
+            "es": "Consultar"
+          },
+          "frames": [
+            {
+              "id": "operator-api-form",
+              "src": "/produto/intelligence/vitrine-app-open.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 3000,
+              "focus": {
+                "x": 0.745,
+                "y": 0.52
+              },
+              "zoom": 2.3,
+              "mobileScale": 1.6,
+              "caption": {
+                "pt": "O operador preenche o dado necessário e consulta o sistema sem sair do modal.",
+                "en": "The operator enters the required data and queries the system without leaving the modal.",
+                "es": "El operador introduce el dato necesario y consulta el sistema sin salir del modal."
+              }
+            },
+            {
+              "id": "operator-api-result",
+              "src": "/produto/intelligence/vitrine-app-result.jpg",
+              "width": 1798,
+              "height": 1197,
+              "durationMs": 4300,
+              "focus": {
+                "x": 0.745,
+                "y": 0.67
+              },
+              "zoom": 2.4,
+              "mobileScale": 1.6,
+              "caption": {
+                "pt": "O resultado aparece ali: menos procura, menos cópia e mais tempo para resolver o caso.",
+                "en": "The result appears right there: less searching and copying, and more time to resolve the case.",
+                "es": "El resultado aparece allí: menos búsquedas y copias, y más tiempo para resolver el caso."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "controle": {
+      "title": {
+        "pt": "Teste e revise antes de aplicar",
+        "en": "Test and review before use",
+        "es": "Prueba y revisa antes de aplicar"
+      },
+      "label": {
+        "pt": "Teste e revise antes de aplicar",
+        "en": "Test and review before use",
+        "es": "Prueba y revisa antes de aplicar"
+      },
+      "sourceNote": {
+        "pt": "Telas reais do produto, com exemplos de demonstração. Interface em português.",
+        "en": "Real product screens with demonstration examples. Interface in Portuguese.",
+        "es": "Pantallas reales del producto, con ejemplos de demostración. Interfaz en portugués."
+      },
+      "chapters": [
+        {
+          "id": "agents",
+          "frames": [
+            {
+              "id": "agent-request",
+              "src": "/produto/intelligence/agent-prompt.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 3800,
+              "focus": {
+                "x": 0.52,
+                "y": 0.61
+              },
+              "zoom": 1.45,
+              "mobileScale": 1,
+              "caption": {
+                "pt": "Descreva o atendimento que o agente deve realizar. A conversa prepara um rascunho.",
+                "en": "Describe the service the agent should provide. The conversation prepares a draft.",
+                "es": "Describe la atención que debe realizar el agente. La conversación prepara un borrador."
+              }
+            },
+            {
+              "id": "agent-capability",
+              "src": "/produto/intelligence/agent-created.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 3600,
+              "focus": {
+                "x": 0.86,
+                "y": 0.74
+              },
+              "zoom": 2.05,
+              "mobileScale": 1.45,
+              "caption": {
+                "pt": "O rascunho recebe a capacidade de consultar o catálogo, junto das orientações do atendimento.",
+                "en": "The draft receives the catalog lookup capability alongside the service instructions.",
+                "es": "El borrador recibe la capacidad de consultar el catálogo junto con las instrucciones de atención."
+              }
+            },
+            {
+              "id": "agent-test",
+              "src": "/produto/intelligence/agent-test-result.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 2600,
+              "focus": {
+                "x": 0.604,
+                "y": 0.048
+              },
+              "zoom": 1.8,
+              "mobileScale": 1.2,
+              "caption": {
+                "pt": "Na aba Testar, valide a conversa com o cliente antes de publicar em um canal.",
+                "en": "In the Test tab, validate the customer conversation before publishing to a channel.",
+                "es": "En la pestaña Probar, valida la conversación con el cliente antes de publicar en un canal."
+              }
+            },
+            {
+              "id": "agent-result",
+              "src": "/produto/intelligence/agent-test-result.jpg",
+              "width": 1228,
+              "height": 605,
+              "durationMs": 4600,
+              "focus": {
+                "x": 0.29,
+                "y": 0.63
+              },
+              "zoom": 1.7,
+              "mobileScale": 1.1,
+              "caption": {
+                "pt": "O teste consulta o produto e responde com nome, preço e estoque do catálogo de demonstração.",
+                "en": "The test looks up the product and responds with its name, price and stock from the demonstration catalog.",
+                "es": "La prueba consulta el producto y responde con nombre, precio y existencias del catálogo de demostración."
+              }
+            }
+          ],
+          "label": {
+            "pt": "Construir e testar",
+            "en": "Build and test",
+            "es": "Construir y probar"
+          }
+        }
+      ]
+    }
+  }
+}

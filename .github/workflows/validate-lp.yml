@@ -22,5 +22,8 @@ jobs:
       - run: npm ci
       - run: npm run check:lp
       - run: npm run build
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       - run: npx playwright install --with-deps chromium
       - run: npm test

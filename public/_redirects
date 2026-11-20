@@ -1,2 +1,7 @@
 # Redirect old sitemap URL to new
 /sitemap-index.xml /sitemap.xml 301
+
+# IA e integrações agora compartilham a mesma página canônica
+/integrations /intelligence 301
+/en/integrations /en/intelligence 301
+/es/integrations /es/intelligence 301

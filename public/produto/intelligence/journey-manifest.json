@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "source": {
+    "environment": "DEV/TEST",
+    "tenant": "yapt.operations",
+    "language": "pt-BR",
+    "capturedAt": "2026-11-14T15:04:50.585Z"
+  },
+  "chapters": [
+    {
+      "id": "agents",
+      "frames": [
+        {
+          "id": "agent-request",
+          "src": "/produto/intelligence/agent-prompt.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 3800,
+          "focus": {
+            "x": 0.52,
+            "y": 0.61
+          },
+          "zoom": 1.45,
+          "mobileScale": 1,
+          "caption": {
+            "pt": "Descreva o atendimento que o agente deve realizar. A conversa prepara um rascunho.",
+            "en": "Describe the service the agent should provide. The conversation prepares a draft.",
+            "es": "Describe la atención que debe realizar el agente. La conversación prepara un borrador."
+          }
+        },
+        {
+          "id": "agent-capability",
+          "src": "/produto/intelligence/agent-created.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 3600,
+          "focus": {
+            "x": 0.86,
+            "y": 0.74
+          },
+          "zoom": 2.05,
+          "mobileScale": 1.45,
+          "caption": {
+            "pt": "O rascunho recebe a capacidade de consultar o catálogo, junto das orientações do atendimento.",
+            "en": "The draft receives the catalog lookup capability alongside the service instructions.",
+            "es": "El borrador recibe la capacidad de consultar el catálogo junto con las instrucciones de atención."
+          }
+        },
+        {
+          "id": "agent-test",
+          "src": "/produto/intelligence/agent-test-result.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 2600,
+          "focus": {
+            "x": 0.604,
+            "y": 0.048
+          },
+          "zoom": 1.8,
+          "mobileScale": 1.2,
+          "caption": {
+            "pt": "Na aba Testar, valide a conversa com o cliente antes de publicar em um canal.",
+            "en": "In the Test tab, validate the customer conversation before publishing to a channel.",
+            "es": "En la pestaña Probar, valida la conversación con el cliente antes de publicar en un canal."
+          }
+        },
+        {
+          "id": "agent-result",
+          "src": "/produto/intelligence/agent-test-result.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 4600,
+          "focus": {
+            "x": 0.29,
+            "y": 0.63
+          },
+          "zoom": 1.7,
+          "mobileScale": 1.1,
+          "caption": {
+            "pt": "O teste consulta o produto e responde com nome, preço e estoque do catálogo de demonstração.",
+            "en": "The test looks up the product and responds with its name, price and stock from the demonstration catalog.",
+            "es": "La prueba consulta el producto y responde con nombre, precio y existencias del catálogo de demostración."
+          }
+        }
+      ]
+    },
+    {
+      "id": "copilots",
+      "frames": [
+        {
+          "id": "copilot-request",
+          "src": "/produto/intelligence/copilot-prompt.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 3800,
+          "focus": {
+            "x": 0.52,
+            "y": 0.61
+          },
+          "zoom": 1.45,
+          "mobileScale": 1,
+          "caption": {
+            "pt": "Para o time humano, descreva um copiloto que orienta o operador durante o atendimento.",
+            "en": "For the human team, describe a copilot that guides the operator during service.",
+            "es": "Para el equipo humano, describe un copiloto que oriente al operador durante la atención."
+          }
+        },
+        {
+          "id": "copilot-role",
+          "src": "/produto/intelligence/copilot-created.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 3200,
+          "focus": {
+            "x": 0.86,
+            "y": 0.39
+          },
+          "zoom": 1.9,
+          "mobileScale": 1.45,
+          "caption": {
+            "pt": "O espelho registra o papel “Para operador”. O exemplo continua em rascunho, sem canal.",
+            "en": "The preview records the “For operator” role. This example remains a draft, with no channel.",
+            "es": "La vista previa registra el papel «Para operador». El ejemplo sigue en borrador, sin canal."
+          }
+        },
+        {
+          "id": "copilot-case",
+          "src": "/produto/intelligence/copilot-case.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 4000,
+          "focus": {
+            "x": 0.29,
+            "y": 0.68
+          },
+          "zoom": 1.75,
+          "mobileScale": 1.1,
+          "caption": {
+            "pt": "No teste, o copiloto lê o caso, consulta o catálogo e sugere a próxima ação.",
+            "en": "In the test, the copilot reads the case, looks up the catalog and suggests the next action.",
+            "es": "En la prueba, el copiloto lee el caso, consulta el catálogo y sugiere la próxima acción."
+          }
+        },
+        {
+          "id": "copilot-guidance",
+          "src": "/produto/intelligence/copilot-test-result.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 4400,
+          "focus": {
+            "x": 0.29,
+            "y": 0.61
+          },
+          "zoom": 1.7,
+          "mobileScale": 1.1,
+          "caption": {
+            "pt": "A equipe recebe uma resposta sugerida e o motivo da orientação, para decidir como seguir.",
+            "en": "The team receives a suggested reply and the reasoning behind it to decide how to proceed.",
+            "es": "El equipo recibe una respuesta sugerida y el motivo de la orientación para decidir cómo seguir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "connections",
+      "frames": [
+        {
+          "id": "connection-proposal",
+          "src": "/produto/intelligence/connection-proposal.jpg",
+          "width": 1471,
+          "height": 979,
+          "durationMs": 3800,
+          "focus": {
+            "x": 0.4,
+            "y": 0.31
+          },
+          "zoom": 1.45,
+          "mobileScale": 1.15,
+          "caption": {
+            "pt": "Informe a documentação e o que precisa consultar. O construtor propõe a conexão para conferir.",
+            "en": "Provide the documentation and what you need to look up. The builder proposes a connection for review.",
+            "es": "Indica la documentación y lo que necesitas consultar. El constructor propone una conexión para revisar."
+          }
+        },
+        {
+          "id": "connection-fields",
+          "src": "/produto/intelligence/connection-fields-proposal.jpg",
+          "width": 1471,
+          "height": 979,
+          "durationMs": 3800,
+          "focus": {
+            "x": 0.4,
+            "y": 0.55
+          },
+          "zoom": 1.6,
+          "mobileScale": 1.25,
+          "caption": {
+            "pt": "Confira a proposta e os nomes dos dados que vão aparecer: produto, preço, estoque e categoria.",
+            "en": "Review the proposal and the displayed data names: product, price, stock and category.",
+            "es": "Revisa la propuesta y los nombres de los datos que se mostrarán: producto, precio, existencias y categoría."
+          }
+        },
+        {
+          "id": "connection-applied",
+          "src": "/produto/intelligence/connection-fields.jpg",
+          "width": 1471,
+          "height": 979,
+          "durationMs": 3400,
+          "focus": {
+            "x": 0.4,
+            "y": 0.56
+          },
+          "zoom": 1.65,
+          "mobileScale": 1.25,
+          "caption": {
+            "pt": "Depois de aplicar, os nomes ficam registrados na capacidade de consulta da conexão.",
+            "en": "Once applied, the names are stored in the connection’s lookup capability.",
+            "es": "Una vez aplicados, los nombres quedan guardados en la capacidad de consulta de la conexión."
+          }
+        },
+        {
+          "id": "connection-executed",
+          "src": "/produto/intelligence/agent-test-result.jpg",
+          "width": 1228,
+          "height": 605,
+          "durationMs": 4600,
+          "focus": {
+            "x": 0.86,
+            "y": 0.54
+          },
+          "zoom": 2.15,
+          "mobileScale": 1.45,
+          "caption": {
+            "pt": "No teste do agente, os bastidores confirmam a execução da consulta. A conexão alimenta a resposta.",
+            "en": "In the agent test, the execution details confirm the lookup ran. The connection supplies the response.",
+            "es": "En la prueba del agente, los detalles confirman la ejecución de la consulta. La conexión alimenta la respuesta."
+          }
+        }
+      ]
+    }
+  ],
+  "video": "/produto/intelligence/journey.mp4"
+}

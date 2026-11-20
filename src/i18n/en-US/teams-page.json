@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "title": "Teams and collaboration in your AI operation",
+    "description": "Internal communication and corporate chat in yapt. teams, with groups, private chats and discussions linked to customer service in the AI platform."
+  },
+  "hero": {
+    "eyebrow": "Internal communication in the AI platform · Beta",
+    "title": "Teams and collaboration.",
+    "ending": "Connected to your AI operation.",
+    "description": "Connect internal communication to customer-service and sales conversations in the yapt. platform. In yapt. teams, groups, private chats and case discussions keep the conversation context available to authorized people, without copying the history to another tool.",
+    "cta": "Connect my team",
+    "secondary": "See collaboration in action",
+    "proof": "Groups · private chats · case discussions · voice.",
+    "frameBrand": "Teams and collaboration",
+    "screenLabel": "The right people, with work context",
+    "screenNote": "Product in Beta · Real screens from New Way. Internal information hidden where needed.",
+    "image": "/produto/teams/workspace.jpg",
+    "imageWidth": 1352,
+    "imageHeight": 666,
+    "imageAlt": "Real yapt. teams screen at New Way, showing a test discussion and the original customer conversation details.",
+    "tags": [
+      "Case",
+      "Context",
+      "Collaboration",
+      "Decision"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore where collaboration needs to improve",
+    "mechanismLabel": "How yapt. helps",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Application example",
+    "moreLabel": "Enlarge product screen",
+    "imageNote": "Real screens from New Way. Internal information hidden where needed. Product interface in Portuguese.",
+    "eyebrow": "Corporate chat with the context of the work",
+    "title": "How much work stalls between one person and the next?",
+    "description": "In internal communication, copying information to another chat, forwarding history and finding someone who can help takes time. Connect collaboration to customer-service and sales conversation context to keep work moving.",
+    "items": [
+      {
+        "id": "contexto",
+        "short": "Discussions without context",
+        "pain": "“I have to explain everything again to get help with this case.”",
+        "title": "Bring the discussion closer to the case.",
+        "description": "Start a discussion from a customer-service conversation and involve the people or groups who can help. The link lets participants consult the available context and return to the original conversation, with less copying and relaying between tools.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Open the case",
+            "text": "Start the discussion from the conversation that needs support."
+          },
+          {
+            "title": "Involve the team",
+            "text": "Choose colleagues or groups enabled to participate."
+          },
+          {
+            "title": "Keep work moving",
+            "text": "Consult the context and return to the original conversation."
+          }
+        ],
+        "benefits": [
+          "Consult the company, contact, ticket or conversation and available follow-up information.",
+          "Keep a reference to the customer-service conversation that prompted collaboration."
+        ],
+        "metric": "Time to get support, information handoffs and time to the next customer-service action.",
+        "example": {
+          "title": "The specialist joins with context",
+          "when": "A customer-service conversation needs another colleague’s assessment.",
+          "then": "The operator opens a linked discussion and involves the responsible team.",
+          "outcome": "Those helping can find the case reference and open the original conversation."
+        },
+        "image": "/produto/teams/workspace.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Real New Way test discussion with the original customer conversation details."
+      },
+      {
+        "id": "grupos",
+        "short": "Teams out of sync",
+        "pain": "“The customer waits while I figure out which team to contact.”",
+        "title": "Connect the people who move work forward.",
+        "description": "Organize groups around company workstreams and use private chats for direct alignment. Enabled groups can also join case discussions, bringing customer-facing teams closer to the people who know the subject.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Bring people together by team, topic or workstream."
+          },
+          {
+            "title": "Align",
+            "text": "Talk in the group or directly with the person you need."
+          },
+          {
+            "title": "Connect to the case",
+            "text": "Involve enabled groups when customer service needs them."
+          }
+        ],
+        "benefits": [
+          "Bring internal communication and cross-team support into the same platform.",
+          "Use groups and private chats according to the coordination needed."
+        ],
+        "metric": "Time to find the responsible team, handoffs between people and time waiting for alignment.",
+        "example": {
+          "title": "Cross-team support without rebuilding the story",
+          "when": "Customer service depends on support, finance or a specialist.",
+          "then": "The team finds the group or colleague and brings the case into a linked discussion.",
+          "outcome": "The right people collaborate with a shared reference for the work."
+        },
+        "image": "/produto/teams/grupos.jpg",
+        "imageWidth": 328,
+        "imageHeight": 666,
+        "imageAlt": "Real list of New Way groups in yapt. teams."
+      },
+      {
+        "id": "decisoes",
+        "short": "Decisions that get lost",
+        "pain": "“The team decided in chat, but the decision never reached the operator.”",
+        "title": "Bring the decision back into the operation.",
+        "description": "Organize follow-up in threads and mention the people who need to participate. In a linked discussion, review and record the decision as an internal note in customer service, preserving the reference for whoever continues the work.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Discuss",
+            "text": "Keep replies about the same subject in the thread."
+          },
+          {
+            "title": "Record",
+            "text": "Review the decision before recording it as an internal note."
+          },
+          {
+            "title": "Continue",
+            "text": "Continue customer service with the guidance and discussion reference."
+          }
+        ],
+        "benefits": [
+          "Keep each topic’s follow-up together without mixing every reply.",
+          "Bring the collaboration outcome into the internal history that guides the team."
+        ],
+        "metric": "Recorded decisions, repeated questions and time between alignment and the next action.",
+        "example": {
+          "title": "The agreement reaches the next person",
+          "when": "The team agrees on guidance for continuing the case.",
+          "then": "A person reviews the decision and records it as an internal note linked to the discussion.",
+          "outcome": "Whoever resumes customer service finds the guidance and can consult the internal discussion."
+        },
+        "image": "/produto/teams/thread.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Real message thread from the test discussion."
+      },
+      {
+        "id": "busca",
+        "short": "Time spent searching",
+        "pain": "“I know that information was shared in a group. I just cannot find where.”",
+        "title": "Find what the team has already shared.",
+        "description": "Use global search or search within a conversation. Room files and saved messages help you find references again; conversation history preserves the discussion trail so the team can avoid asking everything again.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Search",
+            "text": "Search Teams or the conversation where the topic was discussed."
+          },
+          {
+            "title": "Retrieve",
+            "text": "Consult available messages, files and references."
+          },
+          {
+            "title": "Resume",
+            "text": "Return to the topic with the history the team shared."
+          }
+        ],
+        "benefits": [
+          "Search history without relying on someone remembering which group they replied in.",
+          "Save important messages and consult conversation files when needed."
+        ],
+        "metric": "Search time, repeated questions and effort to retrieve files and guidance.",
+        "example": {
+          "title": "The earlier answer becomes useful again",
+          "when": "A similar topic comes up and the team needs to retrieve previous guidance.",
+          "then": "The person searches history and consults the available message or file.",
+          "outcome": "The team retrieves the shared information and decides how to apply it to the current case."
+        },
+        "image": "/produto/teams/busca.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Real yapt. teams search finding a message from the test discussion."
+      },
+      {
+        "id": "voz",
+        "short": "Slow coordination",
+        "pain": "“This would be easier to resolve in a quick voice conversation.”",
+        "title": "Use voice when the work calls for it.",
+        "description": "Availability helps identify who can talk. Audio calls in private chats and the Lounge provide spaces for voice coordination within Teams, according to the features enabled for the account.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Check availability",
+            "text": "Find the person you need to coordinate with."
+          },
+          {
+            "title": "Talk",
+            "text": "Use an audio call or the available voice space."
+          },
+          {
+            "title": "Follow through",
+            "text": "Record the agreement in the work context when needed."
+          }
+        ],
+        "benefits": [
+          "Combine messages and voice according to the coordination the topic needs.",
+          "Keep coordination inside the platform where the team already collaborates."
+        ],
+        "metric": "Time waiting for coordination, time to a decision and the need to revisit the same topic.",
+        "example": {
+          "title": "A quick conversation unblocks the next step",
+          "when": "A question needs a quick exchange between two people or a group.",
+          "then": "The team uses the available voice feature to align on the topic.",
+          "outcome": "People agree on the next steps and record the guidance needed for the work."
+        },
+        "image": "/produto/teams/voz.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Real yapt. teams Lounge screen with no active call."
+      },
+      {
+        "id": "acesso",
+        "short": "People missing context",
+        "pain": "“We need another person involved, but participation and access are unclear.”",
+        "title": "Involve the people who can help, with appropriate access.",
+        "description": "Organize group and discussion participants according to company access permissions. Partners who are authorized users can collaborate in permitted spaces, with participation defined for each workstream.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Define participation",
+            "text": "Identify the people and groups who need to work together."
+          },
+          {
+            "title": "Organize access",
+            "text": "Consider company membership and the available permissions."
+          },
+          {
+            "title": "Collaborate",
+            "text": "Bring authorized participants into the work space."
+          }
+        ],
+        "benefits": [
+          "Define who participates in spaces and which groups can receive case discussions.",
+          "Involve authorized colleagues and partners while keeping the reference to the conversation that needs support."
+        ],
+        "metric": "Time to involve participants, handoffs outside the workflow and clarity about who is following the work.",
+        "example": {
+          "title": "Collaboration with defined participation",
+          "when": "A case needs a colleague from another team or a partner with authorized access.",
+          "then": "The team checks access and brings participants into the permitted space.",
+          "outcome": "Work continues with the people needed and a shared reference."
+        },
+        "image": "/produto/teams/acesso.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Real participant selection in a group draft, showing the privacy notice."
+      }
+    ]
+  },
+  "foundation": {
+    "eyebrow": "Internal communication and contextual collaboration",
+    "title": "People, context and continuity in one place.",
+    "description": "Connect corporate chat to customer-service and sales conversations. yapt. teams brings people, messages and decisions into the operational workspace while keeping the case reference.",
+    "items": [
+      {
+        "icon": "teams",
+        "title": "Corporate chat for your team",
+        "text": "Groups, private chats and voice for internal company communication."
+      },
+      {
+        "icon": "support",
+        "title": "Collaboration with customer context",
+        "text": "Discussions linked to customer-service or sales conversations, with references to consult and revisit."
+      },
+      {
+        "icon": "data",
+        "title": "The story continues",
+        "text": "Threads, search, files and recorded decisions help keep work moving."
+      }
+    ],
+    "builderLabel": "From customer service to teamwork",
+    "builderTitle": "Those helping find the case. Those serving receive the decision.",
+    "builderDescription": "Start the discussion from the conversation, involve enabled people or groups and consult the available context. After alignment, a person can review and record the decision as an internal note. Closing the discussion organizes collaboration; customer-service status is handled separately.",
+    "builderLink": "Explore yapt. for Support",
+    "builderHref": "/support",
+    "builderImageAlt": "Real screen for reviewing a decision before adding it as an internal note to the customer conversation."
+  },
+  "journey": {
+    "eyebrow": "From conversation to collaboration",
+    "title": "Move the case forward with the right people.",
+    "description": "See the team find its collaboration space, follow replies and consult the context linking a discussion to customer service. The reviewed decision can return to the internal history to guide the next steps.",
+    "note": "Animation assembled from real captures of an existing New Way test discussion. The drafts shown were not submitted. Beta product, subject to account enablement."
+  },
+  "adoption": {
+    "eyebrow": "Your team, with specialist support if needed",
+    "title": "Start where missing context delays delivery most.",
+    "description": "Your team can identify handoffs between departments, organize collaboration spaces and select an initial routine. Specialists can support implementation, depending on the delivery model you choose, bringing communication closer to the work that needs to move forward.",
+    "steps": [
+      {
+        "title": "Map handoffs",
+        "text": "Identify where the team has to leave the context, repeat information or wait for another team."
+      },
+      {
+        "title": "Organize collaboration",
+        "text": "Define groups, participants and a routine for discussions and decision records."
+      },
+      {
+        "title": "Track continuity",
+        "text": "Track time to get support, handoffs and customer-service progress."
+      }
+    ],
+    "footnote": "yapt. teams is in Beta. Availability, participants and features are confirmed according to company access."
+  },
+  "faq": {
+    "eyebrow": "Before connecting your team",
+    "title": "Clarity to collaborate and keep work moving.",
+    "items": [
+      {
+        "question": "How does yapt. teams work as a corporate chat?",
+        "answer": "yapt. teams brings groups, private chats and voice features together for internal company communication. Case discussions add a link to the customer-service or sales conversation, bringing coordination between people closer to the customer context."
+      },
+      {
+        "question": "How can people collaborate on a customer-service or sales conversation?",
+        "answer": "A discussion can be started from the customer-service conversation modal. The link preserves the conversation or ticket reference and lets participants consult available information such as contact, company, status and owners, as well as open the original conversation. Each person’s access permissions still apply."
+      },
+      {
+        "question": "Can I involve groups and partners?",
+        "answer": "You can involve colleagues and groups enabled to receive case discussions. Partners must be users with authorized company access and participate in permitted spaces. Participation depends on configured membership and permissions; it is not a public room open through a link."
+      },
+      {
+        "question": "How does the decision return to customer service?",
+        "answer": "In a linked discussion, a person can review and record the decision as an internal note in customer service, with a reference to the discussion. Closing a discussion organizes the internal work and its outcome. It does not close the ticket or automatically change the customer-service status."
+      },
+      {
+        "question": "What helps find information that has already been shared?",
+        "answer": "Global search and in-conversation search help retrieve messages. Threads keep a topic’s replies together, files are available in the conversation and important messages can be saved. Results respect the spaces each person can access."
+      },
+      {
+        "question": "Does yapt. teams support voice calls?",
+        "answer": "Audio features support calls in private chats and voice spaces in the Lounge, according to account availability. Presence helps track people’s availability."
+      },
+      {
+        "question": "Where do we start?",
+        "answer": "yapt. teams is in Beta. First confirm availability for your company and choose a routine where coordination between people or departments delays work. Your team can organize participants and spaces and work with specialists when needed. Track indicators such as time to get support, handoffs and service continuity."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Your team’s next step forward",
+    "title": "Find the context your team needs to move work forward.",
+    "description": "Work with our specialists to examine handoffs, waiting time and information lost between people and tools. We will choose a path to bring collaboration closer to the operation.",
+    "points": [
+      "A routine where getting support takes longer than it should.",
+      "People, groups and context organized around the work.",
+      "Platform and specialists to implement and track progress."
+    ],
+    "cta": "Connect my team",
+    "footnote": "Talk to our team about your operation and yapt. teams availability.",
+    "error": "The chat could not load. Try again or open WhatsApp using the link below.",
+    "fallback": "Open WhatsApp directly",
+    "noScript": "You can also contact our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close enlarged image",
+    "imageLabel": "Product screen",
+    "openImage": "Enlarge screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to enlarge and close."
+  }
+}

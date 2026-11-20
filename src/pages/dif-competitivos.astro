@@ -1,4 +1,5 @@
 ---
+import { whatsappHref } from '../lib/whatsapp';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ModuleDeepDive from '../components/ModuleDeepDive.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
@@ -222,14 +223,13 @@ const stats = [
         </p>
       </div>
       <div data-fade class="mt-10" style="opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;">
-        <button
-          type="button"
-          onclick="typeof yaptwa==='function'&&yaptwa('open')"
+        <a
+          href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
           class="inline-block bg-white font-poppins font-semibold px-8 py-4 rounded-xl text-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
           style="color: #064E3B;"
         >
           Agendar demonstração gratuita →
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -326,14 +326,13 @@ const stats = [
     <div class="max-w-3xl mx-auto px-6 text-center">
       <p class="font-poppins text-lg font-semibold text-[#0F0F0F] mb-2">Pronto para operar com API oficial e sem risco?</p>
       <p class="text-sm text-[#656D78] mb-6">Veja a yapt. ao vivo — setup em 24h, sem compromisso.</p>
-      <button
-          type="button"
-          onclick="typeof yaptwa==='function'&&yaptwa('open')"
+      <a
+          href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
         class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
         style={`background: ${GRADIENT};`}
       >
         Agendar demonstração gratuita →
-      </button>
+      </a>
     </div>
   </div>
 
@@ -415,14 +414,13 @@ const stats = [
           <p class="font-poppins font-semibold text-white text-base">Viu a diferença?</p>
           <p class="text-sm text-white/70 mt-0.5">Em 30 minutos você vê tudo isso funcionando na prática.</p>
         </div>
-        <button
-          type="button"
-          onclick="typeof yaptwa==='function'&&yaptwa('open')"
+        <a
+          href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
           class="flex-shrink-0 inline-block bg-white font-poppins font-semibold px-7 py-3 rounded-xl text-base hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
           style="color: #064E3B;"
         >
           Agendar demo gratuita →
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -556,21 +554,19 @@ const stats = [
         <p class="font-poppins text-xl font-bold text-[#0F0F0F] mb-2">Esse é o processo. Do anúncio ao fechamento.</p>
         <p class="text-sm text-[#656D78] mb-6 max-w-lg mx-auto">Quer ver cada etapa funcionando na sua operação? Agende uma demo de 30 minutos com um especialista.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
-          <button
-          type="button"
-          onclick="typeof yaptwa==='function'&&yaptwa('open')"
+          <a
+          href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
             class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
             style={`background: ${GRADIENT};`}
           >
             Quero ver funcionando →
-          </button>
-          <button
-          type="button"
-          onclick="typeof yaptwa==='function'&&yaptwa('open')"
+          </a>
+          <a
+          href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
             class="inline-block font-poppins font-semibold px-8 py-3.5 rounded-xl text-base text-[#0F0F0F] border border-gray-200 bg-white hover:border-[#20B2AA]/40 hover:text-[#20B2AA] transition-all duration-200"
           >
             Falar com especialista
-          </button>
+          </a>
         </div>
         <p class="text-xs text-[#656D78] mt-4">Setup em 24h · Sem compromisso · Suporte dedicado</p>
       </div>

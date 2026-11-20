@@ -1,0 +1,30 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import type { Locale } from '../lib/i18n';
+import { localePath } from '../lib/i18n';
+import UIIcon from './UIIcon.astro';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const copy = {
+  'pt-BR': { title: 'Página não encontrada', text: 'Esse endereço não está disponível. Encontre o próximo caminho para a sua operação.', home: 'Voltar ao início', insights: 'Explorar os Insights' },
+  'en-US': { title: 'Page not found', text: 'This address is not available. Find the next step for your operation.', home: 'Back to home', insights: 'Explore Insights' },
+  'es-ES': { title: 'Página no encontrada', text: 'Esta dirección no está disponible. Encuentra el próximo paso para tu operación.', home: 'Volver al inicio', insights: 'Explorar Insights' },
+}[locale];
+---
+<SiteLayout title={copy.title} description={copy.text} path="/404" locale={locale} noindex={true} noHreflang={true}>
+  <main class="not-found">
+    <span class="not-found-code" aria-hidden="true">404</span>
+    <h1>{copy.title}</h1><p>{copy.text}</p>
+    <div><a class="not-found-home" href={localePath('/', locale)}>{copy.home}<UIIcon name="arrow-up-right" size={18}/></a><a href={localePath('/blog', locale)}>{copy.insights}</a></div>
+  </main>
+</SiteLayout>
+<style>
+  .not-found{display:grid;align-content:center;justify-items:center;text-align:center;min-height:80vh;padding:140px 24px 90px;background:#f0f7f3;color:#123d34;font-family:Inter,sans-serif}
+  .not-found-code{font:600 14px/1.5 Poppins,sans-serif;letter-spacing:.18em;color:#0b7168}
+  .not-found h1{font:600 clamp(32px,5vw,54px)/1.15 Poppins,sans-serif;letter-spacing:-.045em;margin:20px 0}
+  .not-found p{max-width:48ch;font-size:16px;line-height:1.8;margin:0 0 28px;color:#526b62}
+  .not-found div{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 24px}
+  .not-found a{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:48px;color:#0b7168;text-decoration:none;font-size:14px;font-weight:600}
+  .not-found .not-found-home{background:#0b7168;color:#fff;padding:14px 20px;border-radius:12px}
+  .not-found a:focus-visible{outline:3px solid #20b2aa;outline-offset:4px}
+</style>

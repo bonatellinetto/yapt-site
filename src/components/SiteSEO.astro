@@ -1,0 +1,48 @@
+---
+import type { SEOProps } from '../lib/seo';
+import { getCanonical, getHreflangAlternates, normalizePagePath, organizationJsonLd, websiteJsonLd, webPageJsonLd, breadcrumbJsonLd, pageTitle, serializeJsonLd, siteUrl } from '../lib/seo';
+import { getSocialImage } from '../lib/social-images';
+
+interface Props extends SEOProps { noHreflang?: boolean }
+const props = Astro.props;
+const { title, description, path, locale, ogType = 'website', noindex = false, noHreflang = false } = props;
+const canonical = getCanonical(path, locale);
+const alternates = noHreflang || noindex ? [] : getHreflangAlternates(path);
+const defaultImage = getSocialImage(path, locale);
+const suppliedImage = props.ogImage && props.ogImage !== '/og-image.png';
+const image = suppliedImage
+  ? { url: props.ogImage!, width: props.ogImageWidth, height: props.ogImageHeight, alt: props.ogImageAlt || title }
+  : defaultImage;
+const imageUrl = new URL(image.url, siteUrl).href;
+const extension = new URL(imageUrl).pathname.split('.').at(-1)?.toLowerCase();
+const types: Record<string, string> = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp' };
+const imageType = extension ? types[extension] : undefined;
+const ogLocales = { 'pt-BR': 'pt_BR', 'en-US': 'en_US', 'es-ES': 'es_ES' };
+const schemas = [organizationJsonLd(), websiteJsonLd(), webPageJsonLd(props), ...(props.jsonLd || [])];
+if (normalizePagePath(path) !== '/' && !schemas.some(schema => schema['@type'] === 'BreadcrumbList')) schemas.push(breadcrumbJsonLd(props));
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle(title)}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={pageTitle(title)} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="yapt." />
+<meta property="og:locale" content={ogLocales[locale]} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:secure_url" content={imageUrl} />
+{image.width && <meta property="og:image:width" content={String(image.width)} />}
+{image.height && <meta property="og:image:height" content={String(image.height)} />}
+{imageType && <meta property="og:image:type" content={imageType} />}
+<meta property="og:image:alt" content={image.alt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle(title)} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={image.alt} />
+{alternates.map(({ hreflang, href }) => <link rel="alternate" hreflang={hreflang} href={href} />)}
+{schemas.map(schema => <script is:inline type="application/ld+json" set:html={serializeJsonLd(schema)} />)}

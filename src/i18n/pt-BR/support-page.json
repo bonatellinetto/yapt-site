@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "title": "Inteligência artificial para atendimento e suporte",
+    "description": "Inteligência artificial para atendimento e suporte no WhatsApp. Organize tickets, SLA e conhecimento para resolver mais com menos espera e retrabalho."
+  },
+  "hero": {
+    "eyebrow": "Inteligência artificial para atendimento e suporte",
+    "title": "Inteligência artificial para suporte.",
+    "ending": "Mais resolução e eficiência.",
+    "description": "O yapt. aplica IA no atendimento pelo WhatsApp, conectando tickets, filas e base de conhecimento. Agentes e copilotos ajudam a resolver demandas com contexto e a reduzir espera e retrabalho. Especialistas podem apoiar a implantação e a evolução do suporte.",
+    "cta": "Quero um diagnóstico de suporte",
+    "secondary": "Veja como o atendimento avança",
+    "proof": "Parceiro Oficial Meta · 40M+ mensagens por mês · 16 anos.",
+    "frameBrand": "Suporte",
+    "screenLabel": "IA e time na mesma visão de eficiência",
+    "screenNote": "Tela real do produto · exemplo de operação",
+    "image": "/produto/support/monitoria-periodo-privacidade.png",
+    "imageWidth": 1669,
+    "imageHeight": 942,
+    "imageAlt": "Tela real de monitoria do yapt. com volumes, tempos e indicadores de atendimento por IA e por pessoas. Nomes protegidos.",
+    "tags": [
+      "IA",
+      "Equipe",
+      "Tempos",
+      "Eficiência"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore os problemas da operação de suporte",
+    "mechanismLabel": "Como o yapt. resolve",
+    "actionLabel": "Na prática",
+    "measurementLabel": "O que acompanhar",
+    "exampleLabel": "Exemplo de operação",
+    "moreLabel": "Ampliar tela real",
+    "imageNote": "Capturas de diferentes setores e exemplos de configuração. Interface em português.",
+    "eyebrow": "O custo da ineficiência no suporte",
+    "title": "Quanto a ineficiência do seu suporte custa em receita, produtividade e confiança?",
+    "description": "Cliente que espera, problema que volta e operador preso em tarefas manuais: o custo vai além do atendimento. Ele aparece na experiência ruim, na capacidade desperdiçada e na receita que deixa de acontecer. O yapt. conecta IA e plataforma para organizar o suporte. Especialistas podem ajudar a identificar os gargalos e aplicar a solução.",
+    "items": [
+      {
+        "id": "contexto",
+        "short": "Cliente e contexto",
+        "pain": "“O cliente volta e precisa explicar tudo de novo.”",
+        "title": "Continue de onde o cliente parou.",
+        "description": "Quando o cliente é identificado, a IA e o time podem usar o histórico disponível e os chamados vinculados para entender o motivo do contato. O atendimento ganha contexto antes de pedir que a história comece de novo.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Reconheça",
+            "text": "Cliente e histórico disponível."
+          },
+          {
+            "title": "Entenda",
+            "text": "Chamados abertos e motivo do contato."
+          },
+          {
+            "title": "Continue",
+            "text": "Próximo passo com IA e equipe."
+          }
+        ],
+        "benefits": [
+          "Configure a IA para consultar os chamados do contato e ajudar a distinguir um caso em andamento de uma nova solicitação.",
+          "Prepare resumo ou nota no fluxo configurado e encaminhe para uma pessoa com o histórico e o contexto disponíveis."
+        ],
+        "metric": "Repetição de informações, tempo de preparação e continuidade do atendimento.",
+        "example": {
+          "title": "Dois chamados, uma escolha clara",
+          "when": "Um cliente identificado volta a falar com a empresa.",
+          "then": "A IA consulta os chamados disponíveis e pergunta qual deles ele deseja continuar, ou se é um novo assunto.",
+          "outcome": "A conversa segue ligada ao contexto escolhido pelo cliente."
+        },
+        "image": "/produto/support/academy-tickets-historico-real.webp",
+        "imageAlt": "Tela real do histórico de tickets no yapt., com casos e responsáveis.",
+        "imageWidth": 1400,
+        "imageHeight": 493
+      },
+      {
+        "id": "filas",
+        "short": "Filas e produtividade",
+        "pain": "“A fila cresce, o urgente fica escondido e parte do time está sobrecarregada.”",
+        "title": "Equilibre filas, capacidade e produtividade do time.",
+        "description": "Enxergue a demanda, a espera e a carga por operador e por fila. Combine prioridades, capacidade e carteiras de clientes para distribuir melhor o trabalho e descobrir onde o time precisa de apoio.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Enxergue",
+            "text": "Filas, espera e produtividade dos operadores."
+          },
+          {
+            "title": "Distribua",
+            "text": "Regras, prioridades e capacidade do time."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Carga, continuidade e evolução por fila."
+          }
+        ],
+        "benefits": [
+          "Use rodízio ou menor carga no modo automático configurado, respeitando prioridades e limites da equipe.",
+          "Acompanhe a produtividade por operador e por fila e organize responsáveis e carteiras, quando habilitados, para dar continuidade ao atendimento."
+        ],
+        "metric": "Espera, carga, produtividade por operador e conversas aguardando atendimento.",
+        "example": {
+          "title": "A distribuição considera a capacidade",
+          "when": "Novas conversas chegam a um setor com a equipe ocupada.",
+          "then": "A distribuição verifica as condições configuradas e mantém a conversa em espera quando não há vaga.",
+          "outcome": "A gestão enxerga o acúmulo e pode decidir onde apoiar a operação."
+        },
+        "image": "/produto/ops-filas.webp",
+        "imageAlt": "Tela real de saúde das filas do yapt., com espera e disponibilidade por setor.",
+        "imageWidth": 1600,
+        "imageHeight": 670
+      },
+      {
+        "id": "chamados",
+        "short": "Casos e encaminhamento",
+        "pain": "“O atendimento troca de mãos e ninguém sabe o que ainda falta resolver.”",
+        "title": "Mantenha o caso inteiro no mesmo acompanhamento.",
+        "description": "Conecte chamado, conversas, etapas e responsáveis. Separe assuntos quando necessário e acompanhe o encaminhamento especializado sem perder a trilha do que já aconteceu.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Caso, assunto e conversas vinculadas."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Etapas, responsáveis e pendências."
+          },
+          {
+            "title": "Encaminhe",
+            "text": "Motivo, destino e histórico do caso."
+          }
+        ],
+        "benefits": [
+          "Consulte chamados em aberto e organize novos assuntos ou subprotocolos conforme a triagem definida para o setor.",
+          "Registre o encaminhamento para outra equipe com motivo e responsabilidade, preservando a continuidade do caso."
+        ],
+        "metric": "Casos sem avanço, transferências e tempo de passagem entre etapas.",
+        "example": {
+          "title": "Um caso que continua entre equipes",
+          "when": "O atendimento precisa da ajuda de uma equipe especializada.",
+          "then": "O encaminhamento registra motivo e destino e mantém a trilha do chamado disponível.",
+          "outcome": "A próxima equipe assume sabendo o que já foi tratado e o que precisa continuar."
+        },
+        "image": "/produto/support/ticket-encaminhamento-real.png",
+        "imageAlt": "Tela real do ticket no yapt., com etapa, prioridade, responsável, distribuição e ações de encaminhamento.",
+        "imageWidth": 1090,
+        "imageHeight": 1634
+      },
+      {
+        "id": "conhecimento",
+        "short": "Conhecimento e copiloto",
+        "pain": "“O operador procura respostas em vários manuais e repete tentativas.”",
+        "title": "Aplique o conhecimento do negócio em cada atendimento.",
+        "description": "Organize manuais, conhecimento de produtos e procedimentos para apoiar rotinas de N1 e N2. A IA e o copiloto ajudam a preparar respostas e próximos passos com as orientações configuradas para o cenário.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Produtos, manuais e orientações."
+          },
+          {
+            "title": "Oriente",
+            "text": "Procedimentos e contexto aplicável."
+          },
+          {
+            "title": "Revise",
+            "text": "Respostas e próximos passos do time."
+          }
+        ],
+        "benefits": [
+          "Configure etapas, pré-requisitos e encaminhamento para quando uma rotina não avançar.",
+          "Revise o conhecimento e os procedimentos com responsáveis pela aprovação; o operador decide o que usar das sugestões do copiloto."
+        ],
+        "metric": "Tempo para encontrar respostas, tentativas repetidas e necessidade de revisão do conhecimento.",
+        "example": {
+          "title": "Um procedimento com próximo passo definido",
+          "when": "Um cliente relata um problema previsto no conhecimento da empresa.",
+          "then": "A IA aplica o procedimento configurado, considerando contexto, etapas e alternativas de encaminhamento.",
+          "outcome": "A equipe acompanha as orientações e continua quando houver necessidade de intervenção humana."
+        },
+        "image": "/produto/support/mentor-privacidade.png",
+        "imageAlt": "Tela real do mentor do yapt. na conversa, com sugestão de resposta, orientação e opção de usar a resposta. Nome de marca protegido.",
+        "imageWidth": 1058,
+        "imageHeight": 1487
+      },
+      {
+        "id": "integracoes",
+        "short": "Sistemas e automações",
+        "pain": "“O cliente espera enquanto o atendente abre outras telas e copia informações.”",
+        "title": "Construa integrações por conversa. Traga os dados para o atendimento.",
+        "description": "No yaAgents, descreva o que precisa consultar ou fazer e construa a integração por conversa, com os sistemas e as APIs disponíveis. Exiba os dados dos sistemas internos no próprio modal da conversa e dê à IA ferramentas para consultar e executar as ações configuradas.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Descreva",
+            "text": "A necessidade, o sistema e a documentação da API."
+          },
+          {
+            "title": "Conecte",
+            "text": "Consultas, ações e permissões necessárias."
+          },
+          {
+            "title": "Atenda",
+            "text": "Dados e ferramentas na conversa, para IA e operador."
+          }
+        ],
+        "benefits": [
+          "Construa e ajuste conexões por conversa no yaAgents, com revisão da configuração e dos acessos necessários.",
+          "Pelo menos 30% mais produtividade para o operador, com dados dos sistemas internos na conversa e menos troca de telas, cópias e consultas manuais."
+        ],
+        "metric": "Tempo de atendimento, consultas manuais, troca de telas e produtividade do operador.",
+        "example": {
+          "title": "O sistema responde dentro da conversa",
+          "when": "O cliente pergunta sobre um pedido ou uma pendência que está em outro sistema.",
+          "then": "A conexão configurada consulta os dados e os disponibiliza para a IA e para o operador no contexto do atendimento.",
+          "outcome": "A equipe continua o atendimento com a informação disponível, sem refazer a consulta em outra tela."
+        },
+        "image": "/produto/support/dados-na-conversa-real.png",
+        "imageAlt": "Tela real do yapt. com dados de um sistema interno dentro do modal da conversa, incluindo saúde do cliente e situação financeira.",
+        "imageWidth": 1398,
+        "imageHeight": 1678
+      },
+      {
+        "id": "prazos",
+        "short": "Prazos e continuidade",
+        "pain": "“A IA responde rápido, mas o cliente continua esperando uma pessoa ou a solução.”",
+        "title": "Enxergue a espera que a resposta automática não resolve.",
+        "description": "Defina os prazos e acompanhe a passagem entre IA e equipe. Diferencie espera, primeira resposta humana, continuidade e resolução para investigar onde o atendimento está demorando.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Defina",
+            "text": "Metas de tempo e horário de atendimento."
+          },
+          {
+            "title": "Distinga",
+            "text": "Resposta da IA, espera e resposta humana."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Prazos e ocorrências da operação."
+          }
+        ],
+        "benefits": [
+          "Configure as metas por setor e habilite os controles de tempo que fazem sentido para o processo.",
+          "Abra os casos ligados aos indicadores para investigar o atraso, sem confundir atribuição com uma resposta ao cliente."
+        ],
+        "metric": "Espera, resposta humana, duração do caso e cumprimento dos prazos configurados.",
+        "example": {
+          "title": "A espera fica visível depois da transferência",
+          "when": "A IA encaminha uma conversa para a equipe.",
+          "then": "Os controles habilitados acompanham o prazo e a primeira resposta humana conforme a configuração do setor.",
+          "outcome": "A gestão consegue investigar a espera e decidir a ação necessária."
+        },
+        "image": "/produto/ops-prazos.webp",
+        "imageAlt": "Exemplo real de configuração de metas de tempo por setor no yapt.",
+        "imageWidth": 1600,
+        "imageHeight": 1291
+      },
+      {
+        "id": "qualidade",
+        "short": "Qualidade e gargalos",
+        "pain": "“Fechamos chamados, mas não sabemos onde o tempo se perde nem como o cliente saiu.”",
+        "title": "Meça a jornada até a solução. Investigue o retrabalho.",
+        "description": "Acompanhe espera, trabalho, evolução das etapas, reaberturas e transferências. Combine a leitura dos casos com as pesquisas de satisfação disponíveis para decidir onde melhorar.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Observe",
+            "text": "Casos, tempos e passagens entre equipes."
+          },
+          {
+            "title": "Investigue",
+            "text": "Reaberturas, gargalos e feedback recebido."
+          },
+          {
+            "title": "Melhore",
+            "text": "Prioridades e acompanhamento das mudanças."
+          }
+        ],
+        "benefits": [
+          "Consulte o percurso dos casos e identifique onde há espera ou trocas repetidas de setor.",
+          "Leia CSAT, NPS, comentários e taxa de resposta quando houver pesquisas enviadas e respondidas."
+        ],
+        "metric": "Tempo de espera e trabalho, reaberturas, transferências e satisfação com o recorte definido.",
+        "example": {
+          "title": "O indicador leva ao que precisa ser investigado",
+          "when": "A gestão percebe acúmulo em uma etapa do suporte.",
+          "then": "O relatório permite consultar os casos e analisar seu percurso, conforme o recorte e os dados disponíveis.",
+          "outcome": "A equipe define uma melhoria e acompanha os indicadores do mesmo cenário."
+        },
+        "image": "/produto/demo-vendas-eficiencia.webp",
+        "imageAlt": "Tela real do relatório de eficiência do funil de Suporte e garantia no yapt.",
+        "imageWidth": 2458,
+        "imageHeight": 2308
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Por dentro da operação de suporte",
+    "title": "O cliente é o mesmo. O contexto continua.",
+    "description": "Acompanhe o reconhecimento do cliente, a consulta de chamados, o registro configurado e a passagem para uma pessoa. Depois, explore filas, capacidade e indicadores da operação.",
+    "note": "Demonstração com dados ilustrativos. Recursos, registros e ações dependem da configuração. Indicadores devem ser lidos conforme o período e o critério de cada relatório."
+  },
+  "foundation": {
+    "eyebrow": "Inteligência aplicada à resolução",
+    "title": "IA preparando o atendimento. Pessoas e processos conectados à solução.",
+    "description": "A plataforma conecta o conhecimento e o histórico do cliente aos tickets e às ações do atendimento. Sua equipe pode contar com especialistas para configurar a IA e evoluir os processos.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "IA no atendimento",
+        "text": "Histórico, tickets e base de conhecimento ajudam os agentes a responder e encaminhar cada caso com contexto."
+      },
+      {
+        "icon": "teams",
+        "title": "Copiloto para o time",
+        "text": "Conhecimento, resumos e sugestões apoiam o operador, que mantém a decisão sobre o que aplicar."
+      },
+      {
+        "icon": "automation",
+        "title": "Filas inteligentes",
+        "text": "Regras, prioridades e distribuição configuradas organizam os próximos passos do atendimento."
+      },
+      {
+        "icon": "data",
+        "title": "Tickets e SLA à vista",
+        "text": "Espera, prazos e jornada dos tickets ajudam a identificar gargalos e orientar as decisões do suporte."
+      }
+    ],
+    "builderLabel": "yaAgents · construção por conversa",
+    "builderTitle": "Descreva como seu suporte funciona. Prepare a IA para trabalhar com ele.",
+    "builderDescription": "No yaAgents, organize orientações, conhecimento e ferramentas por conversa. Especialistas podem apoiar sua equipe na revisão da configuração, nos testes e na evolução da IA no atendimento.",
+    "builderLink": "Conheça o yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Tela real do construtor de agentes de IA do yapt."
+  },
+  "adoption": {
+    "eyebrow": "Tecnologia própria e apoio especializado",
+    "title": "Seu suporte tem particularidades. A aplicação de IA precisa entendê-las.",
+    "description": "O diagnóstico considera motivos de contato, base de conhecimento, filas e sistemas. Especialistas podem apoiar a escolha do primeiro cenário e a implantação da IA.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Entender onde há espera, repetição de trabalho e perda de contexto na jornada do cliente."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Configurar o primeiro cenário, a IA, o conhecimento, as filas e as conexões necessárias."
+      },
+      {
+        "title": "Evoluir",
+        "text": "Orientar a equipe, revisar o conhecimento e acompanhar os indicadores do cenário."
+      }
+    ],
+    "footnote": "Escopo, canais, integrações e recursos são definidos conforme a necessidade e a configuração de cada empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de começar",
+    "title": "Clareza para quem atende. Visibilidade para quem decide.",
+    "items": [
+      {
+        "question": "A IA pode atuar no N1 e no N2?",
+        "answer": "Podemos configurar agentes e procedimentos para rotinas de atendimento com o conhecimento da empresa e as ações permitidas. O escopo é definido e testado por cenário, com encaminhamento para a equipe quando a rotina precisar de intervenção humana."
+      },
+      {
+        "question": "A IA sabe quem é o cliente e quais chamados ele já tem?",
+        "answer": "Quando o contato é identificado e as ferramentas estão configuradas, a IA pode consultar chamados e usar o contexto disponível. Dados, memória e herança de histórico seguem as configurações e os limites da operação."
+      },
+      {
+        "question": "O que acontece quando uma pessoa precisa assumir?",
+        "answer": "O fluxo pode consultar o contexto, gerar um resumo ou nota e encaminhar o atendimento conforme as ações configuradas. A transferência preserva os registros disponíveis; gerar resumo e transferir são passos que precisam fazer parte do fluxo."
+      },
+      {
+        "question": "Como acompanhamos os prazos depois da resposta da IA?",
+        "answer": "A resposta automática e a primeira resposta humana são situações diferentes. O setor pode configurar metas e habilitar controles de tempo conforme seu processo. Atribuir uma conversa a um operador não equivale a responder ao cliente."
+      },
+      {
+        "question": "Precisamos substituir os sistemas que já usamos?",
+        "answer": "O diagnóstico define o que concentrar no yapt. e o que precisa continuar conectado. No yaAgents, podemos construir conexões por conversa e disponibilizar consultas, ações e dados dentro do atendimento. A integração depende dos sistemas, das APIs, dos acessos e das ferramentas disponíveis."
+      },
+      {
+        "question": "Como avaliamos se o suporte ficou mais eficiente?",
+        "answer": "Definimos período, casos e critérios antes de comparar. Espera, tempo de trabalho, avanço de etapas, reaberturas, transferências e pesquisas respondidas ajudam a investigar os gargalos. Um indicador isolado não comprova qualidade ou economia."
+      },
+      {
+        "question": "A IA aprende e muda os procedimentos sozinha?",
+        "answer": "O conhecimento e os procedimentos precisam de organização, revisão e responsáveis. A aplicação pode definir critérios de aprovação e orientar quais conteúdos a IA usa; melhorias entram conforme o processo de revisão e a configuração da empresa."
+      },
+      {
+        "question": "Como chatbot com IA, tickets e equipe trabalham juntos?",
+        "answer": "A aplicação pode combinar um chatbot com IA para atender no WhatsApp, tickets para acompanhar o caso e copilotos para orientar a equipe. A base de conhecimento fornece contexto; regras de fila e SLA ajudam a organizar o trabalho. Ações e encaminhamentos dependem do fluxo e das permissões definidos para a operação."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Descubra onde o suporte pode resolver melhor",
+    "title": "Vamos encontrar onde seu suporte perde tempo, dinheiro e confiança.",
+    "description": "Analisamos a jornada entre o primeiro contato e a solução para identificar esperas, retrabalho e perda de contexto. Definimos como aplicar IA e plataforma à operação, com apoio especializado conforme a necessidade.",
+    "points": [
+      "Uma visão dos gargalos do atendimento.",
+      "Um primeiro cenário com prioridades claras.",
+      "Plataforma com apoio especializado disponível."
+    ],
+    "cta": "Quero um diagnóstico de suporte",
+    "footnote": "Converse com nosso time sobre a sua operação.",
+    "error": "O atendimento não carregou agora. Tente novamente ou abra o WhatsApp pelo link abaixo.",
+    "fallback": "Abrir direto no WhatsApp",
+    "noScript": "Você também pode falar com nosso time pelo WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Fechar imagem ampliada",
+    "imageLabel": "Tela real do produto",
+    "openImage": "Ampliar a tela",
+    "skip": "Ir para o conteúdo",
+    "imageNote": "Use os controles da imagem para ampliar e fechar."
+  }
+}

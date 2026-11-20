@@ -1,0 +1,10 @@
+---
+import DiagnosticCallout from '../diagnostic/DiagnosticCallout.astro';
+import type { Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<section id="diagnostico" class="home-section home-diagnostic-closing" aria-label={locale === 'pt-BR' ? 'Diagnóstico da sua operação' : locale === 'en-US' ? 'Your operational diagnosis' : 'Diagnóstico de tu operación'}>
+  <div class="home-shell"><DiagnosticCallout locale={locale} topic="home" placement="closing" /></div>
+</section>
+<style>.home-diagnostic-closing{background:#f4f8f3}</style>

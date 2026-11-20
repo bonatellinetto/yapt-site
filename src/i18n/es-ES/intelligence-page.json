@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "title": "Plataforma de inteligencia artificial aplicada",
+    "description": "Crea agentes de inteligencia artificial, copilotos e integraciones conversando en yaAgents. Aplica IA a las conversaciones, datos y procesos de tu empresa."
+  },
+  "hero": {
+    "eyebrow": "Plataforma de inteligencia artificial aplicada",
+    "title": "Agentes de inteligencia artificial.",
+    "ending": "Aplicados a tu negocio.",
+    "description": "Crea agentes de IA, copilotos y conexiones conversando en yaAgents. Usa conocimiento, datos y APIs existentes para atender a clientes, orientar a tu equipo y ejecutar acciones configuradas. Tu equipo puede conducir la aplicación y contar con especialistas para implantar y evolucionar.",
+    "cta": "Quiero aplicar IA en mi negocio",
+    "secondary": "Mira cómo construir por conversación",
+    "proof": "Agentes de IA · copilotos · APIs · conocimiento y control.",
+    "frameBrand": "yaAgents",
+    "screenLabel": "Tu necesidad se convierte en una aplicación de IA",
+    "screenNote": "Pantalla real del producto · interfaz en portugués.",
+    "image": "/produto/intelligence/agent-created.jpg",
+    "imageWidth": 1228,
+    "imageHeight": 605,
+    "imageAlt": "Agente de atención creado por conversación en yaAgents, con una consulta al catálogo vinculada al borrador.",
+    "tags": [
+      "Describe",
+      "Construye",
+      "Prueba",
+      "Aplica"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explora dónde aplicar IA e integraciones",
+    "mechanismLabel": "Cómo ayuda yapt.",
+    "actionLabel": "En la práctica",
+    "measurementLabel": "Qué medir",
+    "exampleLabel": "Ejemplo de aplicación",
+    "moreLabel": "Ampliar pantalla real",
+    "imageNote": "Pantalla real del producto. El ejemplo ilustra la configuración; no representa un resultado de cliente. Interfaz en portugués.",
+    "eyebrow": "Inteligencia artificial aplicada al trabajo real",
+    "title": "¿Dónde necesita tu equipo más capacidad para entregar?",
+    "description": "Las respuestas repetidas, las dudas durante el trabajo y las búsquedas en otros sistemas consumen tiempo. Explora seis situaciones para aplicar agentes de inteligencia artificial, copilotos e integraciones al proceso de tu empresa.",
+    "items": [
+      {
+        "id": "agentes",
+        "short": "Atención repetitiva",
+        "pain": "“El equipo repite las mismas respuestas y falta tiempo para los casos que necesitan atención.”",
+        "title": "Crea agentes para atender a tus clientes.",
+        "description": "Describe el papel del agente, lo que necesita saber y cuándo debe recurrir a una persona. Construye el borrador por conversación, revisa las instrucciones y prueba las respuestas antes de publicar.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "El objetivo, el público y los límites de la atención."
+          },
+          {
+            "title": "Prepara",
+            "text": "El conocimiento, las instrucciones y las capacidades necesarias."
+          },
+          {
+            "title": "Prueba",
+            "text": "Las respuestas y la derivación a una persona antes de publicar."
+          }
+        ],
+        "benefits": [
+          "Da continuidad a las solicitudes previstas con conocimiento e instrucciones definidos para tu negocio.",
+          "Reserva la atención del equipo para los casos derivados, con el contexto disponible de la conversación."
+        ],
+        "metric": "Volumen atendido por la IA, derivaciones, motivos de duda y calidad de las respuestas en los escenarios definidos.",
+        "example": {
+          "title": "Una duda recurrente encuentra un camino",
+          "when": "El cliente pregunta cómo funciona un servicio.",
+          "then": "El agente consulta el conocimiento configurado y sigue las instrucciones; cuando es necesario, deriva al equipo.",
+          "outcome": "La operación revisa las respuestas y las derivaciones para ajustar la atención."
+        },
+        "image": "/produto/intelligence/agent-test-result.jpg",
+        "imageAlt": "Prueba real del agente consultando un catálogo de productos, con la ejecución de la capacidad visible.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      },
+      {
+        "id": "copilotos",
+        "short": "Tiempo de formación",
+        "pain": "“Formar al equipo lleva tiempo — y cada vendedor o agente atiende de una manera.”",
+        "title": "Lleva la experiencia de los mejores a todo el equipo.",
+        "description": "Convierte las buenas prácticas en orientación para quienes venden y quienes resuelven. El Mentor combina el contexto de la conversación, el conocimiento de la empresa y las consultas permitidas a otros sistemas para sugerir respuestas y próximos pasos. El equipo aprende mientras trabaja, con menos búsquedas y menos dependencia de ayuda.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Prepara",
+            "text": "Define las buenas prácticas, el conocimiento y las consultas del Mentor."
+          },
+          {
+            "title": "Orienta",
+            "text": "Acerca la respuesta sugerida y la información adecuada al caso en curso."
+          },
+          {
+            "title": "Desarrolla",
+            "text": "La persona revisa, aplica y aprende con la explicación de la orientación."
+          }
+        ],
+        "benefits": [
+          "Acerca los enfoques de ventas y las orientaciones de soporte de tu equipo de referencia a quienes están empezando.",
+          "Reduce las búsquedas en otros sistemas y las interrupciones para pedir ayuda, con orientación en el contexto de la conversación."
+        ],
+        "metric": "Tiempo hasta la autonomía, tiempo de atención, uso de sugerencias y calidad de las respuestas.",
+        "example": {
+          "title": "La orientación adecuada al responder",
+          "when": "El vendedor recibe una objeción o el agente necesita un dato para resolver el caso.",
+          "then": "El Mentor consulta el conocimiento y los sistemas permitidos, sugiere una respuesta y explica el próximo paso.",
+          "outcome": "La persona revisa la sugerencia y decide cómo seguir, aprendiendo con el contexto de la atención."
+        },
+        "image": "/produto/intelligence/copilot-test-result.jpg",
+        "imageAlt": "Prueba real del copiloto, con una respuesta sugerida y explicación para el operador.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      },
+      {
+        "id": "conexoes",
+        "short": "Búsqueda en otros sistemas",
+        "pain": "“Para responder al cliente, necesitamos abrir otro sistema y buscar la información.”",
+        "title": "Crea conexiones con tus sistemas por conversación.",
+        "description": "Describe el sistema, la API disponible y lo que necesitas consultar. yaAgents ayuda a construir la conexión y sus capacidades para llevar la información al agente y a la persona del equipo, según los accesos autorizados.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "El sistema y la información necesaria para el trabajo."
+          },
+          {
+            "title": "Conecta",
+            "text": "Configura el acceso y prueba la consulta a través de la API."
+          },
+          {
+            "title": "Habilita",
+            "text": "Vincula al agente y habilita al equipo según los permisos."
+          }
+        ],
+        "benefits": [
+          "Lleva datos de los sistemas internos al contexto de la atención, reduciendo búsquedas y copias manuales.",
+          "Reutiliza las capacidades autorizadas con agentes y personas del equipo; el Mentor puede usar las consultas permitidas."
+        ],
+        "metric": "Consultas manuales, cambios de pantalla, tiempo para obtener la información y fallos en las consultas.",
+        "example": {
+          "title": "El dato llega a la conversación",
+          "when": "El cliente pregunta por un pedido registrado en otro sistema.",
+          "then": "Una capacidad de consulta usa la API configurada para buscar la información disponible.",
+          "outcome": "El agente o la persona autorizada usa el resultado para continuar la atención."
+        },
+        "image": "/produto/intelligence/connection-fields.jpg",
+        "imageAlt": "Conexión creada en yaAgents y datos Producto, Precio y Existencias configurados por conversación.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "conhecimento",
+        "short": "Respuestas fiables",
+        "pain": "“Una respuesta inventada cuesta la confianza del cliente y genera trabajo adicional.”",
+        "title": "Respuestas fiables, con el conocimiento de tu empresa.",
+        "description": "yaBrain conecta documentos, manuales y procedimientos con los productos, los agentes y el apoyo al equipo. La IA busca en la base definida y usa el contexto de la conversación. Las reglas de fundamentación y transferencia ayudan a impedir instrucciones técnicas sin fuente y derivan a la persona adecuada lo que necesita análisis.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Organiza",
+            "text": "Reúne documentos, manuales y procedimientos con sus fuentes."
+          },
+          {
+            "title": "Conecta",
+            "text": "Vincula el conocimiento con los productos y los agentes que van a utilizarlo."
+          },
+          {
+            "title": "Valida",
+            "text": "Prueba respuestas, revisa los vacíos y define cuándo transferir a una persona."
+          }
+        ],
+        "benefits": [
+          "Sustenta la atención de la IA y la orientación del Mentor con una base de conocimiento conectada al negocio.",
+          "Vincula el contenido al producto y revisa fuentes, versiones y cobertura para reducir respuestas sin fundamento."
+        ],
+        "metric": "Preguntas sin cobertura, fuentes consultadas, respuestas contradictorias y transferencias por falta de información.",
+        "example": {
+          "title": "Una respuesta basada en lo que sabe la empresa",
+          "when": "El cliente hace una pregunta sobre un producto o procedimiento.",
+          "then": "La IA busca en el conocimiento vinculado al escenario; las reglas configuradas orientan la respuesta y la transferencia.",
+          "outcome": "El equipo comprueba la referencia, identifica lo que falta en la base y mantiene las orientaciones actualizadas."
+        },
+        "image": "/produto/vendas-yaagents.webp",
+        "imageAlt": "Pantalla real del constructor yaAgents, usado para definir el conocimiento y las instrucciones del agente.",
+        "imageWidth": 1600,
+        "imageHeight": 1193
+      },
+      {
+        "id": "acoes",
+        "short": "Tareas y registros manuales",
+        "pain": "“Consultar ayuda, pero todavía necesitamos repetir la misma tarea en otro sistema.”",
+        "title": "Lleva consultas y acciones al lugar donde ocurre el trabajo.",
+        "description": "Define qué se puede consultar o ejecutar mediante la API y quién puede usar cada capacidad. El agente sigue sus herramientas y reglas; en la atención humana, las acciones de escritura requieren confirmación. Combina la aplicación con flujos y secuencias para dar continuidad a otras rutinas del negocio.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Delimita",
+            "text": "El dato necesario y la acción que permite el sistema."
+          },
+          {
+            "title": "Configura",
+            "text": "La capacidad, las reglas y los accesos autorizados."
+          },
+          {
+            "title": "Ejecuta",
+            "text": "Revisa el resultado y las confirmaciones necesarias."
+          }
+        ],
+        "benefits": [
+          "Reduce la repetición de registros con acciones configuradas para el proceso y los accesos disponibles.",
+          "Ofrece al equipo consultas y acciones en el contexto de la conversación, con confirmación antes de guardar en el sistema."
+        ],
+        "metric": "Tareas manuales, acciones completadas, fallos de ejecución y necesidad de intervención.",
+        "example": {
+          "title": "Una actualización acompaña la atención",
+          "when": "La atención exige una actualización prevista en un sistema conectado.",
+          "then": "La persona autorizada revisa los datos y confirma la acción disponible en la conversación.",
+          "outcome": "El resultado de la ejecución orienta la continuidad del trabajo."
+        },
+        "image": "/produto/intelligence/connections-catalog.jpg",
+        "imageAlt": "Catálogo real de conexiones de yaAgents, con consultas y acciones para sistemas conectados.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "controle",
+        "short": "IA sin límites claros",
+        "pain": "“Queremos usar IA, pero necesitamos saber qué puede consultar y hacer.”",
+        "title": "Define el papel, los accesos y los límites antes de aplicar.",
+        "description": "Revisa las instrucciones, el conocimiento y las capacidades. Prueba el agente en borrador, publica cuando esté listo y configura qué agentes y personas del equipo pueden usar la conexión. Los cambios sensibles requieren una nueva confirmación de las autorizaciones.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Las responsabilidades, los accesos y los límites de cada papel."
+          },
+          {
+            "title": "Valida",
+            "text": "Prueba las respuestas y revisa las consultas y acciones."
+          },
+          {
+            "title": "Revisa",
+            "text": "Observa el uso y ajusta la configuración con el equipo."
+          }
+        ],
+        "benefits": [
+          "Diferencia al agente que atiende, al Mentor que orienta y a la persona que decide durante el trabajo.",
+          "Controla el acceso a las conexiones y revisa las autorizaciones cuando cambie una configuración sensible."
+        ],
+        "metric": "Fallos en las pruebas, derivaciones, comentarios del equipo y revisiones de permisos y capacidades.",
+        "example": {
+          "title": "Una aplicación con límites revisados",
+          "when": "La empresa prepara un agente para un nuevo escenario.",
+          "then": "El equipo prueba el borrador, revisa las capacidades y define dónde se puede usar la conexión.",
+          "outcome": "La aplicación entra en la rutina con responsabilidades y accesos configurados."
+        },
+        "image": "/produto/intelligence/agent-created.jpg",
+        "imageAlt": "Borrador de agente en yaAgents, con sus capacidades disponibles para revisión.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "De la conversación al trabajo real",
+    "title": "Tres formas de construir. Un negocio con más capacidad.",
+    "description": "Mira cómo crear y probar un agente para clientes, preparar un Mentor para orientar al equipo y construir una conexión para consultar un sistema. En cada capítulo, la necesidad descrita se convierte en una configuración que el equipo puede revisar.",
+    "note": "Demostración con pantallas reales, agentes en borrador y datos de ejemplo. Interfaz en portugués."
+  },
+  "foundation": {
+    "eyebrow": "Agentes de IA, mentores e integraciones",
+    "title": "Agentes para clientes. Copilotos para equipos. Conexiones para el trabajo.",
+    "description": "En la plataforma de inteligencia artificial de yapt., los agentes atienden a clientes, los copilotos orientan a las personas y las conexiones llevan datos de los sistemas al proceso. El conocimiento, las instrucciones y los permisos definen cómo actúa cada papel.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "Agentes de inteligencia artificial",
+        "text": "Atienden las demandas previstas con conocimiento, capacidades y reglas de derivación configurados."
+      },
+      {
+        "icon": "teams",
+        "title": "Copilotos y mentores de IA",
+        "text": "El Mentor orienta al operador en el contexto de la atención, aclara dudas y sugiere el siguiente paso."
+      },
+      {
+        "icon": "integrations",
+        "title": "Integraciones con APIs",
+        "text": "Las APIs disponibles de CRM, ERP y otros sistemas llevan consultas y acciones a agentes y personas autorizadas."
+      }
+    ],
+    "builderLabel": "Construcción con contexto y control",
+    "builderTitle": "Describe la necesidad. Revisa la aplicación antes de ponerla en uso.",
+    "builderDescription": "Construye agentes, copilotos y conexiones por conversación en yaAgents. Organiza el conocimiento, revisa los accesos y prueba con el equipo. Para etapas, actividades y comunicaciones, combina la aplicación con los flujos y las secuencias de yapt.",
+    "builderLink": "Conoce las automatizaciones",
+    "builderHref": "/automations",
+    "builderImageAlt": "Datos de una conexión configurados por conversación en yaAgents y mostrados en el espejo de la conexión."
+  },
+  "adoption": {
+    "eyebrow": "Tu equipo, con especialistas cuando los necesites",
+    "title": "La aplicación empieza en tu proceso y evoluciona con el trabajo real.",
+    "description": "Tu equipo puede elegir un problema, organizar conocimiento y accesos y aplicar un primer escenario. También puedes contar con especialistas para la implantación y la evolución, según la modalidad de trabajo elegida.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Entender el problema, el esfuerzo repetitivo, el conocimiento y los sistemas involucrados."
+      },
+      {
+        "title": "Construir y probar",
+        "text": "Preparar un agente, copiloto o conexión; revisar el comportamiento con el equipo antes de aplicar."
+      },
+      {
+        "title": "Medir y evolucionar",
+        "text": "Observar el uso, escuchar al equipo y ajustar las instrucciones y capacidades con base en el trabajo real."
+      }
+    ],
+    "footnote": "El alcance, los canales, las APIs, los accesos y los recursos se definen según las necesidades y la configuración de cada empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de empezar",
+    "title": "Claridad para construir. Criterio para poner en uso.",
+    "items": [
+      {
+        "question": "¿Cómo actúan los agentes de inteligencia artificial y los copilotos?",
+        "answer": "El agente de IA atiende al cliente según su papel, conocimiento y herramientas. El copiloto o Mentor orienta a una persona del equipo durante la atención, sin hablar directamente con el cliente; la persona decide qué aplicar. El constructor por conversación prepara agentes y conexiones a partir de lo que describes."
+      },
+      {
+        "question": "¿Necesitamos programar para crear agentes y conexiones?",
+        "answer": "La construcción empieza por conversación: describes el objetivo y revisas la configuración preparada en yaAgents. Una conexión depende de una API existente, documentación y accesos autorizados. Puedes contar con especialistas para evaluar la viabilidad y los detalles de la aplicación a tu proceso."
+      },
+      {
+        "question": "¿El copiloto puede ayudar a capacitar al equipo?",
+        "answer": "El Mentor orienta y enseña durante el trabajo real: usa el contexto de la conversación y el conocimiento configurado para aclarar dudas, sugerir respuestas y próximos pasos. La persona revisa y aplica la orientación."
+      },
+      {
+        "question": "¿Cómo integrar agentes de IA con APIs, CRM y ERP?",
+        "answer": "En yaAgents, la construcción por conversación prepara conexiones con APIs existentes, como las de CRM y ERP, para las consultas y acciones disponibles en el sistema. Los flujos y las reglas tienen sus propias formas de configurar APIs y webhooks. La viabilidad depende de la documentación, los accesos, las reglas y los recursos habilitados en la cuenta."
+      },
+      {
+        "question": "¿La misma conexión puede ser usada por la IA, el equipo y las automatizaciones?",
+        "answer": "Las capacidades de una conexión pueden vincularse a agentes y habilitarse para el equipo según los permisos. El Mentor puede aprovechar consultas permitidas del agente, con límites propios. Los flujos y las secuencias tienen sus caminos de configuración de integración; el diagnóstico define cómo participa cada recurso en el proceso."
+      },
+      {
+        "question": "¿Cómo controlamos lo que pueden hacer la IA y el equipo?",
+        "answer": "Definimos el papel, las instrucciones, el conocimiento y las capacidades disponibles. El agente se puede probar en borrador antes de publicarlo. Las conexiones tienen autorizaciones por agente y para las personas autorizadas; en la atención humana, las acciones de escritura exigen confirmación. Los cambios sensibles requieren revisar las autorizaciones."
+      },
+      {
+        "question": "¿Por dónde empezamos y cómo evaluamos el resultado?",
+        "answer": "Empieza por un problema concreto, como una duda recurrente, orientación del equipo o una consulta manual en otro sistema. Tu equipo puede construir y probar el escenario y contar con especialistas cuando los necesite. Define indicadores y períodos comparables para seguir calidad, esfuerzo, derivaciones y uso; el impacto económico también considera los datos y costos del negocio."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "IA aplicada a lo que necesita tu negocio",
+    "title": "Veamos dónde la IA y las integraciones pueden mejorar tu operación.",
+    "description": "Analizamos el trabajo de clientes y equipo, el conocimiento y los sistemas involucrados. Definimos un primer escenario para construir por conversación y aplicar con un objetivo, límites e indicadores claros.",
+    "points": [
+      "Un problema concreto y un primer escenario de aplicación.",
+      "Conocimiento, accesos y criterios de éxito definidos.",
+      "Plataforma y especialistas para construir, probar y evolucionar."
+    ],
+    "cta": "Quiero aplicar IA en mi negocio",
+    "footnote": "Habla con nuestro equipo sobre tu operación.",
+    "error": "La atención no se pudo cargar ahora. Inténtalo de nuevo o abre WhatsApp con el enlace de abajo.",
+    "fallback": "Abrir directamente en WhatsApp",
+    "noScript": "También puedes hablar con nuestro equipo por WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Cerrar imagen ampliada",
+    "imageLabel": "Pantalla real del producto",
+    "openImage": "Ampliar pantalla",
+    "skip": "Ir al contenido",
+    "imageNote": "Usa los controles de la imagen para ampliar y cerrar."
+  }
+}

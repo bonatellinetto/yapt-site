@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "Plataforma de inteligência artificial para empresas",
+    "description": "IA para marketing, vendas, suporte e operações. CRM no WhatsApp, agentes, automações e integrações para gerar receita e eficiência operacional."
+  },
+  "hero": {
+    "eyebrow": "Plataforma de inteligência artificial para",
+    "eyebrowAreas": "Marketing, Vendas, Suporte e Operações.",
+    "platformBy": "Uma plataforma",
+    "title": "Mais receita e eficiência operacional.",
+    "ending": "Com IA aplicada ao seu negócio.",
+    "description": "Uma plataforma de inteligência artificial que conecta CRM no WhatsApp, agentes, copilotos, automações e os dados dos seus sistemas. Gere mais receita e eficiência operacional com seu time ou com nossos especialistas.",
+    "cta": "Quero um diagnóstico",
+    "secondary": "Conheça a operação",
+    "proofMessagesLabel": "msgs/mês",
+    "proofYearsLabel": "anos",
+    "sceneLabel": "Uma jornada ilustrativa: campanha, conversa, venda e atendimento conectados",
+    "sceneCaption": "Uma conversa. Toda a operação conectada.",
+    "chatTitle": "Uma conversa com contexto",
+    "chatRole": "IA + seu time",
+    "chatInbound": "Vi a campanha e quero saber mais.",
+    "chatOutbound": "Vamos encontrar o melhor caminho para você. Já tenho o contexto do que você procura.",
+    "chatEvent": "Contexto compartilhado com o time",
+    "connections": {
+      "label": "Canais e sistemas conectados à sua operação",
+      "smart": "Integrações inteligentes"
+    }
+  },
+  "areas": {
+    "marketing": {
+      "label": "Marketing",
+      "phrase": "Da campanha à receita, com origem e resultado conectados.",
+      "points": [
+        "Réguas inteligentes de nutrição e follow-ups automáticos.",
+        "IA nas conversas, com o contexto de cada campanha.",
+        "Inteligência e gestão para acompanhar conversão e receita."
+      ]
+    },
+    "sales": {
+      "label": "Vendas",
+      "phrase": "IA que prepara o vendedor. Gestão que faz a venda avançar.",
+      "points": [
+        "Qualifica leads, lê documentos e áudios e identifica de onde cada oportunidade veio.",
+        "Resume o contexto e sugere ao vendedor o que responder.",
+        "Funil de prospecção e vendas, atividades e metas conectados aos dados do seu negócio."
+      ]
+    },
+    "support": {
+      "label": "Suporte",
+      "phrase": "Atendimento que conhece o cliente e resolve com contexto.",
+      "points": [
+        "IA no N1 e N2, com histórico do cliente e acesso à sua base de conhecimento.",
+        "Respostas apoiadas em documentações complexas, com limites definidos e encaminhamento ao time.",
+        "Automações via API com potencial próximo de 50% das demandas, conforme os processos e integrações da sua operação."
+      ]
+    },
+    "operations": {
+      "label": "Operações",
+      "phrase": "Visibilidade para antecipar gargalos e ganhar eficiência.",
+      "points": [
+        "Filas, prazos, capacidade e produtividade em uma visão da operação.",
+        "Distribuição de demandas e automações para reduzir tarefas manuais.",
+        "Dados integrados para identificar gargalos e orientar decisões."
+      ]
+    },
+    "ai": {
+      "label": "IAs",
+      "phrase": "Agentes e copilotos criados por conversa, para a sua operação.",
+      "points": [
+        "Converse com o yaAgents para criar IAs, copilotos e automações.",
+        "Conecte conhecimento, ferramentas e APIs dos seus sistemas.",
+        "Defina regras, teste respostas e evolua os agentes com nossos especialistas."
+      ]
+    },
+    "teams": {
+      "label": "Times",
+      "phrase": "Pessoas e grupos colaboram com o contexto do atendimento.",
+      "points": [
+        "Discuta um caso com colegas, grupos e parceiros autorizados.",
+        "Consulte o atendimento original e mantenha o raciocínio em threads.",
+        "Revise decisões para registrar no histórico interno da conversa."
+      ]
+    }
+  },
+  "problem": {
+    "eyebrow": "IA e especialistas, olhando para a sua operação.",
+    "title": "Os gargalos da sua operação resolvidos com uma plataforma de inteligência artificial e gente que opera junto.",
+    "description": "Investigamos seus processos, dados e a jornada do cliente para encontrar os gargalos que comprometem receita e eficiência. Com nossa plataforma nativa de IA e especialistas trabalhando com você, construímos uma operação sob medida, conectada ao seu time e aos sistemas que você já usa.",
+    "insideLabel": "Dentro da operação",
+    "outsideLabel": "Na experiência do cliente",
+    "items": [
+      {
+        "area": "Marketing",
+        "headline": "Problemas frequentes nas operações de Marketing",
+        "inside": {
+          "number": "70%",
+          "fact": "dos profissionais de marketing relatam dificuldade para medir o retorno das atividades e campanhas.",
+          "source": "Gartner / MarTech · 2025",
+          "url": "https://martech.org/how-to-stop-wasting-money-on-personalization/"
+        },
+        "outside": {
+          "number": "31%",
+          "fact": "dos consumidores dizem que experiências sem personalização já os levaram a comprar de outra marca.",
+          "source": "Twilio · State of Customer Engagement, 2024",
+          "url": "https://www.twilio.com/en-us/press/releases/socer-2024"
+        }
+      },
+      {
+        "area": "Vendas",
+        "headline": "Em Vendas, os números revelam oportunidades perdidas",
+        "inside": {
+          "number": "60%",
+          "fact": "do tempo dos vendedores vai para atividades que não são vender.",
+          "source": "Salesforce · State of Sales, 2026",
+          "url": "https://www.salesforce.com/sales/state-of-sales/sales-statistics/"
+        },
+        "outside": {
+          "number": "73%",
+          "fact": "dos compradores B2B pesquisados evitam fornecedores que enviam abordagens irrelevantes.",
+          "source": "Gartner · pesquisa com compradores B2B, 2025",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-sales-survey-finds-61-percent-of-b2b-buyers-prefer-a-rep-free-buying-experience"
+        }
+      },
+      {
+        "area": "Suporte",
+        "headline": "No Suporte, a ineficiência pesa na experiência e na receita",
+        "inside": {
+          "number": "47%",
+          "fact": "das experiências ruins levam o cliente a reduzir seus gastos com a empresa.",
+          "source": "Qualtrics · estudo para 2026",
+          "url": "https://www.qualtrics.com/articles/customer-experience/3-trillion-risk-due-bad-customer-experiences-2026/"
+        },
+        "outside": {
+          "number": "74%",
+          "fact": "dos consumidores se frustram quando precisam repetir informações.",
+          "source": "Zendesk · CX Trends, 2026",
+          "url": "https://www.zendesk.com/newsroom/press-releases/contextual-intelligence-becomes-the-new-standard-for-exceptional-customer-experience-in-2026/"
+        }
+      }
+    ],
+    "note": "Pesquisas de mercado com amostras e períodos distintos. O dado da Qualtrics abrange a experiência do cliente em geral e mede redução de gastos, não percentual de faturamento perdido.",
+    "bridgeLead": "O mercado mostra o tamanho do problema. Nossos especialistas descobrem onde ele aparece na sua empresa.",
+    "bridgeTitle": "Com o yapt., o diagnóstico vira uma plataforma entregando resultados no primeiro mês ou uma operação sob medida com um time de especialistas.",
+    "bridgeText": "IA, automações e integrações aplicadas aos seus gargalos para fazer a solução acontecer.",
+    "cta": "Descobrir os gargalos da minha operação"
+  },
+  "ecosystem": {
+    "eyebrow": "Inteligência que conecta",
+    "title": "Mais receita.",
+    "description": "Operação e gestão mais eficientes.",
+    "center": "Uma inteligência compartilhada",
+    "hint": "Explore cada parte da operação",
+    "management": "Gestão que atravessa as áreas",
+    "operations": "Acompanhe filas, prazos, capacidade e produtividade de ponta a ponta.",
+    "expansion": "A relação continua depois da venda.",
+    "expansionText": "Carteiras, públicos e réguas mantêm o contexto para reter, reativar e crescer com quem já é cliente.",
+    "operationsLink": "Conheça Operações",
+    "expansionLink": "Explore o pós-venda"
+  },
+  "solutions": {
+    "eyebrow": "Onde o resultado acontece",
+    "title": "Veja como ajudamos a gerar mais receita e eficiência operacional.",
+    "description": "Marketing, vendas, suporte e operações: plataforma, IA e especialistas para transformar gargalos em resultados.",
+    "items": [
+      {
+        "id": "marketing",
+        "key": "marketing",
+        "label": "Marketing",
+        "title": "Mais receita das suas campanhas. Menos leads sem retorno.",
+        "answer": "Você investe para gerar interesse, mas os contatos esfriam, a nutrição fica pelo caminho e nem sempre dá para enxergar o que virou venda. Conectamos campanhas, conversas e negócios para transformar esse interesse em receita, com IA e especialistas trabalhando junto.",
+        "bullets": [
+          "Saiba o que traz resultado: acompanhe a origem do lead até o negócio e a receita.",
+          "Mantenha o interesse vivo: nutrição, personalização e follow-ups automáticos.",
+          "Melhore a passagem para vendas: oportunidades com histórico e contexto da campanha."
+        ],
+        "href": "/marketing-site",
+        "link": "Conheça o yapt. para Marketing",
+        "image": "/produto/vendas-leads.webp",
+        "alt": "Lista real de leads do yapt. com origem, jornada, negócio vinculado e nota de qualificação",
+        "width": 1600,
+        "height": 664
+      },
+      {
+        "id": "vendas",
+        "key": "sales",
+        "label": "Vendas",
+        "title": "Mais negócios avançando. Menos oportunidades esfriando.",
+        "answer": "Leads esperando resposta, vendedores procurando informações e follow-ups dependendo da memória comprometem a conversão. O yapt. conecta CRM no WhatsApp, agentes de IA e gestão do funil para preparar a oportunidade e fazer os negócios avançarem.",
+        "bullets": [
+          "Entre na conversa preparado: IA que qualifica, interpreta documentos e áudios e resume o contexto.",
+          "Dê continuidade à negociação: sugestões de resposta, atividades e follow-ups conectados.",
+          "Enxergue onde a venda trava: funil, metas e informações do negócio na mesma operação."
+        ],
+        "href": "/sales",
+        "link": "Conheça o yapt. para Vendas",
+        "image": "/produto/vendas-funil.webp",
+        "alt": "Funil real do yapt. com negócios, valores, previsão de receita e meta",
+        "width": 1600,
+        "height": 301
+      },
+      {
+        "id": "suporte",
+        "key": "support",
+        "label": "Suporte",
+        "title": "Resolva mais. Faça o cliente explicar menos.",
+        "answer": "O cliente repete a história, o atendimento procura respostas e o chamado troca de mãos sem avançar. A inteligência artificial no atendimento conecta histórico, tickets e conhecimento para apoiar a equipe e dar continuidade até a solução.",
+        "bullets": [
+          "Atenda com contexto e IA no N1 e N2: histórico, tickets e dados do cliente conectados, com respostas apoiadas na sua documentação e ações nos seus sistemas.",
+          "Reduza tempos com uma gestão inteligente: organize filas, equipes, prioridades e carteiras de clientes para equilibrar a carga e tornar o atendimento mais eficiente.",
+          "Encaminhe com contexto e acompanhe os resultados: o time assume com resumo da IA e histórico; relatórios mostram resolução, tempos, produtividade e gargalos."
+        ],
+        "href": "/support",
+        "link": "Conheça o yapt. para Suporte",
+        "image": "/produto/ops-indicadores-suporte.webp",
+        "alt": "Indicadores reais de suporte no yapt. com resolução e tempos de atendimento",
+        "width": 1600,
+        "height": 692
+      },
+      {
+        "id": "operacoes",
+        "key": "operations",
+        "label": "Operações",
+        "href": "/operations",
+        "link": "Conheça o yapt. para Operações",
+        "image": "/produto/ops-filas.webp",
+        "alt": "Tela real de saúde das filas do yapt. com conversas em espera, maior tempo de espera e operadores disponíveis por setor",
+        "width": 1600,
+        "height": 670,
+        "title": "Menos retrabalho. Mais capacidade para entregar.",
+        "answer": "Filas crescendo, equipes sobrecarregadas e informações espalhadas dificultam saber onde agir. Aplique inteligência artificial para operações, automação de processos e integração de sistemas para melhorar o fluxo entre as áreas, com apoio de especialistas quando precisar.",
+        "bullets": [
+          "Veja onde o trabalho para: filas, prazos, capacidade e produtividade na mesma visão.",
+          "Reduza o trabalho manual: distribuição de demandas e processos conectados aos sistemas existentes.",
+          "Acompanhe a melhoria: responsáveis, indicadores e visibilidade sobre o efeito das mudanças."
+        ]
+      }
+    ],
+    "screenLabel": "Por dentro da plataforma"
+  },
+  "foundation": {
+    "eyebrow": "IA aplicada à sua operação",
+    "title": "Inteligência para conversar, orientar e fazer acontecer.",
+    "description": "O yapt. é uma plataforma nativa de IA que conecta conversas, pessoas, dados e os sistemas da sua empresa. No yaAgents, você descreve o que precisa e constrói com o apoio de especialistas.",
+    "builderLabel": "yaAgents · Construtor",
+    "preview": "Exemplo ilustrativo",
+    "status": "Rascunho · você decide quando publicar",
+    "hint": "Veja quatro possibilidades",
+    "steps": [
+      "Descreva",
+      "Refine",
+      "Teste",
+      "Publique"
+    ],
+    "examples": [
+      {
+        "label": "Agente de vendas",
+        "prompt": "Quero uma IA que entenda o lead, qualifique e entregue o contexto para o vendedor.",
+        "response": "Vamos construir. Ela pode usar o seu conhecimento, seguir a jornada de qualificação e passar a conversa para o time certo.",
+        "capabilities": [
+          "Conhecimento da empresa",
+          "Jornada de qualificação",
+          "Transferência para o time"
+        ]
+      },
+      {
+        "label": "Mentor do operador",
+        "prompt": "Quero um copiloto que ajude meu time a resolver os chamados sem perder o contexto.",
+        "response": "Vamos conectar os procedimentos e o histórico. O mentor pode sugerir respostas e orientar a próxima ação enquanto a pessoa conduz o atendimento.",
+        "capabilities": [
+          "Procedimentos",
+          "Contexto do atendimento",
+          "Sugestões para o operador"
+        ]
+      },
+      {
+        "label": "Distribuição inteligente",
+        "prompt": "Quero encaminhar cada conversa para quem pode resolver, considerando o assunto, a urgência e a capacidade do time.",
+        "response": "Vamos combinar as regras da operação com a análise de IA para identificar o contexto e distribuir as conversas. Você define os critérios e testa antes de publicar.",
+        "capabilities": [
+          "Perfil e capacidade",
+          "Contexto e urgência",
+          "Regras definidas pelo time"
+        ]
+      },
+      {
+        "label": "Integração e dados",
+        "prompt": "Quero consultar o pedido no meu sistema, mostrar os dados no atendimento e permitir que o agente atualize uma informação autorizada.",
+        "response": "Vamos definir o acesso e as ações que a conexão pode executar. Você testa consultas e atualizações, escolhe quando uma ação precisa de aprovação e decide quando publicar.",
+        "capabilities": [
+          "Dados no atendimento",
+          "Consultas e ações",
+          "Aprovação humana"
+        ]
+      }
+    ],
+    "builderLink": "Conheça a inteligência do yapt.",
+    "cards": [
+      {
+        "key": "ai",
+        "label": "Inteligência artificial",
+        "title": "IA para atender, orientar e agir.",
+        "text": "Da primeira conversa à próxima decisão, a IA participa do trabalho com o contexto da sua empresa.",
+        "bullets": [
+          "Agentes atendem, qualificam oportunidades e executam ações autorizadas.",
+          "Mentores e copilotos sugerem respostas e próximos passos com o histórico e o conhecimento da empresa.",
+          "Pontuação de leads e análise de sentimento ajudam o time a priorizar."
+        ],
+        "href": "/intelligence",
+        "link": "Conheça a IA do yapt."
+      },
+      {
+        "key": "automation",
+        "label": "Automações",
+        "title": "Cada conversa dá o próximo passo.",
+        "text": "Regras da operação e análise de IA transformam o que acontece na conversa em próximos passos.",
+        "bullets": [
+          "Distribua conversas por perfil, capacidade e urgência.",
+          "Programe retornos, tarefas e mudanças de etapa no momento definido.",
+          "Leve ações aos sistemas conectados para dar continuidade ao processo."
+        ],
+        "href": "/automations",
+        "link": "Explore as automações"
+      },
+      {
+        "key": "data",
+        "label": "Dados no contexto",
+        "title": "O contexto certo, na hora de resolver.",
+        "text": "Reúna as informações dos sistemas da empresa onde a conversa e o trabalho acontecem.",
+        "bullets": [
+          "Pedido, cadastro e informações financeiras na janela do operador.",
+          "O mesmo contexto disponível para a IA consultar e executar ações autorizadas.",
+          "Dados que alimentam automações e indicadores da operação."
+        ],
+        "href": "/conversations",
+        "link": "Veja os dados no atendimento"
+      },
+      {
+        "key": "integrations",
+        "label": "Integrações",
+        "title": "Do que você descreve ao sistema conectado.",
+        "text": "Converse com o Construtor no yaAgents para criar ferramentas, integrações e fluxos que consultam ou atualizam sistemas.",
+        "bullets": [
+          "Defina quais dados e ações cada conexão pode acessar.",
+          "Teste o comportamento e escolha quando publicar.",
+          "Conte com especialistas para desenhar e conectar cada cenário."
+        ],
+        "href": "/integrations",
+        "link": "Conheça as integrações"
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Tecnologia com gente junto",
+    "title": "Você não recebe só uma plataforma. Recebe um time que faz acontecer.",
+    "description": "A New Way conecta tecnologia à realidade da sua empresa. Gente que entende o processo, constrói com você e acompanha a operação.",
+    "tag": "New Way + seu time",
+    "headline": "Da primeira conversa à melhoria contínua.",
+    "items": [
+      {
+        "step": "01",
+        "title": "Entender antes de construir",
+        "text": "Mapeamos a jornada, as dores e os sistemas para encontrar onde a IA faz diferença."
+      },
+      {
+        "step": "02",
+        "title": "Colocar para funcionar juntos",
+        "text": "Configuração, conhecimento, integrações e preparo do time ligados ao seu processo."
+      },
+      {
+        "step": "03",
+        "title": "Acompanhar e evoluir",
+        "text": "A operação mostra o que ajustar. A gente ajuda a transformar isso em melhoria."
+      }
+    ],
+    "link": "Vamos conversar sobre a sua operação"
+  },
+  "results": {
+    "eyebrow": "Na operação real",
+    "title": "A escala já é real.",
+    "description": "Tecnologia que já participa do dia a dia de empresas, em jornadas de atendimento e relacionamento.",
+    "items": [
+      {
+        "value": "1 milhão+",
+        "label": "atendimentos executados por IA"
+      },
+      {
+        "value": "130 mil+",
+        "label": "conversas resolvidas na plataforma"
+      },
+      {
+        "value": "Até 70%",
+        "label": "de retenção pela IA em setores com resultado validado"
+      }
+    ],
+    "note": "Dados agregados de nossos clientes, com base validada em julho de 2026. Resultados variam conforme a operação; não são uma promessa de desempenho individual."
+  },
+  "diagnostic": {
+    "eyebrow": "O próximo passo é seu",
+    "title": "Onde a IA pode fazer a sua empresa avançar?",
+    "description": "Vamos olhar para a sua operação e encontrar oportunidades de receita, eficiência e redução de custo. Com clareza sobre o que fazer primeiro.",
+    "cta": "Quero um diagnóstico",
+    "points": [
+      "Sua realidade",
+      "Suas prioridades",
+      "Um caminho para começar"
+    ],
+    "footnote": "Uma conversa para entender o seu momento.",
+    "error": "O formulário não abriu. Aguarde alguns instantes e tente novamente.",
+    "fallback": "Falar com a New Way"
+  }
+}

@@ -1,0 +1,60 @@
+---
+import UIIcon from '../UIIcon.astro';
+import ProductJourney from '../home/ProductJourney.astro';
+import {teamsScenes,teamsSequences,teamsTitles,type TeamsKind,type TeamsScreen} from '../../lib/teams-motions';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy,JourneyFrame } from '../../scripts/marketing-journey';
+import rawCaptures from '../../../public/produto/teams/captures.json';
+interface Props {locale:Locale;kind?:TeamsKind}
+type Capture={src:string;width:number;height:number;focus?:{x:number;y:number};mobileScale?:number};
+type CaptureManifest={version:number;captures:Partial<Record<TeamsScreen,Capture>>};
+const {locale,kind='overview'}=Astro.props;
+const captureMap=(rawCaptures as CaptureManifest).captures;
+const selected=teamsSequences[kind].map(id=>teamsScenes[id]);
+const sourceFor=(id:TeamsScreen)=>[id,...teamsScenes[id].fallback].find(key=>captureMap[key]);
+const captureFor=(id:TeamsScreen)=>{const source=sourceFor(id);return source?captureMap[source]:undefined;};
+const ui={
+ 'pt-BR':{demo:'Telas reais do produto',play:'Reproduzir',pause:'Pausar',replay:'Recomeçar demonstração',expand:'Ampliar demonstração',collapse:'Sair da tela cheia',label:'Jornada de colaboração no yaTeams: pessoas, discussão e contexto do atendimento.',source:'Telas reais do produto. Informações internas protegidas quando necessário. Interface em português.',open:'Ampliar tela real',chapters:['Encontrar o contexto','Resolver com o time','Dar continuidade']},
+ 'en-US':{demo:'Real product screens · Portuguese UI',play:'Play',pause:'Pause',replay:'Restart demo',expand:'Expand demo',collapse:'Exit full screen',label:'A yaTeams collaboration journey: people, discussions and customer conversation context.',source:'Real product screens. Internal information protected where necessary. Interface in Portuguese.',open:'Enlarge real screen',chapters:['Find the context','Resolve as a team','Keep work moving']},
+ 'es-ES':{demo:'Pantallas reales · interfaz en portugués',play:'Reproducir',pause:'Pausar',replay:'Reiniciar demostración',expand:'Ampliar demostración',collapse:'Salir de pantalla completa',label:'Recorrido de colaboración en yaTeams: personas, debates y contexto de atención.',source:'Pantallas reales del producto. Información interna protegida cuando corresponde. Interfaz en portugués.',open:'Ampliar pantalla real',chapters:['Encontrar el contexto','Resolver en equipo','Dar continuidad']},
+}[locale];
+const isMain=kind==='overview';
+const chapters=isMain?ui.chapters:selected.map(scene=>scene.chapter[locale]);
+const copy:JourneyCopy={...ui,title:teamsTitles[kind][locale],chapters,captions:selected.flatMap(scene=>[scene.lead[locale],scene.detail[locale]])};
+const frames:JourneyFrame[]=selected.flatMap((scene,index)=>[
+ {screen:`teams-${scene.id}`,focus:`teams-${scene.id}-overview`,zoom:1,duration:isMain?2400:1000,chapter:isMain?Math.floor(index/2):index},
+ {screen:`teams-${scene.id}`,focus:`teams-${scene.id}-detail`,zoom:scene.zoom,duration:isMain?3600:4300,chapter:isMain?Math.floor(index/2):index},
+]);
+const clamp=(n:number,min:number,max:number)=>Math.min(max,Math.max(min,n));
+const positioning=(id:TeamsScreen)=>{
+ const capture=captureFor(id),scene=teamsScenes[id];
+ if(!capture)return{x:560,y:350,mobileScale:1,mobileX:0,mobileY:0,mobileFocusX:560,mobileFocusY:350};
+ const fit=Math.min(1120/capture.width,700/capture.height),left=(1120-capture.width*fit)/2,top=(700-capture.height*fit)/2;
+ const focus=capture.focus||scene.focus,x=left+capture.width*fit*focus.x,y=top+capture.height*fit*focus.y;
+ const mobileScale=clamp(capture.mobileScale||scene.mobileScale,1,3);
+ const bound=(desired:number,start:number,end:number,extent:number)=>end-start>=extent?clamp(desired,extent-end,-start):(extent-start-end)/2;
+ const mobileX=bound(560-x*mobileScale,left*mobileScale,(1120-left)*mobileScale,1120),mobileY=bound(350-y*mobileScale,top*mobileScale,(700-top)*mobileScale,700);
+ return{x,y,mobileScale,mobileX,mobileY,mobileFocusX:x*mobileScale+mobileX,mobileFocusY:y*mobileScale+mobileY};
+};
+const unique=[...new Set(selected.map(scene=>scene.id))];
+const images=unique.flatMap(id=>{const capture=captureFor(id);return capture?[{id,capture}]:[];});
+const firstCapture=captureFor(selected[0].id);
+---
+<div class:list={['teams-journey',{'teams-journey--main':isMain}]} data-teams-journey={kind} style={firstCapture?`--tm-poster:url('${firstCapture.src}')`:undefined}>
+ <ProductJourney locale={locale} variant="marketing" copy={copy} frames={frames} chapterFrames={isMain?[1,5,9]:[1,3,5]} staticLabels={chapters} staticValues={chapters} sourceNote={ui.source}>
+  {unique.map(id=>{
+   const capture=captureFor(id),point=positioning(id);
+   return <div class:list={['tm-scene',{'is-active':id===selected[0].id}]} data-j-screen={`teams-${id}`} data-teams-source={sourceFor(id)} style={`--tm-focus-x:${point.x}px;--tm-focus-y:${point.y}px;--tm-mobile-scale:${point.mobileScale};--tm-mobile-x:${point.mobileX}px;--tm-mobile-y:${point.mobileY}px;--tm-mobile-focus-x:${point.mobileFocusX}px;--tm-mobile-focus-y:${point.mobileFocusY}px`}>
+    {capture&&<img class="tm-real-capture" src={capture.src} width={capture.width} height={capture.height} alt="" loading="lazy" decoding="async" draggable="false"/>}
+    <span class="tm-focus tm-focus--overview" data-j-target={`teams-${id}-overview`} style="left:560px;top:350px"/>
+    <span class="tm-focus tm-focus--detail" data-j-target={`teams-${id}-detail`}/>
+   </div>;
+  })}
+ </ProductJourney>
+ <p class="tm-transcript">{ui.label} {copy.captions.join(' ')}</p>
+ {!isMain&&images.length>0&&<div class="tm-real-links">{images.slice(0,2).map(({id,capture})=><a href={capture.src} data-marketing-image data-image-title={teamsScenes[id].chapter[locale]} data-image-alt={teamsScenes[id].lead[locale]} target="_blank" rel="noopener noreferrer">{ui.open}: {teamsScenes[id].chapter[locale]}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a>)}</div>}
+</div>
+<style>
+.teams-journey{min-width:0;width:100%;padding:0 18px 22px;box-sizing:border-box}.teams-journey--main{padding:0}.tm-scene{position:absolute;inset:0;width:1120px;height:700px;overflow:hidden;opacity:0;background:#f7f9f9}.tm-scene.is-active{opacity:1}.tm-real-capture{display:block;width:1120px;height:700px;object-fit:contain;max-width:none;user-select:none}.tm-focus{position:absolute;width:1px;height:1px;pointer-events:none}.tm-focus--detail{left:var(--tm-focus-x);top:var(--tm-focus-y)}.teams-journey :global(.mj-heading){flex-wrap:wrap;gap:6px;font-size:11px}.teams-journey :global(.mj-heading small){font-size:9px;white-space:normal}.teams-journey[data-teams-journey] :global(.marketing-journey .mj-chapters){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.teams-journey[data-teams-journey] :global(.marketing-journey .mj-chapters button:nth-child(n)){grid-column:auto;min-height:44px;font-size:10px;gap:4px;padding-inline:4px}.teams-journey :global(.mj-controls button){min-height:44px}.teams-journey :global(.mj-controls .mj-icon-button){min-width:44px}.teams-journey :global(.mj-caption){min-height:58px;font-size:13px;max-width:90ch}.teams-journey :global(.mj-source-note){font-size:9px;line-height:1.6}.teams-journey :global(.mj-static){background:#f7f9f9 var(--tm-poster,none) center/contain no-repeat}.teams-journey[style] :global(.mj-static>*){display:none}.tm-real-links{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:5px}.tm-real-links a{display:inline-flex;align-items:center;gap:7px;min-height:44px;color:#5d7865;text-decoration:underline;text-underline-offset:4px;font:500 10px/1.5 Inter,sans-serif}.tm-real-links a:focus-visible{outline:2px solid #20b2aa;outline-offset:3px;border-radius:3px}.tm-transcript{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){.teams-journey{padding:0 12px 18px}.teams-journey--main{padding:0}.teams-journey :global(.mj-viewport){aspect-ratio:1/1;min-height:235px}.teams-journey :global(.mj-caption){font-size:12px;min-height:76px}.teams-journey :global(.mj-heading){font-size:10px}.teams-journey :global(.mj-heading small){font-size:8px}.teams-journey :global(.mj-controls){gap:5px}.teams-journey :global(.mj-controls button){padding-inline:6px}.tm-real-capture{transform:translate(var(--tm-mobile-x),var(--tm-mobile-y)) scale(var(--tm-mobile-scale));transform-origin:0 0}.tm-focus--detail{left:var(--tm-mobile-focus-x);top:var(--tm-mobile-focus-y)}.teams-journey :global(.marketing-journey:fullscreen .mj-viewport){min-height:0;aspect-ratio:auto}.teams-journey :global(.marketing-journey:fullscreen .mj-caption){font-size:11px;min-height:44px}.teams-journey :global(.marketing-journey:fullscreen .mj-source-note){font-size:8px;line-height:1.4}.teams-journey :global(.marketing-journey:fullscreen .mj-heading){font-size:9px}}
+</style>

@@ -1,0 +1,107 @@
+---
+import NatureGlyph from './NatureGlyph.astro';
+import { homeCopy } from './content';
+import type { Locale } from '../../lib/i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale).team;
+const teamLabels: Record<Locale, string> = {
+  'pt-BR': 'Seu time',
+  'en-US': 'Your team',
+  'es-ES': 'Tu equipo',
+};
+const glyphs = ['integrations', 'teams', 'ai'] as const;
+---
+
+<section id="time" class="home-section human-team" aria-labelledby="human-team-heading">
+  <div class="home-shell">
+    <div class="home-section-head home-reveal">
+      <div>
+        <p class="home-label">{c.eyebrow}</p>
+        <h2 id="human-team-heading" class="home-heading">{c.title}</h2>
+      </div>
+      <p class="home-intro">{c.description}</p>
+    </div>
+
+    <div class="human-team__layout">
+      <div class="collaboration home-reveal">
+        <p class="collaboration__tag">{c.tag}</p>
+        <div class="collaboration__partners">
+          <div class="collaboration__partner">
+            <span class="collaboration__symbol"><NatureGlyph name="integrations" size={58} /></span>
+            <span>New Way</span>
+          </div>
+          <span class="collaboration__bridge" aria-hidden="true"><span>+</span></span>
+          <div class="collaboration__partner">
+            <span class="collaboration__symbol"><NatureGlyph name="teams" size={58} /></span>
+            <span>{teamLabels[locale]}</span>
+          </div>
+        </div>
+        <h3>{c.headline}</h3>
+        <div class="collaboration__roots" aria-hidden="true">
+          <NatureGlyph name="integrations" size={250} tone="ink" />
+        </div>
+      </div>
+
+      <div class="human-team__journey home-reveal">
+        <ol class="human-team__steps">
+          {c.items.map((item, index) => (
+            <li>
+              <span class="human-team__step">{item.step}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+              <span class="human-team__glyph"><NatureGlyph name={glyphs[index]} size={30} /></span>
+            </li>
+          ))}
+        </ol>
+        <a class="home-link" href="#diagnostico">{c.link}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .human-team { background: #f5f8f5; }
+  .human-team .home-heading { max-width: 25ch; }
+  .human-team__layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 70px; align-items: stretch; }
+  .collaboration { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 355px; padding: 32px; border: 1px solid #d7e4d9; border-radius: 24px; background: radial-gradient(ellipse at 50% 12%, #fff, transparent 85%), #e9f0e7; }
+  .collaboration__tag { margin: 0; color: #476656; font: 500 11px/1.6 Poppins, sans-serif; letter-spacing: .02em; }
+  .collaboration__partners { display: grid; grid-template-columns: 1fr 54px 1fr; align-items: center; gap: 4px; margin: 30px 0 25px; }
+  .collaboration__partner { display: flex; flex-direction: column; align-items: center; gap: 13px; color: #25483a; font: 500 13px/1.5 Poppins, sans-serif; text-align: center; }
+  .collaboration__symbol { display: grid; place-items: center; width: 94px; height: 94px; background: #ffffffc9; border: 1px solid #d6e2d7; border-radius: 28px; box-shadow: 0 8px 18px -14px #143d365c; }
+  .collaboration__bridge { display: grid; place-items: center; height: 1px; margin-bottom: 34px; background: #a8bfae; }
+  .collaboration__bridge > span { display: grid; place-items: center; width: 25px; height: 25px; background: #edf3eb; color: #567963; font-size: 17px; line-height: 1; }
+  .collaboration h3 { position: relative; max-width: 25ch; margin: 0; color: #234e3c; font: 500 clamp(20px, 2vw, 26px)/1.4 Poppins, sans-serif; letter-spacing: -.035em; text-wrap: balance; }
+  .collaboration__roots { position: absolute; right: -90px; bottom: -115px; z-index: -1; opacity: .045; pointer-events: none; }
+  .human-team__journey { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; }
+  .human-team__steps { width: 100%; margin: 0 0 20px; padding: 0; list-style: none; }
+  .human-team__steps li { display: grid; grid-template-columns: 30px 1fr 32px; gap: 17px; padding: 24px 0; border-bottom: 1px solid #dce7de; }
+  .human-team__steps li:first-child { padding-top: 0; }
+  .human-team__step { padding-top: 4px; color: #527661; font: 500 11px/1.5 Poppins, sans-serif; letter-spacing: .05em; }
+  .human-team__steps h3 { margin: 0; color: #214a39; font: 500 17px/1.5 Poppins, sans-serif; letter-spacing: -.025em; }
+  .human-team__steps p { max-width: 48ch; margin: 8px 0 0; color: #536b5c; font-size: 13px; line-height: 1.8; text-wrap: pretty; }
+  .human-team__glyph { padding-top: 2px; }
+  .human-team__journey > .home-link { font-size: 13px; }
+  @media (max-width: 1023px) {
+    .human-team__layout { gap: 35px; grid-template-columns: .95fr 1.05fr; }
+    .collaboration { padding: 25px; }
+    .collaboration__symbol { width: 80px; height: 80px; border-radius: 23px; }
+    .collaboration__partners { grid-template-columns: 1fr 32px 1fr; }
+    .human-team__steps li { grid-template-columns: 25px 1fr; gap: 12px; }
+    .human-team__glyph { display: none; }
+  }
+  @media (max-width: 767px) {
+    .human-team__layout { grid-template-columns: 1fr; gap: 32px; }
+    .human-team .home-heading { max-width: 25ch; }
+    .collaboration { min-height: 310px; padding: 25px; border-radius: 20px; }
+    .collaboration__partners { width: min(310px, 100%); margin: 24px auto; grid-template-columns: 1fr 48px 1fr; }
+    .collaboration__symbol { width: 88px; height: 88px; }
+    .collaboration h3 { max-width: 26ch; font-size: 23px; }
+    .human-team__steps li { padding: 23px 0; }
+    .human-team__steps h3 { font-size: 17px; }
+    .human-team__steps p { font-size: 14px; }
+  }
+</style>

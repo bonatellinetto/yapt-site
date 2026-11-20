@@ -1,0 +1,416 @@
+---
+import ProductJourney from './ProductJourney.astro';
+import SupportJourneyScreens from './SupportJourneyScreens.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const frames:JourneyFrame[] = [
+  {
+    "screen": "support-conversation",
+    "focus": "support-conversation-overview",
+    "zoom": 1,
+    "duration": 900,
+    "chapter": 0,
+    "state": "arrival"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-known-customer",
+    "zoom": 1.65,
+    "duration": 1800,
+    "chapter": 0,
+    "state": "identified"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-open-tickets",
+    "zoom": 1.8,
+    "duration": 2600,
+    "chapter": 0,
+    "state": "tickets"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-open-tickets",
+    "zoom": 1.6,
+    "duration": 1000,
+    "chapter": 0,
+    "state": "choice"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-ai-answer",
+    "zoom": 1.75,
+    "duration": 1800,
+    "chapter": 0,
+    "state": "answer"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-ai-answer",
+    "zoom": 1.55,
+    "duration": 1100,
+    "chapter": 0,
+    "state": "handoff-request"
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-conversation-overview",
+    "zoom": 1,
+    "duration": 1000,
+    "chapter": 1,
+    "state": "handoff-ready"
+  },
+  {
+    "screen": "support-handoff",
+    "focus": "support-handoff-overview",
+    "zoom": 1,
+    "duration": 1400,
+    "chapter": 1,
+    "state": "handoff-ready"
+  },
+  {
+    "screen": "support-handoff",
+    "focus": "support-ai-summary",
+    "zoom": 1.8,
+    "duration": 3400,
+    "chapter": 1,
+    "state": "handoff-ready"
+  },
+  {
+    "screen": "support-handoff",
+    "focus": "support-human-response",
+    "zoom": 1.8,
+    "duration": 2300,
+    "chapter": 1,
+    "state": "handoff-ready"
+  },
+  {
+    "screen": "support-handoff",
+    "focus": "sp-menu-workspace",
+    "zoom": 1.7,
+    "duration": 750,
+    "chapter": 2,
+    "state": "handoff-ready",
+    "cursor": "sp-menu-workspace",
+    "click": true
+  },
+  {
+    "screen": "support-handoff",
+    "focus": "sp-nav-inbox",
+    "zoom": 1.7,
+    "duration": 1250,
+    "chapter": 2,
+    "state": "handoff-ready",
+    "menu": true,
+    "menuGroup": "workspace",
+    "cursor": "sp-nav-inbox",
+    "click": true
+  },
+  {
+    "screen": "support-pipelines",
+    "focus": "support-pipelines-overview",
+    "zoom": 1,
+    "duration": 1800,
+    "chapter": 2
+  },
+  {
+    "screen": "support-pipelines",
+    "focus": "support-pipeline-stages",
+    "zoom": 1.7,
+    "duration": 2300,
+    "chapter": 2
+  },
+  {
+    "screen": "support-pipelines",
+    "focus": "sp-menu-operations",
+    "zoom": 1.7,
+    "duration": 750,
+    "chapter": 3,
+    "cursor": "sp-menu-operations",
+    "click": true
+  },
+  {
+    "screen": "support-pipelines",
+    "focus": "sp-nav-queues",
+    "zoom": 1.7,
+    "duration": 1250,
+    "chapter": 3,
+    "menu": true,
+    "menuGroup": "operations",
+    "cursor": "sp-nav-queues",
+    "click": true
+  },
+  {
+    "screen": "support-queues",
+    "focus": "support-queues-overview",
+    "zoom": 1,
+    "duration": 1600,
+    "chapter": 3
+  },
+  {
+    "screen": "support-queues",
+    "focus": "support-waiting-time",
+    "zoom": 1.9,
+    "duration": 2400,
+    "chapter": 3
+  },
+  {
+    "screen": "support-capacity",
+    "focus": "support-capacity-overview",
+    "zoom": 1,
+    "duration": 1500,
+    "chapter": 3
+  },
+  {
+    "screen": "support-capacity",
+    "focus": "support-operator-capacity",
+    "zoom": 1.8,
+    "duration": 2400,
+    "chapter": 3
+  },
+  {
+    "screen": "support-distribution",
+    "focus": "support-distribution-overview",
+    "zoom": 1,
+    "duration": 1500,
+    "chapter": 3
+  },
+  {
+    "screen": "support-distribution",
+    "focus": "support-routing-rules",
+    "zoom": 1.65,
+    "duration": 2800,
+    "chapter": 3
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-report-overview",
+    "zoom": 1,
+    "duration": 1800,
+    "chapter": 4,
+    "state": "report-service"
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-response-times",
+    "zoom": 1.95,
+    "duration": 2700,
+    "chapter": 4,
+    "state": "report-service"
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-report-overview",
+    "zoom": 1,
+    "duration": 1700,
+    "chapter": 4,
+    "state": "report-support"
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-resolution",
+    "zoom": 1.95,
+    "duration": 2800,
+    "chapter": 4,
+    "state": "report-support"
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-report-overview",
+    "zoom": 1,
+    "duration": 1500,
+    "chapter": 4,
+    "state": "report-team"
+  },
+  {
+    "screen": "support-report",
+    "focus": "support-team-metrics",
+    "zoom": 1.55,
+    "duration": 2600,
+    "chapter": 4,
+    "state": "report-team"
+  },
+  {
+    "screen": "support-efficiency",
+    "focus": "support-efficiency-overview",
+    "zoom": 1,
+    "duration": 1900,
+    "chapter": 4
+  },
+  {
+    "screen": "support-efficiency",
+    "focus": "support-efficiency-overview",
+    "zoom": 1,
+    "duration": 6500,
+    "chapter": 4,
+    "scroll": 300
+  },
+  {
+    "screen": "support-conversation",
+    "focus": "support-conversation-overview",
+    "zoom": 1,
+    "duration": 1800,
+    "chapter": 4,
+    "state": "arrival"
+  }
+];
+const copies:Record<Locale,JourneyCopy> = {
+  "pt-BR": {
+    "title": "Do atendimento à operação eficiente",
+    "demo": "Demonstração · dados ilustrativos",
+    "label": "Demonstração animada de Suporte com IA, transferência, filas, capacidade e relatórios no yapt.",
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "replay": "Recomeçar a jornada",
+    "expand": "Ampliar demonstração",
+    "collapse": "Sair da tela cheia",
+    "chapters": [
+      "IA com contexto",
+      "Transferência",
+      "Conversas",
+      "Filas e times",
+      "Relatórios"
+    ],
+    "captions": [
+      "O atendimento começa com uma IA conectada ao contexto do cliente.",
+      "A IA reconhece o cliente antes de pedir que ele conte a história.",
+      "Dois tickets em aberto: a IA consulta os casos e pergunta por onde continuar.",
+      "O cliente escolhe o caso. A conversa segue com o histórico certo.",
+      "A IA responde com o contexto do ticket e orienta o próximo passo.",
+      "Quando o cliente precisa de uma pessoa, o contexto acompanha o pedido.",
+      "A IA prepara a transferência para o time de Suporte.",
+      "Uma pessoa assume sem fazer o cliente começar de novo.",
+      "A nota interna reúne o resumo da IA, o ticket e o que já foi feito.",
+      "O atendente continua de onde a IA parou, com um próximo passo claro.",
+      "Do atendimento para a gestão das conversas.",
+      "O Workspace reúne as conversas e as etapas do Suporte.",
+      "A gestão acompanha as conversas por setor e pelo pipeline de Suporte.",
+      "Etapas e prioridades mostram o que está em atendimento, aguardando ou resolvido.",
+      "Em Operações, a visão se amplia para filas e capacidade da equipe.",
+      "Filas e gestão de filas: regras para distribuir o trabalho.",
+      "Conversas em espera, tempo de espera e operadores disponíveis por setor.",
+      "Encontre as filas que precisam de atenção antes de redistribuir a demanda.",
+      "A carga atual mostra onde existe espaço e onde há sobrecarga.",
+      "Capacidade por operador: conversas ativas, limite e disponibilidade.",
+      "As regras de distribuição são configuradas para cada setor.",
+      "Rodízio, menos ocupado e limites ajudam a equilibrar o atendimento.",
+      "Os relatórios mostram a operação inteira, além da conversa individual.",
+      "Primeira resposta, atendimento e SLA ajudam a localizar as demoras.",
+      "Em Suporte, acompanhe resolução e continuidade do atendimento.",
+      "Acompanhe encerramentos e retornos do cliente para investigar a continuidade do atendimento.",
+      "A visão por agente mostra volume, resolução e tempo de resposta no período.",
+      "Compare a distribuição do trabalho e identifique onde apoiar o time.",
+      "A eficiência do funil conecta entradas, etapas e casos resolvidos.",
+      "Rolagem lenta, sem zoom: os dados ajudam a escolher o próximo gargalo a resolver.",
+      "Do resultado para o próximo atendimento. A jornada recomeça."
+    ]
+  },
+  "en-US": {
+    "title": "From service to operational efficiency",
+    "demo": "Demo · sample data · UI in Portuguese",
+    "label": "Animated yapt. Support demonstration with AI, handoff, queues, capacity and reports",
+    "play": "Play",
+    "pause": "Pause",
+    "replay": "Restart journey",
+    "expand": "Expand demo",
+    "collapse": "Exit full screen",
+    "chapters": [
+      "AI in context",
+      "Handoff",
+      "Conversations",
+      "Queues and teams",
+      "Reports"
+    ],
+    "captions": [
+      "Service starts with AI connected to the customer’s context.",
+      "AI recognizes the customer before asking them to repeat the story.",
+      "Two open tickets: AI checks the cases and asks where to continue.",
+      "The customer chooses a case, with the right history already available.",
+      "AI responds with ticket context and guides the next step.",
+      "When the customer needs a person, the request keeps its context.",
+      "AI prepares the handoff to the Support team.",
+      "A person takes over without making the customer start again.",
+      "The internal note brings together the AI summary, ticket and actions already taken.",
+      "The agent continues where AI left off, with a clear next step.",
+      "From an individual interaction to conversation management.",
+      "Workspace brings together Support conversations and stages.",
+      "Managers track conversations by team and Support pipeline.",
+      "Stages and priorities reveal what is in progress, waiting or resolved.",
+      "In Operations, the view expands to queues and team capacity.",
+      "Queues and queue management: rules to distribute work.",
+      "Waiting conversations, waiting time and available operators by team.",
+      "Find queues that need attention before redistributing demand.",
+      "Current workload shows available capacity and overload.",
+      "Operator capacity: active conversations, limits and availability.",
+      "Routing rules are configured for each team.",
+      "Round-robin, least busy and capacity limits help balance service.",
+      "Reports reveal the whole operation beyond individual conversations.",
+      "First response, handling time and SLA help locate delays.",
+      "In Support, track resolution and service continuity.",
+      "Track closed conversations and returning customers to investigate service continuity.",
+      "The agent view shows volume, resolution and response time for the period.",
+      "Compare workload distribution and identify where the team needs support.",
+      "Pipeline efficiency connects entries, stages and resolved cases.",
+      "Slow scrolling without zoom: use the data to choose the next bottleneck to address.",
+      "From results to the next customer interaction. The journey restarts."
+    ]
+  },
+  "es-ES": {
+    "title": "De la atención a una operación eficiente",
+    "demo": "Demo · datos ilustrativos · UI en portugués",
+    "label": "Demostración animada de Soporte en yapt. con IA, transferencia, colas, capacidad e informes",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "replay": "Reiniciar recorrido",
+    "expand": "Ampliar demostración",
+    "collapse": "Salir de pantalla completa",
+    "chapters": [
+      "IA con contexto",
+      "Transferencia",
+      "Conversaciones",
+      "Colas y equipos",
+      "Informes"
+    ],
+    "captions": [
+      "La atención comienza con una IA conectada al contexto del cliente.",
+      "La IA reconoce al cliente antes de pedirle que repita su historia.",
+      "Dos tickets abiertos: la IA consulta los casos y pregunta por dónde continuar.",
+      "El cliente elige el caso y la conversación sigue con el historial correcto.",
+      "La IA responde con el contexto del ticket y orienta el próximo paso.",
+      "Cuando el cliente necesita a una persona, el contexto acompaña la solicitud.",
+      "La IA prepara la transferencia al equipo de Soporte.",
+      "Una persona asume sin hacer que el cliente empiece de nuevo.",
+      "La nota interna reúne el resumen de la IA, el ticket y lo que ya se hizo.",
+      "El agente continúa donde terminó la IA, con un próximo paso claro.",
+      "De una atención individual a la gestión de conversaciones.",
+      "Workspace reúne las conversaciones y etapas de Soporte.",
+      "La gestión sigue las conversaciones por sector y por el pipeline de Soporte.",
+      "Las etapas y prioridades muestran lo que está en atención, en espera o resuelto.",
+      "En Operaciones, la visión se amplía a las colas y la capacidad del equipo.",
+      "Colas y gestión de colas: reglas para distribuir el trabajo.",
+      "Conversaciones en espera, tiempo de espera y operadores disponibles por sector.",
+      "Encuentra las colas que necesitan atención antes de redistribuir la demanda.",
+      "La carga actual muestra dónde hay capacidad y dónde hay sobrecarga.",
+      "Capacidad por operador: conversaciones activas, límite y disponibilidad.",
+      "Las reglas de distribución se configuran para cada sector.",
+      "La rotación, el menos ocupado y los límites ayudan a equilibrar la atención.",
+      "Los informes muestran toda la operación, más allá de cada conversación.",
+      "La primera respuesta, los tiempos de atención y el SLA ayudan a localizar demoras.",
+      "En Soporte, sigue la resolución y la continuidad de la atención.",
+      "Observa los cierres y los nuevos contactos del cliente para investigar la continuidad de la atención.",
+      "La vista por agente muestra volumen, resolución y tiempo de respuesta del período.",
+      "Compara la distribución del trabajo e identifica dónde apoyar al equipo.",
+      "La eficiencia del embudo conecta entradas, etapas y casos resueltos.",
+      "Desplazamiento lento sin zoom: los datos ayudan a elegir el próximo cuello de botella.",
+      "Del resultado a la próxima atención. El recorrido vuelve a empezar."
+    ]
+  }
+};
+const labels = {'pt-BR':['Cliente','Tickets','Equipe','Filas','Gestão'],'en-US':['Customer','Tickets','Team','Queues','Management'],'es-ES':['Cliente','Tickets','Equipo','Colas','Gestión']}[locale];
+const values = {'pt-BR':['Contexto','Histórico','Resumo','Capacidade','Qualidade'],'en-US':['Context','History','Summary','Capacity','Quality'],'es-ES':['Contexto','Historial','Resumen','Capacidad','Calidad']}[locale];
+---
+<ProductJourney locale={locale} variant="support" copy={copies[locale]} frames={frames} chapterFrames={[2,8,13,17,25]} staticLabels={labels} staticValues={values}>
+  <SupportJourneyScreens/>
+</ProductJourney>

@@ -1,0 +1,525 @@
+---
+import UIIcon from '../UIIcon.astro';
+import ProductJourney from '../home/ProductJourney.astro';
+import OperationsRoutineScreens from './OperationsRoutineScreens.astro';
+import OperationsConnectionBuildScreen from './OperationsConnectionBuildScreen.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+
+type Kind = 'visibilidade' | 'distribuicao' | 'produtividade' | 'prazos' | 'continuidade' | 'automacoes' | 'sistemas' | 'resultados';
+interface Props { locale: Locale; kind: Kind }
+const { locale, kind } = Astro.props;
+
+// These are crops of the original captures, never reconstructed product UI.
+// Coordinates belong to the player's 1120 × 700 world. A close view keeps the
+// relevant label readable on phones; the original is available below the player.
+const sources = {
+  monitoria: {src:'/produto/ops-monitoria-real.png',width:3488,height:2286},
+  filas: {src:'/produto/ops-filas.webp',width:1600,height:670},
+  capacidade: {src:'/produto/ops-equipe.webp',width:1600,height:1057},
+  regras: {src:'/produto/ops-distribuicao.jpg',width:720,height:992},
+  prazos: {src:'/produto/ops-prazos.webp',width:1600,height:1291},
+  conversas: {src:'/produto/ops-conversas.webp',width:1600,height:896},
+  ticket: {src:'/produto/support/ticket-encaminhamento-real.png',width:1090,height:1634},
+  produtividade: {src:'/produto/operations/academy-produtividade-real.webp',width:1400,height:326},
+  atividades: {src:'/produto/sales/academy-atividades-negocio-real.webp',width:1400,height:320},
+  reguas: {src:'/produto/vendas-reguas.webp',width:1600,height:565},
+  conexao: {src:'/produto/support/conexao-por-conversa-real.png',width:1412,height:1114},
+  dados: {src:'/produto/support/dados-na-conversa-real.png',width:1398,height:1678},
+  atendimento: {src:'/produto/ops-indicadores-atendimento.webp',width:1600,height:513},
+  suporte: {src:'/produto/ops-indicadores-suporte.webp',width:1600,height:692},
+} as const;
+type SourceKey = keyof typeof sources;
+type Scene = {key:string;source:SourceKey|null;imageWidth:number;left:number;top:number;x:number;y:number;zoom?:number;routine?:'activity'|'field'|'connection'};
+const scenesByKind: Record<Kind, Scene[]> = {
+  visibilidade: [
+    {key:'demanda-atual',source:'monitoria',imageWidth:3488,left:-20,top:-1430,x:200,y:280},
+    {key:'atendimento-humano',source:'monitoria',imageWidth:3488,left:-1780,top:-630,x:230,y:270},
+    {key:'espera-por-fila',source:'filas',imageWidth:2400,left:-950,top:-150,x:340,y:270},
+  ],
+  distribuicao: [
+    {key:'demanda-nas-filas',source:'filas',imageWidth:2400,left:-20,top:-150,x:570,y:270},
+    {key:'carga-e-limites',source:'capacidade',imageWidth:2400,left:-1880,top:-60,x:420,y:260},
+    {key:'criterios-do-setor',source:'regras',imageWidth:1080,left:20,top:-450,x:265,y:280},
+  ],
+  produtividade: [
+    {key:'dias-e-volume',source:'produtividade',imageWidth:1960,left:0,top:120,x:630,y:370},
+    {key:'trabalho-no-periodo',source:'produtividade',imageWidth:1960,left:-950,top:120,x:500,y:370,zoom:1.35},
+    {key:'contexto-da-carga',source:'capacidade',imageWidth:2400,left:-1880,top:-60,x:420,y:260},
+  ],
+  prazos: [
+    {key:'primeira-resposta',source:'prazos',imageWidth:1600,left:-300,top:-110,x:285,y:240},
+    {key:'prazo-de-resolucao',source:'prazos',imageWidth:1600,left:-300,top:-700,x:285,y:335},
+    {key:'espera-vencida',source:'monitoria',imageWidth:3488,left:-2570,top:-1430,x:380,y:280},
+  ],
+  continuidade: [
+    {key:'conversas-em-andamento',source:'conversas',imageWidth:2240,left:-360,top:-50,x:270,y:315},
+    {key:'etapa-e-responsavel',source:'ticket',imageWidth:1090,left:-280,top:-220,x:650,y:350},
+    {key:'encaminhamento-do-ticket',source:'ticket',imageWidth:1090,left:-280,top:-820,x:300,y:270},
+  ],
+  automacoes: [
+    {key:'inicio-configurado',source:'atividades',imageWidth:1680,left:-20,top:120,x:760,y:525,routine:'activity'},
+    {key:'proximo-passo',source:null,imageWidth:1120,left:0,top:0,x:560,y:320,zoom:1.7,routine:'field'},
+    {key:'registro-da-execucao',source:'reguas',imageWidth:2400,left:-1150,top:-160,x:365,y:355,zoom:1.4},
+  ],
+  sistemas: [
+    {key:'capacidade-da-conexao',source:'conexao',imageWidth:2118,left:-350,top:-120,x:560,y:350,zoom:1.7,routine:'connection'},
+    {key:'acesso-configurado',source:'conexao',imageWidth:2118,left:-1450,top:-270,x:200,y:220},
+    {key:'contexto-na-conversa',source:'dados',imageWidth:1398,left:-400,top:-500,x:305,y:350},
+  ],
+  resultados: [
+    {key:'relatorio-de-agentes',source:'produtividade',imageWidth:1960,left:-950,top:120,x:500,y:370,zoom:1.35},
+    {key:'indicadores-do-atendimento',source:'atendimento',imageWidth:2240,left:-600,top:100,x:245,y:250},
+    {key:'volume-do-suporte',source:'suporte',imageWidth:2240,left:-1050,top:-440,x:790,y:280,zoom:2},
+  ],
+};
+
+const controls = {
+  'pt-BR': {demo:'Telas reais',play:'Reproduzir',pause:'Pausar',replay:'Recomeçar a jornada',expand:'Ampliar demonstração',collapse:'Sair da tela cheia'},
+  'en-US': {demo:'Real screens · UI in Portuguese',play:'Play',pause:'Pause',replay:'Restart journey',expand:'Expand demo',collapse:'Exit full screen'},
+  'es-ES': {demo:'Pantallas reales · interfaz en portugués',play:'Reproducir',pause:'Pausar',replay:'Reiniciar recorrido',expand:'Ampliar demostración',collapse:'Salir de pantalla completa'},
+}[locale];
+type ScenarioCopy = {title:string;label:string;chapters:[string,string,string];captions:[string,string,string,string,string,string];staticValues:[string,string,string]};
+const copies: Record<Locale, Record<Kind, ScenarioCopy>> = {
+  'pt-BR': {
+    visibilidade: {
+      title:'Da visão da operação ao ponto de atenção.',
+      label:'Jornada com capturas reais de monitoria da operação, atendimento humano e espera nas filas.',
+      chapters:['Demanda','Atendimento','Filas'],staticValues:['Agora','Contexto','Espera'],
+      captions:[
+        'A monitoria reúne os tickets que precisam de acompanhamento.',
+        'Veja a demanda aguardando uma pessoa, inclusive tickets abertos em outros dias.',
+        'Outra região da monitoria detalha o trabalho com atendimento humano.',
+        'Volume, espera e resposta têm leituras diferentes. Investigue cada indicador com seu contexto.',
+        'A saúde das filas organiza a investigação por setor.',
+        'Acompanhe a espera em cada fila para decidir onde a equipe precisa agir.',
+      ],
+    },
+    distribuicao: {
+      title:'Demanda, capacidade e critérios de distribuição.',
+      label:'Jornada com capturas reais das filas, da carga dos operadores e das regras de distribuição por setor.',
+      chapters:['Filas','Capacidade','Regras'],staticValues:['Demanda','Carga','Critérios'],
+      captions:[
+        'Comece pela demanda que aguarda atendimento em cada fila.',
+        'A coluna de espera ajuda a localizar o trabalho que ainda precisa de uma pessoa.',
+        'A carga dos operadores traz o contexto da capacidade do time.',
+        'Compare conversas atribuídas e limites. Estar disponível não significa ter uma vaga livre.',
+        'As regras do setor definem como repartir novas conversas.',
+        'Rodízio, menos ocupado e limites são escolhas configuradas para cada operação.',
+      ],
+    },
+    produtividade: {
+      title:'Volume e resolução, com contexto do time.',
+      label:'Jornada com capturas reais do relatório de produtividade de agentes e da carga dos operadores.',
+      chapters:['Período','Resolução','Capacidade'],staticValues:['Dias ativos','Trabalho','Carga'],
+      captions:[
+        'O relatório de agentes organiza o trabalho realizado no período.',
+        'Dias ativos e conversas por dia ajudam a interpretar o volume de cada agente.',
+        'A mesma tabela apresenta o total de conversas e as resolvidas.',
+        'Leia volume e resolução juntos antes de decidir onde investigar ou apoiar o time.',
+        'A carga atual complementa a leitura do trabalho já realizado.',
+        'A captura de capacidade mostra outro recorte da operação; não é uma comparação de ganho.',
+      ],
+    },
+    prazos: {
+      title:'Do prazo configurado à espera que pede atenção.',
+      label:'Jornada com capturas reais das metas de tempo do setor e da espera humana vencida na monitoria.',
+      chapters:['Resposta','Resolução','Monitoria'],staticValues:['Meta','Prazo','Atenção'],
+      captions:[
+        'As metas de tempo são definidas para o setor.',
+        'A primeira resposta tem um relógio próprio, conforme a configuração da operação.',
+        'O prazo de resolução é acompanhado separadamente.',
+        'Defina quais tempos acompanhar e interprete cada relógio conforme sua regra.',
+        'A monitoria mostra a demanda humana com prazo vencido.',
+        'O indicador ajuda a localizar o trabalho que precisa de ação da gestão.',
+      ],
+    },
+    continuidade: {
+      title:'O trabalho continua com um próximo passo claro.',
+      label:'Jornada com capturas reais da central de conversas e de um ticket com etapa, responsável e opções de encaminhamento.',
+      chapters:['Conversas','Ticket','Encaminhar'],staticValues:['Contexto','Responsável','Próximo passo'],
+      captions:[
+        'A central reúne conversas de canais e setores diferentes.',
+        'O cartão mantém a conversa visível no contexto do trabalho da equipe.',
+        'O ticket traz etapa, prioridade e responsável para orientar a continuidade.',
+        'Nesta captura, o ticket está sem responsável. A gestão pode definir quem deve continuar.',
+        'O encaminhamento é feito nas opções do próprio ticket.',
+        'Trocar operador, trocar setor e mover etapa permitem organizar o próximo passo.',
+      ],
+    },
+    automacoes: {
+      title:'Atividades, campos e réguas no lugar do trabalho repetido.',
+      label:'Demonstração com telas reais e interfaces reproduzidas do produto: atividades para negócios e suporte, atualização de campos e réguas ao longo da jornada.',
+      chapters:['Atividades','Campos','Réguas'],staticValues:['Responsável','Preenchimento','Etapas'],
+      captions:[
+        'As atividades ficam registradas no trabalho do time. Esta captura mostra um exemplo ligado a um negócio.',
+        'A régua pode criar tarefas com prazo e atribuição ao responsável do negócio ou da conversa de suporte, conforme a configuração.',
+        'Uma ação da régua pode atualizar um campo personalizado do contato.',
+        'Escolha o campo e o valor da regra. Acompanhamento e Aguardando retorno são exemplos ilustrativos.',
+        'As réguas ligam acontecimentos e etapas às ações que a operação definiu.',
+        'Neste modelo de pós-venda, o negócio ganho gera uma tarefa de kickoff; outra tarefa prepara a renovação no prazo configurado.',
+      ],
+    },
+    sistemas: {
+      title:'Conexões por conversa. Dados no contexto do trabalho.',
+      label:'Demonstração com telas reais e interface reproduzida da criação de uma conexão para consultar pedidos em uma API existente e dos dados disponíveis na conversa.',
+      chapters:['Conversa','Consulta','Contexto'],staticValues:['Configuração','Capacidade','Dados'],
+      captions:[
+        'Comece pela conversa com o assistente sobre a conexão do sistema.',
+        'Na demonstração, a pessoa pede a conexão com sua API de pedidos. O assistente prepara a capacidade de consulta para revisão e teste.',
+        'O espelho da conexão deixa a capacidade de consulta visível ao lado da conversa.',
+        'Neste exemplo, Consultar pedido usa o acesso de uma conexão existente, com escopo e dados de retorno definidos.',
+        'A conversa também pode apresentar dados do cliente disponibilizados pela operação.',
+        'O time consulta esse contexto durante o atendimento, conforme as conexões e permissões disponíveis.',
+      ],
+    },
+    resultados: {
+      title:'Relatórios para investigar o trabalho realizado.',
+      label:'Jornada com capturas reais do relatório de agentes e de indicadores de atendimento e suporte, de operações e períodos diferentes.',
+      chapters:['Agentes','Atendimento','Suporte'],staticValues:['Trabalho','Resolução','Volume'],
+      captions:[
+        'O relatório de agentes apresenta o trabalho realizado no período.',
+        'Volume e resolução são pontos de partida para investigar o resultado do trabalho.',
+        'Os indicadores de atendimento oferecem outra leitura da operação.',
+        'Acompanhe as conversas resolvidas junto dos demais indicadores e do período analisado.',
+        'O suporte também apresenta a distribuição do volume ao longo dos dias.',
+        'São operações e períodos diferentes. A troca de capturas não representa antes e depois nem ganho obtido.',
+      ],
+    },
+  },
+  'en-US': {
+    visibilidade: {
+      title:'From the operation overview to what needs attention.',
+      label:'Journey using real screenshots of operational monitoring, human service and queue waiting times.',
+      chapters:['Demand','Service','Queues'],staticValues:['Now','Context','Waiting'],
+      captions:[
+        'Monitoring brings together tickets that need follow-up.',
+        'See demand waiting for a person, including tickets opened on previous days.',
+        'Another monitoring section details work handled by people.',
+        'Volume, waiting and response measure different things. Investigate each indicator in context.',
+        'Queue health organizes the investigation by team.',
+        'Track waiting in each queue to decide where the team needs to act.',
+      ],
+    },
+    distribuicao: {
+      title:'Demand, capacity and routing criteria.',
+      label:'Journey using real screenshots of queues, operator workload and routing rules by team.',
+      chapters:['Queues','Capacity','Rules'],staticValues:['Demand','Workload','Criteria'],
+      captions:[
+        'Start with demand waiting for service in each queue.',
+        'The waiting column helps locate work that still needs a person.',
+        'Operator workload provides context about team capacity.',
+        'Compare assigned conversations and limits. Being available does not mean having a free slot.',
+        'Team rules define how new conversations are assigned.',
+        'Round-robin, least busy and limits are choices configured for each operation.',
+      ],
+    },
+    produtividade: {
+      title:'Volume and resolution, with team context.',
+      label:'Journey using real screenshots of the agent productivity report and operator workload.',
+      chapters:['Period','Resolution','Capacity'],staticValues:['Active days','Work','Workload'],
+      captions:[
+        'The agent report organizes work completed during the period.',
+        'Active days and conversations per day help interpret each agent’s volume.',
+        'The same table shows total and resolved conversations.',
+        'Read volume and resolution together before deciding where to investigate or support the team.',
+        'Current workload complements the view of work already completed.',
+        'The capacity screenshot shows a different operational view; it is not a comparison of improvement.',
+      ],
+    },
+    prazos: {
+      title:'From a configured deadline to waiting that needs attention.',
+      label:'Journey using real screenshots of team time targets and overdue human-service waiting in monitoring.',
+      chapters:['Response','Resolution','Monitoring'],staticValues:['Target','Deadline','Attention'],
+      captions:[
+        'Time targets are defined for the team.',
+        'First response has its own clock, according to the operation’s configuration.',
+        'The resolution deadline is tracked separately.',
+        'Define which times to track and interpret each clock according to its rule.',
+        'Monitoring shows demand with an overdue human-service deadline.',
+        'This indicator helps locate work that needs management action.',
+      ],
+    },
+    continuidade: {
+      title:'Work continues with a clear next step.',
+      label:'Journey using real screenshots of the conversation hub and a ticket with its stage, owner and handoff options.',
+      chapters:['Conversations','Ticket','Hand off'],staticValues:['Context','Owner','Next step'],
+      captions:[
+        'The hub brings together conversations from different channels and teams.',
+        'The card keeps the conversation visible in the context of the team’s work.',
+        'The ticket shows stage, priority and owner to guide the next step.',
+        'In this screenshot, the ticket is unassigned. Management can define who should continue.',
+        'Handoff options are available in the ticket itself.',
+        'Changing the operator, changing the team and moving the stage help organize the next step.',
+      ],
+    },
+    automacoes: {
+      title:'Activities, fields and rules replace repetitive work.',
+      label:'Demo using real screens and reproduced product interfaces: activities for sales and support, field updates and rules throughout the journey.',
+      chapters:['Activities','Fields','Rules'],staticValues:['Owner','Values','Stages'],
+      captions:[
+        'Activities are recorded with the team’s work. This screenshot shows an example linked to a deal.',
+        'A rule can create tasks with a due date and assignment to the deal or support conversation owner, according to its configuration.',
+        'A rule action can update a custom contact field.',
+        'Choose the field and the rule’s value. Follow-up and Waiting for a reply are illustrative examples.',
+        'Rules connect events and stages to the actions defined by the operation.',
+        'In this post-sale template, a won deal creates a kickoff task; another task prepares renewal at the configured time.',
+      ],
+    },
+    sistemas: {
+      title:'Connections through conversation. Data in the context of work.',
+      label:'Demo using real screens and a reproduced interface for creating an order lookup connection to an existing API, with data available in a conversation.',
+      chapters:['Conversation','Lookup','Context'],staticValues:['Configuration','Capability','Data'],
+      captions:[
+        'Start with a conversation with the assistant about connecting the system.',
+        'In the demo, the person requests a connection to their order API. The assistant prepares the lookup capability for review and testing.',
+        'The connection panel makes the lookup capability visible beside the conversation.',
+        'In this example, Order lookup uses access from an existing connection, with a defined scope and response data.',
+        'The conversation can also display customer data made available by the operation.',
+        'The team consults this context during service, according to the available connections and permissions.',
+      ],
+    },
+    resultados: {
+      title:'Reports for investigating completed work.',
+      label:'Journey using real screenshots of agent reporting and service and support indicators from different operations and periods.',
+      chapters:['Agents','Service','Support'],staticValues:['Work','Resolution','Volume'],
+      captions:[
+        'The agent report shows work completed during the period.',
+        'Volume and resolution are starting points for investigating the result of that work.',
+        'Service indicators offer another view of the operation.',
+        'Track resolved conversations alongside the other indicators and the period being analyzed.',
+        'Support also shows how volume is distributed across days.',
+        'These are different operations and periods. Switching screenshots does not show before and after or an achieved improvement.',
+      ],
+    },
+  },
+  'es-ES': {
+    visibilidade: {
+      title:'De la visión de la operación al punto de atención.',
+      label:'Recorrido con capturas reales del monitoreo de la operación, atención humana y espera en las colas.',
+      chapters:['Demanda','Atención','Colas'],staticValues:['Ahora','Contexto','Espera'],
+      captions:[
+        'El monitoreo reúne los tickets que necesitan seguimiento.',
+        'Consulta la demanda que espera a una persona, incluidos tickets abiertos en días anteriores.',
+        'Otra sección del monitoreo detalla el trabajo de atención humana.',
+        'Volumen, espera y respuesta miden cosas diferentes. Investiga cada indicador con su contexto.',
+        'La salud de las colas organiza la investigación por sector.',
+        'Sigue la espera en cada cola para decidir dónde necesita actuar el equipo.',
+      ],
+    },
+    distribuicao: {
+      title:'Demanda, capacidad y criterios de distribución.',
+      label:'Recorrido con capturas reales de las colas, la carga de los agentes y las reglas de distribución por sector.',
+      chapters:['Colas','Capacidad','Reglas'],staticValues:['Demanda','Carga','Criterios'],
+      captions:[
+        'Empieza por la demanda que espera atención en cada cola.',
+        'La columna de espera ayuda a localizar el trabajo que aún necesita a una persona.',
+        'La carga de los agentes aporta contexto sobre la capacidad del equipo.',
+        'Compara conversaciones asignadas y límites. Estar disponible no significa tener una plaza libre.',
+        'Las reglas del sector definen cómo repartir nuevas conversaciones.',
+        'La rotación, el menos ocupado y los límites se configuran para cada operación.',
+      ],
+    },
+    produtividade: {
+      title:'Volumen y resolución, con contexto del equipo.',
+      label:'Recorrido con capturas reales del informe de productividad de agentes y de la carga de los operadores.',
+      chapters:['Período','Resolución','Capacidad'],staticValues:['Días activos','Trabajo','Carga'],
+      captions:[
+        'El informe de agentes organiza el trabajo realizado durante el período.',
+        'Los días activos y las conversaciones por día ayudan a interpretar el volumen de cada agente.',
+        'La misma tabla presenta el total de conversaciones y las resueltas.',
+        'Lee volumen y resolución juntos antes de decidir dónde investigar o apoyar al equipo.',
+        'La carga actual complementa la lectura del trabajo ya realizado.',
+        'La captura de capacidad muestra otro recorte de la operación; no es una comparación de mejora.',
+      ],
+    },
+    prazos: {
+      title:'Del plazo configurado a la espera que necesita atención.',
+      label:'Recorrido con capturas reales de las metas de tiempo del sector y de la espera humana vencida en el monitoreo.',
+      chapters:['Respuesta','Resolución','Monitoreo'],staticValues:['Meta','Plazo','Atención'],
+      captions:[
+        'Las metas de tiempo se definen para el sector.',
+        'La primera respuesta tiene su propio reloj, según la configuración de la operación.',
+        'El plazo de resolución se sigue por separado.',
+        'Define qué tiempos seguir e interpreta cada reloj según su regla.',
+        'El monitoreo muestra la demanda humana con plazo vencido.',
+        'El indicador ayuda a localizar el trabajo que necesita una acción de la gestión.',
+      ],
+    },
+    continuidade: {
+      title:'El trabajo continúa con un siguiente paso claro.',
+      label:'Recorrido con capturas reales de la central de conversaciones y de un ticket con etapa, responsable y opciones de transferencia.',
+      chapters:['Conversaciones','Ticket','Transferir'],staticValues:['Contexto','Responsable','Siguiente paso'],
+      captions:[
+        'La central reúne conversaciones de distintos canales y sectores.',
+        'La tarjeta mantiene visible la conversación en el contexto del trabajo del equipo.',
+        'El ticket muestra etapa, prioridad y responsable para orientar la continuidad.',
+        'En esta captura, el ticket no tiene responsable. La gestión puede definir quién debe continuar.',
+        'La transferencia se realiza desde las opciones del propio ticket.',
+        'Cambiar de agente, cambiar de sector y mover de etapa permiten organizar el siguiente paso.',
+      ],
+    },
+    automacoes: {
+      title:'Actividades, campos y reglas sustituyen el trabajo repetido.',
+      label:'Demostración con pantallas reales e interfaces reproducidas del producto: actividades para ventas y soporte, actualización de campos y reglas a lo largo del recorrido.',
+      chapters:['Actividades','Campos','Reglas'],staticValues:['Responsable','Valores','Etapas'],
+      captions:[
+        'Las actividades quedan registradas en el trabajo del equipo. Esta captura muestra un ejemplo vinculado a un negocio.',
+        'Una regla puede crear tareas con plazo y asignación al responsable del negocio o de la conversación de soporte, según la configuración.',
+        'Una acción de la regla puede actualizar un campo personalizado del contacto.',
+        'Elige el campo y el valor de la regla. Seguimiento y Esperando respuesta son ejemplos ilustrativos.',
+        'Las reglas conectan acontecimientos y etapas con las acciones definidas por la operación.',
+        'En este modelo de posventa, un negocio ganado genera una tarea de inicio; otra tarea prepara la renovación en el plazo configurado.',
+      ],
+    },
+    sistemas: {
+      title:'Conexiones por conversación. Datos en el contexto del trabajo.',
+      label:'Demostración con pantallas reales y una interfaz reproducida de la creación de una conexión para consultar pedidos en una API existente y los datos disponibles en la conversación.',
+      chapters:['Conversación','Consulta','Contexto'],staticValues:['Configuración','Capacidad','Datos'],
+      captions:[
+        'Empieza conversando con el asistente sobre la conexión del sistema.',
+        'En la demostración, la persona pide conectar su API de pedidos. El asistente prepara la capacidad de consulta para revisión y prueba.',
+        'El panel de la conexión muestra la capacidad de consulta junto a la conversación.',
+        'En este ejemplo, Consultar pedido usa el acceso de una conexión existente, con alcance y datos de respuesta definidos.',
+        'La conversación también puede mostrar datos del cliente disponibles para la operación.',
+        'El equipo consulta ese contexto durante la atención, según las conexiones y los permisos disponibles.',
+      ],
+    },
+    resultados: {
+      title:'Informes para investigar el trabajo realizado.',
+      label:'Recorrido con capturas reales del informe de agentes y de indicadores de atención y soporte, de operaciones y períodos diferentes.',
+      chapters:['Agentes','Atención','Soporte'],staticValues:['Trabajo','Resolución','Volumen'],
+      captions:[
+        'El informe de agentes presenta el trabajo realizado durante el período.',
+        'El volumen y la resolución son puntos de partida para investigar el resultado del trabajo.',
+        'Los indicadores de atención ofrecen otra lectura de la operación.',
+        'Sigue las conversaciones resueltas junto con los demás indicadores y el período analizado.',
+        'El soporte también muestra la distribución del volumen a lo largo de los días.',
+        'Son operaciones y períodos diferentes. El cambio de capturas no representa un antes y después ni una mejora obtenida.',
+      ],
+    },
+  },
+};
+const sourceLabels: Record<Locale, Record<SourceKey, string>> = {
+  'pt-BR': {monitoria:'Monitoria',filas:'Filas',capacidade:'Capacidade',regras:'Regras',prazos:'Metas de tempo',conversas:'Conversas',ticket:'Ticket e encaminhamento',produtividade:'Produtividade',atividades:'Atividades do negócio',reguas:'Réguas da jornada',conexao:'Conexão por conversa',dados:'Dados na conversa',atendimento:'Atendimento',suporte:'Volume do suporte'},
+  'en-US': {monitoria:'Monitoring',filas:'Queues',capacidade:'Capacity',regras:'Rules',prazos:'Time targets',conversas:'Conversations',ticket:'Ticket and handoff',produtividade:'Productivity',atividades:'Deal activities',reguas:'Journey rules',conexao:'Conversational connection',dados:'Conversation data',atendimento:'Service',suporte:'Support volume'},
+  'es-ES': {monitoria:'Monitoreo',filas:'Colas',capacidade:'Capacidad',regras:'Reglas',prazos:'Metas de tiempo',conversas:'Conversaciones',ticket:'Ticket y transferencia',produtividade:'Productividad',atividades:'Actividades del negocio',reguas:'Reglas del recorrido',conexao:'Conexión por conversación',dados:'Datos en la conversación',atendimento:'Atención',suporte:'Volumen de soporte'},
+};
+const sourceAlts: Record<Locale, Record<SourceKey, string>> = {
+  'pt-BR': {
+    monitoria:'Monitoria da distribuição com indicadores da etapa automatizada e humana, demanda atual e saúde das filas.',
+    filas:'Saúde das filas por setor com quantidade aguardando, conversas com atendimento humano, maior espera e tempos do dia.',
+    capacidade:'Carga dos operadores com situação de disponibilidade, conversas atribuídas e limites de atendimento.',
+    regras:'Configuração de distribuição do setor com modo automático ou manual, rodízio, menos ocupado, limites e setor reserva.',
+    prazos:'Metas de tempo do setor com primeira resposta, resposta humana, resolução e configurações de relógio e alerta.',
+    conversas:'Central de conversas com cartões organizados por canal, setor e responsável em uma operação de demonstração.',
+    ticket:'Ticket sem responsável com etapa, prioridade, tempo na etapa e opções de trocar operador, trocar setor ou mover etapa.',
+    produtividade:'Relatório de produtividade dos agentes com dias ativos, conversas por dia, total de conversas, resolvidas e taxa de resolução.',
+    atividades:'Atividade de conferir documentos registrada na ficha de um negócio de demonstração, com prazo e responsável.',
+    reguas:'Modelos de réguas de vendas para proposta sem resposta, negócio esfriando, pós-venda e lead novo, com ações automáticas configuráveis.',
+    conexao:'Conversa de configuração de uma conexão para consultar pedidos, junto do espelho com capacidade, permissões e campos disponíveis para exibição.',
+    dados:'Painel de dados na conversa com situação do cliente, indicadores de saúde, sinais, responsável pela conta e situação financeira.',
+    atendimento:'Painel de atendimento com volume de conversas, resolvidas, espera, tempos de resposta e gráfico de volume por dia.',
+    suporte:'Painel de suporte com cartões de indicadores e gráfico do volume diário de conversas.',
+  },
+  'en-US': {
+    monitoria:'Routing monitoring with automated and human-service indicators, current demand and queue health.',
+    filas:'Queue health by team showing waiting counts, conversations with human service, longest wait and daily time indicators.',
+    capacidade:'Operator workload showing availability, assigned conversations and service capacity limits.',
+    regras:'Team routing configuration with automatic or manual mode, round-robin, least busy, limits and an overflow team.',
+    prazos:'Team time targets for first response, human response and resolution, with clock and alert settings.',
+    conversas:'Conversation hub with cards organized by channel, team and owner in a demonstration operation.',
+    ticket:'Unassigned ticket with stage, priority, time in stage and options to change operator, change team or move stage.',
+    produtividade:'Agent productivity report with active days, conversations per day, total conversations, resolved conversations and resolution rate.',
+    atividades:'Document-checking activity recorded in a demonstration deal, with its due date and owner.',
+    reguas:'Sales rule templates for an unanswered proposal, a cooling deal, post-sale work and a new lead, with configurable automatic actions.',
+    conexao:'Configuration conversation for an order lookup connection, beside a panel showing its capability, permissions and fields available for display.',
+    dados:'Conversation data panel with customer status, health indicators, signals, account owner and financial status.',
+    atendimento:'Service dashboard with conversation volume, resolved conversations, waiting, response times and a daily volume chart.',
+    suporte:'Support dashboard with indicator cards and a chart of daily conversation volume.',
+  },
+  'es-ES': {
+    monitoria:'Monitoreo de la distribución con indicadores de la etapa automatizada y humana, demanda actual y salud de las colas.',
+    filas:'Salud de las colas por sector con cantidad en espera, conversaciones con atención humana, mayor espera y tiempos del día.',
+    capacidade:'Carga de los agentes con disponibilidad, conversaciones asignadas y límites de atención.',
+    regras:'Configuración de distribución del sector con modo automático o manual, rotación, menos ocupado, límites y sector de reserva.',
+    prazos:'Metas de tiempo del sector para primera respuesta, respuesta humana y resolución, con ajustes de reloj y alerta.',
+    conversas:'Central de conversaciones con tarjetas organizadas por canal, sector y responsable en una operación de demostración.',
+    ticket:'Ticket sin responsable con etapa, prioridad, tiempo en la etapa y opciones para cambiar agente, cambiar sector o mover etapa.',
+    produtividade:'Informe de productividad de agentes con días activos, conversaciones por día, total de conversaciones, resueltas y tasa de resolución.',
+    atividades:'Actividad de revisar documentos registrada en un negocio de demostración, con plazo y responsable.',
+    reguas:'Modelos de reglas de ventas para propuestas sin respuesta, negocios que pierden interés, posventa y nuevos leads, con acciones automáticas configurables.',
+    conexao:'Conversación de configuración de una conexión para consultar pedidos, junto al panel con capacidad, permisos y campos disponibles para mostrar.',
+    dados:'Panel de datos en la conversación con estado del cliente, indicadores de salud, señales, responsable de la cuenta y situación financiera.',
+    atendimento:'Panel de atención con volumen de conversaciones, resueltas, espera, tiempos de respuesta y gráfico de volumen diario.',
+    suporte:'Panel de soporte con tarjetas de indicadores y un gráfico del volumen diario de conversaciones.',
+  },
+};
+const ui = {
+  'pt-BR': {sourceNote:'Telas reais de diferentes operações e períodos.',gallery:'Ampliar as capturas reais',open:'Ampliar captura'},
+  'en-US': {sourceNote:'Real screens from different operations and periods.',gallery:'Enlarge the real screenshots',open:'Enlarge screenshot'},
+  'es-ES': {sourceNote:'Pantallas reales de diferentes operaciones y períodos.',gallery:'Ampliar las capturas reales',open:'Ampliar captura'},
+}[locale];
+const routineUI = {
+  'pt-BR': {demo:'Produto · demonstração',sourceNote:'Telas reais e interfaces do produto reproduzidas para demonstração. Atividades e campos ilustrativos.'},
+  'en-US': {demo:'Product demo · UI in Portuguese',sourceNote:'Real screens and product interfaces reproduced for demonstration. Illustrative activities and fields.'},
+  'es-ES': {demo:'Producto · demostración · interfaz en portugués',sourceNote:'Pantallas reales e interfaces del producto reproducidas para demostración. Actividades y campos ilustrativos.'},
+}[locale];
+const connectionUI = {
+  'pt-BR': {demo:'Produto · demonstração',sourceNote:'Telas reais e interface do produto reproduzida para demonstração. Exemplo de conexão com uma API existente.'},
+  'en-US': {demo:'Product demo · UI in Portuguese',sourceNote:'Real screens and a product interface reproduced for demonstration. Example connection to an existing API.'},
+  'es-ES': {demo:'Producto · demostración · interfaz en portugués',sourceNote:'Pantallas reales e interfaz del producto reproducida para demostración. Ejemplo de conexión con una API existente.'},
+}[locale];
+const scenes = scenesByKind[kind];
+const scenario = copies[locale][kind];
+const illustratedUI = kind === 'automacoes' ? routineUI : kind === 'sistemas' ? connectionUI : null;
+const copy: JourneyCopy = {...controls,...(illustratedUI ? {demo:illustratedUI.demo} : {}),title:scenario.title,label:scenario.label,chapters:scenario.chapters,captions:scenario.captions};
+const screenKey = (scene: Scene) => `operations-${kind}-${scene.key}`;
+const frames: JourneyFrame[] = scenes.flatMap((scene,chapter) => [
+  {screen:screenKey(scene),focus:`${screenKey(scene)}-overview`,zoom:scene.routine === 'activity' ? 1.35 : 1,duration:1000,chapter},
+  {screen:screenKey(scene),focus:`${screenKey(scene)}-detail`,zoom:scene.zoom ?? 2.1,duration:5600,chapter,...(scene.routine === 'activity' ? {state:'activity-builder'} : scene.routine === 'connection' ? {state:'connection-builder'} : {})},
+]);
+const gallerySources = [...new Set(scenes.flatMap(scene => scene.source ? [scene.source] : []))];
+---
+<div class="operations-scenario-journey" data-operations-scenario-journey={kind}>
+  <ProductJourney locale={locale} variant="operations" copy={copy} frames={frames} chapterFrames={[1,3,5]} staticLabels={scenario.chapters} staticValues={scenario.staticValues} sourceNote={illustratedUI?.sourceNote ?? ui.sourceNote}>
+    {scenes.map(scene => {
+      const source = scene.source ? sources[scene.source] : null;
+      return <div class="osc-screen" data-j-screen={screenKey(scene)}>
+        {source && <img class:list={['osc-capture',{'osc-capture--activity':scene.routine === 'activity','osc-capture--connection':scene.routine === 'connection'}]} src={source.src} width={source.width} height={source.height} alt="" loading="lazy" decoding="async" data-operations-source={source.src} style={`width:${scene.imageWidth}px;left:${scene.left}px;top:${scene.top}px`}/>}
+        {scene.routine && <div class:list={['osc-routine',{'osc-routine--activity':scene.routine === 'activity','osc-routine--connection':scene.routine === 'connection'}]}>{scene.routine === 'connection' ? <OperationsConnectionBuildScreen/> : <OperationsRoutineScreens kind={scene.routine}/>}</div>}
+        <span class="osc-target" data-j-target={`${screenKey(scene)}-overview`} style="left:560px;top:350px"></span>
+        <span class="osc-target" data-j-target={`${screenKey(scene)}-detail`} style={`left:${scene.x}px;top:${scene.y}px`}></span>
+      </div>;
+    })}
+  </ProductJourney>
+  <nav class="osc-sources" aria-label={ui.gallery}>
+    {gallerySources.map(key => <a href={sources[key].src} data-marketing-image data-image-title={sourceLabels[locale][key]} data-image-alt={sourceAlts[locale][key]} data-operations-source={sources[key].src} target="_blank" rel="noopener noreferrer" aria-label={`${ui.open}: ${sourceLabels[locale][key]}`}>{sourceLabels[locale][key]}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></a>)}
+  </nav>
+</div>
+
+<style>
+  .operations-scenario-journey{min-width:0;padding:0 clamp(14px,3vw,24px) 22px}
+  .osc-screen{position:absolute;inset:0;width:1120px;height:700px;overflow:hidden;background:#f7f9f9;visibility:hidden;opacity:0}
+  .osc-screen.is-active{visibility:visible;opacity:1}
+  .osc-capture{position:absolute;display:block;height:auto;max-width:none;border:0;border-radius:0}
+  .osc-routine{position:absolute;inset:0}.osc-routine--activity,.osc-routine--connection{display:none}
+  .operations-scenario-journey :global(.marketing-journey[data-state=activity-builder]) .osc-routine--activity{display:block}
+  .operations-scenario-journey :global(.marketing-journey[data-state=activity-builder]) .osc-capture--activity{visibility:hidden}
+  .operations-scenario-journey :global(.marketing-journey[data-state=connection-builder]) .osc-routine--connection{display:block}
+  .operations-scenario-journey :global(.marketing-journey[data-state=connection-builder]) .osc-capture--connection{visibility:hidden}
+  .osc-target{position:absolute;width:1px;height:1px;pointer-events:none}
+  .operations-scenario-journey :global(.mj-heading){flex-wrap:wrap;row-gap:6px}
+  .operations-scenario-journey :global(.marketing-journey[data-journey=operations] .mj-chapters){grid-template-columns:repeat(3,minmax(0,1fr))}
+  .operations-scenario-journey :global(.marketing-journey[data-journey=operations] .mj-chapters button){grid-column:auto!important;min-height:44px;padding:8px 3px;overflow-wrap:anywhere}
+  .operations-scenario-journey :global(.mj-static>div){grid-template-columns:repeat(3,minmax(0,1fr))}
+  .operations-scenario-journey :global(.mj-caption){min-height:60px}
+  .operations-scenario-journey :global(.mj-controls button){min-height:44px}
+  .operations-scenario-journey :global(.mj-controls .mj-icon-button){min-width:44px}
+  .operations-scenario-journey :global(.mj-source-note){font-size:10px;line-height:1.6}
+  .osc-sources{display:flex;align-items:center;flex-wrap:wrap;gap:0 14px;margin-top:4px}
+  .osc-sources a{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;font:500 10px/1.5 Inter,sans-serif;color:#35684f;text-decoration:underline;text-underline-offset:3px}
+  .osc-sources a:hover{color:#173f31}
+  .osc-sources a:focus-visible{outline:2px solid #20b2aa;outline-offset:3px;border-radius:4px}
+  @media(max-width:600px){.operations-scenario-journey :global(.mj-controls){gap:4px}.operations-scenario-journey :global(.mj-controls button){padding-inline:5px}.operations-scenario-journey :global(.mj-chapters button){font-size:9px}.operations-scenario-journey :global(.mj-caption){min-height:80px}.osc-sources{gap:0 12px}}
+</style>

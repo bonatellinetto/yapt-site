@@ -1,375 +1,167 @@
 ---
-import { t, type Locale, localePath, languages } from '../lib/i18n';
+import UIIcon from './UIIcon.astro';
+import { localePath, type Locale } from '../lib/i18n';
+import { navigationCopy } from '../lib/navigation';
+import { diagnosticCopy } from '../lib/diagnostic-cta';
+import PlatformGroups from './navigation/PlatformGroups.astro';
+import LanguageLinks from './navigation/LanguageLinks.astro';
 
-interface Props {
-  locale: Locale;
-  minimal?: boolean;
-}
-
+interface Props { locale: Locale; minimal?: boolean; }
 const { locale, minimal = false } = Astro.props;
-
-const productLinks = [
-  { key: 'conversations', href: '/conversations' },
-  { key: 'intelligence', href: '/intelligence' },
-  { key: 'sales', href: '/sales' },
-  { key: 'marketing', href: '/marketing-site' },
-  { key: 'automations', href: '/automations' },
-  { key: 'operations', href: '/operations' },
-];
-
-const currentLang = languages.find(l => l.code === locale) || languages[0];
+const copy = navigationCopy[locale];
+const languageLabel = locale === 'pt-BR' ? 'PT' : locale === 'en-US' ? 'EN' : 'ES';
+const pathname = Astro.url.pathname;
+const currentPath = pathname.replace(/\.html$/, '').replace(/\/index$/, '/').replace(/\/$/, '') || '/';
+const diagnosisHref = diagnosticCopy(locale).contactHref;
 ---
 
-<nav
-  id="site-navbar"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5"
-  data-transparent="true"
-  style="background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;"
->
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <!-- Logo (clickable only when not minimal — LPs de ads não devem sair pra home) -->
+<site-navigation class="site-navigation" data-minimal={minimal ? 'true' : undefined}>
+  <nav id="site-navbar" class="nav-shell" aria-label={copy.label}>
     {minimal ? (
-      <div class="flex items-center gap-2">
-        <img src="/yapt-logo.svg" alt="yapt." class="nav-logo-dark h-8 lg:h-10 w-auto" width="112" height="40" />
-        <img src="/yapt-logo-dark.svg" alt="yapt." class="nav-logo-light h-8 lg:h-10 w-auto hidden" width="112" height="40" fetchpriority="high" />
-      </div>
+      <span class="nav-brand"><img src="/yapt-logo.svg" alt="yapt." width="112" height="40" /></span>
     ) : (
-      <a href={localePath('/', locale)} class="flex items-center gap-2">
-        <img src="/yapt-logo.svg" alt="yapt." class="nav-logo-dark h-8 lg:h-10 w-auto" width="112" height="40" />
-        <img src="/yapt-logo-dark.svg" alt="yapt." class="nav-logo-light h-8 lg:h-10 w-auto hidden" width="112" height="40" fetchpriority="high" />
+      <a class="nav-brand" href={localePath('/', locale)} aria-label={copy.home}>
+        <img src="/yapt-logo.svg" alt="yapt." width="112" height="40" fetchpriority="high" />
       </a>
     )}
 
-    <!-- Desktop Nav -->
-    {!minimal && (
-    <div class="hidden md:flex items-center gap-8">
-      <!-- Product dropdown -->
-      <div class="relative" id="product-dropdown">
-        <button
-          class="nav-link font-poppins text-sm font-medium transition-colors flex items-center gap-1"
-          aria-expanded="false"
-        >
-          {t('nav.product', locale)}
-          <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-2xl p-2 hidden"
-          id="product-menu"
-          style="background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.06);"
-        >
-          {productLinks.map((link) => (
-            <a
-              href={localePath(link.href, locale)}
-              class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-            >
-              <span class="block font-poppins text-sm font-semibold text-[#1a1a2e]">
-                {t(`nav.productLinks.${link.key}`, locale)}
-              </span>
-              <span class="block text-xs text-[#656D78] mt-0.5">
-                {t(`nav.productLinks.${link.key}Desc`, locale)}
-              </span>
-            </a>
-          ))}
+    {!minimal && <div class="nav-desktop nav-main-links">
+      {copy.primary.map(link => <a class="nav-link" href={localePath(link.href, locale)} aria-current={currentPath === localePath(link.href, locale) ? 'page' : undefined}>{link.label}</a>)}
+      <details class="nav-disclosure" data-desktop-disclosure>
+        <summary class="nav-link" aria-controls="platform-menu">
+          {copy.platform}<span class="nav-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="nav-popover platform-popover" id="platform-menu">
+          <PlatformGroups locale={locale} />
         </div>
-      </div>
+      </details>
+      <a class="nav-link" href={localePath('/blog', locale)}>{copy.insights}</a>
+    </div>}
 
-      <a href={localePath('/integrations', locale)} class="nav-link font-poppins text-sm font-medium transition-colors">
-        {t('nav.integrations', locale)}
-      </a>
-      <a href={localePath('/for-enterprise', locale)} class="nav-link font-poppins text-sm font-medium transition-colors">
-        {t('nav.enterprise', locale)}
-      </a>
-      <a href={localePath('/pricing', locale)} class="nav-link font-poppins text-sm font-medium transition-colors">
-        {t('nav.pricing', locale)}
-      </a>
-      <a href={localePath('/blog', locale)} class="nav-link font-poppins text-sm font-medium transition-colors">
-        Blog
-      </a>
-    </div>
-    )}
-
-    <!-- CTAs -->
-    <div class="hidden md:flex items-center gap-4">
-      {!minimal && (
-      <a
-        href="https://app.yapt.ai/auth"
-        class="nav-link font-poppins text-sm font-medium transition-colors"
-      >
-        {t('nav.login', locale)}
-      </a>
-      )}
-      <button
-        onclick="typeof yaptwa==='function'&&yaptwa('open')"
-        class="font-poppins text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 text-white cursor-pointer border-none"
-        style="background: linear-gradient(135deg, #20B2AA, #0D9488); box-shadow: 0 2px 10px rgba(0,0,0,0.1);"
-      >
-        {t('nav.scheduleDemo', locale)}
-      </button>
-
-      <!-- Language Selector -->
-      {!minimal && (
-      <div class="relative" id="lang-dropdown">
-        <button
-          class="nav-lang-btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-all duration-150"
-          style="background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08);"
-          aria-expanded="false"
-        >
-          <span class="text-sm leading-none">{currentLang.flag}</span>
-          <span class="nav-lang-label font-poppins text-xs font-semibold" style="color: #434A54;">{currentLang.label}</span>
-          <svg class="nav-lang-chevron w-3 h-3 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="#434A54" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute top-full right-0 mt-2 rounded-xl py-1 min-w-[120px] hidden"
-          id="lang-menu"
-          style="background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.06);"
-        >
-          {languages.map((lang) => {
-            const href = localePath(Astro.url.pathname.replace(/^\/(en|es)(\/|$)/, '/'), lang.code);
-            return (
-              <a
-                href={href}
-                class="flex items-center gap-2.5 w-full px-3.5 py-2.5 text-left transition-colors hover:bg-gray-50"
-                style={locale === lang.code ? 'background-color: rgba(32,178,170,0.06);' : ''}
-                data-lang={lang.code}
-              >
-                <span class="text-base leading-none">{lang.flag}</span>
-                <span
-                  class="font-poppins text-sm"
-                  style={`color: ${locale === lang.code ? '#20B2AA' : '#434A54'}; font-weight: ${locale === lang.code ? '600' : '400'};`}
-                >
-                  {lang.label}
-                </span>
-                {locale === lang.code && (
-                  <svg class="w-3.5 h-3.5 ml-auto" fill="none" viewBox="0 0 24 24" stroke="#20B2AA" stroke-width="3">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+    <div class="nav-actions">
+      {!minimal && <>
+        <a class="nav-link nav-desktop" href="https://app.yapt.ai/auth">{copy.login}</a>
+        <details class="nav-disclosure nav-desktop" data-desktop-disclosure>
+          <summary class="nav-link nav-language-toggle" aria-label={copy.language} aria-controls="language-menu">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a18 18 0 0 1 0 18 18 18 0 0 1 0-18Z" />
+            </svg>
+            {languageLabel}<span class="nav-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="nav-popover language-popover" id="language-menu">
+            <LanguageLinks locale={locale} pathname={pathname} />
+          </div>
+        </details>
+      </>}
+      {minimal ? (
+        <a class="nav-diagnosis" href={diagnosticCopy(locale).contactHref} data-diagnostic-trigger data-diagnostic-placement="menu" target="_blank" rel="noopener noreferrer">{copy.diagnosis}</a>
+      ) : (
+        <a class="nav-diagnosis" href={diagnosisHref} data-diagnostic-trigger data-diagnostic-placement="menu" target="_blank" rel="noopener noreferrer">{copy.diagnosis}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
       )}
     </div>
 
-    {minimal ? (
-      <!-- Mobile CTA (minimal mode — no hamburger) -->
-      <button
-        onclick="typeof yaptwa==='function'&&yaptwa('open')"
-        class="md:hidden font-poppins text-xs font-semibold px-4 py-2 rounded-xl text-white cursor-pointer border-none"
-        style="background: linear-gradient(135deg, #20B2AA, #0D9488);"
-      >
-        {t('nav.scheduleDemo', locale)}
-      </button>
-    ) : (
-      <!-- Mobile hamburger -->
-      <button
-        class="md:hidden flex items-center justify-center w-11 h-11 -mr-2"
-        id="mobile-menu-btn"
-        aria-label="Menu"
-      >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#434A54" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" id="hamburger-icon" />
-        </svg>
-      </button>
-    )}
-  </div>
-
-  {!minimal && (
-  <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    class="md:hidden mt-2 mx-4 rounded-2xl p-6 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto hidden"
-    style="background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);"
-  >
-    <p class="font-poppins text-xs font-semibold text-[#656D78] tracking-wider mb-2">
-      {t('nav.product', locale)}
-    </p>
-    {productLinks.map((link) => (
-      <a
-        href={localePath(link.href, locale)}
-        class="block font-poppins text-sm font-medium text-[#434A54] py-3 pl-2"
-      >
-        {t(`nav.productLinks.${link.key}`, locale)}
-      </a>
-    ))}
-    <div class="h-px bg-gray-100 my-3"></div>
-    <a href={localePath('/integrations', locale)} class="block font-poppins text-sm font-medium text-[#434A54] py-3">
-      {t('nav.integrations', locale)}
-    </a>
-    <a href={localePath('/for-enterprise', locale)} class="block font-poppins text-sm font-medium text-[#434A54] py-3">
-      {t('nav.enterprise', locale)}
-    </a>
-    <a href={localePath('/pricing', locale)} class="block font-poppins text-sm font-medium text-[#434A54] py-3">
-      {t('nav.pricing', locale)}
-    </a>
-    <a href={localePath('/blog', locale)} class="block font-poppins text-sm font-medium text-[#434A54] py-3">
-      Blog
-    </a>
-    <div class="pt-3 border-t border-gray-100 flex flex-col gap-3 mt-2">
-      <a href="https://app.yapt.ai/auth" class="font-poppins text-sm font-medium text-[#434A54]">
-        {t('nav.login', locale)}
-      </a>
-      <button
-        onclick="typeof yaptwa==='function'&&yaptwa('open')"
-        class="font-poppins text-sm font-semibold px-5 py-2.5 rounded-xl text-center text-white cursor-pointer border-none w-full"
-        style="background: linear-gradient(135deg, #20B2AA, #0D9488);"
-      >
-        {t('nav.scheduleDemo', locale)}
-      </button>
-    </div>
-    <!-- Mobile Language Selector -->
-    <div class="pt-3 border-t border-gray-100 mt-2">
-      <div class="flex items-center gap-2">
-        {languages.map((lang) => {
-          const href = localePath(Astro.url.pathname.replace(/^\/(en|es)(\/|$)/, '/'), lang.code);
-          return (
-            <a
-              href={href}
-              class="flex items-center gap-1.5 px-3 py-2.5 rounded-lg transition-all duration-150"
-              style={`background: ${locale === lang.code ? 'rgba(32,178,170,0.1)' : 'rgba(0,0,0,0.03)'}; border: 1.5px solid ${locale === lang.code ? '#20B2AA' : 'transparent'};`}
-              data-lang={lang.code}
-            >
-              <span class="text-sm leading-none">{lang.flag}</span>
-              <span
-                class="font-poppins text-xs font-semibold"
-                style={`color: ${locale === lang.code ? '#20B2AA' : '#656D78'};`}
-              >
-                {lang.label}
-              </span>
-            </a>
-          );
-        })}
+    {!minimal && <details class="nav-mobile-disclosure" data-mobile-disclosure>
+      <summary class="nav-mobile-toggle" aria-label={copy.menu} aria-controls="mobile-menu">
+        <span class="nav-menu-line"></span><span class="nav-menu-line"></span>
+      </summary>
+      <div class="nav-mobile-panel" id="mobile-menu" aria-label={copy.menu} role="region">
+        <div class="mobile-primary-links">
+          {copy.primary.map(link => <a class="nav-link" href={localePath(link.href, locale)} aria-current={currentPath === localePath(link.href, locale) ? 'page' : undefined}>{link.label}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>)}
+        </div>
+        <p class="mobile-platform-label">{copy.platform}</p>
+        <PlatformGroups locale={locale} compact />
+        <div class="mobile-secondary-links">
+          <a class="nav-link" href={localePath('/blog', locale)}>{copy.insights}</a>
+          <a class="nav-link" href="https://app.yapt.ai/auth">{copy.login}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
+        </div>
+        <div class="mobile-language-row">
+          <span class="nav-group-label">{copy.language}</span>
+          <LanguageLinks locale={locale} pathname={pathname} compact />
+        </div>
+        <a class="nav-diagnosis mobile-diagnosis" href={diagnosisHref} data-diagnostic-trigger data-diagnostic-placement="menu" target="_blank" rel="noopener noreferrer">{copy.diagnosis}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
       </div>
-    </div>
-  </div>
-  )}
-</nav>
+    </details>}
+  </nav>
+</site-navigation>
 
-<style>
-  /* Transparent state (over hero) */
-  #site-navbar[data-transparent="true"] .nav-link {
-    color: rgba(255,255,255,0.9);
-  }
-  #site-navbar[data-transparent="true"] .nav-link:hover {
-    color: #ffffff;
-  }
-  #site-navbar[data-transparent="true"] .nav-cta-login {
-    color: rgba(255,255,255,0.9);
-  }
-  #site-navbar[data-transparent="true"] .nav-lang-btn {
-    background: rgba(255,255,255,0.12) !important;
-    border-color: rgba(255,255,255,0.2) !important;
-  }
-  #site-navbar[data-transparent="true"] .nav-lang-label {
-    color: rgba(255,255,255,0.9) !important;
-  }
-  #site-navbar[data-transparent="true"] .nav-lang-chevron {
-    stroke: rgba(255,255,255,0.9);
-  }
-
-  /* Transparent: white logo, hide dark logo */
-  #site-navbar[data-transparent="true"] .nav-logo-dark { display: none; }
-  #site-navbar[data-transparent="true"] .nav-logo-light { display: block; }
-
-  /* Solid state (scrolled) */
-  #site-navbar[data-transparent="false"] .nav-link,
-  #site-navbar:not([data-transparent="true"]) .nav-link {
-    color: #434A54;
-  }
-  #site-navbar[data-transparent="false"] .nav-link:hover,
-  #site-navbar:not([data-transparent="true"]) .nav-link:hover {
-    color: #20B2AA;
-  }
-  #site-navbar[data-transparent="false"] .nav-cta-login {
-    color: #434A54;
-  }
-  #site-navbar[data-transparent="false"] .nav-lang-label {
-    color: #434A54 !important;
-  }
-  #site-navbar[data-transparent="false"] .nav-lang-chevron {
-    stroke: #434A54;
-  }
-  /* Solid: dark logo, hide white logo */
-  #site-navbar[data-transparent="false"] .nav-logo-dark { display: block; }
-  #site-navbar[data-transparent="false"] .nav-logo-light { display: none; }
-</style>
-
-<script is:inline>
-  // Navbar scroll effect — transparent on hero, solid on scroll
-  var navbar = document.getElementById('site-navbar');
-  var navLinks = navbar.querySelectorAll('.nav-link');
-  var logoImg = navbar.querySelector('.nav-logo');
-
-  function updateNavbar() {
-    if (window.scrollY > 50) {
-      navbar.classList.remove('py-5');
-      navbar.classList.add('py-3');
-      navbar.style.background = 'rgba(248,250,252,0.95)';
-      navbar.style.backdropFilter = 'blur(20px)';
-      navbar.style.webkitBackdropFilter = 'blur(20px)';
-      navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
-      navbar.setAttribute('data-transparent', 'false');
-    } else {
-      navbar.classList.remove('py-3');
-      navbar.classList.add('py-5');
-      navbar.style.background = 'transparent';
-      navbar.style.backdropFilter = 'none';
-      navbar.style.webkitBackdropFilter = 'none';
-      navbar.style.boxShadow = 'none';
-      navbar.setAttribute('data-transparent', 'true');
-    }
-  }
-  updateNavbar();
-  window.addEventListener('scroll', updateNavbar);
-
-  // Product dropdown (may be absent in minimal mode)
-  var productDropdown = document.getElementById('product-dropdown');
-  var productBtn = productDropdown && productDropdown.querySelector('button');
-  var productMenu = document.getElementById('product-menu');
-  if (productBtn && productMenu) {
-    productBtn.addEventListener('click', function() {
-      productMenu.classList.toggle('hidden');
-    });
-  }
-
-  // Lang dropdown (may be absent in minimal mode)
-  var langDropdown = document.getElementById('lang-dropdown');
-  var langBtn = langDropdown && langDropdown.querySelector('button');
-  var langMenu = document.getElementById('lang-menu');
-  if (langBtn && langMenu) {
-    langBtn.addEventListener('click', function() {
-      langMenu.classList.toggle('hidden');
-    });
-  }
-
-  // Save language preference on click
-  document.querySelectorAll('[data-lang]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      localStorage.setItem('cosmos_language', el.getAttribute('data-lang'));
-    });
-  });
-
-  // Close dropdowns on outside click
-  document.addEventListener('mousedown', function(e) {
-    if (productDropdown && productMenu && !productDropdown.contains(e.target)) {
-      productMenu.classList.add('hidden');
-    }
-    if (langDropdown && langMenu && !langDropdown.contains(e.target)) {
-      langMenu.classList.add('hidden');
-    }
-  });
-
-  // Mobile menu (may be absent in minimal mode)
-  var mobileBtn = document.getElementById('mobile-menu-btn');
-  var mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+<script>
+  import './navigation/controller';
 </script>
+
+<style is:global>
+  .site-navigation { --nav-ink:#243c35; --nav-muted:#66766f; --nav-teal:#20b2aa; position:fixed; z-index:60; top:14px; left:16px; right:16px; display:block; font-family:Poppins, sans-serif; color:var(--nav-ink); }
+  .site-navigation * { box-sizing:border-box; }
+  .site-navigation .nav-shell { position:relative; display:flex; align-items:center; gap:10px; max-width:1280px; min-height:68px; margin:auto; padding:8px 12px; border:1px solid rgba(255,255,255,.9); border-radius:22px; background:rgba(255,255,255,.94); box-shadow:0 8px 36px #112f2410, inset 0 1px 0 #fff; backdrop-filter:blur(24px) saturate(145%); -webkit-backdrop-filter:blur(24px) saturate(145%); }
+  .site-navigation .nav-brand { display:flex; align-items:center; flex-shrink:0; min-height:44px; margin-right:auto; border-radius:10px; }
+  .site-navigation .nav-brand img { display:block; width:100px; height:auto; }
+  .site-navigation .nav-link, .site-navigation summary, .site-navigation button { -webkit-tap-highlight-color:transparent; }
+  .site-navigation .nav-link { display:flex; align-items:center; justify-content:center; gap:7px; min-height:44px; padding:0 10px; border-radius:11px; color:var(--nav-ink); text-decoration:none; font-size:12px; font-weight:500; white-space:nowrap; transition:background .18s, color .18s; }
+  .site-navigation .nav-link:hover, .site-navigation .nav-link[aria-current=page], .site-navigation .nav-disclosure[open] > summary { background:#eaf4ef; color:#12695e; }
+  .site-navigation a:focus-visible, .site-navigation summary:focus-visible, .site-navigation button:focus-visible { outline:3px solid #0d9488; outline-offset:3px; }
+  .site-navigation .nav-actions { display:flex; align-items:center; gap:2px; margin-left:auto; }
+  .site-navigation .nav-diagnosis { display:flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding:0 15px; border:1px solid transparent; border-radius:12px; background:var(--nav-teal); color:#063c39; text-decoration:none; font:600 12px Poppins,sans-serif; white-space:nowrap; cursor:pointer; transition:background .18s, box-shadow .18s; }
+  .site-navigation .nav-diagnosis:hover { background:#2dd4bf; box-shadow:0 3px 12px #20b2aa20; }
+  .site-navigation .nav-diagnosis > span { font-size:17px; font-weight:400; }
+  .site-navigation .nav-desktop { display:none; }
+  .site-navigation summary { list-style:none; cursor:pointer; user-select:none; }
+  .site-navigation summary::-webkit-details-marker { display:none; }
+  .site-navigation .nav-disclosure { position:relative; }
+  .site-navigation .nav-chevron { width:6px; height:6px; margin:-3px 2px 0 1px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform .18s; }
+  .site-navigation details[open] > summary .nav-chevron { margin-top:3px; transform:rotate(225deg); }
+  .site-navigation .nav-popover { position:absolute; top:calc(100% + 16px); padding:14px; border:1px solid #e3ece6; border-radius:20px; background:rgba(255,255,255,.98); box-shadow:0 18px 48px #102b2321; }
+  .site-navigation .platform-popover { width:530px; left:50%; transform:translateX(-50%); }
+  .site-navigation .platform-groups { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .site-navigation .nav-group-label { margin:0 0 6px; padding:4px 12px; color:var(--nav-muted); font-size:10px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+  .site-navigation .platform-link { display:flex; flex-direction:column; justify-content:center; gap:5px; min-height:72px; padding:12px; color:var(--nav-ink); text-decoration:none; border-radius:12px; }
+  .site-navigation .platform-link > span { font-size:13px; font-weight:600; }
+  .site-navigation .platform-link small { color:var(--nav-muted); font-family:Inter,sans-serif; font-size:11px; line-height:1.5; }
+  .site-navigation .platform-link:hover { background:#eff7f3; }
+  .site-navigation .nav-language-toggle { padding:0 9px; gap:5px; }
+  .site-navigation .language-popover { width:185px; right:0; padding:6px; }
+  .site-navigation .nav-language-links a { display:flex; align-items:center; gap:10px; min-height:44px; padding:0 12px; border-radius:10px; color:var(--nav-ink); font-size:11px; font-weight:500; text-decoration:none; }
+  .site-navigation .nav-language-links a:hover, .site-navigation .nav-language-links a[aria-current] { background:#eaf4ef; color:#12695e; }
+  .site-navigation .nav-language-name { color:var(--nav-muted); }
+  .site-navigation .nav-language-check { margin-left:auto; }
+  .site-navigation .nav-mobile-disclosure { flex-shrink:0; }
+  .site-navigation .nav-mobile-toggle { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; width:44px; height:44px; border:1px solid #dce8e1; border-radius:12px; background:#ffffff80; }
+  .site-navigation .nav-menu-line { display:block; width:17px; height:1.5px; background:var(--nav-ink); transition:transform .18s; }
+  .site-navigation .nav-mobile-disclosure[open] .nav-menu-line:first-child { transform:translateY(3.25px) rotate(45deg); }
+  .site-navigation .nav-mobile-disclosure[open] .nav-menu-line:last-child { transform:translateY(-3.25px) rotate(-45deg); }
+  .site-navigation .nav-mobile-panel { position:absolute; top:calc(100% + 10px); left:0; right:0; max-height:calc(100vh - 112px); max-height:calc(100dvh - 112px); padding:18px; overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; border:1px solid #e1ebe4; border-radius:22px; background:#fbfdfb; box-shadow:0 20px 50px #102b2326; }
+  .site-navigation .mobile-primary-links { display:grid; gap:2px; padding-bottom:15px; border-bottom:1px solid #e1ebe4; }
+  .site-navigation .mobile-primary-links .nav-link { justify-content:space-between; min-height:49px; padding:0 10px; font-size:17px; font-weight:500; }
+  .site-navigation .mobile-primary-links .nav-link > span, .site-navigation .mobile-secondary-links .nav-link > span { color:#769086; font-size:18px; }
+  .site-navigation .mobile-platform-label { margin:20px 10px 13px; font-size:13px; font-weight:600; }
+  .site-navigation .platform-groups-compact { gap:8px; }
+  .site-navigation .platform-groups-compact .nav-group-label { padding:0 10px; font-size:9px; letter-spacing:.06em; }
+  .site-navigation .platform-groups-compact .platform-link { min-height:44px; padding:8px 10px; }
+  .site-navigation .platform-groups-compact .platform-link > span { font-size:12px; font-weight:500; }
+  .site-navigation .mobile-secondary-links { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px 0; margin-top:14px; border-top:1px solid #e1ebe4; border-bottom:1px solid #e1ebe4; }
+  .site-navigation .mobile-secondary-links .nav-link { justify-content:space-between; padding:0 10px; }
+  .site-navigation .mobile-language-row { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 0; }
+  .site-navigation .mobile-language-row .nav-group-label { margin:0; padding:0 10px; }
+  .site-navigation .nav-language-compact { display:flex; gap:3px; }
+  .site-navigation .nav-language-compact a { min-width:44px; justify-content:center; padding:0 8px; border:1px solid #e4ece6; }
+  .site-navigation .nav-language-compact .nav-language-check { display:none; }
+  .site-navigation .mobile-diagnosis { min-height:48px; }
+  .site-navigation .nav-minimal-status { position:absolute; top:calc(100% + 10px); right:0; max-width:320px; margin:0; padding:16px; border:1px solid #e1ebe4; border-radius:16px; background:#fff; box-shadow:0 8px 30px #102b2326; font-size:12px; line-height:1.6; }
+  .site-navigation [hidden] { display:none; }
+  @media (max-width:380px) {
+    .site-navigation { left:10px; right:10px; }
+    .site-navigation .nav-shell { gap:6px; padding:8px; }
+    .site-navigation .nav-brand img { width:92px; }
+    .site-navigation .nav-diagnosis { gap:6px; padding:0 10px; font-size:11px; }
+    .site-navigation .nav-mobile-panel { padding:14px; }
+  }
+  @media (min-width:1120px) {
+    .site-navigation .nav-shell { gap:16px; padding:8px 18px; }
+    .site-navigation .nav-brand img { width:112px; }
+    .site-navigation .nav-desktop { display:flex; }
+    .site-navigation .nav-main-links { align-items:center; gap:0; }
+    .site-navigation .nav-mobile-disclosure { display:none; }
+    .site-navigation .nav-actions { gap:4px; }
+    .site-navigation .nav-diagnosis { margin-left:5px; padding:0 17px; }
+  }
+  @media (min-width:1250px) { .site-navigation .nav-main-links { gap:4px; } .site-navigation .nav-link { font-size:13px; } }
+  @media (prefers-reduced-motion:reduce) { .site-navigation *, .site-navigation *::before, .site-navigation *::after { transition:none; } }
+</style>

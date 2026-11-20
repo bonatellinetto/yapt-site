@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "title": "Artificial intelligence for marketing and revenue",
+    "description": "Artificial intelligence for marketing: automation, multichannel campaigns and revenue attribution to nurture leads and connect marketing with sales."
+  },
+  "hero": {
+    "eyebrow": "Artificial intelligence for marketing",
+    "title": "Artificial intelligence for marketing.",
+    "ending": "More revenue from your campaigns.",
+    "description": "Turn campaigns into conversations and sales with artificial intelligence, marketing automation and lead nurturing. Track attributed revenue and keep the journey moving across channels. Your team runs the platform and can choose support from our specialists.",
+    "cta": "I'd like a marketing assessment",
+    "secondary": "See how it works",
+    "proof": "Official Meta Partner · 40M+ messages per month · 16 years.",
+    "screenLabel": "From campaigns to attributed revenue",
+    "screenNote": "Real product screen · operational example",
+    "imageAlt": "A real yapt. report connecting campaign investment, leads, conversations and attributed revenue.",
+    "tags": [
+      "Campaigns",
+      "Conversations",
+      "Opportunities",
+      "Revenue"
+    ]
+  },
+  "scenarios": {
+    "eyebrow": "The cost of missed opportunities",
+    "title": "How much revenue is your marketing leaving on the table?",
+    "description": "Budget spent on the wrong ads, leads that go cold without follow-up and team time tied up in manual tasks: losses add up between stages. See how yapt. connects data, AI and automation to recover opportunities and invest with greater clarity.",
+    "navLabel": "Explore marketing challenges",
+    "mechanismLabel": "How yapt. solves it",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Operational example",
+    "moreLabel": "Expand real product screen",
+    "items": [
+      {
+        "id": "retorno",
+        "short": "Investment and return",
+        "pain": "“We keep spending without knowing which ads generate revenue.”",
+        "title": "Decide where to invest with revenue in the same view.",
+        "description": "Bring together investment, source, conversations and sales to decide where to maintain, increase or reassess spending. Compare campaigns and accounts using the same analysis criteria.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Connect",
+            "text": "Meta and Google in the campaign view."
+          },
+          {
+            "title": "Track",
+            "text": "From lead to conversation to deal."
+          },
+          {
+            "title": "Decide",
+            "text": "Attributed revenue and return by campaign."
+          }
+        ],
+        "benefits": [
+          "Identify sales with a known source and recognize those that still have no attribution.",
+          "Send relevant operational events back to connected platforms through the Conversion Center."
+        ],
+        "metric": "Attributed revenue, campaign return and sales conversion.",
+        "example": {
+          "title": "From the sale to the next decision",
+          "when": "An opportunity moves forward or a sale is recorded.",
+          "then": "Its source remains linked to the deal and can feed the configured conversion events.",
+          "outcome": "Marketing gains a concrete basis for evaluating investment."
+        },
+        "image": "/solucao/img/349dc240d272.jpg",
+        "imageAlt": "A real yapt. report showing investment, leads, conversations, sales and return by campaign.",
+        "imageWidth": 2000,
+        "imageHeight": 578
+      },
+      {
+        "id": "controle",
+        "short": "Multichannel campaigns",
+        "pain": "“A valuable contact base goes unreached because campaigns rely on just one channel.”",
+        "title": "Activate more opportunities. With campaigns across channels.",
+        "description": "Send campaigns through WhatsApp, email, SMS and RCS, according to the channels enabled for your operation. Define the audience, content, timing and pace with estimates and spending tracking. On WhatsApp, also configure where replies are routed.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Choose",
+            "text": "Audience and channel for the campaign."
+          },
+          {
+            "title": "Prepare",
+            "text": "Content, cost, timing and pace."
+          },
+          {
+            "title": "Track",
+            "text": "Sends, replies and the next step."
+          }
+        ],
+        "benefits": [
+          "Choose the right channel for each audience and track the sending, delivery and response indicators available for that channel.",
+          "Plan estimates and spending limits alongside the channel’s available capacity.",
+          "On WhatsApp, route replies to the appropriate team and monitor channel quality signals."
+        ],
+        "metric": "Sending cost and the delivery, response and conversion indicators available by channel.",
+        "example": {
+          "title": "The reply reaches the responsible team",
+          "when": "The campaign is ready to run.",
+          "then": "The team reviews the estimate, pace and the team that should receive replies.",
+          "outcome": "The operation knows what will happen before sending begins."
+        },
+        "image": "/produto/marketing/campanhas-canais-real.png",
+        "imageAlt": "Real yapt. campaign creation screen showing WhatsApp, email and RCS channels.",
+        "imageWidth": 2032,
+        "imageHeight": 1532
+      },
+      {
+        "id": "publicos",
+        "short": "Audiences and relevance",
+        "pain": "“We spend on the same message for audiences that need different approaches.”",
+        "title": "Reach the right people. At the right time.",
+        "description": "Combine profiles, purchases, pipeline stages and campaign interactions to build more relevant audiences. Each group receives communication that reflects what has already happened.",
+        "icon": "marketing",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Profile, behavior and timing."
+          },
+          {
+            "title": "Combine",
+            "text": "Purchase, campaign and pipeline criteria."
+          },
+          {
+            "title": "Activate",
+            "text": "The audience in the appropriate campaign or sequence."
+          }
+        ],
+        "benefits": [
+          "Re-engage contacts, find customers who fit and keep messages relevant to each group.",
+          "Use your own qualification criteria to distinguish who is ready, needs nurturing or is not a fit."
+        ],
+        "metric": "Responses and qualified opportunities by audience.",
+        "example": {
+          "title": "Bring your existing database back into the plan",
+          "when": "You identify contacts who match the desired profile but have stopped progressing.",
+          "then": "The audience selects contacts using the defined criteria and guides the engagement action.",
+          "outcome": "The campaign gains a clear reason for contacting each person."
+        },
+        "image": "/produto/marketing/publicos-engajamento-real.webp",
+        "imageAlt": "A yapt. screen with audiences organized by relationship stage.",
+        "imageWidth": 1400,
+        "imageHeight": 738
+      },
+      {
+        "id": "relacionamento",
+        "short": "Nurturing and re-engagement",
+        "pain": "“We invest in generating interest, but contacts go cold without follow-up.”",
+        "title": "Keep interest alive. Respect every response.",
+        "description": "Maintain engagement with WhatsApp and email sequences. Messages, waits and conditions follow contact behavior and the opportunity's stage.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Detect",
+            "text": "Audience entry or a business event."
+          },
+          {
+            "title": "Continue",
+            "text": "Messages, waits and conditions."
+          },
+          {
+            "title": "Adapt",
+            "text": "Responses, progress and exit criteria."
+          }
+        ],
+        "benefits": [
+          "Configure sequence exit when the contact responds, changes stage or the deal closes.",
+          "Manage re-entry and intervals to prevent duplicate active sequences."
+        ],
+        "metric": "Responses, re-engagement and opportunity progress.",
+        "example": {
+          "title": "Engagement changes when the customer responds",
+          "when": "A lead does not respond to the first contact.",
+          "then": "The sequence follows the planned next steps. When the lead responds, the configured rule can end the sequence.",
+          "outcome": "The team takes over the conversation with context, without repeating the previous message."
+        },
+        "image": "",
+        "imageAlt": "",
+        "imageWidth": 0,
+        "imageHeight": 0
+      },
+      {
+        "id": "oportunidades",
+        "short": "Lead capture and sales",
+        "pain": "“Leads arrive, but delays, missing context and handoffs cost us opportunities.”",
+        "title": "Give Sales a conversation ready to continue.",
+        "description": "Connect lead capture, source, AI qualification and routing. The salesperson receives the opportunity knowing where it came from, what the contact needs and what has already been discussed.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Capture",
+            "text": "Website, form or conversation."
+          },
+          {
+            "title": "Qualify",
+            "text": "Criteria and context with AI."
+          },
+          {
+            "title": "Route",
+            "text": "Summary, history and next step."
+          }
+        ],
+        "benefits": [
+          "Reduce context loss between ads, pages and WhatsApp using the available source identification.",
+          "Prepare the salesperson with a summary, score and copilot suggestions; the team keeps control over the response."
+        ],
+        "metric": "Time to contact and conversion from qualification to sale.",
+        "example": {
+          "title": "The salesperson starts at the right point",
+          "when": "A person arrives through a campaign and talks to AI.",
+          "then": "Qualification records criteria and context. A deal can be created and routed according to the rules.",
+          "outcome": "The sales team continues the negotiation with the information brought together."
+        },
+        "image": "/produto/marketing/academy-atribuicao-painel.webp",
+        "imageAlt": "A real screen showing a conversation's source and attribution in yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 956
+      },
+      {
+        "id": "execucao",
+        "short": "Content and execution",
+        "pain": "“The team spends hours setting up the operation while opportunities wait.”",
+        "title": "Scale content. Clear repetitive work out of the way.",
+        "description": "Use AI with your brand's context to prepare content and connect recurring tasks through automations. Your team gains a foundation to create, review and improve.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Guide",
+            "text": "Brand, strategy and selected documents."
+          },
+          {
+            "title": "Prepare",
+            "text": "Content, templates and next steps."
+          },
+          {
+            "title": "Connect",
+            "text": "Automations and tools for your systems."
+          }
+        ],
+        "benefits": [
+          "Prepare content for blogs, LinkedIn and Instagram using a defined brand kit and guidelines, with your team retaining review.",
+          "In yaAgents, describe agents, criteria and integration tools through conversation, with configuration and validation before use."
+        ],
+        "metric": "Campaign preparation time and volume of manual work.",
+        "example": {
+          "title": "A starting point with your brand's context",
+          "when": "The team needs to prepare a new piece of content.",
+          "then": "AI uses the brand kit, strategy and selected materials to support creation.",
+          "outcome": "The team reviews, refines and prepares publication with fewer restarts."
+        },
+        "image": "/produto/vendas-yaagents.webp",
+        "imageAlt": "A real screen of yapt.'s AI agent builder.",
+        "imageWidth": 1600,
+        "imageHeight": 1193
+      }
+    ],
+    "imageNote": "Product screens in Portuguese · configuration examples.",
+    "conversionFeedback": {
+      "label": "Conversion Center",
+      "title": "Send qualification and sales signals back to your campaigns.",
+      "description": "Send qualification, stage progression and sales events to connected platforms. Meta and Google can then use operational signals to optimize campaigns, according to the integrations and events configured.",
+      "events": [
+        "Qualified lead",
+        "Relevant stage",
+        "Recorded sale"
+      ]
+    },
+    "channelsLabel": "Campaigns across your available channels",
+    "channels": [
+      "WhatsApp",
+      "Email",
+      "SMS",
+      "RCS"
+    ],
+    "channelsNote": "Channels depend on availability and your agreement. Engagement sequences connect WhatsApp and email."
+  },
+  "journey": {
+    "eyebrow": "Inside yapt.",
+    "title": "An entire journey. Context follows along.",
+    "description": "From investment to conversation, from sequences to results. Explore the platform in action and follow how its stages connect.",
+    "note": "A demonstration of how it works. Results depend on the scenario, data and operational configuration."
+  },
+  "foundation": {
+    "eyebrow": "Artificial intelligence across the customer journey",
+    "title": "AI and automation at every campaign stage.",
+    "description": "Multichannel campaigns, audiences and nurturing sequences share data with marketing and sales. Revenue attribution guides investment; the Conversion Hub sends events to connected platforms. Specialists can support configuration and ongoing improvement.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "AI for lead qualification",
+        "text": "Campaign and conversation context helps qualify leads, prepare summaries and carry out configured actions."
+      },
+      {
+        "icon": "automation",
+        "title": "Marketing automation",
+        "text": "Intelligent sequences nurture and reactivate leads, with messages and next steps based on defined events and conditions."
+      },
+      {
+        "icon": "data",
+        "title": "Revenue attribution",
+        "text": "Connect investment, lead sources, conversations and sales to track what each campaign generates."
+      },
+      {
+        "icon": "integrations",
+        "title": "Conversion Hub",
+        "text": "Send journey events to connected advertising platforms and use operational data to support optimization."
+      }
+    ],
+    "builderLabel": "yaAgents · build through conversation",
+    "builderTitle": "Describe what your operation needs. Build the next step with AI.",
+    "builderDescription": "Agents, qualification criteria and integration tools can be prepared through conversation. Your team reviews, tests and improves the setup, with support from our specialists if needed.",
+    "builderLink": "Explore yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "A real screen of yapt.'s AI agent builder."
+  },
+  "adoption": {
+    "eyebrow": "Applying AI to your marketing",
+    "title": "Your operation has its own needs. Implementation must understand them.",
+    "description": "Choose the first bottleneck and connect campaigns to operational data. Your team can use the platform or choose our specialists to configure scenarios and support ongoing improvement.",
+    "steps": [
+      {
+        "title": "Understand",
+        "text": "Map the journey, data, systems and where opportunities are lost."
+      },
+      {
+        "title": "Apply",
+        "text": "Configure the first scenario, AI, rules and necessary integrations."
+      },
+      {
+        "title": "Improve",
+        "text": "Track indicators, guide the team and adjust what needs to improve."
+      }
+    ],
+    "footnote": "Scope, channels, integrations and features are defined according to each company's needs and configuration."
+  },
+  "faq": {
+    "eyebrow": "Before getting started",
+    "title": "Clarity for decision-makers. Context for operators.",
+    "items": [
+      {
+        "question": "Does yapt. replace all the tools we already use?",
+        "answer": "The assessment defines what makes sense to bring into yapt. and what needs to remain connected. Integrations depend on available systems, APIs and access; the aim is to maintain operational continuity with the necessary data."
+      },
+      {
+        "question": "Do we need to start with every scenario?",
+        "answer": "We can prioritize one bottleneck and define a first scenario with clear indicators. Further development considers the process, data readiness, integrations and the team that will operate it."
+      },
+      {
+        "question": "How does artificial intelligence help with revenue attribution?",
+        "answer": "yapt. connects campaigns, sources, leads, conversations and sales to support investment analysis. Attributed revenue and return must be read with a defined period and attribution criteria, also recognizing sales with no identified source. The Conversion Hub sends configured events to connected platforms to support optimization."
+      },
+      {
+        "question": "Does AI make every decision on its own?",
+        "answer": "Configuration defines the criteria, tools and permitted actions. Copilots support the team with summaries and suggestions; agents can perform configured tasks. Permissions, review and testing are part of preparation."
+      },
+      {
+        "question": "How do multichannel campaigns and marketing automation work?",
+        "answer": "Sequences connect WhatsApp and email to maintain communication and nurture leads. Other campaign channels, such as SMS and RCS, depend on availability and subscription. Events, conditions and integrations define how each scenario works; the assessment confirms the appropriate channels and capabilities."
+      },
+      {
+        "question": "Does content generation automatically publish to social media?",
+        "answer": "The team can prepare and review content for blogs, LinkedIn and Instagram using the selected brand context. Content preparation and internal publication tracking do not mean automatic posting to social media."
+      },
+      {
+        "question": "Can we use the platform without hiring specialists?",
+        "answer": "Yes. Your own team can run the platform. If you need help implementing and improving scenarios, you can combine yapt. with specialists. New Way also offers consulting for a defined problem, with or without the platform."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "The next step is finding where to act",
+    "title": "Let's discover where your marketing loses opportunities and revenue.",
+    "description": "We analyze the journey between campaigns, conversations and sales to identify bottlenecks and define how to apply AI, automations and integrations to your operation.",
+    "points": [
+      "A view of the bottlenecks in your journey.",
+      "A first scenario with clear priorities.",
+      "The platform, with specialist support if you need it."
+    ],
+    "cta": "I'd like a marketing assessment",
+    "footnote": "Talk to our team about your operation.",
+    "error": "The contact form could not load. Try again or open WhatsApp using the link below.",
+    "fallback": "Open WhatsApp directly",
+    "noScript": "You can also contact our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close expanded image",
+    "imageLabel": "Real product screen",
+    "openImage": "Expand screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to expand and close it."
+  }
+}

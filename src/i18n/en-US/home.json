@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "Artificial intelligence platform for businesses",
+    "description": "AI for marketing, sales, support and operations. WhatsApp CRM, agents, automation and integrations to improve revenue and operational efficiency."
+  },
+  "hero": {
+    "eyebrow": "An artificial intelligence platform for",
+    "eyebrowAreas": "Marketing, Sales, Support and Operations.",
+    "platformBy": "A platform by",
+    "title": "More revenue and operational efficiency.",
+    "ending": "With AI applied to your business.",
+    "description": "An artificial intelligence platform connecting WhatsApp CRM, agents, copilots, automation and your business data and systems. Generate more revenue and operational efficiency with your team or with our specialists.",
+    "cta": "I'd like an assessment",
+    "secondary": "Explore the operation",
+    "proofMessagesLabel": "msgs/month",
+    "proofYearsLabel": "years",
+    "sceneLabel": "An illustrative journey: campaigns, conversations, sales, and service connected",
+    "sceneCaption": "One conversation. Your entire operation connected.",
+    "chatTitle": "A conversation with context",
+    "chatRole": "AI + your team",
+    "chatInbound": "I saw the campaign and would like to know more.",
+    "chatOutbound": "Let's find the best path for you. I already have the context of what you're looking for.",
+    "chatEvent": "Context shared with the team",
+    "connections": {
+      "label": "Channels and systems connected to your operation",
+      "smart": "Intelligent integrations"
+    }
+  },
+  "areas": {
+    "marketing": {
+      "label": "Marketing",
+      "phrase": "From campaign to revenue, with source and results connected.",
+      "points": [
+        "Intelligent nurturing sequences and automatic follow-ups.",
+        "AI conversations with the context of each campaign.",
+        "Intelligence and management to track conversion and revenue."
+      ]
+    },
+    "sales": {
+      "label": "Sales",
+      "phrase": "AI that prepares sellers. Management that moves sales forward.",
+      "points": [
+        "Qualifies leads, reads documents and audio, and identifies where each opportunity came from.",
+        "Summarizes context and suggests what the seller should reply.",
+        "Prospecting and sales pipelines, activities and targets connected to your business data."
+      ]
+    },
+    "support": {
+      "label": "Support",
+      "phrase": "Service that knows the customer and resolves issues with context.",
+      "points": [
+        "AI in tier 1 and tier 2 support, with customer history and access to your knowledge base.",
+        "Answers grounded in complex documentation, with defined limits and handover to your team.",
+        "API automations with the potential to handle close to 50% of requests, depending on your processes and integrations."
+      ]
+    },
+    "operations": {
+      "label": "Operations",
+      "phrase": "Visibility to anticipate bottlenecks and improve efficiency.",
+      "points": [
+        "Queues, deadlines, capacity and productivity in one operational view.",
+        "Request routing and automations that reduce manual tasks.",
+        "Connected data to identify bottlenecks and guide decisions."
+      ]
+    },
+    "ai": {
+      "label": "AI",
+      "phrase": "Agents and copilots built through conversation for your operation.",
+      "points": [
+        "Talk to yaAgents to create AI agents, copilots and automations.",
+        "Connect knowledge, tools and APIs from your systems.",
+        "Define rules, test answers and improve agents with our specialists."
+      ]
+    },
+    "teams": {
+      "label": "Teams",
+      "phrase": "People and groups collaborate with customer conversation context.",
+      "points": [
+        "Discuss a case with colleagues, groups and authorized partners.",
+        "Open the original customer conversation and keep the reasoning in threads.",
+        "Review decisions before adding them to the conversation’s internal history."
+      ]
+    }
+  },
+  "problem": {
+    "eyebrow": "AI and specialists, focused on your operation.",
+    "title": "Your operational bottlenecks resolved with an artificial intelligence platform and people who work alongside you.",
+    "description": "We examine your processes, data, and customer journey to identify the bottlenecks holding back revenue and efficiency. With our AI-native platform and specialists working alongside you, we build an operation tailored to your business, connected to your team and the systems you already use.",
+    "insideLabel": "Inside your operation",
+    "outsideLabel": "In the customer experience",
+    "items": [
+      {
+        "area": "Marketing",
+        "headline": "Common problems in Marketing operations",
+        "inside": {
+          "number": "70%",
+          "fact": "of marketing professionals report difficulty measuring the return on their activities and campaigns.",
+          "source": "Gartner / MarTech · 2025",
+          "url": "https://martech.org/how-to-stop-wasting-money-on-personalization/"
+        },
+        "outside": {
+          "number": "31%",
+          "fact": "of consumers say that experiences without personalization have led them to buy from another brand.",
+          "source": "Twilio · State of Customer Engagement, 2024",
+          "url": "https://www.twilio.com/en-us/press/releases/socer-2024"
+        }
+      },
+      {
+        "area": "Sales",
+        "headline": "In Sales, the numbers reveal missed opportunities",
+        "inside": {
+          "number": "60%",
+          "fact": "of sales reps’ time goes to tasks other than selling.",
+          "source": "Salesforce · State of Sales, 2026",
+          "url": "https://www.salesforce.com/sales/state-of-sales/sales-statistics/"
+        },
+        "outside": {
+          "number": "73%",
+          "fact": "of B2B buyers surveyed avoid suppliers that send irrelevant outreach.",
+          "source": "Gartner · B2B buyer survey, 2025",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-sales-survey-finds-61-percent-of-b2b-buyers-prefer-a-rep-free-buying-experience"
+        }
+      },
+      {
+        "area": "Support",
+        "headline": "In Support, inefficiency affects experience and revenue",
+        "inside": {
+          "number": "47%",
+          "fact": "of poor experiences lead customers to reduce their spending with the company.",
+          "source": "Qualtrics · study for 2026",
+          "url": "https://www.qualtrics.com/articles/customer-experience/3-trillion-risk-due-bad-customer-experiences-2026/"
+        },
+        "outside": {
+          "number": "74%",
+          "fact": "of consumers get frustrated when they have to repeat information.",
+          "source": "Zendesk · CX Trends, 2026",
+          "url": "https://www.zendesk.com/newsroom/press-releases/contextual-intelligence-becomes-the-new-standard-for-exceptional-customer-experience-in-2026/"
+        }
+      }
+    ],
+    "note": "Market research with different samples and time periods. The Qualtrics figure covers the overall customer experience and measures reduced spending, not the percentage of revenue lost.",
+    "bridgeLead": "The market shows the scale of the problem. Our specialists find where it appears in your company.",
+    "bridgeTitle": "With yapt., the diagnosis becomes a platform delivering results in the first month or a tailored operation with a team of specialists.",
+    "bridgeText": "AI, automation, and integrations applied to your bottlenecks to put the solution into practice.",
+    "cta": "Find the bottlenecks in my operation"
+  },
+  "ecosystem": {
+    "eyebrow": "Intelligence that connects",
+    "title": "More revenue.",
+    "description": "More efficient operations and management.",
+    "center": "Shared intelligence",
+    "hint": "Explore every part of the operation",
+    "management": "Management across departments",
+    "operations": "Track queues, deadlines, capacity, and productivity from end to end.",
+    "expansion": "The relationship continues after the sale.",
+    "expansionText": "Account portfolios, audiences, and engagement sequences preserve context to retain, reactivate, and grow with existing customers.",
+    "operationsLink": "Explore Operations",
+    "expansionLink": "Explore post-sale engagement"
+  },
+  "solutions": {
+    "eyebrow": "Where results happen",
+    "title": "See how we help drive more revenue and operational efficiency.",
+    "description": "Marketing, sales, support and operations: a platform, AI and specialists working to turn bottlenecks into results.",
+    "items": [
+      {
+        "id": "marketing",
+        "key": "marketing",
+        "label": "Marketing",
+        "title": "More revenue from your campaigns. Fewer leads left unanswered.",
+        "answer": "You invest in generating interest, but contacts go cold, nurturing falls behind, and it is not always clear what turned into a sale. We connect campaigns, conversations and deals to turn that interest into revenue, with AI and specialists working alongside you.",
+        "bullets": [
+          "Know what brings results: track each lead from its source to the deal and revenue.",
+          "Keep interest alive: nurturing, personalization and automatic follow-ups.",
+          "Improve the handover to sales: opportunities with history and campaign context."
+        ],
+        "href": "/marketing-site",
+        "link": "Explore yapt. for Marketing",
+        "image": "/produto/vendas-leads.webp",
+        "alt": "Real yapt. lead list showing source, journey, linked deal and qualification score",
+        "width": 1600,
+        "height": 664
+      },
+      {
+        "id": "vendas",
+        "key": "sales",
+        "label": "Sales",
+        "title": "More deals moving forward. Fewer opportunities going cold.",
+        "answer": "Leads waiting for replies, sellers searching for information and follow-ups relying on memory reduce conversion. yapt. connects WhatsApp CRM, AI agents and pipeline management to prepare opportunities and move deals forward.",
+        "bullets": [
+          "Start the conversation prepared: AI that qualifies leads, interprets documents and audio, and summarizes context.",
+          "Keep negotiations moving: connected reply suggestions, activities and follow-ups.",
+          "See where sales get stuck: pipeline, targets and business information in the same operation."
+        ],
+        "href": "/sales",
+        "link": "Explore yapt. for Sales",
+        "image": "/produto/vendas-funil.webp",
+        "alt": "A real yapt. pipeline with deals, values, revenue forecasts, and targets",
+        "width": 1600,
+        "height": 301
+      },
+      {
+        "id": "suporte",
+        "key": "support",
+        "label": "Support",
+        "title": "Resolve more. Make customers repeat less.",
+        "answer": "Customers repeat their story, agents search for answers and tickets change hands without moving forward. AI for customer service connects history, tickets and knowledge to support your team and keep service moving toward resolution.",
+        "bullets": [
+          "Combine customer context with AI for L1 and L2: connect history, tickets and customer data, with answers grounded in your documentation and actions in your systems.",
+          "Reduce handling times with intelligent management: organize queues, teams, priorities and customer portfolios to balance workload and improve service efficiency.",
+          "Hand off with context and track results: the team receives the AI summary and conversation history; reports show resolution, response times, productivity and bottlenecks."
+        ],
+        "href": "/support",
+        "link": "Explore yapt. for Support",
+        "image": "/produto/ops-indicadores-suporte.webp",
+        "alt": "Real support metrics in yapt. showing resolution and service times",
+        "width": 1600,
+        "height": 692
+      },
+      {
+        "id": "operacoes",
+        "key": "operations",
+        "label": "Operations",
+        "href": "/operations",
+        "link": "Explore yapt. for Operations",
+        "image": "/produto/ops-filas.webp",
+        "alt": "Actual yapt. queue health screen with waiting conversations, longest wait and available agents by department",
+        "width": 1600,
+        "height": 670,
+        "title": "Less rework. More capacity to deliver.",
+        "answer": "Growing queues, overloaded teams and scattered information make it difficult to know where to act. Apply artificial intelligence for operations, process automation and system integration to improve work across teams, with specialists available when needed.",
+        "bullets": [
+          "See where work stops: queues, deadlines, capacity and productivity in one view.",
+          "Reduce manual work: request routing and processes connected to existing systems.",
+          "Track improvement: owners, indicators and visibility into the effect of each change."
+        ]
+      }
+    ],
+    "screenLabel": "Inside the platform"
+  },
+  "foundation": {
+    "eyebrow": "AI applied to your operation",
+    "title": "Intelligence to converse, guide, and get things done.",
+    "description": "yapt. is an AI-native platform that connects conversations, people, data, and your company's systems. In yaAgents, you describe what you need and build with support from specialists.",
+    "builderLabel": "yaAgents · Builder",
+    "preview": "Illustrative example",
+    "status": "Draft · you decide when to publish",
+    "hint": "See four possibilities",
+    "steps": [
+      "Describe",
+      "Refine",
+      "Test",
+      "Publish"
+    ],
+    "examples": [
+      {
+        "label": "Sales agent",
+        "prompt": "I want an AI that understands the lead, qualifies them, and passes the context to the salesperson.",
+        "response": "Let's build it. It can use your knowledge, follow the qualification journey, and hand the conversation over to the right team.",
+        "capabilities": [
+          "Company knowledge",
+          "Qualification journey",
+          "Team handoff"
+        ]
+      },
+      {
+        "label": "Operator mentor",
+        "prompt": "I want a copilot that helps my team resolve tickets without losing context.",
+        "response": "Let's connect your procedures and history. The mentor can suggest replies and guide the next action while the person handles the service interaction.",
+        "capabilities": [
+          "Procedures",
+          "Service context",
+          "Suggestions for the operator"
+        ]
+      },
+      {
+        "label": "Intelligent routing",
+        "prompt": "I want each conversation to reach someone who can resolve it, considering the topic, urgency, and team capacity.",
+        "response": "Let's combine your operating rules with AI analysis to understand the context and route conversations. You define the criteria and test before publishing.",
+        "capabilities": [
+          "Profile and capacity",
+          "Context and urgency",
+          "Team-defined rules"
+        ]
+      },
+      {
+        "label": "Integration and data",
+        "prompt": "I want to look up an order in my system, show the data during service, and let the agent update authorized information.",
+        "response": "Let's define access and the actions the connection can perform. You test lookups and updates, choose when an action needs approval, and decide when to publish.",
+        "capabilities": [
+          "Data during service",
+          "Lookups and actions",
+          "Human approval"
+        ]
+      }
+    ],
+    "builderLink": "Explore yapt. intelligence",
+    "cards": [
+      {
+        "key": "ai",
+        "label": "Artificial intelligence",
+        "title": "AI to serve, guide, and act.",
+        "text": "From the first conversation to the next decision, AI joins the work with your company's context.",
+        "bullets": [
+          "Agents handle conversations, qualify opportunities, and carry out authorized actions.",
+          "Mentors and copilots suggest replies and next steps using history and company knowledge.",
+          "Lead scoring and sentiment analysis help the team prioritize."
+        ],
+        "href": "/intelligence",
+        "link": "Explore yapt. AI"
+      },
+      {
+        "key": "automation",
+        "label": "Automations",
+        "title": "Every conversation takes the next step.",
+        "text": "Operating rules and AI analysis turn what happens in a conversation into next steps.",
+        "bullets": [
+          "Route conversations by profile, capacity, and urgency.",
+          "Schedule follow-ups, tasks, and stage changes at the defined time.",
+          "Carry actions into connected systems to keep the process moving."
+        ],
+        "href": "/automations",
+        "link": "Explore automations"
+      },
+      {
+        "key": "data",
+        "label": "Data in context",
+        "title": "The right context when it's time to resolve.",
+        "text": "Bring information from your company's systems into the place where conversations and work happen.",
+        "bullets": [
+          "Orders, customer records, and financial information in the operator's workspace.",
+          "The same context available for AI to consult and carry out authorized actions.",
+          "Data that feeds automations and operational indicators."
+        ],
+        "href": "/conversations",
+        "link": "See data during service"
+      },
+      {
+        "key": "integrations",
+        "label": "Integrations",
+        "title": "From what you describe to a connected system.",
+        "text": "Talk to the Builder in yaAgents to create tools, integrations, and workflows that look up or update information in systems.",
+        "bullets": [
+          "Define which data and actions each connection can access.",
+          "Test the behavior and choose when to publish.",
+          "Work with specialists to design and connect each scenario."
+        ],
+        "href": "/integrations",
+        "link": "Explore integrations"
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Technology with people alongside you",
+    "title": "You get more than a platform. You get a team that makes it happen.",
+    "description": "New Way connects technology to the reality of your business. People who understand the process, build alongside you, and stay involved in the operation.",
+    "tag": "New Way + your team",
+    "headline": "From the first conversation to continuous improvement.",
+    "items": [
+      {
+        "step": "01",
+        "title": "Understand before building",
+        "text": "We map the journey, pain points, and systems to find where AI makes a difference."
+      },
+      {
+        "step": "02",
+        "title": "Get it working together",
+        "text": "Configuration, knowledge, integrations, and team preparation aligned with your process."
+      },
+      {
+        "step": "03",
+        "title": "Monitor and improve",
+        "text": "The operation shows what needs adjusting. We help turn that into improvement."
+      }
+    ],
+    "link": "Let's talk about your operation"
+  },
+  "results": {
+    "eyebrow": "In real operations",
+    "title": "The scale is already real.",
+    "description": "Technology that is already part of companies' day-to-day service and customer relationships.",
+    "items": [
+      {
+        "value": "1 million+",
+        "label": "service interactions handled by AI"
+      },
+      {
+        "value": "130 thousand+",
+        "label": "conversations resolved on the platform"
+      },
+      {
+        "value": "Up to 70%",
+        "label": "AI containment in sectors with validated results"
+      }
+    ],
+    "note": "Aggregated customer data, with a baseline validated in July 2026. Results vary by operation; they are not a promise of individual performance."
+  },
+  "diagnostic": {
+    "eyebrow": "Your next step",
+    "title": "Where can AI move your business forward?",
+    "description": "Let's look at your operation and find opportunities to increase revenue, improve efficiency, and reduce costs. With a clear view of what to do first.",
+    "cta": "I'd like an assessment",
+    "points": [
+      "Your reality",
+      "Your priorities",
+      "A path to get started"
+    ],
+    "footnote": "A conversation to understand where you are today.",
+    "error": "The form did not open. Please wait a moment and try again.",
+    "fallback": "Contact New Way"
+  }
+}

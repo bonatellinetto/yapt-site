@@ -1,0 +1,158 @@
+---
+import UIIcon from '../UIIcon.astro';
+import ProductJourney from '../home/ProductJourney.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+import rawManifest from '../../../public/produto/intelligence/journey-manifest.json';
+import rawScenarioManifest from '../../../public/produto/intelligence/scenario-manifest.json';
+
+type ScenarioKind = 'agentes' | 'copilotos' | 'conexoes' | 'conhecimento' | 'acoes' | 'controle';
+type LocalizedText = Partial<Record<Locale | 'pt' | 'en' | 'es', string>>;
+interface Props { locale: Locale; kind?: ScenarioKind }
+type CaptureFrame = {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  durationMs: number;
+  caption: LocalizedText;
+  focus?: { x: number; y: number };
+  zoom?: number;
+  mobileScale?: number;
+};
+type CaptureManifest = {
+  version: number;
+  source: { environment: string; tenant: string; language: string; capturedAt?: string };
+  chapters: { id: string; frames: CaptureFrame[] }[];
+  video?: string;
+};
+type Scenario = {
+  title: LocalizedText;
+  label: LocalizedText;
+  sourceNote: LocalizedText;
+  chapters: { id: string; label: LocalizedText; frames: CaptureFrame[] }[];
+};
+type ScenarioManifest = { version: number; scenarios: Partial<Record<ScenarioKind, Scenario>> };
+const { locale, kind } = Astro.props;
+const manifest = rawManifest as CaptureManifest;
+const scenario = kind ? (rawScenarioManifest as ScenarioManifest).scenarios[kind] : undefined;
+const chapters = kind ? scenario?.chapters || [] : manifest.chapters;
+const clamp = (number: number, minimum: number, maximum: number) => Math.min(maximum, Math.max(minimum, number));
+const captures = chapters.flatMap((chapter, chapterIndex) => chapter.frames.map(frame => ({ ...frame, chapterIndex })));
+const labels = {
+  'pt-BR': {
+    title: 'Da conversa ao teste', demo: 'Telas reais · demonstração',
+    label: 'Demonstração do yapt. em três capítulos: agentes, copilotos e conexões. Interface em português.',
+    play: 'Reproduzir', pause: 'Pausar', replay: 'Recomeçar demonstração', expand: 'Ampliar demonstração', collapse: 'Sair da tela cheia',
+    chapters: ['Agentes', 'Copilotos', 'Conexões'],
+    source: 'Telas reais do ambiente de demonstração, com dados de teste. Agente e copiloto em rascunho, sem canal publicado. Interface em português. Montagem com cortes nos tempos de espera.',
+    download: 'Baixar demonstração em vídeo',
+    preparing: 'A demonstração usa capturas reais de criação e teste no produto.',
+  },
+  'en-US': {
+    title: 'From conversation to testing', demo: 'Real screens · demonstration',
+    label: 'A yapt. demonstration in three chapters: agents, copilots and connections. Product interface in Portuguese.',
+    play: 'Play', pause: 'Pause', replay: 'Restart demo', expand: 'Expand demo', collapse: 'Exit full screen',
+    chapters: ['Agents', 'Copilots', 'Connections'],
+    source: 'Real screens from the demonstration environment with test data. Agent and copilot in draft, with no published channel. Portuguese interface. Edited to shorten waiting times.',
+    download: 'Download the video demo',
+    preparing: 'The demonstration uses real captures of creation and testing in the product.',
+  },
+  'es-ES': {
+    title: 'De la conversación a la prueba', demo: 'Pantallas reales · demostración',
+    label: 'Demostración de yapt. en tres capítulos: agentes, copilotos y conexiones. Interfaz del producto en portugués.',
+    play: 'Reproducir', pause: 'Pausar', replay: 'Reiniciar demostración', expand: 'Ampliar demostración', collapse: 'Salir de pantalla completa',
+    chapters: ['Agentes', 'Copilotos', 'Conexiones'],
+    source: 'Pantallas reales del entorno de demostración con datos de prueba. Agente y copiloto en borrador, sin canal publicado. Interfaz en portugués. Montaje con cortes en los tiempos de espera.',
+    download: 'Descargar la demostración en vídeo',
+    preparing: 'La demostración utiliza capturas reales de creación y prueba en el producto.',
+  },
+}[locale];
+const captionLocale = { 'pt-BR': 'pt', 'en-US': 'en', 'es-ES': 'es' }[locale] as 'pt' | 'en' | 'es';
+const localized = (text: LocalizedText | undefined) => text?.[locale] || text?.[captionLocale] || text?.['pt-BR'] || text?.pt || '';
+const caption = (frame: CaptureFrame) => localized(frame.caption);
+const frames: JourneyFrame[] = captures.map(frame => ({
+  screen: `ui-${frame.id}`, focus: `ui-focus-${frame.id}`, zoom: clamp(frame.zoom || 1, 1, 3),
+  duration: frame.durationMs, chapter: frame.chapterIndex,
+}));
+const chapterFrames = chapters.map((_, chapterIndex) => Math.max(0, captures.findIndex(frame => frame.chapterIndex === chapterIndex)));
+const copy: JourneyCopy = {
+  ...labels,
+  title: localized(scenario?.title) || labels.title,
+  label: localized(scenario?.label) || labels.label,
+  chapters: scenario ? scenario.chapters.map(chapter => localized(chapter.label)) : labels.chapters,
+  captions: captures.map(caption),
+};
+const sourceNote = kind ? localized(scenario?.sourceNote) : labels.source;
+const firstCapture = captures[0];
+const capturePosition = (frame: CaptureFrame) => {
+  const scale = Math.min(1120 / frame.width, 700 / frame.height);
+  const left = (1120 - frame.width * scale) / 2;
+  const top = (700 - frame.height * scale) / 2;
+  const x = left + frame.width * scale * clamp(frame.focus?.x ?? .5, 0, 1);
+  const y = top + frame.height * scale * clamp(frame.focus?.y ?? .5, 0, 1);
+  const mobileScale = clamp(frame.mobileScale || 1.8, 1, 3);
+  const boundedOffset = (desired: number, start: number, end: number, extent: number) =>
+    end - start >= extent ? clamp(desired, extent - end, -start) : (extent - start - end) / 2;
+  const mobileX = boundedOffset(560 - x * mobileScale, left * mobileScale, (1120 - left) * mobileScale, 1120);
+  const mobileY = boundedOffset(350 - y * mobileScale, top * mobileScale, (700 - top) * mobileScale, 700);
+  return {
+    x, y, mobileScale, mobileX, mobileY,
+    mobileFocusX: x * mobileScale + mobileX,
+    mobileFocusY: y * mobileScale + mobileY,
+  };
+};
+---
+<figure class:list={['ui-intelligence', { 'ui-intelligence--scenario': Boolean(kind) }]} data-intelligence-scenario={kind} style={`--ui-chapters:${clamp(chapters.length, 1, 3)};${firstCapture ? `--ui-poster:url('${firstCapture.src}')` : ''}`}>
+  {firstCapture ? <>
+    <ProductJourney locale={locale} variant="marketing" copy={copy} frames={frames} chapterFrames={chapterFrames} sourceNote={sourceNote} staticLabels={[]} staticValues={[]}>
+      {captures.map(frame => {
+        const position = capturePosition(frame);
+        return <div class:list={['ui-capture', { 'is-active': frame.id === firstCapture.id }]} data-j-screen={`ui-${frame.id}`} style={`--ui-mobile-scale:${position.mobileScale};--ui-mobile-x:${position.mobileX}px;--ui-mobile-y:${position.mobileY}px;--ui-mobile-focus-x:${position.mobileFocusX}px;--ui-mobile-focus-y:${position.mobileFocusY}px`}>
+          <img src={frame.src} width={frame.width} height={frame.height} alt="" loading={frame.id === firstCapture.id ? 'eager' : 'lazy'} decoding="async" draggable="false" />
+          <span class="ui-focus" data-j-target={`ui-focus-${frame.id}`} style={`left:${position.x}px;top:${position.y}px`} />
+        </div>;
+      })}
+    </ProductJourney>
+    <figcaption class="ui-transcript"><span class="ui-sr-only">{copy.label} {captures.map(caption).join(' ')}</span></figcaption>
+    {!kind && manifest.video && <a class="ui-video-link" href={manifest.video} download>{labels.download}<span aria-hidden="true"><UIIcon name="arrow-down" /></span></a>}
+  </> : <p class="ui-preparing">{labels.preparing}</p>}
+</figure>
+
+<style>
+  .ui-intelligence{margin:0;min-width:0;width:100%;color:#294e3f}
+  .ui-intelligence--scenario{align-self:start;padding:0 16px 20px}
+  .ui-capture{position:absolute;inset:0;width:1120px;height:700px;overflow:hidden;opacity:0;background:#f4f5f7}
+  .ui-capture.is-active{opacity:1}
+  .ui-capture img{display:block;width:1120px;height:700px;object-fit:contain;object-position:center;max-width:none;user-select:none}
+  .ui-focus{position:absolute;width:1px;height:1px;pointer-events:none}
+  .ui-intelligence :global(.mj-static){padding:0;background:#f4f5f7 var(--ui-poster) center/contain no-repeat}
+  .ui-intelligence :global(.mj-static>*){display:none}
+  .ui-intelligence :global(.mj-chapters){grid-template-columns:repeat(var(--ui-chapters,3),minmax(0,1fr));gap:6px}
+  .ui-intelligence :global(.mj-chapters button){min-height:44px;font-size:11px;grid-column:auto}
+  .ui-intelligence :global(.mj-heading){font-size:11px}
+  .ui-intelligence :global(.mj-heading small){font-size:9px}
+  .ui-intelligence :global(.mj-caption){font-size:13px;min-height:44px;max-width:74ch}
+  .ui-intelligence :global(.mj-source-note){font-size:10px;line-height:1.6;max-width:95ch}
+  .ui-intelligence :global(.mj-controls button){min-height:44px;font-size:11px}
+  .ui-intelligence :global(.mj-time){font-size:10px}
+  .ui-intelligence :global(.mj-viewport){background:#f4f5f7}
+  .ui-transcript{margin:0}
+  .ui-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .ui-video-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:9px;font:500 11px/1.5 Inter,sans-serif;color:#42664c;text-decoration:underline;text-underline-offset:4px}
+  .ui-video-link:focus-visible{outline:2px solid #20b2aa;outline-offset:4px;border-radius:3px}
+  .ui-preparing{padding:24px;border:1px solid #dce5dd;border-radius:14px;font:400 14px/1.65 Inter,sans-serif;color:#56755b;background:#f7f9f7}
+  @media(max-width:600px){
+    .ui-intelligence--scenario{padding:0 12px 16px}
+    .ui-intelligence :global(.mj-heading){font-size:10px;flex-wrap:wrap;gap:6px}
+    .ui-intelligence :global(.mj-heading small){font-size:8px;white-space:normal}
+    .ui-intelligence :global(.mj-viewport){aspect-ratio:1/1;min-height:240px}
+    .ui-intelligence :global(.mj-caption){font-size:12px;min-height:76px}
+    .ui-intelligence :global(.mj-chapters button){font-size:10px;gap:4px;padding:8px 3px;grid-column:auto}
+    .ui-intelligence :global(.mj-source-note){font-size:9px}
+    .ui-intelligence :global(.mj-controls){gap:5px}
+    .ui-capture img{transform:translate(var(--ui-mobile-x),var(--ui-mobile-y)) scale(var(--ui-mobile-scale));transform-origin:0 0}
+    .ui-focus{left:var(--ui-mobile-focus-x)!important;top:var(--ui-mobile-focus-y)!important}
+  }
+  @media(prefers-reduced-motion:reduce){.ui-intelligence :global(.mj-world){will-change:auto}}
+</style>

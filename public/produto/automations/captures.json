@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "captures": {
+    "flow-chat": {
+      "src": "/produto/automations/flow-chat-prompt.jpg",
+      "width": 1502,
+      "height": 802,
+      "focus": {
+        "x": 0.86,
+        "y": 0.72
+      },
+      "mobileScale": 1.1
+    }
+  }
+}

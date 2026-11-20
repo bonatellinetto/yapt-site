@@ -1,0 +1,178 @@
+---
+import ProductJourney from './ProductJourney.astro';
+import SalesJourneyScreens from './SalesJourneyScreens.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+interface Props { locale: Locale; commercialOnly?: boolean }
+const { locale, commercialOnly = false } = Astro.props;
+const frames: JourneyFrame[] = [
+  {screen:'workspace',focus:'workspace-overview',zoom:1,duration:1800,chapter:0},
+  {screen:'workspace',focus:'workspace-open-conversation',zoom:1.6,duration:1400,chapter:0,cursor:'workspace-open-conversation',click:true},
+  {screen:'qualification',focus:'conversation-overview',zoom:1,duration:1400,chapter:0},
+  {screen:'qualification',focus:'audio-transcript',zoom:1.9,duration:3400,chapter:0},
+  {screen:'qualification',focus:'ai-note',zoom:1.9,duration:3400,chapter:0},
+  {screen:'qualification',focus:'menu-sales',zoom:1.7,duration:850,chapter:1,cursor:'menu-sales',click:true},
+  {screen:'qualification',focus:'nav-deals',zoom:1.7,duration:1300,chapter:1,menu:true,cursor:'nav-deals',click:true},
+  {screen:'prospecting',focus:'prospecting-overview',zoom:1,duration:2200,chapter:1},
+  {screen:'prospecting',focus:'call-action',zoom:1.75,duration:1700,chapter:1,cursor:'call-action',click:true},
+  {screen:'call',focus:'call-dialog',zoom:1.02,duration:2500,chapter:1},
+  {screen:'prospecting',focus:'prospecting-overview',zoom:1,duration:1200,chapter:1},
+  {screen:'prospecting',focus:'menu-sales',zoom:1.7,duration:850,chapter:2,cursor:'menu-sales',click:true},
+  {screen:'prospecting',focus:'nav-deals',zoom:1.7,duration:1300,chapter:2,menu:true,cursor:'nav-deals',click:true},
+  {screen:'pipeline',focus:'pipeline-overview',zoom:1,duration:2000,chapter:2},
+  {screen:'pipeline',focus:'pipeline-deal',zoom:1.6,duration:1700,chapter:2,cursor:'pipeline-deal',click:true},
+  {screen:'deal',focus:'deal-overview',zoom:1,duration:1800,chapter:2},
+  {screen:'deal',focus:'deal-conversations-tab',zoom:1.65,duration:1700,chapter:2,cursor:'deal-conversations-tab',click:true},
+  {screen:'deal-conversations',focus:'linked-conversation',zoom:2,duration:1900,chapter:2,cursor:'linked-conversation',click:true},
+  {screen:'qualification',focus:'conversation-overview',zoom:1,duration:2000,chapter:2},
+  {screen:'qualification',focus:'menu-sales',zoom:1.7,duration:850,chapter:3,cursor:'menu-sales',click:true},
+  {screen:'qualification',focus:'nav-sales-report',zoom:1.7,duration:1500,chapter:3,menu:true,cursor:'nav-sales-report',click:true},
+  {screen:'sales-report',focus:'sales-report-overview',zoom:1,duration:2600,chapter:3,scroll:0},
+  {screen:'sales-report',focus:'sales-report-body',zoom:1,duration:10000,chapter:3,scroll:650},
+  {screen:'efficiency',focus:'efficiency-overview',zoom:1,duration:1400,chapter:4,scroll:0},
+  {screen:'efficiency-select',focus:'efficiency-overview',zoom:1,duration:2600,chapter:4,cursor:'efficiency-support-option',click:true,scroll:0},
+  {screen:'efficiency',focus:'efficiency-overview',zoom:1,duration:2400,chapter:4,scroll:0},
+  {screen:'efficiency',focus:'efficiency-overview',zoom:1,duration:7500,chapter:4,scroll:300},
+  {screen:'workspace',focus:'workspace-overview',zoom:1,duration:2200,chapter:4},
+];
+const copies: Record<Locale,JourneyCopy> = {
+  'pt-BR': {
+    title:'Da conversa à gestão de vendas', demo:'Demonstração · dados ilustrativos', label:'Demonstração animada da jornada de vendas no yapt.',
+    play:'Reproduzir',pause:'Pausar',replay:'Recomeçar a jornada',expand:'Ampliar demonstração',collapse:'Sair da tela cheia',
+    chapters:['IA na conversa','Prospecção','Negócios','Relatório','Eficiência'],
+    captions:[
+      'Tudo começa no Workspace, com a conversa e o negócio conectados.',
+      'Uma oportunidade aberta. O histórico vem junto.',
+      'A conversa reúne o que o cliente precisa e o que já foi combinado.',
+      'A IA transcreve o áudio e traz a necessidade do cliente para a conversa.',
+      'Uma nota com o resumo da IA prepara o time para o próximo passo.',
+      'Da conversa para o menu de Vendas.',
+      'Negócios: o mesmo contexto acompanha o trabalho comercial.',
+      'No funil de prospecção, prioridades e próximas ações ficam visíveis.',
+      'Registrar ligação: cada tentativa fica ligada à oportunidade.',
+      'Resultado, nota e duração organizam o próximo passo da prospecção.',
+      'De volta ao funil, o trabalho continua organizado.',
+      'Abrimos novamente o menu de Vendas.',
+      'Agora, acompanhamos o funil de vendas.',
+      'Uma visão das etapas e dos negócios que precisam avançar.',
+      'Cada negócio leva ao detalhe da oportunidade.',
+      'Valor, etapa, responsável e atividades na mesma visão.',
+      'Na aba Conversas, o histórico fica ligado à oportunidade.',
+      'Um clique leva à conversa vinculada ao negócio.',
+      'O vendedor retoma o atendimento com contexto.',
+      'Do atendimento para a visão de gestão.',
+      'O relatório de vendas reúne os indicadores da operação.',
+      'Receita, meta, previsão e conversão para orientar as decisões.',
+      'Uma rolagem pela meta, pelos vendedores e pelas etapas do funil.',
+      'Seguimos para a eficiência dos funis, na área de relatórios.',
+      'Selecionamos Suporte e garantia, com a meta Resolvido.',
+      'A captura da plataforma mostra o funil de Suporte, sem zoom.',
+      'Rolagem lenta: volume, resolução e passagem pelas etapas, no enquadramento original.',
+      'Da gestão de volta à conversa. A jornada recomeça.',
+    ],
+  },
+  'en-US': {
+    title:'From conversation to sales management',demo:'Demo · sample data · UI in Portuguese',label:'Animated demonstration of the yapt. sales journey',
+    play:'Play',pause:'Pause',replay:'Restart journey',expand:'Expand demo',collapse:'Exit full screen',
+    chapters:['AI in context','Prospecting','Deals','Report','Efficiency'],
+    captions:[
+      'The journey starts in Workspace, with conversations and deals connected.',
+      'Open an opportunity with its conversation history.',
+      'The conversation brings together needs and previous agreements.',
+      'AI transcribes the audio and brings the customer’s needs into the conversation.',
+      'An internal AI summary prepares the team for the next step.',
+      'From the conversation to the Sales menu.',
+      'Deals: the same context follows the sales process.',
+      'The prospecting pipeline makes priorities and next actions visible.',
+      'Log a call: each attempt stays linked to the opportunity.',
+      'The outcome, notes and duration guide the next prospecting step.',
+      'Back to the prospecting pipeline.',
+      'Open the Sales menu again.',
+      'Now we follow the sales pipeline.',
+      'Stages and opportunities that need to move forward.',
+      'Each deal opens the opportunity details.',
+      'Value, stage, owner and activities in one view.',
+      'The Conversations tab keeps the history linked to the deal.',
+      'Open the conversation linked to this opportunity.',
+      'The salesperson resumes the conversation with context.',
+      'From service to management visibility.',
+      'The sales report brings together operational indicators.',
+      'Revenue, target, forecast and conversion guide decisions.',
+      'Slowly explore targets, salespeople and pipeline stages.',
+      'Continue to pipeline efficiency in the reporting area.',
+      'Select Support and warranty, with Resolved as the goal.',
+      'The platform capture shows the Support pipeline without zoom.',
+      'Slow scrolling through volume, resolution and stages in the original framing.',
+      'From management back to the conversation. The journey restarts.',
+    ],
+  },
+  'es-ES': {
+    title:'De la conversación a la gestión de ventas',demo:'Demo · datos ilustrativos · UI en portugués',label:'Demostración animada del recorrido de ventas en yapt.',
+    play:'Reproducir',pause:'Pausar',replay:'Reiniciar recorrido',expand:'Ampliar demostración',collapse:'Salir de pantalla completa',
+    chapters:['IA en contexto','Prospección','Negocios','Informe','Eficiencia'],
+    captions:[
+      'Todo comienza en Workspace, con la conversación y el negocio conectados.',
+      'Una oportunidad abierta con todo su historial.',
+      'La conversación reúne las necesidades y los acuerdos del cliente.',
+      'La IA transcribe el audio y trae la necesidad del cliente a la conversación.',
+      'Una nota con el resumen de la IA prepara al equipo para el próximo paso.',
+      'De la conversación al menú de Ventas.',
+      'Negocios: el mismo contexto acompaña el trabajo comercial.',
+      'El embudo de prospección muestra prioridades y próximas acciones.',
+      'Registrar llamada: cada intento queda vinculado a la oportunidad.',
+      'Resultado, nota y duración organizan el próximo paso de la prospección.',
+      'De vuelta al embudo de prospección.',
+      'Abrimos de nuevo el menú de Ventas.',
+      'Ahora seguimos el embudo de ventas.',
+      'Etapas y negocios que necesitan avanzar.',
+      'Cada negocio abre el detalle de la oportunidad.',
+      'Valor, etapa, responsable y actividades en una misma vista.',
+      'La pestaña Conversaciones vincula el historial con la oportunidad.',
+      'Un clic abre la conversación vinculada al negocio.',
+      'El vendedor retoma la conversación con contexto.',
+      'De la atención a la visión de gestión.',
+      'El informe de ventas reúne los indicadores de la operación.',
+      'Ingresos, meta, previsión y conversión para orientar las decisiones.',
+      'Un recorrido pausado por metas, vendedores y etapas del embudo.',
+      'Seguimos hacia la eficiencia de los embudos, en el área de informes.',
+      'Seleccionamos Soporte y garantía, con Resuelto como meta.',
+      'La captura de la plataforma muestra el embudo de Soporte, sin zoom.',
+      'Desplazamiento lento por volumen, resolución y etapas en el encuadre original.',
+      'De la gestión a la conversación. El recorrido vuelve a empezar.',
+    ],
+  },
+};
+const commercialChapters: Record<Locale, string[]> = {
+  'pt-BR':['IA na conversa','Prospecção','Negócios','Gestão','Metas e funil'],
+  'en-US':['AI in context','Prospecting','Deals','Management','Targets and pipeline'],
+  'es-ES':['IA en contexto','Prospección','Negocios','Gestión','Metas y embudo'],
+};
+const commercialReportCaption: Record<Locale, string> = {
+  'pt-BR':'Uma rolagem pelas metas, pelo resultado dos vendedores e pelas etapas do funil comercial.',
+  'en-US':'Explore targets, salespeople’s results and the stages of the sales pipeline.',
+  'es-ES':'Un recorrido por las metas, los resultados de los vendedores y las etapas del embudo comercial.',
+};
+const journeyFrames: JourneyFrame[] = commercialOnly
+  ? [...frames.slice(0,22), {...frames[22], chapter:4}, frames[27]]
+  : frames;
+const copy = copies[locale];
+const journeyCopy: JourneyCopy = commercialOnly ? {
+  ...copy,
+  chapters:commercialChapters[locale],
+  captions:[...copy.captions.slice(0,22), commercialReportCaption[locale], copy.captions[27]],
+} : copy;
+const chapterFrames = commercialOnly ? [3,7,13,21,22] : [3,7,13,21,25];
+const staticLabels = {
+  'pt-BR':['Conversa','IA','Prospecção','Negócio','Gestão'],
+  'en-US':['Conversation','AI','Prospecting','Deal','Management'],
+  'es-ES':['Conversación','IA','Prospección','Negocio','Gestión'],
+}[locale];
+const staticValues = {
+  'pt-BR':['Contexto','Resumo','Prioridade','Histórico','Visibilidade'],
+  'en-US':['Context','Summary','Priority','History','Visibility'],
+  'es-ES':['Contexto','Resumen','Prioridad','Historial','Visibilidad'],
+}[locale];
+---
+<ProductJourney locale={locale} variant="sales" copy={journeyCopy} frames={journeyFrames} chapterFrames={chapterFrames} staticLabels={staticLabels} staticValues={staticValues}>
+  <SalesJourneyScreens includeEfficiency={!commercialOnly}/>
+</ProductJourney>

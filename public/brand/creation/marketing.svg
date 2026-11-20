@@ -1,0 +1,15 @@
+<!-- Source: yapt-creation-library.html, element "Borboleta". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <path d="M60 55 Q30 25, 15 40 Q10 55, 25 65 Q40 70, 60 55Z" fill="#F59E0B"/>
+    <path d="M60 55 Q35 30, 22 42 Q18 52, 30 60 Q42 65, 60 55Z" fill="#FBBF24"/>
+    <circle cx="28" cy="48" r="6" fill="#FEF3C7"/>
+    <path d="M60 55 Q90 25, 105 40 Q110 55, 95 65 Q80 70, 60 55Z" fill="#F59E0B"/>
+    <path d="M60 55 Q85 30, 98 42 Q102 52, 90 60 Q78 65, 60 55Z" fill="#FBBF24"/>
+    <circle cx="92" cy="48" r="6" fill="#FEF3C7"/>
+    <path d="M60 60 Q35 70, 25 85 Q30 100, 45 95 Q55 88, 60 60Z" fill="#F97316"/>
+    <path d="M60 60 Q85 70, 95 85 Q90 100, 75 95 Q65 88, 60 60Z" fill="#F97316"/>
+    <ellipse cx="60" cy="60" rx="5" ry="25" fill="#1F2937"/>
+    <circle cx="60" cy="32" r="6" fill="#1F2937"/>
+    <path d="M55 28 Q50 18, 45 12" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
+    <path d="M65 28 Q70 18, 75 12" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
+</svg>

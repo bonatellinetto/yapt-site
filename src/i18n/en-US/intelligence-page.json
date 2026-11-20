@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "title": "Applied artificial intelligence platform",
+    "description": "Create artificial intelligence agents, copilots and integrations through chat in yaAgents. Apply AI to your conversations, data and business processes."
+  },
+  "hero": {
+    "eyebrow": "Applied artificial intelligence platform",
+    "title": "Artificial intelligence agents.",
+    "ending": "Applied to your business.",
+    "description": "Create AI agents, copilots and connections through chat in yaAgents. Use knowledge, data and existing APIs to serve customers, guide your team and perform configured actions. Your team can lead the application and work with specialists for implementation and improvement.",
+    "cta": "I want to apply AI to my business",
+    "secondary": "See how to build through conversation",
+    "proof": "AI agents · copilots · APIs · knowledge and control.",
+    "frameBrand": "yaAgents",
+    "screenLabel": "Your business need becomes an AI application",
+    "screenNote": "Real product screen · interface in Portuguese.",
+    "image": "/produto/intelligence/agent-created.jpg",
+    "imageWidth": 1228,
+    "imageHeight": 605,
+    "imageAlt": "Customer agent built by conversation in yaAgents, with a catalogue query linked to its draft.",
+    "tags": [
+      "Describe",
+      "Build",
+      "Test",
+      "Apply"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore where to apply AI and integrations",
+    "mechanismLabel": "How yapt. helps",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Application example",
+    "moreLabel": "Enlarge real screen",
+    "imageNote": "Real product screen. The example illustrates configuration, not a customer result. Interface in Portuguese.",
+    "eyebrow": "Artificial intelligence applied to everyday work",
+    "title": "Where does your team need more capacity to deliver?",
+    "description": "Repeated answers, questions during work and searches in other systems take time. Explore six situations to apply artificial intelligence agents, copilots and integrations to your business processes.",
+    "items": [
+      {
+        "id": "agentes",
+        "short": "Repetitive customer service",
+        "pain": "“The team repeats the same answers and has less time for cases that need attention.”",
+        "title": "Create agents to serve your customers.",
+        "description": "Describe the agent’s role, what it needs to know and when it should bring in a person. Build a draft through conversation, review the instructions and test responses before publishing.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "The goal, audience and boundaries of the service."
+          },
+          {
+            "title": "Prepare",
+            "text": "Knowledge, instructions and the capabilities needed."
+          },
+          {
+            "title": "Test",
+            "text": "Responses and handoffs to a person before publishing."
+          }
+        ],
+        "benefits": [
+          "Handle the requests you have planned for with knowledge and instructions defined for your business.",
+          "Keep your team’s attention available for referred cases, with the conversation context at hand."
+        ],
+        "metric": "Volume handled by AI, handoffs, reasons for uncertainty and response quality in the defined scenarios.",
+        "example": {
+          "title": "A recurring question finds a path",
+          "when": "A customer asks how a service works.",
+          "then": "The agent consults the configured knowledge and follows its instructions, referring to the team when needed.",
+          "outcome": "The operation reviews responses and handoffs to refine customer service."
+        },
+        "image": "/produto/intelligence/agent-test-result.jpg",
+        "imageAlt": "Real agent test querying a product catalogue, with the capability execution visible.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      },
+      {
+        "id": "copilotos",
+        "short": "Training time",
+        "pain": "“Training takes time — and every salesperson or support agent handles things differently.”",
+        "title": "Bring your best expertise to the whole team.",
+        "description": "Turn good practices into guidance for the people who sell and the people who solve problems. The Mentor combines conversation context, company knowledge and permitted system queries to suggest responses and next steps. The team learns while working, with less searching and less reliance on help.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Prepare",
+            "text": "Define the Mentor’s good practices, knowledge and permitted queries."
+          },
+          {
+            "title": "Guide",
+            "text": "Bring the suggested reply and the right information to the case in progress."
+          },
+          {
+            "title": "Develop",
+            "text": "The person reviews, applies and learns from the explanation behind the guidance."
+          }
+        ],
+        "benefits": [
+          "Bring sales approaches and support guidance from your reference team to people who are getting started.",
+          "Reduce searching in other systems and interruptions to ask for help, with guidance in the conversation context."
+        ],
+        "metric": "Time to autonomy, handling time, use of suggestions and response quality.",
+        "example": {
+          "title": "The right guidance when it is time to respond",
+          "when": "A salesperson receives an objection or a support agent needs information to resolve a case.",
+          "then": "The Mentor consults permitted knowledge and systems, suggests a response and explains the next step.",
+          "outcome": "The person reviews the suggestion and decides how to proceed, learning from the service context."
+        },
+        "image": "/produto/intelligence/copilot-test-result.jpg",
+        "imageAlt": "Real copilot test, with a suggested reply and explanation for the operator.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      },
+      {
+        "id": "conexoes",
+        "short": "Searching other systems",
+        "pain": "“To answer the customer, we need to open another system and look for the information.”",
+        "title": "Create connections to your systems through conversation.",
+        "description": "Describe the system, its available API and what you need to query. yaAgents helps build the connection and its capabilities to bring information to the agent and the team member, according to the access granted.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "The system and the information needed for the work."
+          },
+          {
+            "title": "Connect",
+            "text": "Configure access and test the API query."
+          },
+          {
+            "title": "Make available",
+            "text": "Link to the agent and grant team access according to permissions."
+          }
+        ],
+        "benefits": [
+          "Bring data from internal systems into customer service, reducing manual searches and copying.",
+          "Reuse permitted capabilities with agents and team members; the Mentor can use allowed queries."
+        ],
+        "metric": "Manual queries, switching screens, time to obtain information and query failures.",
+        "example": {
+          "title": "Data reaches the conversation",
+          "when": "A customer asks about an order recorded in another system.",
+          "then": "A query capability uses the configured API to retrieve the available information.",
+          "outcome": "The agent or authorized person uses the result to continue customer service."
+        },
+        "image": "/produto/intelligence/connection-fields.jpg",
+        "imageAlt": "A connection built in yaAgents and Product, Price and Stock fields configured by conversation.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "conhecimento",
+        "short": "Reliable answers",
+        "pain": "“An invented answer costs customer trust and creates rework.”",
+        "title": "Reliable answers, grounded in your company’s knowledge.",
+        "description": "yaBrain connects documents, manuals and procedures to products, agents and team guidance. AI searches the defined knowledge base and uses conversation context. Grounding and handoff rules help prevent technical guidance without a source and route matters that need review to the right person.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Gather documents, manuals and procedures with their sources."
+          },
+          {
+            "title": "Connect",
+            "text": "Link knowledge to the products and agents that will use it."
+          },
+          {
+            "title": "Validate",
+            "text": "Test answers, review gaps and define when to hand off to a person."
+          }
+        ],
+        "benefits": [
+          "Support AI service and Mentor guidance with a knowledge base connected to the business.",
+          "Link content to products and review sources, versions and coverage to reduce ungrounded answers."
+        ],
+        "metric": "Questions without coverage, sources consulted, conflicting responses and handoffs caused by missing information.",
+        "example": {
+          "title": "An answer based on what the company knows",
+          "when": "A customer asks about a product or procedure.",
+          "then": "AI searches knowledge linked to the scenario; configured rules guide the response and handoff.",
+          "outcome": "The team checks the reference, identifies gaps in the knowledge base and keeps guidance up to date."
+        },
+        "image": "/produto/vendas-yaagents.webp",
+        "imageAlt": "Real yaAgents builder screen used to define an agent’s knowledge and instructions.",
+        "imageWidth": 1600,
+        "imageHeight": 1193
+      },
+      {
+        "id": "acoes",
+        "short": "Manual tasks and records",
+        "pain": "“Queries help, but we still need to repeat the same task in another system.”",
+        "title": "Bring queries and actions to where the work happens.",
+        "description": "Define what can be queried or executed through the API and who can use each capability. The agent follows its tools and rules; in human customer service, write actions require confirmation. Combine the application with flows and sequences to keep other business routines moving.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Scope",
+            "text": "The data needed and the action the system allows."
+          },
+          {
+            "title": "Configure",
+            "text": "The capability, rules and access granted."
+          },
+          {
+            "title": "Execute",
+            "text": "Track the result and the confirmations required."
+          }
+        ],
+        "benefits": [
+          "Reduce repetitive data entry with actions configured for the process and available access.",
+          "Give team members queries and actions within the conversation, with confirmation before writing to the system."
+        ],
+        "metric": "Manual tasks, completed actions, execution failures and need for intervention.",
+        "example": {
+          "title": "An update accompanies customer service",
+          "when": "A service case requires a defined update in a connected system.",
+          "then": "The authorized person reviews the data and confirms the action available in the conversation.",
+          "outcome": "The execution result informs how the work continues."
+        },
+        "image": "/produto/intelligence/connections-catalog.jpg",
+        "imageAlt": "The real yaAgents connection catalogue, showing queries and actions for connected systems.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "controle",
+        "short": "AI without clear boundaries",
+        "pain": "“We want to use AI, but we need to know what it can query and do.”",
+        "title": "Define the role, access and boundaries before applying AI.",
+        "description": "Review instructions, knowledge and capabilities. Test the agent as a draft, publish when ready and configure which agents and team members can use the connection. Sensitive changes require renewed confirmation of access grants.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Responsibilities, access and boundaries for each role."
+          },
+          {
+            "title": "Validate",
+            "text": "Test responses and review queries and actions."
+          },
+          {
+            "title": "Track",
+            "text": "Observe usage and adjust configurations with the team."
+          }
+        ],
+        "benefits": [
+          "Distinguish the agent serving customers, the Mentor offering guidance and the person deciding during work.",
+          "Control connection access and review grants when sensitive configuration changes."
+        ],
+        "metric": "Test failures, handoffs, team feedback and reviews of permissions and capabilities.",
+        "example": {
+          "title": "An application with reviewed boundaries",
+          "when": "The company prepares an agent for a new scenario.",
+          "then": "The team tests the draft, reviews capabilities and defines where the connection can be used.",
+          "outcome": "The application joins the workflow with responsibilities and access configured."
+        },
+        "image": "/produto/intelligence/agent-created.jpg",
+        "imageAlt": "An agent draft in yaAgents, with its capabilities available for review.",
+        "imageWidth": 1228,
+        "imageHeight": 605
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "From conversation to real work",
+    "title": "Three ways to build. More capacity for your business.",
+    "description": "See how to create and test a customer agent, prepare a Mentor to guide the team and build a connection to query a system. In each chapter, the need you describe becomes a configuration the team can review.",
+    "note": "Demonstration with real screens, draft agents and sample data. Interface in Portuguese."
+  },
+  "foundation": {
+    "eyebrow": "AI agents, mentors and integrations",
+    "title": "Agents for customers. Copilots for teams. Connections for work.",
+    "description": "In the yapt. artificial intelligence platform, agents serve customers, copilots guide people and connections bring system data into the process. Knowledge, instructions and permissions define how each role works.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "Artificial intelligence agents",
+        "text": "Handle the expected requests with configured knowledge, capabilities and handoff rules."
+      },
+      {
+        "icon": "teams",
+        "title": "AI copilots and mentors",
+        "text": "The Mentor guides operators in the conversation context, answers questions and suggests the next step."
+      },
+      {
+        "icon": "integrations",
+        "title": "API integrations",
+        "text": "Available CRM, ERP and other system APIs bring queries and actions to agents and authorized team members."
+      }
+    ],
+    "builderLabel": "Build with context and control",
+    "builderTitle": "Describe the need. Review the application before putting it to work.",
+    "builderDescription": "Build agents, copilots and connections through conversation in yaAgents. Organize knowledge, review access and test with your team. For steps, activities and communications, combine the application with yapt. flows and sequences.",
+    "builderLink": "Explore automations",
+    "builderHref": "/automations",
+    "builderImageAlt": "Connection data configured by conversation in yaAgents and displayed in the connection mirror."
+  },
+  "adoption": {
+    "eyebrow": "Your team, with specialists when needed",
+    "title": "The application starts with your process and evolves through real work.",
+    "description": "Your team can select a problem, organize knowledge and access, and apply an initial scenario. You can also work with specialists for implementation and ongoing improvement, depending on the delivery model you choose.",
+    "steps": [
+      {
+        "title": "Diagnose",
+        "text": "Understand the problem, repetitive effort, knowledge and systems involved."
+      },
+      {
+        "title": "Build and test",
+        "text": "Prepare an agent, copilot or connection; review its behavior with the team before use."
+      },
+      {
+        "title": "Track and improve",
+        "text": "Observe usage, listen to the team and adjust instructions and capabilities based on real work."
+      }
+    ],
+    "footnote": "Scope, channels, APIs, access and features are defined according to each company’s needs and configuration."
+  },
+  "faq": {
+    "eyebrow": "Before you begin",
+    "title": "Clarity to build. Criteria for putting it to use.",
+    "items": [
+      {
+        "question": "How do artificial intelligence agents and copilots work?",
+        "answer": "An AI agent serves the customer according to its role, knowledge and tools. A copilot or Mentor guides a team member during service without speaking directly to the customer; the person decides what to apply. The conversational builder prepares agents and connections from what you describe."
+      },
+      {
+        "question": "Do we need to code to create agents and connections?",
+        "answer": "Building starts through chat: describe the goal and review the configuration prepared in yaAgents. A connection depends on an existing API, documentation and authorized access. You can work with specialists to assess feasibility and the details of applying it to your process."
+      },
+      {
+        "question": "Can the copilot help train the team?",
+        "answer": "The Mentor guides and teaches during real work: it uses the conversation context and configured knowledge to clarify questions and suggest responses and next steps. The person reviews and applies the guidance."
+      },
+      {
+        "question": "How can AI agents integrate with APIs, CRM and ERP systems?",
+        "answer": "In yaAgents, building through chat prepares connections to existing APIs, such as CRM and ERP APIs, for the queries and actions available in the system. Workflows and intelligent rules have their own API and webhook configuration paths. Feasibility depends on documentation, access, rules and the features enabled for the account."
+      },
+      {
+        "question": "Can the same connection be used by AI, the team and automations?",
+        "answer": "A connection’s capabilities can be linked to agents and made available to team members, according to permissions. The Mentor can use permitted queries from the agent, with its own limits. Flows and sequences have their own integration configuration paths; the diagnosis defines how each feature contributes to the process."
+      },
+      {
+        "question": "How do we control what AI and the team can do?",
+        "answer": "We define the role, instructions, knowledge and available capabilities. An agent can be tested as a draft before publication. Connections have access grants for agents and authorized team members; in human customer service, write actions require confirmation. Sensitive changes require access grants to be reviewed."
+      },
+      {
+        "question": "Where do we start and how do we evaluate results?",
+        "answer": "Start with a concrete problem, such as a recurring question, team guidance or a manual lookup in another system. Your team can build and test the scenario and work with specialists when needed. Define indicators and comparable periods to track quality, effort, handoffs and usage; the economic impact also considers business data and costs."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "AI applied to what your business needs",
+    "title": "Let’s find where AI and integrations can improve your operation.",
+    "description": "We examine customer and team workflows, knowledge and the systems involved. We define an initial scenario to build through conversation and apply with a clear goal, boundaries and indicators.",
+    "points": [
+      "A concrete problem and an initial application scenario.",
+      "Defined knowledge, access and success criteria.",
+      "A platform and specialists to build, test and improve."
+    ],
+    "cta": "I want to apply AI to my business",
+    "footnote": "Talk to our team about your operation.",
+    "error": "Customer service could not load right now. Try again or open WhatsApp using the link below.",
+    "fallback": "Open directly in WhatsApp",
+    "noScript": "You can also talk to our team through WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close enlarged image",
+    "imageLabel": "Real product screen",
+    "openImage": "Enlarge screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to enlarge and close."
+  }
+}
