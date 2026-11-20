@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "title": "Inteligência artificial para marketing e receita",
+    "description": "Inteligência artificial para marketing: automação, campanhas multicanal e atribuição de receita para nutrir leads e conectar marketing e vendas."
+  },
+  "hero": {
+    "eyebrow": "Inteligência artificial para marketing",
+    "title": "Inteligência artificial para marketing.",
+    "ending": "Mais receita das suas campanhas.",
+    "description": "Transforme campanhas em conversas e vendas com inteligência artificial, automação de marketing e nutrição de leads. Acompanhe a receita atribuída e dê continuidade à jornada em diferentes canais. Seu time opera a plataforma e pode contar com nossos especialistas.",
+    "cta": "Quero um diagnóstico de marketing",
+    "secondary": "Veja como funciona",
+    "proof": "Parceiro Oficial Meta · 40M+ mensagens por mês · 16 anos.",
+    "screenLabel": "Da campanha à receita atribuída",
+    "screenNote": "Tela real do produto · exemplo de operação",
+    "imageAlt": "Relatório real do yapt. conectando investimento de campanhas, leads, conversas e receita atribuída.",
+    "tags": [
+      "Campanhas",
+      "Conversas",
+      "Oportunidades",
+      "Receita"
+    ]
+  },
+  "scenarios": {
+    "eyebrow": "O custo das oportunidades perdidas",
+    "title": "Quanto de receita seu marketing está deixando na mesa?",
+    "description": "Verba no anúncio errado, leads que esfriam sem retorno e tempo do time preso em tarefas manuais: a perda se acumula entre uma etapa e outra. Veja como o yapt. conecta dados, IA e automações para recuperar oportunidades e investir com mais clareza.",
+    "navLabel": "Explore os problemas de marketing",
+    "mechanismLabel": "Como o yapt. resolve",
+    "actionLabel": "Na prática",
+    "measurementLabel": "O que acompanhar",
+    "exampleLabel": "Exemplo de operação",
+    "moreLabel": "Ampliar tela real",
+    "items": [
+      {
+        "id": "retorno",
+        "short": "Investimento e retorno",
+        "pain": "“Continuamos investindo sem saber quais anúncios devolvem receita.”",
+        "title": "Decida onde investir com a receita na mesma visão.",
+        "description": "Junte investimento, origem, conversas e vendas para decidir onde manter, ampliar ou rever o investimento. Compare campanhas e contas com o mesmo critério de análise.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Conecte",
+            "text": "Meta e Google na visão de campanhas."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Do lead à conversa e ao negócio."
+          },
+          {
+            "title": "Decida",
+            "text": "Receita atribuída e retorno por campanha."
+          }
+        ],
+        "benefits": [
+          "Identifique vendas com origem conhecida e reconheça as que ainda estão sem atribuição.",
+          "Devolva eventos relevantes da operação às plataformas conectadas pela Central de conversões."
+        ],
+        "metric": "Receita atribuída, retorno das campanhas e conversão em vendas.",
+        "example": {
+          "title": "Da venda para a próxima decisão",
+          "when": "Uma oportunidade avança ou uma venda é registrada.",
+          "then": "A origem permanece ligada ao negócio e pode alimentar os eventos de conversão configurados.",
+          "outcome": "Marketing ganha uma base concreta para avaliar o investimento."
+        },
+        "image": "/solucao/img/349dc240d272.jpg",
+        "imageAlt": "Relatório real do yapt. com investimento, leads, conversas, vendas e retorno por campanha.",
+        "imageWidth": 2000,
+        "imageHeight": 578
+      },
+      {
+        "id": "controle",
+        "short": "Campanhas multicanal",
+        "pain": "“Uma base valiosa fica sem contato porque a campanha depende de um canal só.”",
+        "title": "Ative mais oportunidades. Com campanhas em vários canais.",
+        "description": "Dispare campanhas por WhatsApp, e-mail, SMS e RCS, conforme os canais habilitados na sua operação. Defina público, conteúdo, horário e ritmo com estimativas e acompanhamento do gasto. No WhatsApp, configure também o destino das respostas.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Escolha",
+            "text": "Público e canal para a campanha."
+          },
+          {
+            "title": "Prepare",
+            "text": "Conteúdo, custo, horário e ritmo."
+          },
+          {
+            "title": "Acompanhe",
+            "text": "Envios, respostas e próximo passo."
+          }
+        ],
+        "benefits": [
+          "Escolha o canal adequado para cada público e acompanhe os indicadores de envio, entrega e resposta disponíveis por canal.",
+          "Planeje estimativas e limites de gasto, junto da capacidade disponível no canal.",
+          "No WhatsApp, direcione as respostas ao setor adequado e acompanhe os sinais de qualidade das linhas."
+        ],
+        "metric": "Custo de envio e indicadores de entrega, resposta e conversão disponíveis por canal.",
+        "example": {
+          "title": "A resposta chega ao time responsável",
+          "when": "A campanha está pronta para entrar em execução.",
+          "then": "O time revisa a estimativa, o ritmo e o setor que deve receber as respostas.",
+          "outcome": "A operação sabe o que vai acontecer antes de começar o envio."
+        },
+        "image": "/produto/marketing/campanhas-canais-real.png",
+        "imageAlt": "Tela real de criação de campanha no yapt., com os canais WhatsApp, e-mail e RCS.",
+        "imageWidth": 2032,
+        "imageHeight": 1532
+      },
+      {
+        "id": "publicos",
+        "short": "Públicos e relevância",
+        "pain": "“Gastamos com a mesma mensagem para públicos que precisam de abordagens diferentes.”",
+        "title": "Fale com quem faz sentido. No momento certo.",
+        "description": "Combine perfil, compras, etapa do funil e interação com campanhas para formar públicos mais relevantes. Cada grupo recebe um relacionamento coerente com o que já aconteceu.",
+        "icon": "marketing",
+        "steps": [
+          {
+            "title": "Defina",
+            "text": "Perfil, comportamento e momento."
+          },
+          {
+            "title": "Combine",
+            "text": "Critérios de compra, campanha e funil."
+          },
+          {
+            "title": "Ative",
+            "text": "O público na campanha ou régua adequada."
+          }
+        ],
+        "benefits": [
+          "Reative contatos, encontre clientes com perfil e mantenha mensagens relevantes para cada grupo.",
+          "Use critérios de qualificação próprios para distinguir quem está pronto, precisa de nutrição ou não tem aderência."
+        ],
+        "metric": "Respostas e oportunidades qualificadas por público.",
+        "example": {
+          "title": "A base antiga volta ao plano",
+          "when": "Você identifica contatos com o perfil desejado que deixaram de avançar.",
+          "then": "O público seleciona os contatos pelos critérios definidos e orienta a ação de relacionamento.",
+          "outcome": "A campanha passa a ter um motivo claro para cada contato."
+        },
+        "image": "/produto/marketing/publicos-engajamento-real.webp",
+        "imageAlt": "Tela do yapt. com públicos organizados por estágio de relacionamento.",
+        "imageWidth": 1400,
+        "imageHeight": 738
+      },
+      {
+        "id": "relacionamento",
+        "short": "Nutrição e reativação",
+        "pain": "“Investimos para gerar interesse, mas os contatos esfriam sem acompanhamento.”",
+        "title": "Mantenha o interesse vivo. Respeite cada resposta.",
+        "description": "Dê continuidade ao relacionamento com réguas de WhatsApp e e-mail. Mensagens, esperas e condições acompanham o comportamento do contato e o momento da oportunidade.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Perceba",
+            "text": "Entrada no público ou evento do negócio."
+          },
+          {
+            "title": "Continue",
+            "text": "Mensagens, esperas e condições."
+          },
+          {
+            "title": "Adapte",
+            "text": "Resposta, avanço e critérios de saída."
+          }
+        ],
+        "benefits": [
+          "Configure a saída da sequência quando houver resposta, mudança de etapa ou encerramento do negócio.",
+          "Organize reentrada e intervalos para evitar sequências ativas duplicadas."
+        ],
+        "metric": "Respostas, reativação e avanço das oportunidades.",
+        "example": {
+          "title": "O relacionamento muda quando o cliente responde",
+          "when": "Um lead não responde ao primeiro contato.",
+          "then": "A régua faz a continuidade prevista. Quando ele responde, a regra configurada pode encerrar a sequência.",
+          "outcome": "O time assume a conversa com contexto, sem insistir na mensagem anterior."
+        },
+        "image": "",
+        "imageAlt": "",
+        "imageWidth": 0,
+        "imageHeight": 0
+      },
+      {
+        "id": "oportunidades",
+        "short": "Captação e vendas",
+        "pain": "“O lead chega, mas demora, falta de contexto e repasses custam oportunidades.”",
+        "title": "Entregue ao comercial uma conversa pronta para continuar.",
+        "description": "Conecte captação, origem, qualificação por IA e encaminhamento. O vendedor recebe a oportunidade sabendo de onde veio, o que o contato precisa e o que já foi conversado.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Capture",
+            "text": "Site, formulário ou conversa."
+          },
+          {
+            "title": "Qualifique",
+            "text": "Critérios e contexto com IA."
+          },
+          {
+            "title": "Encaminhe",
+            "text": "Resumo, histórico e próximo passo."
+          }
+        ],
+        "benefits": [
+          "Reduza a perda de contexto entre anúncios, páginas e WhatsApp com a identificação de origem disponível.",
+          "Prepare o vendedor com resumo, score e sugestões do copiloto; a equipe mantém a decisão sobre a resposta."
+        ],
+        "metric": "Tempo até contato e conversão entre qualificação e venda.",
+        "example": {
+          "title": "O vendedor começa do ponto certo",
+          "when": "Uma pessoa chega pela campanha e conversa com a IA.",
+          "then": "A qualificação registra critérios e contexto. O negócio pode ser criado e encaminhado conforme as regras.",
+          "outcome": "A equipe comercial continua a negociação com as informações reunidas."
+        },
+        "image": "/produto/marketing/academy-atribuicao-painel.webp",
+        "imageAlt": "Tela real de origem e atribuição de uma conversa no yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 956
+      },
+      {
+        "id": "execucao",
+        "short": "Conteúdo e execução",
+        "pain": "“O time gasta horas montando a operação enquanto oportunidades esperam.”",
+        "title": "Dê escala ao conteúdo. Tire o trabalho repetitivo do caminho.",
+        "description": "Use IA com o contexto da sua marca para preparar conteúdo e conecte tarefas recorrentes com automações. Seu time ganha uma base para criar, revisar e melhorar.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Oriente",
+            "text": "Marca, estratégia e documentos selecionados."
+          },
+          {
+            "title": "Prepare",
+            "text": "Conteúdos, modelos e próximos passos."
+          },
+          {
+            "title": "Conecte",
+            "text": "Automações e ferramentas dos seus sistemas."
+          }
+        ],
+        "benefits": [
+          "Prepare conteúdo para blog, LinkedIn e Instagram com kit de marca e orientações definidos, mantendo a revisão do time.",
+          "No yaAgents, descreva agentes, critérios e ferramentas de integração por conversa, com configuração e validação antes de usar."
+        ],
+        "metric": "Tempo para preparar campanhas e quantidade de trabalho manual.",
+        "example": {
+          "title": "Um ponto de partida com a sua marca",
+          "when": "O time precisa preparar uma nova peça de conteúdo.",
+          "then": "A IA usa o kit de marca, a estratégia e os materiais selecionados para apoiar a criação.",
+          "outcome": "A equipe revisa, ajusta e prepara a publicação com menos recomeços."
+        },
+        "image": "/produto/vendas-yaagents.webp",
+        "imageAlt": "Tela real do construtor de agentes de IA do yapt.",
+        "imageWidth": 1600,
+        "imageHeight": 1193
+      }
+    ],
+    "imageNote": "Telas do produto em português · exemplos de configuração.",
+    "conversionFeedback": {
+      "label": "Central de conversões",
+      "title": "Leve a qualificação e a venda de volta às campanhas.",
+      "description": "Envie eventos de qualificação, avanço de etapa e venda às plataformas conectadas. Assim, Meta e Google podem usar os sinais da sua operação na otimização das campanhas, conforme a integração e os eventos configurados.",
+      "events": [
+        "Lead qualificado",
+        "Etapa relevante",
+        "Venda registrada"
+      ]
+    },
+    "channelsLabel": "Campanhas nos canais da sua operação",
+    "channels": [
+      "WhatsApp",
+      "E-mail",
+      "SMS",
+      "RCS"
+    ],
+    "channelsNote": "Canais conforme disponibilidade e contratação. As réguas de relacionamento conectam WhatsApp e e-mail."
+  },
+  "journey": {
+    "eyebrow": "Por dentro do yapt.",
+    "title": "Uma jornada inteira. O contexto segue junto.",
+    "description": "Do investimento à conversa, das réguas ao resultado. Explore a plataforma em ação e acompanhe como as etapas se conectam.",
+    "note": "Demonstração de funcionamento. Resultados dependem do cenário, dos dados e da configuração da operação."
+  },
+  "foundation": {
+    "eyebrow": "Inteligência artificial aplicada à jornada",
+    "title": "IA e automação em cada etapa da campanha.",
+    "description": "Campanhas multicanal, públicos e réguas de nutrição compartilham dados com marketing e vendas. A atribuição de receita orienta onde investir; a Central de Conversões leva eventos às plataformas conectadas. Especialistas podem apoiar a configuração e a evolução.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "IA na qualificação de leads",
+        "text": "O contexto da campanha e da conversa ajuda a qualificar o lead, preparar resumos e executar as ações configuradas."
+      },
+      {
+        "icon": "automation",
+        "title": "Automação de marketing",
+        "text": "Réguas inteligentes mantêm a nutrição e a reativação dos leads, com mensagens e próximos passos conforme os eventos e as condições definidos."
+      },
+      {
+        "icon": "data",
+        "title": "Atribuição de receita",
+        "text": "Conecte investimento, origem dos leads, conversas e vendas para acompanhar o que cada campanha gera."
+      },
+      {
+        "icon": "integrations",
+        "title": "Central de Conversões",
+        "text": "Envie eventos da jornada às plataformas de anúncio conectadas e use os dados da operação para apoiar a otimização."
+      }
+    ],
+    "builderLabel": "yaAgents · construção por conversa",
+    "builderTitle": "Descreva o que sua operação precisa. Construa o próximo passo com IA.",
+    "builderDescription": "Agentes, critérios de qualificação e ferramentas de integração podem ser preparados por conversa. Sua equipe revisa a configuração, testa e evolui o funcionamento, com apoio dos nossos especialistas se precisar.",
+    "builderLink": "Conheça o yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Tela real do construtor de agentes de IA do yapt."
+  },
+  "adoption": {
+    "eyebrow": "Aplicação de IA ao seu marketing",
+    "title": "Sua operação tem particularidades. A implantação precisa entender isso.",
+    "description": "Escolha o primeiro gargalo e conecte as campanhas aos dados da operação. Seu time pode usar a plataforma ou contar com nossos especialistas para configurar os cenários e acompanhar a evolução.",
+    "steps": [
+      {
+        "title": "Entender",
+        "text": "Mapear a jornada, os dados, os sistemas e onde as oportunidades se perdem."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Configurar o primeiro cenário, a IA, as regras e as integrações necessárias."
+      },
+      {
+        "title": "Evoluir",
+        "text": "Acompanhar os indicadores, orientar a equipe e ajustar o que precisa melhorar."
+      }
+    ],
+    "footnote": "Escopo, canais, integrações e recursos são definidos conforme a necessidade e a configuração de cada empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de começar",
+    "title": "Clareza para quem decide. Contexto para quem opera.",
+    "items": [
+      {
+        "question": "O yapt. substitui todas as ferramentas que já usamos?",
+        "answer": "O diagnóstico define o que faz sentido concentrar no yapt. e o que precisa continuar conectado. Integrações dependem dos sistemas, APIs e acessos disponíveis; o objetivo é dar continuidade à operação com os dados necessários."
+      },
+      {
+        "question": "Precisamos começar por todos os cenários?",
+        "answer": "Podemos priorizar um gargalo e definir um primeiro cenário com indicadores claros. A evolução considera o processo, a preparação dos dados, as integrações e o time que vai operar."
+      },
+      {
+        "question": "Como a inteligência artificial ajuda na atribuição de receita?",
+        "answer": "O yapt. relaciona campanhas, origens, leads, conversas e vendas para apoiar a análise do investimento. Receita atribuída e retorno precisam ser lidos com período e critério de atribuição definidos, reconhecendo também vendas sem origem identificada. A Central de Conversões envia os eventos configurados às plataformas conectadas para apoiar a otimização."
+      },
+      {
+        "question": "A IA toma todas as decisões sozinha?",
+        "answer": "A configuração define os critérios, as ferramentas e as ações permitidas. Copilotos apoiam a equipe com resumo e sugestões; agentes podem executar tarefas configuradas. Permissões, revisão e testes fazem parte da preparação."
+      },
+      {
+        "question": "Como funcionam as campanhas multicanal e a automação de marketing?",
+        "answer": "As réguas conectam WhatsApp e e-mail para dar continuidade à comunicação e à nutrição de leads. Outros canais de disparo, como SMS e RCS, dependem de disponibilidade e contratação. Eventos, condições e integrações definem como cada cenário funciona; o diagnóstico confirma os canais e recursos adequados."
+      },
+      {
+        "question": "A geração de conteúdo publica automaticamente nas redes?",
+        "answer": "O time pode preparar e revisar conteúdos para blog, LinkedIn e Instagram com o contexto de marca selecionado. A preparação do conteúdo e o controle interno de publicação não significam postagem automática nas redes."
+      },
+      {
+        "question": "Posso usar a plataforma sem contratar especialistas?",
+        "answer": "Sim. Seu time pode conduzir a operação na plataforma. Se precisar de apoio para implantar e evoluir os cenários, você pode combinar yapt. e especialistas. A New Way também oferece consultoria para um problema definido, com ou sem a plataforma."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "O próximo passo é descobrir onde agir",
+    "title": "Vamos descobrir onde seu marketing perde oportunidades e receita.",
+    "description": "Analisamos a jornada entre campanhas, conversas e vendas para identificar os gargalos e definir como aplicar IA, automações e integrações na sua operação.",
+    "points": [
+      "Uma visão dos gargalos da sua jornada.",
+      "Um primeiro cenário com prioridades claras.",
+      "Plataforma, com especialistas se você precisar."
+    ],
+    "cta": "Quero um diagnóstico de marketing",
+    "footnote": "Converse com nosso time sobre a sua operação.",
+    "error": "O atendimento não carregou agora. Tente novamente ou abra o WhatsApp pelo link abaixo.",
+    "fallback": "Abrir direto no WhatsApp",
+    "noScript": "Você também pode falar com nosso time pelo WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Fechar imagem ampliada",
+    "imageLabel": "Tela real do produto",
+    "openImage": "Ampliar a tela",
+    "skip": "Ir para o conteúdo",
+    "imageNote": "Use os controles da imagem para ampliar e fechar."
+  }
+}

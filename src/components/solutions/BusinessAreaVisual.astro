@@ -1,0 +1,74 @@
+---
+import type { BusinessArea, BusinessPageContent } from '../../lib/business-pages';
+
+interface Props {
+  area: BusinessArea;
+  content: BusinessPageContent['visual'];
+}
+
+const { area, content } = Astro.props;
+---
+
+<figure class:list={['context-visual', area]} aria-label={content.note}>
+  <div class="visual-orbit" aria-hidden="true"></div>
+  <div class="context-sheet">
+    <div class="sheet-heading">
+      <span class="brand-mark font-poppins" aria-hidden="true">yapt<span>.</span></span>
+      <span class="sheet-label">{content.label}</span>
+      <svg class="leaf" viewBox="0 0 32 40" fill="none" aria-hidden="true">
+        <path d="M27 3C8 5 1 15 7 27c12 7 23-3 20-24Z" fill="currentColor" opacity=".15" />
+        <path d="M7 37 23 10M13 27l-1-11m7 2 7-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+    </div>
+    <h2 class="font-poppins">{content.title}</h2>
+    <ol class="context-steps">
+      {content.steps.map((step, index) => (
+        <li>
+          <span class:list={['step-icon', { final: index === 2 }]} aria-hidden="true">
+            {index === 0 && <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-6 4V6a2 2 0 0 1 2-2Z" /></svg>}
+            {index === 1 && <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" /><path d="M8 8h8M8 12h8M8 16h4" /></svg>}
+            {index === 2 && <svg viewBox="0 0 24 24" fill="none"><path d="m6 12 4 4 8-9" /></svg>}
+          </span>
+          <span>{step}</span>
+          {index < 2 && <span class="step-link" aria-hidden="true"></span>}
+        </li>
+      ))}
+    </ol>
+    <div class="shared-context">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 15 6-6m-8 9H6a4 4 0 0 1-3-7l4-4a4 4 0 0 1 6 0m-2 10a4 4 0 0 0 6 0l4-4a4 4 0 0 0-3-7h-1" /></svg>
+      <p>{content.context}</p>
+    </div>
+  </div>
+  <figcaption>{content.note}</figcaption>
+</figure>
+
+<style>
+  .context-visual { position: relative; width: 100%; max-width: 480px; margin: 0 auto; padding: 20px 10px 0; }
+  .visual-orbit { position: absolute; z-index: 0; inset: 0 20px 25px; border: 1px solid #c7ded3; border-radius: 46% 48% 41% 47%; transform: rotate(-12deg); }
+  .context-sheet { position: relative; background: #fff; border: 1px solid #dae5dd; border-radius: 24px; padding: 25px; box-shadow: 0 22px 65px -34px #164a37aa; }
+  .sheet-heading { display: flex; align-items: center; gap: 12px; }
+  .brand-mark { display: grid; place-content: center; background: #0b4938; color: #fff; width: 48px; height: 42px; border-radius: 13px; font-size: 16px; font-weight: 600; letter-spacing: -.8px; grid-auto-flow: column; flex: 0 0 auto; }
+  .brand-mark span { color: #51d2ba; }
+  .sheet-label { color: #4b675c; font-size: 11px; font-weight: 600; line-height: 1.5; }
+  .leaf { width: 29px; height: 36px; color: #167f67; margin-left: auto; flex: 0 0 auto; }
+  h2 { font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -.7px; color: #133e30; margin: 27px 0; max-width: 330px; }
+  .context-steps { list-style: none; padding: 0; margin: 0; }
+  .context-steps li { position: relative; display: flex; align-items: center; gap: 15px; min-height: 54px; margin-bottom: 17px; color: #345347; font-size: 13px; font-weight: 500; }
+  .context-steps li:last-child { margin-bottom: 0; }
+  .step-icon { position: relative; z-index: 1; display: grid; place-content: center; flex: 0 0 auto; width: 44px; height: 44px; background: #f1f6f2; border: 1px solid #dce7dd; border-radius: 13px; color: #277259; }
+  .step-icon.final { background: #e3f4eb; border-color: #bedfcc; }
+  .step-icon svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .step-link { position: absolute; height: 26px; width: 1px; background: #c8dcd1; top: 49px; left: 22px; }
+  .shared-context { display: flex; align-items: flex-start; gap: 9px; margin-top: 25px; padding-top: 19px; border-top: 1px solid #e4ece5; color: #557064; }
+  .shared-context svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.4; flex: 0 0 auto; margin-top: 2px; }
+  .shared-context p { font-size: 11px; line-height: 1.6; margin: 0; }
+  figcaption { position: relative; text-align: center; margin-top: 19px; color: #62776c; font-size: 10px; line-height: 1.6; }
+  .expansion .context-sheet { background: #fffffc; }
+  @media (min-width: 768px) {
+    .context-visual { padding: 27px 20px 0; }
+    .context-sheet { padding: 31px; }
+    h2 { font-size: 24px; }
+    .sheet-label { font-size: 12px; }
+    .context-steps li { font-size: 14px; }
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import { whatsappHref } from '../lib/whatsapp';
 interface Props {
   text?: string;
 }
@@ -11,13 +12,12 @@ const { text = 'Agendar demonstração gratuita →' } = Astro.props;
   style="background: rgba(6,78,59,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(45,212,191,0.2);"
 >
   <div class="px-4 py-3">
-    <button
-      type="button"
-      onclick="typeof yaptwa==='function'&&yaptwa('open')"
+    <a
+      href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"
       class="block w-full text-center bg-white font-poppins font-semibold py-3 rounded-xl text-base border-none cursor-pointer"
       style="color: #064E3B;"
     >
       {text}
-    </button>
+    </a>
   </div>
 </div>

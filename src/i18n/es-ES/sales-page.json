@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "title": "Inteligencia artificial para ventas en WhatsApp",
+    "description": "Inteligencia artificial para ventas: cualifica leads, automatiza seguimientos y conecta tu CRM en WhatsApp con el embudo y los datos de tu empresa."
+  },
+  "hero": {
+    "eyebrow": "Inteligencia artificial para ventas",
+    "title": "Inteligencia artificial para ventas.",
+    "ending": "Más ingresos y productividad.",
+    "description": "Los leads que se enfrían y las tareas manuales cuestan ingresos. yapt. aplica IA a la cualificación y al seguimiento, con CRM en WhatsApp, embudo, conversaciones y actividades conectados a tus sistemas. Tu equipo dirige la operación y puede contar con nuestros especialistas.",
+    "cta": "Quiero un diagnóstico de ventas",
+    "secondary": "Mira cómo avanzan los negocios",
+    "proof": "Socio Oficial de Meta · 40M+ mensajes al mes · 16 años.",
+    "frameBrand": "Ventas",
+    "screenLabel": "El próximo paso de cada negocio",
+    "screenNote": "Pantalla real del producto · datos ilustrativos",
+    "image": "/solucao/img/14aec716d998.jpg",
+    "imageWidth": 1376,
+    "imageHeight": 714,
+    "imageAlt": "Pantalla real de yapt. con negocios organizados por etapas del embudo comercial.",
+    "tags": [
+      "Cualificación",
+      "Negociación",
+      "Propuesta",
+      "Gestión"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explora los problemas de la operación comercial",
+    "mechanismLabel": "Cómo lo resuelve yapt.",
+    "actionLabel": "En la práctica",
+    "measurementLabel": "Qué seguir",
+    "exampleLabel": "Ejemplo de operación",
+    "moreLabel": "Ampliar pantalla real",
+    "imageNote": "Pantallas del producto en portugués · ejemplos de configuración.",
+    "eyebrow": "Ingresos y productividad en cada etapa",
+    "title": "¿Cuánto de tu objetivo se pierde antes del cierre?",
+    "description": "Cada oportunidad sin próximo paso, negociación sin contexto y hora dedicada a buscar información reduce la capacidad de vender. Explora dónde aplica yapt. IA, organización y datos para hacer avanzar los negocios.",
+    "items": [
+      {
+        "id": "qualificacao",
+        "short": "Cualificación con IA",
+        "pain": "“El vendedor dedica tiempo a descubrir quién puede comprar de verdad.”",
+        "title": "Prepara la oportunidad antes de involucrar al vendedor.",
+        "description": "Los agentes de IA usan los criterios de tu empresa para cualificar, reunir el contexto disponible y distinguir quién está preparado, necesita nutrición o no encaja. El equipo recibe una base para continuar la venta.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Entiende",
+            "text": "Origen, necesidad y contexto disponible."
+          },
+          {
+            "title": "Cualifica",
+            "text": "Criterios propios e información de la conversación."
+          },
+          {
+            "title": "Prepara",
+            "text": "Resumen y próximo paso para el equipo."
+          }
+        ],
+        "benefits": [
+          "Transcribe audios y extrae información de documentos en los flujos habilitados, reduciendo el tiempo necesario para reconstruir la necesidad.",
+          "Cuando está configurado, el agente consulta los horarios disponibles y agenda la opción elegida, comprobando de nuevo la disponibilidad."
+        ],
+        "metric": "Tiempo hasta la cualificación y avance de oportunidades que encajan.",
+        "example": {
+          "title": "El vendedor recibe lo que importa",
+          "when": "Un contacto llega por la campaña y explica su necesidad.",
+          "then": "La IA reúne las respuestas y aplica los criterios de cualificación configurados.",
+          "outcome": "El vendedor recibe el origen, el contexto y una oportunidad lista para continuar."
+        },
+        "image": "/produto/vendas-leads.webp",
+        "imageAlt": "Pantalla real de yapt. con leads, origen, puntuación y etapa de relación.",
+        "imageWidth": 1600,
+        "imageHeight": 664
+      },
+      {
+        "id": "prospeccao",
+        "short": "Prospección organizada",
+        "pain": "“Hacemos intentos, pero perdemos el seguimiento y el historial.”",
+        "title": "Transforma los intentos aislados en una prospección con continuidad.",
+        "description": "Organiza la cola de prospección, registra los resultados de las llamadas y mantén el contacto de seguimiento acordado vinculado a la oportunidad. Cuando el contacto avanza, el contexto acompaña la transición a Ventas.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Organiza",
+            "text": "Cola, prioridades y franjas de contacto."
+          },
+          {
+            "title": "Registra",
+            "text": "Resultado, observación y próximo intento."
+          },
+          {
+            "title": "Avanza",
+            "text": "Oportunidad e historial en el embudo comercial."
+          }
+        ],
+        "benefits": [
+          "Importa contactos con tratamiento de duplicados e identificación de clientes o negocios ya existentes.",
+          "Registra las llamadas y los contactos de seguimiento para que el trabajo del día tenga una secuencia clara."
+        ],
+        "metric": "Intentos, contactos de seguimiento cumplidos y conversión de prospección en oportunidad.",
+        "example": {
+          "title": "El próximo intento ya tiene contexto",
+          "when": "Un contacto pide retomar la conversación en otro momento.",
+          "then": "El equipo registra el resultado y organiza el seguimiento en la prospección.",
+          "outcome": "El próximo contacto parte de lo que ya se ha acordado."
+        },
+        "image": "/produto/vendas-prospeccao.webp",
+        "imageAlt": "Pantalla real de prospección de yapt., con cola de oportunidades y próximas acciones.",
+        "imageWidth": 1600,
+        "imageHeight": 937
+      },
+      {
+        "id": "continuidade",
+        "short": "Prioridades y seguimiento",
+        "pain": "“Las oportunidades se enfrían mientras el equipo intenta sacar el día adelante.”",
+        "title": "Da a cada oportunidad un próximo paso.",
+        "description": "Mi día reúne actividades atrasadas, de hoy y próximas, además de negocios sin próximo paso. Las alertas y secuencias ayudan a dar continuidad a los negocios que necesitan atención.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Visualiza",
+            "text": "Actividades y oportunidades que requieren acción."
+          },
+          {
+            "title": "Prioriza",
+            "text": "Retrasos, plazos de etapa e inactividad."
+          },
+          {
+            "title": "Continúa",
+            "text": "Tareas, mensajes y avisos configurados."
+          }
+        ],
+        "benefits": [
+          "Completa, reprograma o aplaza actividades sin perder el vínculo con el negocio o la conversación.",
+          "Configura secuencias para oportunidades estancadas y propuestas en la etapa definida, con tareas y avisos para el equipo."
+        ],
+        "metric": "Actividades atrasadas, oportunidades sin próximo paso y avance por etapa.",
+        "example": {
+          "title": "El negocio estancado vuelve al plan del día",
+          "when": "Una oportunidad permanece sin avanzar en la etapa configurada.",
+          "then": "La secuencia puede crear una actividad y avisar al responsable según las condiciones definidas.",
+          "outcome": "El equipo gana visibilidad para retomar el próximo paso."
+        },
+        "image": "/produto/sales/academy-atividades-negocio-real.webp",
+        "imageAlt": "Pantalla real de actividades vinculadas a un negocio en yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 320
+      },
+      {
+        "id": "negociacao",
+        "short": "Contexto y copiloto",
+        "pain": "“Cada vendedor necesita buscar información y reconstruir la negociación.”",
+        "title": "Menos tiempo buscando. Más contexto para negociar.",
+        "description": "Reúne conversaciones, actividades, participantes e historial en el negocio. El copiloto prepara resúmenes, sugiere respuestas y propone próximos pasos, mientras el equipo decide qué enviar y aplicar.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Reúne",
+            "text": "Conversaciones, participantes e información del negocio."
+          },
+          {
+            "title": "Orienta",
+            "text": "Resumen, fuentes y sugerencias del copiloto."
+          },
+          {
+            "title": "Aplica",
+            "text": "Acciones aprobadas por el vendedor."
+          }
+        ],
+        "benefits": [
+          "Identifica a los decisores, compradores y otros participantes para comprender quién forma parte de la negociación.",
+          "Lleva datos de las integraciones habilitadas a la conversación y usa el copiloto para preparar tareas, contactos de seguimiento o actualizaciones de la ficha."
+        ],
+        "metric": "Tiempo de preparación, continuidad de las negociaciones y actividades completadas.",
+        "example": {
+          "title": "La conversación continúa sin empezar de cero",
+          "when": "Otro vendedor necesita asumir una oportunidad.",
+          "then": "La ficha reúne historial y participantes; el copiloto ayuda a resumir y preparar la próxima acción.",
+          "outcome": "El equipo continúa la negociación con contexto y responsabilidades claros."
+        },
+        "image": "/produto/vendas-negocio.webp",
+        "imageAlt": "Pantalla real de un negocio en yapt., con detalles, responsable y contexto comercial.",
+        "imageWidth": 1510,
+        "imageHeight": 1560
+      },
+      {
+        "id": "propostas",
+        "short": "Propuestas y cierre",
+        "pain": "“Enviamos la propuesta, pero seguir versiones y decisiones se convierte en trabajo manual.”",
+        "title": "Da forma a la propuesta. Mantén visible la negociación.",
+        "description": "Prepara propuestas vinculadas al negocio, reutilizando productos, modelos y condiciones. Sigue las versiones y el estado y ofrece un enlace para que el cliente las vea y acepte.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Prepara",
+            "text": "Productos, destinatario, modelo y condiciones."
+          },
+          {
+            "title": "Sigue",
+            "text": "Versiones y estado vinculados al negocio."
+          },
+          {
+            "title": "Formaliza",
+            "text": "Visualización y aceptación por el cliente."
+          }
+        ],
+        "benefits": [
+          "Mantén conectadas la propuesta y la negociación para que el equipo sepa qué versión se está tratando.",
+          "Registra la continuidad en el negocio y conserva la distinción entre propuesta aceptada, venta confirmada y pago."
+        ],
+        "metric": "Tiempo hasta la decisión, propuestas aceptadas y conversión en venta confirmada.",
+        "example": {
+          "title": "Una propuesta con historial de negociación",
+          "when": "El cliente pide un ajuste en las condiciones.",
+          "then": "El equipo prepara la nueva versión manteniendo la propuesta vinculada al negocio.",
+          "outcome": "El cliente la evalúa mediante el enlace y el equipo sigue el estado de la propuesta."
+        },
+        "image": "/produto/sales/academy-propostas-produtos-real.webp",
+        "imageAlt": "Pantalla real de preparación de propuesta con productos y condiciones vinculados al negocio.",
+        "imageWidth": 1400,
+        "imageHeight": 964
+      },
+      {
+        "id": "gestao",
+        "short": "Objetivos y cuellos de botella",
+        "pain": "“El embudo está lleno, pero descubrimos tarde que el objetivo está en riesgo.”",
+        "title": "Visualiza lo que falta para el objetivo mientras aún puedes actuar.",
+        "description": "Sigue los objetivos, los resultados y el ritmo de vendedores y equipos. El informe comercial muestra conversión, tiempo por etapa y motivos de pérdida, con criterios claros para interpretar la previsión.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Compara",
+            "text": "Objetivo, resultados y ritmo del período."
+          },
+          {
+            "title": "Localiza",
+            "text": "Etapas, conversión y motivos de pérdida."
+          },
+          {
+            "title": "Actúa",
+            "text": "Prioridades de gestión para apoyar al equipo."
+          }
+        ],
+        "benefits": [
+          "Mira dónde se estancan los negocios y qué motivos de pérdida requieren investigación.",
+          "Lee la previsión según las reglas y el historial adoptados; orienta la evaluación y no garantiza el cierre."
+        ],
+        "metric": "Resultados, conversión, tiempo por etapa, pérdidas y avance hacia el objetivo.",
+        "example": {
+          "title": "La reunión de resultados se convierte en una decisión",
+          "when": "El equipo está por debajo del ritmo esperado en el período.",
+          "then": "La gestión consulta los resultados y los cuellos de botella del embudo comercial.",
+          "outcome": "El equipo identifica dónde actuar y sigue el efecto de los cambios."
+        },
+        "image": "/produto/vendas-metas.webp",
+        "imageAlt": "Pantalla real de objetivos comerciales de yapt., con resultados y seguimiento del período.",
+        "imageWidth": 1600,
+        "imageHeight": 1091
+      },
+      {
+        "id": "carteira",
+        "short": "Cartera y posventa",
+        "pain": "“Después de la venta, la continuidad de la cuenta depende de la memoria.”",
+        "title": "Mantén la relación con responsable y próximo paso.",
+        "description": "Organiza los clientes en carteras con responsables, negocios, conversaciones e información de la relación. Usa tareas y avisos para orientar el seguimiento después de la venta.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Cartera, responsables y funciones del equipo."
+          },
+          {
+            "title": "Conecta",
+            "text": "Historial, conversaciones y negocios del cliente."
+          },
+          {
+            "title": "Sigue",
+            "text": "Tareas y avisos de seguimiento."
+          }
+        ],
+        "benefits": [
+          "Da visibilidad a quién se ocupa de cada cuenta y a lo que ya se ha acordado en la relación.",
+          "Configura el seguimiento del inicio, la posventa y la renovación con tareas y avisos, según el proceso de la empresa."
+        ],
+        "metric": "Cuentas con responsable, seguimientos previstos y oportunidades de continuidad.",
+        "example": {
+          "title": "La venta inicia la continuidad",
+          "when": "Se completa un negocio y el cliente necesita pasar a la próxima etapa.",
+          "then": "El equipo organiza responsables y actividades de seguimiento.",
+          "outcome": "La relación continúa con historial y responsabilidades visibles."
+        },
+        "image": "",
+        "imageAlt": "",
+        "imageWidth": 0,
+        "imageHeight": 0
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Por dentro de la operación comercial",
+    "title": "De la conversación a la decisión. El negocio sigue conectado.",
+    "description": "Sigue a la IA preparando el contexto, la prospección, la negociación y los indicadores comerciales. Explora la jornada y los próximos pasos en el producto.",
+    "note": "Demostración con datos ilustrativos. Los recursos y resultados dependen de la configuración, los datos y el proceso de la empresa."
+  },
+  "foundation": {
+    "eyebrow": "Inteligencia artificial en la operación comercial",
+    "title": "La IA prepara oportunidades. Tu equipo hace avanzar los negocios.",
+    "description": "En el mismo CRM con IA, el embudo de ventas, las conversaciones y las actividades comparten el contexto del cliente. Los agentes preparan oportunidades, los copilotos orientan al equipo y las integraciones aportan datos de tus sistemas. Nuestros especialistas pueden apoyar la implantación y la evolución.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "Cualificación para el SDR",
+        "text": "Los agentes de IA recopilan información y cualifican leads según los criterios configurados, preparando el contexto para el equipo comercial."
+      },
+      {
+        "icon": "teams",
+        "title": "Copilotos que orientan",
+        "text": "Resúmenes, sugerencias y acciones propuestas durante la conversación, con la decisión del vendedor."
+      },
+      {
+        "icon": "automation",
+        "title": "Seguimiento con contexto",
+        "text": "Las secuencias inteligentes y las actividades mantienen el seguimiento vinculado al negocio, las conversaciones y la etapa del embudo."
+      },
+      {
+        "icon": "data",
+        "title": "Gestión del embudo de ventas",
+        "text": "El origen del lead, el historial, los objetivos y los indicadores ayudan al gestor a localizar los cuellos de botella y seguir las oportunidades."
+      }
+    ],
+    "builderLabel": "yaAgents · construcción por conversación",
+    "builderTitle": "Describe cómo vende tu equipo. Prepara la IA para trabajar con él.",
+    "builderDescription": "En yaAgents, describe los criterios de cualificación, las orientaciones y las herramientas que necesita la operación. Tu equipo revisa y prueba la configuración y puede contar con nuestros especialistas para implantar y mejorar la solución.",
+    "builderLink": "Conoce yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Pantalla real del constructor de agentes de IA de yapt."
+  },
+  "adoption": {
+    "eyebrow": "Del diagnóstico a la IA en acción",
+    "title": "Tu proceso de ventas tiene particularidades. La IA necesita conocerlas.",
+    "description": "Define dónde aplicar IA a la prospección, la negociación y el seguimiento. Tu equipo puede usar la plataforma o contratar a nuestros especialistas para apoyar la implantación y la evolución.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Entender la entrada de oportunidades, los cuellos de botella del embudo y el tiempo que dedica el equipo."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Configurar el primer escenario, los criterios de la IA, las reglas y las conexiones necesarias."
+      },
+      {
+        "title": "Evolucionar",
+        "text": "Orientar al equipo, seguir los indicadores y ajustar lo que necesita mejorar."
+      }
+    ],
+    "footnote": "El alcance, los canales, las integraciones y los recursos se definen según la necesidad y la configuración de cada empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de empezar",
+    "title": "Claridad para la gestión. Continuidad para quien vende.",
+    "items": [
+      {
+        "question": "¿Cómo funciona un CRM en WhatsApp con inteligencia artificial?",
+        "answer": "yapt. reúne contactos, conversaciones, negocios y actividades en el mismo contexto. La IA puede cualificar leads, resumir el historial y sugerir respuestas; las secuencias organizan el seguimiento según las reglas definidas. La empresa elige dónde actúa el agente y dónde el vendedor revisa, aprueba o asume la negociación."
+      },
+      {
+        "question": "¿Cómo sigue el gestor la productividad y los objetivos?",
+        "answer": "Mi día organiza actividades, retrasos, próximos pasos y señales de negocios que necesitan atención. El informe comercial reúne objetivos, resultados, conversión, tiempo por etapa y motivos de pérdida, ayudando a la gestión a definir dónde apoyar al equipo."
+      },
+      {
+        "question": "¿Cómo ayuda la inteligencia artificial al SDR y a la prospección?",
+        "answer": "Los agentes pueden cualificar leads según los criterios configurados y preparar el contexto para el SDR o vendedor. La cola organiza oportunidades y seguimientos previstos; el equipo registra llamadas, observaciones y próximos intentos en el negocio. Las secuencias y actividades ayudan a mantener la continuidad del seguimiento."
+      },
+      {
+        "question": "¿La previsión de ventas garantiza los ingresos?",
+        "answer": "No. La previsión usa reglas, probabilidades de etapa e historial para ayudar a evaluar el período. Un negocio ganado, una propuesta aceptada, un pedido confirmado y el dinero recibido son situaciones diferentes que deben interpretarse con el criterio adecuado."
+      },
+      {
+        "question": "¿La IA puede leer audios, documentos y datos de nuestros sistemas?",
+        "answer": "La transcripción, el análisis de documentos y las herramientas de integración pueden preparar información para la IA y el equipo cuando están habilitados y configurados. Hay límites de formato y procesamiento; las integraciones dependen de los sistemas, las API y los accesos disponibles."
+      },
+      {
+        "question": "¿Tenemos que implantarlo todo a la vez?",
+        "answer": "Podemos priorizar un cuello de botella y definir un primer escenario con indicadores claros. Los módulos, permisos, datos, integraciones y la preparación del equipo orientan el alcance y la evolución."
+      },
+      {
+        "question": "¿Necesito contratar especialistas para usar la plataforma?",
+        "answer": "Puedes contratar la plataforma para que la gestione tu equipo o combinar yapt. con especialistas que acompañan su aplicación. New Way también ofrece consultoría para un problema definido, con o sin la plataforma. El diagnóstico ayuda a elegir el formato adecuado para tu operación."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Descubre dónde puede vender más tu operación",
+    "title": "Encontremos dónde pierde ingresos y productividad tu operación comercial.",
+    "description": "Analizamos la entrada de oportunidades, el trabajo del equipo y los cuellos de botella entre la primera conversación y el cierre. Definimos dónde aplicar IA y qué formato de trabajo encaja con tu empresa.",
+    "points": [
+      "Una visión de los cuellos de botella comerciales.",
+      "Un primer escenario con prioridades claras.",
+      "La plataforma, con especialistas si los necesitas."
+    ],
+    "cta": "Quiero un diagnóstico de ventas",
+    "footnote": "Habla con nuestro equipo sobre tu operación.",
+    "error": "La atención no se ha cargado ahora. Inténtalo de nuevo o abre WhatsApp mediante el enlace de abajo.",
+    "fallback": "Abrir directamente en WhatsApp",
+    "noScript": "También puedes hablar con nuestro equipo por WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Cerrar imagen ampliada",
+    "imageLabel": "Pantalla real del producto",
+    "openImage": "Ampliar pantalla",
+    "skip": "Ir al contenido",
+    "imageNote": "Usa los controles de la imagen para ampliarla y cerrarla."
+  }
+}

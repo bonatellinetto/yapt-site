@@ -1,0 +1,12 @@
+---
+import SupportSidebar from './SupportSidebar.astro';
+import SupportConversationScenes from './SupportConversationScenes.astro';
+import SupportManagementScenes from './SupportManagementScenes.astro';
+interface Props { idPrefix?: string }
+const { idPrefix = '' } = Astro.props;
+---
+<div class="sp-ui" lang="pt-BR">
+  <SupportSidebar idPrefix={idPrefix}/>
+  <SupportConversationScenes idPrefix={idPrefix}/>
+  <SupportManagementScenes idPrefix={idPrefix}/>
+</div>

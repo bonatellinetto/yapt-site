@@ -1,0 +1,21 @@
+---
+import { localePath, type Locale } from '../../lib/i18n';
+import { navigationCopy } from '../../lib/navigation';
+
+interface Props { locale: Locale; compact?: boolean; }
+const { locale, compact = false } = Astro.props;
+---
+
+<div class:list={['platform-groups', { 'platform-groups-compact': compact }]}>
+  {navigationCopy[locale].groups.map(group => (
+    <div class="platform-group">
+      <p class="nav-group-label">{group.label}</p>
+      {group.links.map(link => (
+        <a class="platform-link" href={localePath(link.href, locale)}>
+          <span>{link.label}</span>
+          {!compact && <small>{link.description}</small>}
+        </a>
+      ))}
+    </div>
+  ))}
+</div>

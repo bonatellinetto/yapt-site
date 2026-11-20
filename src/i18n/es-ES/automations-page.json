@@ -1,0 +1,449 @@
+{
+  "meta": {
+    "title": "Automatizaciones con inteligencia artificial",
+    "description": "Automatiza WhatsApp, procesos y seguimientos con yaFlows y reglas inteligentes. Conecta conversaciones, datos y sistemas en la plataforma yapt."
+  },
+  "hero": {
+    "eyebrow": "Automatizaciones con inteligencia artificial",
+    "title": "Automatiza el trabajo.",
+    "ending": "Con inteligencia artificial.",
+    "description": "Usa automatizaciones con inteligencia artificial para conectar etapas, conversaciones de WhatsApp y datos de tus sistemas. Combina el builder yaFlows y reglas inteligentes para tareas, seguimientos y continuidad. Tu equipo puede operar con apoyo de especialistas. La construcción de flujos por conversación con iavéh se está habilitando gradualmente.",
+    "cta": "Quiero automatizar mi operación",
+    "secondary": "Mira las automatizaciones en movimiento",
+    "proof": "yaFlows · reglas inteligentes · automatización de procesos.",
+    "frameBrand": "Automatizaciones",
+    "screenLabel": "De la entrada al siguiente paso, con contexto",
+    "screenNote": "Ejemplo ilustrativo de una operación automatizada.",
+    "image": "/produto/automations/flow-chat-prompt.jpg",
+    "imageWidth": 1502,
+    "imageHeight": 802,
+    "imageAlt": "Pantalla real de iavéh en el modo Construir, con una solicitud escrita para preparar un flujo en yaFlows.",
+    "tags": [
+      "Evento",
+      "Contexto",
+      "Acción",
+      "Resultado"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explora dónde automatizar tu operación",
+    "mechanismLabel": "Cómo lo resuelve yapt.",
+    "actionLabel": "En la práctica",
+    "measurementLabel": "Qué seguir",
+    "exampleLabel": "Ejemplo de aplicación",
+    "moreLabel": "Ampliar pantalla del producto",
+    "imageNote": "Interfaces del producto y ejemplos de configuración. Construcción con iavéh en habilitación gradual; secuencias de servicios próximamente.",
+    "eyebrow": "Automatización de procesos, de la entrada al siguiente paso",
+    "title": "¿Qué queda detenido cuando alguien tiene que recordar, copiar o insistir?",
+    "description": "Un contacto sin seguimiento, una tarea que no se creó y un dato que quedó en otro sistema interrumpen el recorrido. Explora ocho situaciones de automatización de procesos y WhatsApp para dar continuidad al trabajo con IA, flujos y reglas.",
+    "items": [
+      {
+        "id": "fluxos",
+        "short": "Procesos que se detienen",
+        "pain": "«Cada nueva rutina depende de alguien que organice, explique y supervise todas las etapas».",
+        "title": "Convierte la rutina en un flujo que hace avanzar el trabajo.",
+        "description": "En yaFlows, conecta mensajes, condiciones, esperas, programaciones, IA y acciones del negocio en un recorrido visual. La creación por conversación con iavéh se está habilitando gradualmente: describes lo que necesitas, revisas la propuesta y ajustas las etapas en el builder.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "Define el punto de entrada, el objetivo y lo que debe ocurrir."
+          },
+          {
+            "title": "Construye",
+            "text": "Combina condiciones, datos, IA y acciones en el builder visual."
+          },
+          {
+            "title": "Revisa",
+            "text": "Comprueba el recorrido y sigue su ejecución antes de mejorarlo."
+          }
+        ],
+        "benefits": [
+          "Alterna etapas con IA y con personas, conectando la calificación, la recopilación de datos y la transferencia al equipo.",
+          "Utiliza botones, listas y formularios de WhatsApp Flows para obtener la información necesaria y continuar el recorrido."
+        ],
+        "metric": "Tiempo entre etapas, intervenciones manuales, abandonos y finalización del flujo en el período elegido.",
+        "example": {
+          "title": "De la solicitud al siguiente paso",
+          "when": "Llega una solicitud que necesita clasificación y calificación.",
+          "then": "El flujo recopila información, aplica condiciones y dirige la solicitud con el contexto reunido.",
+          "outcome": "El equipo recibe el caso cuando necesita intervenir y puede seguir el recorrido ejecutado."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "Recorrido real de un yaFlow, con inicio, etapa de mensaje y finalización.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "campanhas",
+        "short": "Contactos sin seguimiento",
+        "pain": "«Invertimos en la campaña, pero la comunicación termina después del primer contacto».",
+        "title": "Mantén el interés hasta la siguiente oportunidad.",
+        "description": "Combina campañas y secuencias de comunicación para nutrir, recuperar y acompañar contactos. Utiliza públicos, eventos, condiciones e intervalos para decidir quién recibe cada mensaje por WhatsApp o correo electrónico y cuándo la secuencia debe continuar o detenerse.",
+        "icon": "marketing",
+        "steps": [
+          {
+            "title": "Segmenta",
+            "text": "Elige el público y el momento de entrada en la comunicación."
+          },
+          {
+            "title": "Comunica",
+            "text": "Prepara mensajes, fechas, intervalos y recorridos según la interacción."
+          },
+          {
+            "title": "Acompaña",
+            "text": "Observa respuestas, clics y salidas para ajustar la secuencia."
+          }
+        ],
+        "benefits": [
+          "Da continuidad a la comunicación con nutrición, recordatorios y seguimientos según el interés del contacto.",
+          "Conecta los envíos de campañas y las secuencias con el historial que marketing y ventas utilizan en la operación."
+        ],
+        "metric": "Entregas, respuestas, clics, salidas y avance de las oportunidades por campaña y período.",
+        "example": {
+          "title": "El interés continúa después del primer mensaje",
+          "when": "Un contacto entra en una campaña y muestra interés.",
+          "then": "La secuencia sigue su interacción y prepara la continuidad según los eventos y filtros definidos.",
+          "outcome": "Marketing y ventas encuentran el historial para continuar la conversación y evaluar el resultado."
+        },
+        "image": "/produto/marketing/campanhas-canais-real.png",
+        "imageAlt": "Pantalla real de configuración de una campaña con canales de envío.",
+        "imageWidth": 2032,
+        "imageHeight": 1532
+      },
+      {
+        "id": "vendas",
+        "short": "Negocios que se enfrían",
+        "pain": "«La propuesta se envió. El seguimiento depende de que el vendedor lo recuerde».",
+        "title": "Mantén las oportunidades en movimiento, con la siguiente acción preparada.",
+        "description": "Utiliza secuencias de ventas para acompañar propuestas sin respuesta, negocios detenidos y posventa. Las etapas pueden generar actividades, avisar a los responsables, organizar la asignación por turnos y solicitar orientación de la IA con el contexto del negocio.",
+        "icon": "sales",
+        "steps": [
+          {
+            "title": "Identifica",
+            "text": "Define la etapa, la señal de estancamiento o el cambio en el negocio."
+          },
+          {
+            "title": "Prepara",
+            "text": "Combina el seguimiento, una actividad y un aviso al responsable."
+          },
+          {
+            "title": "Continúa",
+            "text": "Sigue las respuestas y los cambios para continuar o finalizar la secuencia."
+          }
+        ],
+        "benefits": [
+          "Transforma los negocios sin avance en siguientes acciones visibles para el vendedor y la gestión.",
+          "Lleva contexto y orientación de la IA al responsable, con tareas y comunicaciones conectadas al embudo."
+        ],
+        "metric": "Negocios sin siguiente acción, tiempo detenido por etapa, actividades completadas y avance después del seguimiento.",
+        "example": {
+          "title": "Una propuesta recibe seguimiento",
+          "when": "Una oportunidad permanece sin respuesta en la etapa de propuesta.",
+          "then": "La secuencia preparada organiza un mensaje de seguimiento, una actividad o un aviso según sus reglas.",
+          "outcome": "El vendedor encuentra la siguiente acción y el historial para continuar la negociación."
+        },
+        "image": "/produto/vendas-reguas.webp",
+        "imageAlt": "Pantalla real de secuencias de ventas con modelos de propuesta sin respuesta, negocio detenido y posventa.",
+        "imageWidth": 1600,
+        "imageHeight": 565
+      },
+      {
+        "id": "servicos",
+        "short": "Servicios · próximamente",
+        "pain": "«El ticket cambia de etapa y el equipo tiene que comprobarlo todo para que el servicio continúe».",
+        "title": "Lleva la continuidad de las secuencias también a los servicios.",
+        "description": "Próximamente, las secuencias de servicios ampliarán la automatización de tickets y etapas de atención. El objetivo es organizar actividades, actualizaciones y avisos según el avance del caso, conectando el seguimiento con el recorrido que tu empresa necesita entregar.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Mapea",
+            "text": "Define las etapas, los pendientes y los momentos que requieren atención."
+          },
+          {
+            "title": "Prepara",
+            "text": "Planifica actividades, datos y comunicaciones para cada situación."
+          },
+          {
+            "title": "Mide",
+            "text": "Define indicadores para evaluar la rutina cuando se habilite el recurso."
+          }
+        ],
+        "benefits": [
+          "Planifica la continuidad de casos que dependen de una respuesta, documentación o transferencia entre responsables.",
+          "Prepara el seguimiento de cada servicio con eventos, condiciones y acciones vinculados a sus etapas."
+        ],
+        "metric": "Al aplicarlo, seguir el tiempo por etapa, los pendientes, las respuestas y la finalización de los casos.",
+        "example": {
+          "title": "La siguiente etapa del seguimiento de servicios",
+          "when": "Un caso de servicio cambia de etapa o queda a la espera de información.",
+          "then": "La secuencia de servicios podrá organizar la continuidad según los eventos y las condiciones definidos.",
+          "outcome": "El equipo podrá seguir los pendientes y los próximos pasos del caso. Recurso disponible próximamente."
+        },
+        "image": "/produto/operations/academy-fluxo-roteiro-real.webp",
+        "imageAlt": "Ejemplo de recorrido visual del producto; las secuencias de servicios se presentan como un recurso próximo.",
+        "imageWidth": 1400,
+        "imageHeight": 946
+      },
+      {
+        "id": "atividades",
+        "short": "Registros repetidos",
+        "pain": "«La conversación avanza, pero alguien todavía tiene que crear la tarea y completar los campos».",
+        "title": "Transforma los eventos en actividades y datos organizados.",
+        "description": "Crea actividades a partir de eventos del negocio o de la conversación, actualiza los campos definidos y mantén el proceso con la información necesaria. Combina reglas, variables, consultas e IA para reducir el trabajo repetido entre una etapa y otra.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "Elige el evento y los datos necesarios para el proceso."
+          },
+          {
+            "title": "Automatiza",
+            "text": "Configura la actividad, el campo o la actualización prevista."
+          },
+          {
+            "title": "Conecta",
+            "text": "Mantén la rutina vinculada al negocio, al contacto o a la atención."
+          }
+        ],
+        "benefits": [
+          "Prepara tareas de seguimiento en el contexto donde se realiza el trabajo.",
+          "Reduce las copias y los registros repetidos con campos y acciones configurados para cada situación."
+        ],
+        "metric": "Actividades creadas y completadas, campos pendientes, tiempo dedicado a registros y retrabajo.",
+        "example": {
+          "title": "El siguiente trabajo ya queda registrado",
+          "when": "Una oportunidad o un caso llega a un momento que requiere seguimiento.",
+          "then": "La automatización crea la actividad prevista y actualiza los datos configurados para la etapa.",
+          "outcome": "El responsable encuentra el trabajo organizado en el contexto del negocio o de la atención."
+        },
+        "image": "/produto/sales/academy-atividades-negocio-real.webp",
+        "imageAlt": "Pantalla real de actividades vinculadas a un negocio en yapt.",
+        "imageWidth": 1400,
+        "imageHeight": 320
+      },
+      {
+        "id": "distribuicao",
+        "short": "Solicitudes sin destino",
+        "pain": "«Llegan contactos, pero la distribución y la clasificación siguen ocupando al equipo».",
+        "title": "Dale un destino al trabajo que llega.",
+        "description": "Combina la recopilación de información, las condiciones y la calificación con IA para dirigir la demanda. Utiliza transferencias a sectores y reglas de asignación, como los turnos, para preparar el paso al responsable con el contexto disponible.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Comprende",
+            "text": "Recopila el asunto, el perfil y la información de la solicitud."
+          },
+          {
+            "title": "Dirige",
+            "text": "Aplica filtros, condiciones y reglas de asignación."
+          },
+          {
+            "title": "Continúa",
+            "text": "Transfiere al sector o responsable con los datos reunidos."
+          }
+        ],
+        "benefits": [
+          "Prepara el direccionamiento según el asunto, el perfil y la información del contacto.",
+          "Conecta la clasificación y la distribución con las actividades y el contexto que el equipo necesita para continuar."
+        ],
+        "metric": "Tiempo hasta el direccionamiento, nuevas transferencias, distribución de la demanda y espera por sector.",
+        "example": {
+          "title": "Del contacto recibido al responsable",
+          "when": "Llega un nuevo contacto que necesita encontrar al equipo adecuado.",
+          "then": "El flujo recopila el asunto, utiliza las condiciones definidas y dirige la solicitud; la secuencia puede organizar la asignación y una actividad.",
+          "outcome": "El equipo recibe el contexto para continuar el trabajo con menos clasificación manual."
+        },
+        "image": "/produto/ops-filas.webp",
+        "imageAlt": "Pantalla real de gestión de colas de yapt., utilizada para ilustrar el destino de las solicitudes.",
+        "imageWidth": 1600,
+        "imageHeight": 670
+      },
+      {
+        "id": "conexoes",
+        "short": "Datos aislados en sistemas",
+        "pain": "«Cada herramienta tiene una parte de la información, y el equipo tiene que conectarlas».",
+        "title": "Haz que los datos participen en la automatización.",
+        "description": "Crea conexiones por conversación en yaAgents y configura consultas y acciones para el proceso. Los flujos, las secuencias y los agentes pueden intercambiar datos con sistemas mediante APIs y webhooks, según los recursos y accesos definidos. El Mentor utiliza las consultas autorizadas para orientar al equipo.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Conecta",
+            "text": "Describe la API, el dato necesario y la capacidad de consulta o acción."
+          },
+          {
+            "title": "Utiliza los datos",
+            "text": "Lleva las entradas y los resultados a las condiciones y acciones del proceso."
+          },
+          {
+            "title": "Acompaña",
+            "text": "Comprueba el retorno para decidir cómo debe continuar el recorrido."
+          }
+        ],
+        "benefits": [
+          "Evita que el paso entre sistemas dependa de que alguien copie la información.",
+          "Combina datos y acciones en las automatizaciones, con consultas también disponibles para IA y personas autorizadas."
+        ],
+        "metric": "Traspasos manuales entre sistemas, consultas y acciones completadas, errores de integración y tiempo de respuesta.",
+        "example": {
+          "title": "El dato del sistema cambia el siguiente paso",
+          "when": "El recorrido necesita consultar información registrada en otro sistema.",
+          "then": "La integración recibe el dato de entrada y devuelve el resultado al proceso configurado.",
+          "outcome": "El resultado puede orientar una condición, una respuesta o la siguiente acción del trabajo."
+        },
+        "image": "/produto/intelligence/connection-fields.jpg",
+        "imageAlt": "Pantalla real de una conexión configurada por conversación en yaAgents.",
+        "imageWidth": 1471,
+        "imageHeight": 979
+      },
+      {
+        "id": "controle",
+        "short": "Automatizaciones sin visibilidad",
+        "pain": "«La rutina debería haberse ejecutado, pero solo descubrimos el fallo después».",
+        "title": "Mira lo que se ejecutó. Encuentra dónde se detuvo el proceso.",
+        "description": "Sigue las ejecuciones, las etapas y los retornos para entender el recorrido de cada flujo. En las secuencias, configura entradas, condiciones y salidas para que la comunicación acompañe el momento del contacto y del negocio. Revisa la automatización y mejórala con lo que muestra la operación.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Revisa",
+            "text": "Comprueba los disparadores, mensajes, condiciones y acciones antes de activar."
+          },
+          {
+            "title": "Observa",
+            "text": "Consulta la ejecución y el retorno de las etapas."
+          },
+          {
+            "title": "Ajusta",
+            "text": "Investiga los fallos y revisa los recorridos con el equipo."
+          }
+        ],
+        "benefits": [
+          "Localiza la etapa y el retorno que necesitan investigación en los detalles de ejecución.",
+          "Utiliza condiciones de entrada, salida y reentrada para organizar la continuidad de las secuencias."
+        ],
+        "metric": "Ejecuciones completadas, fallos, interrupciones, salidas de secuencias y necesidad de intervención manual.",
+        "example": {
+          "title": "Encuentra la etapa que necesita un ajuste",
+          "when": "Una integración devuelve un error durante el flujo.",
+          "then": "El equipo consulta los detalles de ejecución e identifica el retorno de la etapa.",
+          "outcome": "El ajuste parte de un punto concreto, con una nueva revisión del recorrido antes de ampliar su uso."
+        },
+        "image": "/produto/operations/academy-fluxo-execucao-real.webp",
+        "imageAlt": "Pantalla real de los detalles de ejecución de un flujo, con un ejemplo de fallo de integración para investigar.",
+        "imageWidth": 1400,
+        "imageHeight": 719
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "De la necesidad a la ejecución",
+    "title": "Un recorrido conectado, etapa por etapa.",
+    "description": "Mira cómo diseñar la rutina en yaFlows, preparar secuencias para los momentos del recorrido y utilizar conexiones para llevar los datos al proceso. El equipo revisa los caminos y sigue la ejecución.",
+    "note": "Demostración con interfaces del producto y datos de ejemplo. Construcción por conversación en habilitación gradual; secuencias de servicios próximamente."
+  },
+  "foundation": {
+    "eyebrow": "Automatización de WhatsApp y procesos",
+    "title": "Flujos para ejecutar. Secuencias para acompañar. IA y conexiones para dar contexto.",
+    "description": "Combina la automatización en WhatsApp, los seguimientos y los datos de los sistemas con el recorrido del trabajo. El builder visual y las reglas inteligentes ejecutan las condiciones y acciones configuradas para el proceso de tu empresa.",
+    "items": [
+      {
+        "icon": "automation",
+        "title": "yaFlows: builder de automatizaciones",
+        "text": "Un builder visual para combinar mensajes, condiciones, esperas, inteligencia artificial y acciones del negocio."
+      },
+      {
+        "icon": "marketing",
+        "title": "Reglas inteligentes de seguimiento",
+        "text": "Nutrición, seguimientos, actividades y actualizaciones vinculadas a eventos de marketing y ventas. Servicios próximamente."
+      },
+      {
+        "icon": "integrations",
+        "title": "IA y conexiones aportan contexto",
+        "text": "Las consultas, los datos y las acciones integran los sistemas al trabajo con los accesos y recursos configurados."
+      }
+    ],
+    "builderLabel": "yaFlows + iavéh · habilitación gradual",
+    "builderTitle": "Describe el proceso. Revisa el flujo. Haz avanzar la operación.",
+    "builderDescription": "La construcción de flujos por conversación con iavéh se está habilitando gradualmente. Describe el proceso, revisa la propuesta y aplícala cuando sea adecuada. Al aplicarla, se crea el flujo desactivado en yaFlows; revisa las etapas y actívalo en una acción separada. Después, sigue las ejecuciones y los resultados con el equipo.",
+    "builderLink": "Conoce IA e integraciones",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Pantalla real de iavéh en el modo Construir, con una solicitud escrita para preparar un flujo en yaFlows."
+  },
+  "adoption": {
+    "eyebrow": "Tu equipo, con apoyo especializado si lo necesita",
+    "title": "Automatizar empieza por entender lo que necesita mejorar.",
+    "description": "Tu equipo puede localizar el esfuerzo repetido, organizar las reglas y elegir un primer proceso. Puedes contar con especialistas para construir y evolucionar las automatizaciones, según la modalidad de trabajo elegida.",
+    "steps": [
+      {
+        "title": "Diagnosticar",
+        "text": "Mapear el recorrido, los cuellos de botella, los datos y el esfuerzo manual que afecta la entrega."
+      },
+      {
+        "title": "Construir y revisar",
+        "text": "Preparar flujos, secuencias e integraciones con las personas que conocen el proceso."
+      },
+      {
+        "title": "Acompañar y mejorar",
+        "text": "Observar la ejecución y los indicadores para ajustar las rutinas con el equipo."
+      }
+    ],
+    "footnote": "El alcance, los canales, los accesos y las integraciones se definen según la operación. La construcción con iavéh se está habilitando gradualmente; las secuencias de servicios llegan próximamente."
+  },
+  "faq": {
+    "eyebrow": "Antes de automatizar",
+    "title": "Claridad para diseñar. Visibilidad para mejorar.",
+    "items": [
+      {
+        "question": "¿Cómo usar yaFlows y reglas para automatizar procesos?",
+        "answer": "En la automatización de procesos, yaFlows organiza el recorrido: recopila información, aplica condiciones y ejecuta las acciones configuradas. Las reglas inteligentes acompañan momentos del recorrido con comunicaciones, seguimientos, actividades y actualizaciones según eventos, intervalos y condiciones. Ambos pueden participar en el mismo proceso."
+      },
+      {
+        "question": "¿Ya podemos crear un flujo conversando con iavéh?",
+        "answer": "La construcción de yaFlows por conversación con iavéh se está habilitando gradualmente. Describes la necesidad y revisas la propuesta antes de aplicarla. El builder visual permite comprobar y ajustar las etapas; la disponibilidad de la construcción por conversación depende de la habilitación de la cuenta."
+      },
+      {
+        "question": "¿En qué áreas podemos utilizar las secuencias?",
+        "answer": "Las secuencias de marketing y ventas acompañan la nutrición, los seguimientos, las propuestas, los negocios detenidos y la posventa, según la configuración. Las secuencias de servicios llegan próximamente para ampliar la continuidad de los tickets y las etapas de atención."
+      },
+      {
+        "question": "¿yaFlows permite automatizar conversaciones en WhatsApp?",
+        "answer": "Sí. El builder combina mensajes y plantillas, botones, listas y formularios de WhatsApp Flows. También permite recopilar datos, aplicar encuestas, condiciones y pruebas A/B, esperar respuestas o eventos, programar etapas y conectar IA, actividades y acciones de CRM. Según los canales, permisos y recursos habilitados, puede enviar mensajes en Instagram y notificaciones internas, dirigir conversaciones e integrar sistemas."
+      },
+      {
+        "question": "¿Las automatizaciones pueden enviar y recibir datos de otros sistemas?",
+        "answer": "Sí. Las APIs, los webhooks y las conexiones pueden llevar datos de entrada y resultados a las rutinas del builder, las secuencias y los agentes de IA, según la configuración de cada recorrido. El Mentor puede utilizar consultas autorizadas para orientar al operador. Una integración depende de la API disponible, la documentación y los accesos del sistema."
+      },
+      {
+        "question": "¿Cómo seguimos la ejecución y controlamos la continuidad?",
+        "answer": "Revisa los recorridos antes de activar y sigue los detalles de ejecución para investigar las etapas y sus retornos. En las secuencias, define condiciones de entrada, salida y reentrada, como la respuesta del contacto o el cambio de etapa, según el escenario. El equipo mantiene el control de los ajustes y la aplicación."
+      },
+      {
+        "question": "¿Por dónde empezamos y cómo evaluamos el resultado?",
+        "answer": "Empieza por un proceso con esfuerzo manual o falta de continuidad. Tu equipo puede organizar reglas, datos y acciones y contar con especialistas cuando los necesite. Define indicadores y períodos comparables para seguir el tiempo entre etapas, actividades, fallos, intervenciones y avance del recorrido, considerando los datos y costos de tu operación."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "El siguiente avance de tu operación",
+    "title": "Encontremos el trabajo que puede avanzar con automatización.",
+    "description": "Analizamos dónde se detiene el proceso, quién necesita actuar y qué datos faltan. Construimos un primer recorrido con flujos, secuencias, IA e integraciones para mejorar la continuidad y reducir el esfuerzo repetido.",
+    "points": [
+      "Un proceso relevante y el esfuerzo manual que necesita mejorar.",
+      "Reglas, datos e indicadores definidos con quienes operan.",
+      "Plataforma y especialistas para construir, acompañar y mejorar."
+    ],
+    "cta": "Quiero automatizar mi operación",
+    "footnote": "Conversa con nuestro equipo sobre tu operación.",
+    "error": "La atención no cargó esta vez. Inténtalo de nuevo o abre WhatsApp con el enlace de abajo.",
+    "fallback": "Abrir directamente en WhatsApp",
+    "noScript": "También puedes hablar con nuestro equipo por WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Cerrar imagen ampliada",
+    "imageLabel": "Pantalla del producto",
+    "openImage": "Ampliar pantalla",
+    "skip": "Ir al contenido",
+    "imageNote": "Utiliza los controles de la imagen para ampliar y cerrar."
+  }
+}

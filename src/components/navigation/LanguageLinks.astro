@@ -1,0 +1,26 @@
+---
+import UIIcon from '../UIIcon.astro';
+import type { Locale } from '../../lib/i18n';
+import { navigationLanguages } from '../../lib/navigation';
+
+interface Props { locale: Locale; pathname: string; compact?: boolean; }
+const { locale, pathname, compact = false } = Astro.props;
+---
+
+<div class:list={['nav-language-links', { 'nav-language-compact': compact }]}>
+  {navigationLanguages(pathname).map(language => (
+    <a
+      href={language.href}
+      lang={language.code}
+      hreflang={language.code}
+      aria-current={language.code === locale ? 'true' : undefined}
+      aria-label={language.name}
+      data-language={language.code}
+      data-preserve-route={language.preserveRoute ? 'true' : 'false'}
+    >
+      <span>{language.short}</span>
+      {!compact && <span class="nav-language-name">{language.name}</span>}
+      {language.code === locale && <span class="nav-language-check" aria-hidden="true"><UIIcon name="check" size={15} /></span>}
+    </a>
+  ))}
+</div>

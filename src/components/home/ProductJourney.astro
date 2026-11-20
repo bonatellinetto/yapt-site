@@ -1,0 +1,70 @@
+---
+import type { Locale } from '../../lib/i18n';
+import UIIcon from '../UIIcon.astro';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+interface Props {
+  locale: Locale;
+  variant?: 'marketing' | 'sales' | 'support' | 'operations';
+  copy: JourneyCopy;
+  frames?: JourneyFrame[];
+  chapterFrames?: number[];
+  staticLabels: string[];
+  staticValues: string[];
+  sourceNote?: string;
+}
+const { locale, variant = 'marketing', copy: c, frames, chapterFrames, staticLabels, staticValues, sourceNote } = Astro.props;
+const JourneyTag = ({marketing:'marketing-journey',sales:'sales-journey',support:'support-journey',operations:'operations-journey'} as const)[variant];
+const variantLabel = variant === 'operations' ? ({'pt-BR':'Operações','en-US':'Operations','es-ES':'Operaciones'}[locale]) : variant === 'support' ? ({'pt-BR':'Suporte','en-US':'Support','es-ES':'Soporte'}[locale]) : variant === 'sales' ? ({ 'pt-BR':'Vendas', 'en-US':'Sales', 'es-ES':'Ventas' }[locale]) : 'Marketing';
+const duration = frames?.reduce((sum,frame) => sum + frame.duration, 0) ?? 38550;
+const totalTime = `${Math.floor(duration/60000).toString().padStart(2,'0')}:${Math.floor((duration/1000)%60).toString().padStart(2,'0')}`;
+---
+<JourneyTag class="marketing-journey" data-mj-root data-journey={variant} data-frames={frames ? JSON.stringify(frames) : undefined} data-chapter-frames={chapterFrames ? JSON.stringify(chapterFrames) : undefined} data-copy={JSON.stringify(c)} role="group" aria-label={c.label}>
+  <header class="mj-heading"><span><i aria-hidden="true"></i>{c.title}</span><small>{c.demo}</small></header>
+  <div class="mj-viewport" data-mj-viewport>
+    <div class="mj-static" aria-hidden="true"><span>yapt. · {variantLabel}</span><strong>{c.title}</strong><div>{staticLabels.map((label,index) => <p><small>{label}</small><b>{staticValues[index]}</b></p>)}</div><small>{c.demo}</small></div>
+    <div class="mj-world" data-mj-world aria-hidden="true" lang="pt-BR" inert>
+      <slot/>
+      <div class="mj-cursor" data-mj-cursor>
+        <svg width="28" height="33" viewBox="0 0 28 33" fill="none"><path d="M3 2L24 19L14 20L10 29L3 2Z" fill="#163e35" stroke="white" stroke-width="2.5" stroke-linejoin="round"/></svg><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mj-progress" aria-hidden="true"><span data-mj-progress></span></div>
+  <p class="mj-caption" data-mj-caption aria-live="off">{c.captions[0]}</p>
+  <div class="mj-chapters" aria-label={locale === 'pt-BR' ? 'Escolha uma etapa da jornada' : locale === 'en-US' ? 'Choose a journey stage' : 'Elige una etapa del recorrido'}>
+    {c.chapters.map((chapter,index) => <button type="button" data-mj-chapter={index} aria-pressed={index === 0 ? 'true' : 'false'}><span aria-hidden="true">0{index+1}</span>{chapter}</button>)}
+  </div>
+  <div class="mj-controls">
+    <span class="mj-time" data-mj-time aria-hidden="true">00:00 / {totalTime}</span>
+    <div>
+      <button type="button" class="mj-play" data-mj-play aria-label={c.play}><span data-mj-play-icon data-state="play" aria-hidden="true"><UIIcon name="play" size={15} /><UIIcon name="pause" size={15} /></span><span data-mj-play-label>{c.play}</span></button>
+      <button type="button" class="mj-icon-button" data-mj-replay aria-label={c.replay} title={c.replay}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="mj-icon-button mj-expand" data-mj-expand aria-label={c.expand} title={c.expand} hidden><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+  {sourceNote && <p class="mj-source-note">{sourceNote}</p>}
+</JourneyTag>
+<script>import '../../scripts/marketing-journey';</script>
+<style>
+  [data-mj-play-icon]{display:inline-flex;align-items:center;justify-content:center}
+  [data-mj-play-icon] :global([data-ui-icon=pause]){display:none}
+  [data-mj-play-icon][data-state=pause] :global([data-ui-icon=play]){display:none}
+  [data-mj-play-icon][data-state=pause] :global([data-ui-icon=pause]){display:inline-block}
+  .marketing-journey{display:block;min-width:0;color:#214e42;--mj-menu-opacity:0;--mj-rule-scroll:0}
+  .mj-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 16px;font-size:10px;line-height:1.5;color:#56755b}.mj-heading>span{display:flex;align-items:center;gap:7px;font-weight:500}.mj-heading i{width:4px;height:4px;border-radius:50%;background:#84a975;flex-shrink:0}.mj-heading small{font-size:8px;border:1px solid #d6dfce;border-radius:5px;padding:3px 6px;white-space:nowrap;letter-spacing:.02em;color:#6c7e64}
+  .mj-viewport{position:relative;width:100%;min-width:0;overflow:hidden;aspect-ratio:16/10;background:#f7f9f9;border:1px solid #dce5dd;border-radius:14px;isolation:isolate;box-shadow:0 22px 38px -25px #1f46255c}.mj-world{position:absolute;width:1120px;height:700px;left:0;top:0;transform-origin:0 0;will-change:transform;overflow:hidden;background:#f7f9f9;user-select:none;pointer-events:none;opacity:0}.marketing-journey[data-ready=true] .mj-world{opacity:1}.mj-static{position:absolute;inset:0;padding:8%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(140deg,#f9fcfa,#edf5ed);font-family:Inter,sans-serif;gap:14px}.mj-static>span{font-size:11px;color:#66947f}.mj-static>strong{font-size:clamp(18px,2vw,28px);line-height:1.3;max-width:23ch}.mj-static>div{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.mj-static p{display:flex;flex-direction:column;gap:9px;margin:0;padding:12px 8px;background:#fff;border:1px solid #dce8df;border-radius:8px}.mj-static small{font-size:8px;color:#7c9483}.mj-static b{font-size:15px;color:#285f4a}.marketing-journey[data-ready=true] .mj-static{display:none}.marketing-journey:not([data-ready=true]) .mj-controls,.marketing-journey:not([data-ready=true]) .mj-chapters,.marketing-journey:not([data-ready=true]) .mj-progress{display:none}
+  .mj-cursor{position:absolute;left:0;top:0;z-index:80;width:28px;height:33px;pointer-events:none;opacity:0;filter:drop-shadow(0 2px 2px #12382e35);transform-origin:0 0}.mj-cursor svg{position:relative;z-index:1}.mj-cursor span{position:absolute;left:-13px;top:-13px;width:32px;height:32px;border:2px solid #20b2aa;border-radius:50%;opacity:0;transform:scale(.2)}
+  .mj-progress{height:2px;background:#dce6d9;margin:18px 0 0;overflow:hidden;border-radius:5px}.mj-progress>span{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:#3b9b80;will-change:transform}.mj-caption{font:500 12px/1.65 Inter,sans-serif;color:#3f6350;margin:14px 0 12px;min-height:40px;max-width:64ch;text-wrap:pretty}
+  .mj-chapters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.mj-chapters button{font:500 9px/1.4 Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 4px;min-height:40px;min-width:0;border:1px solid #dce4d4;background:#ffffff80;color:#6c7e65;border-radius:8px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}.mj-chapters button>span{font-size:8px;color:#8da187}.mj-chapters button[aria-pressed=true]{background:#e8f2e2;border-color:#b2cba7;color:#215c3b}.mj-chapters button:hover{border-color:#86b391}.marketing-journey button:focus-visible{outline:2px solid #20b2aa;outline-offset:3px}
+  .mj-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}.mj-time{font:400 9px/1.5 Inter,sans-serif;font-variant-numeric:tabular-nums;color:#82917b}.mj-controls>div{display:flex;align-items:center;gap:3px}.mj-controls button{font:500 10px/1.5 Inter,sans-serif;min-height:36px;padding:7px 9px;border:0;background:transparent;color:#42664c;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:7px;cursor:pointer}.mj-controls button:hover{background:#e3ebdd}.mj-controls .mj-icon-button{min-width:36px;padding:7px}.mj-controls button[hidden]{display:none}
+  .marketing-journey:fullscreen{background:#f3f7ef;padding:24px 36px;display:flex;flex-direction:column;justify-content:center;max-width:none;width:100%;height:100%;box-sizing:border-box}.marketing-journey:fullscreen .mj-viewport{flex:1;aspect-ratio:auto;min-height:0;max-height:calc(100vh - 210px)}.marketing-journey:fullscreen .mj-heading,.marketing-journey:fullscreen .mj-caption{font-size:14px}.marketing-journey:fullscreen .mj-chapters button{font-size:12px}.marketing-journey:fullscreen .mj-controls button{font-size:12px}
+  @media(max-width:600px){.mj-heading{align-items:flex-start;gap:8px;margin-bottom:12px;font-size:9px}.mj-heading small{font-size:9px;padding:3px 4px}.mj-viewport{aspect-ratio:4/3;border-radius:10px;min-height:200px}.mj-progress{margin-top:15px}.mj-caption{font-size:12px;line-height:1.6;min-height:58px;margin-block:12px}.mj-chapters{grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}.mj-chapters button{grid-column:span 2;min-height:40px;font-size:9px}.mj-chapters button:nth-child(4){grid-column:2/span 2}.mj-chapters button:nth-child(5){grid-column:4/span 2}.mj-controls{margin-top:5px}.mj-controls button{min-height:44px}.marketing-journey:fullscreen{padding:16px}.marketing-journey:fullscreen .mj-viewport{max-height:calc(100dvh - 270px)}}
+  @media(max-width:600px){.mj-static{padding:18px;gap:10px}.mj-static>div{gap:4px}.mj-static p{padding:9px 4px;gap:7px}.mj-static small{font-size:7px}.mj-static b{font-size:10px}}
+  .marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static>div{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media(min-width:601px){.marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static b{font-size:13px}}
+  @media(max-width:600px){.marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static{padding:14px;gap:6px}.marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static>strong{font-size:16px;line-height:1.25}.marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static>div{grid-template-columns:repeat(3,minmax(0,1fr))}.marketing-journey:is([data-journey=sales],[data-journey=support],[data-journey=operations]) .mj-static p{padding:6px 4px;gap:4px}}
+  .mj-source-note{margin:10px 0 0;font:400 9px/1.5 Inter,sans-serif;color:#768b77;text-wrap:pretty}
+  .marketing-journey[data-journey=operations]{container-type:inline-size}
+  @container(max-width:360px){.marketing-journey[data-journey=operations] .mj-chapters{grid-template-columns:repeat(6,minmax(0,1fr))}.marketing-journey[data-journey=operations] .mj-chapters button{grid-column:span 2}.marketing-journey[data-journey=operations] .mj-chapters button:nth-child(4){grid-column:2/span 2}.marketing-journey[data-journey=operations] .mj-chapters button:nth-child(5){grid-column:4/span 2}}
+  @media(prefers-reduced-motion:reduce){.mj-chapters button{transition:none}}
+</style>

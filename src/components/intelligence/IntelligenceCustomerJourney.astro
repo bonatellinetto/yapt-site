@@ -1,0 +1,133 @@
+---
+import ProductJourney from '../home/ProductJourney.astro';
+import SupportJourneyScreens from '../home/SupportJourneyScreens.astro';
+import type { Locale } from '../../lib/i18n';
+import type { JourneyCopy, JourneyFrame } from '../../scripts/marketing-journey';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const frames: JourneyFrame[] = [
+  {screen:'intelligence-creation-prompt',focus:'intelligence-creation-prompt-focus',zoom:1.45,duration:2200,chapter:0},
+  {screen:'intelligence-creation-agent',focus:'intelligence-creation-agent-focus',zoom:1.95,duration:2000,chapter:0},
+  {screen:'support-conversation',focus:'support-conversation-overview',zoom:1,duration:1500,chapter:1,state:'arrival'},
+  {screen:'support-conversation',focus:'support-known-customer',zoom:1.65,duration:2000,chapter:1,state:'identified'},
+  {screen:'support-conversation',focus:'support-open-tickets',zoom:1.8,duration:2800,chapter:1,state:'tickets'},
+  {screen:'support-conversation',focus:'support-open-tickets',zoom:1.6,duration:1000,chapter:1,state:'choice'},
+  {screen:'support-conversation',focus:'support-ai-answer',zoom:1.75,duration:2100,chapter:1,state:'answer'},
+  {screen:'support-conversation',focus:'support-ai-answer',zoom:1.55,duration:900,chapter:2,state:'handoff-request'},
+  {screen:'support-conversation',focus:'support-conversation-overview',zoom:1,duration:1200,chapter:2,state:'handoff-ready'},
+  {screen:'support-handoff',focus:'support-ai-summary',zoom:1.8,duration:2500,chapter:2,state:'handoff-ready'},
+  {screen:'support-handoff',focus:'support-human-response',zoom:1.8,duration:2300,chapter:2,state:'handoff-ready'},
+];
+const captures = [
+  {screen:'intelligence-creation-prompt',src:'/produto/intelligence/agent-prompt.jpg',focus:{x:.52,y:.61}},
+  {screen:'intelligence-creation-agent',src:'/produto/intelligence/agent-created.jpg',focus:{x:.86,y:.74}},
+];
+const labels = {
+  'pt-BR': {
+    title:'Da criação à conversa com o cliente.',
+    demo:'Capturas reais + conversa de demonstração',
+    label:'Demonstração em três etapas: construção real do agente, atendimento reproduzido no WhatsApp e continuidade com uma pessoa.',
+    play:'Reproduzir',pause:'Pausar',replay:'Recomeçar demonstração',expand:'Ampliar demonstração',collapse:'Sair da tela cheia',
+    chapters:['Construir','Atender','Continuar'],
+    captions:[
+      'Descreva o atendimento que precisa. O yaAgents prepara o agente por conversa.',
+      'Revise as orientações e a capacidade de consultar os dados necessários ao atendimento.',
+      'Na conversa de demonstração, o cliente chega pelo WhatsApp.',
+      'A IA reconhece o cliente e usa o contexto disponível para começar o atendimento.',
+      'Ela identifica dois tickets em aberto e pergunta por qual deles continuar.',
+      'O cliente escolhe o caso. O atendimento segue ligado ao ticket certo.',
+      'A IA usa o histórico para dar continuidade à conversa e entender o que falta resolver.',
+      'Quando o cliente pede uma pessoa, a operação prepara o encaminhamento.',
+      'O histórico e o que já foi feito seguem com o atendimento.',
+      'Uma nota interna reúne o resumo da IA para quem assume o caso.',
+      'A pessoa continua com contexto, sem fazer o cliente repetir toda a história.',
+    ],
+    source:'Criação com telas reais; atendimento reproduzido a partir do produto, com conversa de demonstração.',
+  },
+  'en-US': {
+    title:'From creation to the customer conversation.',
+    demo:'Real captures + demonstration conversation',
+    label:'Three-stage demonstration: real agent creation, reproduced WhatsApp service and continuity with a human agent. Product interface in Portuguese.',
+    play:'Play',pause:'Pause',replay:'Restart demo',expand:'Expand demo',collapse:'Exit full screen',
+    chapters:['Build','Serve','Continue'],
+    captions:[
+      'Describe the service you need. yaAgents prepares the agent by conversation.',
+      'Review the instructions and the capability to look up the data needed for service.',
+      'In the demonstration conversation, the customer arrives on WhatsApp.',
+      'AI recognizes the customer and uses the available context to begin service.',
+      'It identifies two open tickets and asks which one to continue.',
+      'The customer chooses a case. Service stays linked to the right ticket.',
+      'AI uses the history to continue the conversation and understand what remains unresolved.',
+      'When the customer asks for a person, the operation prepares the handoff.',
+      'The history and the actions already taken stay with the conversation.',
+      'An internal note brings together the AI summary for the person taking over.',
+      'The person continues with context, without asking the customer to repeat the whole story.',
+    ],
+    source:'Creation shown with real screens; service reproduced from the product with a demonstration conversation. Product interface in Portuguese.',
+  },
+  'es-ES': {
+    title:'De la creación a la conversación con el cliente.',
+    demo:'Capturas reales + conversación de demostración',
+    label:'Demostración en tres etapas: creación real del agente, atención reproducida por WhatsApp y continuidad con una persona. Interfaz del producto en portugués.',
+    play:'Reproducir',pause:'Pausar',replay:'Reiniciar demostración',expand:'Ampliar demostración',collapse:'Salir de pantalla completa',
+    chapters:['Construir','Atender','Continuar'],
+    captions:[
+      'Describe la atención que necesitas. yaAgents prepara el agente por conversación.',
+      'Revisa las instrucciones y la capacidad de consultar los datos necesarios para la atención.',
+      'En la conversación de demostración, el cliente llega por WhatsApp.',
+      'La IA reconoce al cliente y usa el contexto disponible para iniciar la atención.',
+      'Identifica dos tickets abiertos y pregunta por cuál continuar.',
+      'El cliente elige un caso. La atención sigue vinculada al ticket correcto.',
+      'La IA utiliza el historial para continuar la conversación y entender qué falta resolver.',
+      'Cuando el cliente pide a una persona, la operación prepara la transferencia.',
+      'El historial y las acciones ya realizadas acompañan la atención.',
+      'Una nota interna reúne el resumen de la IA para quien asume el caso.',
+      'La persona continúa con contexto, sin pedir al cliente que repita toda la historia.',
+    ],
+    source:'Creación con pantallas reales; atención reproducida a partir del producto con una conversación de demostración. Interfaz del producto en portugués.',
+  },
+}[locale];
+const copy: JourneyCopy = labels;
+const capturePoint = (focus: {x:number;y:number}) => ({x:1120*focus.x,y:(700-605*1120/1228)/2+605*1120/1228*focus.y});
+---
+<div class="intelligence-customer-journey" data-intelligence-scenario="agentes" data-intelligence-customer-journey>
+  <ProductJourney locale={locale} variant="support" copy={copy} frames={frames} chapterFrames={[0,4,9]} sourceNote={labels.source} staticLabels={[]} staticValues={[]}>
+    <SupportJourneyScreens idPrefix="intelligence-customer-"/>
+    {captures.map((capture,index)=>{
+      const point = capturePoint(capture.focus);
+      return <div class:list={['icj-capture', {'is-active':index===0}]} data-j-screen={capture.screen}>
+        <img src={capture.src} width="1228" height="605" alt="" loading="lazy" decoding="async" draggable="false"/>
+        <span class="icj-focus" data-j-target={`${capture.screen}-focus`} style={`left:${point.x}px;top:${point.y}px`}/>
+      </div>;
+    })}
+  </ProductJourney>
+  <p class="icj-transcript">{labels.label} {labels.captions.join(' ')}</p>
+</div>
+
+<style>
+  .intelligence-customer-journey{min-width:0;width:100%;padding:0 16px 20px;box-sizing:border-box}
+  .icj-capture{position:absolute;inset:0;width:1120px;height:700px;z-index:90;overflow:hidden;opacity:0;pointer-events:none;background:#f4f5f7}
+  .icj-capture.is-active{opacity:1}
+  .icj-capture img{display:block;width:1120px;height:700px;max-width:none;object-fit:contain;user-select:none}
+  .icj-focus{position:absolute;width:1px;height:1px;pointer-events:none}
+  .intelligence-customer-journey :global(.mj-static){padding:0;background:#f4f5f7 url('/produto/intelligence/agent-prompt.jpg') center/contain no-repeat}
+  .intelligence-customer-journey :global(.mj-static>*){display:none}
+  .intelligence-customer-journey :global(.mj-heading){font-size:11px;flex-wrap:wrap;row-gap:6px}
+  .intelligence-customer-journey :global(.mj-heading small){font-size:9px;white-space:normal}
+  .intelligence-customer-journey :global(.mj-chapters){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .intelligence-customer-journey :global(.mj-chapters button){grid-column:auto;min-height:44px;font-size:11px}
+  .intelligence-customer-journey :global(.mj-controls button){min-height:44px}
+  .intelligence-customer-journey :global(.mj-caption){font-size:13px;min-height:65px;max-width:74ch}
+  .intelligence-customer-journey :global(.mj-source-note){font-size:10px;line-height:1.6}
+  .icj-transcript{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media(max-width:600px){
+    .intelligence-customer-journey{padding:0 12px 16px}
+    .intelligence-customer-journey :global(.mj-heading){font-size:10px}
+    .intelligence-customer-journey :global(.mj-heading small){font-size:8px}
+    .intelligence-customer-journey :global(.mj-chapters button){font-size:10px;gap:4px;padding-inline:3px;grid-column:auto}
+    .intelligence-customer-journey :global(.mj-controls){gap:5px}
+    .intelligence-customer-journey :global(.mj-caption){font-size:12px;min-height:76px}
+    .intelligence-customer-journey :global(.mj-source-note){font-size:9px}
+  }
+</style>

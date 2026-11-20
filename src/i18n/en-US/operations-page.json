@@ -1,0 +1,454 @@
+{
+  "meta": {
+    "title": "Artificial intelligence for operations management",
+    "description": "Artificial intelligence for operations management. Integrate systems, automate processes and track queues and productivity to improve operational efficiency."
+  },
+  "hero": {
+    "eyebrow": "Artificial intelligence for operations management",
+    "title": "Artificial intelligence for operations.",
+    "ending": "More capacity and efficiency.",
+    "description": "yapt. connects people, data and systems to apply AI to operations management. Organize queues, automate processes and track productivity indicators to reduce repetitive work. Specialists can support assessment and implementation.",
+    "cta": "Get an operations assessment",
+    "secondary": "See the operation in motion",
+    "proof": "Official Meta Partner · 40M+ messages per month · 16 years.",
+    "frameBrand": "Operations",
+    "screenLabel": "Demand, AI and team in one view",
+    "screenNote": "Real product screen · operational example",
+    "image": "/produto/support/monitoria-periodo-privacidade.png",
+    "imageWidth": 1669,
+    "imageHeight": 942,
+    "imageAlt": "Real yapt. monitoring screen with volume, waiting time, queues and separate AI and human views. Names protected.",
+    "tags": [
+      "Demand",
+      "People",
+      "Processes",
+      "Results"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore your operational challenges",
+    "mechanismLabel": "How yapt. helps",
+    "actionLabel": "In practice",
+    "measurementLabel": "What to track",
+    "exampleLabel": "Operational example",
+    "moreLabel": "Expand real screen",
+    "imageNote": "Screens from different teams and periods. Product UI in Portuguese. Each screen's indicators have their own scope.",
+    "eyebrow": "Find the effort that does not become delivery",
+    "title": "Where is your operation losing time, money and capacity?",
+    "description": "A growing queue, repeated tasks and scattered information have the same effect: more effort to deliver. Explore eight situations and see how to connect management, AI and processes to address waste.",
+    "items": [
+      {
+        "id": "visibilidade",
+        "short": "Limited visibility",
+        "pain": "“We only find the problem after the queue has grown.”",
+        "title": "See where work is building up.",
+        "description": "Bring together demand, queues and the work handled by AI and people. Distinguish today's activity from work that is still active, including earlier days, to locate the bottleneck and decide where to act.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Observe",
+            "text": "Today's demand and work still active."
+          },
+          {
+            "title": "Locate",
+            "text": "Queues, longest wait and handoffs to people."
+          },
+          {
+            "title": "Prioritize",
+            "text": "The team and cases that need attention."
+          }
+        ],
+        "benefits": [
+          "See what AI received, resolved or handed over and what reached the team, respecting each indicator's definition.",
+          "Check queue health and the longest wait to investigate the backlog before choosing an intervention."
+        ],
+        "metric": "Active work, waiting conversations, longest wait and volume by team within the selected scope.",
+        "example": {
+          "title": "From total volume to a point of attention",
+          "when": "Management notices a backlog in the operation.",
+          "then": "It compares AI and human views and checks queue health to locate the team with waiting work.",
+          "outcome": "The team has a concrete starting point to investigate and define the next action."
+        },
+        "image": "/produto/support/monitoria-periodo-privacidade.png",
+        "imageAlt": "Real yapt. monitoring screen showing demand, AI and human activity and queue health. Names protected.",
+        "imageWidth": 1669,
+        "imageHeight": 942
+      },
+      {
+        "id": "distribuicao",
+        "short": "Uneven distribution",
+        "pain": "“Some people are overloaded while others could help.”",
+        "title": "Distribute work with clear criteria and limits.",
+        "description": "Configure routing by team and track each operator's workload. Round-robin, least loaded, priorities and limits guide incoming work according to your operational rules.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Compare",
+            "text": "Current workload, limits and availability."
+          },
+          {
+            "title": "Configure",
+            "text": "Criteria, priorities and per-operator limits."
+          },
+          {
+            "title": "Follow up",
+            "text": "Distribution, waiting time and support needs."
+          }
+        ],
+        "benefits": [
+          "Choose manual routing or automatic round-robin or least-loaded routing according to the team's configuration.",
+          "Balance incoming demand with per-operator limits and options for waiting or routing to another team."
+        ],
+        "metric": "Workload per operator, waiting conversations and distribution of work across people and teams.",
+        "example": {
+          "title": "New demand follows the team's rules",
+          "when": "A conversation arrives while part of the team is already at its limit.",
+          "then": "Automatic routing considers the configured criteria and conditions; without capacity, it applies the defined waiting or backup rule.",
+          "outcome": "Management can monitor workloads and decide when to adjust support."
+        },
+        "image": "/produto/ops-equipe.webp",
+        "imageAlt": "Real yapt. operator workload screen showing current conversations, limits and availability.",
+        "imageWidth": 1600,
+        "imageHeight": 1057
+      },
+      {
+        "id": "produtividade",
+        "short": "Wasted capacity",
+        "pain": "“The team works all day, but we do not know where capacity is lost.”",
+        "title": "Find capacity to deliver more.",
+        "description": "Track productivity by operator and period, combining volume, handling times, occupancy and status records. Investigate differences in workload and process before comparing people or changing the team.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Set the scope",
+            "text": "The period, teams and analysis criteria."
+          },
+          {
+            "title": "Compare",
+            "text": "Volume, times, occupancy and statuses."
+          },
+          {
+            "title": "Investigate",
+            "text": "The routines and conditions behind the numbers."
+          }
+        ],
+        "benefits": [
+          "Review resolved conversations, average handling time, first response and conversations per hour within the same scope.",
+          "Analyze time by status and recorded break reasons to guide team conversations and routine adjustments."
+        ],
+        "metric": "Resolved conversations, handling time, first response, occupancy and time by status in the period.",
+        "example": {
+          "title": "The report starts an investigation",
+          "when": "Two operators show different volumes in the same period.",
+          "then": "Management checks times, occupancy, statuses and work context before interpreting the difference.",
+          "outcome": "The adjustment can consider workload, process and coaching needs based on evidence."
+        },
+        "image": "/produto/ops-equipe.webp",
+        "imageAlt": "Real yapt. screen showing operator workloads and availability to support capacity analysis.",
+        "imageWidth": 1600,
+        "imageHeight": 1057
+      },
+      {
+        "id": "prazos",
+        "short": "Targets and waiting",
+        "pain": "“The message was answered, but the customer is still waiting for what they need.”",
+        "title": "Set a target for each part of the wait.",
+        "description": "Define targets by team and distinguish first response, next response, human response and resolution. Track enabled time controls to investigate where the journey slows down, even after an automatic reply.",
+        "icon": "automation",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "The team's targets and business hours."
+          },
+          {
+            "title": "Distinguish",
+            "text": "Assignment, response and resolution."
+          },
+          {
+            "title": "Investigate",
+            "text": "Cases and stages with longer-than-expected waits."
+          }
+        ],
+        "benefits": [
+          "Configure separate targets for relevant times and enable the controls suited to the process.",
+          "Check cases linked to the indicators; assigning an operator does not mean responding to the customer."
+        ],
+        "metric": "Waiting time, first human response, next response, resolution and compliance with enabled targets.",
+        "example": {
+          "title": "A handoff does not end the wait",
+          "when": "AI replies and hands a conversation over to a person.",
+          "then": "The operation tracks the human-response time according to the configured control and target.",
+          "outcome": "Management can investigate the wait that continues after AI has acted."
+        },
+        "image": "/produto/ops-prazos.webp",
+        "imageAlt": "Real yapt. time-target configuration by team, with response and resolution targets.",
+        "imageWidth": 1600,
+        "imageHeight": 1291
+      },
+      {
+        "id": "continuidade",
+        "short": "Lost continuity",
+        "pain": "“The case changes hands and we have to reconstruct everything to continue.”",
+        "title": "Keep context, ownership and the next step together.",
+        "description": "Connect conversations, tickets and available history to follow work across people and teams. Record stages and handoffs so the next person can find what has happened and what needs to continue.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Connect",
+            "text": "The customer, conversation and relevant ticket."
+          },
+          {
+            "title": "Record",
+            "text": "Stage, owner and handoff reason."
+          },
+          {
+            "title": "Continue",
+            "text": "History and pending work available to the team."
+          }
+        ],
+        "benefits": [
+          "Organize cases and their conversations to review the work's journey without relying solely on the team's memory.",
+          "Include a summary or note in the configured flow and record the destination and reason when handing work to another team."
+        ],
+        "metric": "Cases without progress, transfers, reopened cases and time between stages.",
+        "example": {
+          "title": "The next team finds the context",
+          "when": "A request needs to move to another team.",
+          "then": "The handoff preserves available records and identifies the destination and reason for the transfer.",
+          "outcome": "The owner can review what has already been handled and continue the case."
+        },
+        "image": "/produto/support/ticket-encaminhamento-real.png",
+        "imageAlt": "Real yapt. ticket with stage, owner and handoff options to continue the work.",
+        "imageWidth": 1090,
+        "imageHeight": 1634
+      },
+      {
+        "id": "automacoes",
+        "short": "Manual routines",
+        "pain": "“Creating tasks, filling fields and remembering every next step still depends on the team.”",
+        "title": "Clear repetitive routines from the team’s path.",
+        "description": "Automatically create activities in deals and support, fill the fields you define and organize smart sequences throughout the customer journey. yapt. connects events, conditions, AI and actions to keep work moving with less manual effort.",
+        "icon": "ai",
+        "steps": [
+          {
+            "title": "Trigger",
+            "text": "A deal or service event starts the routine."
+          },
+          {
+            "title": "Execute",
+            "text": "Activities, fields and next steps follow the defined rules."
+          },
+          {
+            "title": "Keep moving",
+            "text": "Smart sequences support every stage of the journey."
+          }
+        ],
+        "benefits": [
+          "Create activities with owners and deadlines based on what happens in a deal or service interaction.",
+          "Automatically fill defined fields and apply smart communication and action sequences throughout the journey."
+        ],
+        "metric": "Activities created, records filled, next steps completed and time between stages.",
+        "example": {
+          "title": "A routine with defined next steps",
+          "when": "A case reaches a stage that requires an update and a handoff.",
+          "then": "The flow evaluates conditions and executes configured records and actions with the defined agents and permissions.",
+          "outcome": "The team checks execution history to follow progress and address anything that needs attention."
+        },
+        "image": "/produto/vendas-reguas.webp",
+        "imageAlt": "Real yapt. automation-sequence screen with routines and conditions to move work forward.",
+        "imageWidth": 1600,
+        "imageHeight": 565
+      },
+      {
+        "id": "sistemas",
+        "short": "Disconnected systems",
+        "pain": "“To complete one task, we have to open several screens and copy information.”",
+        "title": "Your API integration, built through conversation in yaAgents.",
+        "description": "Describe what you need to look up or execute and build the API connection through conversation in yaAgents. Bring internal system data into the conversation panel and make queries and actions available to AI agents and your team.",
+        "icon": "integrations",
+        "steps": [
+          {
+            "title": "Describe",
+            "text": "The system, the API and what needs to happen."
+          },
+          {
+            "title": "Build",
+            "text": "The yaAgents conversation becomes a connection with queries and actions."
+          },
+          {
+            "title": "Use",
+            "text": "Data for operators and tools for AI, in the context of work."
+          }
+        ],
+        "benefits": [
+          "Build API and webhook connections through conversation, with the data, access and actions your operation needs.",
+          "Display internal system information during service and enable AI to look up data or execute configured actions."
+        ],
+        "metric": "Screen switching, manual lookups and copying, execution time and information-handoff errors.",
+        "example": {
+          "title": "Data reaches the point of decision",
+          "when": "The team needs to check a pending issue recorded in another system.",
+          "then": "The configured connection brings the available information into the conversation's context.",
+          "outcome": "The person continues working with the retrieved data without repeating the search in another screen."
+        },
+        "image": "/produto/support/dados-na-conversa-real.png",
+        "imageAlt": "Real yapt. screen with information from an internal system inside the conversation modal.",
+        "imageWidth": 1398,
+        "imageHeight": 1678
+      },
+      {
+        "id": "resultados",
+        "short": "Unmeasured improvements",
+        "pain": "“We changed the operation, but we do not know if results improved.”",
+        "title": "Track change with comparable criteria.",
+        "description": "Define the problem, period and indicator before changing the routine. Combine monitoring, productivity and case journeys to check what changed and investigate what still needs adjustment.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Define",
+            "text": "The scenario, indicator and initial scope."
+          },
+          {
+            "title": "Compare",
+            "text": "Periods using the same interpretation criteria."
+          },
+          {
+            "title": "Improve",
+            "text": "The process based on cases and data."
+          }
+        ],
+        "benefits": [
+          "Read waiting time, work, transfers and productivity according to each report's period and definitions.",
+          "When needed, work with specialists to review cases, choose the next adjustment and track the same scenario."
+        ],
+        "metric": "Changes in waiting time, backlogs, times, transfers and productivity within the defined scope.",
+        "example": {
+          "title": "The improvement has a question to answer",
+          "when": "The company adjusts routing to address a team's backlog.",
+          "then": "It tracks workload and waiting time over comparable periods and investigates cases that remain stalled.",
+          "outcome": "Management has evidence to keep, correct or expand the adjustment."
+        },
+        "image": "/produto/demo-vendas-eficiencia.webp",
+        "imageAlt": "Real yapt. efficiency report showing times and case journeys in a support pipeline.",
+        "imageWidth": 2458,
+        "imageHeight": 2308
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Inside the operation",
+    "title": "From a backlog to the next decision.",
+    "description": "Follow a monitoring review, find a queue with waiting work and compare team workloads. Then see where to configure routing and time targets, and return to the indicators to follow up.",
+    "note": "Real screens from different teams and periods, with indicators specific to each scope."
+  },
+  "foundation": {
+    "eyebrow": "A connected foundation for your operation",
+    "title": "AI, automation, data and integrations working with your team.",
+    "description": "Process automation and system integration connect demand to the work that needs to happen. Your team can work with specialists to configure rules, data and AI around your operational needs.",
+    "items": [
+      {
+        "icon": "ai",
+        "title": "AI for operations management",
+        "text": "Knowledge and instructions prepare agents and suggestions for defined scenarios."
+      },
+      {
+        "icon": "automation",
+        "title": "Process automation",
+        "text": "Configured rules, tools and limits organize routines and handoffs to people."
+      },
+      {
+        "icon": "data",
+        "title": "Productivity indicators",
+        "text": "Queue management uses volume, workload and time indicators to identify bottlenecks and assess operational efficiency."
+      },
+      {
+        "icon": "integrations",
+        "title": "System integration",
+        "text": "Available APIs and access bring lookups and actions into the context of work."
+      }
+    ],
+    "builderLabel": "yaAgents · build through conversation",
+    "builderTitle": "Describe your operation. Build the AI and connections to work with it.",
+    "builderDescription": "Organize knowledge, instructions and tools through conversation in yaAgents. Specialists can help your team review the configuration, test scenarios and improve AI as the process develops.",
+    "builderLink": "Explore yaAgents",
+    "builderHref": "/intelligence",
+    "builderImageAlt": "Real yapt. AI agent and tool builder screen."
+  },
+  "adoption": {
+    "eyebrow": "Our platform, with specialist support available",
+    "title": "Your operation has its own needs. Improvement starts with understanding them.",
+    "description": "The assessment considers queues, manual processes and systems to prioritize AI and automation. Specialist support is available for implementation and ongoing operational improvement.",
+    "steps": [
+      {
+        "title": "Diagnose",
+        "text": "Understand demand, bottlenecks, team capacity and the systems involved."
+      },
+      {
+        "title": "Implement",
+        "text": "Configure an initial scenario with the rules, AI, knowledge and connections required."
+      },
+      {
+        "title": "Improve",
+        "text": "Guide the team, track indicators and adjust the process based on real work."
+      }
+    ],
+    "footnote": "Scope, channels, integrations and features are defined according to each company's needs and configuration."
+  },
+  "faq": {
+    "eyebrow": "Before you start",
+    "title": "Clarity to organize. Evidence to improve.",
+    "items": [
+      {
+        "question": "Is artificial intelligence for operations limited to customer service?",
+        "answer": "The platform connects conversations, tickets, owners, queues, AI and systems to organize work linked to the customer journey. The assessment identifies where to apply process automation and which stages to track in yapt. or integrated systems."
+      },
+      {
+        "question": "How can we balance the team’s workload?",
+        "answer": "Combine views of queues, current workload, limits and operator availability to decide where to support the operation. Configure manual routing or automatic round-robin or least-loaded routing, priorities and options for waiting or a backup team. Capacity should be read alongside workload and limits, as well as online status."
+      },
+      {
+        "question": "What can we automate with AI?",
+        "answer": "We can combine flows, sequences and agents to look up information, prepare responses, update records and route demand according to defined triggers and conditions. Each scenario uses configured knowledge, tools and permissions, with human review or continuation when needed. For mentor suggestions, the operator decides what to apply."
+      },
+      {
+        "question": "How are time targets tracked after an AI response?",
+        "answer": "An automatic reply, assignment and first human response are different events. Each team configures targets and enables time controls relevant to its process, including response and resolution times. Assigning a conversation does not mean responding to the customer."
+      },
+      {
+        "question": "Do we need to replace our systems?",
+        "answer": "The assessment defines what to bring into yapt. and what to connect. In yaAgents, we build connections through conversation to make data, lookups and actions available in the work. Feasibility depends on available systems, APIs, access and tools."
+      },
+      {
+        "question": "How do we evaluate productivity and the return on a change?",
+        "answer": "We define the scenario, period and comparable criteria to track waiting time, workload, volume, times and productivity. The analysis considers cases and working conditions to guide the next adjustments. To evaluate economic impact, we combine operational indicators with business costs and data."
+      },
+      {
+        "question": "Where do we start and how do specialists participate?",
+        "answer": "You can start with a concrete problem, such as a queue backlog or repeated manual lookups. Specialists are available to help configure the first scenario, test it with the team and analyze indicators. Their involvement and scope are defined according to your operational needs."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "Find the capacity your operation is losing",
+    "title": "Let's find where your operation loses time, money and capacity.",
+    "description": "We analyze demand, people, processes and systems to locate waiting time and repeated effort. We define an initial scenario for AI and the platform, with specialist support according to your needs.",
+    "points": [
+      "A view of bottlenecks and repeated effort.",
+      "An initial scenario with clear priorities and indicators.",
+      "Platform with specialist support available."
+    ],
+    "cta": "Get an operations assessment",
+    "footnote": "Talk to our team about your operation.",
+    "error": "The chat could not load right now. Try again or open WhatsApp using the link below.",
+    "fallback": "Open directly in WhatsApp",
+    "noScript": "You can also talk to our team on WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Close expanded image",
+    "imageLabel": "Real product screen",
+    "openImage": "Expand screen",
+    "skip": "Skip to content",
+    "imageNote": "Use the image controls to expand and close."
+  }
+}

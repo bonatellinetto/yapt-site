@@ -1,0 +1,16 @@
+.op-ui .opm-screen{padding-left:0;background:#f5f7f8}
+.op-ui .opm-capture{position:absolute;left:0;top:0;width:1120px;height:700px;overflow:hidden;background:#f5f7f8}
+.op-ui .opm-capture>img{position:absolute;left:0;top:0;display:block;width:1120px;height:auto;max-width:none}
+.op-ui .opm-hotspot{position:absolute;display:block;background:transparent;pointer-events:none;border-radius:5px}
+.op-ui .opm-hotspot.is-emphasized{position:absolute}
+
+/* World coordinates refer to the unmodified 3488 × 2286 capture at 1120 px wide. */
+.op-ui .opm-ai-human{left:22px;top:209px;width:1084px;height:264px}
+.op-ui .opm-ai-flow{left:165px;top:254px;width:389px;height:60px}
+.op-ui .opm-human-flow{left:578px;top:254px;width:392px;height:60px}
+.op-ui .opm-backlog{left:22px;top:524px;width:211px;height:55px}
+.op-ui .opm-waiting{left:677px;top:524px;width:211px;height:55px}
+.op-ui .opm-queue-health{left:23px;top:599px;width:399px;height:101px}
+
+/* At this scale the capture is 734.0367 px tall: never scroll past its pixels. */
+.op-ui .opm-followup-screen .opm-capture>img{transform:translateY(calc(-1px * clamp(0,var(--mj-rule-scroll,0),34)));will-change:transform}

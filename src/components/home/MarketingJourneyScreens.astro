@@ -1,0 +1,173 @@
+---
+import './marketing-journey-screens.css';
+
+const marketingItems = [
+  { name: "Tráfego Pago", icon: 'real-campaigns', description: "Conecte suas campanhas Meta e Google, faça suas vendas e entenda qual anúncio vendeu mais." },
+  { name: "Central de conversões", icon: 'real-campaigns', description: "Envie eventos para campanhas Meta e Google para otimizar campanhas: até 20% a mais de resultados.", target: 'nav-conversions' },
+  { name: "Disparos de marketing", icon: 'real-megaphone', description: "Envie campanhas via WhatsApp e e-mail para seus clientes.", target: 'nav-campaigns' },
+  { name: "Réguas inteligentes", icon: 'branch', description: "Automatize réguas de relacionamento para vender mais e atender melhor.", target: 'nav-rules' },
+  { name: "Conteúdos Inteligentes", icon: 'sparkles', description: "Crie conteúdos relevantes para seus clientes usando IA: para blog, LinkedIn e Instagram." },
+  { name: "Modelos de e-mail", icon: 'mail', description: "Crie modelos de e-mail para usar nas suas campanhas e réguas." },
+  { name: "Captação", icon: 'real-forms', description: "Botões de WhatsApp para seu site e landing pages, widgets e formulários." },
+];
+const composerSteps = ['Básico', 'Público', 'Como & quando', 'Respostas', 'Conteúdo', 'Revisar'];
+---
+
+<div class="mj-ui" lang="pt-BR">
+  <svg class="mj-icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="mj-i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+      <symbol id="mj-i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l-3 2v-8.5A8.5 8.5 0 0 1 10.5 5h2A8.5 8.5 0 0 1 21 11.5Z"/><path d="M7 10h9M7 14h6"/></symbol>
+      <symbol id="mj-i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87M15 3.13a4 4 0 0 1 0 7.75"/><circle cx="9" cy="7" r="4"/></symbol>
+      <symbol id="mj-i-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16m6-16v16M3 9h6m0 4h6m0-5h6"/></symbol>
+      <symbol id="mj-i-megaphone" viewBox="0 0 24 24"><path d="m3 9 15-5v16L3 15Zm4 7 1 5h4l-2-4M21 8v8"/></symbol>
+      <symbol id="mj-i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15v-4m5 4V7m5 8v-6"/></symbol>
+      <symbol id="mj-i-conversion" viewBox="0 0 24 24"><path d="M20 7h-9a6 6 0 0 0 0 12h7M16 3l4 4-4 4M8 13l-4 4 4 4"/></symbol>
+      <symbol id="mj-i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9L2 9Zm0 0L11 13"/></symbol>
+      <symbol id="mj-i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="19" r="2"/><path d="M6 7v10m0-5h7a5 5 0 0 0 5-5"/></symbol>
+      <symbol id="mj-i-sparkles" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5ZM20 2v4m-2-2h4"/></symbol>
+      <symbol id="mj-i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="mj-i-magnet" viewBox="0 0 24 24"><path d="M4 3h5v9a3 3 0 0 0 6 0V3h5v9a8 8 0 0 1-16 0Zm0 5h5m6 0h5"/></symbol>
+      <symbol id="mj-i-settings" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3Z"/><circle cx="12" cy="11" r="3"/></symbol>
+      <symbol id="mj-i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 8a2.5 2.5 0 1 1 4.2 1.8c-1.2.7-1.7 1.2-1.7 2.7M12 16h.01"/></symbol>
+      <symbol id="mj-i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="mj-i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="mj-i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="mj-i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="mj-i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="mj-i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+      <symbol id="mj-i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="mj-i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v7l-4 2v-9Z"/></symbol>
+      <symbol id="mj-i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+      <symbol id="mj-i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+      <symbol id="mj-i-edit" viewBox="0 0 24 24"><path d="m16 3 5 5-12 12-6 1 1-6Zm-1 1 5 5"/></symbol>
+      <symbol id="mj-i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="mj-i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+      <symbol id="mj-i-whatsapp" viewBox="0 0 24 24"><path d="M20.6 15.5A9 9 0 0 1 7 20.1L2 22l1.8-5A9 9 0 1 1 20.6 15.5Z"/><path d="m8 7-1 2c1 4 3 6 7 7l2-1-2-3-2 1-2-2 1-2Z"/></symbol>
+      <symbol id="mj-i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m0 4 1-1a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"/></symbol>
+      <symbol id="mj-i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="mj-i-note" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8m-8 4h5"/></symbol>
+      <symbol id="mj-i-attachment" viewBox="0 0 24 24"><path d="m8 12 7-7a4 4 0 0 1 6 6L10 22a6 6 0 0 1-8-8L13 3m-8 14 10-10"/></symbol>
+      <symbol id="mj-i-real-favorite" viewBox="0 0 100 100"><path d="M50 15 L55 40 L80 40 L60 55 L68 80 L50 65 L32 80 L40 55 L20 40 L45 40 Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round" /></symbol>
+      <symbol id="mj-i-real-workspace" viewBox="0 0 100 100"><rect x="15" y="15" width="70" height="52" rx="10" stroke="currentColor" stroke-width="5" />
+    <path d="M30 67 L30 82 L48 67" stroke="currentColor" stroke-width="5" stroke-linejoin="round" />
+    <path d="M32 35 L68 35" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M32 47 L58 47" stroke="currentColor" stroke-width="4" stroke-linecap="round" /></symbol>
+      <symbol id="mj-i-real-sales" viewBox="0 0 100 100"><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="5" />
+    <path d="M50 30 L50 70" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M38 40 C38 35, 45 32, 50 32 C55 32, 62 35, 62 40 C62 46, 55 48, 50 50 C45 52, 38 54, 38 60 C38 65, 45 68, 50 68 C55 68, 62 65, 62 60" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none" /></symbol>
+      <symbol id="mj-i-real-megaphone" viewBox="0 0 100 100"><path d="M15 45L75 25V75L15 55V45Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round" />
+    <path d="M48 68A12 12 0 1 1 24 62" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></symbol>
+      <symbol id="mj-i-real-ops" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="5" />
+    <circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="5" />
+    <circle cx="50" cy="50" r="8" fill="currentColor" />
+    <path d="M50 12 L50 26" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M50 74 L50 88" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M12 50 L26 50" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M74 50 L88 50" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></symbol>
+      <symbol id="mj-i-real-forms" viewBox="0 0 100 100"><rect x="25" y="18" width="50" height="64" rx="4" stroke="currentColor" stroke-width="5" />
+    <path d="M35 35 L65 35" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M35 50 L65 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M35 65 L55 65" stroke="currentColor" stroke-width="4" stroke-linecap="round" /></symbol>
+      <symbol id="mj-i-real-campaigns" viewBox="0 0 100 100"><path d="M25 75 L25 45" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+    <path d="M45 75 L45 30" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+    <path d="M65 75 L65 50" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+    <path d="M85 75 L85 35" stroke="currentColor" stroke-width="6" stroke-linecap="round" /></symbol>
+      <symbol id="mj-i-real-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="mj-rail">
+    <div class="mj-brand"><img src="/produto/app-icon.svg" width="32" height="32" alt="" /></div>
+    <div class="mj-rail-links">
+      <span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-real-favorite"/></svg></span>
+      <span class="mj-rail-divider"></span>
+      <span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-real-workspace"/></svg></span>
+      <span class="mj-rail-item mj-rail-marketing" data-j-target="menu-marketing"><svg class="mj-icon"><use href="#mj-i-real-megaphone"/></svg></span>
+      <span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-real-sales"/></svg></span>
+      <span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-real-ops"/></svg></span>
+      <span class="mj-rail-divider"></span>
+      <span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-real-grid"/></svg></span>
+    </div>
+    <div class="mj-rail-bottom"><span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-help"/></svg></span><span class="mj-rail-item"><svg class="mj-icon"><use href="#mj-i-settings"/></svg></span><span class="mj-avatar mj-avatar-small">D</span></div>
+  </div>
+
+  <div class="mj-flyout">
+    <div class="mj-flyout-heading"><strong>Marketing</strong><svg class="mj-icon"><use href="#mj-i-close"/></svg></div>
+    <div class="mj-flyout-list">{marketingItems.map(item => <div class="mj-flyout-item" data-j-target={item.target}><svg class="mj-icon"><use href={`#mj-i-${item.icon}`}/></svg><span><strong>{item.name}</strong><small>{item.description}</small></span></div>)}</div>
+  </div>
+
+  <div class="mj-screen mj-report-screen mj-product-report" data-j-screen="report">
+    <div class="mj-real-header"><span class="mj-module-icon"><svg class="mj-icon"><use href="#mj-i-chart"/></svg></span><strong>Tráfego Pago</strong><div class="mj-real-header-tabs"><span>Visão geral</span><span class="mj-current">Campanhas</span><span>Conjuntos</span><span>Anúncios</span><span>Conversas</span></div><span class="mj-notification-bell"><svg class="mj-icon"><use href="#mj-i-help"/></svg><i>2</i></span></div>
+    <div class="mj-report-content" data-j-target="report-overview"><h2>Tráfego Pago</h2><p>Acompanhe campanhas, investimento e resultados do seu negócio.</p><div class="mj-report-dates"><span class="mj-control">15/10/2026 <svg class="mj-icon"><use href="#mj-i-calendar"/></svg></span><span>até</span><span class="mj-control">13/11/2026 <svg class="mj-icon"><use href="#mj-i-calendar"/></svg></span><span class="mj-control">Hoje</span><span class="mj-control">7d</span><span class="mj-control">30d</span><span class="mj-control">Todas as contas <svg class="mj-icon"><use href="#mj-i-down"/></svg></span></div>
+      <div class="mj-report-capture"><img src="/solucao/img/349dc240d272.jpg" width="2000" height="578" alt="" decoding="async"/>
+        <span class="mj-capture-focus" data-j-target="investment" style="left:39.75%;top:34.25%;width:9.5%;height:9.4%"></span>
+        <span class="mj-capture-focus" data-j-target="leads" style="left:49.3%;top:34.25%;width:5.4%;height:9.4%"></span>
+        <span class="mj-capture-focus" data-j-target="conversations" style="left:54.75%;top:34.25%;width:6.25%;height:9.4%"></span>
+        <span class="mj-capture-focus" data-j-target="sales" style="left:61%;top:34.25%;width:5.25%;height:9.4%"></span>
+        <span class="mj-capture-focus" data-j-target="roas" style="left:84.95%;top:34.25%;width:5.05%;height:9.4%"></span>
+      </div>
+      <p class="mj-capture-source">Workspace de demonstração · relatório de atribuição da plataforma.</p>
+    </div>
+  </div>
+
+  <div class="mj-screen mj-product-conversions" data-j-screen="conversions">
+    <div class="mj-real-conversion-content" data-j-target="conversions-overview"><div class="mj-page-heading"><div><span class="mj-real-eyebrow">Marketing</span><h2>Central de conversões</h2><p>Escolha o que acontece no yapt e qual evento enviar para a Meta.</p></div><span class="mj-primary"><svg class="mj-icon"><use href="#mj-i-plus"/></svg>Enviar evento para a Meta</span></div>
+      <div class="mj-real-segmented"><span class="mj-current">Regras de envio</span><span>Histórico</span><span>Conexões</span></div>
+      <div class="mj-real-conversion-rule" data-j-target="conversions-rule"><div><strong>Venda confirmada → Compra</strong><span class="mj-status-badge">Ativa</span><span class="mj-real-rule-actions">Editar <span>Ⅱ Pausar</span></span></div><div class="mj-real-sentence"><p>Quando uma venda for confirmada no yapt.</p><svg class="mj-icon"><use href="#mj-i-chevron"/></svg><span>Enviar <b>Purchase</b> para <strong>Meta · Showcase</strong></span></div></div>
+      <div class="mj-real-conversion-rule"><div><strong>Conversa qualificada → Lead</strong><span class="mj-status-badge">Ativa</span><span class="mj-real-rule-actions">Editar <span>Ⅱ Pausar</span></span></div><div class="mj-real-sentence"><p>Quando uma conversa entrar na etapa Qualificação do funil Vendas.</p><svg class="mj-icon"><use href="#mj-i-chevron"/></svg><span>Enviar <b>Lead</b> para <strong>Meta · Showcase</strong></span></div></div>
+      <p class="mj-real-future-only">A regra vale para novos acontecimentos. Salvar ou ativar não envia eventos do histórico.</p>
+    </div>
+  </div>
+
+  <div class="mj-screen mj-product-campaigns" data-j-screen="campaigns">
+    <div class="mj-real-module-heading"><div><span class="mj-module-icon"><svg class="mj-icon"><use href="#mj-i-send"/></svg></span><div><h2>Disparos de marketing</h2><p>Envie campanhas via WhatsApp e e-mail para seus clientes.</p></div></div><div class="mj-real-segmented"><span class="mj-current"><svg class="mj-icon"><use href="#mj-i-send"/></svg>Campanhas</span><span><svg class="mj-icon"><use href="#mj-i-users"/></svg>Público</span><span><svg class="mj-icon"><use href="#mj-i-branch"/></svg>Réguas</span><span><svg class="mj-icon"><use href="#mj-i-sparkles"/></svg>Otimizador IA</span><span><svg class="mj-icon"><use href="#mj-i-lock"/></svg>Bloqueios</span></div></div>
+    <div class="mj-real-content-card" data-j-target="campaigns-overview"><div class="mj-page-heading"><div><h3>Campanhas</h3><p>Gerencie os disparos e acompanhe os resultados de cada envio.</p></div><span class="mj-primary" data-j-target="new-campaign"><svg class="mj-icon"><use href="#mj-i-plus"/></svg>Nova campanha</span></div><div class="mj-real-list-filters"><span class="mj-search-field"><svg class="mj-icon"><use href="#mj-i-search"/></svg>Buscar campanhas...</span><div class="mj-real-segmented"><span class="mj-current">Todas</span><span>Rascunho</span><span>Agendadas</span><span>Em envio</span><span>Concluídas</span></div></div>
+      <table class="mj-real-campaign-table"><thead><tr><th>□</th><th>Campanha</th><th>Status</th><th>Canal</th><th>Destinatários</th><th>Enviadas</th><th>Entregues</th><th>Lidas</th><th>Custo</th><th></th></tr></thead><tbody>{[{name:'Boas-vindas · Showcase',status:'Concluída',channel:'WhatsApp',recipients:'120',sent:'120',delivered:'118',read:'96',cost:'R$ 72,00'},{name:'Relacionamento · Showcase',status:'Agendada',channel:'WhatsApp',recipients:'85',sent:'—',delivered:'—',read:'—',cost:'—'},{name:'Novidades · Showcase',status:'Rascunho',channel:'E-mail',recipients:'—',sent:'—',delivered:'—',read:'—',cost:'—'}].map(row=><tr><td>□</td><td><strong>{row.name}</strong><small>Campanha de demonstração</small></td><td><span class="mj-neutral-badge">{row.status}</span></td><td>{row.channel}</td><td>{row.recipients}</td><td>{row.sent}</td><td>{row.delivered}</td><td>{row.read}</td><td>{row.cost}</td><td>⋮</td></tr>)}</tbody></table>
+    </div>
+  </div>
+
+  <div class="mj-screen mj-composer-screen" data-j-screen="composer">
+    <div class="mj-composer-backdrop"><div class="mj-topbar"><div class="mj-breadcrumb">Marketing<svg class="mj-icon"><use href="#mj-i-chevron"/></svg><span>Disparos de marketing</span></div></div><div class="mj-main"><div class="mj-page-heading"><div><h2>Disparos de marketing</h2><p>Envie campanhas via WhatsApp e e-mail para seus clientes.</p></div></div><div class="mj-tabs"><span class="mj-tab-active">Campanhas</span><span>Público</span><span>Otimizador IA</span><span>Bloqueios</span></div><div class="mj-card mj-backdrop-table"><div></div><div></div><div></div></div></div></div>
+    <div class="mj-modal-shade"></div>
+    <div class="mj-campaign-modal">
+      <div class="mj-modal-heading"><div><h2>Nova campanha</h2><p></p></div><svg class="mj-icon"><use href="#mj-i-close"/></svg></div>
+      <div class="mj-composer-steps">{composerSteps.map((step, index) => <span class={index === 0 ? 'mj-composer-step mj-composer-current' : 'mj-composer-step'}><i>{index + 1}</i><span>{step}</span></span>)}</div>
+      <div class="mj-modal-body"><div class="mj-field-label">Nome da campanha</div><div class="mj-field-value">Boas-vindas · demonstração</div><div class="mj-field-label">Descrição <span class="mj-optional">(opcional)</span></div><div class="mj-field-value mj-textarea-value">Primeiro contato com quem demonstrou interesse.</div><div class="mj-field-label mj-channel-label">Canal de envio</div>
+        <div class="mj-channel-options" data-j-target="channel-options"><div class="mj-channel-card mj-channel-selected"><span class="mj-channel-symbol"><svg class="mj-icon"><use href="#mj-i-whatsapp"/></svg></span><div><strong>WhatsApp</strong><p>Template aprovado pela Meta · por número</p></div><span class="mj-radio-dot"></span></div><div class="mj-channel-card mj-channel-disabled"><span class="mj-channel-symbol"><svg class="mj-icon"><use href="#mj-i-mail"/></svg></span><div><strong>E-mail</strong><p>Modelo em blocos · remetente verificado</p></div><svg class="mj-icon mj-channel-lock"><use href="#mj-i-lock"/></svg></div></div>
+      </div>
+      <div class="mj-modal-footer"><span class="mj-control">Cancelar</span><span class="mj-primary">Próximo<svg class="mj-icon"><use href="#mj-i-chevron"/></svg></span></div>
+    </div>
+  </div>
+
+  <div class="mj-screen mj-product-rules" data-j-screen="rules">
+    <div class="mj-real-module-heading"><div><span class="mj-module-icon"><svg class="mj-icon"><use href="#mj-i-send"/></svg></span><div><h2>Disparos de marketing</h2><p>Envie campanhas via WhatsApp e e-mail para seus clientes.</p></div></div><div class="mj-real-segmented"><span><svg class="mj-icon"><use href="#mj-i-send"/></svg>Campanhas</span><span><svg class="mj-icon"><use href="#mj-i-users"/></svg>Público</span><span class="mj-current"><svg class="mj-icon"><use href="#mj-i-branch"/></svg>Réguas</span><span><svg class="mj-icon"><use href="#mj-i-sparkles"/></svg>Otimizador IA</span><span><svg class="mj-icon"><use href="#mj-i-lock"/></svg>Bloqueios</span></div></div>
+    <div class="mj-real-content-card" data-j-target="rules-overview"><div class="mj-page-heading"><div><h2>Réguas inteligentes</h2><p>Uma sequência de ações, do gatilho ao próximo passo.</p></div><span class="mj-search-field"><svg class="mj-icon"><use href="#mj-i-search"/></svg>Buscar réguas...</span><span class="mj-primary"><svg class="mj-icon"><use href="#mj-i-plus"/></svg>Nova régua</span></div>
+      <div class="mj-real-filter-chips"><span class="mj-chip-selected">Todas · 3</span><span>Ativas · 2</span><span>Pausadas · 1</span><span>Rascunho · 0</span><i></i><span>E-mail</span><span>WhatsApp</span><span>Funil de negócios</span><span>Atendimento</span><span>Público</span><span>Campanha</span></div>
+      {[{name:'Boas-vindas e acompanhamento',trigger:'Contato criado',channel:'WhatsApp',steps:'5 passos · WhatsApp → esperar 24 horas → Se…',active:true},{name:'Relacionamento após a compra',trigger:'Negócio ganho',channel:'E-mail',steps:'3 passos · e-mail → esperar 7 dias → e-mail',active:true},{name:'Retomar interesse',trigger:'Entrou no público',channel:'WhatsApp',steps:'2 passos · esperar 2 dias → WhatsApp',active:false}].map((row,index)=><div class={`mj-real-regua-row ${row.active?'':'mj-regua-paused'}`}><span class="mj-real-regua-icon"><svg class="mj-icon"><use href="#mj-i-users"/></svg></span><div class="mj-real-regua-info" data-j-target={index===0?'edit-rule':undefined}><div><strong>{row.name}</strong><span class="mj-neutral-badge">{row.trigger}</span><span class="mj-channel-pill"><svg class="mj-icon"><use href={row.channel==='E-mail'?'#mj-i-mail':'#mj-i-whatsapp'}/></svg>{row.channel}</span></div><p>{row.steps}</p></div><span class="mj-real-regua-stats"><b>0</b> na régua · <b>0</b> concluíram · <b>0</b> saíram</span><span class="mj-real-regua-toggle">{row.active?'Ⅱ':'▷'}<i class={row.active?'mj-regua-on':''}></i></span></div>)}
+    </div>
+  </div>
+
+  <div class="mj-screen mj-rule-editor-screen mj-product-builder" data-j-screen="rule-editor">
+    <div class="mj-real-builder-header"><span>‹ Réguas inteligentes <i>›</i> Editar</span><div><span class="mj-status-badge">● Ativa</span><span class="mj-primary"><svg class="mj-icon"><use href="#mj-i-check"/></svg>Salvar alterações</span></div></div>
+    <div class="mj-real-builder-window" data-j-target="rule-inspector"><div class="mj-real-builder-scroll">
+      <div class="mj-real-builder-card mj-real-builder-name"><label>Nome da régua *</label><div class="mj-field-value">Boas-vindas e acompanhamento</div><label>Descrição (opcional)</label><div class="mj-field-value mj-textarea-value">Receber novos contatos e dar continuidade ao relacionamento.</div></div>
+      <div class="mj-real-builder-divider"><span></span>Fluxo da Automação<span></span></div>
+      <div class="mj-real-builder-section"><h3><svg class="mj-icon"><use href="#mj-i-sparkles"/></svg>Quando</h3><div class="mj-real-builder-card" data-j-target="rule-trigger"><div class="mj-real-trigger-heading"><span class="mj-real-trigger-icon"><svg class="mj-icon"><use href="#mj-i-users"/></svg></span><div><strong>Contato criado</strong><p>Quando um novo contato for criado no yapt.</p></div><span>Alterar</span></div><div class="mj-real-trigger-config"><label>Origem</label><div class="mj-field-value">Todas as origens <svg class="mj-icon"><use href="#mj-i-down"/></svg></div></div></div></div>
+      <div class="mj-real-builder-connector"></div>
+      <div class="mj-real-builder-section"><h3><svg class="mj-icon"><use href="#mj-i-sparkles"/></svg>Então <span>5 passos · 2 caminhos</span></h3>
+        <div class="mj-real-action-card"><div><span class="mj-real-action-icon"><svg class="mj-icon"><use href="#mj-i-send"/></svg></span><b>1</b><strong>Enviar mensagem</strong><span>↑ ↓ ⋮</span></div><div class="mj-real-action-body"><label>Mensagem</label><div class="mj-field-value mj-textarea-value">Olá! Que bom ter você por aqui. Como podemos ajudar?</div><label>Canal de envio</label><div class="mj-field-value">WhatsApp · Showcase <svg class="mj-icon"><use href="#mj-i-down"/></svg></div></div></div>
+        <div class="mj-real-action-card"><div><span class="mj-real-action-icon"><svg class="mj-icon"><use href="#mj-i-clock"/></svg></span><b>2</b><strong>Esperar</strong><span>↑ ↓ ⋮</span></div><div class="mj-real-action-body mj-real-wait-fields"><div><label>Tempo de espera</label><div class="mj-field-value">24</div></div><div><label>Unidade</label><div class="mj-field-value">Horas <svg class="mj-icon"><use href="#mj-i-down"/></svg></div></div></div></div>
+        <div class="mj-real-action-card"><div><span class="mj-real-action-icon"><svg class="mj-icon"><use href="#mj-i-branch"/></svg></span><b>3</b><strong>Se…</strong><span>↑ ↓ ⋮</span></div><div class="mj-real-action-body"><label>Condição</label><div class="mj-field-value">O contato respondeu? <svg class="mj-icon"><use href="#mj-i-down"/></svg></div><div class="mj-real-condition-paths"><span>Sim <i>Encerrar</i></span><span>Não <i>Continuar</i></span></div></div></div>
+        <div class="mj-real-action-card"><div><span class="mj-real-action-icon"><svg class="mj-icon"><use href="#mj-i-send"/></svg></span><b>4</b><strong>Enviar mensagem</strong><span>↑ ↓ ⋮</span></div><div class="mj-real-action-body"><div class="mj-field-value">Ainda podemos ajudar com alguma dúvida?</div></div></div>
+        <div class="mj-real-action-card" data-j-target="rule-last"><div><span class="mj-real-action-icon"><svg class="mj-icon"><use href="#mj-i-clock"/></svg></span><b>5</b><strong>Esperar</strong><span>↑ ↓ ⋮</span></div><div class="mj-real-action-body mj-real-wait-fields"><div><label>Tempo de espera</label><div class="mj-field-value">48</div></div><div><label>Unidade</label><div class="mj-field-value">Horas <svg class="mj-icon"><use href="#mj-i-down"/></svg></div></div></div></div>
+        <div class="mj-real-add-action">＋ Adicionar ação</div>
+      </div>
+      <div class="mj-real-builder-card mj-real-builder-rules"><h3>Regras da régua</h3><p>Reentrada e interrupção</p><div><span>Permitir reentrada do contato</span><span class="mj-toggle"></span></div><div><span>Parar quando o contato responder</span><span class="mj-toggle"></span></div></div>
+    </div></div>
+  </div>
+
+  <div class="mj-screen mj-conversation-screen mj-product-conversation" data-j-screen="conversation">
+    <div class="mj-real-conversation-capture" data-j-target="conversation-overview"><img src="/lp/prints/conversa-anuncio.png" width="1243" height="809" alt="" decoding="async"/><span class="mj-capture-focus mj-conversation-panel-focus" data-j-target="attribution-panel"></span><span class="mj-capture-focus mj-conversation-origin-focus" data-j-target="attribution-origin"></span></div>
+  </div>
+</div>

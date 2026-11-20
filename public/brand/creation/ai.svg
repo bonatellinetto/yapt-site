@@ -1,0 +1,12 @@
+<!-- Source: yapt-creation-library.html, element "Coruja". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <ellipse cx="60" cy="70" rx="35" ry="40" fill="#7C3AED"/>
+    <ellipse cx="60" cy="75" rx="22" ry="28" fill="#A78BFA"/>
+    <ellipse cx="60" cy="35" rx="28" ry="25" fill="#7C3AED"/>
+    <path d="M35 15 Q38 25, 40 30" stroke="#7C3AED" stroke-width="8" stroke-linecap="round"/>
+    <path d="M85 15 Q82 25, 80 30" stroke="#7C3AED" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="47" cy="38" r="12" fill="#FCD34D"/><circle cx="73" cy="38" r="12" fill="#FCD34D"/>
+    <circle cx="47" cy="38" r="6" fill="#1a1a1a"/><circle cx="73" cy="38" r="6" fill="#1a1a1a"/>
+    <circle cx="49" cy="36" r="2" fill="white"/><circle cx="75" cy="36" r="2" fill="white"/>
+    <path d="M55 50 L60 58 L65 50 Z" fill="#F59E0B"/>
+</svg>

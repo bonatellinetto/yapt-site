@@ -1,0 +1,64 @@
+---
+import UIIcon from '../UIIcon.astro';
+import type { Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const copy = {
+  'pt-BR': {
+    label: 'Da conexão à conversa',
+    note: 'Capturas reais do produto · interface em português.',
+    expand: 'Ampliar tela real',
+    images: [
+      {title:'Construa a integração por conversa',text:'Descreva a consulta, conecte a API e defina os dados que ficam disponíveis para a IA e para o time.',src:'/produto/support/conexao-por-conversa-real.png',width:1412,height:1114,alt:'Conexão no yaAgents construída por conversa, com consulta de pedido e definição dos dados disponíveis para agentes e atendentes.'},
+      {title:'Use os dados no próprio atendimento',text:'Histórico, situação financeira e informações do negócio ficam ao lado da conversa, sem procurar em várias telas.',src:'/produto/support/dados-na-conversa-real.png',width:1398,height:1678,alt:'Painel de dados de um sistema interno dentro da conversa no yapt., com saúde do cliente e situação financeira.'},
+    ],
+  },
+  'en-US': {
+    label: 'From connection to conversation',
+    note: 'Real product screenshots · interface in Portuguese.',
+    expand: 'Expand real screenshot',
+    images: [
+      {title:'Build the integration through conversation',text:'Describe the query, connect the API and define which data is available to AI and your team.',src:'/produto/support/conexao-por-conversa-real.png',width:1412,height:1114,alt:'Connection built through conversation in yaAgents, with order lookup and data made available to agents and operators.'},
+      {title:'Use the data during the interaction',text:'Customer history, financial status and business information sit beside the conversation, without searching across screens.',src:'/produto/support/dados-na-conversa-real.png',width:1398,height:1678,alt:'Internal system data displayed inside a yapt. conversation, including customer health and financial status.'},
+    ],
+  },
+  'es-ES': {
+    label: 'De la conexión a la conversación',
+    note: 'Capturas reales del producto · interfaz en portugués.',
+    expand: 'Ampliar captura real',
+    images: [
+      {title:'Construye la integración por conversación',text:'Describe la consulta, conecta la API y define qué datos estarán disponibles para la IA y el equipo.',src:'/produto/support/conexao-por-conversa-real.png',width:1412,height:1114,alt:'Conexión en yaAgents construida por conversación, con consulta de pedidos y datos disponibles para agentes y operadores.'},
+      {title:'Usa los datos en la propia atención',text:'El historial, la situación financiera y la información del negocio quedan junto a la conversación, sin buscar en varias pantallas.',src:'/produto/support/dados-na-conversa-real.png',width:1398,height:1678,alt:'Panel de datos de un sistema interno dentro de una conversación de yapt., con salud del cliente y situación financiera.'},
+    ],
+  },
+}[locale];
+---
+<div class="support-integration-visual" data-support-integrations>
+  <p class="mk-case__label">{copy.label}</p>
+  <div class="support-integration-grid">
+    {copy.images.map((entry,index)=><figure>
+      <figcaption><span aria-hidden="true">0{index+1}</span><h4>{entry.title}</h4><p>{entry.text}</p></figcaption>
+      <a href={entry.src} target="_blank" rel="noopener noreferrer" data-marketing-image data-image-title={entry.title} aria-label={`${copy.expand}: ${entry.title}`}>
+        <div class:list={['support-integration-shot',{'support-integration-shot--panel':index===1}]}><img src={entry.src} width={entry.width} height={entry.height} alt={entry.alt} loading="lazy" decoding="async"/></div>
+        <span class="mk-case__expand">{copy.expand}<span aria-hidden="true"><UIIcon name="arrow-up-right" /></span></span>
+      </a>
+    </figure>)}
+  </div>
+  <p class="mk-case__screen-note">{copy.note}</p>
+</div>
+<style>
+.support-integration-visual{min-width:0;padding:0 24px 24px}
+.support-integration-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.support-integration-grid figure{margin:0;min-width:0;background:#f7f9f8;border:1px solid #e0e9e3;border-radius:16px;overflow:hidden}
+.support-integration-grid figcaption{padding:20px 18px 18px;min-height:176px}
+.support-integration-grid figcaption>span{font:500 9px/1 Inter,sans-serif;color:#6f9488}
+.support-integration-grid h4{font:600 17px/1.35 Poppins,sans-serif;letter-spacing:-.025em;color:#214f43;margin:12px 0 9px;text-wrap:balance}
+.support-integration-grid figcaption p{font:400 12px/1.7 Inter,sans-serif;color:#658075;margin:0;text-wrap:pretty}
+.support-integration-grid a{display:block;text-decoration:none;color:inherit;background:#fff}
+.support-integration-shot{position:relative;height:340px;overflow:hidden;border-block:1px solid #e0e9e3;background:#f6f8f7}
+.support-integration-shot img{display:block;width:100%;height:100%;object-fit:contain}
+.support-integration-shot--panel img{object-fit:cover;object-position:80% 50%}
+.support-integration-visual .mk-case__expand{justify-content:space-between}
+@media(max-width:1100px) and (min-width:768px){.support-integration-grid{grid-template-columns:1fr}.support-integration-grid figcaption{min-height:0}.support-integration-shot{height:auto;aspect-ratio:1.3}.support-integration-shot--panel{height:440px;aspect-ratio:auto}}
+@media(max-width:600px){.support-integration-visual{padding:0 14px 20px}.support-integration-grid{grid-template-columns:1fr;gap:16px}.support-integration-grid figcaption{min-height:0;padding:19px 17px}.support-integration-grid h4{font-size:17px}.support-integration-shot{height:auto;aspect-ratio:1.268}.support-integration-shot--panel{height:auto;aspect-ratio:.834}.support-integration-shot--panel img{object-fit:contain}.support-integration-visual .mk-case__expand{min-height:44px}}
+</style>

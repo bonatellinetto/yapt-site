@@ -1,0 +1,16 @@
+<!-- Source: yapt-creation-library.html, element "Aves Migratórias". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <g stroke="#1E3A5F" stroke-width="2" fill="none">
+        <path d="M60 25 Q55 30, 50 28 M60 25 Q65 30, 70 28"/>
+        <path d="M45 40 Q40 45, 35 43 M45 40 Q50 45, 55 43"/>
+        <path d="M30 55 Q25 60, 20 58 M30 55 Q35 60, 40 58"/>
+        <path d="M75 40 Q70 45, 65 43 M75 40 Q80 45, 85 43"/>
+        <path d="M90 55 Q85 60, 80 58 M90 55 Q95 60, 100 58"/>
+    </g>
+    <g fill="#1E3A5F">
+        <ellipse cx="60" cy="25" rx="4" ry="2"/>
+        <ellipse cx="45" cy="40" rx="3" ry="1.5"/><ellipse cx="30" cy="55" rx="3" ry="1.5"/>
+        <ellipse cx="75" cy="40" rx="3" ry="1.5"/><ellipse cx="90" cy="55" rx="3" ry="1.5"/>
+    </g>
+    <ellipse cx="85" cy="95" rx="15" ry="6" fill="#E0E7FF" opacity="0.5"/>
+</svg>

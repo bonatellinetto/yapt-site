@@ -1,0 +1,92 @@
+---
+import NatureGlyph from './NatureGlyph.astro';
+import UIIcon from '../UIIcon.astro';
+import { homeCopy, areaKeys, areaHref } from './content';
+import { localePath, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale);
+const teamsLabel = {'pt-BR':'Times e colaboração','en-US':'Teams & collaboration','es-ES':'Equipos y colaboración'}[locale];
+---
+<section class="home-section connected-areas" id="visao-geral" aria-labelledby="ecosystem-heading">
+  <div class="home-shell">
+    <div class="ecosystem-heading home-reveal"><p class="home-label">{c.ecosystem.eyebrow}</p><h2 class="home-heading" id="ecosystem-heading">{c.ecosystem.title}</h2><p class="home-intro">{c.ecosystem.description}</p></div>
+    <div class="operation-map home-reveal" aria-label={c.ecosystem.hint}>
+      <svg class="map-branches" viewBox="0 0 1100 460" preserveAspectRatio="none" fill="none" aria-hidden="true"><g stroke="#a4cab8" stroke-width="1"><path d="M180 145V220H920V145M550 145V315M180 315V240H920V315"/><path d="M180 220H920" stroke-dasharray="3 7"/></g><g fill="#6bb498"><circle cx="180" cy="220" r="4"/><circle cx="920" cy="220" r="4"/><circle cx="180" cy="240" r="4"/><circle cx="920" cy="240" r="4"/></g></svg>
+      {areaKeys.slice(0,3).map(key => (
+        <a class="map-area" href={areaHref(key,locale)}>
+          <div class="map-area-top"><NatureGlyph name={key} size={37} /><h3>{c.areas[key].label}</h3><span aria-hidden="true"><UIIcon name="arrow-up-right" size={17}/></span></div>
+          <p>{c.areas[key].phrase}</p>
+          <ul>{c.areas[key].points.map(point => <li>{point}</li>)}</ul>
+        </a>
+      ))}
+      <div class="map-center"><div class="map-brand"><img src="/yapt-logo.svg" alt="yapt." width="100" height="36"/><span>{c.ecosystem.center}</span></div></div>
+      {areaKeys.slice(3).map(key => (
+        <a class="map-area map-foundation" href={areaHref(key,locale)}>
+          <div class="map-area-top"><NatureGlyph name={key} size={32} /><h3>{key === 'teams' ? teamsLabel : c.areas[key].label}</h3><span aria-hidden="true"><UIIcon name="arrow-up-right" size={17}/></span></div>
+          <p>{c.areas[key].phrase}</p>
+          <ul>{c.areas[key].points.map(point => <li>{point}</li>)}</ul>
+        </a>
+      ))}
+    </div>
+    <div class="management-row home-reveal">
+      <article id="gestao-operacional"><div><span class="management-tag">{c.ecosystem.management}</span><h3>{c.areas.operations.label}</h3></div><p>{c.ecosystem.operations}</p><a class="home-link" href={localePath('/operations',locale)}>{c.ecosystem.operationsLink}</a></article>
+    </div>
+  </div>
+</section>
+<style>
+  .connected-areas { background: #f4f8f4; border-block: 1px solid #e5ece5; position: relative; overflow: hidden; padding-block: clamp(56px, 6vw, 82px); }
+  .ecosystem-heading { margin: auto; text-align: center; }
+  .ecosystem-heading .home-label { justify-content: center; margin-bottom: 12px; }
+  .ecosystem-heading .home-heading { max-width: none; margin: 0; font-size: clamp(32px, 3.2vw, 44px); line-height: 1.15; }
+  .ecosystem-heading .home-intro { margin: 10px auto 0; max-width: none; font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; color: #416551; text-wrap: balance; }
+  .operation-map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; position: relative; padding: 18px 24px 24px; margin-top: 26px; isolation: isolate; }
+  .map-branches { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; opacity: .75; }
+  .map-area { padding: 24px; background: #ffffffed; border: 1px solid #dce8de; border-radius: 18px; color: #173e31; text-decoration: none; box-shadow: 0 10px 30px -25px #1d573550; transition: transform .25s, border-color .25s, box-shadow .25s; min-width: 0; }
+  .map-area:hover { transform: translateY(-4px); border-color: #78bb9f; box-shadow: 0 15px 35px -22px #1d57354a; }
+  .map-area-top { display: flex; align-items: center; gap: 12px; min-height: 37px; }
+  .map-area-top h3 { font: 600 16px Poppins, sans-serif; letter-spacing: -.025em; margin: 0; }
+  .map-area-top > span { margin-left: auto; font-size: 17px; color: #6a957e; }
+  .map-area p { font-size: 13px; font-weight: 500; line-height: 1.65; color: #365e4a; margin: 16px 0 0; text-wrap: pretty; }
+  .map-area ul { display: grid; gap: 9px; list-style: none; padding: 14px 0 0; border-top: 1px solid #e6ede6; margin: 14px 0 0; font-size: 12px; line-height: 1.7; color: #607766; }
+  .map-area li { padding-left: 12px; position: relative; }
+  .map-area li::before { content: ''; position: absolute; width: 3px; height: 3px; top: .73em; left: 0; border-radius: 50%; background: #69a489; }
+  .map-center { grid-column: 1/-1; display: flex; justify-content: center; padding: 30px 0; }
+  .map-brand { display: flex; align-items: center; gap: 20px; border: 1px solid #b8d4bf; border-radius: 99px; padding: 15px 25px; background: #eff7ef; box-shadow: 0 0 0 10px #f4f8f4; }
+  .map-brand img { width: 90px; height: auto; }
+  .map-brand span { font-size: 11px; color: #557e63; border-left: 1px solid #bfdbc6; padding-left: 20px; }
+  .map-foundation { background: #f9fcf7f5; }
+  .management-row { border-top: 1px solid #d5e3d6; margin-top: 31px; padding-top: 35px; }
+  .management-row article { display: grid; grid-template-columns: minmax(160px,.75fr) minmax(0,1.6fr) auto; align-items: center; gap: 28px; }
+  .management-tag { font-size: 10px; color: #65826b; letter-spacing: .035em; }
+  .management-row h3 { font: 600 23px Poppins, sans-serif; letter-spacing: -.04em; margin: 10px 0; }
+  .management-row p { font-size: 13px; line-height: 1.8; color: #607766; max-width: 48ch; margin: 0 0 12px; }
+  .management-row .home-link { font-size: 12px; }
+  @media (max-width: 1000px) {
+    .operation-map { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 0; }
+    .map-branches { display: none; }
+    .map-center { order: -1; padding: 0 0 8px; }
+    .management-row article { grid-template-columns: 1fr 1.5fr; gap: 12px 24px; }
+    .management-row article > .home-link { grid-column: 2; }
+  }
+  @media (max-width: 600px) {
+    .connected-areas { padding-block: 56px; }
+    .ecosystem-heading { text-align: left; }
+    .ecosystem-heading .home-label { justify-content: flex-start; }
+    .ecosystem-heading .home-intro { text-align: left; text-wrap: pretty; max-width: 28ch; margin-left: 0; }
+    .operation-map { grid-template-columns: 1fr; gap: 14px; margin-top: 25px; }
+    .map-brand { padding: 13px 16px; border-radius: 14px; gap: 13px; box-shadow: none; width: 100%; justify-content: center; }
+    .map-brand img { width: 72px; }
+    .map-brand span { font-size: 10px; padding-left: 13px; max-width: 18ch; line-height: 1.5; }
+    .map-area { padding: 22px; border-radius: 16px; }
+    .map-area-top { gap: 11px; }
+    .map-area-top h3 { font-size: 16px; }
+    .map-area p { font-size: 14px; margin-top: 14px; }
+    .map-area ul { font-size: 13px; gap: 10px; }
+    .management-row { margin-top: 31px; padding-top: 27px; }
+    .management-row article { display: block; }
+    .management-row h3 { font-size: 23px; }
+    .management-row p { font-size: 14px; }
+    .management-row .home-link { font-size: 13px; }
+  }
+</style>

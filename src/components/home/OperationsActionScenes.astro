@@ -1,0 +1,38 @@
+---
+import './operations-action-scenes.css';
+---
+
+<!-- All four views use unchanged captures of the product. Targets are inert
+     camera anchors; the shared journey player supplies navigation and motion. -->
+<div class="op-screen opa-scene opa-queues-screen" data-j-screen="operations-queues">
+  <div class="opa-queues-capture" data-j-target="operations-queues-overview">
+    <img src="/produto/ops-filas.webp" width="1600" height="670" alt="" decoding="async" />
+    <span class="opa-hotspot opa-critical-queue" data-j-target="operations-critical-queue"></span>
+  </div>
+</div>
+
+<div class="op-screen opa-scene opa-capacity-screen" data-j-screen="operations-capacity">
+  <div class="opa-capacity-capture" data-j-target="operations-capacity-overview">
+    <img src="/produto/ops-equipe.webp" width="1600" height="1057" alt="" decoding="async" />
+    <span class="opa-hotspot opa-operator-load" data-j-target="operations-operator-load"></span>
+    <span class="opa-hotspot opa-available-capacity" data-j-target="operations-available-capacity"></span>
+  </div>
+</div>
+
+<div class="op-screen opa-scene opa-routing-screen" data-j-screen="operations-routing">
+  <div class="opa-modal-backdrop"><img src="/produto/ops-filas.webp" width="1600" height="670" alt="" decoding="async" /></div>
+  <div class="opa-modal-shade"></div>
+  <div class="opa-routing-capture" data-j-target="operations-routing-overview">
+    <img src="/produto/ops-distribuicao.jpg" width="720" height="992" alt="" decoding="async" />
+    <span class="opa-hotspot opa-routing-rules" data-j-target="operations-routing-rules"></span>
+  </div>
+</div>
+
+<div class="op-screen opa-scene opa-sla-screen" data-j-screen="operations-sla">
+  <div class="opa-modal-backdrop"><img src="/produto/ops-filas.webp" width="1600" height="670" alt="" decoding="async" /></div>
+  <div class="opa-modal-shade"></div>
+  <div class="opa-sla-capture" data-j-target="operations-sla-overview">
+    <img src="/produto/ops-prazos.webp" width="1600" height="1291" alt="" decoding="async" />
+    <span class="opa-hotspot opa-sla-goal" data-j-target="operations-sla-goal"></span>
+  </div>
+</div>

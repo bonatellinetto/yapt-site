@@ -1,89 +1,40 @@
 import type { APIRoute } from 'astro';
 import { getAllPublishedPosts } from '../lib/blog';
+import { getPostLocale } from '../lib/blog-seo';
+import { getLocaleFromPath, localeHreflang, stripLocalePrefix, type Locale } from '../lib/i18n';
+import { getCanonical } from '../lib/seo';
+import { getIndexableStaticPaths, getRouteLocales } from '../lib/site-routes';
 
-const SITE = 'https://yapt.ai';
+const xmlEntities: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' };
 
-const staticPages = [
-  '/',
-  '/conversations',
-  '/intelligence',
-  '/sales',
-  '/marketing-site',
-  '/automations',
-  '/operations',
-  '/integrations',
-  '/for-enterprise',
-  '/trust',
-  '/pricing',
-  '/privacy',
-  '/terms',
-  '/blog',
-  '/partners',
-];
+function escapeXml(value: string): string {
+  return value.replace(/[&<>"']/g, character => xmlEntities[character]);
+}
 
-const locales = [
-  { prefix: '', hreflang: 'pt-BR' },
-  { prefix: '/en', hreflang: 'en' },
-  { prefix: '/es', hreflang: 'es' },
-];
+function buildUrlEntry(path: string, locale: Locale, availableLocales: Locale[], lastmod?: string): string {
+  const loc = escapeXml(getCanonical(path, locale));
+  const alternates = availableLocales.map(alternate =>
+    `    <xhtml:link rel="alternate" hreflang="${localeHreflang[alternate]}" href="${escapeXml(getCanonical(path, alternate))}" />`);
+  const defaultLocale = availableLocales.includes('pt-BR') ? 'pt-BR' : availableLocales[0];
+  if (defaultLocale) alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(getCanonical(path, defaultLocale))}" />`);
+  return ['  <url>', `    <loc>${loc}</loc>`, ...(lastmod ? [`    <lastmod>${escapeXml(lastmod)}</lastmod>`] : []), ...alternates, '  </url>'].join('\n');
+}
 
-function buildUrlEntry(
-  locPath: string,
-  basePath: string,
-  lastmod?: string,
-  priority?: string,
-): string {
-  const lines: string[] = [];
-  lines.push('  <url>');
-  lines.push(`    <loc>${SITE}${locPath}</loc>`);
-  if (lastmod) lines.push(`    <lastmod>${lastmod}</lastmod>`);
-  if (priority) lines.push(`    <priority>${priority}</priority>`);
-
-  // hreflang alternates — always based on basePath (without locale prefix)
-  for (const locale of locales) {
-    const href = basePath === '/' ? (locale.prefix || '/') : `${locale.prefix}${basePath}`;
-    lines.push(`    <xhtml:link rel="alternate" hreflang="${locale.hreflang}" href="${SITE}${href}" />`);
-  }
-  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${basePath}" />`);
-
-  lines.push('  </url>');
-  return lines.join('\n');
+function validLastmod(value: string | null): string | undefined {
+  const date = value ? new Date(value) : null;
+  return date && Number.isFinite(date.getTime()) ? date.toISOString().split('T')[0] : undefined;
 }
 
 export const GET: APIRoute = async () => {
   const posts = await getAllPublishedPosts();
-  const today = new Date().toISOString().split('T')[0];
-
-  const urls: string[] = [];
-
-  // Static pages (all locales)
-  for (const page of staticPages) {
-    const priority = page === '/' ? '1.0' : page === '/blog' ? '0.8' : '0.7';
-    for (const locale of locales) {
-      const fullPath = page === '/' ? (locale.prefix || '/') : `${locale.prefix}${page}`;
-      urls.push(buildUrlEntry(fullPath, page, today, priority));
-    }
-  }
-
-  // Blog posts (all locales)
-  for (const post of posts) {
-    const lastmod = post.updated_at ? post.updated_at.split('T')[0] : today;
-    const baseBlogPath = `/blog/${post.slug}`;
-    for (const locale of locales) {
-      const fullPath = `${locale.prefix}${baseBlogPath}`;
-      urls.push(buildUrlEntry(fullPath, baseBlogPath, lastmod, '0.6'));
-    }
-  }
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
-${urls.join('\n')}
-</urlset>`;
-
-  return new Response(xml, {
-    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+  const urls = getIndexableStaticPaths().map(path => {
+    const basePath = stripLocalePrefix(path);
+    return buildUrlEntry(basePath, getLocaleFromPath(path), getRouteLocales(basePath));
   });
+  for (const post of posts) {
+    const locale = getPostLocale(post);
+    urls.push(buildUrlEntry(`/blog/${post.slug}`, locale, [locale], validLastmod(post.updated_at || post.published_at)));
+  }
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>`;
+  return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 };

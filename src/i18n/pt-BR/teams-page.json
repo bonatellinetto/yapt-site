@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "title": "Times e colaboração na operação com IA",
+    "description": "Comunicação interna e chat corporativo no yapt. teams, com grupos, conversas privadas e discussões ligadas ao atendimento na plataforma com IA."
+  },
+  "hero": {
+    "eyebrow": "Comunicação interna na plataforma com IA · Beta",
+    "title": "Times e colaboração.",
+    "ending": "Conectados à operação com IA.",
+    "description": "Conecte a comunicação interna às conversas de atendimento e vendas na plataforma yapt. No yapt. teams, grupos, chats privados e discussões de casos mantêm o contexto da conversa acessível às pessoas autorizadas, sem copiar o histórico para outra ferramenta.",
+    "cta": "Quero conectar meu time",
+    "secondary": "Veja a colaboração em movimento",
+    "proof": "Grupos · conversas privadas · discussões de casos · voz.",
+    "frameBrand": "Times e colaboração",
+    "screenLabel": "As pessoas certas, com o contexto do trabalho",
+    "screenNote": "Produto em Beta · Telas reais da New Way. Informações internas ocultadas quando necessário.",
+    "image": "/produto/teams/workspace.jpg",
+    "imageWidth": 1352,
+    "imageHeight": 666,
+    "imageAlt": "Tela real do yapt. teams na New Way, com uma discussão de teste e os detalhes do atendimento original.",
+    "tags": [
+      "Caso",
+      "Contexto",
+      "Colaboração",
+      "Decisão"
+    ]
+  },
+  "scenarios": {
+    "navLabel": "Explore onde a colaboração precisa melhorar",
+    "mechanismLabel": "Como o yapt. resolve",
+    "actionLabel": "Na prática",
+    "measurementLabel": "O que acompanhar",
+    "exampleLabel": "Exemplo de aplicação",
+    "moreLabel": "Ampliar tela do produto",
+    "imageNote": "Telas reais da New Way. Informações internas ocultadas quando necessário. Interface do produto em português.",
+    "eyebrow": "Chat corporativo com o contexto do trabalho",
+    "title": "Quanto trabalho fica parado entre uma pessoa e outra?",
+    "description": "Na comunicação interna, copiar informações para outro chat, reenviar o histórico e procurar quem pode ajudar consome tempo. Veja como conectar a colaboração ao contexto das conversas de atendimento e vendas para dar continuidade ao trabalho.",
+    "items": [
+      {
+        "id": "contexto",
+        "short": "Discussões sem contexto",
+        "pain": "“Preciso explicar tudo de novo para conseguir ajuda com este caso.”",
+        "title": "Leve a discussão para perto do caso.",
+        "description": "Abra uma discussão a partir da conversa de atendimento e envolva as pessoas ou os grupos que podem ajudar. O vínculo permite consultar o contexto disponível e voltar ao atendimento original, com menos cópias e repasses entre ferramentas.",
+        "icon": "support",
+        "steps": [
+          {
+            "title": "Abra o caso",
+            "text": "Inicie a discussão no atendimento que precisa de apoio."
+          },
+          {
+            "title": "Envolva o time",
+            "text": "Escolha colegas ou grupos habilitados para participar."
+          },
+          {
+            "title": "Continue",
+            "text": "Consulte o contexto e retorne à conversa original."
+          }
+        ],
+        "benefits": [
+          "Consulte empresa, contato, ticket ou conversa e os dados de acompanhamento disponíveis.",
+          "Mantenha uma referência ao atendimento que motivou a colaboração."
+        ],
+        "metric": "Tempo até conseguir apoio, repasses de informação e tempo até a próxima ação no atendimento.",
+        "example": {
+          "title": "O especialista entra com contexto",
+          "when": "Um atendimento precisa da avaliação de outra pessoa da empresa.",
+          "then": "O operador abre uma discussão vinculada à conversa e envolve o time responsável.",
+          "outcome": "Quem ajuda encontra a referência do caso e pode abrir o atendimento original."
+        },
+        "image": "/produto/teams/workspace.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Discussão real de teste da New Way, com os detalhes do atendimento original."
+      },
+      {
+        "id": "grupos",
+        "short": "Áreas desencontradas",
+        "pain": "“O cliente espera enquanto eu descubro com qual área falar.”",
+        "title": "Conecte as pessoas que fazem o trabalho avançar.",
+        "description": "Organize grupos para as frentes da empresa e use conversas privadas para o alinhamento direto. Grupos habilitados também podem participar das discussões de casos, aproximando quem atende de quem conhece o assunto.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Organize",
+            "text": "Reúna as pessoas por time, assunto ou frente de trabalho."
+          },
+          {
+            "title": "Alinhe",
+            "text": "Converse no grupo ou diretamente com a pessoa necessária."
+          },
+          {
+            "title": "Conecte ao caso",
+            "text": "Envolva os grupos habilitados quando o atendimento precisar."
+          }
+        ],
+        "benefits": [
+          "Reúna a comunicação interna e o apoio entre áreas na mesma plataforma.",
+          "Use grupos e conversas privadas conforme o tipo de alinhamento necessário."
+        ],
+        "metric": "Tempo para localizar a área responsável, repasses entre pessoas e espera por alinhamento.",
+        "example": {
+          "title": "Apoio entre áreas sem reconstruir a história",
+          "when": "O atendimento depende de suporte, financeiro ou de um especialista.",
+          "then": "A equipe encontra o grupo ou colega e leva o caso para a discussão vinculada.",
+          "outcome": "As pessoas certas colaboram com uma referência comum para o trabalho."
+        },
+        "image": "/produto/teams/grupos.jpg",
+        "imageWidth": 328,
+        "imageHeight": 666,
+        "imageAlt": "Lista real de grupos da New Way no yapt. teams."
+      },
+      {
+        "id": "decisoes",
+        "short": "Decisões que se perdem",
+        "pain": "“O time decidiu no chat, mas a decisão não chegou a quem atende.”",
+        "title": "Faça a decisão voltar para a operação.",
+        "description": "Organize os desdobramentos em threads e mencione quem precisa participar. Na discussão vinculada, revise e registre a decisão como nota interna no atendimento, preservando a referência para quem continua o trabalho.",
+        "icon": "operations",
+        "steps": [
+          {
+            "title": "Discuta",
+            "text": "Mantenha as respostas sobre o mesmo assunto na thread."
+          },
+          {
+            "title": "Registre",
+            "text": "Revise a decisão antes de enviá-la como nota interna."
+          },
+          {
+            "title": "Dê continuidade",
+            "text": "Retome o atendimento com a orientação e a referência da discussão."
+          }
+        ],
+        "benefits": [
+          "Concentre o desdobramento de cada assunto sem misturar todas as respostas.",
+          "Leve o resultado da colaboração ao histórico interno que orienta a equipe."
+        ],
+        "metric": "Decisões registradas, dúvidas repetidas e tempo entre o alinhamento e a próxima ação.",
+        "example": {
+          "title": "O acordo acompanha a próxima pessoa",
+          "when": "A equipe chega a uma orientação para dar continuidade ao caso.",
+          "then": "Uma pessoa revisa a decisão e a registra como nota interna vinculada à discussão.",
+          "outcome": "Quem retoma o atendimento encontra a orientação e consegue consultar a conversa interna."
+        },
+        "image": "/produto/teams/thread.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Thread real de uma mensagem da discussão de teste."
+      },
+      {
+        "id": "busca",
+        "short": "Tempo procurando respostas",
+        "pain": "“Eu sei que essa informação já passou por algum grupo. Só não encontro onde.”",
+        "title": "Encontre o que o time já compartilhou.",
+        "description": "Use a busca global ou pesquise dentro de uma conversa. Arquivos da sala e mensagens salvas ajudam a reencontrar referências; o histórico preserva o caminho da discussão para reduzir a necessidade de perguntar tudo outra vez.",
+        "icon": "data",
+        "steps": [
+          {
+            "title": "Busque",
+            "text": "Procure no Teams ou dentro da conversa em que o assunto aconteceu."
+          },
+          {
+            "title": "Recupere",
+            "text": "Consulte as mensagens, os arquivos e as referências disponíveis."
+          },
+          {
+            "title": "Retome",
+            "text": "Volte ao assunto com o histórico que a equipe compartilhou."
+          }
+        ],
+        "benefits": [
+          "Pesquise no histórico sem depender de alguém lembrar em qual grupo respondeu.",
+          "Salve mensagens importantes e consulte os arquivos da conversa quando precisar."
+        ],
+        "metric": "Tempo de busca, perguntas repetidas e esforço para reencontrar arquivos e orientações.",
+        "example": {
+          "title": "A resposta anterior volta a ser útil",
+          "when": "Um assunto parecido reaparece e a equipe precisa recuperar uma orientação.",
+          "then": "A pessoa pesquisa o histórico e consulta a mensagem ou o arquivo disponível.",
+          "outcome": "O time retoma a informação compartilhada e decide como aplicá-la ao caso atual."
+        },
+        "image": "/produto/teams/busca.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Busca real no yapt. teams encontrando uma mensagem da discussão de teste."
+      },
+      {
+        "id": "voz",
+        "short": "Alinhamento que demora",
+        "pain": "“Esse assunto se resolveria melhor em uma conversa rápida por voz.”",
+        "title": "Converse por voz quando o trabalho pedir.",
+        "description": "A disponibilidade ajuda a identificar quem pode conversar. Chamadas de áudio nos chats privados e o Lounge oferecem espaços para o alinhamento por voz dentro do Teams, conforme os recursos liberados para a conta.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Veja quem está disponível",
+            "text": "Encontre a pessoa com quem precisa alinhar o assunto."
+          },
+          {
+            "title": "Converse",
+            "text": "Use a chamada de áudio ou o espaço de voz disponível."
+          },
+          {
+            "title": "Dê sequência",
+            "text": "Registre o combinado no contexto do trabalho quando necessário."
+          }
+        ],
+        "benefits": [
+          "Combine mensagens e voz conforme o tipo de alinhamento que o assunto precisa.",
+          "Mantenha o alinhamento dentro da plataforma em que a equipe já colabora."
+        ],
+        "metric": "Espera por alinhamento, tempo até a decisão e necessidade de retomar o mesmo assunto.",
+        "example": {
+          "title": "Um alinhamento rápido destrava o próximo passo",
+          "when": "Uma dúvida exige uma troca rápida entre duas pessoas ou um grupo.",
+          "then": "A equipe usa o recurso de voz disponível para alinhar o assunto.",
+          "outcome": "As pessoas combinam a continuidade e registram a orientação necessária para o trabalho."
+        },
+        "image": "/produto/teams/voz.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Tela real do Lounge do yapt. teams, sem chamada em andamento."
+      },
+      {
+        "id": "acesso",
+        "short": "Pessoas fora do contexto",
+        "pain": "“Precisamos envolver outra pessoa, mas falta organizar quem participa e o que pode acessar.”",
+        "title": "Envolva quem precisa ajudar, com o acesso adequado.",
+        "description": "Organize os participantes dos grupos e das discussões conforme os acessos da empresa. Parceiros que sejam usuários autorizados podem colaborar nos espaços permitidos, com a participação definida para cada frente de trabalho.",
+        "icon": "teams",
+        "steps": [
+          {
+            "title": "Defina a participação",
+            "text": "Identifique quais pessoas e grupos precisam atuar juntos."
+          },
+          {
+            "title": "Organize os acessos",
+            "text": "Considere o vínculo com a empresa e as permissões disponíveis."
+          },
+          {
+            "title": "Colabore",
+            "text": "Reúna os participantes autorizados no espaço do trabalho."
+          }
+        ],
+        "benefits": [
+          "Defina quem participa dos espaços e quais grupos podem receber discussões de casos.",
+          "Envolva colegas e parceiros autorizados sem perder a referência da conversa que precisa de apoio."
+        ],
+        "metric": "Tempo para envolver participantes, repasses fora do fluxo e clareza sobre quem está acompanhando.",
+        "example": {
+          "title": "Colaboração com participação definida",
+          "when": "Um caso precisa de um colega de outra área ou de um parceiro com acesso autorizado.",
+          "then": "A equipe confere os acessos e reúne os participantes no espaço permitido.",
+          "outcome": "O trabalho segue com as pessoas necessárias e com uma referência compartilhada."
+        },
+        "image": "/produto/teams/acesso.jpg",
+        "imageWidth": 1352,
+        "imageHeight": 666,
+        "imageAlt": "Seleção real de participantes em um rascunho de grupo, com aviso de privacidade."
+      }
+    ]
+  },
+  "foundation": {
+    "eyebrow": "Comunicação interna e colaboração com contexto",
+    "title": "Pessoas, contexto e continuidade no mesmo lugar.",
+    "description": "Conecte o chat corporativo às conversas de atendimento e vendas. O yapt. teams reúne pessoas, mensagens e decisões no ambiente da operação, sem perder a referência do caso.",
+    "items": [
+      {
+        "icon": "teams",
+        "title": "Chat corporativo para o time",
+        "text": "Grupos, conversas privadas e voz para a comunicação interna da empresa."
+      },
+      {
+        "icon": "support",
+        "title": "Colaboração com o contexto do cliente",
+        "text": "Discussões vinculadas à conversa de atendimento ou vendas, com referências para consultar e retomar."
+      },
+      {
+        "icon": "data",
+        "title": "A história continua",
+        "text": "Threads, busca, arquivos e decisões registradas ajudam a dar continuidade ao trabalho."
+      }
+    ],
+    "builderLabel": "Do atendimento ao trabalho em equipe",
+    "builderTitle": "Quem ajuda encontra o caso. Quem atende recebe a decisão.",
+    "builderDescription": "Abra a discussão a partir da conversa, envolva pessoas ou grupos habilitados e consulte o contexto disponível. Depois do alinhamento, uma pessoa pode revisar e registrar a decisão como nota interna. Encerrar a discussão organiza a colaboração; a situação do atendimento é tratada separadamente.",
+    "builderLink": "Conheça o yapt. para Suporte",
+    "builderHref": "/support",
+    "builderImageAlt": "Tela real de revisão de uma decisão antes de registrá-la como nota interna no atendimento."
+  },
+  "journey": {
+    "eyebrow": "Da conversa à colaboração",
+    "title": "O caso avança com as pessoas certas.",
+    "description": "Veja a equipe encontrar o espaço de colaboração, acompanhar as respostas e consultar o contexto que liga a discussão ao atendimento. A decisão revisada pode voltar ao histórico interno para orientar a continuidade.",
+    "note": "Animação montada com capturas reais de uma discussão de teste da New Way. Os rascunhos exibidos não foram enviados. Produto em Beta, conforme habilitação da conta."
+  },
+  "adoption": {
+    "eyebrow": "Seu time, com apoio especializado se precisar",
+    "title": "Comece onde a falta de contexto mais atrasa a entrega.",
+    "description": "Sua equipe pode identificar os repasses entre áreas, organizar os espaços de colaboração e escolher uma rotina para começar. Especialistas podem apoiar a aplicação, conforme a forma de atuação escolhida, aproximando a comunicação do trabalho que precisa avançar.",
+    "steps": [
+      {
+        "title": "Mapear os repasses",
+        "text": "Identificar onde a equipe precisa sair do contexto, repetir informações ou esperar outra área."
+      },
+      {
+        "title": "Organizar a colaboração",
+        "text": "Definir grupos, participantes e uma rotina de discussão e registro das decisões."
+      },
+      {
+        "title": "Acompanhar a continuidade",
+        "text": "Observar o tempo para conseguir apoio, os repasses e a evolução do atendimento."
+      }
+    ],
+    "footnote": "O yapt. teams está em Beta. Disponibilidade, participantes e recursos são confirmados conforme os acessos da empresa."
+  },
+  "faq": {
+    "eyebrow": "Antes de conectar o time",
+    "title": "Clareza para colaborar e dar continuidade.",
+    "items": [
+      {
+        "question": "Como o yapt. teams funciona como chat corporativo?",
+        "answer": "O yapt. teams reúne grupos, conversas privadas e recursos de voz para a comunicação interna da empresa. As discussões de casos acrescentam o vínculo com a conversa de atendimento ou vendas, aproximando o alinhamento entre pessoas do contexto do cliente."
+      },
+      {
+        "question": "Como colaborar em um atendimento ou conversa de vendas?",
+        "answer": "A discussão pode ser iniciada a partir do modal da conversa de atendimento. O vínculo preserva a referência da conversa ou do ticket e permite consultar informações disponíveis, como contato, empresa, situação e responsáveis, além de abrir o atendimento original. Os acessos de cada pessoa continuam valendo."
+      },
+      {
+        "question": "Posso envolver grupos e parceiros?",
+        "answer": "Você pode envolver colegas e grupos habilitados para receber discussões de casos. Parceiros precisam ser usuários com acesso autorizado à empresa e participar dos espaços permitidos. A participação depende dos membros e das permissões configuradas; não é uma sala pública aberta por link."
+      },
+      {
+        "question": "Como a decisão volta para o atendimento?",
+        "answer": "Na discussão vinculada, uma pessoa pode revisar e registrar a decisão como nota interna no atendimento, com referência à discussão. Encerrar uma discussão organiza o trabalho interno e seu resultado. Isso não encerra o ticket nem altera automaticamente a situação do atendimento."
+      },
+      {
+        "question": "O que ajuda a encontrar informações já compartilhadas?",
+        "answer": "A busca global e a busca dentro da conversa ajudam a recuperar mensagens. Threads mantêm as respostas de um assunto juntas, arquivos ficam disponíveis na conversa e mensagens importantes podem ser salvas. Os resultados respeitam os espaços aos quais a pessoa tem acesso."
+      },
+      {
+        "question": "O yapt. teams tem chamadas de voz?",
+        "answer": "Há recursos de áudio para chamadas em chats privados e espaços de voz no Lounge, conforme a disponibilidade da conta. A presença ajuda a acompanhar a disponibilidade das pessoas."
+      },
+      {
+        "question": "Por onde começamos?",
+        "answer": "O yapt. teams está em Beta. Primeiro confirme a disponibilidade para a empresa e escolha uma rotina em que o alinhamento entre pessoas ou áreas atrasa o trabalho. Sua equipe pode organizar os participantes e os espaços e contar com especialistas quando precisar. Acompanhe indicadores como tempo para conseguir apoio, repasses e continuidade do atendimento."
+      }
+    ]
+  },
+  "diagnostic": {
+    "eyebrow": "O próximo avanço do seu time",
+    "title": "Vamos encontrar o contexto que falta para o trabalho avançar.",
+    "description": "Olhe com nossos especialistas para os repasses, as esperas e as informações que se perdem entre pessoas e ferramentas. Vamos escolher um caminho para aproximar a colaboração da operação.",
+    "points": [
+      "Uma rotina em que conseguir apoio demora mais do que deveria.",
+      "Pessoas, grupos e contexto organizados para o trabalho.",
+      "Plataforma e especialistas para aplicar e acompanhar a evolução."
+    ],
+    "cta": "Quero conectar meu time",
+    "footnote": "Converse com nosso time sobre a sua operação e a disponibilidade do yapt. teams.",
+    "error": "O atendimento não carregou agora. Tente novamente ou abra o WhatsApp pelo link abaixo.",
+    "fallback": "Abrir direto no WhatsApp",
+    "noScript": "Você também pode falar com nosso time pelo WhatsApp.",
+    "contactHref": "https://wa.me/5511913673185"
+  },
+  "ui": {
+    "close": "Fechar imagem ampliada",
+    "imageLabel": "Tela do produto",
+    "openImage": "Ampliar a tela",
+    "skip": "Ir para o conteúdo",
+    "imageNote": "Use os controles da imagem para ampliar e fechar."
+  }
+}

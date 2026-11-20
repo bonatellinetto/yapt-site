@@ -1,0 +1,30 @@
+---
+import UIIcon from '../UIIcon.astro';
+import { diagnosticCopy } from '../../lib/diagnostic-cta';
+import type { Locale } from '../../lib/i18n';
+import { whatsappConfigUrl } from '../../lib/whatsapp';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = diagnosticCopy(locale);
+---
+<dialog class="diagnostic-recovery" data-diagnostic-recovery data-error={c.error} data-loading={c.loading} data-close-label={c.close} data-widget-config={whatsappConfigUrl} aria-labelledby="diagnostic-recovery-title">
+  <button class="diagnostic-recovery-close" type="button" data-diagnostic-recovery-close aria-label={c.close}><UIIcon name="close" size={22} /></button>
+  <p class="diagnostic-recovery-eyebrow">{c.eyebrow}</p>
+  <h2 id="diagnostic-recovery-title">{c.recoveryTitle}</h2>
+  <p data-diagnostic-recovery-message>{c.error}</p>
+  <a href={c.contactHref} data-diagnostic-recovery-link target="_blank" rel="noopener noreferrer">{c.fallback}<span aria-hidden="true"><UIIcon name="arrow-up-right" size={18} /></span></a>
+</dialog>
+<style is:global>
+  .diagnostic-recovery{position:fixed;width:min(430px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;margin:auto;padding:32px 26px 26px;border:1px solid #c8ded2;border-radius:22px;background:#fbfdf9;color:#12473b;box-shadow:0 24px 80px #052f374d;font-family:Inter,sans-serif}
+  .diagnostic-recovery::backdrop{background:#05291dcc;backdrop-filter:blur(5px)}
+  .diagnostic-recovery-close{position:absolute;top:6px;right:6px;width:44px;height:44px;border:0;border-radius:12px;background:transparent;color:#315b4c;font-size:28px;cursor:pointer}
+  .diagnostic-recovery-eyebrow{margin:10px 35px 14px 0;font:600 10px/1.6 Poppins,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+  .diagnostic-recovery h2{margin:0;font:600 26px/1.25 Poppins,sans-serif;letter-spacing:-.035em}
+  .diagnostic-recovery p:not(.diagnostic-recovery-eyebrow){font-size:14px;line-height:1.75;margin:18px 0 24px}
+  .diagnostic-recovery a{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:14px 17px;border-radius:12px;background:#0b7168;color:white;text-decoration:none;font:600 13px/1.5 Poppins,sans-serif}
+  .diagnostic-recovery a:focus-visible,.diagnostic-recovery button:focus-visible,.diagnostic-widget input:focus-visible,.diagnostic-widget button:focus-visible{outline:3px solid #20b2aa;outline-offset:3px}
+  html:has(.diagnostic-recovery[open]),body:has(.diagnostic-recovery[open]){overflow:hidden}
+  [data-diagnostic-trigger][aria-busy=true]{cursor:progress;opacity:.7}
+  .diagnostic-widget{overscroll-behavior:contain}
+  @media(prefers-reduced-motion:reduce){.diagnostic-recovery::backdrop{backdrop-filter:none}}
+</style>

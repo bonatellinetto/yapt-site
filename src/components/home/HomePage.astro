@@ -1,0 +1,34 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { softwareApplicationJsonLd } from '../../lib/seo';
+import type { Locale } from '../../lib/i18n';
+import HomeHero from './HomeHero.astro';
+import ClientStrip from './ClientStrip.astro';
+import MarketProblem from './MarketProblem.astro';
+import ConnectedAreas from './ConnectedAreas.astro';
+import BusinessSolutions from './BusinessSolutions.astro';
+import IntelligenceFoundation from './IntelligenceFoundation.astro';
+import HumanTeam from './HumanTeam.astro';
+import DiagnosticCTA from './DiagnosticCTA.astro';
+import DiagnosticCallout from '../diagnostic/DiagnosticCallout.astro';
+import { homeCopy } from './content';
+import './home.css';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = homeCopy(locale);
+---
+<SiteLayout title={c.meta.title} description={c.meta.description} path="/" locale={locale} jsonLd={[softwareApplicationJsonLd()]}>
+  <main class="home-page" id="main-content">
+    <HomeHero locale={locale} />
+    <ClientStrip locale={locale} />
+    <MarketProblem locale={locale} />
+    <ConnectedAreas locale={locale} />
+    <BusinessSolutions locale={locale} />
+    <div class="home-shell" style="padding-bottom:clamp(40px,6vw,72px)"><DiagnosticCallout locale={locale} topic="home" placement="scenario" /></div>
+    <IntelligenceFoundation locale={locale} />
+    <div class="home-shell" style="padding-block:clamp(40px,6vw,72px)"><DiagnosticCallout locale={locale} topic="home" placement="journey" /></div>
+    <HumanTeam locale={locale} />
+    <DiagnosticCTA locale={locale} />
+  </main>
+</SiteLayout>
+<script>import '../../scripts/home-experience';</script>

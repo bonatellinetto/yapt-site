@@ -1,0 +1,40 @@
+---
+interface Props {
+  name: 'marketing' | 'sales' | 'support' | 'operations' | 'ai' | 'teams' | 'automation' | 'data' | 'integrations';
+  size?: number;
+  tone?: 'natural' | 'ink' | 'light';
+  class?: string;
+}
+
+const { name, size = 32, tone = 'natural', class: className } = Astro.props;
+---
+
+<img
+  class:list={['nature-glyph', `nature-glyph--${tone}`, className]}
+  src={`/brand/creation/${name}.svg`}
+  alt=""
+  aria-hidden="true"
+  width={size}
+  height={size}
+  decoding="async"
+  draggable="false"
+/>
+
+<style>
+  .nature-glyph {
+    display: inline-block;
+    flex-shrink: 0;
+    object-fit: contain;
+    vertical-align: middle;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .nature-glyph--ink {
+    filter: grayscale(1) brightness(.45);
+  }
+
+  .nature-glyph--light {
+    filter: brightness(0) invert(1);
+  }
+</style>

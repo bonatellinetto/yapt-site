@@ -1,24 +1,14 @@
+---
+import SiteSEO from '../../components/SiteSEO.astro';
+import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
+import DiagnosticRecovery from '../../components/diagnostic/DiagnosticRecovery.astro';
+import { whatsappHref } from '../../lib/whatsapp';
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>yapt. — Monetize a Base que Você Já Tem</title>
-<meta name="description" content="Reative sua base de alunos e leads no WhatsApp com IA. Upsell, cross-sell e renovação automáticos. Vender pra quem já comprou custa 7x menos que adquirir cliente novo.">
+<SiteSEO title="yapt. — Monetize a Base que Você Já Tem" description="Reative sua base de alunos e leads no WhatsApp com IA. Upsell, cross-sell e renovação automáticos. Vender pra quem já comprou custa 7x menos que adquirir cliente novo." path="/infoprodutores/reativacao-base" locale="pt-BR" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="canonical" href="https://yapt.ai/infoprodutores/reativacao-base">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yapt. — Monetize a Base de Alunos que Você Já Tem">
-<meta property="og:description" content="Reative sua base de alunos e leads no WhatsApp com IA. Upsell, cross-sell e renovação automáticos. Custa 7x menos que adquirir cliente novo.">
-<meta property="og:url" content="https://yapt.ai/infoprodutores/reativacao-base">
-<meta property="og:site_name" content="yapt.">
-<meta property="og:image" content="https://yapt.ai/og-image.png">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="yapt. — Monetize a Base de Alunos que Você Já Tem">
-<meta name="twitter:description" content="Reative sua base de alunos e leads no WhatsApp com IA. Upsell, cross-sell e renovação automáticos. Custa 7x menos que adquirir cliente novo.">
-<meta name="twitter:image" content="https://yapt.ai/og-image.png">
-<meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -327,7 +317,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         BSP Oficial Meta · 30M msg/mês
       </div>
-      <a href="#" onclick="yaptwa('open');return false" class="nav-cta">Grátis por 7 dias →</a>
+      <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer" class="nav-cta">Grátis por 7 dias →</a>
     </div>
   </div>
 </nav>
@@ -345,7 +335,7 @@
         </h1>
         <p class="hero-sub">A yapt. é a IA que reativa sua base de alunos e leads no WhatsApp — oferta o produto certo, na hora certa, de forma personalizada e automática.</p>
         <div class="hero-ctas">
-          <a href="#" onclick="yaptwa('open');return false" class="btn-wa">
+          <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer" class="btn-wa">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Experimentar grátis por 7 dias
           </a>
@@ -502,7 +492,7 @@
 
 <!-- MID CTA 1 -->
 <div class="container"><div class="mid-cta reveal">
-  <a href="#" onclick="yaptwa('open');return false"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Monetizar minha base agora</a>
+  <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Monetizar minha base agora</a>
   <p>Sem cartão · 7 dias grátis · Cancela quando quiser</p>
 </div></div>
 
@@ -653,7 +643,7 @@
 
 <!-- MID CTA 2 -->
 <div class="container"><div class="mid-cta reveal">
-  <a href="#" onclick="yaptwa('open');return false"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base</a>
+  <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base</a>
   <p>Integra com Hotmart · Kiwify · Eduzz · Kirvano · Cakto · Planilha CSV</p>
 </div></div>
 
@@ -780,7 +770,7 @@
       <p>E isso é de <em>uma</em> campanha de reativação. A yapt. roda continuamente — cada aluno que termina um produto entra automaticamente no ciclo de monetização. <strong>É receita recorrente, não pontual.</strong></p>
     </div>
     <div class="mid-cta" style="padding-top:40px;">
-      <a href="#" onclick="yaptwa('open');return false"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base → Grátis por 7 dias</a>
+      <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quero monetizar minha base → Grátis por 7 dias</a>
       <p>Sem cartão de crédito · Cancela quando quiser</p>
     </div>
   </div>
@@ -907,8 +897,8 @@
       </h2>
       <p class="cta-final-sub">Comece hoje e veja como a yapt. abordaria a sua base —<br><strong style="color:var(--white);">com o seu produto, o seu histórico e os seus números reais.</strong></p>
       <div class="cta-buttons">
-        <a href="#" onclick="yaptwa('open');return false" class="btn-wa-lg"><svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Experimentar grátis por 7 dias</a>
-        <a href="#" onclick="yaptwa('open');return false" class="btn-outline-lg">Falar com um especialista →</a>
+        <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer" class="btn-wa-lg"><svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Experimentar grátis por 7 dias</a>
+        <a href={whatsappHref} data-diagnostic-trigger target="_blank" rel="noopener noreferrer" class="btn-outline-lg">Falar com um especialista →</a>
       </div>
       <div class="cta-microcopy">Sem cartão de crédito. Configura em minutos. Cancela quando quiser.</div>
     </div>
@@ -932,38 +922,38 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  document.querySelectorAll('.features-grid .feat-card,.ponto,.check-item,.obj-item,.cenario-card,.step-h').forEach((el,i) => {
+  document.querySelectorAll<HTMLElement>('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll<HTMLElement>('.features-grid .feat-card,.ponto,.check-item,.obj-item,.cenario-card,.step-h').forEach((el,i) => {
     el.style.transitionDelay = `${i*55}ms`;
     el.classList.add('reveal');
     observer.observe(el);
   });
 
   // Conversation engine
-  function runConversation(bodyEl) {
-    const typingEl    = bodyEl.querySelector('.wa-typing');
-    const msgs        = Array.from(bodyEl.querySelectorAll('.wa-msg'));
-    const dateDivider = bodyEl.querySelector('.wa-date-divider');
+  function runConversation(bodyEl: HTMLElement) {
+    const typingEl    = bodyEl.querySelector<HTMLElement>('.wa-typing');
+    const msgs        = Array.from(bodyEl.querySelectorAll<HTMLElement>('.wa-msg'));
+    const dateDivider = bodyEl.querySelector<HTMLElement>('.wa-date-divider');
     const TYPING_SPEED = 36, TYPING_MIN = 650, TYPING_MAX = 1900;
     const GAP_OUT = 280, GAP_AFTER = 240, END_PAUSE = 3500;
 
-    function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
-    function typingDur(text) { return Math.min(TYPING_MAX, Math.max(TYPING_MIN, text.length * TYPING_SPEED)); }
+    function delay(ms: number) { return new Promise<void>(r => setTimeout(r, ms)); }
+    function typingDur(text: string) { return Math.min(TYPING_MAX, Math.max(TYPING_MIN, text.length * TYPING_SPEED)); }
     function scrollBot() { bodyEl.scrollTo({ top: bodyEl.scrollHeight, behavior: 'smooth' }); }
-    function hideEl(el) { el.style.transition='none'; el.classList.remove('visible'); el.style.display='none'; }
-    function showEl(el) { el.style.display='block'; void el.offsetHeight; requestAnimationFrame(() => { el.style.transition=''; el.classList.add('visible'); }); }
+    function hideEl(el: HTMLElement) { el.style.transition='none'; el.classList.remove('visible'); el.style.display='none'; }
+    function showEl(el: HTMLElement) { el.style.display='block'; void el.offsetHeight; requestAnimationFrame(() => { el.style.transition=''; el.classList.add('visible'); }); }
 
     function reset() {
-      [...msgs, typingEl, dateDivider].filter(Boolean).forEach(el => hideEl(el));
+      [...msgs, typingEl, dateDivider].filter((el): el is HTMLElement => el !== null).forEach(el => hideEl(el));
       if (typingEl) bodyEl.appendChild(typingEl);
       bodyEl.scrollTop = 0;
     }
 
-    async function showTyping(forEl) {
+    async function showTyping(forEl: HTMLElement) {
       if (!typingEl) return;
       bodyEl.appendChild(typingEl);
       showEl(typingEl); scrollBot();
-      await delay(typingDur(forEl.textContent.trim()));
+      await delay(typingDur((forEl.textContent ?? '').trim()));
       hideEl(typingEl); await delay(50);
     }
 
@@ -974,7 +964,7 @@
         const msg = msgs[i];
         if (msg.classList.contains('in')) { await showTyping(msg); } else { await delay(GAP_OUT); }
         showEl(msg); scrollBot();
-        await delay(GAP_AFTER + Math.min(750, msg.textContent.trim().length * 11));
+        await delay(GAP_AFTER + Math.min(750, (msg.textContent ?? '').trim().length * 11));
       }
       if (typingEl) { bodyEl.appendChild(typingEl); showEl(typingEl); scrollBot(); }
       await delay(END_PAUSE);
@@ -984,19 +974,14 @@
     loop();
   }
 
-  document.querySelectorAll('.wa-body').forEach((body, i) => {
+  document.querySelectorAll<HTMLElement>('.wa-body').forEach((body, i) => {
     setTimeout(() => runConversation(body), i * 2200);
   });
 </script>
 
 <!-- yapt. WhatsApp Button (widget unico, canal Site yapt.ai) -->
-<script>
-(function(w,d,s,o,f,js,fjs){
-  w['YaptWA']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-  js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
-}(window,document,'script','yaptwa','https://cdn.yapt.ai/wa-button.js'));
-yaptwa('init', { id: 'a28b6328-6021-4b00-8d2b-af875173ec4b', mode: 'both' });
-</script>
+<WhatsAppWidget />
+<DiagnosticRecovery locale="pt-BR" />
+<script>import '../../scripts/diagnostic';</script>
 </body>
 </html>

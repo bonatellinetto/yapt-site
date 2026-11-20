@@ -1,0 +1,148 @@
+.sj-ui .sjw-symbols{position:absolute;width:0;height:0;overflow:hidden}
+.sj-ui .sjw-scene{font-family:Inter,Arial,sans-serif;color:#242424;letter-spacing:0;background:#fff}
+.sj-ui .sjw-icon{display:inline-block;flex-shrink:0;vertical-align:middle;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.sj-ui .sjw-workspace-capture{position:absolute;left:64px;top:0;width:1056px;height:700px;overflow:hidden;background:#f4f5f6}
+.sj-ui .sjw-workspace-capture>img{display:block;position:absolute;left:0;top:0;width:1250px;max-width:none;height:700px}
+.sj-ui .sjw-workspace-hotspot{position:absolute;left:225px;top:179px;width:329px;height:120px;border:1px solid #d1d5db;border-left:3px solid #58afa7;border-radius:9px;background:#f8f9fa;overflow:hidden;box-shadow:0 1px 1px #00000005}
+.sj-ui .sjw-workspace-card-heading{display:flex;align-items:center;gap:4px;padding:8px 9px 0;white-space:nowrap;line-height:1.4}
+.sj-ui .sjw-workspace-card-heading>.sjw-icon{width:13px;height:13px;color:#1c9c60;stroke-width:1.5}
+.sj-ui .sjw-workspace-card-heading>strong{font-size:12px;font-weight:600;color:#121212}
+.sj-ui .sjw-workspace-card-heading>small{font-size:8px;letter-spacing:-.02em;color:#64748b;background:#e9edf2;display:flex;align-items:center;gap:1px;line-height:1.2;min-width:0}
+.sj-ui .sjw-workspace-card-heading>small>.sjw-icon{width:7px;height:7px;color:#94a3b8}
+.sj-ui .sjw-workspace-card-heading>span{display:flex;align-items:center;gap:3px;font-size:8px;color:#cc5151;border-radius:4px;background:#fff0f0;padding:1px 4px;margin-left:auto}
+.sj-ui .sjw-workspace-card-heading>span>i{width:4px;height:4px;border-radius:50%;background:#dd5656}
+.sj-ui .sjw-workspace-hotspot>p{font-size:11px;color:#646464;line-height:1.5;margin:6px 10px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sj-ui .sjw-workspace-card-footer{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:5px;height:28px;padding:4px 8px;border-top:1px solid #e5e5e5;font-size:8px;color:#666;white-space:nowrap;background:#f5f5f5}
+.sj-ui .sjw-workspace-card-footer>span:first-child{border-radius:9px;background:#eee;padding:2px 4px;font-size:7px;color:#555}
+.sj-ui .sjw-workspace-card-footer>b{display:flex;align-items:center;gap:4px;max-width:115px;border-radius:6px;background:#eeeeef;padding:2px 5px;font-size:8px;font-weight:400;overflow:hidden;text-overflow:ellipsis;color:#606060}
+.sj-ui .sjw-workspace-card-footer>b>i{width:4px;height:4px;border-radius:50%;background:#6065db}
+.sj-ui .sjw-workspace-card-footer>span{display:flex;align-items:center;gap:3px}
+.sj-ui .sjw-workspace-card-footer>span>.sjw-icon{width:10px;height:10px;color:#7a7a7a}
+.sj-ui .sjw-workspace-card-footer>.sjw-workspace-sla{width:11px;height:11px;color:#dc5656;margin-left:auto}
+.sj-ui .sjw-workspace-card-footer>strong{font-size:8px;color:#777;font-weight:400}
+.sj-ui .sjw-real-backdrop{position:absolute;left:64px;inset-block:0;width:1056px;overflow:hidden;filter:blur(2px)}
+.sj-ui .sjw-real-backdrop>img{width:1250px;max-width:none;height:700px;display:block}
+.sj-ui .sjw-backdrop-deal{position:absolute;left:614px;top:0;width:506px;height:700px;background:#fff;padding:16px 22px;filter:blur(1px);font-size:16px;border-left:1px solid #dedede}
+.sj-ui .sjw-backdrop-deal>div:first-child{font-size:20px;font-weight:600}.sj-ui .sjw-backdrop-deal>p{font-size:12px;color:#777;margin-top:9px}
+.sj-ui .sjw-background-stages{display:flex;gap:8px;margin-top:23px;font-size:10px;color:#777}
+.sj-ui .sjw-background-stages>span,.sj-ui .sjw-background-stages>strong{border-top:5px solid #21b4a5;padding-top:7px;flex:1}
+.sj-ui .sjw-shade{position:absolute;left:64px;top:0;right:0;bottom:0;background:#000a}
+.sj-ui .sjw-conversation{position:absolute;left:84px;top:49px;width:1016px;height:640px;border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 22px 55px #0003}
+.sj-ui .sjw-header{height:56px;display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid #e5e5e5;background:#fff;white-space:nowrap}
+.sj-ui .sjw-avatar{flex-shrink:0;display:flex;justify-content:center;align-items:center;width:33px;height:33px;border-radius:50%;background:#3b82f6;color:#fff;font-size:13px;font-weight:500}
+.sj-ui .sjw-contact{margin-right:auto;min-width:0}
+.sj-ui .sjw-contact>div{display:flex;align-items:center;gap:7px;font-size:13px;line-height:1.5}
+.sj-ui .sjw-contact strong{color:#181818;font-size:13px;font-weight:600}
+.sj-ui .sjw-contact small{display:flex;align-items:center;gap:2px;background:#f0f4f7;border-radius:4px;font-size:8px;font-weight:600;color:#64748b;padding:1px 4px}
+.sj-ui .sjw-contact small>.sjw-icon{width:8px;height:8px;color:#94a3b8}
+.sj-ui .sjw-external{width:12px;height:12px;color:#777;margin-left:3px}
+.sj-ui .sjw-contact>p{display:flex;align-items:center;gap:5px;font-size:10px;color:#737373;line-height:1.5}
+.sj-ui .sjw-contact i{font-style:normal;color:#777}.sj-ui .sjw-contact b{display:flex;align-items:center;gap:4px;color:#ff3577;font-weight:400}
+.sj-ui .sjw-contact b>.sjw-icon{width:12px;height:12px}
+.sj-ui .sjw-channel-dot{width:5px;height:5px;border-radius:50%;background:#6657ed;margin-right:-1px}
+.sj-ui .sjw-client-badge{display:flex;align-items:center;gap:5px;color:#10b981;background:#eaf9f2;border-radius:6px;padding:7px 10px;font-size:11px;font-weight:500}
+.sj-ui .sjw-client-badge>i{width:5px;height:5px;background:#10b981;border-radius:50%}
+.sj-ui .sjw-journey{display:flex;gap:3px;width:150px;margin-inline:4px}
+.sj-ui .sjw-journey>span{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;text-align:center}
+.sj-ui .sjw-journey small{font-size:6px;letter-spacing:-.025em;color:#757575;font-weight:600;line-height:1.2}
+.sj-ui .sjw-journey i{display:block;height:3px;background:#10b981;border-radius:5px}
+.sj-ui .sjw-journey .sjw-won{background:#ff9000}
+.sj-ui .sjw-status{display:flex;align-items:center;justify-content:center;height:30px;padding:0 12px;background:#eee;border-radius:7px;font-size:10px;font-weight:600}
+.sj-ui .sjw-reopen{display:flex;align-items:center;justify-content:center;width:32px;height:29px;margin-right:6px;color:#9469ff;border:1px solid #dfd0ff;border-radius:7px}
+.sj-ui .sjw-reopen>.sjw-icon{width:16px;height:16px}
+.sj-ui .sjw-header-download,.sj-ui .sjw-header-close{width:15px;height:15px;color:#6b6b6b;margin-left:8px}
+.sj-ui .sjw-header-close{margin-left:12px}
+.sj-ui .sjw-body{height:584px;display:grid;grid-template-columns:minmax(0,1fr) 44px 310px}
+.sj-ui .sjw-chat{position:relative;display:flex;flex-direction:column;min-width:0;background:#efeae2 url('/produto/chat-pattern.svg') repeat;background-size:320px 320px}
+.sj-ui .sjw-company{display:flex;align-items:center;gap:4px;min-height:28px;padding:4px 12px;border-bottom:1px solid #d4d1c6;background:#d9e1d65e;font-size:12px;color:#20b5ad}
+.sj-ui .sjw-company>.sjw-icon:first-child{width:11px;height:11px;color:#9d9d90}
+.sj-ui .sjw-company>.sjw-icon:last-child{width:11px;height:11px;color:#8b8b7e;margin-left:auto}
+.sj-ui .sjw-feed{position:relative;display:flex;align-items:flex-start;flex-direction:column;gap:8px;flex:1;min-height:0;padding:15px 30px 12px;overflow:hidden}
+.sj-ui .sjw-date{align-self:center;display:inline-block;background:#fff;border-radius:6px;padding:5px 11px;color:#748f9a;font-size:10px;box-shadow:0 1px 2px #0001;margin-bottom:2px}
+.sj-ui .sjw-message{position:relative;padding:7px 9px 17px;max-width:92%;font-size:13px;line-height:1.35;color:#25323b;background:#fff;border-radius:0 6px 6px 6px;box-shadow:0 1px 1px #0001}
+.sj-ui .sjw-message>time{position:absolute;bottom:4px;right:7px;font-size:8px;color:#7192a0;line-height:1.1}
+.sj-ui .sjw-message>time b{color:#53cce3;margin-left:2px;font-size:11px;font-weight:400}
+.sj-ui .sjw-message-outgoing{align-self:flex-end;background:#D9FDD3;border-radius:6px 0 6px 6px}
+.sj-ui .sjw-message-outgoing>strong{display:block;font-size:11px;color:#5c7864;border-bottom:1px solid #c3e1bd;padding-bottom:5px;margin-bottom:5px;font-weight:600}
+.sj-ui .sjw-audio-message{position:relative;max-width:92%;width:540px;padding:9px 11px 18px;background:#fff;border-radius:0 7px 7px 7px;color:#25323b;box-shadow:0 1px 1px #0001}
+.sj-ui .sjw-audio-player{display:flex;align-items:center;gap:9px;height:32px;color:#8e9ba0}
+.sj-ui .sjw-audio-play{display:flex;align-items:center;justify-content:center;width:24px;height:28px;flex-shrink:0}
+.sj-ui .sjw-audio-play>.sjw-icon{width:18px;height:18px;fill:currentColor;stroke:none}
+.sj-ui .sjw-waveform{display:flex;align-items:center;gap:3px;flex:1;overflow:hidden;height:35px}
+.sj-ui .sjw-waveform>i{display:block;flex-shrink:0;width:3px;background:#b0bdc1;border-radius:2px}
+.sj-ui .sjw-audio-duration{font-size:10px;color:#778c95}
+.sj-ui .sjw-transcription-label{display:flex;align-items:center;gap:6px;font-size:12px;color:#737373;margin-top:6px;line-height:1.5}
+.sj-ui .sjw-transcription-label>.sjw-icon{width:12px;height:12px}
+.sj-ui .sjw-transcription{margin-top:6px;padding:10px 12px;background:#f4f4f5;border-radius:12px}
+.sj-ui .sjw-transcription>p{font-size:13px;line-height:1.55;color:#252525}
+.sj-ui .sjw-transcription-badges{display:flex;align-items:center;gap:6px;margin-top:8px}
+.sj-ui .sjw-transcription-badges>span{border:1px solid #d4d4d8;border-radius:5px;color:#737373;padding:1px 6px;font-size:10px;line-height:1.25}
+.sj-ui .sjw-transcription-badges>span:first-child{border-color:#10b98133;background:#10b9811a;color:#059669}
+.sj-ui .sjw-transcription>.sjw-transcription-summary{font-size:12px;line-height:1.4;color:#737373;font-style:italic;margin-top:8px}
+.sj-ui .sjw-audio-message>time{position:absolute;right:8px;bottom:4px;font-size:8px;line-height:1.2;color:#7192a0}
+.sj-ui .sjw-note{align-self:center;max-width:85%;width:500px;border-radius:12px;background:#FFFDF5;border-left:3px solid #F59E0B;box-shadow:0 1px 2px #0001;padding:8px 12px;color:#252525;flex-shrink:0}
+.sj-ui .sjw-note>div{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.sj-ui .sjw-note>div>.sjw-icon{width:12px;height:12px;color:#F59E0B}
+.sj-ui .sjw-note strong{font-size:10px;font-weight:600;letter-spacing:.05em;color:#D97706}
+.sj-ui .sjw-note time{font-size:10px;color:#737373;margin-left:auto;white-space:nowrap}
+.sj-ui .sjw-note p{font-size:12px;line-height:1.5;color:#252525;overflow-wrap:break-word}
+.sj-ui .sjw-last-message{font-size:12px}
+.sj-ui .sjw-window{height:48px;flex-shrink:0;display:flex;align-items:center;gap:10px;background:#efeee8e8;border-top:1px solid #e8e4dc;padding:6px 12px;color:#737373}
+.sj-ui .sjw-window>span{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:28px;height:28px;color:#f59e0b;border-radius:8px;background:#fae9c7}
+.sj-ui .sjw-window>span>.sjw-icon{width:15px;height:15px}
+.sj-ui .sjw-window>div{flex:1;min-width:0}
+.sj-ui .sjw-window strong{display:block;color:#292929;font-size:11px;font-weight:500;line-height:1.3}
+.sj-ui .sjw-window p{font-size:9px;line-height:1.3;margin-top:1px}
+.sj-ui .sjw-window>.sjw-icon{width:17px;height:17px;color:#6b6b6b}
+.sj-ui .sjw-action-rail{border-left:1px solid #ddd;border-right:1px solid #ddd;background:#fff;display:flex;align-items:center;flex-direction:column;gap:6px;padding-top:10px;overflow:hidden}
+.sj-ui .sjw-action-rail>span{position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;width:34px;height:34px;border-radius:7px;color:#6c6c6c}
+.sj-ui .sjw-action-rail .sjw-icon{width:19px;height:19px;stroke-width:1.6}
+.sj-ui .sjw-action-rail>.sjw-action-selected{background:#3b82f6;color:#fff}
+.sj-ui .sjw-action-rail i{position:absolute;right:-2px;top:-3px;font-style:normal;font-size:8px;background:#f59e0b;color:white;border:1px solid white;border-radius:50%;padding:0 4px;line-height:12px}
+.sj-ui .sjw-actions{background:#efefef;padding:0 11px 12px;overflow:hidden}
+.sj-ui .sjw-actions-heading{display:flex;align-items:center;gap:8px;height:50px;border-bottom:1px solid #e4e4e4;margin-bottom:10px}
+.sj-ui .sjw-actions-heading>strong{font-size:14px;font-weight:600;color:#1c1c1c}
+.sj-ui .sjw-actions-heading>span{display:flex;align-items:center;gap:5px;font-size:10px;color:#15a376;background:#eafff6;border-radius:20px;padding:3px 7px}
+.sj-ui .sjw-actions-heading>span>i{width:5px;height:5px;border-radius:50%;background:#10b981}
+.sj-ui .sjw-actions-heading>.sjw-icon{width:13px;height:13px;color:#737373;margin-left:auto;margin-right:8px}
+.sj-ui .sjw-action-card{background:#fff;border:1px solid #e2e2e2;border-radius:11px;margin-bottom:10px;overflow:hidden}
+.sj-ui .sjw-action-card h4{display:flex;align-items:center;gap:9px;padding:12px 12px;min-height:44px;border-bottom:1px solid #e4e4e4;font-size:12px;color:#242424;font-weight:600;line-height:1.3}
+.sj-ui .sjw-action-card h4>.sjw-icon:first-child{width:17px;height:17px}
+.sj-ui .sjw-action-card h4>.sjw-icon:last-child:not(:first-child){width:13px;height:13px;margin-left:auto;color:#737373}
+.sj-ui .sjw-action-card h4>span{display:flex;align-items:center;justify-content:center;width:26px;height:24px;border-radius:7px;background:#eee;color:#797979}
+.sj-ui .sjw-action-card h4>span>.sjw-icon{width:15px;height:15px}
+.sj-ui .sjw-andamento{background:#fafafa}
+.sj-ui .sjw-andamento>div{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;border:1px solid #e1e1e1;border-radius:10px;height:40px;margin:14px 9px 9px;font-size:12px;box-shadow:0 1px 2px #0001}
+.sj-ui .sjw-andamento>div>.sjw-icon{width:15px;height:15px}
+.sj-ui .sjw-andamento>div>strong{font-weight:600}
+.sj-ui .sjw-management{padding-bottom:10px;background:#fafafa}
+.sj-ui .sjw-management>div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 10px;color:#737373;font-size:12px;margin-top:11px}
+.sj-ui .sjw-reserve>span{display:flex;align-items:center;gap:8px}
+.sj-ui .sjw-reserve>span>.sjw-icon{width:14px;height:14px}
+.sj-ui .sjw-reserve>i{position:relative;width:37px;height:20px;border-radius:12px;background:#d7d7d7}
+.sj-ui .sjw-reserve>i:after{content:"";position:absolute;width:17px;height:17px;left:2px;top:1.5px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003}
+.sj-ui .sjw-priority>b{display:flex;align-items:center;justify-content:space-between;gap:19px;min-width:109px;background:#fff;border:1px solid #e1e1e1;border-radius:7px;padding:8px 10px;font-weight:400;color:#28b794;font-size:11px}
+.sj-ui .sjw-priority>b>.sjw-icon{width:12px;height:12px;color:#737373}
+.sj-ui .sjw-tags-label>.sjw-icon{width:15px;height:15px;color:#252525}
+.sj-ui .sjw-tag{display:inline-flex;align-items:center;gap:5px;background:#ddf4ef;color:#20b5ad;border-radius:5px;padding:3px 7px;margin:8px 10px 0;font-size:11px}
+.sj-ui .sjw-tag>.sjw-icon{width:11px;height:11px;color:#20b5ad}
+.sj-ui .sjw-collapsed-card h4{border-bottom:0;min-height:43px}
+.sj-ui .sjw-collapsed-card h4>span{background:#e9faf6;color:#20b5ad}
+.sj-ui .sjw-sla-card{background:#fafafa}
+.sj-ui .sjw-sla-card>div{display:flex;justify-content:space-between;align-items:center;gap:9px;margin:10px 11px;color:#737373;font-size:10px}
+.sj-ui .sjw-sla-card>div>span{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.sj-ui .sjw-sla-card>div>span>.sjw-icon{width:13px;height:13px}
+.sj-ui .sjw-sla-card>div>strong{padding:2px 6px;border-radius:4px;background:#e4f8ef;color:#18bd86;font-size:9px;font-weight:400;white-space:nowrap}
+.sj-ui .sjw-sla-card>div>b{font-weight:400;color:#18bd86;font-size:11px;white-space:nowrap}
+.sj-ui .sjw-lock-card h4>span{background:#eee;color:#737373}
+.sj-ui .sjw-created{display:flex;justify-content:space-between;align-items:center;color:#737373;font-size:10px;margin:17px 0}
+.sj-ui .sjw-created>strong{font-weight:400;color:#252525}
+@media(max-width:600px){
+  .sj-ui .sjw-audio-message.is-emphasized{width:390px;max-width:390px;flex-shrink:0}
+  .sj-ui .sjw-audio-message.is-emphasized .sjw-transcription>p{font-size:16px;line-height:1.5}
+  .sj-ui .sjw-audio-message.is-emphasized .sjw-transcription-label{font-size:13px}
+  .sj-ui .sjw-audio-message.is-emphasized .sjw-transcription>.sjw-transcription-summary{font-size:12px}
+  .sj-ui .sjw-note.is-emphasized{width:390px;max-width:390px;align-self:flex-start}
+  .sj-ui .sjw-note.is-emphasized p{font-size:16px;line-height:1.5}
+  .sj-ui .sjw-note.is-emphasized time{font-size:8px}
+}

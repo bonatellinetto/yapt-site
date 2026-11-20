@@ -1,0 +1,14 @@
+<!-- Source: yapt-creation-library.html, element "Formigueiro". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <ellipse cx="60" cy="90" rx="45" ry="20" fill="#92400E"/>
+    <path d="M30 75 Q60 40, 90 75 Q75 90, 60 90 Q45 90, 30 75Z" fill="#B45309"/>
+    <path d="M45 75 L45 95" stroke="#78350F" stroke-width="2" stroke-dasharray="3 2"/>
+    <path d="M60 65 L60 90" stroke="#78350F" stroke-width="2" stroke-dasharray="3 2"/>
+    <path d="M75 75 L75 95" stroke="#78350F" stroke-width="2" stroke-dasharray="3 2"/>
+    <g fill="#1F2937">
+        <ellipse cx="40" cy="60" rx="4" ry="3"/><ellipse cx="36" cy="58" rx="3" ry="2"/>
+        <ellipse cx="70" cy="55" rx="4" ry="3"/><ellipse cx="74" cy="53" rx="3" ry="2"/>
+        <ellipse cx="55" cy="45" rx="4" ry="3"/><ellipse cx="51" cy="43" rx="3" ry="2"/>
+        <path d="M55 40 Q60 30, 65 35" fill="#34D399"/>
+    </g>
+</svg>

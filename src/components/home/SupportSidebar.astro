@@ -1,0 +1,77 @@
+---
+interface Props { idPrefix?: string }
+const { idPrefix = '' } = Astro.props;
+import './support-journey-screens.css';
+const workspaceItems = [{"name": "Dashboard", "description": "Veja os números do atendimento e das vendas em um só lugar.", "icon": "dashboard", "target": null}, {"name": "Inbox", "description": "Atenda seus clientes por WhatsApp, e-mail e redes sociais em uma tela só.", "icon": "inbox", "target": "sp-nav-inbox"}, {"name": "Histórico", "description": "Encontre qualquer conversa já encerrada, com tudo que foi dito.", "icon": "history", "target": null}, {"name": "Calendário", "description": "Gerencie agendamentos e disponibilidade da sua equipe.", "icon": "calendar", "target": null}];
+const operationsItems = [{"name": "Inteligência em Canais", "description": "Saiba quais linhas oficiais pode usar, quanto pode enviar e o que a Meta mudou.", "icon": "radio", "target": null}, {"name": "Filas e gestão de filas", "description": "Distribua as conversas entre a equipe com regras de fila e prioridade.", "icon": "queue", "target": "sp-nav-queues"}, {"name": "Operadores e produtividade", "description": "Acompanhe sua equipe em tempo real: quem está online, em pausa ou atendendo.", "icon": "activity", "target": "sp-nav-operators"}];
+---
+<svg class="sps-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id={`${idPrefix}sps-star`} viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></symbol>
+<symbol id={`${idPrefix}sps-grid`} viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M3 12h18"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect></symbol>
+<symbol id={`${idPrefix}sps-close`} viewBox="0 0 24 24"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></symbol>
+<symbol id={`${idPrefix}sps-activity`} viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></symbol>
+<symbol id={`${idPrefix}sps-radio`} viewBox="0 0 24 24"><path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"></path><path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"></path><circle cx="12" cy="9" r="2"></circle><path d="M16.2 4.8c2 2 2.26 5.11.8 7.47"></path><path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"></path><path d="M9.5 18h5"></path><path d="m8 22 4-11 4 11"></path></symbol>
+<symbol id={`${idPrefix}sps-calendar`} viewBox="0 0 24 24"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></symbol>
+<symbol id={`${idPrefix}sps-help`} viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></symbol>
+<symbol id={`${idPrefix}sps-cap`} viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></symbol>
+<symbol id={`${idPrefix}sps-settings`} viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></symbol>
+<symbol id={`${idPrefix}sps-bell`} viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></symbol>
+<symbol id={`${idPrefix}sps-workspace`} viewBox="0 0 100 100">    <rect x="15" y="15" width="70" height="52" rx="10" stroke="currentColor" stroke-width="5" />
+    <path d="M30 67 L30 82 L48 67" stroke="currentColor" stroke-width="5" stroke-linejoin="round" />
+    <path d="M32 35 L68 35" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M32 47 L58 47" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-inbox`} viewBox="0 0 100 100">    <rect x="20" y="25" width="60" height="50" rx="6" stroke="currentColor" stroke-width="5" />
+    <path d="M20 45 L50 62 L80 45" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-marketing`} viewBox="0 0 100 100">    <path d="M15 45L75 25V75L15 55V45Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round" />
+    <path d="M48 68A12 12 0 1 1 24 62" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-sales`} viewBox="0 0 100 100">    <circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="5" />
+    <path d="M50 30 L50 70" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M38 40 C38 35, 45 32, 50 32 C55 32, 62 35, 62 40 C62 46, 55 48, 50 50 C45 52, 38 54, 38 60 C38 65, 45 68, 50 68 C55 68, 62 65, 62 60" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none" />
+  </symbol>
+<symbol id={`${idPrefix}sps-operations`} viewBox="0 0 100 100">    <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="5" />
+    <circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="5" />
+    <circle cx="50" cy="50" r="8" fill="currentColor" />
+    <path d="M50 12 L50 26" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M50 74 L50 88" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M12 50 L26 50" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+    <path d="M74 50 L88 50" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-history`} viewBox="0 0 100 100">    <rect x="15" y="20" width="45" height="32" rx="6" stroke="currentColor" stroke-width="5" />
+    <path d="M25 36 L50 36" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M25 44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <rect x="40" y="48" width="45" height="32" rx="6" stroke="currentColor" stroke-width="5" />
+    <path d="M50 64 L75 64" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M50 72 L65 72" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-queue`} viewBox="0 0 100 100">    <circle cx="30" cy="30" r="12" stroke="currentColor" stroke-width="5" />
+    <circle cx="70" cy="30" r="12" stroke="currentColor" stroke-width="5" />
+    <circle cx="30" cy="70" r="12" stroke="currentColor" stroke-width="5" />
+    <circle cx="70" cy="70" r="12" stroke="currentColor" stroke-width="5" />
+    <path d="M42 30H58" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M30 42V58" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+    <path d="M70 42V58" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  </symbol>
+<symbol id={`${idPrefix}sps-dashboard`} viewBox="0 0 100 100">    <rect x="18" y="18" width="28" height="28" rx="4" stroke="currentColor" stroke-width="5" />
+    <rect x="54" y="18" width="28" height="28" rx="4" stroke="currentColor" stroke-width="5" />
+    <rect x="18" y="54" width="28" height="28" rx="4" stroke="currentColor" stroke-width="5" />
+    <rect x="54" y="54" width="28" height="28" rx="4" stroke="currentColor" stroke-width="5" />
+  </symbol>
+</defs></svg>
+<div class="sps-rail">
+  <div class="sps-logo"><img src="/produto/app-icon.svg" width="32" height="32" alt=""/></div>
+  <div class="sps-primary">
+    <span class="sps-button sps-favorite"><svg class="sps-icon"><use href={`#${idPrefix}sps-star`}/></svg></span>
+    <span class="sps-separator"></span>
+    <span class="sps-button sps-workspace" data-j-target="sp-menu-workspace"><svg class="sps-icon"><use href={`#${idPrefix}sps-workspace`}/></svg></span>
+    <span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-marketing`}/></svg></span>
+    <span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-sales`}/></svg></span>
+    <span class="sps-button sps-operations" data-j-target="sp-menu-operations"><svg class="sps-icon"><use href={`#${idPrefix}sps-operations`}/></svg></span>
+    <span class="sps-separator"></span>
+    <span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-grid`}/></svg></span>
+  </div>
+  <div class="sps-footer"><span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-cap`}/></svg></span><span class="sps-button sps-team">＠</span><span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-help`}/></svg></span><span class="sps-separator"></span><span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-bell`}/></svg></span><span class="sps-button"><svg class="sps-icon"><use href={`#${idPrefix}sps-settings`}/></svg></span><span class="sps-user">JS</span><small>v1.558.0</small></div>
+</div>
+{[{title:'Workspace',key:'workspace',items:workspaceItems},{title:'Operações',key:'operations',items:operationsItems}].map(menu=><div class={`sps-menu sps-menu-${menu.key}`}><div class="sps-menu-heading"><strong>{menu.title}</strong><svg class="sps-icon"><use href={`#${idPrefix}sps-close`}/></svg></div><div class="sps-menu-items">{menu.items.map(item=><div class="sps-menu-item" data-j-target={item.target??undefined}><svg class="sps-icon"><use href={`#${idPrefix}sps-${item.icon}`}/></svg><span><strong>{item.name}</strong><small>{item.description}</small></span></div>)}</div></div>)}

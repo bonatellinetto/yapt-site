@@ -1,0 +1,37 @@
+---
+import './sales-report-scene.css';
+const metrics = [
+  {label:'Vendas fechadas',value:'R$ 188.270',detail:'20 vendas'},
+  {label:'Meta',value:'R$ 310.000',detail:'60,7% · faltam R$ 121.730'},
+  {label:'Previsão do período ⓘ',value:'R$ 331.208',detail:'106,8% da meta'},
+  {label:'Taxa de ganho',value:'44,1%',detail:'15 ganhos · 19 perdidos'},
+  {label:'Ciclo médio ⓘ',value:'10 dias',detail:'mediana 7,9 dias'},
+  {label:'Ticket médio',value:'R$ 9.414',detail:''},
+  {label:'Em aberto',value:'R$ 4.425.486',detail:'605 negócios · 528 esfriando'},
+];
+const sellers = [
+  ['LO','Lucas Oliveira','R$ 65.000','R$ 121.908','187,6%','R$ 135.212','127','R$ 464.513','113'],
+  ['MS','Maria Santos','R$ 75.000','R$ 39.693','52,9%','R$ 78.397','134','R$ 543.904','117'],
+  ['JS','João Silva','R$ 75.000','R$ 21.976','29,3%','R$ 25.741','134','R$ 1.087.005','117'],
+  ['AP','Ana Pereira','R$ 65.000','R$ 3.497','5,4%','R$ 11.568','125','R$ 763.744','112'],
+];
+const stages = [
+  ['Novo Lead','18','R$ 89.507','16','62,5%','26,4 dias'],
+  ['Qualificação','14','R$ 78.986','10','70%','28,6 dias'],
+  ['Demonstração','12','R$ 46.096','7','14,3%','15,5 dias'],
+  ['Proposta','4','R$ 56.294','1','100%','30,5 dias'],
+  ['Negociação','5','R$ 60.765','1','100%','33,8 dias'],
+  ['Fechamento','3','R$ 19.487','1','0% para ganho','59,8 dias'],
+];
+---
+<div class="sj-screen sjr-screen" data-j-screen="sales-report">
+  <header class="sjr-top"><span class="sjr-page-icon"><svg class="sj-icon"><use href="#sj-i-chart"/></svg></span><strong>Relatório de vendas</strong><div class="sjr-tabs"><span>Meu dia</span><span>Funil</span><span>Vendas</span><span>Réguas</span><span>Metas</span><span class="sjr-selected">Relatório</span></div><div class="sjr-top-actions"><svg class="sj-icon"><use href="#sj-i-bell"/></svg><span class="sjr-export"><svg class="sj-icon"><use href="#sj-i-download"/></svg></span><span class="sjr-target"><svg class="sj-icon"><use href="#sj-i-target"/></svg>Definir metas</span></div></header>
+  <div class="sjr-filter-row">{[['Período','Este mês'],['Funil','Todos os funis'],['Vendedor','Equipe toda'],['Origem','Todas']].map(([label,value]) => <div><small>{label}</small><span>{value}<svg class="sj-icon"><use href="#sj-i-down"/></svg></span></div>)}<span class="sjr-weekly"><svg class="sj-icon"><use href="#sj-i-mail"/></svg>Receber resumo semanal <small>· por e-mail toda segunda às 8h</small><i></i></span></div>
+  <div class="sjr-view" data-j-target="sales-report-overview"><div class="sjr-scroll" data-j-target="sales-report-body">
+    <div class="sjr-metrics">{metrics.map((m,i) => <div class={i === 1 ? 'sjr-meta' : ''}><small>{m.label}</small><strong>{m.value}</strong><span>{m.detail}</span></div>)}</div>
+    <section class="sjr-card sjr-goal"><div class="sjr-section-head"><strong>Caminho da meta</strong><span>realizado acumulado contra o ritmo que bate a meta no fim do período</span></div><div class="sjr-goal-bar"><i></i><b></b><em></em></div><div class="sjr-legend"><span><i></i>Realizado R$ 188.270</span><span><i></i>Ponderado em aberto R$ 1.962.002</span><span>│ Ritmo esperado hoje: 43,3% — a equipe está adiantada</span><span>┊ Previsão R$ 331.208</span><span>Meta R$ 310.000</span></div><div class="sjr-plot"><div class="sjr-y-labels"><span>R$ 320 mil</span><span>R$ 240 mil</span><span>R$ 160 mil</span><span>R$ 80 mil</span><span>R$ 0</span></div><svg viewBox="0 0 900 150" preserveAspectRatio="none" aria-hidden="true"><path class="sjr-grid" d="M0 0H900M0 37.5H900M0 75H900M0 112.5H900M0 150H900"/><path class="sjr-pace" d="M0 150 900 0"/><path class="sjr-value" d="M0 150 24 146 42 143 57 137 68 131 82 128 92 127 103 120 110 101 121 83 135 76 154 76 171 76 184 75 202 75 212 72 224 64 237 61 258 61 281 61 308 61 332 61 361 61"/><path class="sjr-today" d="M361 0V150"/></svg><div class="sjr-dates">{Array.from({length:30},(_,i) => <span>{i+1}</span>)}</div></div></section>
+    <section class="sjr-card"><div class="sjr-section-head"><strong>Por vendedor</strong><span>clique na linha para ver só aquela pessoa</span><span class="sjr-columns">⊞ Colunas</span></div><div class="sjr-sellers sjr-th">{['Vendedor','Meta','↓ Realizado','Atingido','Previsão','Negócios abertos','Em aberto','Esfriando'].map(s => <span>{s}</span>)}</div>{sellers.map(row => <div class="sjr-sellers"><span><i class="sjr-avatar">{row[0]}</i>{row[1]}</span><span>{row[2]}</span><strong>{row[3]}</strong><span class="sjr-achieved"><i><b style={`width:${Math.min(parseFloat(row[4].replace(',','.')),100)}%;background:${parseFloat(row[4])<30?'#cd4740':'#57ad9f'}`}></b></i>{row[4]}</span><span>{row[5]}</span><span>{row[6]}</span><span>{row[7]}</span><span><b class="sjr-cold">{row[8]}</b></span></div>)}<p class="sjr-table-note">Previsão = fechado + abertos com previsão de fechar no período, pesados pela chance da etapa corrigida pela taxa de ganho de 90 dias.</p></section>
+    <section class="sjr-card"><div class="sjr-section-head"><strong>Funil por etapa</strong><span>Vendas · abertos agora e conversão dos negócios criados no período</span></div><div class="sjr-bottleneck"><b>Maior trava</b> Fechamento: os negócios ficam 59,8 dias em média nesta etapa.</div><div class="sjr-stages sjr-th">{['ETAPA','ABERTOS','VALOR','PASSARAM','CONVERSÃO','TEMPO MÉDIO'].map(s => <span>{s}</span>)}</div>{stages.map((row,i) => <div class={`sjr-stages ${i===5?'sjr-stalled':''}`}><span>{row[0]}{i===5 && <b>Maior trava</b>}</span>{row.slice(1).map(value => <span>{value}</span>)}</div>)}<p class="sjr-table-note">Tempo por etapa medido com exatidão desde 12/10/2026. Antes disso, “Passaram” e o tempo médio usam a etapa atual de cada negócio.</p></section>
+    <section class="sjr-card"><div class="sjr-section-head"><strong>Por que perdemos</strong><span>19 negócios · R$ 122.609</span></div><div class="sjr-loss sjr-th"><span>MOTIVO</span><span>NEGÓCIOS</span><span>VALOR</span></div>{[['Sem orçamento disponível','2','R$ 39.151'],['Prazo incompatível','2','R$ 18.211'],['Perdeu para concorrente','2','R$ 16.493'],['Produto não atende a necessidade','2','R$ 12.048'],['Decisão adiada','1','R$ 20.592']].map(row => <div class="sjr-loss">{row.map(value => <span>{value}</span>)}</div>)}</section>
+  </div></div>
+</div>

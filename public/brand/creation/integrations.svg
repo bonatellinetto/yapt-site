@@ -1,0 +1,14 @@
+<!-- Source: yapt-creation-library.html, element "Teia de Aranha". Original SVG geometry and colors preserved; only xmlns and whitespace added. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="45" stroke="#94A3B8" stroke-width="1"/>
+    <circle cx="60" cy="60" r="35" stroke="#94A3B8" stroke-width="1"/>
+    <circle cx="60" cy="60" r="25" stroke="#94A3B8" stroke-width="1"/>
+    <circle cx="60" cy="60" r="15" stroke="#94A3B8" stroke-width="1"/>
+    <line x1="60" y1="10" x2="60" y2="110" stroke="#94A3B8" stroke-width="1"/>
+    <line x1="10" y1="60" x2="110" y2="60" stroke="#94A3B8" stroke-width="1"/>
+    <line x1="20" y1="20" x2="100" y2="100" stroke="#94A3B8" stroke-width="1"/>
+    <line x1="100" y1="20" x2="20" y2="100" stroke="#94A3B8" stroke-width="1"/>
+    <ellipse cx="60" cy="60" rx="6" ry="8" fill="#374151"/>
+    <circle cx="60" cy="53" r="4" fill="#374151"/>
+    <circle cx="40" cy="40" r="2" fill="#BFDBFE"/><circle cx="80" cy="40" r="2" fill="#BFDBFE"/>
+</svg>

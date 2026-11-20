@@ -1,0 +1,73 @@
+---
+import './sales-deals-scenes.css';
+const outcomes = [
+  {label:'Não atendeu',icon:'missed'},
+  {label:'Caixa postal',icon:'voicemail'},
+  {label:'Número errado',icon:'off',danger:true},
+  {label:'Sem interesse',icon:'thumb',danger:true},
+  {label:'Retornar',icon:'call'},
+  {label:'Reunião agendada',icon:'calendar'},
+  {label:'Não ligar mais',icon:'ban',danger:true},
+];
+const conversations = [
+  {name:'Caio Cavalcanti',initials:'CC',role:'Contato principal',number:'801630',preview:'Precisamos de uma solução para a equipe.',state:'Em aberto',active:true,origin:true,time:'há 2 minutos'},
+  {name:'Felipe Duarte',initials:'FD',role:'Influenciador',number:'801736',preview:'Vamos confirmar as condições com o financeiro.',state:'Pendente',pending:true,time:'há 1 hora'},
+  {name:'Caio Cavalcanti',initials:'CC',role:'Contato principal',number:'800630',preview:'Obrigado pelo envio da proposta.',state:'Encerrada',time:'há 2 dias'},
+  {name:'Felipe Duarte',initials:'FD',role:'Influenciador',number:'800736',preview:'Recebemos as informações da solução.',state:'Encerrada',time:'há 4 dias'},
+];
+---
+<svg class="sjd-icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="sjd-i-phone" viewBox="0 0 24 24"><path d="m7 3 3 5-3 3a17 17 0 0 0 6 6l3-3 5 3-1 4C10 22 2 14 3 4Z"/></symbol>
+  <symbol id="sjd-i-call" viewBox="0 0 24 24"><path d="m7 3 3 5-3 3a17 17 0 0 0 6 6l3-3 5 3-1 4C10 22 2 14 3 4Zm7 0a7 7 0 0 1 7 7m-7-3a3 3 0 0 1 3 3"/></symbol>
+  <symbol id="sjd-i-missed" viewBox="0 0 24 24"><path d="m7 3 3 5-3 3a17 17 0 0 0 6 6l3-3 5 3-1 4C10 22 2 14 3 4Zm8 0 6 6m0-6-6 6"/></symbol>
+  <symbol id="sjd-i-voicemail" viewBox="0 0 24 24"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></symbol>
+  <symbol id="sjd-i-off" viewBox="0 0 24 24"><path d="m7 3 3 5-3 3a17 17 0 0 0 6 6l3-3 5 3-1 4C10 22 2 14 3 4ZM2 2l20 20"/></symbol>
+  <symbol id="sjd-i-thumb" viewBox="0 0 24 24"><path d="M17 3h4v11h-4Zm-2 11-4 7a3 3 0 0 1-3-4l1-3H4a2 2 0 0 1-2-2l2-7a3 3 0 0 1 3-2h10v11Z"/></symbol>
+  <symbol id="sjd-i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 5 2 2 4-4"/></symbol>
+  <symbol id="sjd-i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="sjd-i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l-3 2v-8.5A8.5 8.5 0 0 1 10.5 5h2A8.5 8.5 0 0 1 21 11.5Z"/></symbol>
+  <symbol id="sjd-i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="sjd-i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="sjd-i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="sjd-i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="sjd-i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+  <symbol id="sjd-i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+  <symbol id="sjd-i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v7l-4 2v-9Z"/></symbol>
+  <symbol id="sjd-i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-3a8 8 0 0 1 16 0v3"/></symbol>
+  <symbol id="sjd-i-arrow" viewBox="0 0 24 24"><path d="m3 16 6-6 5 3 7-10M16 3h5v5"/></symbol>
+  <symbol id="sjd-i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 14v7h16v-7"/></symbol>
+  <symbol id="sjd-i-star" viewBox="0 0 24 24"><path d="m12 2 3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z"/></symbol>
+</defs></svg>
+
+{['prospecting','call'].map(screen => <div class={`sj-screen sj-board-screen sjd-capture-scene ${screen==='call'?'sjd-call-screen':''}`} data-j-screen={screen}>
+  <div class="sjd-prospecting-capture" data-j-target={screen==='prospecting'?'prospecting-overview':undefined}>
+    <img src="/produto/vendas-prospeccao.webp" width="1600" height="937" alt="" class="sjd-prospecting-image" decoding="async"/>
+    {screen==='prospecting'&&<span class="sjd-hotspot sjd-call-hotspot" data-j-target="call-action"></span>}
+  </div>
+  {screen==='call'&&<><div class="sjd-dialog-backdrop"></div><div class="sjd-call-dialog" data-j-target="call-dialog">
+    <div class="sjd-dialog-heading"><h2>Registrar ligação</h2><svg class="sjd-icon"><use href="#sjd-i-close"/></svg><p><strong>Atacadista Central do Vale</strong><span><svg class="sjd-icon"><use href="#sjd-i-phone"/></svg>+55 19 96778 8622</span></p></div>
+    <div class="sjd-dialog-body"><div class="sjd-outcomes">{outcomes.map((outcome,index)=><div class={`sjd-outcome ${outcome.danger?'sjd-danger':''}`}><span><svg class="sjd-icon"><use href={`#sjd-i-${outcome.icon}`}/></svg><kbd>{index+1}</kbd></span><strong>{outcome.label}</strong></div>)}</div><p class="sjd-shortcut">Teclas 1 a 7 escolhem o resultado</p>
+      <div class="sjd-note-fields"><div><span class="sjd-label">Nota (opcional)</span><div class="sjd-textarea">O que a pessoa disse?</div></div><div><span class="sjd-label">Duração (min)</span><div class="sjd-input"></div></div></div>
+    </div>
+    <div class="sjd-dialog-footer"><span><svg class="sjd-icon"><use href="#sjd-i-chat"/></svg>WhatsApp</span><span>Cancelar</span><span class="sjd-confirm-disabled">Confirmar</span></div>
+  </div></>}
+</div>)}
+
+<div class="sj-screen sj-board-screen sjd-pipeline-scene" data-j-screen="pipeline">
+  <div class="sjd-pipeline-shell" data-j-target="pipeline-overview">
+    <div class="sjd-product-header"><span class="sjd-product-icon"><svg class="sjd-icon"><use href="#sjd-i-arrow"/></svg></span><strong>Negócios</strong><div class="sjd-product-tabs"><span>Meu dia</span><span class="sjd-product-tab-active">Funil</span><span>Vendas</span><span>Réguas</span><span>Metas</span><span>Relatório</span></div><div class="sjd-header-tools"><svg class="sjd-icon"><use href="#sjd-i-bell"/></svg><span class="sjd-round-control"><svg class="sjd-icon"><use href="#sjd-i-upload"/></svg></span><span class="sjd-round-control">☷</span><span class="sjd-new-deal"><svg class="sjd-icon"><use href="#sjd-i-plus"/></svg>Novo Negócio</span></div></div>
+    <div class="sjd-pipeline-tabs"><span>Vendas consultivas • Showcase</span><span>Renovações e expansão • Showcase</span><span>Projetos corporativos • Showcase</span><span class="sjd-pipeline-selected">Vendas</span><span>Enterprise</span><span>Prospecção ativa</span><svg class="sjd-icon"><use href="#sjd-i-plus"/></svg><div class="sjd-view-tabs"><span class="sjd-product-tab-active">Quadro</span><span>Lista</span><span>Previsão</span></div></div>
+    <div class="sjd-filters"><span class="sjd-search"><svg class="sjd-icon"><use href="#sjd-i-search"/></svg>Buscar negócio...</span><span><svg class="sjd-icon"><use href="#sjd-i-user"/></svg>Responsável</span><span><svg class="sjd-icon"><use href="#sjd-i-filter"/></svg>Estágio</span><span><svg class="sjd-icon"><use href="#sjd-i-calendar"/></svg>Prev.</span><div class="sjd-status-options"><b>Ativos</b><span>Ganhos</span><span>Perdidos</span><span>Todos</span></div><span class="sjd-cold">△ Parado</span></div>
+    <div class="sjd-board-summary"><span>Visões</span><span class="sjd-saved-view">Joao Silva <i>×</i></span><span class="sjd-saved-view">Maria Silva <i>×</i></span><span>＋ Salvar visão</span><span>Em aberto <b>R$ 1.291.969</b> · 162 negócios</span><span>Ponderado <b>R$ 514.837</b></span><span>Meta do mês <b>R$ 310.000</b></span></div>
+    <div class="sjd-real-board"><img src="/solucao/img/14aec716d998.jpg" width="1376" height="714" alt="" decoding="async"/><span class="sjd-hotspot sjd-pipeline-deal-hotspot" data-j-target="pipeline-deal"></span></div>
+  </div>
+</div>
+
+{['deal','deal-conversations'].map(screen=><div class="sj-screen sj-deal-screen sjd-deal-scene" data-j-screen={screen}>
+  <div class="sjd-deal-board-backdrop"><img src="/solucao/img/14aec716d998.jpg" width="1376" height="714" alt=""/></div><div class="sjd-deal-overlay"></div>
+  <div class="sjd-real-drawer" data-j-target={screen==='deal'?'deal-overview':undefined}>
+    <img class="sjd-drawer-capture" src="/produto/vendas-negocio.webp" width="1510" height="1560" alt="" decoding="async"/>
+    {screen==='deal'&&<span class="sjd-hotspot sjd-conversations-tab-hotspot" data-j-target="deal-conversations-tab"></span>}
+    {screen==='deal-conversations'&&<><div class="sjd-drawer-tabs"><span>Visão geral</span><span>Atividades</span><span class="sjd-drawer-tab-active">Conversas <b>4</b></span><span>Reuniões</span><span>Notas internas</span><span>Histórico</span></div><div class="sjd-conversations-pane"><section class="sjd-linked-conversations"><div class="sjd-conversation-list-heading"><div><h2>Conversas <span>4 conversas · 2 em aberto</span></h2><p>Conversas de todas as pessoas do negócio, em todos os canais.</p></div><span class="sjd-new-conversation"><svg class="sjd-icon"><use href="#sjd-i-plus"/></svg>Nova conversa</span></div><div class="sjd-conversation-list">{conversations.map((conversation,index)=><div class={`sjd-conversation ${conversation.active?'sjd-conversation-open':conversation.pending?'sjd-conversation-pending':'sjd-conversation-closed'}`} ><div class="sjd-person-avatar">{conversation.initials}<span><svg class="sjd-icon"><use href="#sjd-i-chat"/></svg></span></div><div class="sjd-conversation-content"><div class="sjd-conversation-person"><strong data-j-target={index===0?'linked-conversation':undefined}>{conversation.name}</strong><span>· {conversation.role}</span>{conversation.origin&&<svg class="sjd-icon sjd-origin-star"><use href="#sjd-i-star"/></svg>}<time>{conversation.time}</time></div><div class="sjd-conversation-preview"><span class="sjd-ticket-number">#C-{conversation.number}</span><p>{conversation.preview}</p><span class="sjd-conversation-state">{conversation.state}</span></div></div></div>)}</div></section></div></>}
+  </div>
+</div>)}

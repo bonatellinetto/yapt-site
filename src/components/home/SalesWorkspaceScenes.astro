@@ -1,0 +1,79 @@
+---
+import './sales-workspace-scenes.css';
+const waveform = [8,13,21,29,17,24,33,15,28,19,10,24,35,21,13,31,25,16,30,22,12,19,28,36,24,17,29,22,13,26,31,18,24,15,28,20,12,25,17,30,22,14];
+const actionIcons = ['academy','cursor','headphones','person','megaphone','clipboard','chat','note','dollar','handshake','calendar','check-square','chat','flow','brain'];
+---
+<svg class="sjw-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="sjw-i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="sjw-i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  <symbol id="sjw-i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M21 3l-9 9M10 5H3v16h16v-7"/></symbol>
+  <symbol id="sjw-i-reopen" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7"/></symbol>
+  <symbol id="sjw-i-activity" viewBox="0 0 24 24"><path d="M2 12h4l3-8 5 16 3-8h5"/></symbol>
+  <symbol id="sjw-i-chevron-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+  <symbol id="sjw-i-file-text" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8m-8 4h5"/></symbol>
+  <symbol id="sjw-i-note" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5"/></symbol>
+  <symbol id="sjw-i-academy" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5ZM6 11v6c3 3 9 3 12 0v-6M22 9v8"/></symbol>
+  <symbol id="sjw-i-cursor" viewBox="0 0 24 24"><path d="m8 7 3 13 3-5 6-2ZM4 5 2 3M8 3V1M3 9H1M12 4l2-2M4 13l-2 2"/></symbol>
+  <symbol id="sjw-i-headphones" viewBox="0 0 24 24"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 12H2v8h5v-8Zm16 0h2v8h-5v-8Z"/></symbol>
+  <symbol id="sjw-i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+  <symbol id="sjw-i-clipboard" viewBox="0 0 24 24"><path d="M9 4H5v18h14V4h-4M9 2h6v5H9ZM8 12h8m-8 4h6"/></symbol>
+  <symbol id="sjw-i-chat" viewBox="0 0 24 24"><path d="M3 3h14v12H8l-5 4Zm14 5h4v13l-4-3h-6v-3"/></symbol>
+  <symbol id="sjw-i-dollar" viewBox="0 0 24 24"><path d="M12 1v22M18 5H9a4 4 0 0 0 0 8h6a4 4 0 0 1 0 8H5"/></symbol>
+  <symbol id="sjw-i-handshake" viewBox="0 0 24 24"><path d="m2 8 4-4 5 1 3-1 8 4-3 10-4 3-3-2-3-1-4-4Zm5-3 4 1-3 5 3 2 4-4 4 6m-8 4 2-3m2 5 2-4"/></symbol>
+  <symbol id="sjw-i-check-square" viewBox="0 0 24 24"><path d="M12 3H3v18h18v-9M8 11l4 4L22 3"/></symbol>
+  <symbol id="sjw-i-flow" viewBox="0 0 24 24"><rect x="2" y="2" width="7" height="6" rx="2"/><rect x="15" y="16" width="7" height="6" rx="2"/><path d="M5 8v7a4 4 0 0 0 4 4h6m3-3V9a4 4 0 0 0-4-4H9"/></symbol>
+  <symbol id="sjw-i-brain" viewBox="0 0 24 24"><path d="M12 4C7-1 3 3 4 7c-4 2-3 7 0 8-1 5 4 8 8 5Zm0 0c5-5 9-1 8 3 4 2 3 7 0 8 1 5-4 8-8 5ZM8 8v5m8-5v5"/></symbol>
+  <symbol id="sjw-i-megaphone" viewBox="0 0 24 24"><path d="m3 9 18-5v16L3 15Zm4 7 2 5h4l-2-4"/></symbol>
+  <symbol id="sjw-i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 2v6m8-6v6M3 11h18"/></symbol>
+</defs></svg>
+
+<div class="sj-screen sjw-scene sjw-workspace-scene" data-j-screen="workspace">
+  <div class="sjw-workspace-capture" data-j-target="workspace-overview">
+    <img src="/produto/ops-conversas.webp" width="1600" height="896" alt="" decoding="async"/>
+    <div class="sjw-workspace-hotspot" data-j-target="workspace-open-conversation"><div class="sjw-workspace-card-heading"><svg class="sjw-icon"><use href="#sj-i-whatsapp"/></svg><strong>Caio Cavalcanti</strong><small>#C-800630 <svg class="sjw-icon"><use href="#sjw-i-copy"/></svg></small><span><i></i>Fechada</span></div><p>Headset corporativo — Solare Saúde 40</p><div class="sjw-workspace-card-footer"><span>Opportunity</span><b><i></i>Vendas e novos clien...</b><span><svg class="sjw-icon"><use href="#sjw-i-person"/></svg>João</span><svg class="sjw-icon sjw-workspace-sla"><use href="#sj-i-clock"/></svg><strong>50d</strong></div></div>
+  </div>
+</div>
+
+<div class="sj-screen sjw-scene sjw-qualification-scene" data-j-screen="qualification">
+  <div class="sjw-real-backdrop"><img src="/produto/ops-conversas.webp" width="1600" height="896" alt="" decoding="async"/></div>
+  <div class="sjw-backdrop-deal"><div>Headset corporativo</div><p>Solare Saúde 40 · Caio Cavalcanti · Diagnóstico</p><div class="sjw-background-stages"><span>Novo Lead</span><strong>Diagnóstico · 40%</strong><span>Demonstração</span></div></div>
+  <div class="sjw-shade"></div>
+  <div class="sjw-conversation" data-j-target="conversation-overview">
+    <header class="sjw-header">
+      <span class="sjw-avatar">CC</span>
+      <div class="sjw-contact"><div><strong>Caio Cavalcanti</strong><small>#C-801856 <svg class="sjw-icon"><use href="#sjw-i-copy"/></svg></small><svg class="sjw-icon sjw-external"><use href="#sjw-i-external"/></svg></div><p>cliente0630@showcase.example <i>›</i><b><svg class="sjw-icon"><use href="#sjw-i-instagram"/></svg>Showcase · Instagram</b><i>•</i><span class="sjw-channel-dot"></span>Financeiro e cobrança</p></div>
+      <span class="sjw-client-badge"><i></i>Cliente</span>
+      <div class="sjw-journey">{['LEAD','MQL','SAL','SQL','OPORT','GANHO'].map((name,index)=><span><small>{name}</small><i class={index===5?'sjw-won':''}></i></span>)}</div>
+      <span class="sjw-status">Resolvida</span><span class="sjw-reopen"><svg class="sjw-icon"><use href="#sjw-i-reopen"/></svg></span><svg class="sjw-icon sjw-header-download"><use href="#sj-i-download"/></svg><svg class="sjw-icon sjw-header-close"><use href="#sj-i-close"/></svg>
+    </header>
+    <div class="sjw-body">
+      <div class="sjw-chat">
+        <div class="sjw-company"><svg class="sjw-icon"><use href="#sjw-i-clipboard"/></svg>yapt. Business — Solare Saúde 40<svg class="sjw-icon"><use href="#sj-i-close"/></svg></div>
+        <div class="sjw-feed">
+          <span class="sjw-date">17 de junho</span>
+          <div class="sjw-message sjw-message-incoming">Gostaria de receber uma proposta para Headset corporativo. Vou usar na minha empresa.<time>17/06 - 19:04</time></div>
+          <div class="sjw-message sjw-message-outgoing"><strong>João Silva</strong>Entendi, Caio. Qual é a necessidade da sua equipe?<time>17/06 - 19:08 <b>✓✓</b></time></div>
+          <div class="sjw-audio-message" data-j-target="audio-transcript">
+            <div class="sjw-audio-player"><span class="sjw-audio-play"><svg class="sjw-icon"><use href="#sj-i-play"/></svg></span><div class="sjw-waveform">{waveform.map(height=><i style={`height:${height}px`}></i>)}</div><span class="sjw-audio-duration">0:36</span></div>
+            <div class="sjw-transcription-label"><svg class="sjw-icon"><use href="#sjw-i-file-text"/></svg><span>Transcrição</span><svg class="sjw-icon"><use href="#sjw-i-chevron-up"/></svg></div>
+            <div class="sjw-transcription"><p>Precisamos de uma solução para a equipe. Gostaria de entender a garantia e as condições de pagamento para avançar com a proposta.</p><div class="sjw-transcription-badges"><span>Positivo</span><span>Solicitação de proposta</span></div><p class="sjw-transcription-summary">Interesse da equipe; confirmar garantia e condição de pagamento.</p></div>
+            <time>17/06 - 19:20</time>
+          </div>
+          <div class="sjw-note" data-j-target="ai-note"><div><svg class="sjw-icon"><use href="#sjw-i-note"/></svg><strong>NOTA INTERNA</strong><time>João Silva · 20:12</time></div><p>Contexto para a equipe: cliente já validou a necessidade. Conferir condições e manter o histórico na transferência.</p></div>
+          <div class="sjw-message sjw-message-outgoing sjw-last-message"><strong>João Silva</strong>Preparei a proposta com desconto por volume. Posso acompanhar a aprovação com você.<time>17/06 - 19:59 <b>✓✓</b></time></div>
+        </div>
+        <div class="sjw-window"><span><svg class="sjw-icon"><use href="#sj-i-clock"/></svg></span><div><strong>Janela de 24h do Instagram encerrada</strong><p>Aguarde o cliente responder para continuar a conversa. Instagram não permite envio de mensagens fora da janela.</p></div><svg class="sjw-icon"><use href="#sjw-i-instagram"/></svg></div>
+      </div>
+      <div class="sjw-action-rail">{actionIcons.map((icon,index)=><span class={index===1?'sjw-action-selected':''}><svg class="sjw-icon"><use href={`#sjw-i-${icon}`}/></svg>{index===7&&<i>1</i>}</span>)}</div>
+      <aside class="sjw-actions">
+        <div class="sjw-actions-heading"><strong>Ações</strong><span><i></i>Orgânico</span><svg class="sjw-icon"><use href="#sj-i-close"/></svg></div>
+        <div class="sjw-action-card sjw-andamento"><h4><svg class="sjw-icon"><use href="#sjw-i-activity"/></svg>Andamento</h4><div><svg class="sjw-icon"><use href="#sjw-i-reopen"/></svg><strong>Reabrir</strong></div></div>
+        <div class="sjw-action-card sjw-management"><h4><span><svg class="sjw-icon"><use href="#sj-i-settings"/></svg></span>Gestão<svg class="sjw-icon"><use href="#sjw-i-chevron-up"/></svg></h4><div class="sjw-reserve"><span><svg class="sjw-icon"><use href="#sj-i-lock"/></svg>Reservar conversa</span><i></i></div><div class="sjw-priority"><span>Prioridade</span><b>Normal<svg class="sjw-icon"><use href="#sj-i-down"/></svg></b></div><div class="sjw-tags-label"><span>Tags</span><svg class="sjw-icon"><use href="#sj-i-plus"/></svg></div><span class="sjw-tag">Demo · Cobrança <svg class="sjw-icon"><use href="#sj-i-close"/></svg></span></div>
+        <div class="sjw-action-card sjw-collapsed-card"><h4><span><svg class="sjw-icon"><use href="#sj-i-board"/></svg></span>Detalhes<svg class="sjw-icon"><use href="#sj-i-down"/></svg></h4></div>
+        <div class="sjw-action-card sjw-sla-card"><h4><span><svg class="sjw-icon"><use href="#sj-i-clock"/></svg></span>SLA &amp; Métricas<svg class="sjw-icon"><use href="#sjw-i-chevron-up"/></svg></h4><div><span><svg class="sjw-icon"><use href="#sj-i-clock"/></svg>Status SLA</span><strong>✓ No Prazo</strong></div><div><span><svg class="sjw-icon"><use href="#sj-i-check"/></svg>Tempo 1ª Resposta</span><b>4m 10s</b></div></div>
+        <div class="sjw-action-card sjw-collapsed-card sjw-lock-card"><h4><span><svg class="sjw-icon"><use href="#sj-i-lock"/></svg></span>Bloqueio<svg class="sjw-icon"><use href="#sj-i-down"/></svg></h4></div>
+        <div class="sjw-created"><span>Criada</span><strong>há 5 meses</strong></div>
+      </aside>
+    </div>
+  </div>
+</div>
