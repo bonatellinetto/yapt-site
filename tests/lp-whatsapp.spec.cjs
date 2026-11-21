@@ -7,13 +7,39 @@ test.beforeEach(async({page})=>{
  await page.route('**/functions/v1/webhook-widget',r=>r.abort());
  await page.route('**/functions/v1/widget-api?**',r=>r.fulfill({json:{success:true,data:{is_active:true,wa_button_phone:'5511000000000',wa_button_message:'teste',wa_button_capture_fields:['phone','name','email']}}}));
  await page.goto('http://127.0.0.1:4329'+pages[0]+'?gclid=review-test');
+ await page.getByRole('button',{name:'Aceitar cookies',exact:true}).click();
  await page.locator('#yapt-wa-button').waitFor();
- await page.evaluate(()=>{window.dataLayer=[];window.open=()=>null;window.fbq=()=>{}});
+ await page.evaluate(()=>{window.dataLayer=[];window.open=()=>null;window.__metaCalls=[];window.fbq=(...args)=>window.__metaCalls.push(args)});
 });
 test('floating button is measured',async({page})=>{await page.locator('#yapt-wa-button').click();expect(await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_click').length)).toBe(1)});
 test('whitespace does not create a conversion',async({page})=>{await page.locator('#yapt-wa-button').click();await page.locator('input[name=phone]').fill('   ');await page.locator('button[type=submit]').click();expect(await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_lead').length)).toBe(0)});
 test('failed capture shows an error and does not convert',async({page})=>{await page.route('**/functions/v1/webhook-widget',r=>r.fulfill({status:500,json:{success:false}}));await page.locator('#yapt-wa-button').click();await page.locator('input[name=phone]').fill('5511999999999');await page.locator('button[type=submit]').click();await expect(page.getByRole('alert')).toBeVisible();expect(await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_lead').length)).toBe(0)});
 test('confirmed capture converts once and sends attribution',async({page})=>{let payload;await page.route('**/functions/v1/webhook-widget',r=>{payload=r.request().postDataJSON();return r.fulfill({json:{success:true,data:{phone:'5511000000000',message:'teste'}}})});await page.locator('#yapt-wa-button').click();await page.locator('input[name=phone]').fill('5511999999999');await page.locator('button[type=submit]').click();await expect.poll(()=>page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_lead').length)).toBe(1);expect(payload.clickIds?.gclid).toBe('review-test');expect(payload.pageTitle).toBe((await page.title()).replace(/\s*\|\s*yapt\.\s*$/i, '').trim());expect(new URL(payload.pageUrl).pathname).toBe(pages[0])});
+
+test('confirmed form sends a single Meta Lead without personal fields',async({page})=>{
+ await page.evaluate(()=>{window.__metaCalls=[];window.fbq=(...args)=>window.__metaCalls.push(args)});
+ await page.route('**/functions/v1/webhook-widget',r=>r.fulfill({json:{success:true}}));
+ await page.locator('#yapt-wa-button').click();
+ await page.locator('input[name=phone]').fill('5511999999999');
+ await page.locator('input[name=name]').fill('Nome reservado');
+ await page.locator('input[name=email]').fill('reservado@example.test');
+ await page.locator('button[type=submit]').click();
+ await expect.poll(()=>page.evaluate(()=>window.__metaCalls.length)).toBe(1);
+ expect(await page.evaluate(()=>window.__metaCalls)).toEqual([['trackSingle','26923785453912756','Lead']]);
+ const events=await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_lead'));
+ expect(events).toEqual([{event:'lp_whatsapp_lead',lp:'crm-whatsapp-ia'}]);
+});
+
+test('rejected cookies keep contact usable without a Meta conversion',async({page})=>{
+ await page.evaluate(()=>{window.yaptMarketingConsent.set(false);window.__metaCalls=[];window.fbq=(...args)=>window.__metaCalls.push(args);window.dataLayer=[]});
+ await page.route('**/functions/v1/webhook-widget',r=>r.fulfill({json:{success:true}}));
+ await page.locator('#yapt-wa-button').click();
+ await page.locator('input[name=phone]').fill('5511999999999');
+ await page.locator('button[type=submit]').click();
+ await expect(page.getByRole('status')).toContainText('Contato registrado');
+ expect(await page.evaluate(()=>window.__metaCalls)).toEqual([]);
+ expect(await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_lead'))).toEqual([]);
+});
 
 test('floating keyboard activation is measured',async({page})=>{await page.locator('#yapt-wa-button').press('Enter');expect(await page.evaluate(()=>window.dataLayer.filter(x=>x.event==='lp_whatsapp_click').length)).toBe(1)});
 

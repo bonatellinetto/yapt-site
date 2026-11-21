@@ -1,7 +1,7 @@
 import { findDiagnosticModal, observeDiagnosticModals, restoreDiagnosticFocus } from './diagnostic-modal';
 import { whenWhatsAppReady, whatsAppAPI, whatsAppWidgetState } from './whatsapp-widget';
 type Metric = { event: string; diagnostic_topic: string; diagnostic_placement: string; diagnostic_scenario: string; page_path: string };
-type DiagnosticWindow = Window & { dataLayer?: { push: (event: Metric) => unknown } };
+type DiagnosticWindow = Window & { dataLayer?: { push: (event: Metric) => unknown }; yaptMarketingConsent?: { isGranted(): boolean } };
 type Context = Omit<Metric, 'event'>;
 const host = window as DiagnosticWindow;
 const recovery = document.querySelector<HTMLDialogElement>('[data-diagnostic-recovery]');
@@ -21,6 +21,7 @@ function contextFor(trigger: HTMLElement): Context {
 }
 
 function track(event: string, context: Context) {
+  if (!host.yaptMarketingConsent?.isGranted()) return;
   try { const initial: Metric[] = []; const layer = host.dataLayer ??= initial; layer.push({ event, ...context }); }
   catch { /* Analytics never blocks the diagnosis. */ }
 }
