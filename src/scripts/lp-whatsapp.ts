@@ -1,5 +1,5 @@
 import { acquisitionParams } from './lp-attribution';
-// Adapter for the public yapt. WA widget: immediate navigation and confirmed campaign measurement.
+// Adapter for the public yapt. WA widget: immediate navigation and confirmed, consented measurement.
 // The CDN widget still owns config, routing and modal rendering.
 const instanceId = 'a28b6328-6021-4b00-8d2b-af875173ec4b';
 const apiUrl = 'https://vkrwduoawdhsbkoufurl.supabase.co/functions/v1/webhook-widget';
@@ -23,7 +23,8 @@ const pending = new WeakSet<HTMLFormElement>();
 let maxScroll = 0;
 type TrackingWindow = Window & {
   dataLayer?: Record<string, unknown>[];
-  fbq?: (...args: unknown[]) => void;
+  yaptMarketingConsent?: { isGranted(): boolean };
+  yaptMetaPixel?: { trackLead(): void };
   lintrk?: (command: 'track', data: { conversion_id: number }) => void;
   yaptwa?: (command: string) => void;
 };
@@ -36,11 +37,21 @@ function cookie(key: string): string {
   const match = document.cookie.match(new RegExp('(?:^|; )yapt_' + key + '=([^;]*)'));
   try { return match ? decodeURIComponent(match[1]) : ''; } catch { return ''; }
 }
-for (const key of clickKeys) {
-  const value = params.get(key);
-  if (value) document.cookie = `yapt_${key}=${encodeURIComponent(value)}; max-age=7776000; path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
+function syncAttributionCookies() {
+  const allowed = tracking.yaptMarketingConsent?.isGranted() === true;
+  for (const key of clickKeys) {
+    const value = params.get(key);
+    if (allowed && value) document.cookie = `yapt_${key}=${encodeURIComponent(value)}; max-age=7776000; path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
+    if (!allowed) {
+      document.cookie = `yapt_${key}=; max-age=0; path=/; SameSite=Lax`;
+      if (location.hostname.endsWith('yapt.ai')) document.cookie = `yapt_${key}=; max-age=0; path=/; Domain=.yapt.ai; SameSite=Lax`;
+    }
+  }
 }
+syncAttributionCookies();
+window.addEventListener('yapt:marketing-consent', syncAttributionCookies);
 function track(event: string, details: Record<string, unknown>) {
+  if (!tracking.yaptMarketingConsent?.isGranted()) return;
   (tracking.dataLayer ||= []).push({ event, lp, ...details });
 }
 document.addEventListener('click', event => {
@@ -118,9 +129,9 @@ async function capture(form: HTMLFormElement, phone: string) {
     const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true, signal: AbortSignal.timeout(15000) });
     const result = await response.json();
     if (!response.ok || result.success !== true) throw new Error('Capture failed');
-    track('lp_whatsapp_lead', { telefone: phone, email: payload.email, gclid: payload.clickIds.gclid, gbraid: payload.clickIds.gbraid, wbraid: payload.clickIds.wbraid });
-    tracking.fbq?.('track', 'Lead');
-    tracking.lintrk?.('track', { conversion_id: linkedinLeadConversionId });
+    track('lp_whatsapp_lead', {});
+    tracking.yaptMetaPixel?.trackLead();
+    if (tracking.yaptMarketingConsent?.isGranted()) tracking.lintrk?.('track', { conversion_id: linkedinLeadConversionId });
     whatsappNotice(form, whatsappUrl, 'Contato registrado. Continue sua conversa:');
     // Keep the form locked: repeated clicks must not resend the template.
   } catch {
